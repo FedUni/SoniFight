@@ -397,30 +397,11 @@
   </watchList>
   <triggerList>
     <Trigger>
-      <id>1</id>
-      <name>Clock-99-Reset</name>
-      <description>Resets all  triggers with a Once type when clock is 99</description>
-      <value xsi:type="xsd:string">99</value>
-      <triggerType>Once</triggerType>
-      <controlType>Reset</controlType>
-      <allowanceType>Any</allowanceType>
-      <watchOneId>0</watchOneId>
-      <watchTwoId>-1</watchTwoId>
-      <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>CHANGE_ME</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <isClock>true</isClock>
-      <triggerStopList />
-      <triggerResetList />
-      <active>true</active>
-    </Trigger>
-    <Trigger>
       <id>2</id>
       <name>Clock 50</name>
       <description>Says 'Clock half' when it hits 50</description>
       <value xsi:type="xsd:string">50</value>
-      <triggerType>Once</triggerType>
+      <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>0</watchOneId>
@@ -439,7 +420,7 @@
       <name>Clock 25</name>
       <description>Says 'Clock 25' when clock hits 25</description>
       <value xsi:type="xsd:string">25</value>
-      <triggerType>Once</triggerType>
+      <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>0</watchOneId>
@@ -458,7 +439,7 @@
       <name>Clock 10</name>
       <description>Says 'Clock Ten' when clock hits 10</description>
       <value xsi:type="xsd:string">10</value>
-      <triggerType>Once</triggerType>
+      <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>0</watchOneId>
@@ -483,7 +464,7 @@
       <watchOneId>1</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>health-five-hundred.mp3</sampleFilename>
+      <sampleFilename>Health-Five-Hundred-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -502,7 +483,7 @@
       <watchOneId>1</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>health-two-fifty.mp3</sampleFilename>
+      <sampleFilename>Health-Two-Fifty-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -521,7 +502,7 @@
       <watchOneId>1</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>health-one-hundred.mp3</sampleFilename>
+      <sampleFilename>Health-Low-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -540,7 +521,7 @@
       <watchOneId>3</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>super-one.mp3</sampleFilename>
+      <sampleFilename>Super-One-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -559,7 +540,7 @@
       <watchOneId>3</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>super-two.mp3</sampleFilename>
+      <sampleFilename>Super-Two-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -578,7 +559,7 @@
       <watchOneId>3</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>super-three.mp3</sampleFilename>
+      <sampleFilename>Super-Three-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -588,7 +569,7 @@
     </Trigger>
     <Trigger>
       <id>11</id>
-      <name>P1 Super - Got 4 bars</name>
+      <name>P1 Super - Got 4 bars (i.e. full)</name>
       <description>Triggers when P1 super is 1000 or greater</description>
       <value xsi:type="xsd:string">1000</value>
       <triggerType>Recurring</triggerType>
@@ -597,7 +578,7 @@
       <watchOneId>3</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>super-full.mp3</sampleFilename>
+      <sampleFilename>Super-Full-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -616,7 +597,7 @@
       <watchOneId>5</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>ultra-half.mp3</sampleFilename>
+      <sampleFilename>Ultra-Half-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -629,13 +610,13 @@
       <name>P1 Ultra - Full</name>
       <description>Triggers when player 1 ultra bar hits 400 or greater.</description>
       <value xsi:type="xsd:string">400</value>
-      <triggerType>Once</triggerType>
+      <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>5</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>ultra-full.mp3</sampleFilename>
+      <sampleFilename>Ultra-Full-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -644,84 +625,8 @@
       <active>true</active>
     </Trigger>
     <Trigger>
-      <id>14</id>
-      <name>Mute P1 Health &lt;= 0</name>
-      <description>If p1 health is &lt;= 0 then we're not in a round.</description>
-      <value xsi:type="xsd:string">0</value>
-      <triggerType>Once</triggerType>
-      <controlType>Mute</controlType>
-      <allowanceType>Any</allowanceType>
-      <watchOneId>1</watchOneId>
-      <watchTwoId>-1</watchTwoId>
-      <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>CHANGE_ME</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
-      <active>false</active>
-    </Trigger>
-    <Trigger>
-      <id>15</id>
-      <name>Mute P1 Health &gt; 1100</name>
-      <description>If P1 health is &gt; 1100 then we're not in a match</description>
-      <value xsi:type="xsd:string">1100</value>
-      <triggerType>Once</triggerType>
-      <controlType>Mute</controlType>
-      <allowanceType>InGame</allowanceType>
-      <watchOneId>1</watchOneId>
-      <watchTwoId>-1</watchTwoId>
-      <comparisonType>GreaterThan</comparisonType>
-      <sampleFilename>CHANGE_ME</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
-      <active>false</active>
-    </Trigger>
-    <Trigger>
-      <id>16</id>
-      <name>Mute P2 Health &lt;= 0</name>
-      <description>If P2 health is &lt;= 0 we're not in a round.</description>
-      <value xsi:type="xsd:string">0</value>
-      <triggerType>Once</triggerType>
-      <controlType>Mute</controlType>
-      <allowanceType>InGame</allowanceType>
-      <watchOneId>2</watchOneId>
-      <watchTwoId>-1</watchTwoId>
-      <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>CHANGE_ME</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
-      <active>false</active>
-    </Trigger>
-    <Trigger>
-      <id>17</id>
-      <name>Mute P2 Health &gt; 1100</name>
-      <description>If P2 health is &gt; 1100 we're not in a round.</description>
-      <value xsi:type="xsd:string">1100</value>
-      <triggerType>Once</triggerType>
-      <controlType>Mute</controlType>
-      <allowanceType>InGame</allowanceType>
-      <watchOneId>2</watchOneId>
-      <watchTwoId>-1</watchTwoId>
-      <comparisonType>GreaterThan</comparisonType>
-      <sampleFilename>CHANGE_ME</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
-      <active>false</active>
-    </Trigger>
-    <Trigger>
       <id>18</id>
-      <name>P2 Super 1 (faster)</name>
+      <name>P2 Super 1</name>
       <description>Triggers when P2 super is at least 250</description>
       <value xsi:type="xsd:string">250</value>
       <triggerType>Recurring</triggerType>
@@ -730,8 +635,8 @@
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>super-one.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Super-One-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -2602,7 +2507,7 @@
     </Trigger>
     <Trigger>
       <id>117</id>
-      <name>P2 Health 500 (faster)</name>
+      <name>P2 Health 500</name>
       <description>Triggers when player 2 health is 500 or less</description>
       <value xsi:type="xsd:string">500</value>
       <triggerType>Recurring</triggerType>
@@ -2611,8 +2516,8 @@
       <watchOneId>2</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>health-five-hundred.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Health-Five-Hundred-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -2621,7 +2526,7 @@
     </Trigger>
     <Trigger>
       <id>118</id>
-      <name>P2 Health 250 (faster)</name>
+      <name>P2 Health 250</name>
       <description>Triggers when player 2 health is 250 or lower</description>
       <value xsi:type="xsd:string">250</value>
       <triggerType>Recurring</triggerType>
@@ -2630,8 +2535,8 @@
       <watchOneId>2</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>health-two-fifty.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Health-Two-Fifty-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -2640,7 +2545,7 @@
     </Trigger>
     <Trigger>
       <id>119</id>
-      <name>P2 Health 100 (faster)</name>
+      <name>P2 Health Low</name>
       <description>Triggers when player 2 health is 100 or lower.</description>
       <value xsi:type="xsd:string">100</value>
       <triggerType>Recurring</triggerType>
@@ -2649,8 +2554,8 @@
       <watchOneId>2</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>health-one-hundred.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Health-Low-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -2659,7 +2564,7 @@
     </Trigger>
     <Trigger>
       <id>120</id>
-      <name>P2 Super 2 (faster)</name>
+      <name>P2 Super 2</name>
       <description>Triggers when P2 super is at least 500</description>
       <value xsi:type="xsd:string">500</value>
       <triggerType>Recurring</triggerType>
@@ -2668,8 +2573,8 @@
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>super-two.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Super-Two-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -2678,7 +2583,7 @@
     </Trigger>
     <Trigger>
       <id>121</id>
-      <name>P2 Super 3 (faster)</name>
+      <name>P2 Super 3</name>
       <description>Triggers when P2 super is at least 750</description>
       <value xsi:type="xsd:string">750</value>
       <triggerType>Recurring</triggerType>
@@ -2687,8 +2592,8 @@
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>super-three.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Super-Three-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -2697,7 +2602,7 @@
     </Trigger>
     <Trigger>
       <id>122</id>
-      <name>P2 Super full (faster)</name>
+      <name>P2 Super full</name>
       <description>Triggers when P2 super is at least 1000</description>
       <value xsi:type="xsd:string">1000</value>
       <triggerType>Recurring</triggerType>
@@ -2706,8 +2611,8 @@
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>super-full.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Super-Full-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -2944,7 +2849,7 @@
     </Trigger>
     <Trigger>
       <id>135</id>
-      <name>P2 Ultra - Half (faster)</name>
+      <name>P2 Ultra Half</name>
       <description>Triggers when player 2 ultra bar hits 200 or higher</description>
       <value xsi:type="xsd:string">200</value>
       <triggerType>Recurring</triggerType>
@@ -2953,8 +2858,8 @@
       <watchOneId>19</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>ultra-half.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Ultra-Half-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -2963,17 +2868,17 @@
     </Trigger>
     <Trigger>
       <id>136</id>
-      <name>P2 Ultra - Full (faster)</name>
+      <name>P2 Ultra Full</name>
       <description>Triggers when player 2 ultra bar hits 400 or greater.</description>
       <value xsi:type="xsd:string">400</value>
-      <triggerType>Once</triggerType>
+      <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>19</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>ultra-full.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Ultra-Full-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -3713,7 +3618,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-00-Ryu.mp3</sampleFilename>
+      <sampleFilename>Character-00-Ryu-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3732,7 +3637,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-01-Ken.mp3</sampleFilename>
+      <sampleFilename>Character-01-Ken-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3751,7 +3656,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-02-Chun-Li.mp3</sampleFilename>
+      <sampleFilename>Character-02-Chun-Li-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3770,7 +3675,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-03-E-Honda.mp3</sampleFilename>
+      <sampleFilename>Character-03-E-Honda-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3789,7 +3694,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-04-Blanka.mp3</sampleFilename>
+      <sampleFilename>Character-04-Blanka-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3808,7 +3713,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-05-Zangief.mp3</sampleFilename>
+      <sampleFilename>Character-05-Zangief-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3827,7 +3732,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-06-Guile.mp3</sampleFilename>
+      <sampleFilename>Character-06-Guile-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3846,7 +3751,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-07-Dhalsim.mp3</sampleFilename>
+      <sampleFilename>Character-07-Dhalsim-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3865,7 +3770,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-08-Balrog.mp3</sampleFilename>
+      <sampleFilename>Character-08-Balrog-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3884,7 +3789,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-09-Vega.mp3</sampleFilename>
+      <sampleFilename>Character-09-Vega-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3903,7 +3808,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-10-Sagat.mp3</sampleFilename>
+      <sampleFilename>Character-10-Sagat-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3922,7 +3827,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-11-M-Bison.mp3</sampleFilename>
+      <sampleFilename>Character-11-M-Bison-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3941,7 +3846,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-12-C-Viper.mp3</sampleFilename>
+      <sampleFilename>Character-12-C-Viper-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3960,7 +3865,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-13-Rufus.mp3</sampleFilename>
+      <sampleFilename>Character-13-Rufus-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3979,7 +3884,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-14-El-Fuerte.mp3</sampleFilename>
+      <sampleFilename>Character-14-El-Fuerte-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -3998,7 +3903,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-15-Able.mp3</sampleFilename>
+      <sampleFilename>Character-15-Able-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4017,7 +3922,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-16-Seth.mp3</sampleFilename>
+      <sampleFilename>Character-16-Seth-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4036,7 +3941,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-17-Akuma.mp3</sampleFilename>
+      <sampleFilename>Character-17-Akuma-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4055,7 +3960,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-18-Gouken.mp3</sampleFilename>
+      <sampleFilename>Character-18-Gouken-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4074,7 +3979,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-19-T-Hawk.mp3</sampleFilename>
+      <sampleFilename>Character-19-T-Hawk-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4093,7 +3998,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-20-Cammy.mp3</sampleFilename>
+      <sampleFilename>Character-20-Cammy-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4112,7 +4017,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-21-Fei-Long.mp3</sampleFilename>
+      <sampleFilename>Character-21-Fei-Long-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4131,7 +4036,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-22-Dee-Jay.mp3</sampleFilename>
+      <sampleFilename>Character-22-Dee-Jay-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4150,7 +4055,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-23-Sakura.mp3</sampleFilename>
+      <sampleFilename>Character-23-Sakura-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4169,7 +4074,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-24-Rose.mp3</sampleFilename>
+      <sampleFilename>Character-24-Rose-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4188,7 +4093,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-25-Gen.mp3</sampleFilename>
+      <sampleFilename>Character-25-Gen-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4207,7 +4112,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-26-Dan.mp3</sampleFilename>
+      <sampleFilename>Character-26-Dan-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4226,7 +4131,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-27-Guy.mp3</sampleFilename>
+      <sampleFilename>Character-27-Guy-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4245,7 +4150,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-28-Cody.mp3</sampleFilename>
+      <sampleFilename>Character-28-Cody-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4264,7 +4169,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-29-Ibuki.mp3</sampleFilename>
+      <sampleFilename>Character-29-Ibuki-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4283,7 +4188,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-30-Makoto.mp3</sampleFilename>
+      <sampleFilename>Character-30-Makoto-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4302,7 +4207,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-31-Dudley.mp3</sampleFilename>
+      <sampleFilename>Character-31-Dudley-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4321,7 +4226,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-32-Adon.mp3</sampleFilename>
+      <sampleFilename>Character-32-Adon-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4340,7 +4245,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-33-Hakan.mp3</sampleFilename>
+      <sampleFilename>Character-33-Hakan-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4359,7 +4264,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-34-Juri.mp3</sampleFilename>
+      <sampleFilename>Character-34-Juri-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4378,7 +4283,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-35-Yun.mp3</sampleFilename>
+      <sampleFilename>Character-35-Yun-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4397,7 +4302,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-36-Yang.mp3</sampleFilename>
+      <sampleFilename>Character-36-Yang-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4416,7 +4321,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-37-Evil-Ryu.mp3</sampleFilename>
+      <sampleFilename>Character-37-Evil-Ryu-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4435,7 +4340,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-38-Oni.mp3</sampleFilename>
+      <sampleFilename>Character-38-Oni-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4454,7 +4359,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-39-Rolento.mp3</sampleFilename>
+      <sampleFilename>Character-39-Rolento-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4473,7 +4378,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-40-Elena.mp3</sampleFilename>
+      <sampleFilename>Character-40-Elena-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4492,7 +4397,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-41-Poison.mp3</sampleFilename>
+      <sampleFilename>Character-41-Poison-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4511,7 +4416,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-42-Hugo.mp3</sampleFilename>
+      <sampleFilename>Character-42-Hugo-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4530,7 +4435,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Character-43-Decapre.mp3</sampleFilename>
+      <sampleFilename>Character-43-Decapre-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -4549,7 +4454,7 @@
       <watchOneId>23</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Random.mp3</sampleFilename>
+      <sampleFilename>Character-44-Random-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -6154,7 +6059,7 @@
       <active>true</active>
     </Trigger>
   </triggerList>
-  <Description>Test SSFIV GameConfig - Al Lansley - 2017-05-27</Description>
+  <Description>Test SSFIV GameConfig - Al Lansley - 2017-06-18</Description>
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>

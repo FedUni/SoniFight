@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -23,7 +25,9 @@ namespace SoniFight
 
         // Valid ranges of how fast to play the sample (1.0f is 'normal speed')
         public const float MIN_SAMPLE_PLAYBACK_SPEED = 0.5f;
-        public const float MAX_SAMPLE_PLAYBACK_SPEED = 4.0f;       
+        public const float MAX_SAMPLE_PLAYBACK_SPEED = 4.0f;
+
+        private static DateTime lastProcessConnectionCheckTime = DateTime.Now;
 
         // Description of this config
         private string description = "GameConfig description";
@@ -114,68 +118,97 @@ namespace SoniFight
 
         public void setPollSleepMS(int i) { pollSleepMS = i; }
 
-        public bool activate()
-        {
-            Process[] processArray;
+        // Background worker so we can attempt to connect to a game process without locking up the UI
+        public static BackgroundWorker processConnectionBW = new BackgroundWorker();
+       
 
-            Console.WriteLine("Attempting to connect to process: " + processName);
-            //Console.WriteLine("Press any key to abort.");
+        private Process[] processArray = null;
 
-            //TODO: Make this run as a background worker - just sleeping the UI thread obviously makes it unresponsive
-
-            do
+        // DoWork method for the process connection background worker
+        public void connectToProcess(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {   
+            // Not connected and we're not cancelling? Then using the background worker...
+            while (!Program.connectedToProcess && !processConnectionBW.CancellationPending)
             {
                 // Find all instances of the named process running on the local computer.
                 // This will return an empty array if the process isn't running.
                 processArray = Process.GetProcessesByName(processName);
 
+                // Not found? Indicate we're trying...
                 if (processArray.Length < 1)
                 {
                     Console.Write(".");
-                    //Thread.Sleep(1000);
                 }
-                else
+                else // Found the process by name?
                 {
-                    break;
+                    // Flip the flag so we can stop trying to connect
+                    Program.connectedToProcess = true;
+
+                    // Get the process handle
+                    gameProcess = processArray[0];
+                    processHandle = (int)gameProcess.Handle;
+
+                    // Get the process base address
+                    processBaseAddress = Utils.findProcessBaseAddress(processName);
+                    if (processBaseAddress == 0)
+                    {
+                        MessageBox.Show("Error: No process called " + processName + " found. Activation failed.");
+                        e.Cancel = true;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Found process base address at: " + MainForm.gameConfig.ProcessBaseAddress);
+                    }
+
+
+
+                    // Calculate initial destination addresses.
+                    // Note: These get re-calculated per iteration, but these are the initial values.
+                    // TODO: Remove this and see if it still works!
+                    for (int watchLoop = 0; watchLoop < watchList.Count; watchLoop++)
+                    {
+                        watchList[watchLoop].DestinationAddress = Utils.findFeatureAddress(processHandle, processBaseAddress, watchList[watchLoop].PointerList);
+                    }
+
+                    // Set the triggered flag of all triggers to false
+                    foreach (Trigger t in triggerList)
+                    {
+                        t.Triggered = false;
+
+                        // Load sample if not already loaded - but only if a normal trigger and NOT the main clock trigger!
+                        if (!SoundPlayer.SampleLoaded(t.sampleFilename) && t.controlType == Trigger.ControlType.Normal && !t.isClock)
+                        {
+                            SoundPlayer.LoadSample(ConfigDirectory, t.sampleFilename, t.allowanceType);
+                        }
+                    }
+
+
+                    e.Cancel = true;
+
+                    // This sets cancellation to pending, which we handle in the associated doWork method
+                    // to actually perform the cancellation.
+                    processConnectionBW.CancelAsync();
                 }
 
-            } while (true);
-
-            // Try to find the process and it's base address
-            processBaseAddress = Utils.findProcessBaseAddress(processName);
-            if (processBaseAddress == 0)
-            {
-                MessageBox.Show("Error: No process called " + processName + " found. Activation failed.");
-                return false;
+                // Only poll in our background worker twice per second
+                Thread.Sleep(500);
             }
-            else
-            {
-                Console.WriteLine("Found process base address at: " + MainForm.gameConfig.ProcessBaseAddress);
-            }
+        }
 
-            // Get the process handle
-            gameProcess = processArray[0];
-            processHandle = (int)gameProcess.Handle;
+        public bool activate()
+        {
+            Process[] processArray = null;
 
-            // Calculate initial destination addresses.
-            // Note: These get re-calculated per iteration, but these are the initial values.
-            // TODO: Remove this and see if it still works!
-            for (int watchLoop = 0; watchLoop < watchList.Count; watchLoop++)
-            {
-                watchList[watchLoop].DestinationAddress = Utils.findFeatureAddress(processHandle, processBaseAddress, watchList[watchLoop].PointerList);
-            }
+            Console.WriteLine("Attempting to connect to process: " + processName);
+            //Console.WriteLine("Press any key to abort.");
 
-            // Set the triggered flag of all triggers to false
-            foreach (Trigger t in triggerList)
-            {
-                t.Triggered = false;
-
-                // Load sample if not already loaded - but only if a normal trigger and NOT the main clock trigger!
-                if (!SoundPlayer.SampleLoaded(t.sampleFilename) && t.controlType == Trigger.ControlType.Normal && !t.isClock)
-                {
-                    SoundPlayer.LoadSample(ConfigDirectory, t.sampleFilename, t.allowanceType);
-                }
-            }
+            // Set up the background worker to connect to our game process without freezing the UI and kick it off.
+            processConnectionBW = new BackgroundWorker();
+            processConnectionBW.DoWork += connectToProcess;
+            processConnectionBW.WorkerReportsProgress = false;
+            processConnectionBW.WorkerSupportsCancellation = true;
+            processConnectionBW.RunWorkerAsync();
 
             return true;
         }

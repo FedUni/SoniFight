@@ -51,6 +51,8 @@ namespace SoniFight
         // Our FMOD SoundPlayer instance
         static SoundPlayer soundplayer;
 
+        public static bool connectedToProcess = false;
+
         // We don't want to play menu triggers at the same time (i.e. samples playing over the top of each other), so if we're playing a menu
         // trigger then we add the next menu trigger that wants to get played to this list. We also cap this list to a single item only and
         // overwrite the trigger in the queue if the SoundPlayer channel is playing. This stops us from 'buffering' menu samples if we quickly
@@ -308,7 +310,7 @@ namespace SoniFight
                         {
                             if (Program.gameState == GameState.InGame)
                             {
-                                Console.WriteLine("Playing sample: " + t.sampleFilename + " - associated trigger id is: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
+                                Console.WriteLine("InGame sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
                                 SoundPlayer.Play(t.sampleFilename, t.sampleVolume, t.sampleSpeed);
                             }
                             else // GameState must be InMenu
@@ -316,7 +318,7 @@ namespace SoniFight
                                 if (!SoundPlayer.IsPlaying())
                                 {
                                     // Not already playing a sample? So play this menu sample!
-                                    Console.WriteLine("Playing sample: " + t.sampleFilename + " - associated trigger id is: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
+                                    Console.WriteLine("InMenu sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
 
                                     // Grab the time at which we played our last menu sonification event...
                                     lastMenuSonificationTime = DateTime.Now;
@@ -411,7 +413,14 @@ namespace SoniFight
         {
             if (e.Cancel)
             {
-                Console.WriteLine("Sonification stopped.");
+                Console.WriteLine("\nSonification stopped.");
+
+                // Flip the flag to say we're no longer connected
+                Program.connectedToProcess = false;
+
+                // Clean up our process connection and sonification background workers
+                GameConfig.processConnectionBW.Dispose();
+                sonificationBGW.Dispose();
 
                 // We do NOT unload all samples here - we only do that on SelectedIndexChanged of the config selection drop-down.
                 // This minimises delay in stopping and starting sonification of the same config.

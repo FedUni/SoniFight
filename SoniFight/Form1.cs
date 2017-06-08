@@ -322,6 +322,7 @@ namespace SoniFight
         {
             // This sets cancellation to pending, which we handle in the associated doWork method
             // to actually perform the cancellation.
+            GameConfig.processConnectionBW.CancelAsync();
             Program.sonificationBGW.CancelAsync();
 
             this.Text = formTitle + " Status: Stopped";

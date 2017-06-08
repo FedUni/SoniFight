@@ -65,7 +65,7 @@ namespace SoniFight
             
             configDirectory = ".\\Configs\\" + configDirectory;
 
-            Console.WriteLine("Loading sample: " + sampleName + " from: " + configDirectory);
+            Console.WriteLine("Loading sample: " + sampleName);
 
             // Load our sound
             FMOD.Sound sound;
