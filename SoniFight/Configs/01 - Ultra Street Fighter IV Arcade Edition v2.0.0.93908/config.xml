@@ -394,12 +394,45 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>29</Id>
+      <Name>Options Menu Graphics Resolution</Name>
+      <Description>The resolution setting as an int. Range 0 (640x480) to 18 (1920x1080).</Description>
+      <PointerList>
+        <string>8B8860</string>
+        <string>14</string>
+        <string>4</string>
+        <string>44</string>
+        <string>44</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
+      <id>1</id>
+      <name>Clock GameState (isClock)</name>
+      <description>Keeps track of whether we're in game or in menu by watching the clock</description>
+      <value xsi:type="xsd:string">99</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>Any</allowanceType>
+      <watchOneId>0</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>CHANGE_ME</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>true</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
       <id>2</id>
       <name>Clock 50</name>
-      <description>Says 'Clock half' when it hits 50</description>
+      <description>Says 'Clock 50' when it hits 50</description>
       <value xsi:type="xsd:string">50</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
@@ -407,7 +440,7 @@
       <watchOneId>0</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>clock-fifty.mp3</sampleFilename>
+      <sampleFilename>Clock-Fifty.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -426,7 +459,7 @@
       <watchOneId>0</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>clock-twentyfive.mp3</sampleFilename>
+      <sampleFilename>Clock-Twenty-Five.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -445,7 +478,7 @@
       <watchOneId>0</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>clock-ten.mp3</sampleFilename>
+      <sampleFilename>Clock-Ten.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -631,7 +664,7 @@
       <value xsi:type="xsd:string">250</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
@@ -1414,7 +1447,7 @@
       <watchOneId>12</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>any.mp3</sampleFilename>
+      <sampleFilename>Any.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -1547,7 +1580,7 @@
       <watchOneId>13</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>any.mp3</sampleFilename>
+      <sampleFilename>Any.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -1566,7 +1599,7 @@
       <watchOneId>14</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>any.mp3</sampleFilename>
+      <sampleFilename>Any.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -2569,7 +2602,7 @@
       <value xsi:type="xsd:string">500</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
@@ -2588,7 +2621,7 @@
       <value xsi:type="xsd:string">750</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
@@ -2607,7 +2640,7 @@
       <value xsi:type="xsd:string">1000</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
@@ -2987,7 +3020,7 @@
       <value xsi:type="xsd:string">0</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3006,7 +3039,7 @@
       <value xsi:type="xsd:string">1</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3025,7 +3058,7 @@
       <value xsi:type="xsd:string">2</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3044,7 +3077,7 @@
       <value xsi:type="xsd:string">3</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3063,7 +3096,7 @@
       <value xsi:type="xsd:string">4</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3082,7 +3115,7 @@
       <value xsi:type="xsd:string">5</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3101,7 +3134,7 @@
       <value xsi:type="xsd:string">6</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3120,7 +3153,7 @@
       <value xsi:type="xsd:string">7</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3139,7 +3172,7 @@
       <value xsi:type="xsd:string">8</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3158,7 +3191,7 @@
       <value xsi:type="xsd:string">9</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3177,7 +3210,7 @@
       <value xsi:type="xsd:string">10</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3196,7 +3229,7 @@
       <value xsi:type="xsd:string">11</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3215,7 +3248,7 @@
       <value xsi:type="xsd:string">12</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3234,7 +3267,7 @@
       <value xsi:type="xsd:string">13</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3253,7 +3286,7 @@
       <value xsi:type="xsd:string">14</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3272,7 +3305,7 @@
       <value xsi:type="xsd:string">15</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3291,7 +3324,7 @@
       <value xsi:type="xsd:string">16</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3310,7 +3343,7 @@
       <value xsi:type="xsd:string">17</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3329,7 +3362,7 @@
       <value xsi:type="xsd:string">18</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3348,7 +3381,7 @@
       <value xsi:type="xsd:string">19</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3367,7 +3400,7 @@
       <value xsi:type="xsd:string">Choose screen resolution.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3381,12 +3414,12 @@
     </Trigger>
     <Trigger>
       <id>163</id>
-      <name>Graphics Settings 02 - Resolution-CLONE</name>
+      <name>Graphics Settings 02 - VSync</name>
       <description>Graphics options comparing with case-sensitive submenu string.</description>
       <value xsi:type="xsd:string">Set vertical synchronization.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3405,7 +3438,7 @@
       <value xsi:type="xsd:string">Setting the framerate to SMOOTH m</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3424,7 +3457,7 @@
       <value xsi:type="xsd:string">Screen antialiasing.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3443,7 +3476,7 @@
       <value xsi:type="xsd:string">Texture filter.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3462,7 +3495,7 @@
       <value xsi:type="xsd:string">3D model/character quality.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3481,7 +3514,7 @@
       <value xsi:type="xsd:string">Stage visibility.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3500,7 +3533,7 @@
       <value xsi:type="xsd:string">Soft shadow quality.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3519,7 +3552,7 @@
       <value xsi:type="xsd:string">Self shadow quality.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3538,7 +3571,7 @@
       <value xsi:type="xsd:string">Motion blur quality.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3557,7 +3590,7 @@
       <value xsi:type="xsd:string">Particles quality.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -3576,7 +3609,7 @@
       <value xsi:type="xsd:string">Special post effect.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4659,7 +4692,7 @@
       <value xsi:type="xsd:string">0</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4678,7 +4711,7 @@
       <value xsi:type="xsd:string">1</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4697,7 +4730,7 @@
       <value xsi:type="xsd:string">2</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4716,7 +4749,7 @@
       <value xsi:type="xsd:string">3</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4735,7 +4768,7 @@
       <value xsi:type="xsd:string">4</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4754,7 +4787,7 @@
       <value xsi:type="xsd:string">5</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4773,7 +4806,7 @@
       <value xsi:type="xsd:string">6</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4792,7 +4825,7 @@
       <value xsi:type="xsd:string">7</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4811,7 +4844,7 @@
       <value xsi:type="xsd:string">8</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4830,7 +4863,7 @@
       <value xsi:type="xsd:string">9</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4849,7 +4882,7 @@
       <value xsi:type="xsd:string">10</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4868,7 +4901,7 @@
       <value xsi:type="xsd:string">11</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4887,7 +4920,7 @@
       <value xsi:type="xsd:string">Dummy opponent stands.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4906,7 +4939,7 @@
       <value xsi:type="xsd:string">Dummy opponent crouches.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4925,7 +4958,7 @@
       <value xsi:type="xsd:string">Dummy opponent jumps vertically.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4944,7 +4977,7 @@
       <value xsi:type="xsd:string">CPU controls dummy opponent.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4963,7 +4996,7 @@
       <value xsi:type="xsd:string">Control dummy opponent with 2P co</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -4982,7 +5015,7 @@
       <value xsi:type="xsd:string">Record your own movement to dummy</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5001,7 +5034,7 @@
       <value xsi:type="xsd:string">Playback your recorded dummy oppo</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5020,7 +5053,7 @@
       <value xsi:type="xsd:string">Dummy opponent does not block.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5039,7 +5072,7 @@
       <value xsi:type="xsd:string">Dummy opponent blocks after first</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5058,7 +5091,7 @@
       <value xsi:type="xsd:string">Dummy opponent blocks all incomin</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5077,7 +5110,7 @@
       <value xsi:type="xsd:string">Dummy opponent blocks randomly.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5096,7 +5129,7 @@
       <value xsi:type="xsd:string">Dummy opponent always performs no</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5115,7 +5148,7 @@
       <value xsi:type="xsd:string">Dummy opponent always performs qu</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5134,7 +5167,7 @@
       <value xsi:type="xsd:string">Dummy opponent always performs de</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5153,7 +5186,7 @@
       <value xsi:type="xsd:string">Make dummy opponent perform knock</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5172,7 +5205,7 @@
       <value xsi:type="xsd:string">Your attacks do not register as C</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5191,7 +5224,7 @@
       <value xsi:type="xsd:string">Your attacks register as Counter</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5210,7 +5243,7 @@
       <value xsi:type="xsd:string">Your attacks randomly register as</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5229,7 +5262,7 @@
       <value xsi:type="xsd:string">Opponent's stun resistance goes u</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5248,7 +5281,7 @@
       <value xsi:type="xsd:string">Opponent's stun resistance remain</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5267,7 +5300,7 @@
       <value xsi:type="xsd:string">Opponent does not get stunned.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5286,7 +5319,7 @@
       <value xsi:type="xsd:string">Begin with default Super Combo Ga</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5305,7 +5338,7 @@
       <value xsi:type="xsd:string">Begin with full Super Combo Gauge</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5324,7 +5357,7 @@
       <value xsi:type="xsd:string">Super Combo Gauge does not deplet</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5343,7 +5376,7 @@
       <value xsi:type="xsd:string">Super Combo Gauge replenishes aut</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5362,7 +5395,7 @@
       <value xsi:type="xsd:string">Begin with default Revenge Gauge.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5381,7 +5414,7 @@
       <value xsi:type="xsd:string">Begin with full Revenge Gauge.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5400,7 +5433,7 @@
       <value xsi:type="xsd:string">Revenge Gauge does not deplete.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5419,7 +5452,7 @@
       <value xsi:type="xsd:string">Revenge Gauge replenishes automat</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5438,7 +5471,7 @@
       <value xsi:type="xsd:string">Do not display attack data.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5457,7 +5490,7 @@
       <value xsi:type="xsd:string">Display attack data.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5476,7 +5509,7 @@
       <value xsi:type="xsd:string">Do not display input data.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5495,7 +5528,7 @@
       <value xsi:type="xsd:string">Display input data.</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5666,7 +5699,7 @@
       <value xsi:type="xsd:string">0</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5685,7 +5718,7 @@
       <value xsi:type="xsd:string">1</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5704,7 +5737,7 @@
       <value xsi:type="xsd:string">2</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5723,7 +5756,7 @@
       <value xsi:type="xsd:string">3</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5742,7 +5775,7 @@
       <value xsi:type="xsd:string">4</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5761,7 +5794,7 @@
       <value xsi:type="xsd:string">5</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5780,7 +5813,7 @@
       <value xsi:type="xsd:string">6</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5799,7 +5832,7 @@
       <value xsi:type="xsd:string">7</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5818,7 +5851,7 @@
       <value xsi:type="xsd:string">8</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5837,7 +5870,7 @@
       <value xsi:type="xsd:string">9</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5856,7 +5889,7 @@
       <value xsi:type="xsd:string">10</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5875,7 +5908,7 @@
       <value xsi:type="xsd:string">11</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5894,7 +5927,7 @@
       <value xsi:type="xsd:string">12</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5913,7 +5946,7 @@
       <value xsi:type="xsd:string">13</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5932,7 +5965,7 @@
       <value xsi:type="xsd:string">14</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5951,7 +5984,7 @@
       <value xsi:type="xsd:string">15</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5970,7 +6003,7 @@
       <value xsi:type="xsd:string">16</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -5989,7 +6022,7 @@
       <value xsi:type="xsd:string">17</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -6008,7 +6041,7 @@
       <value xsi:type="xsd:string">18</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -6027,7 +6060,7 @@
       <value xsi:type="xsd:string">19</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -6046,7 +6079,7 @@
       <value xsi:type="xsd:string">20</value>
       <triggerType>Recurring</triggerType>
       <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -6056,6 +6089,361 @@
       <isClock>false</isClock>
       <triggerStopList />
       <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>304</id>
+      <name>Options Menu Graphics Res 00 - 640x480</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">0</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-00-640x480.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>305</id>
+      <name>Options Menu Graphics Res 01 - 720x480</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">1</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-01-720x480.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>306</id>
+      <name>Options Menu Graphics Res 02 - 720x576</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">2</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-02-720x576.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>307</id>
+      <name>Options Menu Graphics Res 03 - 800x600</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">3</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-03-800x600.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>308</id>
+      <name>Options Menu Graphics Res 04 - 1024x768</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">4</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-04-1024x768.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>309</id>
+      <name>Options Menu Graphics Res 05 - 1152x864</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">5</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-05-1152x864.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>310</id>
+      <name>Options Menu Graphics Res 06 - 1176x664</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">6</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-06-1176x664.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>311</id>
+      <name>Options Menu Graphics Res 07 - 1280x720</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">7</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-07-1280x720.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>312</id>
+      <name>Options Menu Graphics Res 08 - 1280x800</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">8</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-08-1280x800.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>313</id>
+      <name>Options Menu Graphics Res 09 - 1280x960</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">9</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-09-1280x960.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>314</id>
+      <name>Options Menu Graphics Res 10 - 1280x1024</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">10</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-10-1280x1024.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>315</id>
+      <name>Options Menu Graphics Res 11 - 1366x768</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">11</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-11-1366x768.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>316</id>
+      <name>Options Menu Graphics Res 12 - 1400x1050</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">12</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-12-1400x1050.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>317</id>
+      <name>Options Menu Graphics Res 13 - 1440x900</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">13</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-13-1440x900.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>318</id>
+      <name>Options Menu Graphics Res 14 - 1600x900</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">14</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-14-1600x900.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>319</id>
+      <name>Options Menu Graphics Res 15 - 1600x1024</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">15</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-15-1600x1024.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>320</id>
+      <name>Options Menu Graphics Res 16 - 1680x1050</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">16</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-16-1680x1050.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>321</id>
+      <name>Options Menu Graphics Res 17 - 1768x992</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">17</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-17-1768x992.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>322</id>
+      <name>Options Menu Graphics Res 18 - 1920x1080</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">18</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-18-1920x1080.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
       <active>true</active>
     </Trigger>
   </triggerList>

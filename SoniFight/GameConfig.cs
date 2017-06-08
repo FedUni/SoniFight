@@ -119,9 +119,10 @@ namespace SoniFight
         public void setPollSleepMS(int i) { pollSleepMS = i; }
 
         // Background worker so we can attempt to connect to a game process without locking up the UI
+        [XmlIgnore]
         public static BackgroundWorker processConnectionBW = new BackgroundWorker();
-       
 
+        [XmlIgnore]
         private Process[] processArray = null;
 
         // DoWork method for the process connection background worker
@@ -418,7 +419,7 @@ namespace SoniFight
         }
 
         // Method to reset all Triggered properties to false when a 'reset' trigger is matched (i.e. when clock is 99 or such).
-        public void resetAllOnceTriggers()
+        /*public void resetAllOnceTriggers()
         {
             // Set the triggered flag of all triggers to false
             foreach (Trigger t in triggerList)
@@ -428,10 +429,10 @@ namespace SoniFight
                     t.Triggered = false;
                 }
             }
-        }
+        }*/
 
         // Method to mute / stop all playing trigger samples
-        public void disableAllOnceTriggers()
+        /*public void disableAllOnceTriggers()
         {
             // Set all triggers which use the Once type to have their Triggered flag set to true so they can't activate until
             // reset has been called. This stops all health notifications being played between rounds as health for both players
@@ -455,13 +456,9 @@ namespace SoniFight
             // Stop any samples playing on the channel
             //SoundPlayer.StopChannel();
         }
+        */
 
-    } // End of GameConfig class
-
-       
-       
-
-       
+    } // End of GameConfig class  
 
 } // End of namespace
 

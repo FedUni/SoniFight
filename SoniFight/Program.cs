@@ -235,7 +235,7 @@ namespace SoniFight
                         endTime = DateTime.Now;
                         double elapsedMilliseconds = ((TimeSpan)(endTime - startTime)).TotalMilliseconds;
 
-                        // If a second has passed
+                        // If a GameConfig clock-tick has has passed (i.e. a second or such)
                         if (elapsedMilliseconds >= MainForm.gameConfig.ClockTickMS)
                         {
                             // Reset the start time
@@ -308,6 +308,7 @@ namespace SoniFight
                         // If we found a match...
                         if (foundSonicMatch)
                         {
+                            // InGame? Fine - play the sample.
                             if (Program.gameState == GameState.InGame)
                             {
                                 Console.WriteLine("InGame sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
@@ -315,6 +316,7 @@ namespace SoniFight
                             }
                             else // GameState must be InMenu
                             {
+                                // 
                                 if (!SoundPlayer.IsPlaying())
                                 {
                                     // Not already playing a sample? So play this menu sample!
@@ -330,16 +332,16 @@ namespace SoniFight
                                 {
                                     // ...so keep track of this to play it later.
                                     // Note: We force this to be at index 0 always because we only want to 'buffer' a single menu sonification event
-                                    if (menuTriggerQueue.Count < 2)
+                                    if (menuTriggerQueue.Count < 1)
                                     {
                                         menuTriggerQueue.Enqueue(t);
 
                                         //Console.WriteLine("Queue is less than two so adding menu trigger to queue. New queue size is: " + menuTriggerQueue.Count);
                                     }
-                                    else // Already have 2 or more elements in the queue?
+                                    else // Already have one or more elements in the queue?
                                     {
                                         // Remove queued triggers from the front of the queue until we only have two left...
-                                        while (menuTriggerQueue.Count >= 2)
+                                        while (menuTriggerQueue.Count >= 1)
                                         {                                            
                                             menuTriggerQueue.Dequeue();
                                             //Console.WriteLine("Removed element from queue in while loop. New queue size is: " + menuTriggerQueue.Count);
@@ -348,8 +350,7 @@ namespace SoniFight
                                         // ...then add the current trigger to the queue
                                         menuTriggerQueue.Enqueue(t);
 
-                                        Console.WriteLine("Adding element to queue. New queue size is: " + menuTriggerQueue.Count);
-                                        //menuTriggerQueue[0] = t;
+                                        //Console.WriteLine("Adding element to queue. New queue size is: " + menuTriggerQueue.Count);
                                     }
         
                                 } // End of section where we're InMenu but a sound is already playing
@@ -375,7 +376,7 @@ namespace SoniFight
                         // This both gets the trigger and removes it from the queue in one fell swoop!
                         Trigger menuTrigger = menuTriggerQueue.Dequeue();
 
-                        //Console.WriteLine("Playing queued sample and removing from queue: " + menuTrigger.sampleFilename + " - associated trigger id is: " + menuTrigger.id + " Volume: " + menuTrigger.sampleVolume + " Speed: " + t.sampleSpeed);
+                        Console.WriteLine("Playing queued sample and removing: " + menuTrigger.sampleFilename + " - trigger id: " + menuTrigger.id + " Volume: " + menuTrigger.sampleVolume + " Speed: " + t.sampleSpeed);
 
                         //Console.WriteLine("*** MS last menu sonification = " + timeSinceLastMenuSonificationMS);
 
