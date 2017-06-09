@@ -62,8 +62,26 @@ namespace SoniFight
         {
             configsComboBox.Items.Clear();
 
+            string[] subdirectoryArray = null;
             string configPath = ".\\Configs";
-            string[] subdirectoryArray = System.IO.Directory.GetDirectories(configPath);
+            try
+            {
+                subdirectoryArray = System.IO.Directory.GetDirectories(configPath);
+            }
+            catch (DirectoryNotFoundException dnfe)
+            {
+                MessageBox.Show("Error: Configs directory does not exist in same folder as SoniFight executable - click OK to create folder.");
+                System.IO.Directory.CreateDirectory(configPath);
+                try
+                {
+                    subdirectoryArray = System.IO.Directory.GetDirectories(configPath);
+                }
+                catch (DirectoryNotFoundException dnfe2)
+                {
+                    MessageBox.Show("Error: Configs directory creation failed - please manually create a directory called \"Configs\" in the same folder as the SoniFight executable.");
+                    this.Close();
+                }
+            }
 
             // Strip ".\Configs\" (i.e. the first 10 chars) off the returned list of directories
             for (int loop = 0; loop < subdirectoryArray.Length; loop++)

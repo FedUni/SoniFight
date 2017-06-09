@@ -244,8 +244,8 @@
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>Health-Half.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Health-Half-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -263,8 +263,8 @@
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>Health-Quarter.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Health-Quarter-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -282,8 +282,8 @@
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>Health-Low.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Health-Low-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -301,8 +301,8 @@
       <watchOneId>5</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>Enhanced.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Enhanced-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -320,8 +320,8 @@
       <watchOneId>5</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>Breaker.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>Breaker-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -339,8 +339,8 @@
       <watchOneId>5</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>X-Ray.mp3</sampleFilename>
-      <sampleSpeed>1.2</sampleSpeed>
+      <sampleFilename>X-Ray-P2.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <triggerStopList />
@@ -348,7 +348,7 @@
       <active>true</active>
     </Trigger>
   </triggerList>
-  <Description>Basic in-game triggers for Mortal Kombat 9 - Al Lansley 2017-05-29</Description>
+  <Description>Basic in-game triggers for Mortal Kombat 9 - Al Lansley 2017-06-09</Description>
   <ProcessName>MKKE</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>

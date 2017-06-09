@@ -19,6 +19,10 @@ namespace SoniFight
         public const int MIN_POLL_SLEEP_MS = 1;
         public const int MAX_POLL_SLEEP_MS = 200;
 
+        // Valid ranges of how long betweeen ticks of the clock in the game - in milliseconds. This is used to determine if we're 'InGame' or 'InMenu'.
+        public const int MIN_CLOCK_TICK_MS = 100;
+        public const int MAX_CLOCK_TICK_MS = 3000;
+
         // Valid ranges of how loud to play a sample
         public const float MIN_SAMPLE_VOLUME = 0.0f;
         public const float MAX_SAMPLE_VOLUME = 1.0f;
@@ -259,6 +263,33 @@ namespace SoniFight
                 return false;
             }
 
+            // Ensure clockTickMS is an int within the valid range
+            s = ClockTickMS.ToString();
+            if (!string.IsNullOrEmpty(s))
+            {
+                // Have a value? Great - try to parse it to an int
+                int i;
+                if (Int32.TryParse(s, out i))
+                {
+                    // If we're here we got an int - now we need to check if it's within the valid range
+                    if (i < GameConfig.MIN_CLOCK_TICK_MS || i > GameConfig.MAX_CLOCK_TICK_MS)
+                    {
+                        MessageBox.Show("Validation Error: Clock tick must be an integer between " + GameConfig.MIN_CLOCK_TICK_MS + " and " + GameConfig.MAX_CLOCK_TICK_MS + " milliseconds. If unknown just guess 1000.");
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Validation Error: Could not parse clock tick value " + s + " to int.");
+                    return false;
+                }
+            }
+            else // Null or empty poll sleep value?
+            {
+                MessageBox.Show("Validation Error: Clock tick must be an integer between " + GameConfig.MIN_CLOCK_TICK_MS + " and " + GameConfig.MAX_CLOCK_TICK_MS + " milliseconds. If unknown just guess 1000.");
+                return false;
+            }
+
             // Ensure we have at least one watch
             if (watchList.Count == 0)
             {
@@ -319,6 +350,8 @@ namespace SoniFight
 
             // Got triggers? Great - let's make sure they're sane...
             idList.Clear();
+            int clockTriggersFound = 0;
+            List<int> clockTriggerIdList = new List<int>();
             foreach (Trigger t in triggerList)
             {
                 idList.Add(t.id);
@@ -339,8 +372,17 @@ namespace SoniFight
                         return false;
                     }
                 }
+                else // Found clock trigger?
+                {
+                    // If the clock trigger is active then track it so we can ensure we only have a single active clock trigger later on (no more, no less)
+                    if (t.active)
+                    {
+                        clockTriggerIdList.Add(t.id);
+                        ++clockTriggersFound;
+                    }
+                }
 
-                // Ensure sample volume is a float within the valid range
+                // Ensure sample volume is a float within the valid range (the clock trigger doesn't use a sample)
                 s = t.sampleVolume.ToString();
                 if (!t.isClock)
                 {
@@ -364,12 +406,10 @@ namespace SoniFight
                     }
                 }
 
-                // Ensure sample volume rate is a float within the valid range
+                // Ensure sample volume rate is a float within the valid range (the clock trigger doesn't use a sample)
                 s = t.sampleSpeed.ToString();
                 if (!t.isClock)
                 {
-
-
                     if (!string.IsNullOrEmpty(s))
                     {
                         float f;
@@ -391,6 +431,31 @@ namespace SoniFight
                 }
 
             } // End of loop over triggers
+
+            // Ensure we found precisely 1 clock trigger
+            if (clockTriggersFound != 1)
+            {
+                if (clockTriggersFound == 0)
+                {
+                    MessageBox.Show("Validation Error: There no active triggers marked isClock and there needs to be precisely 1 to monitor the games' in-game vs in-menu state.");
+                    return false;
+                }
+                else // More than 1...
+                {
+                    s = "Validation Error: There is more than a single active trigger marked isClock and we may only have one. Triggers marked isClock: ";
+                    for (int i = 0; i < clockTriggerIdList.Count; ++i)
+                    {
+                        s += clockTriggerIdList[i].ToString();
+
+                        if (i != (clockTriggerIdList.Count - 1))
+                        {
+                            s += ", ";
+                        }
+                    }
+                    MessageBox.Show(s);
+                    return false;
+                }
+            }
 
             // Ensure trigger ids are unique
             if (idList.Count != idList.Distinct().Count())

@@ -408,6 +408,54 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>30</Id>
+      <Name>Options Menu Graphics VSync</Name>
+      <Description>On or Off as an int with value 0 or 1</Description>
+      <PointerList>
+        <string>8B8860</string>
+        <string>14</string>
+        <string>4</string>
+        <string>44</string>
+        <string>98</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>31</Id>
+      <Name>Options Menu Graphics Framerate</Name>
+      <Description>Variable/Fixed/Smooth. Ints 0, 1 or 2.</Description>
+      <PointerList>
+        <string>97D3C0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>32</Id>
+      <Name>Options Menu Graphics Anti-Aliasing</Name>
+      <Description>Ints - range 0 through 6 inclusive.</Description>
+      <PointerList>
+        <string>8B8860</string>
+        <string>14</string>
+        <string>4</string>
+        <string>44</string>
+        <string>4C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>33</Id>
+      <Name>Options Menu Graphics Filtering</Name>
+      <Description>Ints - range 0 through 4 inclusive. The value 1 occurs twice - for "Default" and for "2x"</Description>
+      <PointerList>
+        <string>685550</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
@@ -602,7 +650,7 @@
     </Trigger>
     <Trigger>
       <id>11</id>
-      <name>P1 Super - Got 4 bars (i.e. full)</name>
+      <name>P1 Super - Full</name>
       <description>Triggers when P1 super is 1000 or greater</description>
       <value xsi:type="xsd:string">1000</value>
       <triggerType>Recurring</triggerType>
@@ -678,7 +726,7 @@
     </Trigger>
     <Trigger>
       <id>19</id>
-      <name>Main-Menu-Option-0-Arcade</name>
+      <name>Main Menu Option 00 - Arcade</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">Fight against the CPU in this sin</value>
       <triggerType>Recurring</triggerType>
@@ -697,7 +745,7 @@
     </Trigger>
     <Trigger>
       <id>20</id>
-      <name>Main-Menu-Option-1-Versus</name>
+      <name>Main Menu Option 01 - Versus</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">Choose your character, select a s</value>
       <triggerType>Recurring</triggerType>
@@ -716,7 +764,7 @@
     </Trigger>
     <Trigger>
       <id>21</id>
-      <name>Main-Menu-Option-2-Multiplayer-Battle</name>
+      <name>Main Menu Option 02 - Multiplayer Battle</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">This mode utilizes Steam and allo</value>
       <triggerType>Recurring</triggerType>
@@ -735,7 +783,7 @@
     </Trigger>
     <Trigger>
       <id>22</id>
-      <name>Main-Menu-Option-3-Challenge</name>
+      <name>Main Menu Option 03 - Challenge</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">Take on a series of Challenges in</value>
       <triggerType>Recurring</triggerType>
@@ -754,7 +802,7 @@
     </Trigger>
     <Trigger>
       <id>23</id>
-      <name>Main-Menu-Option-4-Training</name>
+      <name>Main Menu Option 04 - Training</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">Hone your fighting skills by sett</value>
       <triggerType>Recurring</triggerType>
@@ -773,7 +821,7 @@
     </Trigger>
     <Trigger>
       <id>24</id>
-      <name>Main-Menu-Option-5-Player-Data</name>
+      <name>Main Menu Option 05 - Player Data</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">Take a look at your records here.</value>
       <triggerType>Recurring</triggerType>
@@ -792,7 +840,7 @@
     </Trigger>
     <Trigger>
       <id>25</id>
-      <name>Main-Menu-Option-6-Options</name>
+      <name>Main Menu Option 06 - Options</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">Set your game settings here.</value>
       <triggerType>Recurring</triggerType>
@@ -811,7 +859,7 @@
     </Trigger>
     <Trigger>
       <id>26</id>
-      <name>Main-Menu-Option-7-Game-Manual</name>
+      <name>Main Menu Option 07 - Game Manual</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">View the game manual.</value>
       <triggerType>Recurring</triggerType>
@@ -830,7 +878,7 @@
     </Trigger>
     <Trigger>
       <id>27</id>
-      <name>Main-Menu-Option-8-Steam-Store</name>
+      <name>Main Menu Option 08 - Steam Store</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">Purchase downloadable content her</value>
       <triggerType>Recurring</triggerType>
@@ -849,7 +897,7 @@
     </Trigger>
     <Trigger>
       <id>28</id>
-      <name>Main-Menu-Option-9-Benchmark</name>
+      <name>Main Menu Option 09 - Benchmark</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">Launch benchmark.</value>
       <triggerType>Recurring</triggerType>
@@ -868,7 +916,7 @@
     </Trigger>
     <Trigger>
       <id>29</id>
-      <name>Main-Menu-Option-10-Quit</name>
+      <name>Main Menu Option 10 - Quit</name>
       <description>Runs when submenu text matches (Exits at null char or 35 chars max)</description>
       <value xsi:type="xsd:string">Quit to desktop.</value>
       <triggerType>Recurring</triggerType>
@@ -6410,6 +6458,8 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -6427,6 +6477,8 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -6444,10 +6496,354 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>323</id>
+      <name>Options Menu VSync On</name>
+      <description>Says VSync setting.</description>
+      <value xsi:type="xsd:string">1</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>30</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>On.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>324</id>
+      <name>Options Menu VSync Off</name>
+      <description>Says VSync setting.</description>
+      <value xsi:type="xsd:string">0</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>30</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Off.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>325</id>
+      <name>Options Menu Framerate - Variable</name>
+      <description>Says framerate setting.</description>
+      <value xsi:type="xsd:string">0</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>31</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Framerate-Variable.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>326</id>
+      <name>Options Menu Framerate - Fixed</name>
+      <description>Says framerate setting.</description>
+      <value xsi:type="xsd:string">1</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>31</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Framerate-Fixed.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>327</id>
+      <name>Options Menu Framerate - Smooth</name>
+      <description>Says framerate setting.</description>
+      <value xsi:type="xsd:string">2</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>31</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Framerate-Smooth.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>328</id>
+      <name>Options Menu Antialiasing 0 - None</name>
+      <description>Says antialiasing setting.</description>
+      <value xsi:type="xsd:string">0</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>32</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-None.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>329</id>
+      <name>Options Menu Antialiasing 1 - 2x</name>
+      <description>Says antialiasing setting.</description>
+      <value xsi:type="xsd:string">1</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>32</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-2x.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>330</id>
+      <name>Options Menu Antialiasing 2 - 4x</name>
+      <description>Says antialiasing setting.</description>
+      <value xsi:type="xsd:string">2</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>32</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-4x.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>331</id>
+      <name>Options Menu Antialiasing 3 - 8x</name>
+      <description>Says antialiasing setting.</description>
+      <value xsi:type="xsd:string">3</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>32</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-8x.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>332</id>
+      <name>Options Menu Antialiasing 4 - C8x</name>
+      <description>Says antialiasing setting.</description>
+      <value xsi:type="xsd:string">4</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>32</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-C8x.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>333</id>
+      <name>Options Menu Antialiasing 5 - C16x</name>
+      <description>Says antialiasing setting.</description>
+      <value xsi:type="xsd:string">5</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>32</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-C16x.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>334</id>
+      <name>Options Menu Antialiasing 6 - C16xQ</name>
+      <description>Says antialiasing setting.</description>
+      <value xsi:type="xsd:string">6</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>32</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-C16xQ.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>335</id>
+      <name>Options Menu Filtering 0 - Default</name>
+      <description>Says filtering setting. This is option 0, but matches on value 1.</description>
+      <value xsi:type="xsd:string">1</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>33</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-Default-2x.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>336</id>
+      <name>Options Menu Filtering 1 - Off</name>
+      <description>Says filtering setting. This is option 1, but matches on value 0.</description>
+      <value xsi:type="xsd:string">0</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>33</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Off.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>337</id>
+      <name>Options Menu Filtering 2 - 2x DISABLED USE DEFAULT</name>
+      <description>Default is 1, as is 2x - so we'll have this here but disabled so we know we didn't forget anything.</description>
+      <value xsi:type="xsd:string">1</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>33</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-2x.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>false</active>
+    </Trigger>
+    <Trigger>
+      <id>339</id>
+      <name>Options Menu Filtering 3 - 4x</name>
+      <description>Says filtering setting. This is option 3, but matches on value 2.</description>
+      <value xsi:type="xsd:string">2</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>33</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-4x.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>340</id>
+      <name>Options Menu Filtering 4 - 8x</name>
+      <description>Says filtering setting. This is option 4, but matches on value 3.</description>
+      <value xsi:type="xsd:string">3</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>33</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-8x.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>341</id>
+      <name>Options Menu Filtering 5 - 16x</name>
+      <description>Says filtering setting. This is option 5, but matches on value 4.</description>
+      <value xsi:type="xsd:string">4</value>
+      <triggerType>Recurring</triggerType>
+      <controlType>Normal</controlType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>33</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Graphics-16x.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <triggerStopList />
+      <triggerResetList />
       <active>true</active>
     </Trigger>
   </triggerList>
-  <Description>Test SSFIV GameConfig - Al Lansley - 2017-06-18</Description>
+  <Description>Test SSFIV GameConfig - Al Lansley - 2017-06-09</Description>
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
