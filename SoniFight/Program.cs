@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace SoniFight
 {
     /*** New name: Sonifight, or Sonifyght, or Sonifyt ***/
+
+    
 
     static class Program
     {
@@ -48,7 +54,7 @@ namespace SoniFight
         public static BackgroundWorker sonificationBGW = new BackgroundWorker();
         public static AutoResetEvent resetEvent = new AutoResetEvent(false); // We use this to reset the worker
 
-        // Our FMOD SoundPlayer instance
+        // Our IrrKlang SoundPlayer instance
         static SoundPlayer soundplayer;
 
         public static bool connectedToProcess = false;
@@ -65,6 +71,56 @@ namespace SoniFight
         [STAThread]
         static void Main()
         {
+            //AppDomain.CurrentDomain.AssemblyResolve += (sender, arg) => { if (arg.Name.StartsWith("msvcr100")) return Assembly.Load(Properties.Resources.msvcr100); return null; };
+
+            /*
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+            {
+                String resourceName = "AssemblyLoadingAndReflection." + new AssemblyName(args.Name).Name + ".dll";
+
+                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+                {
+                    Byte[] assemblyData = new Byte[stream.Length];
+
+                    stream.Read(assemblyData, 0, assemblyData.Length);
+
+                    return Assembly.Load(assemblyData);
+                }
+            };
+            */
+
+            /*
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+            {
+                Assembly thisAssembly = Assembly.GetExecutingAssembly();
+
+                //Get the Name of the AssemblyFile
+                var name = args.Name.Substring(0, args.Name.L.IndexOf(',')) + ".dll";
+
+                string[] foo = thisAssembly.GetManifestResourceNames();
+                foreach (string s in foo)
+                {
+                    Console.WriteLine("Got resource: " + s);
+                }
+
+                //Load form Embedded Resources - This Function is not called if the Assembly is in the Application Folder
+                var resources = thisAssembly.GetManifestResourceNames().Where(s => s.EndsWith(name));
+
+                if (resources.Count() > 0)
+                {
+                    var resourceName = resources.First();
+                    using (Stream stream = thisAssembly.GetManifestResourceStream(resourceName))
+                    {
+                        if (stream == null) return null;
+                        var block = new byte[stream.Length];
+                        stream.Read(block, 0, block.Length);
+                        return Assembly.Load(block);
+                    }
+                }
+                return null;
+            };
+            */
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -80,7 +136,7 @@ namespace SoniFight
             // Main loop - we STAY on this line until the application terminates
             Application.Run(new MainForm());
             
-            // FMOD cleanup
+            // IrrKlang cleanup (unload and samples and dispose of player)
             SoundPlayer.ShutDown();
         }
         
@@ -122,7 +178,7 @@ namespace SoniFight
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Likely dynamic type comparison exception. You can likely ignore this. Exact error is: " + e.Message);
+                    Console.WriteLine("Dynamic type comparison exception. Exact error is: " + e.Message);
                 }
 
             }
@@ -200,10 +256,8 @@ namespace SoniFight
 
             // While we are providing sonification...            
             while (!e.Cancel)
-            {
-                
-                bool foundSonicMatch = false; // Did we find a match to a sonification condition?
-                bool foundMuteMatch = false;  // Did we find a match to a mute condition?
+            {                
+                bool foundSonicMatch = false; // Did we find a match to a sonification condition?             
 
                 // Update all active watch destination addresses (this must happen once per poll!)
                 Watch w;
@@ -273,7 +327,7 @@ namespace SoniFight
                 for (int triggerLoop = 0; triggerLoop < gc.triggerList.Count; ++triggerLoop)
                 {
                     // Grab a trigger
-                    t = MainForm.gameConfig.triggerList[triggerLoop];
+                    t = MainForm.gameConfig.triggerList[triggerLoop];                    
 
                     // Skip this trigger if the game state and trigger state don't match or... 
                     if ( (t.allowanceType == Trigger.AllowanceType.InGame && Program.gameState == GameState.InMenu) ||
@@ -286,6 +340,9 @@ namespace SoniFight
                     }
 
                     // At this stage the trigger can be read and used - so let's get on with it...
+
+                    String sampleKey = ".\\Configs\\" + gc.ConfigDirectory + "\\" + t.sampleFilename;
+                    //Console.WriteLine("Sample key is: " + sampleKey);
 
                     // Read the value associated with the watch named by this trigger
                     // Note: We don't know the type - but the watch itself knows the type, and 'getDynamicValueFromType'
@@ -312,12 +369,16 @@ namespace SoniFight
                             if (Program.gameState == GameState.InGame)
                             {
                                 Console.WriteLine("InGame sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
-                                SoundPlayer.Play(t.sampleFilename, t.sampleVolume, t.sampleSpeed);
+                                SoundPlayer.Play(sampleKey, t.sampleVolume, t.sampleSpeed);
+
+                                // Remove any queued menu triggers
+                                menuTriggerQueue.Clear();
                             }
                             else // GameState must be InMenu
                             {
                                 // 
                                 if (!SoundPlayer.IsPlaying())
+                                //if (menuTriggerQueue.Count == 0)
                                 {
                                     // Not already playing a sample? So play this menu sample!
                                     Console.WriteLine("InMenu sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
@@ -326,26 +387,25 @@ namespace SoniFight
                                     lastMenuSonificationTime = DateTime.Now;
 
                                     // ...then play the sample.
-                                    SoundPlayer.Play(t.sampleFilename, t.sampleVolume, t.sampleSpeed);
+                                    SoundPlayer.Play(sampleKey, t.sampleVolume, t.sampleSpeed);
                                 }
-                                else // We are in a menu and already playing a menu sonification event...
+                                else // We are in the menus and already playing a menu sonification event...
                                 {
-                                    // ...so keep track of this to play it later.
-                                    // Note: We force this to be at index 0 always because we only want to 'buffer' a single menu sonification event
+                                    // If there's nothing in the queue add this menu trigger.
                                     if (menuTriggerQueue.Count < 1)
                                     {
                                         menuTriggerQueue.Enqueue(t);
-
-                                        //Console.WriteLine("Queue is less than two so adding menu trigger to queue. New queue size is: " + menuTriggerQueue.Count);
+                                        //Console.WriteLine("Queue is less than one so adding menu trigger to queue. New queue size is: " + menuTriggerQueue.Count);
                                     }
                                     else // Already have one or more elements in the queue?
                                     {
                                         // Remove queued triggers from the front of the queue until we only have two left...
-                                        while (menuTriggerQueue.Count >= 1)
+                                        menuTriggerQueue.Clear();
+                                        /*while (menuTriggerQueue.Count > 1)
                                         {                                            
                                             menuTriggerQueue.Dequeue();
                                             //Console.WriteLine("Removed element from queue in while loop. New queue size is: " + menuTriggerQueue.Count);
-                                        }
+                                        }*/
 
                                         // ...then add the current trigger to the queue
                                         menuTriggerQueue.Enqueue(t);
@@ -367,7 +427,7 @@ namespace SoniFight
                     double timeSinceLastMenuSonificationMS = ((TimeSpan)(DateTime.Now - lastMenuSonificationTime)).TotalMilliseconds;
 
                     // If we have a queued menu trigger and either i.) We're not currently playing audio OR ii.) It's been at least half a second since the last menu sonification event...
-                    if (menuTriggerQueue.Count > 0 && (!SoundPlayer.IsPlaying() || timeSinceLastMenuSonificationMS > 500.0))
+                    if (menuTriggerQueue.Count > 0 && (!SoundPlayer.IsPlaying() || timeSinceLastMenuSonificationMS > 500.0) )
                     {
                         // ...then we play the queued sample!
                         
@@ -383,8 +443,10 @@ namespace SoniFight
                         // Mark the time at which we played the last menu sonification event...
                         lastMenuSonificationTime = DateTime.Now;
 
+                        String menuTriggerKey = ".\\Configs\\" + gc.ConfigDirectory + "\\" + menuTrigger.sampleFilename;
+
                         // ...then actually play the sample
-                        SoundPlayer.Play(menuTrigger.sampleFilename, menuTrigger.sampleVolume, menuTrigger.sampleSpeed);
+                        SoundPlayer.Play(menuTriggerKey, menuTrigger.sampleVolume, menuTrigger.sampleSpeed);
                     }
 
                     // Update our 'previousValue' ready for the next check (used if comparison type is 'Changed').
@@ -398,6 +460,9 @@ namespace SoniFight
                 {
                     e.Cancel = true;
                 }
+
+                // Update the SoundEngine
+                SoundPlayer.updateEngine();
 
                 // Finally, once all watches have been looked at, we sleep for the amount of time specified in the GameConfig
                 Thread.Sleep(MainForm.gameConfig.PollSleepMS);

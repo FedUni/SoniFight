@@ -2,54 +2,61 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using IrrKlang;
 
 namespace SoniFight
 {
     public class SoundPlayer
     {
         // Import functionality to load a library
-        [DllImport("kernel32.dll")]
-        public static extern IntPtr LoadLibrary(string dllToLoad);
+        //[DllImport("kernel32.dll")]
+        //public static extern IntPtr LoadLibrary(string dllToLoad);
 
         private static int numSamples;
 
         private static int SAMPLE_INDEX = 0;
 
+        private static bool soundPlaying = false;
+
         //public const int SONG_INDEX_1 = 0;
         //public const int SONG_INDEX_2 = 1;
         
         // The FMOD system itself and a channel used to play audio (multiple samples can play at once)
-        private static FMOD.System FMODSystem;
-        private static FMOD.Channel Channel;
+        //private static FMOD.System FMODSystem;
+        //private static FMOD.Channel Channel;
 
         // We group sounds in InGame and InMenu SoundGroups so that we can allow a large number of InGame sounds
         // to play at once, while limiting the number of InMenu sounds to 1 so that the last sound always 'overwrites'
         // any currently playing menu sonification. This stops us from 'buffering' sonification events as we quickly
         // move through menus (which sounds like a cacophany!)
-        static FMOD.SoundGroup InGameSoundGroup;
-        static FMOD.SoundGroup InMenuSoundGroup;
+        //static FMOD.SoundGroup InGameSoundGroup;
+        //static FMOD.SoundGroup InMenuSoundGroup;
 
 
         // We'll build up a dictionary (i.e. list of key-value pairs) mapping the sample filename to the actual loaded sample
         // which can be used by any given GameConfig
-        private static Dictionary<string, FMOD.Sound> sampleDictionary = new Dictionary<string, FMOD.Sound>();
+        //private static Dictionary<string, ISoundSource> sampleDictionary = new Dictionary<string, ISoundSource>();
+        private static Dictionary<string, ISound> sampleDictionary = new Dictionary<string, ISound>();
 
-        
+        private static ISoundEngine soundEngine;
 
         public SoundPlayer()
         {
-            if (Environment.Is64BitProcess) { LoadLibrary(System.IO.Path.GetFullPath("FMOD\\64bit\\fmod.dll")); }
-            else { LoadLibrary(System.IO.Path.GetFullPath("FMOD\\32bit\\fmod.dll")); }
+            //if (Environment.Is64BitProcess) { LoadLibrary(System.IO.Path.GetFullPath("FMOD\\64bit\\fmod.dll")); }
+            //else { LoadLibrary(System.IO.Path.GetFullPath("FMOD\\32bit\\fmod.dll")); }
 
             numSamples = 0;
 
-            FMOD.Factory.System_Create(out FMODSystem);
+            //FMOD.Factory.System_Create(out FMODSystem);
 
-            FMODSystem.setDSPBufferSize(1024, 10);
-            FMODSystem.init(32, FMOD.INITFLAGS.NORMAL, (IntPtr)0);
 
-            FMODSystem.createSoundGroup("InGameSoundGroup", out InGameSoundGroup);
-            FMODSystem.createSoundGroup("InMenuSoundGroup", out InMenuSoundGroup);
+            soundEngine = new ISoundEngine();
+
+            //FMODSystem.setDSPBufferSize(1024, 10);
+            //FMODSystem.init(32, FMOD.INITFLAGS.NORMAL, (IntPtr)0);
+
+            //FMODSystem.createSoundGroup("InGameSoundGroup", out InGameSoundGroup);
+            //FMODSystem.createSoundGroup("InMenuSoundGroup", out InMenuSoundGroup);
         }
 
         public static bool LoadSample(string configDirectory, string sampleName, Trigger.AllowanceType at)
@@ -68,23 +75,35 @@ namespace SoniFight
             Console.WriteLine("Loading sample: " + sampleName);
 
             // Load our sound
-            FMOD.Sound sound;
-            FMOD.RESULT r = FMODSystem.createSound(configDirectory + sampleName, FMOD.MODE.DEFAULT, out sound);
+            //FMOD.Sound sound;
+            //FMOD.RESULT r = FMODSystem.createSound(configDirectory + sampleName, FMOD.MODE.DEFAULT, out sound);
+
+            // Load the sound. Params: sample filename, loop, startPaused            
+            ISound sound = soundEngine.Play2D(configDirectory + sampleName, false, true);
+
             
+
+            // Load the sample into a SoundSource. Params: Filename, streaming mode, preload
+            //ISoundSource sample = soundEngine.AddSoundSourceFromFile(configDirectory + sampleName, StreamMode.NoStreaming, true);
+
             //if (at == Trigger.AllowanceType.InGame)
             //{
             //      InGameSoundGroup.add   
             //}
 
             // Moan if anything bad happened and return false for failure
-            if (r != FMOD.RESULT.OK)
+            /*if (r != FMOD.RESULT.OK)
             {
                 MessageBox.Show("Loading sample " + (configDirectory + sampleName) + " at index " + SAMPLE_INDEX + " failed, got result " + r);
                 return false;
-            }
+            }*/
 
             // Otherwise add to our sample list, increment the SAM and return true for success
-            sampleDictionary.Add(sampleName, sound);
+            if ( !sampleDictionary.ContainsKey(configDirectory + sampleName))
+            {
+                sampleDictionary.Add(configDirectory + sampleName, sound);
+                //Console.WriteLine("Added: " + configDirectory + sampleName);
+            }
 
             ++numSamples;
 
@@ -102,9 +121,25 @@ namespace SoniFight
 
         public static bool IsPlaying()
         {
-            bool isPlaying = false;
-            if (Channel != null) { Channel.isPlaying(out isPlaying); }
-            return isPlaying;
+            // Release all samples in the dictionary then clear it
+            foreach (KeyValuePair<string, ISound> sample in sampleDictionary)
+            {
+                if (soundEngine.IsCurrentlyPlaying(sample.Key))
+                {
+                    return true;
+                }
+            }
+            return false;
+            
+            //return soundEngine.IsCurrentlyPlaying();
+        }
+
+        // Update the SoundEngine
+        public static void updateEngine()
+        {
+            // We must call the Update method on the SoundEngine several times per second for everything to run smoothly, especially
+            // when moving sounds around. As such, this is called from the main loop 1000 / POLL_SLEEP_MS times per second.
+            soundEngine.Update();
         }
 
         
@@ -119,19 +154,21 @@ namespace SoniFight
 
                 // NOTE 1: Playing a sound with Channel as the output CREATES the Channel - there's no constructor for it - which means...
                 // Params: Sound, ChannelGroup, Paused, Channel
-                FMODSystem.playSound(sampleDictionary[sampleFilename], null, false, out Channel);
+                //FMODSystem.playSound(sampleDictionary[sampleFilename], null, false, out Channel);
 
-                // IMPORTANT: If we don't call FMODSystem.update() often then we use all our sample spots and only one sample can be played at a time.
-                //            I believe calling update 'clears' samples which have finished playing, allowing those spots to be used in muxing again
-                //            so our multi-sample-at-once audio keeps working properly. See: https://www.fmod.org/questions/question/forum-29440/
-                FMODSystem.update();
+                sampleDictionary[sampleFilename].Volume = volume;
+                sampleDictionary[sampleFilename].PlaybackSpeed = pitch;
+                soundEngine.Play2D(sampleFilename);// sampleDictionary[sampleFilename]);
+
+
+                
 
                 // NOTE 2: However, the creation seems fine to adjust this even if the first use of the Channel was just above, and it'll modify the volume and pitch as planned
-                if (Channel != null)// !IsPlaying())
+                /*if (Channel != null)// !IsPlaying())
                 {
                     Channel.setVolume(volume);
                     Channel.setPitch(pitch);                    
-                }
+                }*/
             }
             else // Warn user of issue
             {
@@ -196,11 +233,12 @@ namespace SoniFight
 
         public static void StopChannel()
         {
-            if (Channel != null && IsPlaying()) { Channel.stop(); }
+            //if (Channel != null && IsPlaying()) { Channel.stop(); }
+            soundEngine.StopAllSounds();
         }
 
         //TODO: This isn't used - we just don't play stuff when in currentlyMuted state - delete method
-        public static bool muteChannel()
+        /*public static bool muteChannel()
         {
             FMOD.RESULT result = FMOD.RESULT.OK;
             if (Channel != null)
@@ -227,10 +265,10 @@ namespace SoniFight
                 return true;
             }
             return false;
-        }
+        }*/
 
 
-        public static bool isMuted()
+        /*public static bool isMuted()
         {
             FMOD.RESULT result = FMOD.RESULT.OK;
             bool muted = false;
@@ -239,27 +277,35 @@ namespace SoniFight
                 result = Channel.getMute(out muted);
             }
             return muted;
-        }
+        }*/
 
         public static void UnloadAllSamples()
         {
-            if (IsPlaying()) { Channel.stop(); }
+            //if (IsPlaying()) { Channel.stop(); }
+            soundEngine.StopAllSounds();
 
+            
 
             // Release all samples in the dictionary then clear it
-            foreach (KeyValuePair<string, FMOD.Sound> sample in sampleDictionary)
+            foreach (KeyValuePair<string, ISound> sample in sampleDictionary)
             {
                 Console.WriteLine("Releasing sample: " + sample.Key);
-                sample.Value.release();
+                sample.Value.Dispose();
             }
             sampleDictionary.Clear();
+
+            // Unload all samples and force garbage collection
+            soundEngine.RemoveAllSoundSources();
+            System.GC.Collect();
         }
 
         public static void ShutDown()
         {
             // Free the samples and finally realease the FMODSystem itself
             UnloadAllSamples();
-            FMODSystem.release();
+
+            //FMODSystem.release();
+            soundEngine.Dispose();
         }
     }
 }

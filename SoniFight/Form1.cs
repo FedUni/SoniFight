@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace SoniFight
 {
     public partial class MainForm : Form
     {
-        private static string formTitle = "SoniFight v0.1";
+        private static string formTitle = "SoniFight v0.6";
 
         bool running = false;
 
@@ -1521,6 +1523,11 @@ namespace SoniFight
             // Note: When this node becomes selected the UI for the type of node is constructed in the 'gcTreeView_AfterSelect' method
             tv.SelectedNode = currentTreeNode;
             tv.Focus();
+        }
+
+        private void appTitleLable_Click(object sender, EventArgs e)
+        {
+
         }
     } // End of MainForm partial class
 
