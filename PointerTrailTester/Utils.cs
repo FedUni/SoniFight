@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Xml.Serialization;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
@@ -11,56 +9,10 @@ namespace PointerTrailTester
 {
     static class Utils
     {
-        // Kernel hooks to read and write process memory
-        // Note: Even on 64-bit systems the kernel is called kernel32!
+        // Kernel hook to read process memory. Note: Even on 64-bit systems the kernel is called kernel32.
         [DllImport("kernel32.dll")]
         public static extern bool ReadProcessMemory(int hProcess, int lpBaseAddress, byte[] lpBuffer, int dwSize, ref int lpNumberOfBytesRead);
-
-        // Constants are implied static in C# - you cannot mark them as such.
-        public const int MAX_STRING_LENGTH = 150;        
-
-        // Range parsing code based on Chris Fazzio's code on StackOverflow. Dupe removal added by me. Source:
-        // http://stackoverflow.com/questions/40161/does-c-sharp-have-built-in-support-for-parsing-page-number-strings
-        public static int[] ParseIntRange(string ranges)
-        {
-            // Split on commas
-            string[] groups = ranges.Split(',');
-
-            // List may contain duplicates
-            int[] naiveList = groups.SelectMany(t => GetIntRangeNumbers(t)).ToArray();
-
-            // Use a LINQ query to return a list without dupes, sorted in descending order (high to low)
-            return naiveList.Distinct().OrderByDescending(c => c).ToArray();
-        }
-
-        private static int[] GetIntRangeNumbers(string range)
-        {
-            int[] RangeNums = range
-                .Split('-')
-                .Select(t => new String(t.Where(Char.IsDigit).ToArray())) // Digits Only
-                .Where(t => !string.IsNullOrWhiteSpace(t)) // Only if has a value
-                .Select(t => int.Parse(t)) // digit to int
-                .ToArray();
-            return RangeNums.Length.Equals(2) ? Enumerable.Range(RangeNums.Min(), (RangeNums.Max() + 1) - RangeNums.Min()).ToArray() : RangeNums;
-        }
-
-        public static short[] ParseShortRange(string ranges)
-        {
-            int[] intRange = ParseIntRange(ranges);
-
-            int elementCount = intRange.Length;
-
-            short[] shortArray = new short[elementCount];
-
-            for (int loop = 0; loop < elementCount; loop++)
-            {
-                shortArray[loop] = (short)(intRange[loop]);
-                MessageBox.Show(shortArray[loop].ToString());
-            }
-
-            return shortArray;
-        }
-
+        
         // Find the process in the processName property and set the processBaseAddress property ready for use
         public static int findProcessBaseAddress(string processName)
         {
@@ -94,7 +46,7 @@ namespace PointerTrailTester
                 {
                     offset = Convert.ToInt32(hexPointerTrail.ElementAt(loop), 16);
                 }
-                catch (FormatException fe)
+                catch (FormatException)
                 {
                     Program.validPointerTrail = false;
                     return 0;
@@ -139,7 +91,7 @@ namespace PointerTrailTester
             return false;
         }
 
-
+        // Read and return an int
         public static Int32 getIntFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;            
@@ -148,6 +100,7 @@ namespace PointerTrailTester
             return BitConverter.ToInt32(buf, 0);
         }
 
+        // Read and return a short
         public static Int16 getShortFromAddress(int processHandle, int address)
         {   
             int bytesRead = 0;
@@ -156,6 +109,7 @@ namespace PointerTrailTester
             return BitConverter.ToInt16(buf, 0);
         }
 
+        // Read and return a long
         public static Int64 getLongFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -164,6 +118,7 @@ namespace PointerTrailTester
             return BitConverter.ToInt64(buf, 0);
         }
 
+        // Read and return a float
         public static float getFloatFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -172,6 +127,7 @@ namespace PointerTrailTester
             return BitConverter.ToSingle(buf, 0);
         }
 
+        // Read and return a double
         public static double getDoubleFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -181,6 +137,7 @@ namespace PointerTrailTester
             return BitConverter.ToDouble(buf, 0);
         }
 
+        // Read and return a bool
         public static Boolean getBoolFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -189,6 +146,7 @@ namespace PointerTrailTester
             return BitConverter.ToBoolean(buf, 0);
         }
 
+        // Read and return a UTF-8 formatted string
         public static string getUTF8FromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -224,6 +182,7 @@ namespace PointerTrailTester
             return s.TrimEnd(); // Still trim spaces at end.
         }
 
+        // Read and return a UTF-16 formatted string
         public static string getUTF16FromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -259,32 +218,42 @@ namespace PointerTrailTester
             return s.TrimEnd(); // Still trim spaces at end.
         }
 
+        // Return a value of a given type from the feature address
         public static dynamic getDynamicValueFromType(Program.ValueType valueType)
         {
             switch (valueType)
             {
                 case Program.ValueType.IntType:
                     return (Int32)Utils.getIntFromAddress(Program.processHandle, Program.featureAddress);
+
                 case Program.ValueType.ShortType:
                     return (Int16)Utils.getShortFromAddress(Program.processHandle, Program.featureAddress);
+
                 case Program.ValueType.LongType:
                     return (Int64)Utils.getShortFromAddress(Program.processHandle, Program.featureAddress);
+
                 case Program.ValueType.FloatType:
                     return (float)Utils.getFloatFromAddress(Program.processHandle, Program.featureAddress);
+
                 case Program.ValueType.DoubleType:
                     return (double)Utils.getDoubleFromAddress(Program.processHandle, Program.featureAddress);
+
                 case Program.ValueType.BoolType:
                     return (bool)Utils.getBoolFromAddress(Program.processHandle, Program.featureAddress);
+
                 case Program.ValueType.StringUTF8Type:
                     return (string)Utils.getUTF8FromAddress(Program.processHandle, Program.featureAddress);
+
                 case Program.ValueType.StringUTF16Type:
                     return (string)Utils.getUTF16FromAddress(Program.processHandle, Program.featureAddress);
+
                 default:
                     MessageBox.Show("Value type in getDynamicValueFromType not recognised. Value type we got was: " + valueType.ToString());
                     return null;
             }
         }
 
+        // Convert a comma separated list of pointer trails into a list
         public static List<string> CommaSeparatedStringToStringList(string s)
         {
             // Return a list of string items split on commas with whitespaces removed and no 'blank' entries (i.e. ",   ,")
@@ -293,59 +262,7 @@ namespace PointerTrailTester
                    .Where(x => !string.IsNullOrWhiteSpace(x))
                    .ToList();
         }
-
-        public static Program.ValueType GetValueTypeFromInt(int i)
-        {
-            switch (i)
-            {
-                case 0:
-                    return Program.ValueType.IntType;
-                case 1:
-                    return Program.ValueType.ShortType;
-                case 2:
-                    return Program.ValueType.LongType;
-                case 3:
-                    return Program.ValueType.FloatType;
-                case 4:
-                    return Program.ValueType.DoubleType;
-                case 5:
-                    return Program.ValueType.BoolType;
-                case 6:
-                    return Program.ValueType.StringUTF8Type;
-                case 7:
-                    return Program.ValueType.StringUTF16Type;
-                default:
-                    return Program.ValueType.IntType;
-            }
-
-        } // End of GetValueTypeFromInt method
-
-        public static int GetIntFromValueType(Program.ValueType vt)
-        {
-            switch (vt)
-            {
-                case Program.ValueType.IntType:
-                    return 0;
-                case Program.ValueType.ShortType:
-                    return 1;
-                case Program.ValueType.LongType:
-                    return 2;
-                case Program.ValueType.FloatType:
-                    return 3;
-                case Program.ValueType.DoubleType:
-                    return 4;
-                case Program.ValueType.BoolType:
-                    return 5;
-                case Program.ValueType.StringUTF8Type:
-                    return 6;
-                case Program.ValueType.StringUTF16Type:
-                    return 7;
-                default:
-                    return 0;
-            }
-
-        } // End of GetIntFromValueType method
-
+        
     } // End of Utils class
 
 } // End of namespace

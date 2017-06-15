@@ -70,7 +70,7 @@ namespace SoniFight
             {
                 subdirectoryArray = System.IO.Directory.GetDirectories(configPath);
             }
-            catch (DirectoryNotFoundException dnfe)
+            catch (DirectoryNotFoundException)
             {
                 MessageBox.Show("Error: Configs directory does not exist in same folder as SoniFight executable - click OK to create folder.");
                 System.IO.Directory.CreateDirectory(configPath);
@@ -78,7 +78,7 @@ namespace SoniFight
                 {
                     subdirectoryArray = System.IO.Directory.GetDirectories(configPath);
                 }
-                catch (DirectoryNotFoundException dnfe2)
+                catch (DirectoryNotFoundException)
                 {
                     MessageBox.Show("Error: Configs directory creation failed - please manually create a directory called \"Configs\" in the same folder as the SoniFight executable.");
                     this.Close();

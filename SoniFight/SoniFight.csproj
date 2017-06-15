@@ -71,6 +71,9 @@
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SoniFight-Icon-16x16.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="irrKlang.NET4, Version=1.0.5235.17346, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -144,6 +147,8 @@
     <Content Include="msvcr100.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="SoniFight-Icon-16x16.ico" />
+    <Content Include="SoniFight-Logo-32x32.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -145,6 +145,7 @@
             // processNameTB
             // 
             this.processNameTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.processNameTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.processNameTB.Location = new System.Drawing.Point(273, 9);
             this.processNameTB.MaxLength = 256;
             this.processNameTB.Name = "processNameTB";

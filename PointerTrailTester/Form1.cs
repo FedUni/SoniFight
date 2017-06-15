@@ -1,25 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PointerTrailTester
 {
     public partial class Form1 : Form
     {
+        // Background worker which will attempt to connect to the requested process without locking up the UI
         public static BackgroundWorker processConnectionBW = new BackgroundWorker();
 
-        private System.Windows.Forms.Timer statusTimer;
-
+        // The value we'll read from memory
         dynamic value;
 
+        // A timer to update the UI
+        private System.Windows.Forms.Timer statusTimer;
+
+        // Method to setup and start a timer which will check for updates to the process connection / feature value status
+        // and update the UI
         public void InitTimer()
         {
             statusTimer = new System.Windows.Forms.Timer();
@@ -28,6 +27,7 @@ namespace PointerTrailTester
             statusTimer.Start();
         }
 
+        // Each tick of te timer we do this...
         private void statusTimer_Tick(object sender, EventArgs e)
         {
             if (!Program.connectedToProcess)
@@ -43,11 +43,12 @@ namespace PointerTrailTester
                     memoryAddressTB.Text = "INVALID POINTER TRAIL";
                     valueTB.Text = "INVALID POINTER TRAIL";
                 }
-                else
+                else // We do? Great!
                 {
                     // Convert int memory address to hex and update memory address field
                     memoryAddressTB.Text = Program.featureAddress.ToString("X");
 
+                    // Read correct data type from address & set as the valueTB Text
                     switch (dataTypeCB.SelectedIndex)
                     {
                         case 0:
@@ -76,12 +77,14 @@ namespace PointerTrailTester
                             break;
                     }
                     valueTB.Text = Convert.ToString(value);
-                    
-                }               
-            }
 
-        }
+                } // End of we-have-a-valid-pointer-trail section
 
+            } // End of if we're connected to the requested process section
+
+        } // End of statusTimer_Tick method
+
+        // Constructor
         public Form1()
         {
             InitializeComponent();
@@ -139,10 +142,10 @@ namespace PointerTrailTester
                         return;
                     }
                 }
-            };
 
+            }; // End of pointerTrailTB TextChanged handler
 
-        }
+        } // End of Form1_Load method
 
 
         // DoWork method for the process connection background worker
