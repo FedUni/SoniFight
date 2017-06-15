@@ -49,8 +49,6 @@ namespace SoniFight
 
         public dynamic getDynamicValueFromType()
         {
-            //dynamic value;
-
             switch (valueType)
             {
                 case Watch.ValueType.IntType:

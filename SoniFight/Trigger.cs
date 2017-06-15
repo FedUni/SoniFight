@@ -94,22 +94,13 @@ namespace SoniFight
         // Is this trigger the clock which we use to determine whether we're InGame or InMenu?
         public bool isClock;
 
-        public List<int> triggerStopList;  // Stops all triggers in the list from playing when this trigger is triggered (list is of id's)
-        public List<int> triggerResetList; // Resets all triggers in the list to have their triggered flag as false (list is of id's)
+        //public List<int> triggerStopList;  // Stops all triggers in the list from playing when this trigger is triggered (list is of id's)
+        //public List<int> triggerResetList; // Resets all triggers in the list to have their triggered flag as false (list is of id's)
 
 
         
              
-
-        // Properties which do need to be stored in XML
-        [XmlIgnore]
-        private bool triggered;
-        [XmlIgnore]
-        public bool Triggered
-        {
-            get { return triggered;  }
-            set { triggered = value; }
-        }
+        
 
         // Whether we should use this trigger or not
         public bool active;

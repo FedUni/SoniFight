@@ -176,11 +176,9 @@ namespace SoniFight
                         watchList[watchLoop].DestinationAddress = Utils.findFeatureAddress(processHandle, processBaseAddress, watchList[watchLoop].PointerList);
                     }
 
-                    // Set the triggered flag of all triggers to false
+                    // Load all samples
                     foreach (Trigger t in triggerList)
                     {
-                        t.Triggered = false;
-
                         // Load sample if not already loaded - but only if a normal trigger and NOT the main clock trigger!
                         if (!SoundPlayer.SampleLoaded(t.sampleFilename) && t.controlType == Trigger.ControlType.Normal && !t.isClock)
                         {
