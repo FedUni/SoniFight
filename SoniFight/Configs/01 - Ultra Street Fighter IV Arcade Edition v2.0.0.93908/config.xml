@@ -5,7 +5,7 @@
       <valueType>IntType</valueType>
       <Id>0</Id>
       <Name>Clock Watch</Name>
-      <Description>The round timer - range is 99 down to 0</Description>
+      <Description>The round timer as an int - range is 99 down to 0</Description>
       <PointerList>
         <string>6A7DD8</string>
         <string>18</string>
@@ -5835,7 +5835,18 @@
       <active>true</active>
     </Trigger>
   </triggerList>
-  <Description>Test SSFIV GameConfig - Al Lansley - 2017-06-17</Description>
+  <Description>Street Fighter IV GameConfig
+
+Al Lansley - 2017-06-17
+
+This config ships with SoniFight and provides alerts for clock values, health, super bar and ultra bar for both players.
+
+It also provides a large number of menu sonification events to assist in navigating menus and selecting characters without the need to memorise menu options.
+
+Known Issues:
+At present there are occassional non-sensical sonifications between rounds, such as the screen resolution being said - if this bothers you then you can find the offending trigger (run from command line for debug output to identify the trigger id if required) and then either deactivate it by unchecking the Active checkbox, or you can delete the trigger entirely via its Delete Trigger button.
+
+Unfortunately because memory gets re-used for storing various data there isn't too much that can be done about this issue besides disabling the offending trigger(s) - because we're either watching a memory address for a change in its status, or we aren't - and there isn't much of a middle ground.</Description>
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>

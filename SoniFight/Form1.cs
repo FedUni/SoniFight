@@ -30,8 +30,8 @@ namespace SoniFight
 
         private int detailsPanelX = 340;
         private int detailsPanelY = 50;
-        private int detailsPanelWidth = 400;
-        private Padding padding = new System.Windows.Forms.Padding(10);
+        private int detailsPanelWidth = 550;
+        private Padding padding = new System.Windows.Forms.Padding(5);
 
         // Flag for when to create a new config rather than attempt to load one from a config folder on tab index changed
         static bool creatingNewConfig = false;
@@ -53,7 +53,7 @@ namespace SoniFight
         }
 
         // Setup the form
-        private void MainForm_Load(object sender, EventArgs e)
+        private void MainForm_Load(object senderender, EventArgs e)
         {   
             populateMainConfigsBox();
         }
@@ -126,7 +126,7 @@ namespace SoniFight
         }
 
         // Update selected config string (we'll use this string to load the 'config.xml' file from within this directory.
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object senderender, EventArgs e)
         {
             // Set the config directory to the text on the dropdown
             // Note: The config is activated when the 'activateAndValidate' method is called
@@ -143,15 +143,15 @@ namespace SoniFight
             SoundPlayer.UnloadAllSamples();     
         }
 
-        private void exitButton_Click_1(object sender, EventArgs e)
+        private void exitButton_Click_1(object senderender, EventArgs e)
         {
             // Close this form   
             this.Close();
 
             // This sets cancellation to pending, which we handle in the associated doWork method
             // to actually perform the cancellation.
-            // Note: This is just the code from the stop running config button method - but it's required as otherwise
-            //       we get a "Pure Virtual Function" error on shutdown.
+            // Note: This is just the code from the stop running config button method - but it's required (including the sleep)
+            //       as otherwise we get a "Pure Virtual Function" error on shutdown.
             GameConfig.processConnectionBW.CancelAsync();
             Program.sonificationBGW.CancelAsync();
             this.Text = formTitle + " Status: Stopped";
@@ -161,13 +161,13 @@ namespace SoniFight
             // Note: Once here SoundPlayer.ShutDown() will be called from the main method because we've been stuck in this form loop up until then.
         }
 
-        private void createNewConfigButton_Click(object sender, EventArgs e)
+        private void createNewConfigButton_Click(object senderender, EventArgs e)
         {
             MessageBox.Show("CreateNewConfig button was clicked!");
 
             creatingNewConfig = true;
 
-            // Reset the static GameConfig object so that it gets re-created when we hit the Edit tab...
+            // Reset the static GameConfig object sendero that it gets re-created when we hit the Edit tab...
             gameConfig.ConfigDirectory = "";
             gameConfig.Description = "";
             gameConfig.ProcessName = "";
@@ -180,7 +180,7 @@ namespace SoniFight
         }
 
         // Method to load the config and start polling
-        private void runConfig_Click(object sender, EventArgs e)
+        private void runConfig_Click(object senderender, EventArgs e)
         {
             // Inflate game config from XML file
             string pathToConfig = ".\\Configs\\" + MainForm.gameConfig.ConfigDirectory + "\\config.xml";
@@ -208,7 +208,7 @@ namespace SoniFight
 
         } // End of runConfig_Click method
 
-        private void saveConfig_Click(object sender, EventArgs e)
+        private void saveConfig_Click(object senderender, EventArgs e)
         {
             Console.WriteLine("--- Validating GameConfig ---");
 
@@ -300,7 +300,7 @@ namespace SoniFight
         }
 
 
-        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        private void tabControl_SelectedIndexChanged(object senderender, EventArgs e)
         {
             //Console.WriteLine("1 - Selected index changed. Config dir is: " + gameConfig.ConfigDirectory);
 
@@ -365,7 +365,7 @@ namespace SoniFight
         } // End of tabControl_SelectedIndexChanged method
 
         // Stop button handler to stop the sonification background worker
-        private void stopConfigButton_Click(object sender, EventArgs e)
+        private void stopConfigButton_Click(object senderender, EventArgs e)
         {
             // This sets cancellation to pending, which we handle in the associated doWork method
             // to actually perform the cancellation.
@@ -376,27 +376,22 @@ namespace SoniFight
             Thread.Sleep(500);
         }
 
-        private void refreshButton_Click(object sender, EventArgs e)
+        private void refreshButton_Click(object senderender, EventArgs e)
         {
             populateMainConfigsBox();
         }
 
-        private void gcTreeView_AfterSelect(object sender, TreeViewEventArgs tvea)
+        private void gcTreeView_AfterSelect(object senderender, TreeViewEventArgs tvea)
         {
-            // Clear the panel
+            // Clear the panel and set some properties on it
             TableLayoutPanel panel = this.gcPanel;
-
-            panel.Location = new Point(detailsPanelX, detailsPanelY);
-
             clearPanel(panel);
-
+            panel.Location = new Point(detailsPanelX, detailsPanelY);
+            panel.Width = detailsPanelWidth;            
+            panel.Padding = padding;
+            panel.AutoSizeMode = AutoSizeMode.GrowOnly;
             panel.Visible = false;
-
-
-            //panel.Location = Size.
-            //panel.AutoScroll = true;
-            //panel.AutoSizeMode = AutoSizeMode.GrowAndShrink; <-- this one
-
+            
             // Update the current node to be the node which triggered this method
             currentTreeNode = tvea.Node;
             
@@ -422,7 +417,7 @@ namespace SoniFight
 
                         TextBox dirTB = new TextBox();
                         dirTB.Text = gameConfig.ConfigDirectory;
-                        dirTB.TextChanged += (object s, EventArgs ea) => { gameConfig.ConfigDirectory = dirTB.Text; };
+                        dirTB.TextChanged += (object sender, EventArgs ea) => { gameConfig.ConfigDirectory = dirTB.Text; };
                         dirTB.Tag = "dirTB";
                         dirTB.Anchor = AnchorStyles.Right;
                         dirTB.Dock = DockStyle.Fill;
@@ -430,26 +425,7 @@ namespace SoniFight
                         panel.Controls.Add(dirTB, 1, row); // Control, Column, Row                        
                         row++;
 
-                        // ----- Row 1 - Config description -----                
-                        Label descLabel = new Label();
-                        descLabel.AutoSize = true;
-                        descLabel.Text = "Description";
-                        descLabel.Tag = "DescriptionLabel";
-                        descLabel.Anchor = AnchorStyles.Right;
-                        descLabel.Margin = padding;
-                        panel.Controls.Add(descLabel, 0, row); // Control, Column, Row
-
-                        TextBox descTB = new TextBox();
-                        descTB.Text = gameConfig.Description;
-                        descTB.TextChanged += (object s, EventArgs ea) => { gameConfig.Description = descTB.Text; };
-                        descTB.Tag = "descTB";
-                        descTB.Anchor = AnchorStyles.Right;
-                        descTB.Dock = DockStyle.Fill;
-                        descTB.Margin = padding;
-                        panel.Controls.Add(descTB, 1, row); // Control, Column, Row
-                        row++;
-
-                        // ----- Row 2 - Process name -----                
+                        // ----- Row 1 - Process name -----                
                         Label processLabel = new Label();
                         processLabel.AutoSize = true;
                         processLabel.Text = "Process Name";
@@ -460,7 +436,7 @@ namespace SoniFight
 
                         TextBox processTB = new TextBox();
                         processTB.Text = gameConfig.ProcessName;
-                        processTB.TextChanged += (object s, EventArgs ea) => { gameConfig.ProcessName = processTB.Text; };
+                        processTB.TextChanged += (object sender, EventArgs ea) => { gameConfig.ProcessName = processTB.Text; };
                         processTB.Tag = "processTB";
                         processTB.Anchor = AnchorStyles.Right;
                         processTB.Dock = DockStyle.Fill;
@@ -468,7 +444,7 @@ namespace SoniFight
                         panel.Controls.Add(processTB, 1, row); // Control, Column, Row
                         row++;
 
-                        // ----- Row 3 - Poll Sleep -----                
+                        // ----- Row 2 - Poll Sleep -----                
                         Label pollLabel = new Label();
                         pollLabel.AutoSize = true;
                         pollLabel.Text = "Poll Sleep (Milliseconds)";
@@ -479,7 +455,7 @@ namespace SoniFight
 
                         TextBox pollTB = new TextBox();
                         pollTB.Text = gameConfig.PollSleepMS.ToString();
-                        pollTB.TextChanged += (object s, EventArgs ea) =>
+                        pollTB.TextChanged += (object sender, EventArgs ea) =>
                         {
                             int x;
                             bool result = Int32.TryParse(pollTB.Text, out x);
@@ -506,7 +482,7 @@ namespace SoniFight
                         panel.Controls.Add(pollTB, 1, row); // Control, Column, Row
                         row++;
 
-                        // ----- Row 4 - Clock Tick MS -----                
+                        // ----- Row 3 - Clock Tick MS -----                
                         Label clockTickLabel = new Label();
                         clockTickLabel.AutoSize = true;
                         clockTickLabel.Text = "Clock Tick (Milliseconds)";
@@ -517,7 +493,7 @@ namespace SoniFight
 
                         TextBox clockTickTB = new TextBox();
                         clockTickTB.Text = gameConfig.ClockTickMS.ToString();
-                        clockTickTB.TextChanged += (object s, EventArgs ea) =>
+                        clockTickTB.TextChanged += (object sender, EventArgs ea) =>
                         {
                             int x;
                             bool result = Int32.TryParse(clockTickTB.Text, out x);
@@ -544,6 +520,31 @@ namespace SoniFight
                         panel.Controls.Add(clockTickTB, 1, row); // Control, Column, Row
                         row++;
 
+                        // ----- Row 4 - Config description -----                
+                        Label descLabel = new Label();
+                        descLabel.AutoSize = true;
+                        descLabel.Text = "Description";
+                        descLabel.Tag = "DescriptionLabel";
+                        descLabel.Anchor = AnchorStyles.Right;
+                        descLabel.Margin = padding;
+                        panel.Controls.Add(descLabel, 0, row); // Control, Column, Row
+
+                        TextBox descTB = new TextBox();
+                        descTB.Multiline = true;
+                        descTB.Height = descTB.Font.Height * 25 + padding.Horizontal; // Set height to be enough for 25 lines
+
+                        // Replace all \n newlines with \r\n sp it properly linebreaks on returns
+                        gameConfig.Description = gameConfig.Description.Replace("\n", Environment.NewLine);
+
+                        descTB.Text = gameConfig.Description;                        
+                        descTB.TextChanged += (object sender, EventArgs ea) => { gameConfig.Description = descTB.Text; };
+                        descTB.Tag = "descTB";
+                        descTB.Anchor = AnchorStyles.Right;
+                        descTB.Dock = DockStyle.Fill;
+                        descTB.Margin = padding;
+                        panel.Controls.Add(descTB, 1, row); // Control, Column, Row
+                        row++;
+
                         break;
                     }
                 case "Watches":
@@ -565,11 +566,11 @@ namespace SoniFight
                         watchDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
                         watchDescriptionTB.Text += "Only watches that are marked as active will be used - so you can disable a watch while still keeping the data around in your GameConfig.";
                         watchDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
-                        watchDescriptionTB.Text += "Please read the documentation to learn more about how to identify consistent pointer trails for use as watches.";
+                        watchDescriptionTB.Text += "Please consult the user documentation to learn more about how to identify consistent pointer trails for use as watches.";
 
                         // Make the description span both columns in the TableLayoutPanel
                         watchDescriptionTB.WordWrap = true;
-                        watchDescriptionTB.Width = 550;
+                        watchDescriptionTB.Width = detailsPanelWidth;
                         watchDescriptionTB.Height = 400;
                         watchDescriptionTB.Dock = DockStyle.Fill;
                         panel.Controls.Add(watchDescriptionTB);
@@ -600,7 +601,7 @@ namespace SoniFight
 
                         TextBox idTB = new TextBox();
                         idTB.Text = currentWatch.Id.ToString();
-                        idTB.TextChanged += (object s, EventArgs ea) =>
+                        idTB.TextChanged += (object o, EventArgs ea) =>
                         {
                             int x;
                             bool result = Int32.TryParse(idTB.Text, out x);
@@ -639,7 +640,7 @@ namespace SoniFight
 
                         TextBox nameTB = new TextBox();
                         nameTB.Text = currentWatch.Name.ToString();
-                        nameTB.TextChanged += (object s, EventArgs ea) =>
+                        nameTB.TextChanged += (object sender, EventArgs ea) =>
                         {
                             currentWatch.Name = nameTB.Text;
                             currentTreeNode.Text = currentWatch.Id + "-" + currentWatch.Name;
@@ -662,7 +663,7 @@ namespace SoniFight
 
                         TextBox descTB = new TextBox();
                         descTB.Text = currentWatch.Description.ToString();
-                        descTB.TextChanged += (object s, EventArgs ea) => { currentWatch.Description = descTB.Text; };
+                        descTB.TextChanged += (object sender, EventArgs ea) => { currentWatch.Description = descTB.Text; };
                         descTB.Tag = "descTB";
                         descTB.Anchor = AnchorStyles.Right;
                         descTB.Dock = DockStyle.Fill;
@@ -673,7 +674,7 @@ namespace SoniFight
                         // ----- Row 3 - Pointer List -----            
                         Label pointerLabel = new Label();
                         pointerLabel.AutoSize = true;
-                        pointerLabel.Text = "Pointer List (comma-separated hex, no prefixes)";
+                        pointerLabel.Text = "Pointer List (comma-separated hex no prefixes)";
                         pointerLabel.Tag = "pointerLabel";
                         pointerLabel.Anchor = AnchorStyles.Right;
                         pointerLabel.Margin = padding;
@@ -690,7 +691,7 @@ namespace SoniFight
                             }
                         }
                         pointerTB.Text = plString;
-                        pointerTB.TextChanged += (object s, EventArgs ea) =>
+                        pointerTB.TextChanged += (object sender, EventArgs ea) =>
                         {
                             List<string> tempPointerList = Utils.CommaSeparatedStringToStringList(pointerTB.Text);
                             int x;
@@ -755,15 +756,62 @@ namespace SoniFight
 
                         CheckBox activeCB = new CheckBox();
                         activeCB.Checked = currentWatch.Active;
-                        activeCB.CheckedChanged += (object s, EventArgs ea) => { currentWatch.Active = activeCB.Checked; };
+                        activeCB.CheckedChanged += (object sender, EventArgs ea) => { currentWatch.Active = activeCB.Checked; };
                         activeCB.Tag = "activeCB";
                         activeCB.Anchor = AnchorStyles.Right;
                         activeCB.Dock = DockStyle.Fill;
                         activeCB.Margin = padding;
                         panel.Controls.Add(activeCB, 1, row); // Control, Column, Row
                         row++;
+
+
+
+
+                        // ----- Row 6 - Description -----                
+                        Label triggersUsingLabel = new Label();
+                        triggersUsingLabel.AutoSize = true;
+                        triggersUsingLabel.Text = "Triggers Using This Watch";
+                        triggersUsingLabel.Tag = "triggersUsingLabel";
+                        triggersUsingLabel.Anchor = AnchorStyles.Right;
+                        triggersUsingLabel.Margin = padding;
+                        panel.Controls.Add(triggersUsingLabel, 0, row); // Control, Column, Row
+
+                        TextBox triggersUsingTB = new TextBox();
+
+                        // Add all triggers which use this watch to the textbox
+                        bool foundTriggerUsing = false;
+                        String s = "";
+                        for (int loop = 0; loop < gameConfig.triggerList.Count; ++loop)
+                        {
+                            if (gameConfig.triggerList[loop].watchOneId == currentWatch.Id)
+                            {
+                                s += Convert.ToString(gameConfig.triggerList[loop].id) + ", ";
+                                foundTriggerUsing = true;
+                            }                            
+                        }
+
+                        // Didn't find any triggers using this watch - fair enough. Say so.
+                        if (!foundTriggerUsing)
+                        {
+                            s = "None";
+                        }
+                        else // Strip the final ", " from the end of the string
+                        {
+                            s = s.Substring(0, s.Length - 2);
+                        }
                         
-                        // ----- Row 6 - Delete Watch -----
+                        triggersUsingTB.Tag = "triggersUsingTB";
+                        triggersUsingTB.Anchor = AnchorStyles.Right;
+                        triggersUsingTB.Dock = DockStyle.Fill;
+                        triggersUsingTB.Margin = padding;
+                        triggersUsingTB.ReadOnly = true;
+                        triggersUsingTB.Multiline = true;
+                        triggersUsingTB.Height = triggersUsingTB.Font.Height * 4 + padding.Horizontal; // Set height to be enough for 4 lines, which should be plenty
+                        triggersUsingTB.Text = s;
+                        panel.Controls.Add(triggersUsingTB, 1, row); // Control, Column, Row
+                        row++;
+
+                        // ----- Row 7 - Delete Watch -----
                         Button deleteWatchBtn = new Button();
                         deleteWatchBtn.AutoSize = true;
                         deleteWatchBtn.Text = "Delete Watch";
@@ -771,7 +819,7 @@ namespace SoniFight
                         deleteWatchBtn.Anchor = AnchorStyles.Right;
                         deleteWatchBtn.Margin = padding;
                         deleteWatchBtn.BackColor = Color.Red;
-                        deleteWatchBtn.Click += (object s, EventArgs ea) =>
+                        deleteWatchBtn.Click += (object sender, EventArgs ea) =>
                         {
                             try
                             {
@@ -810,7 +858,7 @@ namespace SoniFight
                         triggerDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
                         triggerDescriptionTB.Text += "Each trigger must have a unique trigger id specified as an integer greater than or equal to zero, and a condition to match against.";
                         triggerDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
-                        triggerDescriptionTB.Text += "Please read the documentation to learn more about how to set and use triggers.";
+                        triggerDescriptionTB.Text += "Please consult the user documentation to learn more about how to set and use triggers.";
 
                         // Make the description span both columns in the TableLayoutPanel
                         triggerDescriptionTB.WordWrap = true;
@@ -845,7 +893,7 @@ namespace SoniFight
 
                         TextBox idTB = new TextBox();
                         idTB.Text = currentTrigger.id.ToString();
-                        idTB.TextChanged += (object s, EventArgs ea) =>
+                        idTB.TextChanged += (object sender, EventArgs ea) =>
                         {
                             int x;
                             bool result = Int32.TryParse(idTB.Text, out x);
@@ -884,7 +932,7 @@ namespace SoniFight
 
                         TextBox nameTB = new TextBox();                        
                         nameTB.Text = currentTrigger.name.ToString();
-                        nameTB.TextChanged += (object s, EventArgs ea) =>
+                        nameTB.TextChanged += (object sender, EventArgs ea) =>
                         {
                             currentTrigger.name = nameTB.Text;
                             currentTreeNode.Text = currentTrigger.id + "-" + currentTrigger.name;
@@ -907,7 +955,7 @@ namespace SoniFight
 
                         TextBox descTB = new TextBox();
                         descTB.Text = currentTrigger.description.ToString();
-                        descTB.TextChanged += (object s, EventArgs ea) => { currentTrigger.description = descTB.Text; };
+                        descTB.TextChanged += (object sender, EventArgs ea) => { currentTrigger.description = descTB.Text; };
                         descTB.Tag = "descTB";
                         descTB.Anchor = AnchorStyles.Right;
                         descTB.Dock = DockStyle.Fill;
@@ -975,7 +1023,7 @@ namespace SoniFight
                         watch1TB.Anchor = AnchorStyles.Left;
                         watch1TB.Dock = DockStyle.Fill;
                         watch1TB.Margin = padding;
-                        watch1TB.TextChanged += (object s, EventArgs ea) =>
+                        watch1TB.TextChanged += (object sender, EventArgs ea) =>
                         {
                             int x;
                             bool result = Int32.TryParse(watch1TB.Text, out x);
@@ -1024,7 +1072,7 @@ namespace SoniFight
                             watch2TB.Enabled = true;
                         }
 
-                        watch2TB.TextChanged += (object s, EventArgs ea) =>
+                        watch2TB.TextChanged += (object sender, EventArgs ea) =>
                         {
                             int x;
                             bool result = Int32.TryParse(watch2TB.Text, out x);
@@ -1090,7 +1138,7 @@ namespace SoniFight
                         valueTB.MaxLength = Program.TEXT_COMPARISON_CHAR_LIMIT;
 
                         // Comparison TextBox handler
-                        valueTB.TextChanged += (object s, EventArgs ea) => {
+                        valueTB.TextChanged += (object sender, EventArgs ea) => {
 
                             // Trim whitespace
                             currentTrigger.value = valueTB.Text.TrimEnd();
@@ -1192,7 +1240,7 @@ namespace SoniFight
                         // Disable sample field if we're the clock trigger
                         if (currentTrigger.isClock) { sampleFilenameTB.Enabled = false; }
 
-                        sampleFilenameTB.TextChanged += (object s, EventArgs ea) => { currentTrigger.sampleFilename = sampleFilenameTB.Text; };
+                        sampleFilenameTB.TextChanged += (object sender, EventArgs ea) => { currentTrigger.sampleFilename = sampleFilenameTB.Text; };
 
                         sampleSelectionPanel.Controls.Add(sampleFilenameTB);
                                                 
@@ -1237,7 +1285,7 @@ namespace SoniFight
                         // Disable sample volume field if we're the clock trigger
                         if (currentTrigger.isClock) { sampleVolumeTB.Enabled = false; }
 
-                        sampleVolumeTB.TextChanged += (object s, EventArgs ea) => {
+                        sampleVolumeTB.TextChanged += (object sender, EventArgs ea) => {
                             float x;
                             bool result = float.TryParse(sampleVolumeTB.Text, out x);
                             if (result)
@@ -1278,7 +1326,7 @@ namespace SoniFight
                         // Disable sample speed field if we're not the clock trigger
                         if (currentTrigger.isClock) { sampleSpeedTB.Enabled = false; }
 
-                        sampleSpeedTB.TextChanged += (object s, EventArgs ea) =>
+                        sampleSpeedTB.TextChanged += (object sender, EventArgs ea) =>
                         {
                             float x;
                             bool result = float.TryParse(sampleSpeedTB.Text, out x);
@@ -1313,7 +1361,7 @@ namespace SoniFight
 
                         CheckBox isClockCB = new CheckBox();
                         isClockCB.Checked = currentTrigger.isClock;
-                        isClockCB.CheckedChanged += (object s, EventArgs ea) => { currentTrigger.isClock = isClockCB.Checked; };
+                        isClockCB.CheckedChanged += (object sender, EventArgs ea) => { currentTrigger.isClock = isClockCB.Checked; };
                         isClockCB.Tag = "isClockCB";
                         isClockCB.Anchor = AnchorStyles.Right;
                         isClockCB.Dock = DockStyle.Fill;
@@ -1365,7 +1413,7 @@ namespace SoniFight
 
                         CheckBox activeCB = new CheckBox();
                         activeCB.Checked = currentTrigger.active;
-                        activeCB.CheckedChanged += (object s, EventArgs ea) => { currentTrigger.active = activeCB.Checked; };
+                        activeCB.CheckedChanged += (object sender, EventArgs ea) => { currentTrigger.active = activeCB.Checked; };
                         activeCB.Tag = "activeCB";
                         activeCB.Anchor = AnchorStyles.Right;
                         activeCB.Dock = DockStyle.Fill;
@@ -1381,7 +1429,7 @@ namespace SoniFight
                         deleteTriggerBtn.Anchor = AnchorStyles.Right;
                         deleteTriggerBtn.Margin = padding;
                         deleteTriggerBtn.BackColor = Color.Red;
-                        deleteTriggerBtn.Click += (object s, EventArgs ea) =>
+                        deleteTriggerBtn.Click += (object sender, EventArgs ea) =>
                         {
                             try
                             {
@@ -1416,7 +1464,7 @@ namespace SoniFight
 
 
 
-        private void addWatchButton_Click(object sender, EventArgs e)
+        private void addWatchButton_Click(object senderender, EventArgs e)
         {
             currentUILabel.Text = "Add Watch";
 
@@ -1424,7 +1472,8 @@ namespace SoniFight
             TableLayoutPanel panel = this.gcPanel;
             clearPanel(panel);
 
-            panel.Width = 400;// = new System.Windows.Forms.Padding(100);
+            panel.Width = detailsPanelWidth;
+            panel.Padding = padding;
 
             currentWatch = new Watch();
             //currentWatch.Id = gameConfig.watchList.Count;
@@ -1450,14 +1499,15 @@ namespace SoniFight
             tv.Focus();
         }
 
-        private void addTriggerButton_Click(object sender, EventArgs e)
+        private void addTriggerButton_Click(object senderender, EventArgs e)
         {
             currentUILabel.Text = "Add Trigger";
 
             // Get the panel and remove all controls
             TableLayoutPanel panel = this.gcPanel;
             clearPanel(panel);
-            panel.Width = 400;
+            panel.Width = detailsPanelWidth;
+            panel.Padding = padding;
 
             // Create a new trigger and add it to the list
             currentTrigger = new Trigger();
@@ -1480,7 +1530,7 @@ namespace SoniFight
             tv.Focus();
         }
 
-        private void cloneTriggerButton_Click(object sender, EventArgs e)
+        private void cloneTriggerButton_Click(object senderender, EventArgs e)
         {
             currentUILabel.Text = "Clone Trigger";
 
@@ -1494,7 +1544,8 @@ namespace SoniFight
             // Get the panel and remove all controls
             TableLayoutPanel panel = this.gcPanel;
             clearPanel(panel);
-            panel.Width = detailsPanelX;
+            panel.Width = detailsPanelWidth;
+            panel.Padding = padding;
 
             // Create a new trigger and use the one parameter Trigger constructor to make it a deep-copy of the existing current trigger
             currentTrigger = new Trigger(currentTrigger);
@@ -1518,7 +1569,7 @@ namespace SoniFight
             tv.Focus();
         }
 
-        private void cloneWatchButton_Click(object sender, EventArgs e)
+        private void cloneWatchButton_Click(object senderender, EventArgs e)
         {
             currentUILabel.Text = "Clone Watch";
 
@@ -1533,6 +1584,7 @@ namespace SoniFight
             TableLayoutPanel panel = this.gcPanel;
             clearPanel(panel);
             panel.Width = detailsPanelWidth;
+            panel.Padding = padding;
 
             // Create a new trigger and use the one parameter Trigger constructor to make it a deep-copy of the existing current trigger
             currentWatch = new Watch(currentWatch);
@@ -1556,7 +1608,7 @@ namespace SoniFight
             tv.Focus();
         }
 
-        private void appTitleLable_Click(object sender, EventArgs e)
+        private void appTitleLable_Click(object senderender, EventArgs e)
         {
 
         }

@@ -7,25 +7,17 @@ using IrrKlang;
 namespace SoniFight
 {
     public class SoundPlayer
-    {
-        // Import functionality to load a library
-        [DllImport("kernel32.dll")]
-        public static extern IntPtr LoadLibrary(string dllToLoad);
-
-        private static int numSamples;
-        
-        private static bool soundPlaying = false;
-        
+    {        
         // We'll build up a dictionary (i.e. list of key-value pairs) mapping the sample filename to the actual loaded sample
-        // which can be used by any given GameConfig
-        //private static Dictionary<string, ISoundSource> sampleDictionary = new Dictionary<string, ISoundSource>();
+        // which can be used by any given GameConfig        
         private static Dictionary<string, ISound> sampleDictionary = new Dictionary<string, ISound>();
 
+        // The sound engine object itself
         private static ISoundEngine soundEngine;
 
+        // Constructor
         public SoundPlayer()
         {
-            numSamples = 0;
             soundEngine = new ISoundEngine();            
         }
 
@@ -53,8 +45,6 @@ namespace SoniFight
                 //Console.WriteLine("Added: " + configDirectory + sampleName);
             }
 
-            ++numSamples;
-
             return true;
         }
 
@@ -67,16 +57,16 @@ namespace SoniFight
             return false;
         }
 
+        // Method to check if any sample in the dictionary is currently playing
         public static bool IsPlaying()
-        {
-            // Release all samples in the dictionary then clear it
+        {        
             try
             {
                 foreach (KeyValuePair<string, ISound> sample in sampleDictionary)
                 {
                     if (soundEngine.IsCurrentlyPlaying(sample.Key))
                     {
-                        Console.WriteLine("FOUND PLAYING SAMPLE: " + sample.Key);
+                        //Console.WriteLine("FOUND PLAYING SAMPLE: " + sample.Key);
                         return true;
                     }
                 }
@@ -88,7 +78,7 @@ namespace SoniFight
             return false;
         }
 
-        // Update the SoundEngine
+        // Method to update the SoundEngine
         public static void updateEngine()
         {
             // We must call the Update method on the SoundEngine several times per second for everything to run smoothly, especially
@@ -96,33 +86,22 @@ namespace SoniFight
             soundEngine.Update();
         }
 
-        
+        // Method to play the sample identified by the key at the volume and pitch provided
         public static void Play(string sampleFilename, float volume, float pitch)
         {
-            // If we have a sample loaded with a given filename, then play it...
+            // If we have a sample loaded with a given filename...
             if ( sampleDictionary.ContainsKey(sampleFilename) )
             {
-                //TODO: Really need to use a ChannelGroup here with a pool of channels so I can play on the next available channel because
-                //      I think changing the volume/pitch on the channel will change it for all samples playing not just 'this' sample being played.
-
+                // ...then set the volume and pitch of the specified sample and then play it
                 sampleDictionary[sampleFilename].Volume = volume;
                 sampleDictionary[sampleFilename].PlaybackSpeed = pitch;
                 soundEngine.Play2D(sampleFilename);
             }
             else // Warn user of issue
-            {
-                string s = "WARNING: Sample: " + sampleFilename + " does not exist in sampleDictionary.";
-                Console.WriteLine(s);
-            }
-            
-        }
-
-        public static void StopChannel()
-        {
-            //if (Channel != null && IsPlaying()) { Channel.stop(); }
-            soundEngine.StopAllSounds();
-        }
-
+            {                
+                Console.WriteLine("WARNING: Sample: " + sampleFilename + " does not exist in sampleDictionary.");
+            }            
+        }                
         
         // Method to unload all samples and clear the sample dictionary
         public static void UnloadAllSamples()
@@ -151,5 +130,7 @@ namespace SoniFight
             //FMODSystem.release();
             soundEngine.Dispose();
         }
-    }
-}
+
+    } // End of SoundPlayer class
+
+} // End of SoniFight namespace

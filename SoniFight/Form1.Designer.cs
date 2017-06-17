@@ -117,7 +117,7 @@ namespace SoniFight
             this.refreshButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshButton.Location = new System.Drawing.Point(626, 41);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(277, 48);
+            this.refreshButton.Size = new System.Drawing.Size(277, 46);
             this.refreshButton.TabIndex = 5;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -150,9 +150,9 @@ namespace SoniFight
             this.quitButton.AccessibleName = "Quit button";
             this.quitButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.quitButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quitButton.Location = new System.Drawing.Point(3, 338);
+            this.quitButton.Location = new System.Drawing.Point(3, 340);
             this.quitButton.Name = "quitButton";
-            this.quitButton.Size = new System.Drawing.Size(311, 50);
+            this.quitButton.Size = new System.Drawing.Size(311, 46);
             this.quitButton.TabIndex = 4;
             this.quitButton.Text = "Quit";
             this.quitButton.UseVisualStyleBackColor = true;
@@ -165,9 +165,9 @@ namespace SoniFight
             this.createNewConfigButton.AccessibleName = "Create new config button";
             this.createNewConfigButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.createNewConfigButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createNewConfigButton.Location = new System.Drawing.Point(3, 267);
+            this.createNewConfigButton.Location = new System.Drawing.Point(3, 266);
             this.createNewConfigButton.Name = "createNewConfigButton";
-            this.createNewConfigButton.Size = new System.Drawing.Size(311, 44);
+            this.createNewConfigButton.Size = new System.Drawing.Size(311, 46);
             this.createNewConfigButton.TabIndex = 3;
             this.createNewConfigButton.Text = "Create New Config";
             this.createNewConfigButton.UseVisualStyleBackColor = true;
