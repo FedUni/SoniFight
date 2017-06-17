@@ -67,18 +67,15 @@
       <name>Clock trigger for InGame vs InMenu determination</name>
       <description>Round timer. 90 down to 0 as an int</description>
       <value xsi:type="xsd:string">90</value>
-      <triggerType>Once</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>1</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>beep.mp3</sampleFilename>
+      <sampleFilename>NO-SAMPLE-FOR-CLOCK</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>true</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -86,8 +83,7 @@
       <name>P1 Health Half</name>
       <description>Says half health</description>
       <value xsi:type="xsd:string">0.5</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>2</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -96,8 +92,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -105,8 +99,7 @@
       <name>P1 Health Quarter</name>
       <description>Says health quarter.</description>
       <value xsi:type="xsd:string">0.25</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>2</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -115,8 +108,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -124,8 +115,7 @@
       <name>P1 Health Low</name>
       <description>Says health low when 10% or less.</description>
       <value xsi:type="xsd:string">0.1</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>2</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -134,8 +124,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -143,9 +131,8 @@
       <name>Clock 45</name>
       <description>Says clock 45 at the halfway point of the round</description>
       <value xsi:type="xsd:string">45</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InGame</allowanceType>
       <watchOneId>1</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -153,8 +140,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -162,9 +147,8 @@
       <name>Clock 10</name>
       <description>Says clock 10 when the clock hits that value.</description>
       <value xsi:type="xsd:string">10</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
-      <allowanceType>Any</allowanceType>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InGame</allowanceType>
       <watchOneId>1</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
@@ -172,8 +156,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -181,8 +163,7 @@
       <name>P1 - One Third Bar - Enhanced</name>
       <description>Says Enhanced when you get one third bar.</description>
       <value xsi:type="xsd:string">0.33</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>3</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -191,8 +172,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -200,8 +179,7 @@
       <name>P1 - Two Thirds Bar - Breaker</name>
       <description>Says breaker when player 1 gets two thirds bar.</description>
       <value xsi:type="xsd:string">0.66</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>3</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -210,8 +188,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -219,8 +195,7 @@
       <name>P1 - Full Bar - X-Ray</name>
       <description>Says X-Ray when player 1 gets full bar.</description>
       <value xsi:type="xsd:string">1</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>3</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -229,8 +204,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -238,8 +211,7 @@
       <name>P2 Health Half</name>
       <description>Says half health.</description>
       <value xsi:type="xsd:string">0.5</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -248,8 +220,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -257,8 +227,7 @@
       <name>P2 Health Quarter</name>
       <description>Says health quarter.</description>
       <value xsi:type="xsd:string">0.25</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -267,8 +236,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -276,8 +243,7 @@
       <name>P2 Health Low</name>
       <description>Says health low when 10% or less.</description>
       <value xsi:type="xsd:string">0.1</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -286,8 +252,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -295,8 +259,7 @@
       <name>P2 - One Third Bar - Enhanced</name>
       <description>Says Enhanced when player 2 gets one third bar.</description>
       <value xsi:type="xsd:string">0.33</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>5</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -305,8 +268,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -314,8 +275,7 @@
       <name>P2 - Two Thirds Bar - Breaker</name>
       <description>Says breaker when player 2 gets two thirds bar.</description>
       <value xsi:type="xsd:string">0.66</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>5</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -324,8 +284,6 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
     <Trigger>
@@ -333,8 +291,7 @@
       <name>P2 - Full Bar - X-Ray</name>
       <description>Says X-Ray when player 2 gets full bar.</description>
       <value xsi:type="xsd:string">1</value>
-      <triggerType>Recurring</triggerType>
-      <controlType>Normal</controlType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>5</watchOneId>
       <watchTwoId>-1</watchTwoId>
@@ -343,12 +300,10 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <triggerStopList />
-      <triggerResetList />
       <active>true</active>
     </Trigger>
   </triggerList>
-  <Description>Basic in-game triggers for Mortal Kombat 9 - Al Lansley 2017-06-09</Description>
+  <Description>Basic in-game triggers for Mortal Kombat 9 - Al Lansley 2017-06-17</Description>
   <ProcessName>MKKE</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>

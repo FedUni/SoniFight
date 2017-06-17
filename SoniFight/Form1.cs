@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Threading;
 
 namespace SoniFight
 {
@@ -17,15 +18,13 @@ namespace SoniFight
 
         public static GameConfig gameConfig;
 
-        string[] dataTypesArray = { "Integer", "Short", "Float", "Double", "Boolean", "String (UTF-16)" };
+        string[] dataTypesArray = { "Integer", "Short", "Long", "Float", "Double", "Boolean", "String (UTF-8)", "String (UTF-16)" };
 
         string[] comparisonTypesArray = { "EqualTo", "LessThan", "LessThanOrEqualTo", "GreaterThan", "GreaterThanOrEqualTo", "NotEqualTo", "Changed", "DistanceBetween" };
 
-        string[] triggerTypesArray = { "Once", "Recurring", "Continuous" };
+        string[] triggerTypesArray = { "Normal", "Continuous", "Modifier" };
 
-        string[] controlTypesArray = { "Normal", "Reset", "Mute" };
-
-        string[] allowanceTypesArray = { "Any", "In game", "In menu" };
+        string[] allowanceTypesArray = { "Any", "In-Game", "In-Menu" };
 
         static int selectedConfigDropdownIndex = 0;
 
@@ -118,16 +117,23 @@ namespace SoniFight
                 // Re-select the previously selected index
                 this.configsComboBox.SelectedIndex = selectedConfigDropdownIndex;
 
-                MainForm.gameConfig.ConfigDirectory = this.configsComboBox.GetItemText(this.configsComboBox.SelectedItem);
-            } 
+                if (gameConfig != null)
+                {
+                    MainForm.gameConfig.ConfigDirectory = this.configsComboBox.GetItemText(this.configsComboBox.SelectedItem);
+                }
+
+            } // End of if we found some config directories section
         }
 
         // Update selected config string (we'll use this string to load the 'config.xml' file from within this directory.
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {            
+        {
             // Set the config directory to the text on the dropdown
             // Note: The config is activated when the 'activateAndValidate' method is called
-            MainForm.gameConfig.ConfigDirectory = this.configsComboBox.GetItemText(this.configsComboBox.SelectedItem);
+            if (gameConfig != null)
+            {
+                MainForm.gameConfig.ConfigDirectory = this.configsComboBox.GetItemText(this.configsComboBox.SelectedItem);
+            }
 
             //Console.WriteLine("Selected index text / config dir is now: " + MainForm.gameConfig.ConfigDirectory);
 
@@ -142,7 +148,17 @@ namespace SoniFight
             // Close this form   
             this.Close();
 
-            // Note: Once this happens SoundPlayer.ShutDown() will be called from the main method because we've been stuck in this form loop up until then.
+            // This sets cancellation to pending, which we handle in the associated doWork method
+            // to actually perform the cancellation.
+            // Note: This is just the code from the stop running config button method - but it's required as otherwise
+            //       we get a "Pure Virtual Function" error on shutdown.
+            GameConfig.processConnectionBW.CancelAsync();
+            Program.sonificationBGW.CancelAsync();
+            this.Text = formTitle + " Status: Stopped";
+            running = false;
+            Thread.Sleep(500);
+
+            // Note: Once here SoundPlayer.ShutDown() will be called from the main method because we've been stuck in this form loop up until then.
         }
 
         private void createNewConfigButton_Click(object sender, EventArgs e)
@@ -316,12 +332,23 @@ namespace SoniFight
                     // Read GameConfig object from file
                     string pathToConfig = ".\\Configs\\" + this.configsComboBox.Text + "\\config.xml";
 
+                    // Game config could not be loaded in previous pass? Bail.
+                    if (gameConfig == null)
+                    {
+                        return;
+                    }
+
                     // Maintain the config directory as the actual directory we're in!
                     String s = gameConfig.ConfigDirectory;
                     gameConfig = Utils.ReadFromXmlFile<GameConfig>(pathToConfig);
+
+                    // Could not deserialize XML? Bail.
+                    if (gameConfig == null)
+                    {
+                        return;
+                    }
+
                     gameConfig.ConfigDirectory = s;
-
-
                 }
 
                 RebuildTreeViewFromGameConfig();
@@ -343,10 +370,10 @@ namespace SoniFight
             // This sets cancellation to pending, which we handle in the associated doWork method
             // to actually perform the cancellation.
             GameConfig.processConnectionBW.CancelAsync();
-            Program.sonificationBGW.CancelAsync();
-
+            Program.sonificationBGW.CancelAsync();            
             this.Text = formTitle + " Status: Stopped";
             running = false;
+            Thread.Sleep(500);
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
@@ -1092,6 +1119,7 @@ namespace SoniFight
                         TextBox sampleVolumeTB = new TextBox();
                         TextBox sampleSpeedTB = new TextBox();
 
+                        /*
                         // ----- Row 8 - Control Type (normal / reset / mute) row -----
                         Label triggerControlLabel = new Label();
                         triggerControlLabel.AutoSize = true;
@@ -1136,8 +1164,8 @@ namespace SoniFight
                         triggerControlCB.Margin = padding;
                         panel.Controls.Add(triggerControlCB, 1, row); // Control, Column, Row
                         row++;
-
-
+                        */
+                        
 
                         // ----- Row 9 - Trigger sample row -----
                         Label sampleFilenameLabel = new Label();
@@ -1161,7 +1189,8 @@ namespace SoniFight
                         sampleFilenameTB.Dock = DockStyle.Fill;
                         sampleFilenameTB.Margin = new System.Windows.Forms.Padding(0);
 
-                        if (triggerControlCB.SelectedIndex != 0) { sampleFilenameTB.Enabled = false; } // Disable sample field if we're not a 'Normal' trigger (i.e. Reset or Mute type)
+                        // Disable sample field if we're the clock trigger
+                        if (currentTrigger.isClock) { sampleFilenameTB.Enabled = false; }
 
                         sampleFilenameTB.TextChanged += (object s, EventArgs ea) => { currentTrigger.sampleFilename = sampleFilenameTB.Text; };
 
@@ -1205,7 +1234,8 @@ namespace SoniFight
                         sampleVolumeTB.Dock = DockStyle.Fill;
                         sampleVolumeTB.Margin = padding;
 
-                        if (triggerControlCB.SelectedIndex != 0) { sampleVolumeTB.Enabled = false; } // Disable sample volume field if we're not a 'Normal' trigger (i.e. Reset or Mute type)
+                        // Disable sample volume field if we're the clock trigger
+                        if (currentTrigger.isClock) { sampleVolumeTB.Enabled = false; }
 
                         sampleVolumeTB.TextChanged += (object s, EventArgs ea) => {
                             float x;
@@ -1245,7 +1275,8 @@ namespace SoniFight
                         sampleSpeedTB.Dock = DockStyle.Fill;
                         sampleSpeedTB.Margin = padding;
 
-                        if (triggerControlCB.SelectedIndex != 0) { sampleSpeedTB.Enabled = false; } // Disable sample speed field if we're not a 'Normal' trigger (i.e. Reset or Mute type)
+                        // Disable sample speed field if we're not the clock trigger
+                        if (currentTrigger.isClock) { sampleSpeedTB.Enabled = false; }
 
                         sampleSpeedTB.TextChanged += (object s, EventArgs ea) =>
                         {

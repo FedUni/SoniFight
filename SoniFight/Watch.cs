@@ -18,14 +18,13 @@ namespace SoniFight
         {
             IntType,
             ShortType,
+            LongType,
             FloatType,
             DoubleType,
             BoolType,
-            StringType
+            StringUTF8Type,
+            StringUTF16Type
         }
-
-        private dynamic value;
-
 
         // Default constructor
         public Watch() { }
@@ -47,22 +46,35 @@ namespace SoniFight
             }            
         }
 
+        // Method to read a value of a given type from memory
         public dynamic getDynamicValueFromType()
         {
             switch (valueType)
             {
                 case Watch.ValueType.IntType:
                     return (Int32)Utils.getIntFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
+
                 case Watch.ValueType.ShortType:
                     return (Int16)Utils.getShortFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
+
+                case Watch.ValueType.LongType:
+                    return (Int16)Utils.getLongFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
+
                 case Watch.ValueType.FloatType:
                     return (float)Utils.getFloatFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
+
                 case Watch.ValueType.DoubleType:
                     return (double)Utils.getDoubleFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
+
                 case Watch.ValueType.BoolType:
                     return (bool)Utils.getBoolFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
-                case Watch.ValueType.StringType:
+
+                case Watch.ValueType.StringUTF8Type:
+                    return (string)Utils.getUTF8FromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
+
+                case Watch.ValueType.StringUTF16Type:
                     return (string)Utils.getUTF16FromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
+
                 default:
                     MessageBox.Show("Value type in getDynamicValueFromType not recognised. Value type we got was: " + valueType.ToString());
                     return null;
@@ -140,7 +152,6 @@ namespace SoniFight
             set { active = value; }
         }
 
-
         // Method to update the destination address of this watch. This is called once per poll on all watches.
         public int updateDestinationAddress(int processHandle, int baseAddress)
         {
@@ -171,15 +182,7 @@ namespace SoniFight
             // Note: The specific type of value we'll read at this address will be based on the value type.
 
             return destinationAddress;
-        }
-
-        // This method MUST be implemented by all concrete Watch types (ValueWatch, PairWatch and ToggleWatch)
-        // Note: A 'abstract' method MUST be overridden in any inheriting class, a 'virtual' method -may- be overriden, and if not
-        //       then an existing version will be used, which may or may not work.
-        /*public void checkTriggers()
-        {
-
-        }*/
+        }       
 
     } // End of namespace
 }

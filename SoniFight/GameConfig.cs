@@ -166,8 +166,6 @@ namespace SoniFight
                         Console.WriteLine("Found process base address at: " + MainForm.gameConfig.ProcessBaseAddress);
                     }
 
-
-
                     // Calculate initial destination addresses.
                     // Note: These get re-calculated per iteration, but these are the initial values.
                     // TODO: Remove this and see if it still works!
@@ -179,13 +177,12 @@ namespace SoniFight
                     // Load all samples
                     foreach (Trigger t in triggerList)
                     {
-                        // Load sample if not already loaded - but only if a normal trigger and NOT the main clock trigger!
-                        if (!SoundPlayer.SampleLoaded(t.sampleFilename) && t.controlType == Trigger.ControlType.Normal && !t.isClock)
+                        // Load sample if not already loaded and not the clock trigger
+                        if (!SoundPlayer.SampleLoaded(t.sampleFilename) && !t.isClock)
                         {
-                            SoundPlayer.LoadSample(ConfigDirectory, t.sampleFilename, t.allowanceType);
-                        }
+                            SoundPlayer.LoadSample(ConfigDirectory, t.sampleFilename);
+                        }                        
                     }
-
 
                     e.Cancel = true;
 
@@ -201,7 +198,7 @@ namespace SoniFight
 
         public bool activate()
         {
-            Process[] processArray = null;
+            //Process[] processArray = null;
 
             Console.WriteLine("Attempting to connect to process: " + processName);
             //Console.WriteLine("Press any key to abort.");

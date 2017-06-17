@@ -215,7 +215,12 @@ namespace SoniFight
                         t.value = Convert.ChangeType(t.value, TypeCode.Int16);
                         t.previousValue = new short();
                         t.previousValue = t.value; // By value
-                        break; 
+                        break;
+                    case Watch.ValueType.LongType:
+                        t.value = Convert.ChangeType(t.value, TypeCode.Int64);
+                        t.previousValue = new long();
+                        t.previousValue = t.value; // By value
+                        break;
                     case Watch.ValueType.FloatType:
                         t.value = Convert.ChangeType(t.value, TypeCode.Single);
                         t.previousValue = new float();
@@ -231,7 +236,8 @@ namespace SoniFight
                         t.previousValue = new bool();
                         t.previousValue = t.value; // By value
                         break;
-                    case Watch.ValueType.StringType:
+                    case Watch.ValueType.StringUTF8Type:
+                    case Watch.ValueType.StringUTF16Type:
                         t.value = Convert.ChangeType(t.value, TypeCode.String);
                         t.previousValue = t.value.ToString(); // Strings are reference types so we create a new copy to ensure value and previousValue don't point to the same thing!
                         break;
@@ -350,14 +356,14 @@ namespace SoniFight
                     readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
                     
                     // Sonfiy for continuous events
-                    if (t.comparisonType == Trigger.ComparisonType.DistanceBetween)
+                    if (t.triggerType == Trigger.TriggerType.Continuous)
                     {
                         readValue2 = Utils.getWatchWithId(t.watchTwoId).getDynamicValueFromType();
 
                         /******************* COMPLETE THIS ***********************/
                     }
-                    // Sonify for recurring or single events which haven't yet been triggered
-                    else if (t.triggerType == Trigger.TriggerType.Recurring)
+                    // Sonify for normal (i.e. recurring) triggers...
+                    else if (t.triggerType == Trigger.TriggerType.Normal)
                     {
                         // Check our trigger for a match
                         foundSonicMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType() );
@@ -365,7 +371,7 @@ namespace SoniFight
                         // If we found a match...
                         if (foundSonicMatch)
                         {
-                            // InGame? Fine - play the sample.
+                            // InGame? Fine - play the sample because we don't stop InGame triggers from overlapping too heavily.
                             if (Program.gameState == GameState.InGame)
                             {
                                 Console.WriteLine("InGame sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
@@ -376,10 +382,13 @@ namespace SoniFight
                             }
                             else // GameState must be InMenu
                             {
-                                // 
-                                if (!SoundPlayer.IsPlaying())
-                                //if (menuTriggerQueue.Count == 0)
+                                //Console.WriteLine("Found InMenu match: " + t.sampleFilename);
+
+                                // Not already playing a menu sample? Great - play the one that matched.
+                                if ( !SoundPlayer.IsPlaying() )
                                 {
+                                    //Console.WriteLine("DING!DING!DING!DING!DING!DING!DING!DING!DING!DING!DING!DING!DING!DING!DING!DING!DING!DING!DING!");
+
                                     // Not already playing a sample? So play this menu sample!
                                     Console.WriteLine("InMenu sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
 
@@ -392,22 +401,15 @@ namespace SoniFight
                                 else // We are in the menus and already playing a menu sonification event...
                                 {
                                     // If there's nothing in the queue add this menu trigger.
-                                    if (menuTriggerQueue.Count < 1)
+                                    if (menuTriggerQueue.Count == 0)
                                     {
                                         menuTriggerQueue.Enqueue(t);
                                         //Console.WriteLine("Queue is less than one so adding menu trigger to queue. New queue size is: " + menuTriggerQueue.Count);
                                     }
                                     else // Already have one or more elements in the queue?
                                     {
-                                        // Remove queued triggers from the front of the queue until we only have two left...
+                                        // Clear the queue and enque this sample for playing at the next interval
                                         menuTriggerQueue.Clear();
-                                        /*while (menuTriggerQueue.Count > 1)
-                                        {                                            
-                                            menuTriggerQueue.Dequeue();
-                                            //Console.WriteLine("Removed element from queue in while loop. New queue size is: " + menuTriggerQueue.Count);
-                                        }*/
-
-                                        // ...then add the current trigger to the queue
                                         menuTriggerQueue.Enqueue(t);
 
                                         //Console.WriteLine("Adding element to queue. New queue size is: " + menuTriggerQueue.Count);
@@ -419,7 +421,7 @@ namespace SoniFight
 
                         } // End of found sonic match section                       
 
-                    } // End of if trigger type is once section                        
+                    } // End of if trigger type is Normal section                        
 
                     // If we have a queued menu trigger and we are now not playing, play the queued trigger and remove it from the menuTriggerQueue
 
@@ -427,7 +429,8 @@ namespace SoniFight
                     double timeSinceLastMenuSonificationMS = ((TimeSpan)(DateTime.Now - lastMenuSonificationTime)).TotalMilliseconds;
 
                     // If we have a queued menu trigger and either i.) We're not currently playing audio OR ii.) It's been at least half a second since the last menu sonification event...
-                    if (menuTriggerQueue.Count > 0 && (!SoundPlayer.IsPlaying() || timeSinceLastMenuSonificationMS > 500.0) )
+                    //if (menuTriggerQueue.Count > 0 && (!SoundPlayer.IsPlaying() || timeSinceLastMenuSonificationMS > 500.0) )
+                    if (menuTriggerQueue.Count > 0 && timeSinceLastMenuSonificationMS > 500.0)
                     {
                         // ...then we play the queued sample!
                         

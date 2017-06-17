@@ -81,8 +81,7 @@ namespace SoniFight
             }
             catch (Exception e)
             {
-                Console.WriteLine("Could not deserialize object from XML file.");
-                Console.WriteLine(e.Message);
+                MessageBox.Show("Could not deserialize config from XML file: " + e.Message);
             }
             finally
             {
@@ -252,7 +251,7 @@ namespace SoniFight
             return false;
         }
 
-
+        // Read and return an int
         public static int getIntFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;            
@@ -261,6 +260,7 @@ namespace SoniFight
             return BitConverter.ToInt32(buf, 0);
         }
 
+        // Read and return a short
         public static short getShortFromAddress(int processHandle, int address)
         {   
             int bytesRead = 0;
@@ -269,6 +269,16 @@ namespace SoniFight
             return BitConverter.ToInt16(buf, 0);
         }
 
+        // Read and return a long
+        public static Int64 getLongFromAddress(int processHandle, int address)
+        {
+            int bytesRead = 0;
+            byte[] buf = new byte[8];
+            ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
+            return BitConverter.ToInt64(buf, 0);
+        }
+
+        // Read and return a float
         public static float getFloatFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -277,18 +287,16 @@ namespace SoniFight
             return BitConverter.ToSingle(buf, 0);
         }
 
+        // Read and return a double
         public static double getDoubleFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
             byte[] buf = new byte[8];
             ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
-
-            //double temp = BitConverter.ToDouble(buf, 0);
-            //Console.WriteLine("Read double as: " + temp);
-
             return BitConverter.ToDouble(buf, 0);
         }
 
+        // Read and return a boolean
         public static bool getBoolFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -297,6 +305,43 @@ namespace SoniFight
             return BitConverter.ToBoolean(buf, 0);
         }
 
+        // Read and return a UTF-8 formatted string
+        public static string getUTF8FromAddress(int processHandle, int address)
+        {
+            int bytesRead = 0;
+
+            // We'll read one UTF-16 character at a time
+            byte[] buf = new byte[1];
+
+            // We'll keep a char count to abort after a set number of chars if bad things happen
+            int charCount = 0;
+
+            string s = "";
+            do
+            {
+                // Reset how many bytes we've read then read 2 bytes of data
+                bytesRead = 0;
+                ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
+
+                // We do NOT want the null character on the end of your returned string - so if we find it we bail before adding
+                if (buf[0] == 0)
+                {
+                    break;
+                }
+
+                // (Implied else) Add the UTF-16 representation of the 2-bytes to our string
+                s += System.Text.Encoding.Unicode.GetString(buf);
+
+                // Move along by 2 bytes (text being read is UTF16)
+                address += 1;
+
+            } while (!((buf[0] == 0) || (++charCount >= Program.TEXT_COMPARISON_CHAR_LIMIT))); // Quit when we read a null-terminator [00] or hit 33 chars
+
+            // Return a version of the read string with trailing spaces trimmed so the user does not have to add trailing spaces to their match criteria (which would be ugly - espcially for non-sighted users).
+            return s.TrimEnd(); // Still trim spaces at end.
+        }
+
+        // Read and return a UTF-16 formatted string
         public static string getUTF16FromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -328,10 +373,6 @@ namespace SoniFight
 
             } while (!((buf[0] == 0 && buf[1] == 0) || (++charCount >= Program.TEXT_COMPARISON_CHAR_LIMIT))); // Quit when we read a null-terminator [00] or hit 33 chars
 
-            //Console.WriteLine("Characters read: " + charCount);
-
-            //Console.WriteLine("About to return: \"" + s.TrimEnd() + "\"");
-
             // Return a version of the read string with trailing spaces trimmed so the user does not have to add trailing spaces to their match criteria (which would be ugly - espcially for non-sighted users).
             return s.TrimEnd(); // Still trim spaces at end.
         }
@@ -341,25 +382,14 @@ namespace SoniFight
         // Source: http://stackoverflow.com/questions/15535214/removing-a-specific-row-in-tablelayoutpanel
         public static void removeRow(TableLayoutPanel panel, int rowIndex)
         {
-            /*if (row_index_to_remove >= panel.RowCount)
-            {
-                Console.WriteLine("Index greater than rowcount =/");
-                return;
-            }*/
-
-            //this.SuspendLayout();
-            //panel.Parent.Parent.SuspendLayout();
-            //panel.Parent.SuspendLayout();
-            //panel.SuspendLayout();
-
-            // delete all controls of row that we want to delete
+            // Delete all controls of row that we want to delete
             for (int i = 0; i < panel.ColumnCount; i++)
             {
                 var control = panel.GetControlFromPosition(i, rowIndex);
                 panel.Controls.Remove(control);
             }
 
-            // move up row controls that comes after row we want to remove
+            // Move up row controls that comes after row we want to remove
             for (int i = rowIndex + 1; i < panel.RowCount; i++)
             {
                 for (int j = 0; j < panel.ColumnCount; j++)
@@ -372,14 +402,8 @@ namespace SoniFight
                 }
             }
 
-            // remove last row
-            //panel.RowStyles.RemoveAt(panel.RowCount - 1);
+            // Remove last row
             if (panel.RowCount > 0) panel.RowCount--;
-
-            //panel.ResumeLayout();
-            //panel.Parent.ResumeLayout();
-            //panel.Parent.Parent.ResumeLayout();
-            //this.ResumeLayout();
         }
 
         public static void moveRowsDownByOne(TableLayoutPanel panel, int startingRowIndex)
@@ -390,11 +414,6 @@ namespace SoniFight
 
             // Add a new row to the table
             panel.RowCount++;
-
-            //this.SuspendLayout();
-            //panel.Parent.Parent.SuspendLayout();
-            //panel.Parent.SuspendLayout();
-            //panel.SuspendLayout();
 
             for (int rowLoop = panel.RowCount - 1; rowLoop >= startingRowIndex; rowLoop--)
             {
@@ -411,33 +430,18 @@ namespace SoniFight
             }
 
             panel.ResumeLayout();
-            //panel.Parent.ResumeLayout();
-            //panel.Parent.Parent.ResumeLayout();
-            //this.ResumeLayout();
-
-            Console.WriteLine("*****************Row count is: " + panel.RowCount);
         }
 
+        // Return a list of string items split on commas with whitespaces removed and no 'blank' entries
         public static List<string> CommaSeparatedStringToStringList(string s)
-        {
-            /*
-            offset = Convert.ToInt32(hexPointerTrail.ElementAt(loop), 16);
-            myList.Split(',').Select(s => Convert.ToInt32(s)).ToList();
-
-            List<int> pointerList = new List<int>();
-            pointerList = s.Split(',').Select(r => Convert.ToInt32)
-            */
-
-            //return s.Split(',').ToList().Tr;
-
-            // Return a list of string items split on commas with whitespaces removed and no 'blank' entries (i.e. ",   ,")
+        {         
             return s.Split(',')
                    .Select(x => x.Trim())
                    .Where(x => !string.IsNullOrWhiteSpace(x))
                    .ToList();
-
         }
 
+        //
         public static Watch.ValueType GetValueTypeFromInt(int i)
         {
             switch (i)
@@ -447,13 +451,17 @@ namespace SoniFight
                 case 1:
                     return Watch.ValueType.ShortType;
                 case 2:
-                    return Watch.ValueType.FloatType;
+                    return Watch.ValueType.LongType;
                 case 3:
-                    return Watch.ValueType.DoubleType;
+                    return Watch.ValueType.FloatType;
                 case 4:
-                    return Watch.ValueType.BoolType;
+                    return Watch.ValueType.DoubleType;
                 case 5:
-                    return Watch.ValueType.StringType;
+                    return Watch.ValueType.BoolType;
+                case 6:
+                    return Watch.ValueType.StringUTF8Type;
+                case 7:
+                    return Watch.ValueType.StringUTF16Type;
                 default:
                     return Watch.ValueType.IntType;
             }
@@ -467,14 +475,18 @@ namespace SoniFight
                     return 0;
                 case Watch.ValueType.ShortType:
                     return 1;
-                case Watch.ValueType.FloatType:
+                case Watch.ValueType.LongType:
                     return 2;
-                case Watch.ValueType.DoubleType:
+                case Watch.ValueType.FloatType:
                     return 3;
-                case Watch.ValueType.BoolType:
+                case Watch.ValueType.DoubleType:
                     return 4;
-                case Watch.ValueType.StringType:
+                case Watch.ValueType.BoolType:
                     return 5;
+                case Watch.ValueType.StringUTF8Type:
+                    return 6;
+                case Watch.ValueType.StringUTF16Type:
+                    return 7;
                 default:
                     return 0;
             }
@@ -536,13 +548,13 @@ namespace SoniFight
             switch (i)
             {
                 case 0:
-                    return Trigger.TriggerType.Once;
+                    return Trigger.TriggerType.Normal;
                 case 1:
-                    return Trigger.TriggerType.Recurring;
-                case 2:
                     return Trigger.TriggerType.Continuous;
+                case 2:
+                    return Trigger.TriggerType.Modifier;
                 default:
-                    return Trigger.TriggerType.Once;
+                    return Trigger.TriggerType.Normal;
             }
         }
 
@@ -550,50 +562,17 @@ namespace SoniFight
         {
             switch (tt)
             {
-                case Trigger.TriggerType.Once:
+                case Trigger.TriggerType.Normal:
                     return 0;
-                case Trigger.TriggerType.Recurring:
-                    return 1;
                 case Trigger.TriggerType.Continuous:
-                    return 2;
-                default:
-                    return 0;
-            }
-        }
-
-
-        // Method to return the ControlType based on the selected index (int) of a dropdown menu
-        public static Trigger.ControlType GetControlTypeFromInt(int i)
-        {
-            switch (i)
-            {
-                case 0:
-                    return Trigger.ControlType.Normal;
-                case 1:
-                    return Trigger.ControlType.Reset;
-                case 2:
-                    return Trigger.ControlType.Mute;
-                default:
-                    return Trigger.ControlType.Normal;
-            }
-        }
-
-        // Method to return an int based on the ControlType of a trigger
-        public static int GetIntFromControlType(Trigger.ControlType ct)
-        {
-            switch (ct)
-            {
-                case Trigger.ControlType.Normal:
-                    return 0;
-                case Trigger.ControlType.Reset:
                     return 1;
-                case Trigger.ControlType.Mute:
+                case Trigger.TriggerType.Modifier:
                     return 2;
                 default:
                     return 0;
             }
         }
-
+        
         // Method to return the ControlType based on the selected index (int) of a dropdown menu
         public static Trigger.AllowanceType GetAllowanceTypeFromInt(int i)
         {

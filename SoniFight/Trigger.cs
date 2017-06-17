@@ -1,29 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace SoniFight
 {
     public class Trigger
     {
-        // Every trigger must have a destination value of a type,
-        /*
-        [XmlIgnore]
-        public struct Value
-        {
-            public int    intValue;
-            public short  shortValue;
-            public float  floatValue;
-            public double doubleValue;
-            public bool   boolValue;
-            public string stringValue;
-        }*/
-
-        
-
         // Enum of different types of comparisons we can make        
         public enum ComparisonType
         {
@@ -38,18 +18,18 @@ namespace SoniFight
         }
         
         public enum TriggerType
-        {
-            Once,       // Triggers once only when criteria is met (i.e. once when clock timer hits 50)
-            Recurring,  // Triggers when criteria is met, but may trigger again (i.e. when EX bar hits a given level, gets used, and builds up to that level again)
-            Continuous  // Triggers continuously (i.e. distance between players)
+        {            
+            Normal,      // Triggers when criteria is met (i.e. passes a threshold etc). Normal triggers may play multiple times.
+            Continuous,  // Triggers continuously (i.e. distance between players). We may only have a single trigger of type continuous in any GameConfig.
+            Modifier     // Modifies a continuous trigger
         }
 
-        public enum ControlType
+        /*public enum ControlType
         {
             Normal, // Triggers that operate as normal to provide sonification
             Reset,  // Triggers that reset the 'Triggered' flag on all triggers with a TriggerType of Once
             Mute    // Triggers that mute all sonification of Normal triggers
-        }
+        }*/
 
         public enum AllowanceType
         {
@@ -75,7 +55,7 @@ namespace SoniFight
 
         public TriggerType triggerType;
 
-        public ControlType controlType;
+        //public ControlType controlType;
 
         public AllowanceType allowanceType;
 
@@ -93,15 +73,7 @@ namespace SoniFight
 
         // Is this trigger the clock which we use to determine whether we're InGame or InMenu?
         public bool isClock;
-
-        //public List<int> triggerStopList;  // Stops all triggers in the list from playing when this trigger is triggered (list is of id's)
-        //public List<int> triggerResetList; // Resets all triggers in the list to have their triggered flag as false (list is of id's)
-
-
         
-             
-        
-
         // Whether we should use this trigger or not
         public bool active;
 
@@ -116,7 +88,7 @@ namespace SoniFight
             name = "CHANGE_ME";
             description = "CHANGE_ME";
 
-            controlType = ControlType.Normal;
+            triggerType = TriggerType.Normal;
 
             watchOneId = -1;
             watchTwoId = -1;
@@ -140,7 +112,6 @@ namespace SoniFight
             description = source.description;
 
             triggerType = source.triggerType;
-            controlType = source.controlType;
             comparisonType = source.comparisonType;
             allowanceType = source.allowanceType;
 

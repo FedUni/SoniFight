@@ -116,7 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SoniFight-Icon-16x16.ico" />
-    <Content Include="SoniFight-Logo-32x32.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
