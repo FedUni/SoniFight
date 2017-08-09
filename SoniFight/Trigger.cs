@@ -115,6 +115,8 @@ namespace SoniFight
         // Constructor which creates a deep-copy of an existing trigger
         public Trigger(Trigger source)
         {
+            id = source.id;
+
             name = source.name + "-CLONE";
             description = source.description;
 

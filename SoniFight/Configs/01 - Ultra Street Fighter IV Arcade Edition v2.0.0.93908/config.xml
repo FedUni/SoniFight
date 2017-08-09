@@ -304,11 +304,10 @@
       <Description>Resolution, filtering settings etc. Matched as strings.</Description>
       <PointerList>
         <string>DD544</string>
-        <string>15C</string>
-        <string>4</string>
-        <string>10</string>
+        <string>17C</string>
+        <string>4C</string>
         <string>0</string>
-        <string>80</string>
+        <string>0</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
@@ -3030,7 +3029,7 @@
       <id>164</id>
       <name>Graphics Settings 03 - Framerate</name>
       <description>Graphics options comparing with case-sensitive submenu string.</description>
-      <value xsi:type="xsd:string">Setting the framerate to SMOOTH m</value>
+      <value xsi:type="xsd:string">Replay recording in offline modes</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
@@ -5274,7 +5273,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <watchTwoId>162</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-00-640x480.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5290,7 +5289,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <watchTwoId>162</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-01-720x480.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5306,7 +5305,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <watchTwoId>162</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-02-720x576.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5396,7 +5395,7 @@
     </Trigger>
     <Trigger>
       <id>312</id>
-      <name>Options Menu Graphics Res 08 - 1280x800</name>
+      <name>Options Menu Graphics Res 08 - 1280x768</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">8</value>
       <triggerType>Normal</triggerType>
@@ -5404,7 +5403,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-08-1280x800.mp3</sampleFilename>
+      <sampleFilename>Resolution-08-1280x768.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5412,7 +5411,7 @@
     </Trigger>
     <Trigger>
       <id>313</id>
-      <name>Options Menu Graphics Res 09 - 1280x960</name>
+      <name>Options Menu Graphics Res 09 - 1280x800</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">9</value>
       <triggerType>Normal</triggerType>
@@ -5420,7 +5419,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-09-1280x960.mp3</sampleFilename>
+      <sampleFilename>Resolution-09-1280x800.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5428,7 +5427,7 @@
     </Trigger>
     <Trigger>
       <id>314</id>
-      <name>Options Menu Graphics Res 10 - 1280x1024</name>
+      <name>Options Menu Graphics Res 10 - 1280x960</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">10</value>
       <triggerType>Normal</triggerType>
@@ -5436,7 +5435,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-10-1280x1024.mp3</sampleFilename>
+      <sampleFilename>Resolution-10-1280x960.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5444,7 +5443,7 @@
     </Trigger>
     <Trigger>
       <id>315</id>
-      <name>Options Menu Graphics Res 11 - 1366x768</name>
+      <name>Options Menu Graphics Res 11 - 1280x1024</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">11</value>
       <triggerType>Normal</triggerType>
@@ -5452,7 +5451,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-11-1366x768.mp3</sampleFilename>
+      <sampleFilename>Resolution-11-1280x1024.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5460,7 +5459,7 @@
     </Trigger>
     <Trigger>
       <id>316</id>
-      <name>Options Menu Graphics Res 12 - 1400x1050</name>
+      <name>Options Menu Graphics Res 12 - 1360x768</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">12</value>
       <triggerType>Normal</triggerType>
@@ -5468,7 +5467,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-12-1400x1050.mp3</sampleFilename>
+      <sampleFilename>Resolution-12-1360x768.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5476,7 +5475,7 @@
     </Trigger>
     <Trigger>
       <id>317</id>
-      <name>Options Menu Graphics Res 13 - 1440x900</name>
+      <name>Options Menu Graphics Res 13 - 1366x768</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">13</value>
       <triggerType>Normal</triggerType>
@@ -5484,7 +5483,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-13-1440x900.mp3</sampleFilename>
+      <sampleFilename>Resolution-13-1366x768.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5492,7 +5491,7 @@
     </Trigger>
     <Trigger>
       <id>318</id>
-      <name>Options Menu Graphics Res 14 - 1600x900</name>
+      <name>Options Menu Graphics Res 14 - 1400x900</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">14</value>
       <triggerType>Normal</triggerType>
@@ -5500,7 +5499,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-14-1600x900.mp3</sampleFilename>
+      <sampleFilename>Resolution-14-1440x900.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5508,7 +5507,7 @@
     </Trigger>
     <Trigger>
       <id>319</id>
-      <name>Options Menu Graphics Res 15 - 1600x1024</name>
+      <name>Options Menu Graphics Res 15 - 1600x900</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">15</value>
       <triggerType>Normal</triggerType>
@@ -5516,7 +5515,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-15-1600x1024.mp3</sampleFilename>
+      <sampleFilename>Resolution-15-1600x900.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5524,7 +5523,7 @@
     </Trigger>
     <Trigger>
       <id>320</id>
-      <name>Options Menu Graphics Res 16 - 1680x1050</name>
+      <name>Options Menu Graphics Res 16 - 1600x1024</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">16</value>
       <triggerType>Normal</triggerType>
@@ -5532,7 +5531,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-16-1680x1050.mp3</sampleFilename>
+      <sampleFilename>Resolution-16-1600x1024.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5540,7 +5539,7 @@
     </Trigger>
     <Trigger>
       <id>321</id>
-      <name>Options Menu Graphics Res 17 - 1768x992</name>
+      <name>Options Menu Graphics Res 17 - 1680x1050</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">17</value>
       <triggerType>Normal</triggerType>
@@ -5548,7 +5547,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-17-1768x992.mp3</sampleFilename>
+      <sampleFilename>Resolution-17-1680x1050.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5556,7 +5555,7 @@
     </Trigger>
     <Trigger>
       <id>322</id>
-      <name>Options Menu Graphics Res 18 - 1920x1080</name>
+      <name>Options Menu Graphics Res 18 - 1768x992</name>
       <description>Says resolution</description>
       <value xsi:type="xsd:string">18</value>
       <triggerType>Normal</triggerType>
@@ -5564,7 +5563,7 @@
       <watchOneId>29</watchOneId>
       <watchTwoId>-1</watchTwoId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Resolution-18-1920x1080.mp3</sampleFilename>
+      <sampleFilename>Resolution-18-1768x992.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
@@ -5922,6 +5921,22 @@
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
+    <Trigger>
+      <id>347</id>
+      <name>Options Menu Graphics Res 19 - 1920x1080</name>
+      <description>Says resolution</description>
+      <value xsi:type="xsd:string">19</value>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>29</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Resolution-19-1920x1080.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <active>true</active>
+    </Trigger>
   </triggerList>
   <Description>Street Fighter IV GameConfig
 
@@ -5938,5 +5953,5 @@ Unfortunately because memory gets re-used for storing various data there isn't t
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
+  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
 </GameConfig>

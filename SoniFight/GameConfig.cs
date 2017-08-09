@@ -70,7 +70,6 @@ namespace SoniFight
         public List<Watch> watchList = new List<Watch>();
 
         // List of triggers
-        //private int currentWatchId = 0;
         public List<Trigger> triggerList = new List<Trigger>();
 
         // The actual process attached to

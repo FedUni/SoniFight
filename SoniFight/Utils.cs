@@ -19,8 +19,6 @@ namespace SoniFight
         // Constants are implied static in C# - you cannot mark them as such.
         public const int MAX_STRING_LENGTH = 150;
 
-        
-
         /// <summary>
         /// Writes the given object instance to an XML file.
         /// <para>Only Public properties and variables will be written to the file. These can be any type though, even other classes.</para>
@@ -636,7 +634,7 @@ namespace SoniFight
         public static Watch getWatchWithId(int id)
         {
             Watch w = null;
-            for (int loop = 0; loop < MainForm.gameConfig.triggerList.Count; ++loop)
+            for (int loop = 0; loop < MainForm.gameConfig.watchList.Count; ++loop)
             {
                 w = MainForm.gameConfig.watchList[loop];
                 if (w.Id == id)

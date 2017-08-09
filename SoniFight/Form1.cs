@@ -998,7 +998,7 @@ namespace SoniFight
                             currentTrigger.triggerType = Utils.GetTriggerTypeFromInt(triggerTypeCB.SelectedIndex);
 
                             // If we're a continuous trigger then disable comparison type, watch ids etc.
-                            if (currentTrigger.triggerType == Trigger.TriggerType.Continuous) // && currentTrigger.comparisonType == Trigger.ComparisonType.DistanceBetween)
+                            /*if (currentTrigger.triggerType == Trigger.TriggerType.Continuous) // && currentTrigger.comparisonType == Trigger.ComparisonType.DistanceBetween)
                             {
                                 compTypeCB.Enabled = true;
                                 watch1TB.Enabled = true;
@@ -1011,7 +1011,7 @@ namespace SoniFight
                                 watch1TB.Enabled = true;
                                 watch2TB.Enabled = false;
                                 valueTB.Enabled = true;
-                            }
+                            }*/
                             /*else // trigger type is modifier
                             {
                                 compTypeCB.Enabled = true;
@@ -1023,28 +1023,12 @@ namespace SoniFight
 
                         // We must also check and disable if req'd when we load a trigger of type continuous
                         currentTrigger.triggerType = Utils.GetTriggerTypeFromInt(triggerTypeCB.SelectedIndex);
-                        // If we're a continuous trigger then disable comparison type, watch ids etc.
-                        if (currentTrigger.triggerType == Trigger.TriggerType.Continuous)
-                        {
-                            compTypeCB.Enabled = true;
-                            watch1TB.Enabled = true;
-                            watch2TB.Enabled = true;
-                            valueTB.Enabled = true;
-                        }
-                        else if (currentTrigger.triggerType == Trigger.TriggerType.Normal)
-                        {
-                            compTypeCB.Enabled = true;
-                            watch1TB.Enabled = true;
-                            watch2TB.Enabled = false;
-                            valueTB.Enabled = true;
-                        }
-                        /*else // trigger type is modifier
-                        {
-                            compTypeCB.Enabled = true;
-                            watch1TB.Enabled = true;
-                            watch2TB.Enabled = true;
-                            valueTB.Enabled = true;
-                        }*/
+
+                        /*/ Everything's enabled - all the time
+                        compTypeCB.Enabled = true;
+                        watch1TB.Enabled = true;
+                        watch2TB.Enabled = true;
+                        valueTB.Enabled = true;*/
 
                         triggerTypeCB.Tag = "triggerTypeCB";
                         triggerTypeCB.Anchor = AnchorStyles.Left;
@@ -1074,7 +1058,7 @@ namespace SoniFight
                             
                             // If the trigger comparison type is distance then we use the value property as 'max range'.
                             // If the comaprison type is not distance we disable the 2nd watch id because we're only using a single watch.
-                            if (currentTrigger.triggerType == Trigger.TriggerType.Continuous)
+                            /*if (currentTrigger.triggerType == Trigger.TriggerType.Continuous)
                             {
                                 //valueTB.Enabled = false; // Value is what we're triggering on i.e. > 55 or such.
                                 watch2TB.Enabled = true; 
@@ -1083,7 +1067,7 @@ namespace SoniFight
                             {
                                // valueTB.Enabled = true;
                                 watch2TB.Enabled = false;
-                            }
+                            }*/
                         };
                         compTypeCB.Tag = "compTypeCB";
                         compTypeCB.Anchor = AnchorStyles.Left;
@@ -1133,7 +1117,7 @@ namespace SoniFight
                         // Row 6 - Watch ID 2 (only editable trigger type is modifier)                        
                         Label watch2Label = new Label();
                         watch2Label.AutoSize = true;
-                        watch2Label.Text = "Watch 2 ID";
+                        watch2Label.Text = "Also Req's Trigger / Watch 2 ID";
                         watch2Label.Anchor = AnchorStyles.Right;
                         watch2Label.Margin = padding;
                         panel.Controls.Add(watch2Label, 0, row); // Control, Column, Row
@@ -1146,14 +1130,14 @@ namespace SoniFight
                         watch2TB.Margin = padding;
 
                         // Only enable the 2nd watch if we're comparing distance of two watches
-                        if (currentTrigger.triggerType == Trigger.TriggerType.Continuous) //&& currentTrigger.comparisonType != Trigger.ComparisonType.DistanceBetween)
+                        /*if (currentTrigger.triggerType == Trigger.TriggerType.Continuous)
                         {
                             watch2TB.Enabled = true;
                         }
                         else
                         {
                             watch2TB.Enabled = false;
-                        }
+                        }*/
 
                         watch2TB.TextChanged += (object sender, EventArgs ea) =>
                         {
