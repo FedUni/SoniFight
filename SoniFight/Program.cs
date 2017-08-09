@@ -67,56 +67,6 @@ namespace SoniFight
         [STAThread]
         static void Main()
         {
-            //AppDomain.CurrentDomain.AssemblyResolve += (sender, arg) => { if (arg.Name.StartsWith("msvcr100")) return Assembly.Load(Properties.Resources.msvcr100); return null; };
-
-            /*
-            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
-            {
-                String resourceName = "AssemblyLoadingAndReflection." + new AssemblyName(args.Name).Name + ".dll";
-
-                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
-                {
-                    Byte[] assemblyData = new Byte[stream.Length];
-
-                    stream.Read(assemblyData, 0, assemblyData.Length);
-
-                    return Assembly.Load(assemblyData);
-                }
-            };
-            */
-
-            /*
-            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
-            {
-                Assembly thisAssembly = Assembly.GetExecutingAssembly();
-
-                //Get the Name of the AssemblyFile
-                var name = args.Name.Substring(0, args.Name.L.IndexOf(',')) + ".dll";
-
-                string[] foo = thisAssembly.GetManifestResourceNames();
-                foreach (string s in foo)
-                {
-                    Console.WriteLine("Got resource: " + s);
-                }
-
-                //Load form Embedded Resources - This Function is not called if the Assembly is in the Application Folder
-                var resources = thisAssembly.GetManifestResourceNames().Where(s => s.EndsWith(name));
-
-                if (resources.Count() > 0)
-                {
-                    var resourceName = resources.First();
-                    using (Stream stream = thisAssembly.GetManifestResourceStream(resourceName))
-                    {
-                        if (stream == null) return null;
-                        var block = new byte[stream.Length];
-                        stream.Read(block, 0, block.Length);
-                        return Assembly.Load(block);
-                    }
-                }
-                return null;
-            };
-            */
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -125,8 +75,7 @@ namespace SoniFight
             sonificationBGW.WorkerReportsProgress = false;      // We do not want progress reports
             sonificationBGW.WorkerSupportsCancellation = true;  // We do want to be able to cancel the background worker
 
-
-            // Initialise our FMOD SoundPlayer class ready to play audio
+            // Initialise our irrKlang SoundPlayer class ready to play audio
             Program.soundplayer = new SoundPlayer();
             
             // Main loop - we STAY on this line until the application terminates
@@ -139,6 +88,12 @@ namespace SoniFight
         // This method checks for successful comparisons between a trigger and the value read from that triggers watch
         public static bool performComparison(Trigger t, dynamic readValue, int recursiveDepth)
         {
+            // Don't stack more than 5 triggers dependent on each-other - that would be silly. Avoiding silliness.
+            if (recursiveDepth >= 5)
+            {
+                return false;
+            }
+
             // Note: These 'opposite' comparison checks stop multiple retriggers of a sample as it only happens when the value first crosses the trigger threshold
 
             // Guard against user moving to edit tab where triggers are temporarily reset and there is no previous value
@@ -154,8 +109,6 @@ namespace SoniFight
                             if ((t.previousValue != t.value || recursiveDepth > 0) && (readValue == t.value))
                             {
                                 Console.WriteLine("Trigger " + t.id + " matched equal with perform comparison on depth of: " + recursiveDepth);
-
-
 
                                 // No dependent triggers (even if we ARE a dependent trigger at a recursive depth > 0?) - then we've already made a match so return true.
                                 if (t.watchTwoId == -1)
@@ -200,21 +153,27 @@ namespace SoniFight
                             return false;                            
                         case Trigger.ComparisonType.LessThan:
                             if ((t.previousValue > t.value) && (readValue < t.value)) { return true; }
+                            //TODO: Add dependency recursion.
                             break;
                         case Trigger.ComparisonType.LessThanOrEqualTo:
                             if ((t.previousValue > t.value) && (readValue <= t.value)) { return true; }
+                            //TODO: Add dependency recursion.
                             break;
                         case Trigger.ComparisonType.GreaterThan:
                             if ((t.previousValue < t.value) && (readValue > t.value)) { return true; }
+                            //TODO: Add dependency recursion.
                             break;
                         case Trigger.ComparisonType.GreaterThanOrEqualTo:
                             if ((t.previousValue < t.value) && (readValue >= t.value)) { return true; }
+                            //TODO: Add dependency recursion.
                             break;
                         case Trigger.ComparisonType.NotEqualTo:
                             if ((t.previousValue == t.value) && (readValue != t.value)) { return true; }
+                            //TODO: Add dependency recursion.
                             break;
                         case Trigger.ComparisonType.Changed:
                             if (readValue != t.previousValue) { return true; }
+                            //TODO: Add dependency recursion.
                             break;
                     }
                 }
@@ -223,164 +182,11 @@ namespace SoniFight
                     Console.WriteLine("Dynamic type comparison exception. Exact error is: " + e.Message);
                 }
 
-            }
+            } // End of it t.previousValue != null block
 
             // No matches? False it is, then!
             return false;
-
         }
-
-        /*
-
-        // This method checks for successful comparisons between a trigger and the value read from that triggers watch
-        public static bool performComparison(Trigger t, dynamic readValue)
-        {   
-            // Note: These 'opposite' comparison checks stop multiple retriggers of a sample as it only happens when the value first crosses the trigger threshold
-
-            // Guard against user moving to edit tab where triggers are temporarily reset and there is no previous value
-            if (t.previousValue != null)
-            {
-                // Dynamic type comparisons may possibly fail so wrap 'em in try/catch
-                try
-                {
-
-                    switch (t.comparisonType)
-                    {
-                        case Trigger.ComparisonType.EqualTo:
-                            if ((t.previousValue != t.value) && (readValue == t.value))
-                            {
-                                Console.WriteLine("Trigger " + t.id + " matched with value: " + readValue);
-                                
-                                // No dependent triggers -  then we've  made a match so return true.
-                                if (t.watchTwoId == -1)
-                                {
-                                    return true;
-                                }
-                                else
-                                {
-                                    // Trigger has a dependent trigger? Get and check it.
-                                    Trigger dependentT = Utils.getTriggerWithId(t.watchTwoId);
-
-                                    // If the dependent trigger is active, then our return type from THIS method is the return from checking the comparison
-                                    // with the dependent trigger within this one (which has already matched or we wouldn't be here). This will recurse as
-                                    // deep as the trigger dependencies are linked! Bwahahaha! =D Same with all others - just don't cyclic dependency it or we'll crash! 
-                                    if (dependentT.active)
-                                    {
-                                        Watch dependentWatch = Utils.getWatchWithId(dependentT.watchOneId);
-
-                                        // Dependent watch not active? Then obviously we must fail.
-                                        if (!dependentWatch.Active)
-                                        {
-                                            return false;
-                                        }
-
-                                        bool dependentResult = performDependentComparison(dependentT, dependentWatch.getDynamicValueFromType());
-
-                                        if (!dependentResult)
-                                        {
-                                            Console.WriteLine("Suppressed trigger " + t.id + " due to failure of dependent trigger " + dependentT.id + ".");
-                                        }
-
-                                        return dependentResult;
-                                    }
-                                    else // Dependent trigger was not active so dependencies fail and we record no-match as the end result.
-                                    {
-                                        return false;
-                                    }
-
-                                } // End of if watchTwoId was not -1 section
-
-                            } // Comparison between trigger and readValue failed?
-                            return false;
-                            //break;
-                        case Trigger.ComparisonType.LessThan:
-                            if ((t.previousValue > t.value) && (readValue < t.value)) { return true; }
-                            break;
-                        case Trigger.ComparisonType.LessThanOrEqualTo:
-                            if ((t.previousValue > t.value) && (readValue <= t.value)) { return true; }
-                            break;
-                        case Trigger.ComparisonType.GreaterThan:
-                            if ((t.previousValue < t.value) && (readValue > t.value)) { return true; }
-                            break;
-                        case Trigger.ComparisonType.GreaterThanOrEqualTo:
-                            if ((t.previousValue < t.value) && (readValue >= t.value)) { return true; }
-                            break;
-                        case Trigger.ComparisonType.NotEqualTo:
-                            if ((t.previousValue == t.value) && (readValue != t.value)) { return true; }
-                            break;
-                        case Trigger.ComparisonType.Changed:
-                            if (readValue != t.previousValue) { return true; }
-                            break;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Dynamic type comparison exception. Exact error is: " + e.Message);
-                }
-
-            }
-
-            // No matches? False it is, then!
-            return false;
-            
-        }
-
-        // This method checks for successful comparisons between a trigger and the value read from that triggers watch
-        public static bool performDependentComparison(Trigger dt, dynamic readValue)
-        {
-            // Note: These 'opposite' comparison checks stop multiple retriggers of a sample as it only happens when the value first crosses the trigger threshold
-
-            // Guard against user moving to edit tab where triggers are temporarily reset and there is no previous value
-            if (dt.previousValue != null)
-            {
-                // Dynamic type comparisons may possibly fail so wrap 'em in try/catch
-                try
-                {
-
-                    switch (dt.comparisonType)
-                    {
-                        case Trigger.ComparisonType.EqualTo:
-                            if (dt.id == 162)
-                            {
-                                Console.WriteLine("dt value is: " + dt.value);
-                                Console.WriteLine("dt previous value is: " + dt.previousValue);
-                                Console.WriteLine("dt watch1 id is: " + dt.watchOneId);
-                                Console.WriteLine("readvalue is: " + readValue);
-                            }
-                            if (readValue == dt.value || readValue == dt.previousValue) { return true; }
-                            break;
-                        case Trigger.ComparisonType.LessThan:
-                            if (readValue < dt.value) { return true; }
-                            break;
-                        case Trigger.ComparisonType.LessThanOrEqualTo:
-                            if (readValue <= dt.value) { return true; }
-                            break;
-                        case Trigger.ComparisonType.GreaterThan:
-                            if (readValue > dt.value) { return true; }
-                            break;
-                        case Trigger.ComparisonType.GreaterThanOrEqualTo:
-                            if (readValue >= dt.value) { return true; }
-                            break;
-                        case Trigger.ComparisonType.NotEqualTo:
-                            if (readValue != dt.value) { return true; }
-                            break;
-                        case Trigger.ComparisonType.Changed:
-                            if (readValue != dt.previousValue) { return true; }
-                            break;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Dynamic type comparison exception. Exact error is: " + e.Message);
-                }
-
-            } // End of if previous trigger value wasn't null block
-
-            // No matches? False it is, then!
-            return false;
-
-        }
-        */
 
         // This is the DoWork method for the BackgroundWorker
         public static void performSonification(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -616,7 +422,8 @@ namespace SoniFight
                                 break;
                         }
 
-                    }
+                    } // End of if triggerType is Continuous and gameState is InGame block
+
                     // Sonify for normal (i.e. recurring) triggers...
                     else if (t.triggerType == Trigger.TriggerType.Normal)
                     {

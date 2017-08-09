@@ -205,10 +205,8 @@ namespace SoniFight
 
         public static void ShutDown()
         {
-            // Free the samples and finally realease the FMODSystem itself
+            // Free the samples and finally realease the irrKlang sound engine itself
             UnloadAllSamples();
-
-            //FMODSystem.release();
             soundEngine.Dispose();
         }
 

@@ -5938,18 +5938,14 @@
       <active>true</active>
     </Trigger>
   </triggerList>
-  <Description>Street Fighter IV GameConfig
+  <Description>Street Fighter IV GameConfig - Al Lansley - 2017-08-10
 
-Al Lansley - 2017-06-17
-
-This config ships with SoniFight and provides alerts for clock values, health, super bar and ultra bar for both players.
-
-It also provides a large number of menu sonification events to assist in navigating menus and selecting characters without the need to memorise menu options.
+This config ships with SoniFight and provides alerts for clock values, health, super bar and ultra bar for both players - as well as a large number of (but not all possible) menu sonification events to assist in navigating menus and selecting characters without the need to memorise menu options.
 
 Known Issues:
-At present there are occassional non-sensical sonifications between rounds, such as the screen resolution being said - if this bothers you then you can find the offending trigger (run from command line for debug output to identify the trigger id if required) and then either deactivate it by unchecking the Active checkbox, or you can delete the trigger entirely via its Delete Trigger button.
+At present there are some occassional non-sensical sonifications, such as between rounds, but there may be ways to avoid this as I've added some functionality to allow recursive "dependent triggers" on any given trigger using the watch2Id. By this I mean, you can specify a dependent trigger (by id number), and if the main trigger matches conditions but the dependent doesn't - then the original trigger sample isn't played. See the docs for more details.
 
-Unfortunately because memory gets re-used for storing various data there isn't too much that can be done about this issue besides disabling the offending trigger(s) - because we're either watching a memory address for a change in its status, or we aren't - and there isn't much of a middle ground.</Description>
+Unfortunately in some circumstances random sample playing may be unavoidable because memory gets re-used for storing various data and there isn't too much that can be done about this issue besides disabling the offending trigger(s) [which is a perfectly acceptable solution] - because we're either watching a memory address for a change in its status, or we aren't - and there isn't any middle ground. Use what works best for you.</Description>
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
