@@ -54,7 +54,8 @@ namespace SoniFight
             finally
             {
                 if (writer != null)
-                {
+                {   
+                    writer.Flush();
                     writer.Close();
                 }
             }
@@ -511,7 +512,13 @@ namespace SoniFight
                 case 6:
                     return Trigger.ComparisonType.Changed;
                 case 7:
-                    return Trigger.ComparisonType.DistanceBetween;
+                    return Trigger.ComparisonType.DistanceVolumeDescending;
+                case 8:
+                    return Trigger.ComparisonType.DistanceVolumeAscending;
+                case 9:
+                    return Trigger.ComparisonType.DistancePitchDescending;
+                case 10:
+                    return Trigger.ComparisonType.DistancePitchAscending;
                 default:
                     return Trigger.ComparisonType.EqualTo;
             }
@@ -535,8 +542,14 @@ namespace SoniFight
                     return 5;
                 case Trigger.ComparisonType.Changed:
                     return 6;
-                case Trigger.ComparisonType.DistanceBetween:
+                case Trigger.ComparisonType.DistanceVolumeDescending:
                     return 7;
+                case Trigger.ComparisonType.DistanceVolumeAscending:
+                    return 8;
+                case Trigger.ComparisonType.DistancePitchDescending:
+                    return 9;
+                case Trigger.ComparisonType.DistancePitchAscending:
+                    return 10;
                 default:
                     return 0;
             }

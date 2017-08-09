@@ -14,7 +14,10 @@ namespace SoniFight
             GreaterThanOrEqualTo,
             NotEqualTo,
             Changed,
-            DistanceBetween
+            DistanceVolumeDescending,
+            DistanceVolumeAscending,
+            DistancePitchDescending,
+            DistancePitchAscending            
         }
         
         public enum TriggerType
@@ -79,6 +82,10 @@ namespace SoniFight
 
         [XmlIgnore]
         public bool spitDebug = true;
+
+        // The sampleKey is the relative path to the sample, such as ".\Configs\SomeGame\beep.mp3"
+        [XmlIgnore]
+        public string sampleKey = "";  // Just so it's not null and doesn't trip the pause-if-continuous-trigger-in-menus
 
         // ---------- Methods ----------
 

@@ -456,6 +456,30 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
+    <Watch>
+      <valueType>FloatType</valueType>
+      <Id>34</Id>
+      <Name>Player 1 X Location</Name>
+      <Description>Range is -3.5 to +3.5 as a float.</Description>
+      <PointerList>
+        <string>6A7DCC</string>
+        <string>8</string>
+        <string>16D0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>FloatType</valueType>
+      <Id>35</Id>
+      <Name>Player 2 X Location</Name>
+      <Description>Range is -3.5 to +3.5 as a float.</Description>
+      <PointerList>
+        <string>6A7DCC</string>
+        <string>C</string>
+        <string>16D0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
@@ -5820,7 +5844,71 @@
     </Trigger>
     <Trigger>
       <id>341</id>
-      <name>Options Menu Filtering 5 - 16x</name>
+      <name>Continuous Volume Descending (Wind)</name>
+      <description>Plays constantly when in-game - modify via "Distance" comparison types</description>
+      <value xsi:type="xsd:string">5.0</value>
+      <triggerType>Continuous</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <watchOneId>34</watchOneId>
+      <watchTwoId>35</watchTwoId>
+      <comparisonType>DistanceVolumeDescending</comparisonType>
+      <sampleFilename>Heavy-Wind-Mono.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>0.5</sampleVolume>
+      <isClock>false</isClock>
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>342</id>
+      <name>Continuous Volume Ascending (Electricity)</name>
+      <description>Plays constantly when in-game - modify via "Distance" comparison types</description>
+      <value xsi:type="xsd:string">5.0</value>
+      <triggerType>Continuous</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <watchOneId>34</watchOneId>
+      <watchTwoId>35</watchTwoId>
+      <comparisonType>DistanceVolumeAscending</comparisonType>
+      <sampleFilename>High-Voltage-Electrical-Arcing-Mono.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>0.25</sampleVolume>
+      <isClock>false</isClock>
+      <active>false</active>
+    </Trigger>
+    <Trigger>
+      <id>343</id>
+      <name>Continuous Pitch Descending (Wind)</name>
+      <description>Plays constantly when in-game - modify via "Distance" comparison types</description>
+      <value xsi:type="xsd:string">5.0</value>
+      <triggerType>Continuous</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <watchOneId>34</watchOneId>
+      <watchTwoId>35</watchTwoId>
+      <comparisonType>DistancePitchDescending</comparisonType>
+      <sampleFilename>Heavy-Wind-Mono.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <active>false</active>
+    </Trigger>
+    <Trigger>
+      <id>344</id>
+      <name>Continuous Pitch Ascending (Electricity)</name>
+      <description>Plays constantly when in-game - modify via "Distance" comparison types</description>
+      <value xsi:type="xsd:string">5</value>
+      <triggerType>Continuous</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <watchOneId>34</watchOneId>
+      <watchTwoId>35</watchTwoId>
+      <comparisonType>DistancePitchAscending</comparisonType>
+      <sampleFilename>High-Voltage-Electrical-Arcing-Mono.mp3</sampleFilename>
+      <sampleSpeed>2</sampleSpeed>
+      <sampleVolume>0.25</sampleVolume>
+      <isClock>false</isClock>
+      <active>false</active>
+    </Trigger>
+    <Trigger>
+      <id>345</id>
+      <name>Options Menu Filtering 4 - 16x</name>
       <description>Says filtering setting. This is option 5, but matches on value 4.</description>
       <value xsi:type="xsd:string">4</value>
       <triggerType>Normal</triggerType>
@@ -5850,5 +5938,5 @@ Unfortunately because memory gets re-used for storing various data there isn't t
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
+  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
 </GameConfig>

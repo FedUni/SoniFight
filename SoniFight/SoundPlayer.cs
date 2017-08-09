@@ -15,46 +15,117 @@ namespace SoniFight
         // The sound engine object itself
         private static ISoundEngine soundEngine;
 
+        
+
         // Constructor
         public SoundPlayer()
         {
             soundEngine = new ISoundEngine();            
         }
 
-        public static bool LoadSample(string configDirectory, string sampleName)
+        public static bool LoadSample(string sampleKey, bool loopSample)
         {
-            // Append trailing backslash if necessary
-            int l = configDirectory.Length;
-            if (!configDirectory.EndsWith("\\"))
-            {
-                configDirectory += "\\";
-            }
-            
-            configDirectory = ".\\Configs\\" + configDirectory;
+            // Print just the sample name being loaded
+            int index = sampleKey.LastIndexOf("\\") + 1;
+            string shortKey = sampleKey.Substring(index, sampleKey.Length - index);
+            Console.WriteLine("Loading sample: " + shortKey);
 
-            Console.WriteLine("Loading sample: " + sampleName);
-
-            // Load the sound. Params: sample filename, loop, start paused
-            ISound sound = soundEngine.Play2D(configDirectory + sampleName, false, true);
-            soundEngine.StopAllSounds();
+            // Load the sound by playing it. Params: sample filename, loop, start paused
+            ISound sound = soundEngine.Play2D(sampleKey, loopSample, true, StreamMode.NoStreaming, true);
 
             // Otherwise add to our sample list, increment the SAM and return true for success
-            if ( !sampleDictionary.ContainsKey(configDirectory + sampleName))
+            if ( !sampleDictionary.ContainsKey(sampleKey))
             {
-                sampleDictionary.Add(configDirectory + sampleName, sound);
-                //Console.WriteLine("Added: " + configDirectory + sampleName);
+                sampleDictionary.Add(sampleKey, sound);
             }
 
             return true;
         }
 
-        public static bool SampleLoaded(string sampleName)
+        public static bool SampleLoaded(string sampleFilename)
         {
-            if (sampleDictionary.ContainsKey(sampleName))
+            if (sampleDictionary.ContainsKey(sampleFilename))
             {
                 return true;
             }
             return false;
+        }
+
+        public static bool CurrentlyPlaying(string sampleKey)
+        {
+            return soundEngine.IsCurrentlyPlaying(sampleKey);
+        }
+
+
+        public static void ToggleSamplePaused(string sampleKey)
+        {
+            ISound sample;
+            if (sampleDictionary.TryGetValue(sampleKey, out sample))
+            {
+                sample.Paused = !sample.Paused;
+            }
+        }
+
+        public static void PauseSample(string sampleKey)
+        {
+            ISound sample;
+            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
+            {
+                if (!sample.Paused)
+                {
+                    sample.Paused = true;
+                }
+            }
+        }
+
+        public static void ResumeSample(string sampleKey)
+        {
+            ISound sample;
+            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
+            {
+                if (sample.Paused)
+                {
+                    sample.Paused = false;
+                }
+            }
+        }
+
+        public static bool IsPaused(string sampleKey)
+        {
+            // Attempt to get the ISound (i.e. sample) with the given key name...
+            ISound sample;
+            if (sampleDictionary.TryGetValue(sampleKey, out sample))
+            {
+                sample = sampleDictionary[sampleKey];
+                return sample.Paused;
+            }
+            else // Samples not loaded so key does not yet exist in dictionary? Then yes, I'd say we're paused.
+            {
+                return false;
+            }
+        }
+
+
+        public static void ChangeSampleVolume(string sampleKey, float volume)
+        {
+            // If we're playing the sample...
+            if (soundEngine.IsCurrentlyPlaying(sampleKey))
+            {
+                // ...get access to it. If successfully found, modify its volume.
+                ISound sample = sampleDictionary[sampleKey];
+                sample.Volume = volume;
+            }                
+        }
+
+        public static void ChangeSamplePitch(string sampleKey, float pitch)
+        {
+            // If we're playing the sample...
+            if (soundEngine.IsCurrentlyPlaying(sampleKey))
+            {
+                // ...get access to it. If successfully found, modify its volume.
+                ISound sample = sampleDictionary[sampleKey];
+                sample.PlaybackSpeed = pitch;
+            }
         }
 
         // Method to check if any sample in the dictionary is currently playing
@@ -87,19 +158,29 @@ namespace SoniFight
         }
 
         // Method to play the sample identified by the key at the volume and pitch provided
-        public static void Play(string sampleFilename, float volume, float pitch)
+        public static void Play(string sampleKey, float volume, float pitch, bool loopSample)
         {
             // If we have a sample loaded with a given filename...
-            if ( sampleDictionary.ContainsKey(sampleFilename) )
+            if (sampleDictionary.ContainsKey(sampleKey))
             {
-                // ...then set the volume and pitch of the specified sample and then play it
-                sampleDictionary[sampleFilename].Volume = volume;
-                sampleDictionary[sampleFilename].PlaybackSpeed = pitch;
-                soundEngine.Play2D(sampleFilename);
+                ISound sample;
+                if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
+                {
+                    // ...then set the volume and pitch of the specified sample and then play it
+                    sample.Volume = volume;
+                    sample.PlaybackSpeed = pitch;
+
+                    // Sample, play looped, start-paused, stream-mode, enable-sound-effects
+                    sample = soundEngine.Play2D(sampleKey, loopSample, false, StreamMode.AutoDetect, true);                    
+                }
+                else
+                {
+                    Console.WriteLine("Sample not found: " + sampleKey);
+                }
             }
             else // Warn user of issue
-            {                
-                Console.WriteLine("WARNING: Sample: " + sampleFilename + " does not exist in sampleDictionary.");
+            {
+                Console.WriteLine("WARNING: Sample key: " + sampleKey + " does not exist in sampleDictionary.");
             }            
         }                
         

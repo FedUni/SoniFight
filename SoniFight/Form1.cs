@@ -20,7 +20,10 @@ namespace SoniFight
 
         string[] dataTypesArray = { "Integer", "Short", "Long", "Float", "Double", "Boolean", "String (UTF-8)", "String (UTF-16)" };
 
-        string[] comparisonTypesArray = { "EqualTo", "LessThan", "LessThanOrEqualTo", "GreaterThan", "GreaterThanOrEqualTo", "NotEqualTo", "Changed", "DistanceBetween" };
+        string[] comparisonTypesArray = { "EqualTo", "LessThan", "LessThanOrEqualTo", "GreaterThan", "GreaterThanOrEqualTo", "NotEqualTo", "Changed",
+                                          "Distance - Volume Descending (Cont. Only)", "Distance - Volume Ascending (Cont. Only)",
+                                          "Distance - Pitch Descending (Cont. Only)", "Distance - Pitch Ascending (Cont. Only)" };
+  
 
         string[] triggerTypesArray = { "Normal", "Continuous", "Modifier" };
 
@@ -184,6 +187,9 @@ namespace SoniFight
         {
             // Inflate game config from XML file
             string pathToConfig = ".\\Configs\\" + MainForm.gameConfig.ConfigDirectory + "\\config.xml";
+
+            Console.WriteLine("About to read config - ConfigDirectory is: " + MainForm.gameConfig.ConfigDirectory);
+
             gameConfig = Utils.ReadFromXmlFile<GameConfig>(pathToConfig);
 
             if (gameConfig == null) { MessageBox.Show("After loading gameconfig object - it's still null!");  }
@@ -194,11 +200,11 @@ namespace SoniFight
             MainForm.gameConfig.ConfigDirectory = this.configsComboBox.GetItemText(this.configsComboBox.SelectedItem);
             
             // Validate and activate our gameconfig
-            bool configIsValid = gameConfig.validate();
-            bool configCanBeActivated = gameConfig.activate();
+            gameConfig.valid = gameConfig.validate();
+            gameConfig.active = gameConfig.activate();
 
             // Start our sonification background worker, which calls the 'performSonification' method
-            if (configIsValid && configCanBeActivated)
+            if (gameConfig.valid && gameConfig.active)
             {
                 Program.sonificationBGW.RunWorkerAsync();
 
@@ -227,13 +233,12 @@ namespace SoniFight
 
             //Console.WriteLine("After validation config dir is: " + gameConfig.ConfigDirectory);
 
-            string configDir  = ".\\Configs\\" + gameConfig.ConfigDirectory;
+            string configDir = ".\\Configs\\" + gameConfig.ConfigDirectory;
             string configPath = configDir + "\\config.xml";
-
-
-            //Console.WriteLine("Config directory is: " + gameConfig.ConfigDirectory);
-
-            //Console.WriteLine("But configDir is: " + configDir);
+            
+            //Console.WriteLine("configDir is: " + configDir);
+            //Console.WriteLine("gameConfig.ConfigDirectory is: " + gameConfig.ConfigDirectory);
+            //Console.WriteLine("configPath is: " + configPath);
 
             // Try to create the directory. Note: If the directory already exists then this does nothing.
             Directory.CreateDirectory(configDir);
@@ -374,6 +379,8 @@ namespace SoniFight
             this.Text = formTitle + " Status: Stopped";
             running = false;
             Thread.Sleep(500);
+
+            SoundPlayer.UnloadAllSamples();
         }
 
         private void refreshButton_Click(object senderender, EventArgs e)
@@ -875,6 +882,16 @@ namespace SoniFight
                     {
                         currentUILabel.Text = "Trigger Settings";
 
+                        // Prior declarations of UI elements so we can disable them if required
+                        ComboBox compTypeCB = new ComboBox();
+                        TextBox watch1TB            = new TextBox();
+                        TextBox watch2TB            = new TextBox();
+                        TextBox valueTB             = new TextBox();
+                        TextBox sampleFilenameTB    = new TextBox();
+                        Button sampleFilenameButton = new Button();
+                        TextBox sampleVolumeTB      = new TextBox();
+                        TextBox sampleSpeedTB       = new TextBox();
+
                         // Get the current watch we're working from based on the index of the currently selected treenode
                         // Note: Each child of a parent treenode starts at index 0, so we can use this index as the
                         // index of the watch (in the watchList) that we're currently modifying.
@@ -963,7 +980,80 @@ namespace SoniFight
                         panel.Controls.Add(descTB, 1, row); // Control, Column, Row
                         row++;
 
-                        // ----- Row 3 - Comparison type ----- 
+                        // -----  Row 3 - Trigger type (Once, Recurring, Continuous) -----
+                        Label triggerTypeLabel = new Label();
+                        triggerTypeLabel.AutoSize = true;
+                        triggerTypeLabel.Text = "Trigger Type";
+                        triggerTypeLabel.Tag = "triggerTypeLabel";
+                        triggerTypeLabel.Anchor = AnchorStyles.Right;
+                        triggerTypeLabel.Margin = padding;
+                        panel.Controls.Add(triggerTypeLabel, 0, row); // Control, Column, Row
+
+                        ComboBox triggerTypeCB = new ComboBox();
+                        triggerTypeCB.DropDownStyle = ComboBoxStyle.DropDownList;
+                        triggerTypeCB.Items.AddRange(triggerTypesArray);
+                        triggerTypeCB.SelectedIndex = Utils.GetIntFromTriggerType(currentTrigger.triggerType);                       
+                        triggerTypeCB.SelectedIndexChanged += (object o, EventArgs ae) =>
+                        {
+                            currentTrigger.triggerType = Utils.GetTriggerTypeFromInt(triggerTypeCB.SelectedIndex);
+
+                            // If we're a continuous trigger then disable comparison type, watch ids etc.
+                            if (currentTrigger.triggerType == Trigger.TriggerType.Continuous) // && currentTrigger.comparisonType == Trigger.ComparisonType.DistanceBetween)
+                            {
+                                compTypeCB.Enabled = true;
+                                watch1TB.Enabled = true;
+                                watch2TB.Enabled = true;
+                                valueTB.Enabled = true;
+                            }
+                            else if (currentTrigger.triggerType == Trigger.TriggerType.Normal)
+                            {
+                                compTypeCB.Enabled = true;
+                                watch1TB.Enabled = true;
+                                watch2TB.Enabled = false;
+                                valueTB.Enabled = true;
+                            }
+                            /*else // trigger type is modifier
+                            {
+                                compTypeCB.Enabled = true;
+                                watch1TB.Enabled = true;
+                                watch2TB.Enabled = true;
+                                valueTB.Enabled = true;
+                            }*/
+                        };
+
+                        // We must also check and disable if req'd when we load a trigger of type continuous
+                        currentTrigger.triggerType = Utils.GetTriggerTypeFromInt(triggerTypeCB.SelectedIndex);
+                        // If we're a continuous trigger then disable comparison type, watch ids etc.
+                        if (currentTrigger.triggerType == Trigger.TriggerType.Continuous)
+                        {
+                            compTypeCB.Enabled = true;
+                            watch1TB.Enabled = true;
+                            watch2TB.Enabled = true;
+                            valueTB.Enabled = true;
+                        }
+                        else if (currentTrigger.triggerType == Trigger.TriggerType.Normal)
+                        {
+                            compTypeCB.Enabled = true;
+                            watch1TB.Enabled = true;
+                            watch2TB.Enabled = false;
+                            valueTB.Enabled = true;
+                        }
+                        /*else // trigger type is modifier
+                        {
+                            compTypeCB.Enabled = true;
+                            watch1TB.Enabled = true;
+                            watch2TB.Enabled = true;
+                            valueTB.Enabled = true;
+                        }*/
+
+                        triggerTypeCB.Tag = "triggerTypeCB";
+                        triggerTypeCB.Anchor = AnchorStyles.Left;
+                        triggerTypeCB.Dock = DockStyle.Fill;
+                        triggerTypeCB.Margin = padding;
+                        panel.Controls.Add(triggerTypeCB, 1, row); // Control, Column, Row
+                        row++;
+
+                        // ----- Row 4 - Comparison type ----- 
                         Label compTypeLabel = new Label();
                         compTypeLabel.AutoSize = true;
                         compTypeLabel.Text = "Comparison Type";
@@ -972,12 +1062,7 @@ namespace SoniFight
                         compTypeLabel.Margin = padding;
                         panel.Controls.Add(compTypeLabel, 0, row); // Control, Column, Row
 
-                        // Define the value TextBox here so we can disable it if the comparison type is 'DistanceBetween' (in which case we use a min-max range instead of a value)
-                        TextBox valueTB = new TextBox();
-
-                        TextBox watch2TB = new TextBox();
-
-                        ComboBox compTypeCB = new ComboBox();
+                                                
                         compTypeCB.DropDownStyle = ComboBoxStyle.DropDownList;
                         compTypeCB.Items.AddRange(comparisonTypesArray);
                         compTypeCB.SelectedIndex = Utils.GetIntFromComparisonType(currentTrigger.comparisonType);
@@ -986,12 +1071,10 @@ namespace SoniFight
                             currentTrigger.comparisonType = Utils.GetComparisonTypeFromInt(compTypeCB.SelectedIndex);
 
                             //Console.WriteLine("current trigger comparison type is now: " + currentTrigger.comparisonType);
-
-
-
+                            
                             // If the trigger comparison type is distance then we use the value property as 'max range'.
                             // If the comaprison type is not distance we disable the 2nd watch id because we're only using a single watch.
-                            if (currentTrigger.comparisonType == Trigger.ComparisonType.DistanceBetween)
+                            if (currentTrigger.triggerType == Trigger.TriggerType.Continuous)
                             {
                                 //valueTB.Enabled = false; // Value is what we're triggering on i.e. > 55 or such.
                                 watch2TB.Enabled = true; 
@@ -1009,7 +1092,7 @@ namespace SoniFight
                         panel.Controls.Add(compTypeCB, 1, row); // Control, Column, Row
                         row++;
 
-                        // Row 4 - Watch ID 1
+                        // Row 5 - Watch ID 1
                         Label watch1Label = new Label();
                         watch1Label.AutoSize = true;
                         watch1Label.Text = "Watch 1 ID";
@@ -1017,7 +1100,7 @@ namespace SoniFight
                         watch1Label.Margin = padding;
                         panel.Controls.Add(watch1Label, 0, row); // Control, Column, Row
 
-                        TextBox watch1TB = new TextBox();
+                        //TextBox watch1TB = new TextBox();
                         watch1TB.Text = currentTrigger.watchOneId.ToString();
                         watch1TB.Tag = "watch1TB";
                         watch1TB.Anchor = AnchorStyles.Left;
@@ -1047,7 +1130,7 @@ namespace SoniFight
                         panel.Controls.Add(watch1TB, 1, row); // Control, Column, Row
                         row++;
                         
-                        // Row 5 - Watch ID 2 (only editable if distance type)                        
+                        // Row 6 - Watch ID 2 (only editable trigger type is modifier)                        
                         Label watch2Label = new Label();
                         watch2Label.AutoSize = true;
                         watch2Label.Text = "Watch 2 ID";
@@ -1063,13 +1146,13 @@ namespace SoniFight
                         watch2TB.Margin = padding;
 
                         // Only enable the 2nd watch if we're comparing distance of two watches
-                        if (currentTrigger.comparisonType != Trigger.ComparisonType.DistanceBetween)
+                        if (currentTrigger.triggerType == Trigger.TriggerType.Continuous) //&& currentTrigger.comparisonType != Trigger.ComparisonType.DistanceBetween)
                         {
-                            watch2TB.Enabled = false;
+                            watch2TB.Enabled = true;
                         }
                         else
                         {
-                            watch2TB.Enabled = true;
+                            watch2TB.Enabled = false;
                         }
 
                         watch2TB.TextChanged += (object sender, EventArgs ea) =>
@@ -1096,29 +1179,7 @@ namespace SoniFight
                         panel.Controls.Add(watch2TB, 1, row); // Control, Column, Row
                         row++;
 
-                        // -----  Row 6 - Trigger type (Once, Recurring, Continuous) -----
-                        Label triggerTypeLabel = new Label();
-                        triggerTypeLabel.AutoSize = true;
-                        triggerTypeLabel.Text = "Trigger Type";
-                        triggerTypeLabel.Tag = "triggerTypeLabel";
-                        triggerTypeLabel.Anchor = AnchorStyles.Right;
-                        triggerTypeLabel.Margin = padding;
-                        panel.Controls.Add(triggerTypeLabel, 0, row); // Control, Column, Row
-
-                        ComboBox triggerTypeCB = new ComboBox();
-                        triggerTypeCB.DropDownStyle = ComboBoxStyle.DropDownList;
-                        triggerTypeCB.Items.AddRange(triggerTypesArray);
-                        triggerTypeCB.SelectedIndex = Utils.GetIntFromTriggerType(currentTrigger.triggerType);
-                        triggerTypeCB.SelectedIndexChanged += (object o, EventArgs ae) =>
-                        {
-                            currentTrigger.triggerType = Utils.GetTriggerTypeFromInt(triggerTypeCB.SelectedIndex);
-                        };
-                        triggerTypeCB.Tag = "triggerTypeCB";
-                        triggerTypeCB.Anchor = AnchorStyles.Left;
-                        triggerTypeCB.Dock = DockStyle.Fill;
-                        triggerTypeCB.Margin = padding;
-                        panel.Controls.Add(triggerTypeCB, 1, row); // Control, Column, Row
-                        row++;
+                        
 
                         // ----- Row 7 - Trigger Value -----
                         Label valueLabel = new Label();
@@ -1161,11 +1222,8 @@ namespace SoniFight
                         row++;
 
 
-                        // UI elements to disable if this trigger is a reset trigger (which is controlled by the row & checkbox below)                        
-                        TextBox sampleFilenameTB = new TextBox();
-                        Button sampleFilenameButton = new Button();
-                        TextBox sampleVolumeTB = new TextBox();
-                        TextBox sampleSpeedTB = new TextBox();
+                        
+                        
 
                         /*
                         // ----- Row 8 - Control Type (normal / reset / mute) row -----
@@ -1215,7 +1273,7 @@ namespace SoniFight
                         */
                         
 
-                        // ----- Row 9 - Trigger sample row -----
+                        // ----- Row 8 - Trigger sample row -----
                         Label sampleFilenameLabel = new Label();
                         sampleFilenameLabel.AutoSize = true;
                         sampleFilenameLabel.Text = "Sample Filename (without path)";
@@ -1252,7 +1310,10 @@ namespace SoniFight
                         sampleFilenameButton.Click += (object o, EventArgs ae) =>
                         {
                             OpenFileDialog file = new OpenFileDialog();
-                            file.InitialDirectory = Application.StartupPath + "\\Configs\\" + gameConfig.ConfigDirectory; // Open dialog in gameconfig directory
+                            //file.InitialDirectory = Application.StartupPath + "\\Configs\\" + gameConfig.ConfigDirectory; // Open dialog in gameconfig directory
+
+                            file.InitialDirectory = ".\\Configs\\" + gameConfig.ConfigDirectory; // Open dialog in gameconfig directory
+
                             if (file.ShowDialog() == DialogResult.OK)
                             {
                                 // Note: Filename gives you the full path to the file, SafeFilename gives you ONLY the filename including extension, which is what we want
@@ -1267,7 +1328,7 @@ namespace SoniFight
                         row++;
 
 
-                        // ----- Row 10 - Trigger sample volume ---
+                        // ----- Row 9 - Trigger sample volume ---
                         Label sampleVolumeLabel = new Label();
                         sampleVolumeLabel.AutoSize = true;
                         sampleVolumeLabel.Text = "Sample Volume (Range: 0.0 to 1.0)";
@@ -1308,7 +1369,7 @@ namespace SoniFight
                         panel.Controls.Add(sampleVolumeTB, 1, row); // Control, Column, Row
                         row++;
 
-                        // ----- Row 11 - Trigger sample rate ---
+                        // ----- Row 10 - Trigger sample rate ---
                         Label sampleSpeedLabel = new Label();
                         sampleSpeedLabel.AutoSize = true;
                         sampleSpeedLabel.Text = "Sample Rate (Range: 0.5 to 4.0)";
@@ -1326,13 +1387,12 @@ namespace SoniFight
                         // Disable sample speed field if we're not the clock trigger
                         if (currentTrigger.isClock) { sampleSpeedTB.Enabled = false; }
 
-                        sampleSpeedTB.TextChanged += (object sender, EventArgs ea) =>
-                        {
+                        sampleSpeedTB.TextChanged += (object sender, EventArgs ea) => { 
                             float x;
                             bool result = float.TryParse(sampleSpeedTB.Text, out x);
                             if (result)
                             {
-                                currentTrigger.sampleSpeed = (float)x;
+                                currentTrigger.sampleSpeed = x;
                             }
                             else
                             {
@@ -1350,7 +1410,7 @@ namespace SoniFight
                         panel.Controls.Add(sampleSpeedTB, 1, row); // Control, Column, Row
                         row++;
 
-                        // ----- Row 12 - Active Flag -----            
+                        // ----- Row 11 - Active Flag -----            
                         Label isClockLabel = new Label();
                         isClockLabel.AutoSize = true;
                         isClockLabel.Text = "Is Clock?";
@@ -1369,7 +1429,7 @@ namespace SoniFight
                         panel.Controls.Add(isClockCB, 1, row); // Control, Column, Row
                         row++;
 
-                        // ----- Row 13 - Allowance Type (Any / InGame / InMenu) row -----
+                        // ----- Row 12 - Allowance Type (Any / InGame / InMenu) row -----
                         Label triggerAllowanceLabel = new Label();
                         triggerAllowanceLabel.AutoSize = true;
                         triggerAllowanceLabel.Text = "Allowance Type";
@@ -1402,7 +1462,7 @@ namespace SoniFight
                         }
                         row++;
 
-                        // ----- Row 14 - Active Flag -----            
+                        // ----- Row 13 - Active Flag -----            
                         Label activeLabel = new Label();
                         activeLabel.AutoSize = true;
                         activeLabel.Text = "Active";
@@ -1421,7 +1481,7 @@ namespace SoniFight
                         panel.Controls.Add(activeCB, 1, row); // Control, Column, Row
                         row++;
 
-                        // ----- Row 15 - Delete Trigger -----
+                        // ----- Row 14 - Delete Trigger -----
                         Button deleteTriggerBtn = new Button();
                         deleteTriggerBtn.AutoSize = true;
                         deleteTriggerBtn.Text = "Delete Trigger";

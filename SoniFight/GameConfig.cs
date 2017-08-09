@@ -98,8 +98,10 @@ namespace SoniFight
         }
 
         // We must validate the gameconfig to activate it - this occurs via the validate method.
-        private bool valid = false;
-        private bool active = false;
+        [XmlIgnore]
+        public bool valid = false;
+        [XmlIgnore]
+        public bool active = false;
 
         // The name of the directory containing this GameConfig object and its associated samples
         private string configDirectory;
@@ -110,7 +112,10 @@ namespace SoniFight
         }
 
         // Blank constructor req'd for XML serialisation
-        public GameConfig() { }
+        public GameConfig()
+        {
+            processConnectionBW.WorkerSupportsCancellation = true;
+        }
 
         public void setDescription(string configDescription)
         {
@@ -174,13 +179,32 @@ namespace SoniFight
                         watchList[watchLoop].DestinationAddress = Utils.findFeatureAddress(processHandle, processBaseAddress, watchList[watchLoop].PointerList);
                     }
 
+                    // Get configDirectory in correct state (relative path ending with a backslash)
+                    if (!configDirectory.EndsWith("\\"))
+                    {
+                        configDirectory += "\\";
+                    }
+                    //configDirectory = ".\\Configs\\" + configDirectory;
+
                     // Load all samples
                     foreach (Trigger t in triggerList)
                     {
                         // Load sample if not already loaded and not the clock trigger
-                        if (!SoundPlayer.SampleLoaded(t.sampleFilename) && !t.isClock)
+
+                        t.sampleKey = ".\\Configs\\" + configDirectory + t.sampleFilename;
+
+                        
+
+                        if (!SoundPlayer.SampleLoaded(t.sampleKey) && !t.isClock)
                         {
-                            SoundPlayer.LoadSample(ConfigDirectory, t.sampleFilename);
+                            if (t.triggerType != Trigger.TriggerType.Continuous)
+                            {
+                                SoundPlayer.LoadSample(t.sampleKey, false); // Normal trigger samples don't loop...                                
+                            }
+                            else
+                            {
+                                SoundPlayer.LoadSample(t.sampleKey, true); // ...but continuous trigger samples do!
+                            }
                         }                        
                     }
 
@@ -476,47 +500,7 @@ namespace SoniFight
             {
                 watchList[watchLoop].DestinationAddress = Utils.findFeatureAddress(ProcessHandle, processBaseAddress, watchList[watchLoop].PointerList);
             }
-        }
-
-        // Method to reset all Triggered properties to false when a 'reset' trigger is matched (i.e. when clock is 99 or such).
-        /*public void resetAllOnceTriggers()
-        {
-            // Set the triggered flag of all triggers to false
-            foreach (Trigger t in triggerList)
-            {
-                if (t.triggerType == Trigger.TriggerType.Once)
-                {
-                    t.Triggered = false;
-                }
-            }
-        }*/
-
-        // Method to mute / stop all playing trigger samples
-        /*public void disableAllOnceTriggers()
-        {
-            // Set all triggers which use the Once type to have their Triggered flag set to true so they can't activate until
-            // reset has been called. This stops all health notifications being played between rounds as health for both players
-            // goes to 0 before being reset to their starting health.
-            foreach (Trigger t in triggerList)
-            {
-                if (t.triggerType == Trigger.TriggerType.Once)
-                {
-                    t.Triggered = true;
-                }
-            }
-
-            //SoundPlayer.muteChannel();
-
-            // Set the triggered flag of all triggers to true so they can't trigger again
-            //foreach (Trigger t in triggerList)
-            //{
-            //    t.Triggered = true;
-            //}
-
-            // Stop any samples playing on the channel
-            //SoundPlayer.StopChannel();
-        }
-        */
+        }        
 
     } // End of GameConfig class  
 

@@ -10,10 +10,6 @@ using System.Windows.Forms;
 
 namespace SoniFight
 {
-    /*** New name: Sonifight, or Sonifyght, or Sonifyt ***/
-
-    
-
     static class Program
     {
         // Please note: The program will only handle one GameConfig at any given time and this is
@@ -277,7 +273,6 @@ namespace SoniFight
                         w.updateDestinationAddress(gc.ProcessHandle, gc.ProcessBaseAddress);
                     }
                 }
-
                 
                 // Update the game state to be InGame or InMenu
                 for (int triggerLoop = 0; triggerLoop < gc.triggerList.Count; ++triggerLoop)
@@ -327,40 +322,103 @@ namespace SoniFight
                         break;
 
                     } // End of isClock block
-                }    
+
+                } // End of loop over triggers used to find the clock trigger 
                 
                 // Process triggers to provide sonification
                 for (int triggerLoop = 0; triggerLoop < gc.triggerList.Count; ++triggerLoop)
                 {
                     // Grab a trigger
-                    t = MainForm.gameConfig.triggerList[triggerLoop];                    
+                    t = MainForm.gameConfig.triggerList[triggerLoop];
 
-                    // Skip this trigger if the game state and trigger state don't match or... 
-                    if ( (t.allowanceType == Trigger.AllowanceType.InGame && Program.gameState == GameState.InMenu) ||
-                         (t.allowanceType == Trigger.AllowanceType.InMenu && Program.gameState == GameState.InGame) ||
-                         (Program.gameState != Program.previousGameState)                                           || // ...we haven't been in this game state for 2 'ticks' or...
-                         (t.isClock)                                                                                || // ...if this trigger is the clock trigger used to identify InMenu and InGame states or...
+                    // Have an active continuous trigger?
+                    // Note: This CHECK must occur before the below block to function correctly.
+                    if (t.active && t.triggerType == Trigger.TriggerType.Continuous)
+                    {
+                        // If we're InMenu we pause it...
+                        if (Program.gameState == GameState.InMenu)
+                        {
+                            SoundPlayer.PauseSample(t.sampleKey);
+
+                            continue; // No need to process this continuous trigger any further
+                        }
+                        else // ...otherwise if we're InGame we resume it.
+                        {
+                            
+                            SoundPlayer.ResumeSample(t.sampleKey);
+                        }
+                    }
+
+                    // There are other conditions under which we can skip processing triggers - such as...
+                    if ( (t.allowanceType == Trigger.AllowanceType.InGame && Program.gameState == GameState.InMenu) || // ...if the trigger allowance and game state don't match...
+                         (t.allowanceType == Trigger.AllowanceType.InMenu && Program.gameState == GameState.InGame) || // ...both ways, or... 
+                         (Program.gameState != Program.previousGameState)                                           || // ...if we haven't been in this game state for 2 'ticks' or...
+                         (t.isClock)                                                                                || // ...if this is the clock trigger or...
                          (!t.active) )                                                                                 // ...if the trigger is not active.
                     {
+                        // Skip the rest of the loop for this trigger
                         continue;
                     }
 
-                    // At this stage the trigger can be read and used - so let's get on with it...
+                    
 
-                    String sampleKey = ".\\Configs\\" + gc.ConfigDirectory + "\\" + t.sampleFilename;
-                    //Console.WriteLine("Sample key is: " + sampleKey);
+                    // At this stage the trigger can be read and used - so let's get on with it...
 
                     // Read the value associated with the watch named by this trigger
                     // Note: We don't know the type - but the watch itself knows the type, and 'getDynamicValueFromType'
                     // will ensure the correct data type is read.
                     readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
                     
-                    // Sonfiy for continuous events
-                    if (t.triggerType == Trigger.TriggerType.Continuous)
+                    // Sonfiy for continuous events - ONLY in InGame state!
+                    if (t.triggerType == Trigger.TriggerType.Continuous && Program.gameState == GameState.InGame)
                     {
+                        // Read the second value associated with the second watch in this trigger
                         readValue2 = Utils.getWatchWithId(t.watchTwoId).getDynamicValueFromType();
 
-                        /******************* COMPLETE THIS ***********************/
+                        // The trigger value acts as the range between watch values for continuous triggers
+                        dynamic maxRange = t.value;
+
+                        // Get the range and make it absolute (i.e. positive)
+                        dynamic currentRange = Math.Abs(readValue - readValue2);
+
+                        // Calculate the percentage of the current range to the max range
+                        dynamic percentage;
+
+                        switch (t.comparisonType)
+                        {
+                            case Trigger.ComparisonType.DistanceVolumeDescending:
+                                percentage = currentRange / maxRange;
+                                if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
+                                {
+                                    SoundPlayer.ChangeSampleVolume(t.sampleKey, Convert.ChangeType(t.sampleVolume * percentage, TypeCode.Single));
+                                }
+                                break;
+
+                            case Trigger.ComparisonType.DistanceVolumeAscending:
+                                percentage = 1.0 - (currentRange / maxRange);
+                                if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
+                                {
+                                    SoundPlayer.ChangeSampleVolume(t.sampleKey, Convert.ChangeType(t.sampleVolume * percentage, TypeCode.Single));
+                                }
+                                break;
+
+                            case Trigger.ComparisonType.DistancePitchDescending:
+                                percentage = currentRange / maxRange;
+                                if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
+                                {
+                                    SoundPlayer.ChangeSamplePitch(t.sampleKey, Convert.ChangeType(t.sampleSpeed * percentage, TypeCode.Single));
+                                }
+                                break;
+
+                            case Trigger.ComparisonType.DistancePitchAscending:
+                                percentage = maxRange / currentRange;
+                                if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
+                                {
+                                    SoundPlayer.ChangeSamplePitch(t.sampleKey, Convert.ChangeType(t.sampleSpeed * percentage, TypeCode.Single));
+                                }
+                                break;
+                        }
+
                     }
                     // Sonify for normal (i.e. recurring) triggers...
                     else if (t.triggerType == Trigger.TriggerType.Normal)
@@ -375,7 +433,8 @@ namespace SoniFight
                             if (Program.gameState == GameState.InGame)
                             {
                                 Console.WriteLine("InGame sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
-                                SoundPlayer.Play(sampleKey, t.sampleVolume, t.sampleSpeed);
+                                
+                                SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is because normal triggers don't loop
 
                                 // Remove any queued menu triggers
                                 menuTriggerQueue.Clear();
@@ -396,7 +455,7 @@ namespace SoniFight
                                     lastMenuSonificationTime = DateTime.Now;
 
                                     // ...then play the sample.
-                                    SoundPlayer.Play(sampleKey, t.sampleVolume, t.sampleSpeed);
+                                    SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is to NOT loop InMenu triggers - only continuous triggers can do that
                                 }
                                 else // We are in the menus and already playing a menu sonification event...
                                 {
@@ -439,17 +498,17 @@ namespace SoniFight
                         // This both gets the trigger and removes it from the queue in one fell swoop!
                         Trigger menuTrigger = menuTriggerQueue.Dequeue();
 
-                        Console.WriteLine("Playing queued sample and removing: " + menuTrigger.sampleFilename + " - trigger id: " + menuTrigger.id + " Volume: " + menuTrigger.sampleVolume + " Speed: " + t.sampleSpeed);
+                        Console.WriteLine("Playing queued sample and removing: " + menuTrigger.sampleKey + " - trigger id: " + menuTrigger.id + " Volume: " + menuTrigger.sampleVolume + " Speed: " + t.sampleSpeed);
 
                         //Console.WriteLine("*** MS last menu sonification = " + timeSinceLastMenuSonificationMS);
 
                         // Mark the time at which we played the last menu sonification event...
                         lastMenuSonificationTime = DateTime.Now;
 
-                        String menuTriggerKey = ".\\Configs\\" + gc.ConfigDirectory + "\\" + menuTrigger.sampleFilename;
+                        //String menuTriggerKey = ".\\Configs\\" + gc.ConfigDirectory + "\\" + menuTrigger.sampleFilename;
 
                         // ...then actually play the sample
-                        SoundPlayer.Play(menuTriggerKey, menuTrigger.sampleVolume, menuTrigger.sampleSpeed);
+                        SoundPlayer.Play(menuTrigger.sampleKey, menuTrigger.sampleVolume, menuTrigger.sampleSpeed, false); // Final false is because we don't loop InMenu triggers
                     }
 
                     // Update our 'previousValue' ready for the next check (used if comparison type is 'Changed').
