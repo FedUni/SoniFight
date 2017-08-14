@@ -479,6 +479,30 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>36</Id>
+      <Name>Player 1 Status</Name>
+      <Description>Crouching = 2, Airborne = 4, Counterhit-able = 16. Works as int but likely a bitfield.</Description>
+      <PointerList>
+        <string>6A7DCC</string>
+        <string>8</string>
+        <string>BC</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>37</Id>
+      <Name>Player 2 Status</Name>
+      <Description>Crouching = 2, Airborne = 4, Counterhit-able = 16. Works as int but likely a bitfield.</Description>
+      <PointerList>
+        <string>6A7DCC</string>
+        <string>C</string>
+        <string>BC</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
@@ -5843,7 +5867,7 @@
     </Trigger>
     <Trigger>
       <id>341</id>
-      <name>Continuous Volume Descending (Wind)</name>
+      <name>Continuous Volume Descending w/ Dist. (Wind)</name>
       <description>Plays constantly when in-game - modify via "Distance" comparison types</description>
       <value xsi:type="xsd:string">5.0</value>
       <triggerType>Continuous</triggerType>
@@ -5853,13 +5877,13 @@
       <comparisonType>DistanceVolumeDescending</comparisonType>
       <sampleFilename>Heavy-Wind-Mono.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>0.5</sampleVolume>
+      <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <active>true</active>
+      <active>false</active>
     </Trigger>
     <Trigger>
       <id>342</id>
-      <name>Continuous Volume Ascending (Electricity)</name>
+      <name>Continuous Volume Ascending w/ Dist. (Electricity)</name>
       <description>Plays constantly when in-game - modify via "Distance" comparison types</description>
       <value xsi:type="xsd:string">5.0</value>
       <triggerType>Continuous</triggerType>
@@ -5869,13 +5893,13 @@
       <comparisonType>DistanceVolumeAscending</comparisonType>
       <sampleFilename>High-Voltage-Electrical-Arcing-Mono.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>0.25</sampleVolume>
+      <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <active>false</active>
+      <active>true</active>
     </Trigger>
     <Trigger>
       <id>343</id>
-      <name>Continuous Pitch Descending (Wind)</name>
+      <name>Continuous Pitch Descending w/ Dist. (Wind)</name>
       <description>Plays constantly when in-game - modify via "Distance" comparison types</description>
       <value xsi:type="xsd:string">5.0</value>
       <triggerType>Continuous</triggerType>
@@ -5891,7 +5915,7 @@
     </Trigger>
     <Trigger>
       <id>344</id>
-      <name>Continuous Pitch Ascending (Electricity)</name>
+      <name>Continuous Pitch Ascending w/ Dist. (Electricity)</name>
       <description>Plays constantly when in-game - modify via "Distance" comparison types</description>
       <value xsi:type="xsd:string">5</value>
       <triggerType>Continuous</triggerType>
@@ -5933,6 +5957,22 @@
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-19-1920x1080.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <active>true</active>
+    </Trigger>
+    <Trigger>
+      <id>348</id>
+      <name>Continuous Trigger Modifier - Pitch Down</name>
+      <description>Halves the rate of any continuous modifier while triggered</description>
+      <value xsi:type="xsd:string">2</value>
+      <triggerType>Modifier</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <watchOneId>36</watchOneId>
+      <watchTwoId>342</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>NONE</sampleFilename>
+      <sampleSpeed>0.5</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
       <active>true</active>

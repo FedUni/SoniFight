@@ -26,14 +26,7 @@ namespace SoniFight
             Continuous,  // Triggers continuously (i.e. distance between players). We may only have a single trigger of type continuous in any GameConfig.
             Modifier     // Modifies a continuous trigger
         }
-
-        /*public enum ControlType
-        {
-            Normal, // Triggers that operate as normal to provide sonification
-            Reset,  // Triggers that reset the 'Triggered' flag on all triggers with a TriggerType of Once
-            Mute    // Triggers that mute all sonification of Normal triggers
-        }*/
-
+        
         public enum AllowanceType
         {
             Any,    // Trigger may activate in any state
@@ -71,6 +64,14 @@ namespace SoniFight
         public float sampleSpeed;
         public float sampleVolume;
 
+        // A current sample volume for continuous triggers whose volume may change with distance
+        [XmlIgnore]
+        public float currentSampleVolume;
+
+        // A current sample speed for continuous triggers whose speed may change with distance
+        [XmlIgnore]
+        public float currentSampleSpeed;
+
         // Can this trigger be muted? If we mute when p1 or p2 health hits zero then character select triggers are muted until the reset hits (i.e. timer is 99 or such).
         //public bool mutable;
 
@@ -86,6 +87,9 @@ namespace SoniFight
         // The sampleKey is the relative path to the sample, such as ".\Configs\SomeGame\beep.mp3"
         [XmlIgnore]
         public string sampleKey = "";  // Just so it's not null and doesn't trip the pause-if-continuous-trigger-in-menus
+
+        [XmlIgnore]
+        public bool modificationActive = false;
 
         // ---------- Methods ----------
 
@@ -109,7 +113,8 @@ namespace SoniFight
             sampleSpeed = 1.0f;
 
             active = true;
-            isClock = false;            
+            isClock = false;
+            modificationActive = false;
         }
 
         // Constructor which creates a deep-copy of an existing trigger
@@ -134,6 +139,7 @@ namespace SoniFight
 
             active = source.active;
             isClock = source.isClock;
+            modificationActive = source.modificationActive;
         }
 
         public Trigger(int id) : base()

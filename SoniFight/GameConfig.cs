@@ -188,14 +188,13 @@ namespace SoniFight
                     // Load all samples
                     foreach (Trigger t in triggerList)
                     {
-                        // Load sample if not already loaded and not the clock trigger
-
+                        // Construct the sample key used for the dictionary
                         t.sampleKey = ".\\Configs\\" + configDirectory + t.sampleFilename;
 
-                        
-
-                        if (!SoundPlayer.SampleLoaded(t.sampleKey) && !t.isClock)
+                        // If the sample isn't loaded and it's not the clock or a modifier trigger (these don't use samples)...
+                        if (!SoundPlayer.SampleLoaded(t.sampleKey) && !t.isClock && t.triggerType != Trigger.TriggerType.Modifier)
                         {
+                            // ...then load the sample for the trigger.
                             if (t.triggerType != Trigger.TriggerType.Continuous)
                             {
                                 SoundPlayer.LoadSample(t.sampleKey, false); // Normal trigger samples don't loop...                                
@@ -207,6 +206,7 @@ namespace SoniFight
                         }                        
                     }
 
+                    // Set our process grabbing background worker to cancel
                     e.Cancel = true;
 
                     // This sets cancellation to pending, which we handle in the associated doWork method

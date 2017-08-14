@@ -187,7 +187,6 @@ namespace SoniFight
         // Method to unload all samples and clear the sample dictionary
         public static void UnloadAllSamples()
         {
-            //if (IsPlaying()) { Channel.stop(); }
             soundEngine.StopAllSounds();
 
             // Release all samples in the dictionary then clear it
