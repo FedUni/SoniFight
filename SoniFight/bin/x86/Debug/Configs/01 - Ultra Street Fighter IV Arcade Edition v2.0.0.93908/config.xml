@@ -5993,6 +5993,22 @@
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
+    <Trigger>
+      <id>350</id>
+      <name>Clock 50-CLONE</name>
+      <description>Says 'Clock 50' when it hits 50</description>
+      <value xsi:type="xsd:string">89</value>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <watchOneId>0</watchOneId>
+      <watchTwoId>-1</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>bib.ogg</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <active>true</active>
+    </Trigger>
   </triggerList>
   <Description>Street Fighter IV GameConfig - Al Lansley - 2017-08-10
 
@@ -6005,5 +6021,5 @@ Unfortunately in some circumstances random sample playing may be unavoidable bec
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
+  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
 </GameConfig>

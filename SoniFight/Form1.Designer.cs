@@ -90,8 +90,7 @@ namespace SoniFight
             this.appTitleLable.Size = new System.Drawing.Size(780, 63);
             this.appTitleLable.TabIndex = 0;
             this.appTitleLable.Text = "SoniFight v0.6";
-            this.appTitleLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.appTitleLable.Click += new System.EventHandler(this.appTitleLable_Click);
+            this.appTitleLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;            
             // 
             // configsComboBox
             // 
