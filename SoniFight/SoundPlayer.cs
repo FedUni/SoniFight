@@ -117,14 +117,14 @@ namespace SoniFight
             }                
         }
 
-        public static void ChangeSamplePitch(string sampleKey, float pitch)
+        public static void ChangeSampleSpeed(string sampleKey, float speed)
         {
             // If we're playing the sample...
             if (soundEngine.IsCurrentlyPlaying(sampleKey))
             {
                 // ...get access to it. If successfully found, modify its volume.
                 ISound sample = sampleDictionary[sampleKey];
-                sample.PlaybackSpeed = pitch;
+                sample.PlaybackSpeed = speed;
             }
         }
 

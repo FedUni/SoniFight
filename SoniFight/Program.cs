@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -256,7 +252,7 @@ namespace SoniFight
             // Get the time and the current clock
             startTime = DateTime.Now;
 
-            // Look through all triggers...
+            // Declare a few vars once here to maintain scope throughout the 'game-loop'
             dynamic readValue;
             dynamic readValue2;
             dynamic currentClock = null;
@@ -265,7 +261,7 @@ namespace SoniFight
             // While we are providing sonification...            
             while (!e.Cancel)
             {                
-                bool foundSonicMatch = false; // Did we find a match to a sonification condition?             
+                bool foundMatch = false; // Did we find a match to a sonification condition?             
 
                 // Update all active watch destination addresses (this must happen once per poll!)
                 Watch w;
@@ -342,17 +338,33 @@ namespace SoniFight
                     // Note: This CHECK must occur before the below block to function correctly.
                     if (t.active && t.triggerType == Trigger.TriggerType.Continuous)
                     {
-                        // If we're InMenu we pause it...
+                        // If we're InMenu...
                         if (Program.gameState == GameState.InMenu)
                         {
-                            SoundPlayer.PauseSample(t.sampleKey);
+                            // ...and the continuous trigger is NOT paused...
+                            if (!SoundPlayer.IsPaused(t.sampleKey))
+                            {
+                                // ...then we pause it.
+                                SoundPlayer.PauseSample(t.sampleKey);
+                            }
 
                             continue; // No need to process this continuous trigger any further
                         }
-                        else // ...otherwise if we're InGame we resume it.
+                        else // ...otherwise if we're InGame...
                         {
-                            
-                            SoundPlayer.ResumeSample(t.sampleKey);
+                            // ...AND the sample is NOT playing, then we reset the volume and speed properties then resume it.
+                            if (SoundPlayer.IsPaused(t.sampleKey))
+                            {
+                                t.currentSampleVolume = t.sampleVolume;
+                                t.currentSampleSpeed = t.sampleSpeed;
+                                SoundPlayer.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume);
+                                SoundPlayer.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
+
+                                SoundPlayer.ResumeSample(t.sampleKey);
+                            }
+
+                            // At this point we should be playing the continuous trigger, so we will NOT skip the rest of this iteration on the trigger
+                            // so that any volume/speed adjustments can be made, if necessary.
                         }
                     }
 
@@ -389,6 +401,26 @@ namespace SoniFight
                         // Calculate the percentage of the current range to the max range
                         float percentage;
 
+                        /***
+                         *  WARNING!
+                         *  
+                         *  The below switch condition deals with modifying continuous triggers based on whether they should change by volume or pitch, both ascending or descending.
+                         *  
+                         *  It comes with a VERY IMPORTANT CAVEAT.
+                         *  
+                         *  If your continuous trigger is varying volume, then you should NOT attach a modifier trigger to itthat modifies volume or the results of the modifier trigger
+                         *  will be overwritten on the next poll by the calculation of this continuous trigger.
+                         *  
+                         *  Similarly, if your continuous trigger is varying pitch, then you should NOT attach a modifier trigger to it that modifies pitch or again the result of the
+                         *  modifier trigger will be overwritten on the next poll by the calculation of this continuous trigger section.
+                         *  
+                         *  To reiterate: Continuous changes volume? Modify on pitch only. Continuous changes pitch? Modify on volume only.
+                         *  
+                         *  Get it? Got it? Good!
+                         * 
+                         ***/
+
+                        // Perform sample volume/rate updates for this continuous trigger
                         switch (t.comparisonType)
                         {
                             case Trigger.ComparisonType.DistanceVolumeDescending:
@@ -396,7 +428,7 @@ namespace SoniFight
                                 t.currentSampleVolume = t.sampleVolume * percentage;
                                 if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
                                 {
-                                    SoundPlayer.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume); // Convert.ChangeType(t.currentSampleVolume, TypeCode.Single));
+                                    SoundPlayer.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume);
                                 }
                                 break;
 
@@ -405,7 +437,7 @@ namespace SoniFight
                                 t.currentSampleVolume = t.sampleVolume * percentage;
                                 if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
                                 {
-                                    SoundPlayer.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume); // Convert.ChangeType(t.currentSampleVolume, TypeCode.Single));
+                                    SoundPlayer.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume);
                                 }
                                 break;
 
@@ -414,7 +446,7 @@ namespace SoniFight
                                 t.currentSampleSpeed = t.sampleSpeed * percentage;
                                 if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
                                 {
-                                    SoundPlayer.ChangeSamplePitch(t.sampleKey, t.currentSampleSpeed); // Convert.ChangeType(t.currentSampleSpeed, TypeCode.Single));
+                                    SoundPlayer.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
                                 }
                                 break;
 
@@ -423,7 +455,7 @@ namespace SoniFight
                                 t.currentSampleSpeed = t.sampleSpeed * percentage;
                                 if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
                                 {
-                                    SoundPlayer.ChangeSamplePitch(t.sampleKey, t.currentSampleSpeed); // Convert.ChangeType(t.currentSampleSpeed, TypeCode.Single));
+                                    SoundPlayer.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
                                 }
                                 break;
                         }
@@ -434,10 +466,10 @@ namespace SoniFight
                     else if (t.triggerType == Trigger.TriggerType.Normal)
                     {
                         // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies
-                        foundSonicMatch = performComparison( t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
+                        foundMatch = performComparison( t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
                             
                         // If we found a match...
-                        if (foundSonicMatch)
+                        if (foundMatch)
                         {
                             // InGame? Fine - play the sample because we don't stop InGame triggers from overlapping too heavily.
                             if (Program.gameState == GameState.InGame)
@@ -451,8 +483,6 @@ namespace SoniFight
                             }
                             else // GameState must be InMenu
                             {
-                                //Console.WriteLine("Found InMenu match: " + t.sampleFilename);
-
                                 // Not already playing a menu sample? Great - play the one that matched.
                                 if ( !SoundPlayer.IsPlaying() )
                                 {
@@ -489,72 +519,69 @@ namespace SoniFight
                         } // End of found sonic match section                       
 
                     }
-                    else // t.triggerType == Trigger.TriggerType.Modifier
+                    else // Type must be Trigger.TriggerType.Modifier
                     {
                         // Check our modifier trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies
-                        foundSonicMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
-                        
-                        //Console.WriteLine("Looking for value: " + t.value + ". Found value: " + Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType() + " - so match is: " + foundSonicMatch);
+                        foundMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
                         
                         // Get the continuous trigger related to this modifier trigger
                         // Note: We ALWAYS need this because even if we don't find a match, we may need to reset the volume/pitch of the continuous sample to it's non-modified state
                         Trigger continuousTrigger = Utils.getTriggerWithId(t.watchTwoId);
 
+                        Console.WriteLine("!!Cont vol: " + continuousTrigger.currentSampleVolume + ". Cont speed: " + continuousTrigger.currentSampleSpeed);
+
                         // Modifier condition met? Okay...
-                        if (foundSonicMatch)
+                        if (foundMatch)
                         {
+                            // If this modifier trigger is NOT currently active we must activate it because we HAVE found a match for the modifier condition (i.e. foundMatch)
                             if (!t.modificationActive)
                             {
                                 // Set the flag on this modification trigger to say it's active
                                 t.modificationActive = true;
 
-                                Console.WriteLine("--Found modifier match for trigger " + t.id + " and modification was NOT active.");
-                                Console.WriteLine("--Contiguous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
+                                /*Console.WriteLine("--Found modifier match for trigger " + t.id + " and modification was NOT active.");
+                                Console.WriteLine("--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
                                 Console.WriteLine("--Modifier trigger's sample volume is: " + t.sampleVolume);
-                                Console.WriteLine("--Contiguous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
-                                Console.WriteLine("--Modifier trigger's sample speed is: " + t.sampleSpeed);                                
+                                Console.WriteLine("--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
+                                Console.WriteLine("--Modifier trigger's sample speed is: " + t.sampleSpeed);*/
 
-                                CONTINUOUS TRIGGER'S SAMPLE SPEED IS NOT BEING UPDATED CORRECTLY - GO LOOK AT WHERE IT'S BEING CALCULATED
-
-                                // Set the volume and pitch of the continuous trigger based on the modification trigger's volume and pitch
+                                // Add any volume or pitch changes to the continuous triggers playback
                                 continuousTrigger.currentSampleVolume *= t.sampleVolume;
-                                continuousTrigger.currentSampleSpeed *= t.sampleSpeed;
+                                continuousTrigger.currentSampleSpeed  *= t.sampleSpeed;
                                 SoundPlayer.ChangeSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
-                                SoundPlayer.ChangeSamplePitch(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
+                                SoundPlayer.ChangeSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
 
-                                Console.WriteLine("--Multiplying by modifier sample volume and speed to alter gets us a volume of: " + continuousTrigger.currentSampleVolume + " and a speed of: " + continuousTrigger.currentSampleSpeed);
-
-
+                                //Console.WriteLine("--Multiplying gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
                             }
 
-                            // Else sonification already active on match? Do nothing.
+                            // Else modification already active on this continuous trigger? Do nothing.
                         }
                         else // Did NOT match modifier condition. Do we need to reset the continous trigger?
                         {
+                            // If this modifier trigger IS currently active and we failed the match we have to reset the continuous triggers playback conditions
                             if (t.modificationActive)
                             {
-                                Console.WriteLine("$$Did NOT find modifier match for trigger " + t.id + " and modification WAS active so needs resetting.");
-                                Console.WriteLine("$$Contiguous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
-                                Console.WriteLine("$$Modifier trigger's sample volume is: " + t.sampleVolume);
-                                Console.WriteLine("$$Contiguous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
-                                Console.WriteLine("$$Modifier trigger's sample speed is: " + t.sampleSpeed);
+                                /*Console.WriteLine("22Did NOT find modifier match for trigger " + t.id + " and modification WAS active so needs resetting.");
+                                Console.WriteLine("22Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
+                                Console.WriteLine("22Modifier trigger's sample volume is: " + t.sampleVolume);
+                                Console.WriteLine("22Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
+                                Console.WriteLine("22Modifier trigger's sample speed is: " + t.sampleSpeed);*/
 
                                 // Set the flag on this modification trigger to say it's inactive
                                 t.modificationActive = false;
 
                                 // Reset the volume and pitch of the continuous trigger based on the modification trigger's volume and pitch
                                 continuousTrigger.currentSampleVolume /= t.sampleVolume;
-                                continuousTrigger.currentSampleSpeed /= t.sampleSpeed;
-
+                                continuousTrigger.currentSampleSpeed  /= t.sampleSpeed;
                                 SoundPlayer.ChangeSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
-                                SoundPlayer.ChangeSamplePitch(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
+                                SoundPlayer.ChangeSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
 
-                                Console.WriteLine("$$Dividing by modifier sample volume and speed to alter gets us a volume of: " + continuousTrigger.currentSampleVolume + " and a speed of: " + continuousTrigger.currentSampleSpeed);
-
+                                //Console.WriteLine("22Dividing gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
                             }
 
                             // Else sonification already inactive after failing match? Do nothing.
-                        }
+
+                        } // End of if we did NOT match the modifier condition
 
                     } // End of modifier triggers section
 
@@ -631,9 +658,10 @@ namespace SoniFight
             }
             else 
             {
-                Console.WriteLine("Sonification error - stopping. Cause: " + e.Result.ToString()); 
-            }            
-        }
+                Console.WriteLine( "Sonification error - stopping. Cause: " + e.Result.ToString() ); 
+            }
+
+        } // End of stopSonification method
 
     } // End of Program class
 

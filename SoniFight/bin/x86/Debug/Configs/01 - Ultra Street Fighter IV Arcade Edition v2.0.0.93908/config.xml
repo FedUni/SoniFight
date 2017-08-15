@@ -5892,10 +5892,10 @@
       <watchTwoId>35</watchTwoId>
       <comparisonType>DistanceVolumeAscending</comparisonType>
       <sampleFilename>High-Voltage-Electrical-Arcing-Mono.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
+      <sampleSpeed>0.5</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <active>true</active>
+      <active>false</active>
     </Trigger>
     <Trigger>
       <id>343</id>
@@ -5911,7 +5911,7 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <active>false</active>
+      <active>true</active>
     </Trigger>
     <Trigger>
       <id>344</id>
@@ -5963,8 +5963,8 @@
     </Trigger>
     <Trigger>
       <id>348</id>
-      <name>Continuous Trigger Modifier - Pitch Down</name>
-      <description>Halves the rate of any continuous modifier while triggered</description>
+      <name>Continuous Trigger Modifier - Pitch Down on P1 Crouch</name>
+      <description>Multiplies sample rate by 0.5 for specified continuous trigger on value match</description>
       <value xsi:type="xsd:string">2</value>
       <triggerType>Modifier</triggerType>
       <allowanceType>InGame</allowanceType>
@@ -5974,6 +5974,22 @@
       <sampleFilename>NONE</sampleFilename>
       <sampleSpeed>0.5</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <isClock>false</isClock>
+      <active>false</active>
+    </Trigger>
+    <Trigger>
+      <id>349</id>
+      <name>Continuous Trigger Modifier - Volume Down on P1 Crouch</name>
+      <description>Multiplies sample volume by 0.5 for specified continuous trigger on value match</description>
+      <value xsi:type="xsd:string">2</value>
+      <triggerType>Modifier</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <watchOneId>36</watchOneId>
+      <watchTwoId>343</watchTwoId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>NONE</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>0.5</sampleVolume>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -5989,5 +6005,5 @@ Unfortunately in some circumstances random sample playing may be unavoidable bec
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
+  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
 </GameConfig>

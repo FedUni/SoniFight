@@ -36,30 +36,37 @@ namespace SoniFight
 
         // ---------- Properties ----------       
 
+        // The unique ID of this trigger
         public int id;
 
+        // A brief name and description (optional, but useful)
         public string name;
         public string description;
 
-        //public bool isReset;
-
-        // This is the value we trigger on
+        // This is the value we activate this trigger on when there is a match with the value read from this triggers watch
         public dynamic value;
 
+        // The last value read on this trigger. Used so we can activate only on crossing thresholds rather than repeatedly.
         [XmlIgnore]
         public dynamic previousValue;
 
+        // Is this a normal, continuous or modifier trigger?
         public TriggerType triggerType;
 
-        //public ControlType controlType;
-
+        // Can this trigger be activated in menus, or in game, or both?
         public AllowanceType allowanceType;
 
+        // The watch used to read data for this trigger.
         public int watchOneId;
+
+        // An optional second watch used with continuous triggers.
+        // Note: This property is used to hold the continuous trigger to modify if this trigger is a modifier trigger.
         public int watchTwoId;
         
+        // The type of comparison to make, i.e. EqualTo, LessThan, LessThanOrEqualTo etc.
         public ComparisonType comparisonType;
                 
+        // Properties for the sample to play along with its associated default speed and volume (defaults: 1.0 - i.e. full volume, standard playback speed)
         public string sampleFilename;
         public float sampleSpeed;
         public float sampleVolume;

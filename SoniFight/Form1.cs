@@ -997,28 +997,17 @@ namespace SoniFight
                         {
                             currentTrigger.triggerType = Utils.GetTriggerTypeFromInt(triggerTypeCB.SelectedIndex);
 
-                            // If we're a continuous trigger then disable comparison type, watch ids etc.
-                            /*if (currentTrigger.triggerType == Trigger.TriggerType.Continuous) // && currentTrigger.comparisonType == Trigger.ComparisonType.DistanceBetween)
+                            // If we're a modifier trigger we disable the sample name textbox, otherwise it's left or made active
+                            if (currentTrigger.triggerType == Trigger.TriggerType.Modifier)
                             {
-                                compTypeCB.Enabled = true;
-                                watch1TB.Enabled = true;
-                                watch2TB.Enabled = true;
-                                valueTB.Enabled = true;
+                                sampleFilenameTB.Enabled = false;
+                                sampleFilenameButton.Enabled = false;
                             }
-                            else if (currentTrigger.triggerType == Trigger.TriggerType.Normal)
+                            else
                             {
-                                compTypeCB.Enabled = true;
-                                watch1TB.Enabled = true;
-                                watch2TB.Enabled = false;
-                                valueTB.Enabled = true;
-                            }*/
-                            /*else // trigger type is modifier
-                            {
-                                compTypeCB.Enabled = true;
-                                watch1TB.Enabled = true;
-                                watch2TB.Enabled = true;
-                                valueTB.Enabled = true;
-                            }*/
+                                sampleFilenameTB.Enabled = true;
+                                sampleFilenameButton.Enabled = true;
+                            }
                         };
 
                         // We must also check and disable if req'd when we load a trigger of type continuous
@@ -1294,7 +1283,6 @@ namespace SoniFight
                         sampleFilenameButton.Click += (object o, EventArgs ae) =>
                         {
                             OpenFileDialog file = new OpenFileDialog();
-                            //file.InitialDirectory = Application.StartupPath + "\\Configs\\" + gameConfig.ConfigDirectory; // Open dialog in gameconfig directory
 
                             file.InitialDirectory = ".\\Configs\\" + gameConfig.ConfigDirectory; // Open dialog in gameconfig directory
 
@@ -1306,6 +1294,18 @@ namespace SoniFight
                             }
                         };
                         sampleSelectionPanel.Controls.Add(sampleFilenameButton);
+
+                        // If we're a modifier trigger we disable the sample name textbox and sample selection button, otherwise it's left or made active
+                        if (currentTrigger.triggerType == Trigger.TriggerType.Modifier)
+                        {
+                            sampleFilenameTB.Enabled = false;
+                            sampleFilenameButton.Enabled = false;
+                        }
+                        else
+                        {
+                            sampleFilenameTB.Enabled = true;
+                            sampleFilenameButton.Enabled = true;
+                        }
 
                         // Now we can add the sample selection panel to the cell!
                         panel.Controls.Add(sampleSelectionPanel, 1, row);
