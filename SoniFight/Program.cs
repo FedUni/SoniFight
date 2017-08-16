@@ -79,13 +79,17 @@ namespace SoniFight
         // This method checks for successful comparisons between a trigger and the value read from that triggers watch        
         public static bool performComparison(Trigger t, dynamic readValue, int recursiveDepth)
         {
-            // Don't recurse more than 5 levels (shouldn't be required - also stops cyclic loop stack overflow)
+            // Note: Continuous triggers do NOT call this method because their job is not to compare to a specific value, it's to compare
+            //       two values and give a percentage (e.g. player 1 x-location and player 2 x-location).
+
+            // Don't recurse more than 5 levels (so 6 in total, also stops cyclic loop stack overflow)
             if (recursiveDepth >= 5)
             {
                 return false;
             }
 
-            // Note: These 'opposite' comparison checks stop multiple retriggers of a sample as it only happens when the value first crosses the trigger threshold
+            // Note: The 'opposite' comparison checks using the previous value below stop multiple retriggers of a sample as the sample only activates
+            //       when the value crosses the trigger threshold.
 
             // Guard against user moving to edit tab where triggers are temporarily reset and there is no previous value
             if (t.previousValue != null)
@@ -108,46 +112,44 @@ namespace SoniFight
                                 {
                                     return true;
                                 }
-                                else // We're either a normal trigger with a dependent trigger or we're a continuous trigger
-                                {
-                                    // Trigger has a dependent trigger or modifies a continuous trigger (we'll call both 'dependent')? Get and check it.
-                                    Trigger dependentT = Utils.getTriggerWithId(t.watchTwoId);
 
-                                    MAKE SURE THIS ALL ACTS PROPERLY AND THAT WE DEAL WITH A NORMAL TRIGGER WITH DEPENDENCY OR A CONTINUOUS TRIGGER PROPERLY BELOW
+                                // At this point our trigger is a normal trigger. We know this because we return true if the trigger was a modifier, and (as noted at the
+                                // top of the method) - continuous triggers do not call this performComparison method.    
+                                
+                                // This trigger has a dependent trigger - so we get the trigger. Yes, watchTwoId is now a bad name for the trigger we're getting - but that's what it represents.
+                                Trigger dependentT = Utils.getTriggerWithId(t.watchTwoId);
 
-                                    // If the dependent trigger is active, then our return type from THIS method is the return from checking the comparison
-                                    // with the dependent trigger within this one (which has already matched or we wouldn't be here). This will recurse as
-                                    // deep as the trigger dependencies are linked - fails after 5 linked dependencies to prevent cyclic dependency crash.
-                                    if (dependentT.active)
-                                    {
-                                         FIXME: WHAT IF THIS IS A NORMAL WITH DEPENDENCY? THEN WE'RE GETTING A WATCH WHEN WE SHOULD BE GETTING A TRIGGER!
+                                // If the dependent trigger is active, then our return type from THIS method is the return from checking the comparison
+                                // with the dependent trigger within this one (which has already matched or we wouldn't be here). This will recurse as
+                                // deep as the trigger dependencies are linked - fails after 5 linked dependencies to prevent cyclic dependency crash.
+                                if (dependentT.active)
+                                {   
+                                    Watch dependentWatch = Utils.getWatchWithId(dependentT.watchOneId);
 
-                                        Watch dependentWatch = Utils.getWatchWithId(dependentT.watchOneId);
-
-                                        // Dependent watch not active? Then obviously we must fail.
-                                        if (!dependentWatch.Active)
-                                        {
-                                            return false;
-                                        }
-
-                                        bool dependentResult = performComparison(dependentT, dependentWatch.getDynamicValueFromType(), recursiveDepth + 1);
-
-                                        if (!dependentResult)
-                                        {
-                                            Console.WriteLine("Suppressed trigger " + t.id + " due to failure of dependent trigger " + dependentT.id + ".");
-                                        }
-
-                                        return dependentResult;
-                                    }
-                                    else // Dependent trigger was not active so dependencies fail and we record no-match as the end result.
+                                    // Watch of dependent trigger was not active? Then obviously we must fail as we're not updating the watch details.
+                                    if (!dependentWatch.Active)
                                     {
                                         return false;
                                     }
 
-                                } // End of if watchTwoId was not -1 section
+                                    // Does the dependent trigger match its target condition?
+                                    bool dependentResult = performComparison(dependentT, dependentWatch.getDynamicValueFromType(), recursiveDepth + 1);
+
+                                    // No? Then provide feedback that we'll be supressing this trigger because its dependent trigger failed.
+                                    if (!dependentResult)
+                                    {
+                                        Console.WriteLine("Trigger " + t.id + " supressed as dependent trigger " + dependentT.id + " failed (depth: " + recursiveDepth +").");
+                                    }
+                                    return dependentResult;
+                                }
+                                else // Dependent trigger was not active so dependency fails and we record no-match as the end result.
+                                {
+                                    return false;
+                                }                                
 
                             } // Comparison failed?
-                            return false;                            
+                            return false;
+                                                  
                         case Trigger.ComparisonType.LessThan:
                             if ((t.previousValue > t.value) && (readValue < t.value)) { return true; }
                             //TODO: Add dependency recursion.
@@ -299,7 +301,7 @@ namespace SoniFight
                             Program.previousGameState = Program.gameState;
 
                             // If the current and last clocks differ...
-                            if (currentClock != lastClock)
+                            if ( currentClock != lastClock)
                             {
                                 // ...update the last clock to be the current clock and...
                                 lastClock = currentClock;
@@ -307,6 +309,15 @@ namespace SoniFight
                                 // ...set the current gamestate to be InGame.
                                 Program.gameState = GameState.InGame;
                                 //Console.WriteLine("Program state is InGame");
+
+                                FIX THIS SO THAT CONTINUOUS TRIGGERS DON'T BRIEFLY RESTART BETWEEN ROUNDS WHEN THE CLOCK GETS RESET
+
+                                if (currentClock == 99 || currentClock == 60)
+                                {
+                                    Console.WriteLine("Suppressed moving to InGame state because currentClock is either 99 or 60.");
+                                    Program.gameState = GameState.InMenu;
+                                }
+
                             }
                             else // Current and last clock values the same? Then set the gamestate to be InMenu.
                             {
@@ -343,7 +354,7 @@ namespace SoniFight
                                 SoundPlayer.PauseSample(t.sampleKey);
                             }
 
-                            continue; // No need to process this continuous trigger any further
+                            continue; // No need to process this continuous trigger any further - if it wasn't paused we've now paused it.
                         }
                         else // ...otherwise if we're InGame...
                         {
@@ -354,14 +365,14 @@ namespace SoniFight
                                 t.currentSampleSpeed = t.sampleSpeed;
                                 SoundPlayer.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume);
                                 SoundPlayer.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
-
                                 SoundPlayer.ResumeSample(t.sampleKey);
                             }
 
                             // At this point we should be playing the continuous trigger, so we will NOT skip the rest of this iteration on the trigger
                             // so that any volume/speed adjustments can be made, if necessary.
                         }
-                    }
+
+                    } // End of if we have an active continuous trigger section
 
                     // There are other conditions under which we can skip processing triggers - such as...
                     if ( (t.allowanceType == Trigger.AllowanceType.InGame && Program.gameState == GameState.InMenu) || // ...if the trigger allowance and game state don't match...
@@ -377,14 +388,14 @@ namespace SoniFight
                     // At this stage the trigger can be read and used - so let's get on with it...
 
                     // Read the value associated with the watch named by this trigger
-                    // Note: We don't know the type - but the watch itself knows the type, and 'getDynamicValueFromType'
+                    // Note: We don't know the data type - but the watch itself knows the type, and 'getDynamicValueFromType'
                     // will ensure the correct data type is read.
                     readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
                     
-                    // Sonfiy for continuous events - ONLY in InGame state!
+                    // Sonfiy for continuous events. Note: Continuous triggers may only be used in the InGame state!
                     if (t.triggerType == Trigger.TriggerType.Continuous && Program.gameState == GameState.InGame)
                     {
-                        // Read the second value associated with the second watch in this trigger
+                        // Get the secondary watch associated with this continuous trigger
                         readValue2 = Utils.getWatchWithId(t.watchTwoId).getDynamicValueFromType();
 
                         // The trigger value acts as the range between watch values for continuous triggers
@@ -414,6 +425,8 @@ namespace SoniFight
                          *  Get it? Got it? Good!
                          * 
                          ***/
+
+                        // TODO: Make sure you can't have continuous triggers with use watches with a non-numerical type.
 
                         // Perform sample volume/rate updates for this continuous trigger
                         switch (t.comparisonType)
@@ -519,11 +532,11 @@ namespace SoniFight
                         // Check our modifier trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies
                         foundMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
                         
-                        // Get the continuous trigger related to this modifier trigger
+                        // Get the continuous trigger related to this modifier trigger.
                         // Note: We ALWAYS need this because even if we don't find a match, we may need to reset the volume/pitch of the continuous sample to it's non-modified state
                         Trigger continuousTrigger = Utils.getTriggerWithId(t.watchTwoId);
 
-                        Console.WriteLine("!!Cont vol: " + continuousTrigger.currentSampleVolume + ". Cont speed: " + continuousTrigger.currentSampleSpeed);
+                        //Console.WriteLine("!!Cont vol: " + continuousTrigger.currentSampleVolume + ". Cont speed: " + continuousTrigger.currentSampleSpeed);
 
                         // Modifier condition met? Okay...
                         if (foundMatch)
