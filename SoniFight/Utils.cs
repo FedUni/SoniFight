@@ -11,13 +11,15 @@ namespace SoniFight
 {
     static class Utils
     {
-        // Kernel hooks to read and write process memory
+        // Kernel hook to read process memory
         // Note: Even on 64-bit systems the kernel is called kernel32!
         [DllImport("kernel32.dll")]
         public static extern bool ReadProcessMemory(int hProcess, int lpBaseAddress, byte[] lpBuffer, int dwSize, ref int lpNumberOfBytesRead);
 
         // Constants are implied static in C# - you cannot mark them as such.
         public const int MAX_STRING_LENGTH = 150;
+
+        /* Note: Writing and reading objects to XML code taken from: http://blog.danskingdom.com/saving-and-loading-a-c-objects-data-to-an-xml-json-or-binary-file/ */
 
         /// <summary>
         /// Writes the given object instance to an XML file.
@@ -31,9 +33,6 @@ namespace SoniFight
         /// <param name="append">If false the file will be overwritten if it already exists. If true the contents will be appended to the file.</param>
         public static void WriteToXmlFile<T>(string filePath, T objectToWrite, bool append = false) where T : new()
         {
-
-            //Console.WriteLine("About to write config - path is: " + MainForm.gameConfig.ConfigDirectory);
-
             TextWriter writer = null;
             try
             {
@@ -69,7 +68,6 @@ namespace SoniFight
         public static T ReadFromXmlFile<T>(string filePath) where T : new()
         {
             TextReader reader = null;
-            //var serializer;
 
             T obj = default(T);
             try
@@ -93,6 +91,7 @@ namespace SoniFight
 
         } // End of ReadFromXmlFile method
 
+        // NOTE: This method is not used at the current time, but may come in useful in the future so leaving alone.
         // Range parsing code based on Chris Fazzio's code on StackOverflow. Dupe removal added by me. Source:
         // http://stackoverflow.com/questions/40161/does-c-sharp-have-built-in-support-for-parsing-page-number-strings
         public static int[] ParseIntRange(string ranges)
@@ -116,37 +115,24 @@ namespace SoniFight
                 .Select(t => int.Parse(t)) // digit to int
                 .ToArray();
             return RangeNums.Length.Equals(2) ? Enumerable.Range(RangeNums.Min(), (RangeNums.Max() + 1) - RangeNums.Min()).ToArray() : RangeNums;
-        }
-
-        public static short[] ParseShortRange(string ranges)
-        {
-            int[] intRange = ParseIntRange(ranges);
-
-            int elementCount = intRange.Length;
-
-            short[] shortArray = new short[elementCount];
-
-            for (int loop = 0; loop < elementCount; loop++)
-            {
-                shortArray[loop] = (short)(intRange[loop]);
-                MessageBox.Show(shortArray[loop].ToString());
-            }
-
-            return shortArray;
-        }
+        }       
 
         // ---------- TreeNode manipulation methods ---------
 
         // Flatten a TreeView to find a specific node by its Text property
         // Source: http://stackoverflow.com/questions/12388249/is-there-a-method-for-searching-for-treenode-text-field-in-treeview-nodes-collec/12388467#12388467
-        public static IEnumerable<TreeNode> FlattenTree(this TreeView tv) { return FlattenTree(tv.Nodes); }
+        public static IEnumerable<TreeNode> FlattenTree(this TreeView tv)
+        {
+            return FlattenTree(tv.Nodes);
+        }
 
+        // Method to flatter a TreeView to an enumerable of TreeNodes
         public static IEnumerable<TreeNode> FlattenTree(this TreeNodeCollection coll)
         {
             return coll.Cast<TreeNode>().Concat(coll.Cast<TreeNode>().SelectMany(x => FlattenTree(x.Nodes)));
         }
 
-        // My code
+        // Method to find and return a TreeNode inside a TreeView which has specific text on it
         public static TreeNode FindNodeWithText(TreeView tv, string text)
         {
             var treeNodes = tv.FlattenTree().Where(n => n.Text == text).ToList();
@@ -154,7 +140,7 @@ namespace SoniFight
         }
 
         // Remove all children node from a given node
-        //https://social.msdn.microsoft.com/Forums/vstudio/en-US/689759dd-9ef8-4155-a06b-12f1c0882c8a/remove-all-child-nodes?forum=csharpgeneral
+        // Source: https://social.msdn.microsoft.com/Forums/vstudio/en-US/689759dd-9ef8-4155-a06b-12f1c0882c8a/remove-all-child-nodes?forum=csharpgeneral
         public static void RemoveChildNodes(TreeNode node)
         {
             if (node.Nodes.Count > 0)
@@ -166,11 +152,9 @@ namespace SoniFight
             }
         }
 
-        // --------------------------------------------------
+        // ------------ Process and Memory methods ----------
 
-        
-
-        // Find the process in the processName property and set the processBaseAddress property ready for use
+        // Method to find the process in the processName property and set the processBaseAddress property ready for use
         public static int findProcessBaseAddress(string processName)
         {
             Process[] processArray = Process.GetProcessesByName(processName);
@@ -185,20 +169,12 @@ namespace SoniFight
             return 0;
         }
 
-        // Take base address and a list of hex values (as strings) and return the final feature address
-        //protected int findFeatureAddress(int baseAddress, List<string> hexPointerTrail)
-        // Take base address and a list of hex values (as strings) and return the final feature address
+        // Method to return a feature address given a process handle, base adress, and pointer trail as a list of hexadecimal strings
         public static int findFeatureAddress(int processHandle, int baseAddress, List<string> hexPointerTrail)
         {
-            /*if (!GameConfig.active)
-            {
-                Console.WriteLine("GameConfig is not active/validated!");
-                return 0;
-            }*/
-
             //Console.WriteLine("***Base address is: " + baseAddress);
 
-            // Our final address will change as this method runs, but we start at the base address
+            // Our feature address will change as this method runs, but we always start at the base address
             int featureAddress = baseAddress;
 
             // Follow the pointer trail to find the final address of the feature
@@ -206,37 +182,26 @@ namespace SoniFight
             int offset = 0;
             for (int loop = 0; loop < hexPointerTrail.Count; loop++)
             {
-                //Console.WriteLine("***Loop is: " + loop);
-
                 // Get our offset string as an int
                 offset = Convert.ToInt32(hexPointerTrail.ElementAt(loop), 16);
-
-                //Console.WriteLine("***Offset " + loop + " in hex is: " + hexPointerTrail.ElementAt(loop) + " which as an int is: " + offset);
 
                 // Apply the offset
                 featureAddress += offset;
 
-                //Console.WriteLine("***Adding this offset takes us to address: " + featureAddress);
-
+                // If this was the final value of the pointer trail we've followed the entire trails so break out of the loop here...
                 if (loop == (hexPointerTrail.Count - 1))
                 {
                     break;
                 }
 
-                // Read the address at that offset
+                // ...otherwise, if this wasn't the final hop we read the address at that offset and go around the loop again.
                 featureAddress = getIntFromAddress(processHandle, featureAddress);
-
-
-
-                //Console.WriteLine("***Which has value: " + featureAddress);
-
-                //Console.WriteLine("***----------------------------------***");
             }
 
             return featureAddress;
         }
 
-        // Add a hex value, specified as a string, to the pointer trail
+        // Method to add a hex value, specified as a string, to the pointer trail
         public static bool addHexValueToPointerTrail(List<string> pointerList, string hexValue)
         {
             int i = 0;
@@ -250,7 +215,7 @@ namespace SoniFight
             return false;
         }
 
-        // Read and return an int
+        // Method to read and return an int (4 bytes)
         public static int getIntFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;            
@@ -259,7 +224,7 @@ namespace SoniFight
             return BitConverter.ToInt32(buf, 0);
         }
 
-        // Read and return a short
+        // Method to read and return a short (2 bytes)
         public static short getShortFromAddress(int processHandle, int address)
         {   
             int bytesRead = 0;
@@ -268,7 +233,7 @@ namespace SoniFight
             return BitConverter.ToInt16(buf, 0);
         }
 
-        // Read and return a long
+        // Method to read and return a long (8 bytes)
         public static Int64 getLongFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -277,7 +242,7 @@ namespace SoniFight
             return BitConverter.ToInt64(buf, 0);
         }
 
-        // Read and return a float
+        // Method to read and return a float (4 bytes)
         public static float getFloatFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -286,7 +251,7 @@ namespace SoniFight
             return BitConverter.ToSingle(buf, 0);
         }
 
-        // Read and return a double
+        // Method to read and return a double (8 bytes)
         public static double getDoubleFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -295,7 +260,7 @@ namespace SoniFight
             return BitConverter.ToDouble(buf, 0);
         }
 
-        // Read and return a boolean
+        // Method to read and return a boolean (1 byte)
         public static bool getBoolFromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -304,7 +269,7 @@ namespace SoniFight
             return BitConverter.ToBoolean(buf, 0);
         }
 
-        // Read and return a UTF-8 formatted string
+        // Method to read and return a UTF-8 formatted string (1 byte per char - max of 33 chars returned)
         public static string getUTF8FromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -340,7 +305,7 @@ namespace SoniFight
             return s.TrimEnd(); // Still trim spaces at end.
         }
 
-        // Read and return a UTF-16 formatted string
+        // Method to read and return a UTF-16 formatted string (2 bytes per char - max of 33 chars returned)
         public static string getUTF16FromAddress(int processHandle, int address)
         {
             int bytesRead = 0;
@@ -375,7 +340,10 @@ namespace SoniFight
             // Return a version of the read string with trailing spaces trimmed so the user does not have to add trailing spaces to their match criteria (which would be ugly - espcially for non-sighted users).
             return s.TrimEnd(); // Still trim spaces at end.
         }
+                
+        // --------- UI Manipulation / Helper methods -------
 
+        // Method to remove an aribtrary row from a TableLayoutPanel.
         // By default you cannot remove an arbitrary row from a table (only the last row), but
         // this method allows us to do so via a bunch of copy and pastes. Taken from stack overflow.
         // Source: http://stackoverflow.com/questions/15535214/removing-a-specific-row-in-tablelayoutpanel
@@ -405,9 +373,11 @@ namespace SoniFight
             if (panel.RowCount > 0) panel.RowCount--;
         }
 
+        // Method to move a row in a TableLayoutPanel down by one, making room to insert a row at its previous location.
+        // Note: This method is never used at present, but may come in useful later on so leaving in.
         public static void moveRowsDownByOne(TableLayoutPanel panel, int startingRowIndex)
         {
-            Console.WriteLine("Running move rows down by one - starting at row index: " + startingRowIndex);
+            //Console.WriteLine("Running move rows down by one - starting at row index: " + startingRowIndex);
 
             panel.SuspendLayout();
 
@@ -431,7 +401,7 @@ namespace SoniFight
             panel.ResumeLayout();
         }
 
-        // Return a list of string items split on commas with whitespaces removed and no 'blank' entries
+        // Method to return a list of string items split on commas with whitespaces removed and no 'blank' entries
         public static List<string> CommaSeparatedStringToStringList(string s)
         {         
             return s.Split(',')
@@ -440,7 +410,7 @@ namespace SoniFight
                    .ToList();
         }
 
-        //
+        // Method to return a watch value type by its enum position / dropdown index
         public static Watch.ValueType GetValueTypeFromInt(int i)
         {
             switch (i)
@@ -466,6 +436,7 @@ namespace SoniFight
             }
         }
 
+        // Method to return an int based on the value type of a watch
         public static int GetIntFromValueType(Watch.ValueType vt)
         {
             switch (vt)
@@ -491,6 +462,7 @@ namespace SoniFight
             }
         }
 
+        // Method to return a trigger comparison type by its enum position / dropdown index
         public static Trigger.ComparisonType GetComparisonTypeFromInt(int i)
         {
             switch (i)
@@ -522,6 +494,7 @@ namespace SoniFight
             }
         }
 
+        // Method to return an int based on the comparison type of a trigger
         public static int GetIntFromComparisonType(Trigger.ComparisonType ct)
         {
             switch (ct)
@@ -551,9 +524,9 @@ namespace SoniFight
                 default:
                     return 0;
             }
+        }
 
-        } // End of GetIntFromComparisonType method
-
+        // Method to return a trigger type by its enum position / dropdown index
         public static Trigger.TriggerType GetTriggerTypeFromInt(int i)
         {
             switch (i)
@@ -569,6 +542,7 @@ namespace SoniFight
             }
         }
 
+        // Method to return an int based on the type of a trigger
         public static int GetIntFromTriggerType(Trigger.TriggerType tt)
         {
             switch (tt)
@@ -583,8 +557,8 @@ namespace SoniFight
                     return 0;
             }
         }
-        
-        // Method to return the ControlType based on the selected index (int) of a dropdown menu
+
+        // Method to return a trigger allowance type by its enum position / dropdown index
         public static Trigger.AllowanceType GetAllowanceTypeFromInt(int i)
         {
             switch (i)
@@ -600,7 +574,7 @@ namespace SoniFight
             }
         }
 
-        // Method to return an int based on the ControlType of a trigger
+        // Method to return an int based on the alowance type of a trigger.
         public static int GetIntFromAllowanceType(Trigger.AllowanceType at)
         {
             switch (at)
@@ -673,4 +647,4 @@ namespace SoniFight
 
     } // End of Utils class
 
-} // End of FairFight namespace
+} // End of namespace

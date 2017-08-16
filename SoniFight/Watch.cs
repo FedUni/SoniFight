@@ -9,9 +9,10 @@ using System.Xml.Serialization;
 
 namespace SoniFight
 {
+    // A class used to monitor a memory location (as described by a pointer trail) and retrieve data of a given type from that address
     public class Watch
     {
-        // NOTE: Properties MUST be public for XML Serializer to export them to XML file.... 
+        // NOTE TO SELF: Properties MUST be public for XML Serializer to export them to XML. 
 
         // Enum of different types of destination values we can read
         public enum ValueType
@@ -26,11 +27,10 @@ namespace SoniFight
             StringUTF16Type
         }
 
-        // Default constructor
+        // Default constructor req'd for XML serialization
         public Watch() { }
 
-        // Copy constructor
-        // Constructor which creates a deep-copy of an existing trigger
+        // Copy constructor which creates a deep-copy of an existing watch
         public Watch(Watch source)
         {
             name = source.name + "-CLONE";
@@ -81,9 +81,10 @@ namespace SoniFight
             }
         }
 
+        // What type of value this watch will read - default is int
         public ValueType valueType = ValueType.IntType;
-        public void setValueType(ValueType vt) { this.valueType = vt; }
-
+        
+        // Watch id is a unique positive integer
         [XmlIgnore]
         private int id;
         public int Id
@@ -92,7 +93,7 @@ namespace SoniFight
             set { id = value; }
         }
 
-        // Name of this watch (e.g. "Player 1 X-Location")
+        // The name of this watch (e.g. "Player 1 X-Location")
         [XmlIgnore]
         public string name;
         public string Name
@@ -101,7 +102,7 @@ namespace SoniFight
             set { name = value; }
         }
 
-        // Description of this watch (e.g. "Player 1 X-Location")
+        // A description of this watch (e.g. "Player 1 X-Location")
         [XmlIgnore]
         private string description;
         public string Description
@@ -110,28 +111,18 @@ namespace SoniFight
             set { description = value; }
         }
 
-        // The pointer list contains a list of pointers as strings in hexadecimal format
-        // Note: Do not include any prefixes.
+        // The pointer list contains a list of pointers as strings in hexadecimal format. Note: Do not include any prefixes such as 0x or such.
         // Also: The base offset is the very first pointer in the list. This is typically a larger value than the other offsets which tend to be closer together.
         [XmlIgnore]
         private List<string> pointerList = new List<string>();
         public List<string> PointerList
         {
-            get { return pointerList; }
+            get { return pointerList;  }
             set { pointerList = value; }
         }
-
-        // A watch is associated with one or more triggers (id values are stored - the actual dictionary of triggers is in the GameConfig object)
-        /*private List<int> triggerList = new List<int>();
-        public List<int> TriggerList
-        {
-            get { return triggerList;  }
-            set { triggerList = value; }
-        }*/
-
-        // Note: This form of getter/setter does not make the field publically available, and we don't want it
-        // to be public because we don't want it in our serialized XML.
-        // IMPORTANT: Triggers don't have destination addresses - WATCHES have a destination address (and one watch may have multiple triggers)
+        
+        // The destination address of the feature this watch is monitoring.
+        // IMPORTANT: Triggers don't have destination addresses - WATCHES have a destination address (and one watch may be used by multiple triggers)
         [XmlIgnore]
         private int destinationAddress;
         [XmlIgnore]
@@ -184,5 +175,6 @@ namespace SoniFight
             return destinationAddress;
         }       
 
-    } // End of namespace
-}
+    } // End of Watch class
+
+} // End of namespace

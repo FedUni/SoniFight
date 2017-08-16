@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
 using IrrKlang;
 
 namespace SoniFight
 {
+    // Class used to play and manipulate sonification events
     public class SoundPlayer
     {        
         // We'll build up a dictionary (i.e. list of key-value pairs) mapping the sample filename to the actual loaded sample
@@ -13,9 +12,7 @@ namespace SoniFight
         private static Dictionary<string, ISound> sampleDictionary = new Dictionary<string, ISound>();
 
         // The sound engine object itself
-        private static ISoundEngine soundEngine;
-
-        
+        private static ISoundEngine soundEngine;        
 
         // Constructor
         public SoundPlayer()
@@ -23,6 +20,7 @@ namespace SoniFight
             soundEngine = new ISoundEngine();            
         }
 
+        // Method to load a sample and specify whether it should loop or not when played
         public static bool LoadSample(string sampleKey, bool loopSample)
         {
             // Print just the sample name being loaded
@@ -31,7 +29,7 @@ namespace SoniFight
             Console.WriteLine("Loading sample: " + shortKey);
 
             // Load the sound by playing it. Params: sample filename, loop, start paused
-            ISound sound = soundEngine.Play2D(sampleKey, loopSample, true, StreamMode.NoStreaming, true);
+            ISound sound = soundEngine.Play2D(sampleKey, loopSample, true, StreamMode.AutoDetect, true);
 
             // Otherwise add to our sample list, increment the SAM and return true for success
             if ( !sampleDictionary.ContainsKey(sampleKey))
@@ -42,6 +40,7 @@ namespace SoniFight
             return true;
         }
 
+        // Method to return whether a specific sample is currently loaded
         public static bool SampleLoaded(string sampleFilename)
         {
             if (sampleDictionary.ContainsKey(sampleFilename))
@@ -51,12 +50,13 @@ namespace SoniFight
             return false;
         }
 
+        // Method to return whether a specific sample is currently playing or not
         public static bool CurrentlyPlaying(string sampleKey)
         {
             return soundEngine.IsCurrentlyPlaying(sampleKey);
         }
 
-
+        // Method to toggle a sample between paused and unpaused states
         public static void ToggleSamplePaused(string sampleKey)
         {
             ISound sample;
@@ -66,6 +66,7 @@ namespace SoniFight
             }
         }
 
+        // Method to pause a currently playing sample
         public static void PauseSample(string sampleKey)
         {
             ISound sample;
@@ -78,6 +79,7 @@ namespace SoniFight
             }
         }
 
+        // Method to resume a currently paused sample
         public static void ResumeSample(string sampleKey)
         {
             ISound sample;
@@ -90,6 +92,7 @@ namespace SoniFight
             }
         }
 
+        // Method to check if a given sample is paused or not
         public static bool IsPaused(string sampleKey)
         {
             // Attempt to get the ISound (i.e. sample) with the given key name...
@@ -104,7 +107,6 @@ namespace SoniFight
                 return false;
             }
         }
-
 
         public static void ChangeSampleVolume(string sampleKey, float volume)
         {

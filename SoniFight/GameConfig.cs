@@ -28,11 +28,9 @@ namespace SoniFight
         public const float MAX_SAMPLE_VOLUME = 1.0f;
 
         // Valid ranges of how fast to play the sample (1.0f is 'normal speed')
-        public const float MIN_SAMPLE_PLAYBACK_SPEED = 0.5f;
+        public const float MIN_SAMPLE_PLAYBACK_SPEED = 0.1f;
         public const float MAX_SAMPLE_PLAYBACK_SPEED = 4.0f;
-
-        private static DateTime lastProcessConnectionCheckTime = DateTime.Now;
-
+        
         // Description of this config
         private string description = "GameConfig description";
         public string Description
@@ -50,7 +48,7 @@ namespace SoniFight
         }
 
         // How long to sleep before polling watches in milliseconds (recommend: 1ms? 0 makes the CPU busy wait like crazy)
-        private int pollSleepMS = 10;
+        private int pollSleepMS = 100;
         public int PollSleepMS
         {
             get { return pollSleepMS; }
@@ -183,7 +181,6 @@ namespace SoniFight
                     {
                         configDirectory += "\\";
                     }
-                    //configDirectory = ".\\Configs\\" + configDirectory;
 
                     // Load all samples
                     foreach (Trigger t in triggerList)
@@ -221,10 +218,7 @@ namespace SoniFight
 
         public bool activate()
         {
-            //Process[] processArray = null;
-
             Console.WriteLine("Attempting to connect to process: " + processName);
-            //Console.WriteLine("Press any key to abort.");
 
             // Set up the background worker to connect to our game process without freezing the UI and kick it off.
             processConnectionBW = new BackgroundWorker();

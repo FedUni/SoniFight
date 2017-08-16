@@ -42,7 +42,7 @@ namespace SoniFight
         private Padding padding = new System.Windows.Forms.Padding(5);
 
         // Flag for when to create a new config rather than attempt to load one from a config folder on tab index changed
-        static bool creatingNewConfig = false;
+        bool creatingNewConfig = false;
 
         // Used to keep track of what node is currently selected in the treeview...
         static TreeNode currentTreeNode;
@@ -145,7 +145,7 @@ namespace SoniFight
             //Console.WriteLine("Selected index text / config dir is now: " + MainForm.gameConfig.ConfigDirectory);
 
             // Update our configs selected index so we can move back to it if the user goes from the edit to the main tabs
-            selectedConfigDropdownIndex = this.configsComboBox.SelectedIndex;
+            MainForm.selectedConfigDropdownIndex = this.configsComboBox.SelectedIndex;
 
             SoundPlayer.UnloadAllSamples();     
         }
@@ -191,12 +191,14 @@ namespace SoniFight
         {
             // Inflate game config from XML file
             string pathToConfig = ".\\Configs\\" + MainForm.gameConfig.ConfigDirectory + "\\config.xml";
-
-            Console.WriteLine("About to read config - ConfigDirectory is: " + MainForm.gameConfig.ConfigDirectory);
-
+            Console.WriteLine("About to read config: " + pathToConfig);
             gameConfig = Utils.ReadFromXmlFile<GameConfig>(pathToConfig);
 
-            if (gameConfig == null) { MessageBox.Show("After loading gameconfig object - it's still null!");  }
+            if (gameConfig == null)
+            {
+                MessageBox.Show("Error: Deserialising gameconfig from " + gameConfig.ConfigDirectory + " has failed. Aborting.");
+                return;
+            }
 
             // IMPORTANT: Because loading a GameConfig object from file overwrites all properties, and
             //            the ConfigDirectory is not stored in the object, we need to reset it to the
@@ -211,7 +213,6 @@ namespace SoniFight
             if (gameConfig.valid && gameConfig.active)
             {
                 Program.sonificationBGW.RunWorkerAsync();
-
                 this.Text = formTitle + " Status: Running. Config: " + gameConfig.ConfigDirectory;
                 running = true;
             }
@@ -353,8 +354,6 @@ namespace SoniFight
                 }
 
                 RebuildTreeViewFromGameConfig();
-
-                TreeView tv = this.gcTreeView;
             }
             else // We must be on index 0, and so we should update the GameConfig ComboBox incase the user has created a new config they want to run
             {
@@ -561,14 +560,14 @@ namespace SoniFight
 
                         watchDescriptionTB.Text = "A watch is a memory location expressed as a complex pointer address and the type of data to read from that address.";
                         watchDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
-                        watchDescriptionTB.Text += "You do not need to provide the process base address, only a comma-separated list of pointers starting with the base-offset ";
+                        watchDescriptionTB.Text += "You do not need to provide the process base address, only a comma-separated list of pointers in hexadecimal format starting with the base-offset ";
                         watchDescriptionTB.Text += "which will be used to read the data at that address.";
                         watchDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
                         watchDescriptionTB.Text += "Each watch must have a unique watch id specified as an integer greater than or equal to zero, and may optionally have a name and description.";
                         watchDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
-                        watchDescriptionTB.Text += "Only watches that are marked as active will be used - so you can disable a watch while still keeping the data around in your GameConfig.";
+                        watchDescriptionTB.Text += "Only watches that are marked as active will be used - this allows you to disable a watch while still keeping the data around in your GameConfig for later use, if you wish.";
                         watchDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
-                        watchDescriptionTB.Text += "Please consult the user documentation to learn more about how to identify consistent pointer trails for use as watches.";
+                        watchDescriptionTB.Text += "Please consult the user documentation for further details on identifying pointer trails for use in watches.";
 
                         // Make the description span both columns in the TableLayoutPanel
                         watchDescriptionTB.WordWrap = true;
@@ -874,7 +873,7 @@ namespace SoniFight
                     {
                         currentUILabel.Text = "Trigger Settings";
 
-                        // Prior declarations of UI elements so we can disable them if required
+                        // Prior declarations of UI elements so we can modify or disable them if required based on other trigger settings
                         ComboBox compTypeCB = new ComboBox();
                         TextBox watch1TB            = new TextBox();
                         TextBox watch2TB            = new TextBox();
@@ -883,6 +882,7 @@ namespace SoniFight
                         Button sampleFilenameButton = new Button();
                         TextBox sampleVolumeTB      = new TextBox();
                         TextBox sampleSpeedTB       = new TextBox();
+                        Label watch2Label           = new Label();
 
                         // Get the current watch we're working from based on the index of the currently selected treenode
                         // Note: Each child of a parent treenode starts at index 0, so we can use this index as the
@@ -1001,19 +1001,23 @@ namespace SoniFight
                                 sampleFilenameButton.Enabled = true;
                             }
 
-                            // Disable the watch2 textbox if we're a normal trigger - only continuous and modifier triggers use it
-                            if (currentTrigger.triggerType == Trigger.TriggerType.Normal)
+                            // Display the appropriate label for the 'watch2' field
+                            switch (currentTrigger.triggerType)
                             {
-                                watch2TB.Enabled = false;
-                            }
-                            else
-                            {
-                                watch2TB.Enabled = true;
+                                case Trigger.TriggerType.Normal:
+                                    watch2Label.Text = "Dependent Trigger ID";
+                                    break;
+                                case Trigger.TriggerType.Continuous:
+                                    watch2Label.Text = "Watch 2 ID";
+                                    break;
+                                case Trigger.TriggerType.Modifier:
+                                    watch2Label.Text = "Continuous Trigger ID";
+                                    break;
                             }
                         };
 
-                        // We must also check and disable if req'd when we load a trigger of type continuous
-                        currentTrigger.triggerType = Utils.GetTriggerTypeFromInt(triggerTypeCB.SelectedIndex); //FIXME
+                        // Set the current trigger type based on the selected index of the trigger type dropdown
+                        currentTrigger.triggerType = Utils.GetTriggerTypeFromInt(triggerTypeCB.SelectedIndex);
                         
                         triggerTypeCB.Tag = "triggerTypeCB";
                         triggerTypeCB.Anchor = AnchorStyles.Left;
@@ -1082,10 +1086,23 @@ namespace SoniFight
                         panel.Controls.Add(watch1TB, 1, row); // Control, Column, Row
                         row++;
                         
-                        // Row 6 - Watch ID 2 (only editable trigger type is modifier)                        
-                        Label watch2Label = new Label();
+                        // Row 6 - Watch ID 2 - this is used for dependent triggers for normal triggers, secondary watch for continuous triggers and continuous trigger id for modifier triggers
                         watch2Label.AutoSize = true;
-                        watch2Label.Text = "Secondary Trigger (mod) / Watch 2 ID (cont)";
+                        
+                        // Display the appropriate label for the 'watch2' field
+                        switch (currentTrigger.triggerType)
+                        {
+                            case Trigger.TriggerType.Normal:
+                                watch2Label.Text = "Dependent Trigger ID";
+                                break;
+                            case Trigger.TriggerType.Continuous:
+                                watch2Label.Text = "Watch 2 ID";
+                                break;
+                            case Trigger.TriggerType.Modifier:
+                                watch2Label.Text = "Continuous Trigger ID";
+                                break;
+                        }
+                        
                         watch2Label.Anchor = AnchorStyles.Right;
                         watch2Label.Margin = padding;
                         panel.Controls.Add(watch2Label, 0, row); // Control, Column, Row
@@ -1097,15 +1114,7 @@ namespace SoniFight
                         watch2TB.Dock = DockStyle.Fill;
                         watch2TB.Margin = padding;
 
-                        // Disable this textbox if we're a normal trigger - only continuous and modifier triggers use it
-                        if (currentTrigger.triggerType == Trigger.TriggerType.Normal)
-                        {                            
-                            watch2TB.Enabled = false;
-                        }
-                        else
-                        {
-                            watch2TB.Enabled = true;
-                        }
+                        
 
                         watch2TB.TextChanged += (object sender, EventArgs ea) =>
                         {
@@ -1499,10 +1508,10 @@ namespace SoniFight
             panel.Width = detailsPanelWidth;
             panel.Padding = padding;
 
-            // Create a new trigger and use the one parameter Trigger constructor to make it a deep-copy of the existing current trigger
+            // Create a new trigger and use the copy constructor to make it a deep-copy of the existing current trigger
             currentTrigger = new Trigger(currentTrigger);
 
-            //currentTrigger.id = gameConfig.triggerList.Count;
+            // Update the id to the next available free id value and add the trigger to the trigger list
             currentTrigger.id = Utils.getNextTriggerIndex(gameConfig.triggerList);
             gameConfig.triggerList.Add(currentTrigger);
 

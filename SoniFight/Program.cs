@@ -34,11 +34,6 @@ namespace SoniFight
         // The time that we played our last sonification event
         static DateTime lastMenuSonificationTime = DateTime.Now;
         
-
-        // We start un-muted - triggers with a Mute control type can flip this flag, resetting triggers sets it back to false
-        // TODO: REMOVE! We no longer mute things, we rely on the GameState (InMenu or InGame) along with threshold checks as we pass from, say, above to below a value.
-        //private static bool currentlyMuted = false;
-
         // Maximum characters to compare when doing string comparisons
         public static int TEXT_COMPARISON_CHAR_LIMIT = 33;
 
@@ -98,31 +93,35 @@ namespace SoniFight
                 // Dynamic type comparisons may possibly fail so wrap 'em in try/catch
                 try
                 {
-
+                    // What type of value comparison are we making? Deal with each accordingly.
                     switch (t.comparisonType)
                     {
-                        case Trigger.ComparisonType.EqualTo:
-                            if ((t.previousValue != t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue == t.value))
+                        case Trigger.ComparisonType.EqualTo:                            
+                            if ( (t.previousValue != t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue == t.value) )
                             {
-                                Console.WriteLine("Trigger " + t.id + " matched equal with perform comparison on depth of: " + recursiveDepth);
+                                //Console.WriteLine("Trigger " + t.id + " matched equal with perform comparison on depth of: " + recursiveDepth);
 
-                                // No dependent triggers (even if we ARE a dependent trigger at a recursive depth > 0) - then we've already made a match so return true.
+                                // No dependent triggers (even if we ARE a dependent trigger at a recursive depth > 0)? Then we've already made a match so return true.
                                 // Also, if this is a modifier trigger and we've made a value match we'll return true (because modifier triggers are focussed on matching
                                 // a condition, not only when we pass a threshold!).
                                 if (t.watchTwoId == -1 || t.triggerType == Trigger.TriggerType.Modifier)
                                 {
                                     return true;
                                 }
-                                else
+                                else // We're either a normal trigger with a dependent trigger or we're a continuous trigger
                                 {
-                                    // Trigger has a dependent trigger? Get and check it.
+                                    // Trigger has a dependent trigger or modifies a continuous trigger (we'll call both 'dependent')? Get and check it.
                                     Trigger dependentT = Utils.getTriggerWithId(t.watchTwoId);
+
+                                    MAKE SURE THIS ALL ACTS PROPERLY AND THAT WE DEAL WITH A NORMAL TRIGGER WITH DEPENDENCY OR A CONTINUOUS TRIGGER PROPERLY BELOW
 
                                     // If the dependent trigger is active, then our return type from THIS method is the return from checking the comparison
                                     // with the dependent trigger within this one (which has already matched or we wouldn't be here). This will recurse as
-                                    // deep as the trigger dependencies are linked! Bwahahaha! =D Same with all others - just don't cyclic dependency it or we'll crash! 
+                                    // deep as the trigger dependencies are linked - fails after 5 linked dependencies to prevent cyclic dependency crash.
                                     if (dependentT.active)
                                     {
+                                         FIXME: WHAT IF THIS IS A NORMAL WITH DEPENDENCY? THEN WE'RE GETTING A WATCH WHEN WE SHOULD BE GETTING A TRIGGER!
+
                                         Watch dependentWatch = Utils.getWatchWithId(dependentT.watchOneId);
 
                                         // Dependent watch not active? Then obviously we must fail.
@@ -186,12 +185,9 @@ namespace SoniFight
             return false;
         }
 
-        // This is the DoWork method for the BackgroundWorker
+        // This is the DoWork method for the sonification BackgroundWorker
         public static void performSonification(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            // Initialise the soundplayer
-            //SoundPlayer.Init();
-
             // Save some typing
             GameConfig gc = MainForm.gameConfig;
 
@@ -247,7 +243,6 @@ namespace SoniFight
                 }
 
             } // End of loop over triggers
-
 
             // Get the time and the current clock
             startTime = DateTime.Now;
@@ -335,7 +330,7 @@ namespace SoniFight
                     t = MainForm.gameConfig.triggerList[triggerLoop];
 
                     // Have an active continuous trigger?
-                    // Note: This CHECK must occur before the below block to function correctly.
+                    // Note: This check must occur before the below 'should-we-skip-this-trigger' block to function correctly.
                     if (t.active && t.triggerType == Trigger.TriggerType.Continuous)
                     {
                         // If we're InMenu...
@@ -408,7 +403,7 @@ namespace SoniFight
                          *  
                          *  It comes with a VERY IMPORTANT CAVEAT.
                          *  
-                         *  If your continuous trigger is varying volume, then you should NOT attach a modifier trigger to itthat modifies volume or the results of the modifier trigger
+                         *  If your continuous trigger is varying volume, then you should NOT attach a modifier trigger to it that modifies volume or the results of the modifier trigger
                          *  will be overwritten on the next poll by the calculation of this continuous trigger.
                          *  
                          *  Similarly, if your continuous trigger is varying pitch, then you should NOT attach a modifier trigger to it that modifies pitch or again the result of the
@@ -590,8 +585,7 @@ namespace SoniFight
                     // Calculate how many milliseconds since the last menu sonification event
                     double timeSinceLastMenuSonificationMS = ((TimeSpan)(DateTime.Now - lastMenuSonificationTime)).TotalMilliseconds;
 
-                    // If we have a queued menu trigger and either i.) We're not currently playing audio OR ii.) It's been at least half a second since the last menu sonification event...
-                    //if (menuTriggerQueue.Count > 0 && (!SoundPlayer.IsPlaying() || timeSinceLastMenuSonificationMS > 500.0) )
+                    // If we have a queued menu trigger and either i.) We're not currently playing audio OR ii.) It's been at least half a second since the last menu sonification event...                    
                     if (menuTriggerQueue.Count > 0 && timeSinceLastMenuSonificationMS > 500.0)
                     {
                         // ...then we play the queued sample!
@@ -651,9 +645,9 @@ namespace SoniFight
                 GameConfig.processConnectionBW.Dispose();
                 sonificationBGW.Dispose();
 
-                // We do NOT unload all samples here - we only do that on SelectedIndexChanged of the config selection drop-down.
+                // We do NOT unload all samples here - we only do that on SelectedIndexChanged of the config selection drop-down or on quit.
                 // This minimises delay in stopping and starting sonification of the same config.
-                // Note: If the user adds new triggers using new samples they will be added to the dictionary. 
+                // Note: If the user adds new triggers using new samples they will be added to the existing dictionary. 
                 //SoundPlayer.UnloadAllSamples();
             }
             else 
