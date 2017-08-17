@@ -150,8 +150,7 @@
             this.processNameTB.MaxLength = 256;
             this.processNameTB.Name = "processNameTB";
             this.processNameTB.Size = new System.Drawing.Size(265, 20);
-            this.processNameTB.TabIndex = 5;
-            this.processNameTB.TextChanged += new System.EventHandler(this.processTB_TextChanged);
+            this.processNameTB.TabIndex = 5;            
             // 
             // memoryAddressTB
             // 

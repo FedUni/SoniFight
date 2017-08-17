@@ -310,7 +310,7 @@ namespace SoniFight
                                 Program.gameState = GameState.InGame;
                                 //Console.WriteLine("Program state is InGame");
 
-                                FIX THIS SO THAT CONTINUOUS TRIGGERS DON'T BRIEFLY RESTART BETWEEN ROUNDS WHEN THE CLOCK GETS RESET
+                                //FIX THIS SO THAT CONTINUOUS TRIGGERS DON'T BRIEFLY RESTART BETWEEN ROUNDS WHEN THE CLOCK GETS RESET
 
                                 if (currentClock == 99 || currentClock == 60)
                                 {

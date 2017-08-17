@@ -96,12 +96,7 @@ namespace PointerTrailTester
             dataTypeCB.SelectedIndex = 0;
 
             InitTimer();
-        }
-
-        private void processTB_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+        }       
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -111,8 +106,7 @@ namespace PointerTrailTester
             processNameTB.TextChanged += (object s, EventArgs ea) =>
             {
                 //processConnectionBW.CancelAsync();
-                Program.processName = processNameTB.Text;
-                
+                Program.processName = processNameTB.Text;                
             };
 
             // Add pointer trail TB text change handler
@@ -146,7 +140,6 @@ namespace PointerTrailTester
             }; // End of pointerTrailTB TextChanged handler
 
         } // End of Form1_Load method
-
 
         // DoWork method for the process connection background worker
         public void connectToProcess(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -205,4 +198,5 @@ namespace PointerTrailTester
         } // End of connectToProcess method
 
     } // End of Form1 partial class
-}
+
+} // End of namespace
