@@ -76,6 +76,54 @@ namespace SoniFight
             SoundPlayer.ShutDown();
         }
 
+        // Method to determine if a trigger dependency has been met or not
+        private static bool dependenceCheck(Trigger t, int recursiveDepth)
+        {
+            //Console.WriteLine("Trigger " + t.id + " matched equal with perform comparison on depth of: " + recursiveDepth);
+
+            // No dependent triggers (even if we ARE a dependent trigger at a recursive depth > 0)? Then we've already made a match so return true.
+            // Also, if this is a modifier trigger and we've made a value match we'll return true (because modifier triggers are focussed on matching
+            // a condition, not only when we pass a threshold!).
+            if (t.secondaryId == -1 || t.triggerType == Trigger.TriggerType.Modifier)
+            {
+                return true;
+            }
+
+            // At this point our trigger is a normal trigger. We know this because we return true if the trigger was a modifier, and continuous triggers
+            // do not call the performComparison method.    
+
+            // This trigger has a dependent trigger - so we grab it.
+            Trigger dependentT = Utils.getTriggerWithId(t.secondaryId);
+
+            // If the dependent trigger is active, then our return type from THIS method is the return from checking the comparison
+            // with the dependent trigger within this one (which has already matched or we wouldn't be here). This will recurse as
+            // deep as the trigger dependencies are linked - fails after 5 linked dependencies to prevent cyclic dependency crash.
+            if (dependentT.active)
+            {
+                Watch dependentWatch = Utils.getWatchWithId(dependentT.watchOneId);
+
+                // Watch of dependent trigger was not active? Then obviously we must fail as we're not updating the watch details.
+                if (!dependentWatch.Active)
+                {
+                    return false;
+                }
+
+                // Does the dependent trigger match its target condition?
+                bool dependentResult = performComparison(dependentT, dependentWatch.getDynamicValueFromType(), recursiveDepth + 1);
+
+                // No? Then provide feedback that we'll be supressing this trigger because its dependent trigger failed.
+                if (!dependentResult)
+                {
+                    Console.WriteLine("Trigger " + t.id + " supressed as dependent trigger " + dependentT.id + " failed (depth: " + recursiveDepth + ").");
+                }
+                return dependentResult;
+            }
+            else // Dependent trigger was not active so dependency fails and we record no-match as the end result.
+            {
+                return false;
+            }
+        }
+
         // This method checks for successful comparisons between a trigger and the value read from that triggers watch        
         public static bool performComparison(Trigger t, dynamic readValue, int recursiveDepth)
         {
@@ -103,77 +151,65 @@ namespace SoniFight
                         case Trigger.ComparisonType.EqualTo:                            
                             if ( (t.previousValue != t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue == t.value) )
                             {
-                                //Console.WriteLine("Trigger " + t.id + " matched equal with perform comparison on depth of: " + recursiveDepth);
-
-                                // No dependent triggers (even if we ARE a dependent trigger at a recursive depth > 0)? Then we've already made a match so return true.
-                                // Also, if this is a modifier trigger and we've made a value match we'll return true (because modifier triggers are focussed on matching
-                                // a condition, not only when we pass a threshold!).
-                                if (t.watchTwoId == -1 || t.triggerType == Trigger.TriggerType.Modifier)
-                                {
-                                    return true;
-                                }
-
-                                // At this point our trigger is a normal trigger. We know this because we return true if the trigger was a modifier, and (as noted at the
-                                // top of the method) - continuous triggers do not call this performComparison method.    
-                                
-                                // This trigger has a dependent trigger - so we get the trigger. Yes, watchTwoId is now a bad name for the trigger we're getting - but that's what it represents.
-                                Trigger dependentT = Utils.getTriggerWithId(t.watchTwoId);
-
-                                // If the dependent trigger is active, then our return type from THIS method is the return from checking the comparison
-                                // with the dependent trigger within this one (which has already matched or we wouldn't be here). This will recurse as
-                                // deep as the trigger dependencies are linked - fails after 5 linked dependencies to prevent cyclic dependency crash.
-                                if (dependentT.active)
-                                {   
-                                    Watch dependentWatch = Utils.getWatchWithId(dependentT.watchOneId);
-
-                                    // Watch of dependent trigger was not active? Then obviously we must fail as we're not updating the watch details.
-                                    if (!dependentWatch.Active)
-                                    {
-                                        return false;
-                                    }
-
-                                    // Does the dependent trigger match its target condition?
-                                    bool dependentResult = performComparison(dependentT, dependentWatch.getDynamicValueFromType(), recursiveDepth + 1);
-
-                                    // No? Then provide feedback that we'll be supressing this trigger because its dependent trigger failed.
-                                    if (!dependentResult)
-                                    {
-                                        Console.WriteLine("Trigger " + t.id + " supressed as dependent trigger " + dependentT.id + " failed (depth: " + recursiveDepth +").");
-                                    }
-                                    return dependentResult;
-                                }
-                                else // Dependent trigger was not active so dependency fails and we record no-match as the end result.
-                                {
-                                    return false;
-                                }                                
-
-                            } // Comparison failed?
+                                return dependenceCheck(t, recursiveDepth);
+                            }
+                            
+                            // Comparison failed? Return false.
                             return false;
                                                   
                         case Trigger.ComparisonType.LessThan:
-                            if ((t.previousValue > t.value) && (readValue < t.value)) { return true; }
-                            //TODO: Add dependency recursion.
-                            break;
+                            if ( (t.previousValue > t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue < t.value) )
+                            {
+                                return dependenceCheck(t, recursiveDepth);
+                            }
+
+                            // Comparison failed? Return false.
+                            return false;
+                            
                         case Trigger.ComparisonType.LessThanOrEqualTo:
-                            if ((t.previousValue > t.value) && (readValue <= t.value)) { return true; }
-                            //TODO: Add dependency recursion.
-                            break;
+                            if ( (t.previousValue > t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue <= t.value) )
+                            {
+                                return dependenceCheck(t, recursiveDepth);
+                            }
+
+                            // Comparison failed? Return false.
+                            return false;
+
                         case Trigger.ComparisonType.GreaterThan:
-                            if ((t.previousValue < t.value) && (readValue > t.value)) { return true; }
-                            //TODO: Add dependency recursion.
-                            break;
+                            if ( (t.previousValue < t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue > t.value) )
+                            {
+                                return dependenceCheck(t, recursiveDepth);
+                            }
+
+                            // Comparison failed? Return false.
+                            return false;
+
                         case Trigger.ComparisonType.GreaterThanOrEqualTo:
-                            if ((t.previousValue < t.value) && (readValue >= t.value)) { return true; }
-                            //TODO: Add dependency recursion.
-                            break;
+                            if ( (t.previousValue < t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue >= t.value) )
+                            {
+                                return dependenceCheck(t, recursiveDepth);
+                            }
+
+                            // Comparison failed? Return false.
+                            return false;
+
                         case Trigger.ComparisonType.NotEqualTo:
-                            if ((t.previousValue == t.value) && (readValue != t.value)) { return true; }
-                            //TODO: Add dependency recursion.
-                            break;
+                            if ( (t.previousValue == t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue != t.value) )
+                            {
+                                return dependenceCheck(t, recursiveDepth);
+                            }
+
+                            // Comparison failed? Return false.
+                            return false;
+
                         case Trigger.ComparisonType.Changed:
-                            if (readValue != t.previousValue) { return true; }
-                            //TODO: Add dependency recursion.
-                            break;
+                            if (readValue != t.previousValue || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier)
+                            {
+                                return dependenceCheck(t, recursiveDepth);
+                            }
+
+                            // Comparison failed? Return false.
+                            return false;
                     }
                 }
                 catch (Exception e)
@@ -396,7 +432,7 @@ namespace SoniFight
                     if (t.triggerType == Trigger.TriggerType.Continuous && Program.gameState == GameState.InGame)
                     {
                         // Get the secondary watch associated with this continuous trigger
-                        readValue2 = Utils.getWatchWithId(t.watchTwoId).getDynamicValueFromType();
+                        readValue2 = Utils.getWatchWithId(t.secondaryId).getDynamicValueFromType();
 
                         // The trigger value acts as the range between watch values for continuous triggers
                         dynamic maxRange = t.value;
@@ -534,7 +570,7 @@ namespace SoniFight
                         
                         // Get the continuous trigger related to this modifier trigger.
                         // Note: We ALWAYS need this because even if we don't find a match, we may need to reset the volume/pitch of the continuous sample to it's non-modified state
-                        Trigger continuousTrigger = Utils.getTriggerWithId(t.watchTwoId);
+                        Trigger continuousTrigger = Utils.getTriggerWithId(t.secondaryId);
 
                         //Console.WriteLine("!!Cont vol: " + continuousTrigger.currentSampleVolume + ". Cont speed: " + continuousTrigger.currentSampleSpeed);
 

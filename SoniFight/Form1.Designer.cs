@@ -33,11 +33,11 @@ namespace SoniFight
         {
             System.Windows.Forms.PictureBox pictureBox3;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Watches");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Triggers");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("GameConfig", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Watches");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Triggers");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("GameConfig", new System.Windows.Forms.TreeNode[] {
+            treeNode7,
+            treeNode8});
             this.appTitleLable = new System.Windows.Forms.Label();
             this.configsComboBox = new System.Windows.Forms.ComboBox();
             this.refreshButton = new System.Windows.Forms.Button();
@@ -89,8 +89,8 @@ namespace SoniFight
             this.appTitleLable.Name = "appTitleLable";
             this.appTitleLable.Size = new System.Drawing.Size(780, 63);
             this.appTitleLable.TabIndex = 0;
-            this.appTitleLable.Text = "SoniFight v0.6";
-            this.appTitleLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;            
+            this.appTitleLable.Text = "SoniFight v0.9";
+            this.appTitleLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // configsComboBox
             // 
@@ -358,18 +358,18 @@ namespace SoniFight
             // 
             this.gcTreeView.Location = new System.Drawing.Point(6, 6);
             this.gcTreeView.Name = "gcTreeView";
-            treeNode1.Name = "WatchesNode";
-            treeNode1.Tag = "Watches";
-            treeNode1.Text = "Watches";
-            treeNode2.Name = "TriggersNode";
-            treeNode2.Tag = "Triggers";
-            treeNode2.Text = "Triggers";
-            treeNode3.Checked = true;
-            treeNode3.Name = "gcRootNode";
-            treeNode3.Tag = "GameConfig";
-            treeNode3.Text = "GameConfig";
+            treeNode7.Name = "WatchesNode";
+            treeNode7.Tag = "Watches";
+            treeNode7.Text = "Watches";
+            treeNode8.Name = "TriggersNode";
+            treeNode8.Tag = "Triggers";
+            treeNode8.Text = "Triggers";
+            treeNode9.Checked = true;
+            treeNode9.Name = "gcRootNode";
+            treeNode9.Tag = "GameConfig";
+            treeNode9.Text = "GameConfig";
             this.gcTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode9});
             this.gcTreeView.ShowPlusMinus = false;
             this.gcTreeView.Size = new System.Drawing.Size(320, 326);
             this.gcTreeView.TabIndex = 2;
@@ -391,12 +391,12 @@ namespace SoniFight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(931, 580);
             this.Controls.Add(this.tabControl);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
-            this.Text = "Fair Fight v0.1";
+            this.Text = "SoniFight v0.9";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox3)).EndInit();
             this.mainTabPanel.ResumeLayout(false);

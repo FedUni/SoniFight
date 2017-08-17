@@ -70,9 +70,9 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>1</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>NO-SAMPLE-FOR-CLOCK</sampleFilename>
+      <sampleFilename>NONE</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>true</isClock>
@@ -86,7 +86,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>2</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Half.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -102,7 +102,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>2</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Quarter.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -118,7 +118,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>2</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Low.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -134,7 +134,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>1</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Clock-45.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -150,7 +150,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>1</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Clock-10.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -166,7 +166,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>3</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Enhanced.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -182,7 +182,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>3</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Breaker.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -198,7 +198,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>3</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>X-Ray.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -214,7 +214,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Half-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -230,7 +230,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Quarter-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -246,7 +246,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Low-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -262,7 +262,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>5</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Enhanced-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -278,7 +278,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>5</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Breaker-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -294,7 +294,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>5</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>X-Ray-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>

@@ -43,7 +43,7 @@
       <valueType>ShortType</valueType>
       <Id>3</Id>
       <Name>P1-Super</Name>
-      <Description>Player 1 super bar as a short. Range is 0 to XX</Description>
+      <Description>Player 1 super bar as a short. Range is 0 to 1000</Description>
       <PointerList>
         <string>6A7DCC</string>
         <string>8</string>
@@ -508,14 +508,14 @@
     <Trigger>
       <id>1</id>
       <name>Clock GameState (isClock)</name>
-      <description>Keeps track of whether we're in game or in menu by watching the clock</description>
+      <description>Keeps track of whether we're in game or in menu by watching for clock movement</description>
       <value xsi:type="xsd:string">99</value>
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>0</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>CHANGE_ME</sampleFilename>
+      <sampleFilename>NONE</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>true</isClock>
@@ -529,7 +529,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>0</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Clock-Fifty.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -545,7 +545,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>0</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Clock-Twenty-Five.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -561,7 +561,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>0</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Clock-Ten.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -577,7 +577,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>1</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Five-Hundred-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -593,7 +593,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>1</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Two-Fifty-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -609,7 +609,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>1</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Low-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -625,7 +625,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>3</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Super-One-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -641,7 +641,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>3</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Super-Two-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -657,7 +657,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>3</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Super-Three-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -673,7 +673,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>3</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Super-Full-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -689,7 +689,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>5</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Ultra-Half-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -705,7 +705,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>5</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Ultra-Full-P1.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -721,7 +721,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Super-One-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -737,7 +737,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-0-arcade.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -753,7 +753,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-1-versus.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -769,7 +769,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-2-multiplayer-battle.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -785,7 +785,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-3-challenge.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -801,7 +801,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-4-training.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -817,7 +817,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-5-player-data.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -833,7 +833,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-6-options.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -849,7 +849,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-7-game-manual.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -865,7 +865,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-8-steam-store.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -881,7 +881,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-9-benchmark.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -897,7 +897,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>main-menu-10-quit.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -913,7 +913,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-difficulty.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -929,7 +929,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-rounds.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -945,7 +945,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-time-limit.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -961,7 +961,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-bonus-stages.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -977,7 +977,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-fight-request-is-on.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -993,7 +993,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-request-time-limit.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1009,7 +1009,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-request-region.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1025,7 +1025,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-request-opponent-skill.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1041,7 +1041,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-record-replay.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1057,7 +1057,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-fight-request-is-off.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1073,7 +1073,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-request-rounds.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1089,7 +1089,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>8</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-easiest.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1105,7 +1105,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>8</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-very-easy.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1121,7 +1121,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>8</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-easy.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1137,7 +1137,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>8</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-medium.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1153,7 +1153,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>8</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-medium-hard.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1169,7 +1169,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>8</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-hard.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1185,7 +1185,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>8</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-very-hard.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1201,7 +1201,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>8</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-hardest.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1217,7 +1217,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>9</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>one.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1233,7 +1233,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>9</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>three.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1249,7 +1249,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>9</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>five.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1265,7 +1265,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>9</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>seven.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1281,7 +1281,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>10</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>thirty.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1297,7 +1297,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>10</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>sixty.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1313,7 +1313,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>10</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>ninety-nine.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1329,7 +1329,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>10</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Infinite.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1345,7 +1345,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>11</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>on.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1361,7 +1361,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>11</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>off.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1377,7 +1377,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>12</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Any.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1393,7 +1393,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>12</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>one.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1409,7 +1409,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>12</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>three.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1425,7 +1425,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>12</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>five.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1441,7 +1441,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>13</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Thirty.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1457,7 +1457,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>13</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Sixty.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1473,7 +1473,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>13</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Ninety-Nine.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1489,7 +1489,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>13</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Any.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1505,7 +1505,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>14</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Any.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1521,7 +1521,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>14</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Same.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1537,7 +1537,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>15</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Any.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1553,7 +1553,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>15</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>same-skill.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1569,7 +1569,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>15</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>more-skilled.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1585,7 +1585,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-00-Ryu.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1601,7 +1601,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-01-Ken.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1617,7 +1617,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-02-Chun-Li.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1633,7 +1633,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-03-E-Honda.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1649,7 +1649,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-04-Blanka.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1665,7 +1665,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-05-Zangief.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1681,7 +1681,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-06-Guile.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1697,7 +1697,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-07-Dhalsim.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1713,7 +1713,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-08-Balrog.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1729,7 +1729,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-09-Vega.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1745,7 +1745,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-10-Sagat.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1761,7 +1761,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-11-M-Bison.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1777,7 +1777,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-12-C-Viper.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1793,7 +1793,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-13-Rufus.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1809,7 +1809,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-14-El-Fuerte.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1825,7 +1825,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-15-Able.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1841,7 +1841,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-16-Seth.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1857,7 +1857,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-17-Akuma.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1873,7 +1873,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-18-Gouken.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1889,7 +1889,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-19-T-Hawk.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1905,7 +1905,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-20-Cammy.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1921,7 +1921,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-21-Fei-Long.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1937,7 +1937,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-22-Dee-Jay.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1953,7 +1953,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-23-Sakura.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1969,7 +1969,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-24-Rose.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1985,7 +1985,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-25-Gen.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2001,7 +2001,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-26-Dan.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2017,7 +2017,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-27-Guy.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2033,7 +2033,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-28-Cody.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2049,7 +2049,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-29-Ibuki.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2065,7 +2065,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-30-Makoto.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2081,7 +2081,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-31-Dudley.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2097,7 +2097,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-32-Adon.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2113,7 +2113,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-33-Hakan.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2129,7 +2129,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-34-Juri.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2145,7 +2145,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-35-Yun.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2161,7 +2161,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-36-Yang.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2177,7 +2177,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-37-Evil-Ryu.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2193,7 +2193,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-38-Oni.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2209,7 +2209,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-39-Rolento.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2225,7 +2225,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-40-Elena.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2241,7 +2241,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-41-Poison.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2257,7 +2257,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-42-Hugo.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2273,7 +2273,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-43-Decapre.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2289,7 +2289,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>16</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Random.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2305,7 +2305,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>2</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Five-Hundred-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2321,7 +2321,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>2</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Two-Fifty-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2337,7 +2337,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>2</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
       <sampleFilename>Health-Low-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2353,7 +2353,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Super-Two-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2369,7 +2369,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Super-Three-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2385,7 +2385,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>4</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Super-Full-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2401,7 +2401,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>17</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>on.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2417,7 +2417,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>17</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>off.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2433,7 +2433,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>18</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>MB-Menu-Ranked-Match.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2449,7 +2449,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>18</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>MB-Menu-Endless-Battle.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2465,7 +2465,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>18</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>MB-Menu-Team-Battle.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2481,7 +2481,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>18</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>MB-Menu-Tournament.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2497,7 +2497,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>18</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>MB-Menu-Online-Training.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2513,7 +2513,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>18</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>MB-Menu-Replay-Channel.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2529,7 +2529,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>18</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>MB-Menu-Leaderboards.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2545,7 +2545,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>18</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Lounge-Menus-Quick-Match.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2561,7 +2561,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>18</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Lounge-Menus-Custom-Match.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2577,7 +2577,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>18</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Lounge-Menus-Create-Match.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2593,7 +2593,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>19</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Ultra-Half-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2609,7 +2609,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>19</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
       <sampleFilename>Ultra-Full-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2625,7 +2625,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>20</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Options-Menu-0-Button-Config.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2641,7 +2641,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>20</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Options-Menu-1-Sound-Settings.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2657,7 +2657,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>20</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Options-Menu-2-Screen-Config.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2673,7 +2673,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>20</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Options-Menu-3-Graphics-Settings.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2689,7 +2689,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>20</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Options-Menu-4-Upload-To-YouTube.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2705,7 +2705,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Up.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2721,7 +2721,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Down.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2737,7 +2737,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Left.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2753,7 +2753,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Right.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2769,7 +2769,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Start.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2785,7 +2785,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Select.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2801,7 +2801,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Light-Punch.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2817,7 +2817,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Medium-Punch.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2833,7 +2833,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Heavy-Punch.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2849,7 +2849,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-LP+MP+HP.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2865,7 +2865,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Light-Kick.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2881,7 +2881,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Medium-Kick.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2897,7 +2897,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Heavy-Kick.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2913,7 +2913,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-LK+MK+HK.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2929,7 +2929,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Throw.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2945,7 +2945,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Focus-Attack.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2961,7 +2961,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Personal-Action.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2977,7 +2977,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Red-Focus.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2993,7 +2993,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Reload.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3009,7 +3009,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>21</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Memory.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3025,7 +3025,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Resolution.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3041,7 +3041,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-VSync.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3057,7 +3057,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Framerate.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3073,7 +3073,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Antialiasing.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3089,7 +3089,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Filtering.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3105,7 +3105,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Model-Quality.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3121,7 +3121,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Stage-Quality.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3137,7 +3137,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Soft-Shadow.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3153,7 +3153,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Self-Shadow.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3169,7 +3169,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Motion-Blur.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3185,7 +3185,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Particles.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3201,7 +3201,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>22</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Settings-Menu-Extra-Effect.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3217,7 +3217,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>7</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-fight-request-is-off.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3233,7 +3233,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-00-Ryu-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3249,7 +3249,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-01-Ken-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3265,7 +3265,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-02-Chun-Li-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3281,7 +3281,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-03-E-Honda-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3297,7 +3297,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-04-Blanka-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3313,7 +3313,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-05-Zangief-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3329,7 +3329,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-06-Guile-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3345,7 +3345,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-07-Dhalsim-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3361,7 +3361,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-08-Balrog-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3377,7 +3377,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-09-Vega-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3393,7 +3393,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-10-Sagat-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3409,7 +3409,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-11-M-Bison-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3425,7 +3425,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-12-C-Viper-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3441,7 +3441,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-13-Rufus-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3457,7 +3457,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-14-El-Fuerte-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3473,7 +3473,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-15-Able-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3489,7 +3489,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-16-Seth-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3505,7 +3505,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-17-Akuma-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3521,7 +3521,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-18-Gouken-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3537,7 +3537,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-19-T-Hawk-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3553,7 +3553,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-20-Cammy-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3569,7 +3569,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-21-Fei-Long-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3585,7 +3585,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-22-Dee-Jay-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3601,7 +3601,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-23-Sakura-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3617,7 +3617,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-24-Rose-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3633,7 +3633,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-25-Gen-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3649,7 +3649,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-26-Dan-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3665,7 +3665,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-27-Guy-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3681,7 +3681,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-28-Cody-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3697,7 +3697,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-29-Ibuki-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3713,7 +3713,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-30-Makoto-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3729,7 +3729,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-31-Dudley-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3745,7 +3745,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-32-Adon-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3761,7 +3761,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-33-Hakan-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3777,7 +3777,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-34-Juri-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3793,7 +3793,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-35-Yun-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3809,7 +3809,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-36-Yang-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3825,7 +3825,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-37-Evil-Ryu-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3841,7 +3841,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-38-Oni-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3857,7 +3857,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-39-Rolento-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3873,7 +3873,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-40-Elena-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3889,7 +3889,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-41-Poison-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3905,7 +3905,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-42-Hugo-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3921,7 +3921,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-43-Decapre-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3937,7 +3937,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>23</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Character-44-Random-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3953,7 +3953,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>24</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Pause-Menu-Continue.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3969,7 +3969,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>24</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Pause-Menu-Restart.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -3985,7 +3985,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>24</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Pause-Menu-Training-Options.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4001,7 +4001,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>24</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Options-Menu-0-Button-Config.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4017,7 +4017,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>24</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Pause-Menu-Command-List.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4033,7 +4033,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>24</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Pause-Menu-Character-Change.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4049,7 +4049,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>24</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Memory.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4065,7 +4065,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>24</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Controls-Reload.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4081,7 +4081,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>24</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Pause-Menu-Disable-Fight-Request.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4097,7 +4097,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <watchOneId>24</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Pause-Menu-Exit.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4113,7 +4113,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Action.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4129,7 +4129,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Guard.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4145,7 +4145,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Stand.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4161,7 +4161,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Counter-Hit.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4177,7 +4177,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Stun.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4193,7 +4193,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Super-Gauge.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4209,7 +4209,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Revenge-Gauge.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4225,7 +4225,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Attack-Data.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4241,7 +4241,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Input-Display.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4257,7 +4257,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-menu-difficulty.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4273,7 +4273,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Network-Simulation.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4289,7 +4289,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>25</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Menu-Defaults.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4305,7 +4305,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Action-Stand.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4321,7 +4321,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Action-Crouch.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4337,7 +4337,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Action-Jump.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4353,7 +4353,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Action-CPU.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4369,7 +4369,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Action-Human.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4385,7 +4385,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Action-Record.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4401,7 +4401,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Action-Playback.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4417,7 +4417,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Guard-No-Block.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4433,7 +4433,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Guard-Auto-Block.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4449,7 +4449,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Guard-All-Block.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4465,7 +4465,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Random.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4481,7 +4481,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Normal.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4497,7 +4497,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Stand-Quick.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4513,7 +4513,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Stand-Delay.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4529,7 +4529,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Random.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4545,7 +4545,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Off.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4561,7 +4561,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>On.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4577,7 +4577,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Random.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4593,7 +4593,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Normal.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4609,7 +4609,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Stun-Constant.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4625,7 +4625,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Training-Options-Stun-None.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4641,7 +4641,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Normal.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4657,7 +4657,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Max-Start.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4673,7 +4673,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Infinite.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4689,7 +4689,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Refill.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4705,7 +4705,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Normal.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4721,7 +4721,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Max-Start.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4737,7 +4737,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Infinite.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4753,7 +4753,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Refill.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4769,7 +4769,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Off.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4785,7 +4785,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>On.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4801,7 +4801,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Off.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4817,7 +4817,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>26</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>On.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4833,7 +4833,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>27</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-easiest.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4849,7 +4849,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>27</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-very-easy.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4865,7 +4865,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>27</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-easy.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4881,7 +4881,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>27</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-medium.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4897,7 +4897,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>27</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-medium-hard.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4913,7 +4913,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>27</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-hard.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4929,7 +4929,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>27</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-very-hard.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4945,7 +4945,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>27</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>arcade-difficulty-hardest.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4961,7 +4961,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Zero.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4977,7 +4977,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>One.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4993,7 +4993,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Two.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5009,7 +5009,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Three.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5025,7 +5025,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Four.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5041,7 +5041,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Five.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5057,7 +5057,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Six.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5073,7 +5073,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Seven.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5089,7 +5089,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Eight.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5105,7 +5105,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Nine.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5121,7 +5121,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Ten.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5137,7 +5137,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Eleven.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5153,7 +5153,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Twelve.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5169,7 +5169,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Thirteen.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5185,7 +5185,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Fourteen.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5201,7 +5201,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Fifteen.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5217,7 +5217,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Sixteen.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5233,7 +5233,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Seventeen.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5249,7 +5249,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Eighteen.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5265,7 +5265,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Nineteen.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5281,7 +5281,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Twenty.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5297,7 +5297,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>162</watchTwoId>
+      <secondaryId>162</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-00-640x480.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5313,7 +5313,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>162</watchTwoId>
+      <secondaryId>162</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-01-720x480.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5329,7 +5329,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>162</watchTwoId>
+      <secondaryId>162</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-02-720x576.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5345,7 +5345,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-03-800x600.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5361,7 +5361,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-04-1024x768.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5377,7 +5377,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-05-1152x864.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5393,7 +5393,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-06-1176x664.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5409,7 +5409,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-07-1280x720.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5425,7 +5425,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-08-1280x768.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5441,7 +5441,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-09-1280x800.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5457,7 +5457,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-10-1280x960.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5473,7 +5473,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-11-1280x1024.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5489,7 +5489,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-12-1360x768.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5505,7 +5505,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-13-1366x768.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5521,7 +5521,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-14-1440x900.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5537,7 +5537,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-15-1600x900.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5553,7 +5553,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-16-1600x1024.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5569,7 +5569,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-17-1680x1050.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5585,7 +5585,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-18-1768x992.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5601,7 +5601,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>30</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>On.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5617,7 +5617,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>30</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Off.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5633,7 +5633,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>31</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Framerate-Variable.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5649,7 +5649,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>31</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Framerate-Fixed.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5665,7 +5665,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>31</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Framerate-Smooth.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5681,7 +5681,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>32</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-None.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5697,7 +5697,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>32</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-2x.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5713,7 +5713,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>32</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-4x.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5729,7 +5729,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>32</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-8x.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5745,7 +5745,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>32</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-C8x.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5761,7 +5761,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>32</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-C16x.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5777,7 +5777,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>32</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-C16xQ.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5793,7 +5793,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>33</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-Default-2x.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5809,7 +5809,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>33</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Off.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5825,7 +5825,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>33</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-2x.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5841,7 +5841,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>33</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-4x.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5857,7 +5857,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>33</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-8x.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5873,7 +5873,7 @@
       <triggerType>Continuous</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>34</watchOneId>
-      <watchTwoId>35</watchTwoId>
+      <secondaryId>35</secondaryId>
       <comparisonType>DistanceVolumeDescending</comparisonType>
       <sampleFilename>Heavy-Wind-Mono.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5889,7 +5889,7 @@
       <triggerType>Continuous</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>34</watchOneId>
-      <watchTwoId>35</watchTwoId>
+      <secondaryId>35</secondaryId>
       <comparisonType>DistanceVolumeAscending</comparisonType>
       <sampleFilename>High-Voltage-Electrical-Arcing-Mono.mp3</sampleFilename>
       <sampleSpeed>0.5</sampleSpeed>
@@ -5905,7 +5905,7 @@
       <triggerType>Continuous</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>34</watchOneId>
-      <watchTwoId>35</watchTwoId>
+      <secondaryId>35</secondaryId>
       <comparisonType>DistancePitchDescending</comparisonType>
       <sampleFilename>Heavy-Wind-Mono.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5921,7 +5921,7 @@
       <triggerType>Continuous</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>34</watchOneId>
-      <watchTwoId>35</watchTwoId>
+      <secondaryId>35</secondaryId>
       <comparisonType>DistancePitchAscending</comparisonType>
       <sampleFilename>High-Voltage-Electrical-Arcing-Mono.mp3</sampleFilename>
       <sampleSpeed>2</sampleSpeed>
@@ -5937,7 +5937,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>33</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Graphics-16x.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5953,7 +5953,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>29</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Resolution-19-1920x1080.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5969,7 +5969,7 @@
       <triggerType>Modifier</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>36</watchOneId>
-      <watchTwoId>342</watchTwoId>
+      <secondaryId>342</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>NONE</sampleFilename>
       <sampleSpeed>0.5</sampleSpeed>
@@ -5985,7 +5985,7 @@
       <triggerType>Modifier</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>36</watchOneId>
-      <watchTwoId>343</watchTwoId>
+      <secondaryId>343</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>NONE</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -6001,7 +6001,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>0</watchOneId>
-      <watchTwoId>-1</watchTwoId>
+      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>bib.ogg</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -6012,21 +6012,15 @@
   </triggerList>
   <Description>Street Fighter IV GameConfig - Al Lansley - 2017-08-16
 
-
-
 This config ships with SoniFight and provides alerts for clock values, health, super bar and ultra bar for both players - as well as a large number of (but not all possible) menu sonification events to assist in navigating menus and selecting characters without the need to memorise menu options.
-
-
 
 Known Issues:
 
 At present there are some occassional non-sensical sonifications, such as between rounds, but there may be ways to avoid this as I've added some functionality to allow recursive "dependent triggers" on any normal trigger. By this I mean, you can specify a dependent trigger (by id number), and if the main trigger matches conditions but the dependent doesn't - then the original trigger sample isn't played. See the docs for more details.
 
-
-
 Unfortunately in some circumstances random sample playing may be unavoidable because memory gets re-used for storing various data and there isn't too much that can be done about this issue besides disabling the offending trigger(s) [which is a perfectly acceptable solution] - because we're either watching a memory address for a change in its status, or we aren't - and there isn't any middle ground. Use what works best for you.</Description>
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
+  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
 </GameConfig>

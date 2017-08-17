@@ -876,13 +876,13 @@ namespace SoniFight
                         // Prior declarations of UI elements so we can modify or disable them if required based on other trigger settings
                         ComboBox compTypeCB = new ComboBox();
                         TextBox watch1TB            = new TextBox();
-                        TextBox watch2TB            = new TextBox();
+                        Label secondaryIdLabel      = new Label();
+                        TextBox secondaryIdTB       = new TextBox();
                         TextBox valueTB             = new TextBox();
                         TextBox sampleFilenameTB    = new TextBox();
                         Button sampleFilenameButton = new Button();
                         TextBox sampleVolumeTB      = new TextBox();
                         TextBox sampleSpeedTB       = new TextBox();
-                        Label watch2Label           = new Label();
 
                         // Get the current watch we're working from based on the index of the currently selected treenode
                         // Note: Each child of a parent treenode starts at index 0, so we can use this index as the
@@ -1005,13 +1005,13 @@ namespace SoniFight
                             switch (currentTrigger.triggerType)
                             {
                                 case Trigger.TriggerType.Normal:
-                                    watch2Label.Text = "Dependent Trigger ID";
+                                    secondaryIdLabel.Text = "Dependent Trigger ID";
                                     break;
                                 case Trigger.TriggerType.Continuous:
-                                    watch2Label.Text = "Watch 2 ID";
+                                    secondaryIdLabel.Text = "Watch 2 ID";
                                     break;
                                 case Trigger.TriggerType.Modifier:
-                                    watch2Label.Text = "Continuous Trigger ID";
+                                    secondaryIdLabel.Text = "Continuous Trigger ID";
                                     break;
                             }
                         };
@@ -1087,57 +1087,54 @@ namespace SoniFight
                         row++;
                         
                         // Row 6 - Watch ID 2 - this is used for dependent triggers for normal triggers, secondary watch for continuous triggers and continuous trigger id for modifier triggers
-                        watch2Label.AutoSize = true;
+                        secondaryIdLabel.AutoSize = true;
                         
                         // Display the appropriate label for the 'watch2' field
                         switch (currentTrigger.triggerType)
                         {
                             case Trigger.TriggerType.Normal:
-                                watch2Label.Text = "Dependent Trigger ID";
+                                secondaryIdLabel.Text = "Dependent Trigger ID";
                                 break;
                             case Trigger.TriggerType.Continuous:
-                                watch2Label.Text = "Watch 2 ID";
+                                secondaryIdLabel.Text = "Watch 2 ID";
                                 break;
                             case Trigger.TriggerType.Modifier:
-                                watch2Label.Text = "Continuous Trigger ID";
+                                secondaryIdLabel.Text = "Continuous Trigger ID";
                                 break;
                         }
+
+                        secondaryIdLabel.Anchor = AnchorStyles.Right;
+                        secondaryIdLabel.Margin = padding;
+                        panel.Controls.Add(secondaryIdLabel, 0, row); // Control, Column, Row
                         
-                        watch2Label.Anchor = AnchorStyles.Right;
-                        watch2Label.Margin = padding;
-                        panel.Controls.Add(watch2Label, 0, row); // Control, Column, Row
+                        secondaryIdTB.Text = currentTrigger.secondaryId.ToString();
+                        secondaryIdTB.Tag = "watch2TB";
+                        secondaryIdTB.Anchor = AnchorStyles.Left;
+                        secondaryIdTB.Dock = DockStyle.Fill;
+                        secondaryIdTB.Margin = padding;
 
-                        //TextBox watch2TB = new TextBox(); DEFINED ABOVE SO CAN CHANGE FROM ComparisonType dropdown
-                        watch2TB.Text = currentTrigger.watchTwoId.ToString();
-                        watch2TB.Tag = "watch2TB";
-                        watch2TB.Anchor = AnchorStyles.Left;
-                        watch2TB.Dock = DockStyle.Fill;
-                        watch2TB.Margin = padding;
-
-                        
-
-                        watch2TB.TextChanged += (object sender, EventArgs ea) =>
+                        secondaryIdTB.TextChanged += (object sender, EventArgs ea) =>
                         {
                             int x;
-                            bool result = Int32.TryParse(watch2TB.Text, out x);
+                            bool result = Int32.TryParse(secondaryIdTB.Text, out x);
                             if (result)
                             {
-                                currentTrigger.watchTwoId = x;
+                                currentTrigger.secondaryId = x;
                             }
                             else
                             {
-                                if (!string.IsNullOrEmpty(watch2TB.Text.ToString()))
+                                if (!string.IsNullOrEmpty(secondaryIdTB.Text.ToString()))
                                 {
-                                    MessageBox.Show("Warning: Watch 2 ID must be an integer value.");
+                                    MessageBox.Show("Warning: Secondary ID must be an integer value.");
                                 }
                                 else // Field empty? Invalidate it so we can catch it in the save section
                                 {
-                                    currentTrigger.watchTwoId = -1;
+                                    currentTrigger.secondaryId = -1;
                                 }
                             }
                         };
 
-                        panel.Controls.Add(watch2TB, 1, row); // Control, Column, Row
+                        panel.Controls.Add(secondaryIdTB, 1, row); // Control, Column, Row
                         row++;
 
                         // ----- Row 7 - Trigger Value -----
@@ -1327,7 +1324,59 @@ namespace SoniFight
 
                         CheckBox isClockCB = new CheckBox();
                         isClockCB.Checked = currentTrigger.isClock;
-                        isClockCB.CheckedChanged += (object sender, EventArgs ea) => { currentTrigger.isClock = isClockCB.Checked; };
+
+                        // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
+                        if (currentTrigger.isClock)
+                        {
+                            sampleFilenameTB.Enabled = false;
+                            sampleFilenameButton.Enabled = false;
+                            valueTB.Enabled = false;
+                            sampleVolumeTB.Enabled = false;
+                            sampleSpeedTB.Enabled = false;
+                        }
+                        else
+                        {
+                            // Re-enable the secondary Id textbox along with the sample volume and speed textboxes
+                            valueTB.Enabled = true;
+                            sampleVolumeTB.Enabled = true;
+                            sampleSpeedTB.Enabled = true;
+
+                            // if we're not the clock and not a modifier (which doesn't use samples - it modifies other triggers' samples)? Then we can re-enable the sample UI elements.
+                            if (currentTrigger.triggerType != Trigger.TriggerType.Modifier)
+                            {
+                                sampleFilenameTB.Enabled = true;
+                                sampleFilenameButton.Enabled = true;
+                            }
+                        }
+
+                        isClockCB.CheckedChanged += (object sender, EventArgs ea) => {
+                            // Update the new isClock status on our trigger
+                            currentTrigger.isClock = isClockCB.Checked;
+
+                            // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
+                            if (currentTrigger.isClock)
+                            {
+                                sampleFilenameTB.Enabled = false;
+                                sampleFilenameButton.Enabled = false;
+                                valueTB.Enabled = false;
+                                sampleVolumeTB.Enabled = false;
+                                sampleSpeedTB.Enabled = false;
+                            }
+                            else
+                            {
+                                // Re-enable the secondary Id textbox along with the sample volume and speed textboxes
+                                valueTB.Enabled = true;
+                                sampleVolumeTB.Enabled = true;
+                                sampleSpeedTB.Enabled = true;
+
+                                // if we're not the clock and not a modifier (which doesn't use samples - it modifies other triggers' samples)? Then we can re-enable the sample UI elements.
+                                if (currentTrigger.triggerType != Trigger.TriggerType.Modifier)
+                                {
+                                    sampleFilenameTB.Enabled = true;
+                                    sampleFilenameButton.Enabled = true;
+                                }
+                            }
+                        };
                         isClockCB.Tag = "isClockCB";
                         isClockCB.Anchor = AnchorStyles.Right;
                         isClockCB.Dock = DockStyle.Fill;

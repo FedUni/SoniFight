@@ -61,9 +61,10 @@ namespace SoniFight
         // The watch used to read data for this trigger.
         public int watchOneId;
 
-        // An optional second watch used with continuous triggers.
-        // Note: This property is used to hold the continuous trigger to modify if this trigger is a modifier trigger.
-        public int watchTwoId;
+        // An optional secondary if for a watch or trigger. Normal triggers use this for dependent triggers, continuous
+        // triggers use this for the second watch with which to calculate a percentage, and modifier triggers use this
+        // as the continuous trigger to modify.
+        public int secondaryId;
         
         // The type of comparison to make, i.e. EqualTo, LessThan, LessThanOrEqualTo etc.
         public ComparisonType comparisonType;
@@ -110,9 +111,9 @@ namespace SoniFight
             comparisonType = Trigger.ComparisonType.EqualTo;
             allowanceType  = Trigger.AllowanceType.Any;
 
-            watchOneId = -1;
-            watchTwoId = -1;
-            value      = -1;
+            watchOneId  = -1;
+            secondaryId = -1;
+            value       = -1;
 
             sampleFilename = "NONE";
             sampleVolume   = 1.0f;
@@ -128,20 +129,20 @@ namespace SoniFight
         {
             id = source.id;
 
-            name = source.name + "-CLONE";
+            name        = source.name + "-CLONE";
             description = source.description;
 
-            triggerType = source.triggerType;
+            triggerType    = source.triggerType;
             comparisonType = source.comparisonType;
-            allowanceType = source.allowanceType;
+            allowanceType  = source.allowanceType;
 
-            watchOneId = source.watchOneId;
-            watchTwoId = source.watchTwoId;
-            value = source.value;
+            watchOneId  = source.watchOneId;
+            secondaryId = source.secondaryId;
+            value       = source.value;
 
             sampleFilename = source.sampleFilename;
-            sampleVolume = source.sampleVolume;
-            sampleSpeed = source.sampleSpeed;
+            sampleVolume   = source.sampleVolume;
+            sampleSpeed    = source.sampleSpeed;
 
             active = source.active;
             isClock = source.isClock;
