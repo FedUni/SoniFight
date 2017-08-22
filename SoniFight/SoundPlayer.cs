@@ -192,11 +192,11 @@ namespace SoniFight
             soundEngine.StopAllSounds();
 
             // Release all samples in the dictionary then clear it
-            foreach (KeyValuePair<string, ISound> sample in sampleDictionary)
+            /*foreach (KeyValuePair<string, ISound> sample in sampleDictionary)
             {
                 Console.WriteLine("Releasing sample: " + sample.Key);
                 sample.Value.Dispose();
-            }
+            }*/
             sampleDictionary.Clear();
 
             // Unload all samples and force garbage collection

@@ -346,14 +346,13 @@ namespace SoniFight
                                 Program.gameState = GameState.InGame;
                                 //Console.WriteLine("Program state is InGame");
 
-                                //FIX THIS SO THAT CONTINUOUS TRIGGERS DON'T BRIEFLY RESTART BETWEEN ROUNDS WHEN THE CLOCK GETS RESET
+                                // This condition check stops us from moving briefly into InGame state when the clock is reset between rounds or matches
 
-                                if (currentClock == 99 || currentClock == 60)
+                                if (currentClock == 0 || currentClock == 99 || lastClock == 0)                                
                                 {
-                                    Console.WriteLine("Suppressed moving to InGame state because currentClock is either 99 or 60.");
+                                    Console.WriteLine("Suppressed moving to InGame state because clock is 0 or 99.");
                                     Program.gameState = GameState.InMenu;
                                 }
-
                             }
                             else // Current and last clock values the same? Then set the gamestate to be InMenu.
                             {
