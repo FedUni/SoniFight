@@ -346,11 +346,10 @@ namespace SoniFight
                                 Program.gameState = GameState.InGame;
                                 //Console.WriteLine("Program state is InGame");
 
-                                // This condition check stops us from moving briefly into InGame state when the clock is reset between rounds or matches
-
-                                if (currentClock == 0 || currentClock == 99 || lastClock == 0)                                
+                                // This condition check stops us from moving briefly into the InGame state when the clock is reset between rounds or matches
+                                if (currentClock == 0 || currentClock == MainForm.gameConfig.ClockMax || lastClock == 0)                                
                                 {
-                                    Console.WriteLine("Suppressed moving to InGame state because clock is 0 or 99.");
+                                    Console.WriteLine("Suppressed moving to InGame state because clock is 0 or " + MainForm.gameConfig.ClockMax + ".");
                                     Program.gameState = GameState.InMenu;
                                 }
                             }

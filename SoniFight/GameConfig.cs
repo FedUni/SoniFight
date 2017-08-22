@@ -64,6 +64,15 @@ namespace SoniFight
             set { clockTickMS = value; }
         }
 
+        // The maximum value for the clock in a given game. Default: 99
+        // Used to stop SoniFight from switching to InGame mode between rounds.
+        private int clockMax = 99;
+        public int ClockMax
+        {
+            get { return clockMax; }
+            set { clockMax = value; }
+        }
+
         // Lists of watches - these may be of various types
         public List<Watch> watchList = new List<Watch>();
 
@@ -216,6 +225,7 @@ namespace SoniFight
             }
         }
 
+        // Method to activate this GameConfig
         public bool activate()
         {
             Console.WriteLine("Attempting to connect to process: " + processName);
@@ -230,6 +240,7 @@ namespace SoniFight
             return true;
         }
 
+        // Method to validate this GameConfig
         public bool validate()
         {
             string s;
@@ -299,6 +310,33 @@ namespace SoniFight
             else // Null or empty poll sleep value?
             {
                 MessageBox.Show("Validation Error: Clock tick must be an integer between " + GameConfig.MIN_CLOCK_TICK_MS + " and " + GameConfig.MAX_CLOCK_TICK_MS + " milliseconds. If unknown just guess 1000.");
+                return false;
+            }
+
+            // Ensure clockMax is an int within the valid range
+            s = ClockMax.ToString();
+            if (!string.IsNullOrEmpty(s))
+            {
+                // Have a value? Great - try to parse it to an int
+                int i;
+                if (Int32.TryParse(s, out i))
+                {
+                    // If we're here we got an int - now we need to check if it's within the valid range
+                    if (i < 30 || i > 100)
+                    {
+                        MessageBox.Show("Validation Error: Clock max must be an integer between 30 and 100.");
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Validation Error: Could not parse clock max value " + s + " to int.");
+                    return false;
+                }
+            }
+            else // Null or empty poll sleep value?
+            {
+                MessageBox.Show("Validation Error: Clock max must be an integer between 30 and 100.");
                 return false;
             }
 

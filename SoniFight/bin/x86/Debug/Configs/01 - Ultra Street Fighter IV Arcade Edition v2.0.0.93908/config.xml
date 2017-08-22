@@ -6014,13 +6014,12 @@
 
 This config ships with SoniFight and provides alerts for clock values, health, super bar and ultra bar for both players - as well as a large number of (but not all possible) menu sonification events to assist in navigating menus and selecting characters without the need to memorise menu options.
 
-Known Issues:
-
-At present there are some occassional non-sensical sonifications, such as between rounds, but there may be ways to avoid this as I've added some functionality to allow recursive "dependent triggers" on any normal trigger. By this I mean, you can specify a dependent trigger (by id number), and if the main trigger matches conditions but the dependent doesn't - then the original trigger sample isn't played. See the docs for more details.
+Known Issues: At present there are some occassional non-sensical sonifications, such as between rounds, but there may be ways to avoid this as I've added some functionality to allow recursive "dependent triggers" on any normal trigger. By this I mean, you can specify a dependent trigger (by id number), and if the main trigger matches conditions but the dependent doesn't - then the original trigger sample isn't played. See the docs for more details.
 
 Unfortunately in some circumstances random sample playing may be unavoidable because memory gets re-used for storing various data and there isn't too much that can be done about this issue besides disabling the offending trigger(s) [which is a perfectly acceptable solution] - because we're either watching a memory address for a change in its status, or we aren't - and there isn't any middle ground. Use what works best for you.</Description>
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
+  <ClockMax>99</ClockMax>
   <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
 </GameConfig>

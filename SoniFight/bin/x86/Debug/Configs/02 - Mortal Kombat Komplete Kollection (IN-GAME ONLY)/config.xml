@@ -307,5 +307,6 @@
   <ProcessName>MKKE</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
+  <ClockMax>90</ClockMax>
   <ConfigDirectory>02 - Mortal Kombat Komplete Kollection (IN-GAME ONLY)</ConfigDirectory>
 </GameConfig>

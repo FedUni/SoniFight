@@ -153,9 +153,6 @@ namespace SoniFight
         // Method to cleanly close down the app
         private void exitButton_Click_1(object senderender, EventArgs e)
         {
-            // Close this form   
-            this.Close();
-
             // This sets cancellation to pending, which we handle in the associated doWork method
             // to actually perform the cancellation.
             // Note: This is just the code from the stop running config button method - but it's required (including the sleep)
@@ -164,6 +161,10 @@ namespace SoniFight
             Program.sonificationBGW.CancelAsync();
             this.Text = formTitle + " Status: Stopped";
             running = false;
+
+            // Close this form   
+            this.Close();
+
             Thread.Sleep(500);
 
             // Note: Once here SoundPlayer.ShutDown() will be called from the main method because we've been stuck in this form loop up until then.
@@ -521,7 +522,45 @@ namespace SoniFight
                         panel.Controls.Add(clockTickTB, 1, row); // Control, Column, Row
                         row++;
 
-                        // ----- Row 4 - Config description -----                
+                        // ----- Row 4 - Clock Max -----
+                        Label clockMaxLabel = new Label();
+                        clockMaxLabel.AutoSize = true;
+                        clockMaxLabel.Text = "Clock Max";
+                        clockMaxLabel.Tag = "clockMaxLabel";
+                        clockMaxLabel.Anchor = AnchorStyles.Right;
+                        clockMaxLabel.Margin = padding;
+                        panel.Controls.Add(clockMaxLabel, 0, row); // Control, Column, Row
+
+                        TextBox clockMaxTB = new TextBox();
+                        clockMaxTB.Text = gameConfig.ClockMax.ToString();
+                        clockMaxTB.TextChanged += (object sender, EventArgs ea) =>
+                        {
+                            int x;
+                            bool result = Int32.TryParse(clockMaxTB.Text, out x);
+                            if (result)
+                            {
+                                gameConfig.ClockMax = x;
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(clockMaxTB.Text.ToString()))
+                                {
+                                    MessageBox.Show("Warning: Clock maxk MS must be an integer between 30 and 100.");
+                                }
+                                else // Field empty? Set a sane default.
+                                {
+                                    gameConfig.ClockMax = 99;
+                                }
+                            }
+                        };
+                        clockMaxTB.Tag = "clockMaxTB";
+                        clockMaxTB.Anchor = AnchorStyles.Right;
+                        clockMaxTB.Dock = DockStyle.Fill;
+                        clockMaxTB.Margin = padding;
+                        panel.Controls.Add(clockMaxTB, 1, row); // Control, Column, Row
+                        row++;
+
+                        // ----- Row 5 - Config description -----                
                         Label descLabel = new Label();
                         descLabel.AutoSize = true;
                         descLabel.Text = "Description";
@@ -532,7 +571,7 @@ namespace SoniFight
 
                         TextBox descTB = new TextBox();
                         descTB.Multiline = true;
-                        descTB.Height = descTB.Font.Height * 25 + padding.Horizontal; // Set height to be enough for 25 lines
+                        descTB.Height = descTB.Font.Height * 24 + padding.Horizontal; // Set height to be enough for 24 lines
 
                         // Replace all \n newlines with \r\n sp it properly linebreaks on returns
                         gameConfig.Description = gameConfig.Description.Replace("\n", Environment.NewLine);
@@ -1276,7 +1315,7 @@ namespace SoniFight
                         // ----- Row 10 - Trigger sample rate ---
                         Label sampleSpeedLabel = new Label();
                         sampleSpeedLabel.AutoSize = true;
-                        sampleSpeedLabel.Text = "Sample Rate (Range: 0.5 to 4.0)";
+                        sampleSpeedLabel.Text = "Sample Speed (Range: 0.1 to 4.0)";
                         sampleSpeedLabel.Anchor = AnchorStyles.Right;
                         sampleSpeedLabel.Margin = padding;
                         panel.Controls.Add(sampleSpeedLabel, 0, row); // Control, Column, Row
@@ -1295,13 +1334,16 @@ namespace SoniFight
                             bool result = float.TryParse(sampleSpeedTB.Text, out x);
                             if (result)
                             {
+                                // Cap if necessary and set sample speed
+                                if (x > GameConfig.MAX_SAMPLE_PLAYBACK_SPEED) { x = GameConfig.MAX_SAMPLE_PLAYBACK_SPEED; }
+                                if (x < GameConfig.MIN_SAMPLE_PLAYBACK_SPEED) { x = GameConfig.MIN_SAMPLE_PLAYBACK_SPEED; }
                                 currentTrigger.sampleSpeed = x;
                             }
                             else
                             {
                                 if (!string.IsNullOrEmpty(sampleSpeedTB.Text.ToString()))
                                 {
-                                    MessageBox.Show("Warning: Sample speed must be a value between 0.5 and 4.0.");
+                                    MessageBox.Show("Warning: Sample speed must be a value between " + GameConfig.MIN_SAMPLE_PLAYBACK_SPEED + " and " + GameConfig.MAX_SAMPLE_PLAYBACK_SPEED + ".");
                                 }
                                 else // Field empty? Invalidate it so we can catch it in the save section
                                 {
