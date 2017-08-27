@@ -309,64 +309,56 @@ namespace SoniFight
                     }
                 }
                 
-                // Update the game state to be InGame or InMenu
-                for (int triggerLoop = 0; triggerLoop < gc.triggerList.Count; ++triggerLoop)
-                {
-                    // Grab a trigger
-                    t = MainForm.gameConfig.triggerList[triggerLoop];
+                // Update the game state to be InGame or InMenu if we have a clock
+                if (gc.ClockTriggerId != -1)
+                { 
+                    // Grab the clock trigger
+                    t = Utils.getTriggerWithId(gc.ClockTriggerId);
 
-                    // Found the clock trigger?
-                    if (t.isClock)
+                    // Read the value on it
+                    currentClock = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
+
+                    // Check if a round-tick has passed
+                    endTime = DateTime.Now;
+                    double elapsedMilliseconds = ((TimeSpan)(endTime - startTime)).TotalMilliseconds;
+
+                    // If a GameConfig clock-tick has has passed (i.e. a second or such)
+                    if (elapsedMilliseconds >= MainForm.gameConfig.ClockTickMS)
                     {
-                        // Read the value on it
-                        currentClock = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
+                        //Console.WriteLine("A clock tick has passed.");
 
-                        // Check if a round-tick has passed
-                        endTime = DateTime.Now;
-                        double elapsedMilliseconds = ((TimeSpan)(endTime - startTime)).TotalMilliseconds;
+                        // Reset the start time
+                        startTime = DateTime.Now;                            
 
-                        // If a GameConfig clock-tick has has passed (i.e. a second or such)
-                        if (elapsedMilliseconds >= MainForm.gameConfig.ClockTickMS)
+                        // Update the previous gamestate
+                        Program.previousGameState = Program.gameState;
+
+                        // If the current and last clocks differ...
+                        if ( currentClock != lastClock)
                         {
-                            //Console.WriteLine("A clock tick has passed.");
-
-                            // Reset the start time
-                            startTime = DateTime.Now;                            
-
-                            // Update the previous gamestate
-                            Program.previousGameState = Program.gameState;
-
-                            // If the current and last clocks differ...
-                            if ( currentClock != lastClock)
-                            {
-                                // ...update the last clock to be the current clock and...
-                                lastClock = currentClock;
+                            // ...update the last clock to be the current clock and...
+                            lastClock = currentClock;
                                 
-                                // ...set the current gamestate to be InGame.
-                                Program.gameState = GameState.InGame;
-                                //Console.WriteLine("Program state is InGame");
+                            // ...set the current gamestate to be InGame.
+                            Program.gameState = GameState.InGame;
+                            //Console.WriteLine("Program state is InGame");
 
-                                // This condition check stops us from moving briefly into the InGame state when the clock is reset between rounds or matches
-                                if (currentClock == 0 || currentClock == MainForm.gameConfig.ClockMax || lastClock == 0)                                
-                                {
-                                    Console.WriteLine("Suppressed moving to InGame state because clock is 0 or " + MainForm.gameConfig.ClockMax + ".");
-                                    Program.gameState = GameState.InMenu;
-                                }
-                            }
-                            else // Current and last clock values the same? Then set the gamestate to be InMenu.
+                            // This condition check stops us from moving briefly into the InGame state when the clock is reset between rounds or matches
+                            if (currentClock == 0 || lastClock == 0 || currentClock == MainForm.gameConfig.ClockMax )                                
                             {
-                                Program.gameState = GameState.InMenu;                                
-                                //Console.WriteLine("Program state is InMenu");
-                            }                            
+                                Console.WriteLine("Suppressed moving to InGame state because clock is 0 or " + MainForm.gameConfig.ClockMax + ".");
+                                Program.gameState = GameState.InMenu;
+                            }
+                        }
+                        else // Current and last clock values the same? Then set the gamestate to be InMenu.
+                        {
+                            Program.gameState = GameState.InMenu;                                
+                            //Console.WriteLine("Program state is InMenu");
+                        }                            
 
-                        } // End of if a second or more has elapsed block
+                    } // End of if a second or more has elapsed block                    
 
-                        // Get of the loop finding the clock trigger if we've found and processed it (i.e. no need to process further triggers)
-                        break;
-
-                    } // End of isClock block
-
-                } // End of loop over triggers used to find the clock trigger 
+                } // End of game state update block
                 
                 // Process triggers to provide sonification
                 for (int triggerLoop = 0; triggerLoop < gc.triggerList.Count; ++triggerLoop)
@@ -581,11 +573,11 @@ namespace SoniFight
                                 // Set the flag on this modification trigger to say it's active
                                 t.modificationActive = true;
 
-                                /*Console.WriteLine("--Found modifier match for trigger " + t.id + " and modification was NOT active.");
-                                Console.WriteLine("--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
-                                Console.WriteLine("--Modifier trigger's sample volume is: " + t.sampleVolume);
-                                Console.WriteLine("--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
-                                Console.WriteLine("--Modifier trigger's sample speed is: " + t.sampleSpeed);*/
+                                Console.WriteLine("1--Found modifier match for trigger " + t.id + " and modification was NOT active.");
+                                Console.WriteLine("1--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
+                                Console.WriteLine("1--Modifier trigger's sample volume is: " + t.sampleVolume);
+                                Console.WriteLine("1--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
+                                Console.WriteLine("1--Modifier trigger's sample speed is: " + t.sampleSpeed);
 
                                 // Add any volume or pitch changes to the continuous triggers playback
                                 continuousTrigger.currentSampleVolume *= t.sampleVolume;
@@ -593,7 +585,7 @@ namespace SoniFight
                                 SoundPlayer.ChangeSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
                                 SoundPlayer.ChangeSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
 
-                                //Console.WriteLine("--Multiplying gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
+                                Console.WriteLine("1--Multiplying gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
                             }
 
                             // Else modification already active on this continuous trigger? Do nothing.
@@ -603,11 +595,11 @@ namespace SoniFight
                             // If this modifier trigger IS currently active and we failed the match we have to reset the continuous triggers playback conditions
                             if (t.modificationActive)
                             {
-                                /*Console.WriteLine("22Did NOT find modifier match for trigger " + t.id + " and modification WAS active so needs resetting.");
-                                Console.WriteLine("22Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
-                                Console.WriteLine("22Modifier trigger's sample volume is: " + t.sampleVolume);
-                                Console.WriteLine("22Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
-                                Console.WriteLine("22Modifier trigger's sample speed is: " + t.sampleSpeed);*/
+                                Console.WriteLine("2--Did NOT find modifier match for trigger " + t.id + " and modification WAS active so needs resetting.");
+                                Console.WriteLine("2--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
+                                Console.WriteLine("2--Modifier trigger's sample volume is: " + t.sampleVolume);
+                                Console.WriteLine("2--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
+                                Console.WriteLine("2--Modifier trigger's sample speed is: " + t.sampleSpeed);
 
                                 // Set the flag on this modification trigger to say it's inactive
                                 t.modificationActive = false;
@@ -618,7 +610,7 @@ namespace SoniFight
                                 SoundPlayer.ChangeSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
                                 SoundPlayer.ChangeSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
 
-                                //Console.WriteLine("22Dividing gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
+                                Console.WriteLine("2--Dividing gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
                             }
 
                             // Else sonification already inactive after failing match? Do nothing.

@@ -66,11 +66,24 @@ namespace SoniFight
 
         // The maximum value for the clock in a given game. Default: 99
         // Used to stop SoniFight from switching to InGame mode between rounds.
+        [XmlIgnore]
         private int clockMax = 99;
+        [XmlIgnore]
         public int ClockMax
         {
             get { return clockMax; }
             set { clockMax = value; }
+        }
+
+        // GameConfigs for fighting games will typically use a clock trigger to determine the in-game vs in-menu state. However, 
+        // if sonifying other games like Doom or such for low ammo or health then there's no clock.
+        [XmlIgnore]
+        private int clockTriggerId = -1;
+        [XmlIgnore]
+        public int ClockTriggerId
+        {
+            get { return clockTriggerId; }
+            set { clockTriggerId = value; }
         }
 
         // Lists of watches - these may be of various types
@@ -427,6 +440,8 @@ namespace SoniFight
                     // If the clock trigger is active then track it so we can ensure we only have a single active clock trigger later on (no more, no less)
                     if (t.active)
                     {
+                        // Set this game config's clock trigger id so we can go straight to it rather than finding it per poll
+                        clockTriggerId = t.id;
                         clockTriggerIdList.Add(t.id);
                         ++clockTriggersFound;
                     }
@@ -482,29 +497,22 @@ namespace SoniFight
 
             } // End of loop over triggers
 
-            // Ensure we found precisely 1 clock trigger
-            if (clockTriggersFound != 1)
-            {
-                if (clockTriggersFound == 0)
+            // Moan if we have more than 1 clock trigger (but we will accept no clock triggers for games like Doom etc. which do not have a clock)
+            if (clockTriggersFound > 1)
+            {   
+                s = "Validation Error: There is more than a single active trigger marked isClock and we may only have one. Triggers marked isClock: ";
+                for (int i = 0; i < clockTriggerIdList.Count; ++i)
                 {
-                    MessageBox.Show("Validation Error: There no active triggers marked isClock and there needs to be precisely 1 to monitor the games' in-game vs in-menu state.");
-                    return false;
-                }
-                else // More than 1...
-                {
-                    s = "Validation Error: There is more than a single active trigger marked isClock and we may only have one. Triggers marked isClock: ";
-                    for (int i = 0; i < clockTriggerIdList.Count; ++i)
-                    {
-                        s += clockTriggerIdList[i].ToString();
+                    s += clockTriggerIdList[i].ToString();
 
-                        if (i != (clockTriggerIdList.Count - 1))
-                        {
-                            s += ", ";
-                        }
+                    if (i != (clockTriggerIdList.Count - 1))
+                    {
+                        s += ", ";
                     }
-                    MessageBox.Show(s);
-                    return false;
                 }
+
+                MessageBox.Show(s);
+                return false;                
             }
 
             // Ensure trigger ids are unique
@@ -516,13 +524,7 @@ namespace SoniFight
 
             // Made it this far? Then indicate that we're hot to trot...            
             return true;
-        }
-
-        // This should be called if the process closes or the [Stop] button is clicked
-        public void deactivateGameConfig()
-        {
-            valid = false;
-        }
+        }        
 
         // Method to calculate the address of all features - called once per polling event
         public void calcAllWatchAddresses()

@@ -1217,7 +1217,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>9</watchOneId>
-      <secondaryId>-1</secondaryId>
+      <secondaryId>31</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>one.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -1505,7 +1505,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>14</watchOneId>
-      <secondaryId>-1</secondaryId>
+      <secondaryId>36</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Any.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2401,7 +2401,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>17</watchOneId>
-      <secondaryId>-1</secondaryId>
+      <secondaryId>38</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>on.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -2417,7 +2417,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>17</watchOneId>
-      <secondaryId>-1</secondaryId>
+      <secondaryId>38</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>off.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -4961,7 +4961,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <watchOneId>28</watchOneId>
-      <secondaryId>-1</secondaryId>
+      <secondaryId>240</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>Zero.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
@@ -5877,7 +5877,7 @@
       <comparisonType>DistanceVolumeDescending</comparisonType>
       <sampleFilename>Heavy-Wind-Mono.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
+      <sampleVolume>0.6</sampleVolume>
       <isClock>false</isClock>
       <active>false</active>
     </Trigger>
@@ -5892,10 +5892,10 @@
       <secondaryId>35</secondaryId>
       <comparisonType>DistanceVolumeAscending</comparisonType>
       <sampleFilename>High-Voltage-Electrical-Arcing-Mono.mp3</sampleFilename>
-      <sampleSpeed>0.5</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>0.6</sampleVolume>
       <isClock>false</isClock>
-      <active>false</active>
+      <active>true</active>
     </Trigger>
     <Trigger>
       <id>343</id>
@@ -5911,7 +5911,7 @@
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <active>true</active>
+      <active>false</active>
     </Trigger>
     <Trigger>
       <id>344</id>
@@ -5975,7 +5975,7 @@
       <sampleSpeed>0.5</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <active>false</active>
+      <active>true</active>
     </Trigger>
     <Trigger>
       <id>349</id>
@@ -5985,29 +5985,29 @@
       <triggerType>Modifier</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>36</watchOneId>
-      <secondaryId>343</secondaryId>
+      <secondaryId>342</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>NONE</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>0.5</sampleVolume>
       <isClock>false</isClock>
-      <active>true</active>
+      <active>false</active>
     </Trigger>
     <Trigger>
-      <id>350</id>
-      <name>Clock 50-CLONE</name>
-      <description>Says 'Clock 50' when it hits 50</description>
-      <value xsi:type="xsd:string">89</value>
+      <id>351</id>
+      <name>Versus-Menu-Edition-Select</name>
+      <description>Triggers based on submenu text [33 chars max or hits null char]</description>
+      <value xsi:type="xsd:string">Turns on Edition Select. You can</value>
       <triggerType>Normal</triggerType>
-      <allowanceType>InGame</allowanceType>
-      <watchOneId>0</watchOneId>
+      <allowanceType>InMenu</allowanceType>
+      <watchOneId>7</watchOneId>
       <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>bib.ogg</sampleFilename>
+      <sampleFilename>versus-menu-edition-select.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <isClock>false</isClock>
-      <active>false</active>
+      <active>true</active>
     </Trigger>
   </triggerList>
   <Description>Street Fighter IV GameConfig - Al Lansley - 2017-08-16
@@ -6020,6 +6020,5 @@ Unfortunately in some circumstances random sample playing may be unavoidable bec
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
-  <ClockMax>99</ClockMax>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
+  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
 </GameConfig>
