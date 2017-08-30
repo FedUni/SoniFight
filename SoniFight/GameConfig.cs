@@ -66,9 +66,7 @@ namespace SoniFight
 
         // The maximum value for the clock in a given game. Default: 99
         // Used to stop SoniFight from switching to InGame mode between rounds.
-        [XmlIgnore]
-        private int clockMax = 99;
-        [XmlIgnore]
+        private int clockMax = 99;        
         public int ClockMax
         {
             get { return clockMax; }

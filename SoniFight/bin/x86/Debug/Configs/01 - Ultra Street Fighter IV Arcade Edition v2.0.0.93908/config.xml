@@ -5883,7 +5883,7 @@
     </Trigger>
     <Trigger>
       <id>342</id>
-      <name>Continuous Volume Ascending w/ Dist. (Electricity)</name>
+      <name>Continuous Volume Ascending w/ Dist. (Wind)</name>
       <description>Plays constantly when in-game - modify via "Distance" comparison types</description>
       <value xsi:type="xsd:string">5.0</value>
       <triggerType>Continuous</triggerType>
@@ -5891,9 +5891,9 @@
       <watchOneId>34</watchOneId>
       <secondaryId>35</secondaryId>
       <comparisonType>DistanceVolumeAscending</comparisonType>
-      <sampleFilename>High-Voltage-Electrical-Arcing-Mono.mp3</sampleFilename>
+      <sampleFilename>Heavy-Wind-Mono.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>0.6</sampleVolume>
+      <sampleVolume>0.3</sampleVolume>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -5915,7 +5915,7 @@
     </Trigger>
     <Trigger>
       <id>344</id>
-      <name>Continuous Pitch Ascending w/ Dist. (Electricity)</name>
+      <name>Continuous Pitch Ascending w/ Dist. (Wind)</name>
       <description>Plays constantly when in-game - modify via "Distance" comparison types</description>
       <value xsi:type="xsd:string">5</value>
       <triggerType>Continuous</triggerType>
@@ -5923,9 +5923,9 @@
       <watchOneId>34</watchOneId>
       <secondaryId>35</secondaryId>
       <comparisonType>DistancePitchAscending</comparisonType>
-      <sampleFilename>High-Voltage-Electrical-Arcing-Mono.mp3</sampleFilename>
-      <sampleSpeed>2</sampleSpeed>
-      <sampleVolume>0.25</sampleVolume>
+      <sampleFilename>Heavy-Wind-Mono.mp3</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>0.5</sampleVolume>
       <isClock>false</isClock>
       <active>false</active>
     </Trigger>
@@ -5963,12 +5963,12 @@
     </Trigger>
     <Trigger>
       <id>348</id>
-      <name>Continuous Trigger Modifier - Pitch Down on P1 Crouch</name>
-      <description>Multiplies sample rate by 0.5 for specified continuous trigger on value match</description>
+      <name>Continuous Trigger Modifier - Pitch Down on P2 Crouch</name>
+      <description>Halves continous sample speed on P2 crouch</description>
       <value xsi:type="xsd:string">2</value>
       <triggerType>Modifier</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>36</watchOneId>
+      <watchOneId>37</watchOneId>
       <secondaryId>342</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>NONE</sampleFilename>
@@ -5979,12 +5979,12 @@
     </Trigger>
     <Trigger>
       <id>349</id>
-      <name>Continuous Trigger Modifier - Volume Down on P1 Crouch</name>
+      <name>Continuous Trigger Modifier - Volume Down on P2 Crouch</name>
       <description>Multiplies sample volume by 0.5 for specified continuous trigger on value match</description>
       <value xsi:type="xsd:string">2</value>
       <triggerType>Modifier</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>36</watchOneId>
+      <watchOneId>37</watchOneId>
       <secondaryId>342</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>NONE</sampleFilename>
@@ -6020,5 +6020,6 @@ Unfortunately in some circumstances random sample playing may be unavoidable bec
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
+  <ClockMax>99</ClockMax>
   <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
 </GameConfig>
