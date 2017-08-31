@@ -74,6 +74,9 @@
             // 
             // pointerTrailTB
             // 
+            this.pointerTrailTB.AccessibleDescription = "Enter a comma separated list of hexadecimal values without any zero x or such pre" +
+    "fixes here.";
+            this.pointerTrailTB.AccessibleName = "Pointer Trail Textbox";
             this.pointerTrailTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pointerTrailTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.pointerTrailTB.Location = new System.Drawing.Point(273, 47);
@@ -144,16 +147,21 @@
             // 
             // processNameTB
             // 
+            this.processNameTB.AccessibleDescription = "Enter the name of the game process here without the dot EXE suffix.";
+            this.processNameTB.AccessibleName = "Process Name Textbox";
             this.processNameTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.processNameTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.processNameTB.Location = new System.Drawing.Point(273, 9);
             this.processNameTB.MaxLength = 256;
             this.processNameTB.Name = "processNameTB";
             this.processNameTB.Size = new System.Drawing.Size(265, 20);
-            this.processNameTB.TabIndex = 5;            
+            this.processNameTB.TabIndex = 5;
             // 
             // memoryAddressTB
             // 
+            this.memoryAddressTB.AccessibleDescription = "This is the resulting memory address in hexadecimal when following the provided p" +
+    "ointer trail.";
+            this.memoryAddressTB.AccessibleName = "Memory Address Textbox Read Only";
             this.memoryAddressTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.memoryAddressTB.Location = new System.Drawing.Point(273, 123);
             this.memoryAddressTB.MaxLength = 256;
@@ -164,6 +172,9 @@
             // 
             // valueTB
             // 
+            this.valueTB.AccessibleDescription = "This is the value read from the memory address as the specified data type and is " +
+    "updated 10 times per second.";
+            this.valueTB.AccessibleName = "Value Textbox Read Only";
             this.valueTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.valueTB.Location = new System.Drawing.Point(273, 162);
             this.valueTB.MaxLength = 256;
@@ -174,6 +185,8 @@
             // 
             // dataTypeCB
             // 
+            this.dataTypeCB.AccessibleDescription = "Select the type of data you would like to read from the memory address here.";
+            this.dataTypeCB.AccessibleName = "Data Type Drowndown Menu";
             this.dataTypeCB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataTypeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dataTypeCB.FormattingEnabled = true;

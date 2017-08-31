@@ -27,7 +27,7 @@ namespace PointerTrailTester
             statusTimer.Start();
         }
 
-        // Each tick of te timer we do this...
+        // Each tick of the timer we do this...
         private void statusTimer_Tick(object sender, EventArgs e)
         {
             if (!Program.connectedToProcess)
