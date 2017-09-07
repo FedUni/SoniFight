@@ -1,4 +1,4 @@
-﻿namespace PointerTrailTester
+﻿namespace au.edu.federation.PointerTrailTester
 {
     partial class Form1
     {
@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pointerTrailTB = new System.Windows.Forms.TextBox();
-            this.processNameLabel = new System.Windows.Forms.Label();
+            this.ProcessNameLabel = new System.Windows.Forms.Label();
             this.pointerTrailLabel = new System.Windows.Forms.Label();
             this.dataTypeLabel = new System.Windows.Forms.Label();
             this.memoryAddressLabel = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.pointerTrailTB, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.processNameLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ProcessNameLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pointerTrailLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dataTypeLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.memoryAddressLabel, 0, 3);
@@ -85,17 +85,19 @@
             this.pointerTrailTB.Size = new System.Drawing.Size(265, 20);
             this.pointerTrailTB.TabIndex = 6;
             // 
-            // processNameLabel
+            // ProcessNameLabel
             // 
-            this.processNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.processNameLabel.AutoSize = true;
-            this.processNameLabel.Location = new System.Drawing.Point(74, 2);
-            this.processNameLabel.Name = "processNameLabel";
-            this.processNameLabel.Padding = new System.Windows.Forms.Padding(10);
-            this.processNameLabel.Size = new System.Drawing.Size(193, 33);
-            this.processNameLabel.TabIndex = 0;
-            this.processNameLabel.Text = "Process Name (without .EXE suffix)";
-            this.processNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ProcessNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ProcessNameLabel.AutoSize = true;
+            this.ProcessNameLabel.Location = new System.Drawing.Point(74, 2);
+            this.ProcessNameLabel.Name = "ProcessNameLabel";
+            this.ProcessNameLabel.Padding = new System.Windows.Forms.Padding(10);
+            this.ProcessNameLabel.Size = new System.Drawing.Size(193, 33);
+            this.ProcessNameLabel.TabIndex = 0;
+            this.ProcessNameLabel.Text = "999Process Name (without .EXE suffix)";
+            this.ProcessNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            //this.ProcessNameLabel.Text = Form1.rm.GetString("au.edu.federation.PointerTrailTester.ProcessNameLabel");
+            //this.ProcessNameLabel.Text = resources.GetString("ProcessNameLabel");
             // 
             // pointerTrailLabel
             // 
@@ -217,6 +219,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-2, 136);
             this.pictureBox1.Name = "pictureBox1";
@@ -246,7 +249,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label processNameLabel;
+        private System.Windows.Forms.Label ProcessNameLabel;
         private System.Windows.Forms.Label pointerTrailLabel;
         private System.Windows.Forms.Label dataTypeLabel;
         private System.Windows.Forms.Label memoryAddressLabel;
@@ -258,6 +261,8 @@
         private System.Windows.Forms.TextBox valueTB;
         private System.Windows.Forms.ComboBox dataTypeCB;
         private System.Windows.Forms.PictureBox pictureBox1;
+
+        
     }
 }
 

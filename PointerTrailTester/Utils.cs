@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
-namespace PointerTrailTester
+namespace au.edu.federation.PointerTrailTester
 {
     static class Utils
     {

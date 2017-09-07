@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace PointerTrailTester
+namespace au.edu.federation.PointerTrailTester
 {
     static class Program
     {

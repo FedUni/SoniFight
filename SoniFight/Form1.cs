@@ -414,6 +414,7 @@ namespace SoniFight
                         dirLabel.Tag = "DirectoryLabel";
                         dirLabel.Anchor = AnchorStyles.Right;
                         dirLabel.Margin = padding;
+                        dirLabel.AccessibleDescription = "The directory within the Configs directory containing this game config. Changing this will result in the config.xml file being saved in the newly specified directory.";
                         
                         panel.Controls.Add(dirLabel, 0, row); // Control, Column, Row
 
@@ -424,6 +425,7 @@ namespace SoniFight
                         dirTB.Anchor = AnchorStyles.Right;
                         dirTB.Dock = DockStyle.Fill;
                         dirTB.Margin = padding;
+                        
                         panel.Controls.Add(dirTB, 1, row); // Control, Column, Row                        
                         row++;
 

@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace PointerTrailTester
+using System.Resources;
+
+namespace au.edu.federation.PointerTrailTester
 {
     public partial class Form1 : Form
     {
@@ -88,7 +90,7 @@ namespace PointerTrailTester
         public Form1()
         {
             InitializeComponent();
-
+            
             processConnectionBW.DoWork += connectToProcess;
             processConnectionBW.WorkerReportsProgress = false;
             processConnectionBW.WorkerSupportsCancellation = true;
