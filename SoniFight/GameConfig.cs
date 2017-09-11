@@ -208,8 +208,8 @@ namespace SoniFight
                         // Construct the sample key used for the dictionary
                         t.sampleKey = ".\\Configs\\" + configDirectory + t.sampleFilename;
 
-                        // If the sample isn't loaded and it's not the clock or a modifier trigger (these don't use samples)...
-                        if (!SoundPlayer.SampleLoaded(t.sampleKey) && !t.isClock && t.triggerType != Trigger.TriggerType.Modifier)
+                        // If the sample isn't loaded and it's not the clock or a modifier trigger (these don't use samples) and we're not using tolk...
+                        if (!SoundPlayer.SampleLoaded(t.sampleKey) && !t.isClock && t.triggerType != Trigger.TriggerType.Modifier && !t.useTolk)
                         {
                             // ...then load the sample for the trigger.
                             if (t.triggerType != Trigger.TriggerType.Continuous)

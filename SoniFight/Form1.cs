@@ -924,6 +924,8 @@ namespace SoniFight
                         Button sampleFilenameButton = new Button();
                         TextBox sampleVolumeTB      = new TextBox();
                         TextBox sampleSpeedTB       = new TextBox();
+                        Label tolkLabel = new Label();
+                        CheckBox tolkCheckbox = new CheckBox();
 
                         // Get the current watch we're working from based on the index of the currently selected treenode
                         // Note: Each child of a parent treenode starts at index 0, so we can use this index as the
@@ -1042,17 +1044,20 @@ namespace SoniFight
                                 sampleFilenameButton.Enabled = true;
                             }
 
-                            // Display the appropriate label for the 'watch2' field
+                            // Display the appropriate label for the 'watch2' field and set whether the tolk checkbox is active or not
                             switch (currentTrigger.triggerType)
                             {
                                 case Trigger.TriggerType.Normal:
                                     secondaryIdLabel.Text = "Dependent Trigger ID";
+                                    tolkCheckbox.Enabled = true;
                                     break;
                                 case Trigger.TriggerType.Continuous:
                                     secondaryIdLabel.Text = "Watch 2 ID";
+                                    tolkCheckbox.Enabled = false;
                                     break;
                                 case Trigger.TriggerType.Modifier:
                                     secondaryIdLabel.Text = "Continuous Trigger ID";
+                                    tolkCheckbox.Enabled = false;
                                     break;
                             }
                         };
@@ -1227,7 +1232,7 @@ namespace SoniFight
                                                 
                         sampleFilenameTB.Text = currentTrigger.sampleFilename;
                         sampleFilenameTB.Tag = "sampleFilenameTB";
-                        sampleFilenameTB.Anchor = AnchorStyles.Left;
+                        sampleFilenameTB.Anchor = AnchorStyles.Right;
                         sampleFilenameTB.Dock = DockStyle.Fill;
                         sampleFilenameTB.Margin = new System.Windows.Forms.Padding(0);
 
@@ -1237,7 +1242,77 @@ namespace SoniFight
                         sampleFilenameTB.TextChanged += (object sender, EventArgs ea) => { currentTrigger.sampleFilename = sampleFilenameTB.Text; };
 
                         sampleSelectionPanel.Controls.Add(sampleFilenameTB);
-                                                
+
+                        // ----- Use Tolk label & checkbox -----
+
+                        tolkLabel.Text = "Use Tolk";
+                        tolkLabel.AutoSize = true;
+                        tolkLabel.Anchor = AnchorStyles.Right;
+                        tolkLabel.Dock = DockStyle.Right;
+                        tolkLabel.Padding = padding;
+                        sampleSelectionPanel.Controls.Add(tolkLabel);
+
+                        tolkCheckbox.Anchor = AnchorStyles.Right;
+                        tolkCheckbox.Dock = DockStyle.Right;
+                        tolkCheckbox.AutoSize = true;
+                        tolkCheckbox.Padding = padding;
+                        tolkCheckbox.Checked = currentTrigger.useTolk;
+
+                        // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
+                        if (currentTrigger.useTolk)
+                        {
+                            MessageBox.Show("We're using tolk so disabling stuff!");
+
+                            sampleFilenameButton.Enabled = false;
+                            sampleVolumeTB.Enabled = false;
+                            sampleSpeedTB.Enabled = false;
+                            sampleFilenameLabel.Text = "Screen Reader Text";
+                        }
+                        else // Not using tolk? Enable filename button, volume and speed
+                        {
+                            sampleFilenameButton.Enabled = true;
+                            sampleVolumeTB.Enabled = true;
+                            sampleSpeedTB.Enabled = true;
+                            sampleFilenameLabel.Text = "Sample Filename (without path)";
+                        }
+
+                        // Tolk is only available for normal triggers
+                        if (currentTrigger.triggerType != Trigger.TriggerType.Normal)
+                        {
+                            tolkCheckbox.Enabled = false;
+                        }
+                        else
+                        {
+                            tolkCheckbox.Enabled = true;
+                        }
+
+                        tolkCheckbox.CheckedChanged += (object sender, EventArgs ea) => {
+                            // Update the new isClock status on our trigger
+                            currentTrigger.useTolk = tolkCheckbox.Checked;
+
+                            // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
+                            if (currentTrigger.useTolk)
+                            {
+                                MessageBox.Show("checkchanged handler - We're using tolk so disabling stuff!");
+
+                                sampleFilenameButton.Enabled = false;
+                                sampleVolumeTB.Enabled = false;
+                                sampleSpeedTB.Enabled = false;
+                                sampleFilenameLabel.Text = "Screen Reader Text";
+                            }
+                            else // Not using tolk? Enable filename button, volume and speed
+                            {
+                                sampleFilenameButton.Enabled = true;
+                                sampleVolumeTB.Enabled = true;
+                                sampleSpeedTB.Enabled = true;
+                                sampleFilenameLabel.Text = "Sample Filename (without path)";
+                            }
+                        };
+
+                        // Add the tolk checkbox
+                        sampleSelectionPanel.Controls.Add(tolkCheckbox);
+
+
                         sampleFilenameButton.AutoSize = true;
                         sampleFilenameButton.Anchor = AnchorStyles.Right;
                         sampleFilenameButton.Dock = DockStyle.Right;
@@ -1270,6 +1345,11 @@ namespace SoniFight
                             sampleFilenameButton.Enabled = true;
                         }
 
+                        if (currentTrigger.useTolk)
+                        {
+                            sampleFilenameButton.Enabled = false;
+                        }
+
                         // Now we can add the sample selection panel to the cell!
                         panel.Controls.Add(sampleSelectionPanel, 1, row);
                         row++;
@@ -1288,8 +1368,13 @@ namespace SoniFight
                         sampleVolumeTB.Dock = DockStyle.Fill;
                         sampleVolumeTB.Margin = padding;
 
-                        // Disable sample volume field if we're the clock trigger
-                        if (currentTrigger.isClock) { sampleVolumeTB.Enabled = false; }
+                        // Disable sample volume field if we're the clock trigger or using tolk
+                        if (currentTrigger.isClock || currentTrigger.useTolk)
+                        {
+                            MessageBox.Show("Sample volume TB section - disabling sample volume! Use tolk is: " + currentTrigger.useTolk);
+                            sampleVolumeTB.Enabled = false;
+                            sampleVolumeTB.Update();
+                        }
 
                         sampleVolumeTB.TextChanged += (object sender, EventArgs ea) => {
                             float x;
@@ -1329,7 +1414,7 @@ namespace SoniFight
                         sampleSpeedTB.Margin = padding;
 
                         // Disable sample speed field if we're not the clock trigger
-                        if (currentTrigger.isClock) { sampleSpeedTB.Enabled = false; }
+                        if (currentTrigger.isClock || currentTrigger.useTolk) { sampleSpeedTB.Enabled = false; }
 
                         sampleSpeedTB.TextChanged += (object sender, EventArgs ea) => { 
                             float x;
@@ -1377,19 +1462,33 @@ namespace SoniFight
                             valueTB.Enabled = false;
                             sampleVolumeTB.Enabled = false;
                             sampleSpeedTB.Enabled = false;
+                            tolkCheckbox.Enabled = false;
                         }
-                        else
+                        else // We are not the clock trigger
                         {
-                            // Re-enable the secondary Id textbox along with the sample volume and speed textboxes
+                            // Re-enable the value checkbox
                             valueTB.Enabled = true;
-                            sampleVolumeTB.Enabled = true;
-                            sampleSpeedTB.Enabled = true;
 
-                            // if we're not the clock and not a modifier (which doesn't use samples - it modifies other triggers' samples)? Then we can re-enable the sample UI elements.
-                            if (currentTrigger.triggerType != Trigger.TriggerType.Modifier)
+                           
+
+                            // If we are NOT using tolk then we enable volume, speed and file buttons
+                            if (!currentTrigger.useTolk)
                             {
-                                sampleFilenameTB.Enabled = true;
-                                sampleFilenameButton.Enabled = true;
+                                sampleVolumeTB.Enabled = true;
+                                sampleSpeedTB.Enabled = true;
+
+                                // Modifier triggers do not use samples, so we do not enable the sample filename text box or button
+                                if (currentTrigger.triggerType != Trigger.TriggerType.Modifier)
+                                {
+                                    sampleFilenameTB.Enabled = true;
+                                    sampleFilenameButton.Enabled = true;
+                                }
+                            }
+                            else // We ARE using tolk, so the volume, speed and file button should NOT be active
+                            {
+                                sampleVolumeTB.Enabled = false;
+                                sampleSpeedTB.Enabled = false;
+                                sampleFilenameButton.Enabled = false;                               
                             }
                         }
 
@@ -1405,20 +1504,36 @@ namespace SoniFight
                                 valueTB.Enabled = false;
                                 sampleVolumeTB.Enabled = false;
                                 sampleSpeedTB.Enabled = false;
+                                tolkCheckbox.Enabled = false;
                             }
-                            else
+                            else // This is not the clock trigger
                             {
                                 // Re-enable the secondary Id textbox along with the sample volume and speed textboxes
                                 valueTB.Enabled = true;
-                                sampleVolumeTB.Enabled = true;
-                                sampleSpeedTB.Enabled = true;
 
-                                // if we're not the clock and not a modifier (which doesn't use samples - it modifies other triggers' samples)? Then we can re-enable the sample UI elements.
-                                if (currentTrigger.triggerType != Trigger.TriggerType.Modifier)
+                                // Re-enabled tolk checkbox
+                                tolkCheckbox.Enabled = true;
+
+                                // // If we are NOT using tolk then we enable volume, speed and file buttons
+                                if (!currentTrigger.useTolk)
                                 {
-                                    sampleFilenameTB.Enabled = true;
-                                    sampleFilenameButton.Enabled = true;
+                                    sampleVolumeTB.Enabled = true;
+                                    sampleSpeedTB.Enabled = true;
+
+                                    // Modifier triggers do not use samples, so we do not enable the sample filename text box or button
+                                    if (currentTrigger.triggerType != Trigger.TriggerType.Modifier)
+                                    {
+                                        sampleFilenameTB.Enabled = true;
+                                        sampleFilenameButton.Enabled = true;
+                                    }
                                 }
+                                else // We ARE using tolk, so the volume, speed and file button should NOT be active
+                                {
+                                    sampleVolumeTB.Enabled = false;
+                                    sampleSpeedTB.Enabled = false;
+                                    sampleFilenameButton.Enabled = false;
+                                }
+
                             }
                         };
                         isClockCB.Tag = "isClockCB";

@@ -6353,6 +6353,23 @@
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
+    <Trigger>
+      <id>352</id>
+      <name>Tolk Clock 85</name>
+      <description>Uses tolk to say 'Clock 85' when it hits 85</description>
+      <value xsi:type="xsd:string">85</value>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <watchOneId>0</watchOneId>
+      <secondaryId>-1</secondaryId>
+      <comparisonType>EqualTo</comparisonType>
+      <sampleFilename>Clock 85</sampleFilename>
+      <sampleSpeed>1</sampleSpeed>
+      <sampleVolume>1</sampleVolume>
+      <useTolk>true</useTolk>
+      <isClock>false</isClock>
+      <active>true</active>
+    </Trigger>
   </triggerList>
   <Description>Street Fighter IV GameConfig - Al Lansley - 2017-08-16
 
