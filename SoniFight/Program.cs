@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
 
+using DavyKager; // Required for TOLK screenreader integration.
+
 namespace SoniFight
 {
     static class Program
@@ -226,6 +228,30 @@ namespace SoniFight
         // This is the DoWork method for the sonification BackgroundWorker
         public static void performSonification(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
+            // Load tolk library ready for use
+            Tolk.Load();
+
+            // Try to detect a screen reader and set a flag if we find one so we know we can use it for sonification events.
+            bool screenReaderActive = false;
+            string screenReaderName = Tolk.DetectScreenReader();
+            if (screenReaderName != null)
+            {
+                screenReaderActive = true;
+                Console.WriteLine("Tolk: The active screen reader driver is: {0}", screenReaderName);
+                if (Tolk.HasSpeech())
+                {
+                    Console.WriteLine("Tolk: This screen reader driver supports speech.");
+                }
+                if (Tolk.HasBraille())
+                {
+                    Console.WriteLine("Tolk: This screen reader driver supports braille.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Tolk: None of the supported screen readers are running.");
+            }
+
             // Save some typing
             GameConfig gc = MainForm.gameConfig;
 
@@ -508,48 +534,68 @@ namespace SoniFight
                             // InGame? Fine - play the sample because we don't stop InGame triggers from overlapping too heavily.
                             if (Program.gameState == GameState.InGame)
                             {
-                                Console.WriteLine("InGame sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
-                                
-                                SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is because normal triggers don't loop
+                                // If we're using a screen reader for the sonification event of this trigger
+                                if (screenReaderActive && t.useTolk)
+                                {
+                                    // The sample filename contains the text to say
+                                    Tolk.Output(t.sampleFilename);
+                                }
+                                else // Sample is a sample file
+                                {
+                                    Console.WriteLine("InGame sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
+                                    SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is because normal triggers don't loop
+                                }
+
 
                                 // Remove any queued menu triggers
                                 menuTriggerQueue.Clear();
                             }
                             else // GameState must be InMenu
                             {
-                                // Not already playing a menu sample? Great - play the one that matched.
-                                if ( !SoundPlayer.IsPlaying() )
+                                // If we're using a screen reader for the sonification event of this trigger
+                                if (screenReaderActive && t.useTolk)
                                 {
-                                    // Not already playing a sample? So play this menu sample!
-                                    Console.WriteLine("InMenu sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
-
-                                    // Grab the time at which we played our last menu sonification event...
-                                    lastMenuSonificationTime = DateTime.Now;
-
-                                    // ...then play the sample.
-                                    SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is to NOT loop InMenu triggers - only continuous triggers can do that
+                                    // The sample filename contains the text to say
+                                    Tolk.Output(t.sampleFilename);
                                 }
-                                else // We are in the menus and already playing a menu sonification event...
+                                else // Sample is a sample file
                                 {
-                                    // If there's nothing in the queue add this menu trigger.
-                                    if (menuTriggerQueue.Count == 0)
-                                    {
-                                        menuTriggerQueue.Enqueue(t);
-                                        //Console.WriteLine("Queue is less than one so adding menu trigger to queue. New queue size is: " + menuTriggerQueue.Count);
-                                    }
-                                    else // Already have one or more elements in the queue?
-                                    {
-                                        // Clear the queue and enque this sample for playing at the next interval
-                                        menuTriggerQueue.Clear();
-                                        menuTriggerQueue.Enqueue(t);
 
-                                        //Console.WriteLine("Adding element to queue. New queue size is: " + menuTriggerQueue.Count);
+                                    // Not already playing a menu sample? Great - play the one that matched.
+                                    if (!SoundPlayer.IsPlaying())
+                                    {
+                                        // Not already playing a sample? So play this menu sample!
+                                        Console.WriteLine("InMenu sample: " + t.sampleFilename + " - trigger id: " + t.id + " Volume: " + t.sampleVolume + " Speed: " + t.sampleSpeed);
+
+                                        // Grab the time at which we played our last menu sonification event...
+                                        lastMenuSonificationTime = DateTime.Now;
+
+                                        // ...then play the sample.
+                                        SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is to NOT loop InMenu triggers - only continuous triggers can do that
                                     }
-        
-                                } // End of section where we're InMenu but a sound is already playing
-                                
+                                    else // We are in the menus and already playing a menu sonification event...
+                                    {
+                                        // If there's nothing in the queue add this menu trigger.
+                                        if (menuTriggerQueue.Count == 0)
+                                        {
+                                            menuTriggerQueue.Enqueue(t);
+                                            //Console.WriteLine("Queue is less than one so adding menu trigger to queue. New queue size is: " + menuTriggerQueue.Count);
+                                        }
+                                        else // Already have one or more elements in the queue?
+                                        {
+                                            // Clear the queue and enque this sample for playing at the next interval
+                                            menuTriggerQueue.Clear();
+                                            menuTriggerQueue.Enqueue(t);
+
+                                            //Console.WriteLine("Adding element to queue. New queue size is: " + menuTriggerQueue.Count);
+                                        }
+
+                                    } // End of section where we're InMenu but a sound is already playing
+
+                                } // End of if sonification is via a sample section
+
                             } // End of if in InMenu gamestate section                                                        
-
+                            
                         } // End of found sonic match section                       
 
                     }
@@ -664,6 +710,9 @@ namespace SoniFight
                 Thread.Sleep(MainForm.gameConfig.PollSleepMS);
 
             } // End of while !e.Cancel
+
+            // Unload tolk when we're stopping sonification
+            Tolk.Unload();
 
             // If we're here then the background worker must have been cancelled so we call stopSonification
             stopSonification(e);

@@ -75,6 +75,7 @@
       <sampleFilename>NONE</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>true</isClock>
       <active>true</active>
     </Trigger>
@@ -91,6 +92,7 @@
       <sampleFilename>Health-Half.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -107,6 +109,7 @@
       <sampleFilename>Health-Quarter.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -123,6 +126,7 @@
       <sampleFilename>Health-Low.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -139,6 +143,7 @@
       <sampleFilename>Clock-45.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -155,6 +160,7 @@
       <sampleFilename>Clock-10.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -171,6 +177,7 @@
       <sampleFilename>Enhanced.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -187,6 +194,7 @@
       <sampleFilename>Breaker.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -203,6 +211,7 @@
       <sampleFilename>X-Ray.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -219,6 +228,7 @@
       <sampleFilename>Health-Half-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -235,6 +245,7 @@
       <sampleFilename>Health-Quarter-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -251,6 +262,7 @@
       <sampleFilename>Health-Low-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -267,6 +279,7 @@
       <sampleFilename>Enhanced-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -283,6 +296,7 @@
       <sampleFilename>Breaker-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>
@@ -299,6 +313,7 @@
       <sampleFilename>X-Ray-P2.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
+      <useTolk>false</useTolk>
       <isClock>false</isClock>
       <active>true</active>
     </Trigger>

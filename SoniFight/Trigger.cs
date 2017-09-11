@@ -70,9 +70,13 @@ namespace SoniFight
         public ComparisonType comparisonType;
                 
         // Properties for the sample to play along with its associated default speed and volume (defaults: 1.0 - i.e. full volume, standard playback speed)
+        // Note: The sampleFilename field is used as the text to say if we are using tolk for sonification of this trigger.
         public string sampleFilename;
         public float sampleSpeed;
         public float sampleVolume;
+
+        // Whether this trigger uses Tolk to generate the sonification event (true) or if it uses a sample file (false).
+        public bool useTolk;
 
         // A current sample volume for continuous triggers whose volume may change with distance
         [XmlIgnore]
@@ -122,6 +126,7 @@ namespace SoniFight
             active             = true;
             isClock            = false;
             modificationActive = false;
+            useTolk            = false;
         }
 
         // Copy constructor which creates a deep-copy of an existing trigger
@@ -144,9 +149,10 @@ namespace SoniFight
             sampleVolume   = source.sampleVolume;
             sampleSpeed    = source.sampleSpeed;
 
-            active = source.active;
-            isClock = source.isClock;
+            active             = source.active;
+            isClock            = source.isClock;
             modificationActive = source.modificationActive;
+            useTolk            = source.useTolk;
         }
 
     } // End of Trigger class
