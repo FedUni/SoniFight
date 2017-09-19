@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Globalization;
+using System.Threading;
 
 namespace au.edu.federation.PointerTrailTester
 {
@@ -24,7 +26,7 @@ namespace au.edu.federation.PointerTrailTester
         public static int TEXT_COMPARISON_CHAR_LIMIT = 33;
 
         public static bool connectedToProcess = false; // Keep track of whether we're connected to the named process or not
-        public static bool validPointerTrail  = false; // Keep track of whether the pointer trail is legal or not
+        public static bool validPointerTrail = false; // Keep track of whether the pointer trail is legal or not
 
         public static string processName;      // The name of the process we want to attach to
         public static Process[] processArray;  // Used to find the process
@@ -42,6 +44,12 @@ namespace au.edu.federation.PointerTrailTester
         [STAThread]
         static void Main()
         {
+            // Localisation test code - uncomment to force French localisation etc.
+            CultureInfo cultureOverride = new CultureInfo("fr");
+            Thread.CurrentThread.CurrentUICulture = cultureOverride;
+            Thread.CurrentThread.CurrentCulture = cultureOverride;
+
+            // Kick off the form
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
@@ -50,5 +58,7 @@ namespace au.edu.federation.PointerTrailTester
             Form1.processConnectionBW.CancelAsync();
             Form1.processConnectionBW.Dispose();
         }
-    }
-}
+
+    } // End of class
+
+} // End of namespace

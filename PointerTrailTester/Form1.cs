@@ -3,13 +3,14 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
-
-using System.Resources;
+using au.edu.federation.PointerTrailTester.Properties;
 
 namespace au.edu.federation.PointerTrailTester
 {
     public partial class Form1 : Form
     {
+        //public static ResourceManager resources = new ResourceManager();
+
         // Background worker which will attempt to connect to the requested process without locking up the UI
         public static BackgroundWorker processConnectionBW = new BackgroundWorker();
 
@@ -32,26 +33,30 @@ namespace au.edu.federation.PointerTrailTester
         // Each tick of the timer we do this...
         private void statusTimer_Tick(object sender, EventArgs e)
         {
+            string s;
+
             if (!Program.connectedToProcess)
             {
-                memoryAddressTB.Text = "NOT CONNECTED TO PROCESS";
-                valueTB.Text = "NOT CONNECTED TO PROCESS";
+                s = Resources.ResourceManager.GetString("notConnectedString");
+                memoryAddressTextBox.Text = s;
+                valueTextBox.Text = s;
             }
             else // We are connected to the process? Okay...
             {
                 // ...do we have a valid pointer trail?
                 if (!Program.validPointerTrail)
                 {
-                    memoryAddressTB.Text = "INVALID POINTER TRAIL";
-                    valueTB.Text = "INVALID POINTER TRAIL";
+                    s = Resources.ResourceManager.GetString("invalidPointerString");
+                    memoryAddressTextBox.Text = s;
+                    valueTextBox.Text = s;
                 }
                 else // We do? Great!
                 {
                     // Convert int memory address to hex and update memory address field
-                    memoryAddressTB.Text = Program.featureAddress.ToString("X");
+                    memoryAddressTextBox.Text = Program.featureAddress.ToString("X");
 
                     // Read correct data type from address & set as the valueTB Text
-                    switch (dataTypeCB.SelectedIndex)
+                    switch (dataTypeComboBox.SelectedIndex)
                     {
                         case 0:
                             value = Utils.getIntFromAddress(Program.processHandle, Program.featureAddress);
@@ -78,7 +83,7 @@ namespace au.edu.federation.PointerTrailTester
                             value = Utils.getUTF16FromAddress(Program.processHandle, Program.featureAddress);
                             break;
                     }
-                    valueTB.Text = Convert.ToString(value);
+                    valueTextBox.Text = Convert.ToString(value);
 
                 } // End of we-have-a-valid-pointer-trail section
 
@@ -86,35 +91,29 @@ namespace au.edu.federation.PointerTrailTester
 
         } // End of statusTimer_Tick method
 
-        // Constructor
         public Form1()
         {
             InitializeComponent();
-            
+
             processConnectionBW.DoWork += connectToProcess;
             processConnectionBW.WorkerReportsProgress = false;
             processConnectionBW.WorkerSupportsCancellation = true;
 
-            dataTypeCB.SelectedIndex = 0;
-
-            InitTimer();
-        }       
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
+            dataTypeComboBox.SelectedIndex = 0;
+            
             processConnectionBW.RunWorkerAsync();
 
             // Add process handler
-            processNameTB.TextChanged += (object s, EventArgs ea) =>
+            processNameTextBox.TextChanged += (object s, EventArgs ea) =>
             {
                 //processConnectionBW.CancelAsync();
-                Program.processName = processNameTB.Text;                
+                Program.processName = processNameTextBox.Text;
             };
 
             // Add pointer trail TB text change handler
-            pointerTrailTB.TextChanged += (object s, EventArgs ea) =>
-            {
-                Program.pointerList = Utils.CommaSeparatedStringToStringList(pointerTrailTB.Text);
+            pointerTrailTextBox.TextChanged += (object s, EventArgs ea) =>
+            {   
+                Program.pointerList = Utils.CommaSeparatedStringToStringList(pointerTrailTextBox.Text);
                 int x;
                 foreach (string pointerValue in Program.pointerList)
                 {
@@ -124,24 +123,25 @@ namespace au.edu.federation.PointerTrailTester
                     }
                     catch (FormatException)
                     {
-                        MessageBox.Show("Illegal pointer trail - do not prefix pointer hops with 0x or such and separate each hop with a comma.");
+                        MessageBox.Show( Resources.ResourceManager.GetString("formatExceptionString") );
                         return;
                     }
                     catch (OverflowException)
                     {
-                        MessageBox.Show("Illegal pointer trail - individual pointer hop value exceeds 32-bit limit.");
+                        MessageBox.Show( Resources.ResourceManager.GetString("overflowExceptionString") );
                         return;
                     }
                     catch (ArgumentException ae)
                     {
-                        MessageBox.Show("Illegal pointer trail - argument exception: " + ae.Message);
+                        MessageBox.Show( Resources.ResourceManager.GetString("argumentExceptionString") + ae.Message );
                         return;
                     }
                 }
 
             }; // End of pointerTrailTB TextChanged handler
 
-        } // End of Form1_Load method
+            InitTimer();
+        }
 
         // DoWork method for the process connection background worker
         public void connectToProcess(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -158,7 +158,6 @@ namespace au.edu.federation.PointerTrailTester
                 if (Program.processArray.Length < 1)
                 {
                     Program.connectedToProcess = false;
-                    //Console.Write(".");
                 }
                 else // Found the process by name?
                 {
@@ -175,20 +174,13 @@ namespace au.edu.federation.PointerTrailTester
                         Program.processBaseAddress = Utils.findProcessBaseAddress(Program.processName);
                         if (Program.processBaseAddress == 0)
                         {
-                            //MessageBox.Show("Error: No process called " + processName + " found. Activation failed.");
-                            //e.Cancel = true;
                             break;
-                        }
-                        else
-                        {
-                            //Console.WriteLine("Found process base address at: " + MainForm.gameConfig.ProcessBaseAddress);
                         }
                     }
 
                     // We ALWAYS calculate the feature address. Note: This get re-calculated per iteration
                     // Note: findFeatureAddress will also set the Program.validPointerTrail flag to true or false depending on whether it's legal or not.
                     Program.featureAddress = Utils.findFeatureAddress(Program.processHandle, Program.processBaseAddress, Program.pointerList);
-                    
                     
                 } // End of if we found the process section
 
@@ -199,6 +191,6 @@ namespace au.edu.federation.PointerTrailTester
 
         } // End of connectToProcess method
 
-    } // End of Form1 partial class
+    } // End of class
 
 } // End of namespace

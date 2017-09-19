@@ -6,8 +6,9 @@ using System.Xml.Serialization;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using au.edu.federation.SoniFight.Properties;
 
-namespace SoniFight
+namespace au.edu.federation.SoniFight
 {
     static class Utils
     {
@@ -40,18 +41,17 @@ namespace SoniFight
                 writer = new StreamWriter(filePath, append);
                 serializer.Serialize(writer, objectToWrite);
 
-                Console.WriteLine("GameConfig at " + filePath + " saved successfully.");
+                Console.WriteLine( Resources.ResourceManager.GetString("fileSavedSuccessfullyString") + filePath);
             }
             catch (Exception e)
             {
-                Console.WriteLine("Could not serialize file to XML.");
-                Console.WriteLine(e.Message);
+                Console.WriteLine(Resources.ResourceManager.GetString("fileSaveFailedString") + e.Message);
                 Console.WriteLine(e.InnerException);
             }
             finally
             {
                 if (writer != null)
-                {   
+                {
                     writer.Flush();
                     writer.Close();
                 }
@@ -77,8 +77,9 @@ namespace SoniFight
                 obj = (T)serializer.Deserialize(reader);
             }
             catch (Exception e)
-            {
-                MessageBox.Show("Could not deserialize config from XML file: " + e.Message);
+            {                
+                Console.WriteLine(Resources.ResourceManager.GetString("deserialiseFailedString") + e.Message);
+                Console.WriteLine(e.InnerException);
             }
             finally
             {
@@ -106,6 +107,7 @@ namespace SoniFight
             return naiveList.Distinct().OrderByDescending(c => c).ToArray();
         }
 
+        // Method to generate a range of numbers in an array similar to how pages to print are specified, e.g. 1, 3-5 would print pages 1, 3, 4 and 5.
         private static int[] GetIntRangeNumbers(string range)
         {
             int[] RangeNums = range
@@ -115,7 +117,7 @@ namespace SoniFight
                 .Select(t => int.Parse(t)) // digit to int
                 .ToArray();
             return RangeNums.Length.Equals(2) ? Enumerable.Range(RangeNums.Min(), (RangeNums.Max() + 1) - RangeNums.Min()).ToArray() : RangeNums;
-        }       
+        }
 
         // ---------- TreeNode manipulation methods ---------
 
@@ -158,7 +160,7 @@ namespace SoniFight
         public static int findProcessBaseAddress(string processName)
         {
             Process[] processArray = Process.GetProcessesByName(processName);
-            
+
             if (processArray.Length > 0)
             {
                 // Sleep before returning process base address (prevents crashing when we only just found the process but the base address hasn't been fully established yet)
@@ -218,7 +220,7 @@ namespace SoniFight
         // Method to read and return an int (4 bytes)
         public static int getIntFromAddress(int processHandle, int address)
         {
-            int bytesRead = 0;            
+            int bytesRead = 0;
             byte[] buf = new byte[4];
             ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
             return BitConverter.ToInt32(buf, 0);
@@ -226,7 +228,7 @@ namespace SoniFight
 
         // Method to read and return a short (2 bytes)
         public static short getShortFromAddress(int processHandle, int address)
-        {   
+        {
             int bytesRead = 0;
             byte[] buf = new byte[2];
             ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
@@ -340,7 +342,7 @@ namespace SoniFight
             // Return a version of the read string with trailing spaces trimmed so the user does not have to add trailing spaces to their match criteria (which would be ugly - espcially for non-sighted users).
             return s.TrimEnd(); // Still trim spaces at end.
         }
-                
+
         // --------- UI Manipulation / Helper methods -------
 
         // Method to remove an aribtrary row from a TableLayoutPanel.
@@ -403,7 +405,7 @@ namespace SoniFight
 
         // Method to return a list of string items split on commas with whitespaces removed and no 'blank' entries
         public static List<string> CommaSeparatedStringToStringList(string s)
-        {         
+        {
             return s.Split(',')
                    .Select(x => x.Trim())
                    .Where(x => !string.IsNullOrWhiteSpace(x))
@@ -568,7 +570,7 @@ namespace SoniFight
                 case 1:
                     return Trigger.AllowanceType.InGame;
                 case 2:
-                    return Trigger.AllowanceType.InMenu; 
+                    return Trigger.AllowanceType.InMenu;
                 default:
                     return Trigger.AllowanceType.Any;
             }
@@ -600,7 +602,6 @@ namespace SoniFight
                 if (t.id == id)
                     break;
             }
-
             return t;
         }
 

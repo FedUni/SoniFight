@@ -117,7 +117,418 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Test" xml:space="preserve">
-    <value>Potato</value>
+  <data name="activeLabelString" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="badTreeNodeTagWarningString" xml:space="preserve">
+    <value>Warning: Got node with unrecognised Tag of: </value>
+  </data>
+  <data name="clockMaxLabelString" xml:space="preserve">
+    <value>Clock Max</value>
+  </data>
+  <data name="clockMaxWarningString" xml:space="preserve">
+    <value>Warning: Clock max MS must be an integer between 30 and 100.</value>
+  </data>
+  <data name="clockTickLabelString" xml:space="preserve">
+    <value>Clock Tick (Milliseconds)</value>
+  </data>
+  <data name="clockTickWarningString" xml:space="preserve">
+    <value>Warning: Clock tick must be a positive integer value specified in milliseconds.</value>
+  </data>
+  <data name="configDirCreationFailedString" xml:space="preserve">
+    <value>Error: Configs directory creation failed - please manually create a directory called \"Configs\" in the same folder as the SoniFight executable.</value>
+  </data>
+  <data name="continuousTriggerIdLabelString" xml:space="preserve">
+    <value>Continuous Trigger ID</value>
+  </data>
+  <data name="deleteWatchButtonString" xml:space="preserve">
+    <value>Delete Watch</value>
+  </data>
+  <data name="dependentTriggerIdLabelString" xml:space="preserve">
+    <value>Dependent Trigger ID</value>
+  </data>
+  <data name="descriptionLabelString" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="deserialiseFailString1" xml:space="preserve">
+    <value>Error: Deserialising gameconfig from </value>
+  </data>
+  <data name="deserialiseFailString2" xml:space="preserve">
+    <value> has failed. Aborting.</value>
+  </data>
+  <data name="directoryLabelString" xml:space="preserve">
+    <value>Directory</value>
+  </data>
+  <data name="gameConfigMainUILabelString" xml:space="preserve">
+    <value>GameConfig General Settings</value>
+  </data>
+  <data name="gameConfigString" xml:space="preserve">
+    <value>Game Config</value>
+  </data>
+  <data name="gameConfigTagString" xml:space="preserve">
+    <value>GameConfig</value>
+  </data>
+  <data name="illegalPointerString1" xml:space="preserve">
+    <value>Illegal Pointer Value </value>
+  </data>
+  <data name="illegalPointerString2" xml:space="preserve">
+    <value> in watch with id </value>
+  </data>
+  <data name="illegalPointerString3" xml:space="preserve">
+    <value> cannot be cast to int. Do not prefix pointer hops with 0x or such.</value>
+  </data>
+  <data name="missingConfigDirString" xml:space="preserve">
+    <value>Error: Configs directory does not exist in same folder as SoniFight executable - click OK to create folder.</value>
+  </data>
+  <data name="noConfigsFoundString" xml:space="preserve">
+    <value>No configs found in Configs directory!</value>
+  </data>
+  <data name="noneString" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="pointerListLabelString" xml:space="preserve">
+    <value>Pointer List (comma-separated hex no prefixes)</value>
+  </data>
+  <data name="pollSleepLabelString" xml:space="preserve">
+    <value>Poll Sleep (Milliseconds)</value>
+  </data>
+  <data name="pollSleepWarningString" xml:space="preserve">
+    <value>Warning: Poll sleep must be a positive integer value specified in milliseconds.</value>
+  </data>
+  <data name="processNameLabelString" xml:space="preserve">
+    <value>Process Name</value>
+  </data>
+  <data name="sonificationStoppedString" xml:space="preserve">
+    <value>Sonification stopped.</value>
+  </data>
+  <data name="statusRunningString" xml:space="preserve">
+    <value>Status: Running. Config:</value>
+  </data>
+  <data name="statusStoppedString" xml:space="preserve">
+    <value>Status: Stopped</value>
+  </data>
+  <data name="triggerDescriptionLabelString" xml:space="preserve">
+    <value>Trigger Description</value>
+  </data>
+  <data name="triggerDescriptionString1" xml:space="preserve">
+    <value>A trigger is a condition which can activate a sonification event when that trigger condition is met.</value>
+  </data>
+  <data name="triggerDescriptionString2" xml:space="preserve">
+    <value>Triggers use watches, as identified by their numeric ID values, to read data and compare that data to certain conditions.</value>
+  </data>
+  <data name="triggerDescriptionString3" xml:space="preserve">
+    <value>Each trigger must have a unique trigger ID specified as an integer greater than or equal to zero, and a condition to match against.</value>
+  </data>
+  <data name="triggerDescriptionString4" xml:space="preserve">
+    <value>Please consult the user documentation to learn more about how to set and use triggers.</value>
+  </data>
+  <data name="triggerIdLabelString" xml:space="preserve">
+    <value>Trigger ID (unique int zero or greater)</value>
+  </data>
+  <data name="triggerIdWarningString" xml:space="preserve">
+    <value>Warning: Trigger ID must be an integer value.</value>
+  </data>
+  <data name="triggerNameLabelString" xml:space="preserve">
+    <value>Trigger Name</value>
+  </data>
+  <data name="triggerSettingsLabelString" xml:space="preserve">
+    <value>Trigger Settings</value>
+  </data>
+  <data name="triggersString" xml:space="preserve">
+    <value>Triggers</value>
+  </data>
+  <data name="triggersUsingThisWatchLabelString" xml:space="preserve">
+    <value>Triggers Using This Watch</value>
+  </data>
+  <data name="triggerTypeLabelString" xml:space="preserve">
+    <value>Trigger Type</value>
+  </data>
+  <data name="validationFailedString" xml:space="preserve">
+    <value>Validation failed! GameConfig not saved.</value>
+  </data>
+  <data name="valueTypeLabelString" xml:space="preserve">
+    <value>Value Type</value>
+  </data>
+  <data name="watch2IdLabelString" xml:space="preserve">
+    <value>Watch 2 ID</value>
+  </data>
+  <data name="watchDescriptionLabelString" xml:space="preserve">
+    <value>Watch Description</value>
+  </data>
+  <data name="watchDescriptionString1" xml:space="preserve">
+    <value>A watch is a memory location expressed as a pointer trail leading to the address of a value of interest, and the type of data to read from that memory address.</value>
+  </data>
+  <data name="watchDescriptionString2" xml:space="preserve">
+    <value>Each watch must have a unique watch ID specified as an integer greater than or equal to zero, and may optionally have a name and description.</value>
+  </data>
+  <data name="watchDescriptionString3" xml:space="preserve">
+    <value>Only watches that are marked as active will be used - this allows you to disable a watch while still keeping the data around in your GameConfig for later use, if you wish.</value>
+  </data>
+  <data name="watchDescriptionString4" xml:space="preserve">
+    <value>Please consult the user documentation for further details on identifying pointer trails for use in watches.</value>
+  </data>
+  <data name="watchesString" xml:space="preserve">
+    <value>Watches</value>
+  </data>
+  <data name="watchIdLabelString" xml:space="preserve">
+    <value>Watch ID (unique int zero or greater)</value>
+  </data>
+  <data name="watchIdWarningString" xml:space="preserve">
+    <value>Warning: Watch ID must be an integer value.</value>
+  </data>
+  <data name="watchNameLabelString" xml:space="preserve">
+    <value>Watch Name</value>
+  </data>
+  <data name="watchSettingsLabelString" xml:space="preserve">
+    <value>Watch Settings</value>
+  </data>
+  <data name="watchString" xml:space="preserve">
+    <value>Watch</value>
+  </data>
+  <data name="addTriggerLabelString" xml:space="preserve">
+    <value>Add Trigger</value>
+  </data>
+  <data name="addWatchLabelString" xml:space="preserve">
+    <value>Add Watch</value>
+  </data>
+  <data name="allowanceTypeLabelString" xml:space="preserve">
+    <value>Allowance Type</value>
+  </data>
+  <data name="changeMeString" xml:space="preserve">
+    <value>CHANGE ME</value>
+  </data>
+  <data name="cloneTriggerLabelString" xml:space="preserve">
+    <value>Clone Trigger</value>
+  </data>
+  <data name="cloneWatchLabelString" xml:space="preserve">
+    <value>Clone Watch</value>
+  </data>
+  <data name="cloneWatchWarningString" xml:space="preserve">
+    <value>You must select a watch before opting to clone that watch.</value>
+  </data>
+  <data name="comparisonTypeLabelString" xml:space="preserve">
+    <value>Comparison Type</value>
+  </data>
+  <data name="configDirCannotBeBlankString" xml:space="preserve">
+    <value>Validation Error: GameConfig directory cannot be blank.</value>
+  </data>
+  <data name="deleteTriggerButtonString" xml:space="preserve">
+    <value>Delete Trigger</value>
+  </data>
+  <data name="foundProcessBaseAddressString" xml:space="preserve">
+    <value>Found process base address at: </value>
+  </data>
+  <data name="isClockLabelString" xml:space="preserve">
+    <value>Is Clock?</value>
+  </data>
+  <data name="newTriggerString" xml:space="preserve">
+    <value>-NEW_TRIGGER</value>
+  </data>
+  <data name="newWatchString" xml:space="preserve">
+    <value>-NEW_WATCH</value>
+  </data>
+  <data name="processNotFoundWarningString1" xml:space="preserve">
+    <value>Error: No process called </value>
+  </data>
+  <data name="processNotFoundWarningString2" xml:space="preserve">
+    <value> found. Activation failed.</value>
+  </data>
+  <data name="sampleFilenameLabelString" xml:space="preserve">
+    <value>Sample Filename (without path)</value>
+  </data>
+  <data name="sampleSpeedLabelString" xml:space="preserve">
+    <value>Sample Speed (Range: 0.1 to 4.0)</value>
+  </data>
+  <data name="sampleSpeedWarningString1" xml:space="preserve">
+    <value>Warning: Sample speed must be a value between </value>
+  </data>
+  <data name="sampleSpeedWarningString2" xml:space="preserve">
+    <value> and </value>
+  </data>
+  <data name="sampleSpeedWarningString3" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="sampleVolumeLabelString" xml:space="preserve">
+    <value>Sample Volume (Range: 0.0 to 1.0)</value>
+  </data>
+  <data name="sampleVolumeWarningString" xml:space="preserve">
+    <value>Warning: Sample volume must be a value between 0.0 and 1.0.</value>
+  </data>
+  <data name="screenReaderTextLabelString" xml:space="preserve">
+    <value>Screen Reader Text</value>
+  </data>
+  <data name="secondaryIdLabelContinuousTriggerIdString" xml:space="preserve">
+    <value>Continuous Trigger ID</value>
+  </data>
+  <data name="secondaryIdLabelDependentIdString" xml:space="preserve">
+    <value>Dependent Trigger ID</value>
+  </data>
+  <data name="secondaryIdLabelWatch2IdString" xml:space="preserve">
+    <value>Watch 2 ID</value>
+  </data>
+  <data name="secondaryIdWarningString" xml:space="preserve">
+    <value>Warning: Secondary ID must be an integer value.</value>
+  </data>
+  <data name="selectSampleButtonString" xml:space="preserve">
+    <value>Select Sample File</value>
+  </data>
+  <data name="triggerCloneWarningString" xml:space="preserve">
+    <value>You must select a trigger before opting to clone that trigger.</value>
+  </data>
+  <data name="triggerString" xml:space="preserve">
+    <value>Trigger</value>
+  </data>
+  <data name="triggerValueMaxRangeLabelString" xml:space="preserve">
+    <value>Trigger Value / Max Range</value>
+  </data>
+  <data name="useTolkLabelString" xml:space="preserve">
+    <value>Use Tolk</value>
+  </data>
+  <data name="watch1LabelString" xml:space="preserve">
+    <value>Watch 1 ID</value>
+  </data>
+  <data name="allowanceTypeAnyString" xml:space="preserve">
+    <value>Any</value>
+  </data>
+  <data name="allowanceTypeInGameString" xml:space="preserve">
+    <value>In-Game</value>
+  </data>
+  <data name="allowanceTypeInMenuString" xml:space="preserve">
+    <value>In-Menu</value>
+  </data>
+  <data name="booleanString" xml:space="preserve">
+    <value>Boolean</value>
+  </data>
+  <data name="changedString" xml:space="preserve">
+    <value>Changed</value>
+  </data>
+  <data name="distancePitchAscendingString" xml:space="preserve">
+    <value>Distance Pitch Ascending (Continuous Only)</value>
+  </data>
+  <data name="distancePitchDescendingString" xml:space="preserve">
+    <value>Distance Pitch Descending (Continuous Only)</value>
+  </data>
+  <data name="distanceVolumeAscendingString" xml:space="preserve">
+    <value>Distance Volume Ascending (Continuous Only)</value>
+  </data>
+  <data name="distanceVolumeDescendingString" xml:space="preserve">
+    <value>Distance Volume Descending (Continuous Only)</value>
+  </data>
+  <data name="doubleString" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="dynamicTypeComparisonExceptionString" xml:space="preserve">
+    <value>Dynamic type comparison exception. Exact error is: </value>
+  </data>
+  <data name="equalToString" xml:space="preserve">
+    <value>Equal To</value>
+  </data>
+  <data name="failedDepthString" xml:space="preserve">
+    <value> failed. Depth: </value>
+  </data>
+  <data name="floatString" xml:space="preserve">
+    <value>Float</value>
+  </data>
+  <data name="greaterThanOrEqualToString" xml:space="preserve">
+    <value>Greater Than Or Equal To</value>
+  </data>
+  <data name="greaterThanString" xml:space="preserve">
+    <value>Greater Than</value>
+  </data>
+  <data name="inGameSampleString" xml:space="preserve">
+    <value>InGame Sample: </value>
+  </data>
+  <data name="inMenuSampleString" xml:space="preserve">
+    <value>InMenu Sample: </value>
+  </data>
+  <data name="integerString" xml:space="preserve">
+    <value>Integer</value>
+  </data>
+  <data name="lessThanOrEqualToString" xml:space="preserve">
+    <value>Less Than Or Equal To</value>
+  </data>
+  <data name="lessThanString" xml:space="preserve">
+    <value>Less Than</value>
+  </data>
+  <data name="longString" xml:space="preserve">
+    <value>Long</value>
+  </data>
+  <data name="notEqualToString" xml:space="preserve">
+    <value>Not Equal To</value>
+  </data>
+  <data name="shortString" xml:space="preserve">
+    <value>Short</value>
+  </data>
+  <data name="speedString" xml:space="preserve">
+    <value>, Speed: </value>
+  </data>
+  <data name="stringUTF16String" xml:space="preserve">
+    <value>String (UTF-16)</value>
+  </data>
+  <data name="stringUTF8String" xml:space="preserve">
+    <value>String (UTF-8)</value>
+  </data>
+  <data name="suppressedAsDependentString" xml:space="preserve">
+    <value>suppressed as dependent trigger </value>
+  </data>
+  <data name="suppressedGameStateChangeString" xml:space="preserve">
+    <value>Suppressed moving to InGame state because clock is 0 or</value>
+  </data>
+  <data name="tolkActiveString" xml:space="preserve">
+    <value>Tolk: The active screen reader driver is: </value>
+  </data>
+  <data name="tolkBrailleSupportedString" xml:space="preserve">
+    <value>Tolk: This screen reader driver supports braille.</value>
+  </data>
+  <data name="tolkNoScreenReaderFoundString" xml:space="preserve">
+    <value>Tolk: None of the supported screen readers are running.</value>
+  </data>
+  <data name="tolkSpeechSupportedString" xml:space="preserve">
+    <value>Tolk: This screen reader driver supports speech.</value>
+  </data>
+  <data name="triggerIdString" xml:space="preserve">
+    <value>, Trigger ID: </value>
+  </data>
+  <data name="triggerTypeContinuousString" xml:space="preserve">
+    <value>Continuous</value>
+  </data>
+  <data name="triggerTypeModifierString" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="triggerTypeNormalString" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="triggerWithTrailingSpaceString" xml:space="preserve">
+    <value>Trigger </value>
+  </data>
+  <data name="validatingGameConfigString" xml:space="preserve">
+    <value>--- Validating GameConfig ---</value>
+  </data>
+  <data name="volumeString" xml:space="preserve">
+    <value>, Volume: </value>
+  </data>
+  <data name="cloneString" xml:space="preserve">
+    <value>-CLONE</value>
+  </data>
+  <data name="deserialiseFailedString" xml:space="preserve">
+    <value>Could not deserialize config from XML file: </value>
+  </data>
+  <data name="fileSavedSuccessfullyString" xml:space="preserve">
+    <value>GameConfig saved successfully: </value>
+  </data>
+  <data name="fileSaveFailedString" xml:space="preserve">
+    <value>Could not serialize GameConfig to XML: </value>
+  </data>
+  <data name="keyNotFoundString" xml:space="preserve">
+    <value>WARNING - Sample key not found in dictionary: </value>
+  </data>
+  <data name="sampleNotFoundString" xml:space="preserve">
+    <value>WARNING - Sample not found: </value>
+  </data>
+  <data name="unrecognisedValueTypeWarningString" xml:space="preserve">
+    <value>Unrecognised ValueType in getDynamicValueFromType method: </value>
+  </data>
+  <data name="isAnythingPlayingExceptionString" xml:space="preserve">
+    <value>Exception during IsAnythingPlaying check: </value>
   </data>
 </root>

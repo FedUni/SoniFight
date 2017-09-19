@@ -12,4 +12,136 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="processNameLabel.Text" xml:space="preserve">
+    <value>Nom du processus (sans suffixe .EXE)</value>
+  </data>
+  <data name="processNameTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>306, 61</value>
+  </data>
+  <data name="processNameTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>249, 20</value>
+  </data>
+  <data name="pointerTrailTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>306, 101</value>
+  </data>
+  <data name="pointerTrailTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>249, 20</value>
+  </data>
+  <data name="memoryAddressTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>306, 180</value>
+  </data>
+  <data name="memoryAddressTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>249, 20</value>
+  </data>
+  <data name="pointerTrailLabel.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>15, 101</value>
+  </data>
+  <data name="pointerTrailLabel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>285, 16</value>
+  </data>
+  <data name="pointerTrailLabel.Text" xml:space="preserve">
+    <value>Pointer Trail (hex, séparé par des virgules)</value>
+  </data>
+  <data name="dataTypeLabel.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>172, 139</value>
+  </data>
+  <data name="dataTypeLabel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>128, 16</value>
+  </data>
+  <data name="dataTypeLabel.Text" xml:space="preserve">
+    <value>Type de données</value>
+  </data>
+  <data name="memoryAddressLabel.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>162, 180</value>
+  </data>
+  <data name="memoryAddressLabel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>138, 16</value>
+  </data>
+  <data name="memoryAddressLabel.Text" xml:space="preserve">
+    <value>Adresse mémoire (Hex)</value>
+  </data>
+  <data name="dataTypeComboBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>306, 139</value>
+  </data>
+  <data name="dataTypeComboBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>249, 21</value>
+  </data>
+  <data name="valueTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>306, 218</value>
+  </data>
+  <data name="valueTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>249, 20</value>
+  </data>
+  <data name="valueLabel.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>175, 218</value>
+  </data>
+  <data name="valueLabel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>125, 16</value>
+  </data>
+  <data name="valueLabel.Text" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="titleLabel.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="titleLabel.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 20.25pt</value>
+  </data>
+  <data name="titleLabel.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>69, 9</value>
+  </data>
+  <data name="titleLabel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>426, 31</value>
+  </data>
+  <data name="titleLabel.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="titleLabel.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="processNameLabel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="pointerTrailLabel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="pointerTrailLabel.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="processNameLabel.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="dataTypeLabel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="dataTypeLabel.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="memoryAddressLabel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="memoryAddressLabel.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="valueLabel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="valueLabel.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="processNameLabel.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pointerTrailLabel.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dataTypeLabel.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="memoryAddressLabel.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="valueLabel.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
 </root>

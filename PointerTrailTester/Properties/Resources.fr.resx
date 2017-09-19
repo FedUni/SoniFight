@@ -12,7 +12,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ProcessNameLabel" xml:space="preserve">
-    <value>Oui! J'ai pomme de terre!</value>
+  <data name="notConnectedString" xml:space="preserve">
+    <value>NON CONNECTE AU PROCESSUS</value>
+  </data>
+  <data name="invalidPointerString" xml:space="preserve">
+    <value>ILLÉGAL POINTER TRAIL</value>
+  </data>
+  <data name="argumentExceptionString" xml:space="preserve">
+    <value>Sentier de pointage illégal - exception d'argument: </value>
+  </data>
+  <data name="formatExceptionString" xml:space="preserve">
+    <value>Sentier de pointage illégal - ne préfixe pas le pointeur de sauts avec 0x ou tel et séparez chaque saut avec une virgule.</value>
+  </data>
+  <data name="overflowExceptionString" xml:space="preserve">
+    <value>Sentier de pointage illégal - la valeur de saut de pointeur individuel dépasse la limite de 32 bits.</value>
   </data>
 </root>

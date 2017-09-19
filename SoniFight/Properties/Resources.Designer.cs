@@ -19,7 +19,7 @@ namespace au.edu.federation.SoniFight.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,11 +61,1244 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Potato.
+        ///   Looks up a localized string similar to Active.
         /// </summary>
-        internal static string Test {
+        internal static string activeLabelString {
             get {
-                return ResourceManager.GetString("Test", resourceCulture);
+                return ResourceManager.GetString("activeLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Trigger.
+        /// </summary>
+        internal static string addTriggerLabelString {
+            get {
+                return ResourceManager.GetString("addTriggerLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Watch.
+        /// </summary>
+        internal static string addWatchLabelString {
+            get {
+                return ResourceManager.GetString("addWatchLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Any.
+        /// </summary>
+        internal static string allowanceTypeAnyString {
+            get {
+                return ResourceManager.GetString("allowanceTypeAnyString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In-Game.
+        /// </summary>
+        internal static string allowanceTypeInGameString {
+            get {
+                return ResourceManager.GetString("allowanceTypeInGameString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In-Menu.
+        /// </summary>
+        internal static string allowanceTypeInMenuString {
+            get {
+                return ResourceManager.GetString("allowanceTypeInMenuString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allowance Type.
+        /// </summary>
+        internal static string allowanceTypeLabelString {
+            get {
+                return ResourceManager.GetString("allowanceTypeLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: Got node with unrecognised Tag of: .
+        /// </summary>
+        internal static string badTreeNodeTagWarningString {
+            get {
+                return ResourceManager.GetString("badTreeNodeTagWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Boolean.
+        /// </summary>
+        internal static string booleanString {
+            get {
+                return ResourceManager.GetString("booleanString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changed.
+        /// </summary>
+        internal static string changedString {
+            get {
+                return ResourceManager.GetString("changedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CHANGE ME.
+        /// </summary>
+        internal static string changeMeString {
+            get {
+                return ResourceManager.GetString("changeMeString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clock Max.
+        /// </summary>
+        internal static string clockMaxLabelString {
+            get {
+                return ResourceManager.GetString("clockMaxLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: Clock max MS must be an integer between 30 and 100..
+        /// </summary>
+        internal static string clockMaxWarningString {
+            get {
+                return ResourceManager.GetString("clockMaxWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clock Tick (Milliseconds).
+        /// </summary>
+        internal static string clockTickLabelString {
+            get {
+                return ResourceManager.GetString("clockTickLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: Clock tick must be a positive integer value specified in milliseconds..
+        /// </summary>
+        internal static string clockTickWarningString {
+            get {
+                return ResourceManager.GetString("clockTickWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -CLONE.
+        /// </summary>
+        internal static string cloneString {
+            get {
+                return ResourceManager.GetString("cloneString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clone Trigger.
+        /// </summary>
+        internal static string cloneTriggerLabelString {
+            get {
+                return ResourceManager.GetString("cloneTriggerLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clone Watch.
+        /// </summary>
+        internal static string cloneWatchLabelString {
+            get {
+                return ResourceManager.GetString("cloneWatchLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must select a watch before opting to clone that watch..
+        /// </summary>
+        internal static string cloneWatchWarningString {
+            get {
+                return ResourceManager.GetString("cloneWatchWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comparison Type.
+        /// </summary>
+        internal static string comparisonTypeLabelString {
+            get {
+                return ResourceManager.GetString("comparisonTypeLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validation Error: GameConfig directory cannot be blank..
+        /// </summary>
+        internal static string configDirCannotBeBlankString {
+            get {
+                return ResourceManager.GetString("configDirCannotBeBlankString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: Configs directory creation failed - please manually create a directory called \&quot;Configs\&quot; in the same folder as the SoniFight executable..
+        /// </summary>
+        internal static string configDirCreationFailedString {
+            get {
+                return ResourceManager.GetString("configDirCreationFailedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continuous Trigger ID.
+        /// </summary>
+        internal static string continuousTriggerIdLabelString {
+            get {
+                return ResourceManager.GetString("continuousTriggerIdLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Trigger.
+        /// </summary>
+        internal static string deleteTriggerButtonString {
+            get {
+                return ResourceManager.GetString("deleteTriggerButtonString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Watch.
+        /// </summary>
+        internal static string deleteWatchButtonString {
+            get {
+                return ResourceManager.GetString("deleteWatchButtonString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependent Trigger ID.
+        /// </summary>
+        internal static string dependentTriggerIdLabelString {
+            get {
+                return ResourceManager.GetString("dependentTriggerIdLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string descriptionLabelString {
+            get {
+                return ResourceManager.GetString("descriptionLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not deserialize config from XML file: .
+        /// </summary>
+        internal static string deserialiseFailedString {
+            get {
+                return ResourceManager.GetString("deserialiseFailedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: Deserialising gameconfig from .
+        /// </summary>
+        internal static string deserialiseFailString1 {
+            get {
+                return ResourceManager.GetString("deserialiseFailString1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  has failed. Aborting..
+        /// </summary>
+        internal static string deserialiseFailString2 {
+            get {
+                return ResourceManager.GetString("deserialiseFailString2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Directory.
+        /// </summary>
+        internal static string directoryLabelString {
+            get {
+                return ResourceManager.GetString("directoryLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distance Pitch Ascending (Continuous Only).
+        /// </summary>
+        internal static string distancePitchAscendingString {
+            get {
+                return ResourceManager.GetString("distancePitchAscendingString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distance Pitch Descending (Continuous Only).
+        /// </summary>
+        internal static string distancePitchDescendingString {
+            get {
+                return ResourceManager.GetString("distancePitchDescendingString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distance Volume Ascending (Continuous Only).
+        /// </summary>
+        internal static string distanceVolumeAscendingString {
+            get {
+                return ResourceManager.GetString("distanceVolumeAscendingString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distance Volume Descending (Continuous Only).
+        /// </summary>
+        internal static string distanceVolumeDescendingString {
+            get {
+                return ResourceManager.GetString("distanceVolumeDescendingString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Double.
+        /// </summary>
+        internal static string doubleString {
+            get {
+                return ResourceManager.GetString("doubleString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dynamic type comparison exception. Exact error is: .
+        /// </summary>
+        internal static string dynamicTypeComparisonExceptionString {
+            get {
+                return ResourceManager.GetString("dynamicTypeComparisonExceptionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equal To.
+        /// </summary>
+        internal static string equalToString {
+            get {
+                return ResourceManager.GetString("equalToString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  failed. Depth: .
+        /// </summary>
+        internal static string failedDepthString {
+            get {
+                return ResourceManager.GetString("failedDepthString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GameConfig saved successfully: .
+        /// </summary>
+        internal static string fileSavedSuccessfullyString {
+            get {
+                return ResourceManager.GetString("fileSavedSuccessfullyString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not serialize GameConfig to XML: .
+        /// </summary>
+        internal static string fileSaveFailedString {
+            get {
+                return ResourceManager.GetString("fileSaveFailedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Float.
+        /// </summary>
+        internal static string floatString {
+            get {
+                return ResourceManager.GetString("floatString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Found process base address at: .
+        /// </summary>
+        internal static string foundProcessBaseAddressString {
+            get {
+                return ResourceManager.GetString("foundProcessBaseAddressString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GameConfig General Settings.
+        /// </summary>
+        internal static string gameConfigMainUILabelString {
+            get {
+                return ResourceManager.GetString("gameConfigMainUILabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game Config.
+        /// </summary>
+        internal static string gameConfigString {
+            get {
+                return ResourceManager.GetString("gameConfigString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GameConfig.
+        /// </summary>
+        internal static string gameConfigTagString {
+            get {
+                return ResourceManager.GetString("gameConfigTagString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Greater Than Or Equal To.
+        /// </summary>
+        internal static string greaterThanOrEqualToString {
+            get {
+                return ResourceManager.GetString("greaterThanOrEqualToString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Greater Than.
+        /// </summary>
+        internal static string greaterThanString {
+            get {
+                return ResourceManager.GetString("greaterThanString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Illegal Pointer Value .
+        /// </summary>
+        internal static string illegalPointerString1 {
+            get {
+                return ResourceManager.GetString("illegalPointerString1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  in watch with id .
+        /// </summary>
+        internal static string illegalPointerString2 {
+            get {
+                return ResourceManager.GetString("illegalPointerString2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  cannot be cast to int. Do not prefix pointer hops with 0x or such..
+        /// </summary>
+        internal static string illegalPointerString3 {
+            get {
+                return ResourceManager.GetString("illegalPointerString3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InGame Sample: .
+        /// </summary>
+        internal static string inGameSampleString {
+            get {
+                return ResourceManager.GetString("inGameSampleString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InMenu Sample: .
+        /// </summary>
+        internal static string inMenuSampleString {
+            get {
+                return ResourceManager.GetString("inMenuSampleString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Integer.
+        /// </summary>
+        internal static string integerString {
+            get {
+                return ResourceManager.GetString("integerString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exception during IsAnythingPlaying check: .
+        /// </summary>
+        internal static string isAnythingPlayingExceptionString {
+            get {
+                return ResourceManager.GetString("isAnythingPlayingExceptionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is Clock?.
+        /// </summary>
+        internal static string isClockLabelString {
+            get {
+                return ResourceManager.GetString("isClockLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WARNING - Sample key not found in dictionary: .
+        /// </summary>
+        internal static string keyNotFoundString {
+            get {
+                return ResourceManager.GetString("keyNotFoundString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Less Than Or Equal To.
+        /// </summary>
+        internal static string lessThanOrEqualToString {
+            get {
+                return ResourceManager.GetString("lessThanOrEqualToString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Less Than.
+        /// </summary>
+        internal static string lessThanString {
+            get {
+                return ResourceManager.GetString("lessThanString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Long.
+        /// </summary>
+        internal static string longString {
+            get {
+                return ResourceManager.GetString("longString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: Configs directory does not exist in same folder as SoniFight executable - click OK to create folder..
+        /// </summary>
+        internal static string missingConfigDirString {
+            get {
+                return ResourceManager.GetString("missingConfigDirString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -NEW_TRIGGER.
+        /// </summary>
+        internal static string newTriggerString {
+            get {
+                return ResourceManager.GetString("newTriggerString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -NEW_WATCH.
+        /// </summary>
+        internal static string newWatchString {
+            get {
+                return ResourceManager.GetString("newWatchString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No configs found in Configs directory!.
+        /// </summary>
+        internal static string noConfigsFoundString {
+            get {
+                return ResourceManager.GetString("noConfigsFoundString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        internal static string noneString {
+            get {
+                return ResourceManager.GetString("noneString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Equal To.
+        /// </summary>
+        internal static string notEqualToString {
+            get {
+                return ResourceManager.GetString("notEqualToString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pointer List (comma-separated hex no prefixes).
+        /// </summary>
+        internal static string pointerListLabelString {
+            get {
+                return ResourceManager.GetString("pointerListLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poll Sleep (Milliseconds).
+        /// </summary>
+        internal static string pollSleepLabelString {
+            get {
+                return ResourceManager.GetString("pollSleepLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: Poll sleep must be a positive integer value specified in milliseconds..
+        /// </summary>
+        internal static string pollSleepWarningString {
+            get {
+                return ResourceManager.GetString("pollSleepWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process Name.
+        /// </summary>
+        internal static string processNameLabelString {
+            get {
+                return ResourceManager.GetString("processNameLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: No process called .
+        /// </summary>
+        internal static string processNotFoundWarningString1 {
+            get {
+                return ResourceManager.GetString("processNotFoundWarningString1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  found. Activation failed..
+        /// </summary>
+        internal static string processNotFoundWarningString2 {
+            get {
+                return ResourceManager.GetString("processNotFoundWarningString2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sample Filename (without path).
+        /// </summary>
+        internal static string sampleFilenameLabelString {
+            get {
+                return ResourceManager.GetString("sampleFilenameLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WARNING - Sample not found: .
+        /// </summary>
+        internal static string sampleNotFoundString {
+            get {
+                return ResourceManager.GetString("sampleNotFoundString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sample Speed (Range: 0.1 to 4.0).
+        /// </summary>
+        internal static string sampleSpeedLabelString {
+            get {
+                return ResourceManager.GetString("sampleSpeedLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: Sample speed must be a value between .
+        /// </summary>
+        internal static string sampleSpeedWarningString1 {
+            get {
+                return ResourceManager.GetString("sampleSpeedWarningString1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  and .
+        /// </summary>
+        internal static string sampleSpeedWarningString2 {
+            get {
+                return ResourceManager.GetString("sampleSpeedWarningString2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ..
+        /// </summary>
+        internal static string sampleSpeedWarningString3 {
+            get {
+                return ResourceManager.GetString("sampleSpeedWarningString3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sample Volume (Range: 0.0 to 1.0).
+        /// </summary>
+        internal static string sampleVolumeLabelString {
+            get {
+                return ResourceManager.GetString("sampleVolumeLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: Sample volume must be a value between 0.0 and 1.0..
+        /// </summary>
+        internal static string sampleVolumeWarningString {
+            get {
+                return ResourceManager.GetString("sampleVolumeWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen Reader Text.
+        /// </summary>
+        internal static string screenReaderTextLabelString {
+            get {
+                return ResourceManager.GetString("screenReaderTextLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continuous Trigger ID.
+        /// </summary>
+        internal static string secondaryIdLabelContinuousTriggerIdString {
+            get {
+                return ResourceManager.GetString("secondaryIdLabelContinuousTriggerIdString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependent Trigger ID.
+        /// </summary>
+        internal static string secondaryIdLabelDependentIdString {
+            get {
+                return ResourceManager.GetString("secondaryIdLabelDependentIdString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watch 2 ID.
+        /// </summary>
+        internal static string secondaryIdLabelWatch2IdString {
+            get {
+                return ResourceManager.GetString("secondaryIdLabelWatch2IdString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: Secondary ID must be an integer value..
+        /// </summary>
+        internal static string secondaryIdWarningString {
+            get {
+                return ResourceManager.GetString("secondaryIdWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Sample File.
+        /// </summary>
+        internal static string selectSampleButtonString {
+            get {
+                return ResourceManager.GetString("selectSampleButtonString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Short.
+        /// </summary>
+        internal static string shortString {
+            get {
+                return ResourceManager.GetString("shortString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sonification stopped..
+        /// </summary>
+        internal static string sonificationStoppedString {
+            get {
+                return ResourceManager.GetString("sonificationStoppedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to , Speed: .
+        /// </summary>
+        internal static string speedString {
+            get {
+                return ResourceManager.GetString("speedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: Running. Config:.
+        /// </summary>
+        internal static string statusRunningString {
+            get {
+                return ResourceManager.GetString("statusRunningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: Stopped.
+        /// </summary>
+        internal static string statusStoppedString {
+            get {
+                return ResourceManager.GetString("statusStoppedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to String (UTF-16).
+        /// </summary>
+        internal static string stringUTF16String {
+            get {
+                return ResourceManager.GetString("stringUTF16String", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to String (UTF-8).
+        /// </summary>
+        internal static string stringUTF8String {
+            get {
+                return ResourceManager.GetString("stringUTF8String", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to suppressed as dependent trigger .
+        /// </summary>
+        internal static string suppressedAsDependentString {
+            get {
+                return ResourceManager.GetString("suppressedAsDependentString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suppressed moving to InGame state because clock is 0 or.
+        /// </summary>
+        internal static string suppressedGameStateChangeString {
+            get {
+                return ResourceManager.GetString("suppressedGameStateChangeString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tolk: The active screen reader driver is: .
+        /// </summary>
+        internal static string tolkActiveString {
+            get {
+                return ResourceManager.GetString("tolkActiveString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tolk: This screen reader driver supports braille..
+        /// </summary>
+        internal static string tolkBrailleSupportedString {
+            get {
+                return ResourceManager.GetString("tolkBrailleSupportedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tolk: None of the supported screen readers are running..
+        /// </summary>
+        internal static string tolkNoScreenReaderFoundString {
+            get {
+                return ResourceManager.GetString("tolkNoScreenReaderFoundString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tolk: This screen reader driver supports speech..
+        /// </summary>
+        internal static string tolkSpeechSupportedString {
+            get {
+                return ResourceManager.GetString("tolkSpeechSupportedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must select a trigger before opting to clone that trigger..
+        /// </summary>
+        internal static string triggerCloneWarningString {
+            get {
+                return ResourceManager.GetString("triggerCloneWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigger Description.
+        /// </summary>
+        internal static string triggerDescriptionLabelString {
+            get {
+                return ResourceManager.GetString("triggerDescriptionLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A trigger is a condition which can activate a sonification event when that trigger condition is met..
+        /// </summary>
+        internal static string triggerDescriptionString1 {
+            get {
+                return ResourceManager.GetString("triggerDescriptionString1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Triggers use watches, as identified by their numeric ID values, to read data and compare that data to certain conditions..
+        /// </summary>
+        internal static string triggerDescriptionString2 {
+            get {
+                return ResourceManager.GetString("triggerDescriptionString2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Each trigger must have a unique trigger ID specified as an integer greater than or equal to zero, and a condition to match against..
+        /// </summary>
+        internal static string triggerDescriptionString3 {
+            get {
+                return ResourceManager.GetString("triggerDescriptionString3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please consult the user documentation to learn more about how to set and use triggers..
+        /// </summary>
+        internal static string triggerDescriptionString4 {
+            get {
+                return ResourceManager.GetString("triggerDescriptionString4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigger ID (unique int zero or greater).
+        /// </summary>
+        internal static string triggerIdLabelString {
+            get {
+                return ResourceManager.GetString("triggerIdLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to , Trigger ID: .
+        /// </summary>
+        internal static string triggerIdString {
+            get {
+                return ResourceManager.GetString("triggerIdString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: Trigger ID must be an integer value..
+        /// </summary>
+        internal static string triggerIdWarningString {
+            get {
+                return ResourceManager.GetString("triggerIdWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigger Name.
+        /// </summary>
+        internal static string triggerNameLabelString {
+            get {
+                return ResourceManager.GetString("triggerNameLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigger Settings.
+        /// </summary>
+        internal static string triggerSettingsLabelString {
+            get {
+                return ResourceManager.GetString("triggerSettingsLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Triggers.
+        /// </summary>
+        internal static string triggersString {
+            get {
+                return ResourceManager.GetString("triggersString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigger.
+        /// </summary>
+        internal static string triggerString {
+            get {
+                return ResourceManager.GetString("triggerString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Triggers Using This Watch.
+        /// </summary>
+        internal static string triggersUsingThisWatchLabelString {
+            get {
+                return ResourceManager.GetString("triggersUsingThisWatchLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continuous.
+        /// </summary>
+        internal static string triggerTypeContinuousString {
+            get {
+                return ResourceManager.GetString("triggerTypeContinuousString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigger Type.
+        /// </summary>
+        internal static string triggerTypeLabelString {
+            get {
+                return ResourceManager.GetString("triggerTypeLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modifier.
+        /// </summary>
+        internal static string triggerTypeModifierString {
+            get {
+                return ResourceManager.GetString("triggerTypeModifierString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        internal static string triggerTypeNormalString {
+            get {
+                return ResourceManager.GetString("triggerTypeNormalString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigger Value / Max Range.
+        /// </summary>
+        internal static string triggerValueMaxRangeLabelString {
+            get {
+                return ResourceManager.GetString("triggerValueMaxRangeLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigger .
+        /// </summary>
+        internal static string triggerWithTrailingSpaceString {
+            get {
+                return ResourceManager.GetString("triggerWithTrailingSpaceString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unrecognised ValueType in getDynamicValueFromType method: .
+        /// </summary>
+        internal static string unrecognisedValueTypeWarningString {
+            get {
+                return ResourceManager.GetString("unrecognisedValueTypeWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Tolk.
+        /// </summary>
+        internal static string useTolkLabelString {
+            get {
+                return ResourceManager.GetString("useTolkLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --- Validating GameConfig ---.
+        /// </summary>
+        internal static string validatingGameConfigString {
+            get {
+                return ResourceManager.GetString("validatingGameConfigString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validation failed! GameConfig not saved..
+        /// </summary>
+        internal static string validationFailedString {
+            get {
+                return ResourceManager.GetString("validationFailedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value Type.
+        /// </summary>
+        internal static string valueTypeLabelString {
+            get {
+                return ResourceManager.GetString("valueTypeLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to , Volume: .
+        /// </summary>
+        internal static string volumeString {
+            get {
+                return ResourceManager.GetString("volumeString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watch 1 ID.
+        /// </summary>
+        internal static string watch1LabelString {
+            get {
+                return ResourceManager.GetString("watch1LabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watch 2 ID.
+        /// </summary>
+        internal static string watch2IdLabelString {
+            get {
+                return ResourceManager.GetString("watch2IdLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watch Description.
+        /// </summary>
+        internal static string watchDescriptionLabelString {
+            get {
+                return ResourceManager.GetString("watchDescriptionLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A watch is a memory location expressed as a pointer trail leading to the address of a value of interest, and the type of data to read from that memory address..
+        /// </summary>
+        internal static string watchDescriptionString1 {
+            get {
+                return ResourceManager.GetString("watchDescriptionString1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Each watch must have a unique watch ID specified as an integer greater than or equal to zero, and may optionally have a name and description..
+        /// </summary>
+        internal static string watchDescriptionString2 {
+            get {
+                return ResourceManager.GetString("watchDescriptionString2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only watches that are marked as active will be used - this allows you to disable a watch while still keeping the data around in your GameConfig for later use, if you wish..
+        /// </summary>
+        internal static string watchDescriptionString3 {
+            get {
+                return ResourceManager.GetString("watchDescriptionString3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please consult the user documentation for further details on identifying pointer trails for use in watches..
+        /// </summary>
+        internal static string watchDescriptionString4 {
+            get {
+                return ResourceManager.GetString("watchDescriptionString4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watches.
+        /// </summary>
+        internal static string watchesString {
+            get {
+                return ResourceManager.GetString("watchesString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watch ID (unique int zero or greater).
+        /// </summary>
+        internal static string watchIdLabelString {
+            get {
+                return ResourceManager.GetString("watchIdLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: Watch ID must be an integer value..
+        /// </summary>
+        internal static string watchIdWarningString {
+            get {
+                return ResourceManager.GetString("watchIdWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watch Name.
+        /// </summary>
+        internal static string watchNameLabelString {
+            get {
+                return ResourceManager.GetString("watchNameLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watch Settings.
+        /// </summary>
+        internal static string watchSettingsLabelString {
+            get {
+                return ResourceManager.GetString("watchSettingsLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watch.
+        /// </summary>
+        internal static string watchString {
+            get {
+                return ResourceManager.GetString("watchString", resourceCulture);
             }
         }
     }

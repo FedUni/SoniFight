@@ -19,10 +19,10 @@ namespace au.edu.federation.PointerTrailTester.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace au.edu.federation.PointerTrailTester.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("au.edu.federation.PointerTrailTester.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace au.edu.federation.PointerTrailTester.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,11 +61,47 @@ namespace au.edu.federation.PointerTrailTester.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Process Name (without .EXE suffix).
+        ///   Looks up a localized string similar to Illegal pointer trail - argument exception: .
         /// </summary>
-        internal static string ProcessNameLabel {
+        public static string argumentExceptionString {
             get {
-                return ResourceManager.GetString("ProcessNameLabel", resourceCulture);
+                return ResourceManager.GetString("argumentExceptionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Illegal pointer trail - do not prefix pointer hops with 0x or such and separate each hop with comma..
+        /// </summary>
+        public static string formatExceptionString {
+            get {
+                return ResourceManager.GetString("formatExceptionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INVALID POINTER TRAIL.
+        /// </summary>
+        public static string invalidPointerString {
+            get {
+                return ResourceManager.GetString("invalidPointerString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NOT CONNECTED TO PROCESS.
+        /// </summary>
+        public static string notConnectedString {
+            get {
+                return ResourceManager.GetString("notConnectedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Illegal pointer trail - individual pointer hop value exceeds 32-bit limit..
+        /// </summary>
+        public static string overflowExceptionString {
+            get {
+                return ResourceManager.GetString("overflowExceptionString", resourceCulture);
             }
         }
     }

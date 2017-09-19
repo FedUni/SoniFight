@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace SoniFight
+using au.edu.federation.SoniFight.Properties;
+
+namespace au.edu.federation.SoniFight
 {
     // A class used to monitor a memory location (as described by a pointer trail) and retrieve data of a given type from that address
     public class Watch
@@ -33,7 +31,7 @@ namespace SoniFight
         // Copy constructor which creates a deep-copy of an existing watch
         public Watch(Watch source)
         {
-            name = source.name + "-CLONE";
+            name = source.name + Resources.ResourceManager.GetString("cloneString");
             description = source.description;
             valueType = source.valueType;
             active = source.active;
@@ -43,7 +41,7 @@ namespace SoniFight
             foreach (string s in source.pointerList)
             {
                 pointerList.Add(s);
-            }            
+            }
         }
 
         // Method to read a value of a given type from memory
@@ -76,20 +74,20 @@ namespace SoniFight
                     return (string)Utils.getUTF16FromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
 
                 default:
-                    MessageBox.Show("Value type in getDynamicValueFromType not recognised. Value type we got was: " + valueType.ToString());
+                    MessageBox.Show( Resources.ResourceManager.GetString("unrecognisedValueTypeWarningString") + valueType.ToString() );
                     return null;
             }
         }
 
         // What type of value this watch will read - default is int
         public ValueType valueType = ValueType.IntType;
-        
+
         // Watch id is a unique positive integer
         [XmlIgnore]
         private int id;
         public int Id
         {
-            get { return id; }
+            get { return id;  }
             set { id = value; }
         }
 
@@ -98,7 +96,7 @@ namespace SoniFight
         public string name;
         public string Name
         {
-            get { return name; }
+            get { return name;  }
             set { name = value; }
         }
 
@@ -120,7 +118,7 @@ namespace SoniFight
             get { return pointerList;  }
             set { pointerList = value; }
         }
-        
+
         // The destination address of the feature this watch is monitoring.
         // IMPORTANT: Triggers don't have destination addresses - WATCHES have a destination address (and one watch may be used by multiple triggers)
         [XmlIgnore]
@@ -158,7 +156,7 @@ namespace SoniFight
 
                 // Apply the offset
                 destinationAddress += offset;
-                
+
                 // Final hop? Then that's where we'll find our value so break out of the loop
                 if (hopLoop == (pointerList.Count - 1))
                 {
@@ -169,11 +167,9 @@ namespace SoniFight
                 destinationAddress = Utils.getIntFromAddress(processHandle, destinationAddress);
             }
 
-            // At this point destination address should be correctly set ready for us to read from
-            // Note: The specific type of value we'll read at this address will be based on the value type.
-
+            // At this point destination address should be correctly set ready for us to return
             return destinationAddress;
-        }       
+        }
 
     } // End of Watch class
 

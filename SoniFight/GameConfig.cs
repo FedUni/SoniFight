@@ -1,4 +1,5 @@
-﻿using System;
+﻿using au.edu.federation.SoniFight.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace SoniFight
+namespace au.edu.federation.SoniFight
 {
     public class GameConfig
     {
@@ -30,7 +31,7 @@ namespace SoniFight
         // Valid ranges of how fast to play the sample (1.0f is 'normal speed')
         public const float MIN_SAMPLE_PLAYBACK_SPEED = 0.1f;
         public const float MAX_SAMPLE_PLAYBACK_SPEED = 4.0f;
-        
+
         // Description of this config
         private string description = "GameConfig description";
         public string Description
@@ -43,7 +44,7 @@ namespace SoniFight
         private string processName = "Process to attach to - do not include the .exe extension";
         public string ProcessName
         {
-            get { return processName;  }
+            get { return processName; }
             set { processName = value; }
         }
 
@@ -66,7 +67,7 @@ namespace SoniFight
 
         // The maximum value for the clock in a given game. Default: 99
         // Used to stop SoniFight from switching to InGame mode between rounds.
-        private int clockMax = 99;        
+        private int clockMax = 99;
         public int ClockMax
         {
             get { return clockMax; }
@@ -131,7 +132,7 @@ namespace SoniFight
         // Blank constructor req'd for XML serialisation
         public GameConfig()
         {
-            processConnectionBW.WorkerSupportsCancellation = true;
+            processConnectionBGW.WorkerSupportsCancellation = true;
         }
 
         public void setDescription(string configDescription)
@@ -146,16 +147,16 @@ namespace SoniFight
 
         // Background worker so we can attempt to connect to a game process without locking up the UI
         [XmlIgnore]
-        public static BackgroundWorker processConnectionBW = new BackgroundWorker();
+        public static BackgroundWorker processConnectionBGW = new BackgroundWorker();
 
         [XmlIgnore]
         private Process[] processArray = null;
 
         // DoWork method for the process connection background worker
         public void connectToProcess(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {   
+        {
             // Not connected and we're not cancelling? Then using the background worker...
-            while (!Program.connectedToProcess && !processConnectionBW.CancellationPending)
+            while (!Program.connectedToProcess && !processConnectionBGW.CancellationPending)
             {
                 // Find all instances of the named process running on the local computer.
                 // This will return an empty array if the process isn't running.
@@ -179,13 +180,15 @@ namespace SoniFight
                     processBaseAddress = Utils.findProcessBaseAddress(processName);
                     if (processBaseAddress == 0)
                     {
-                        MessageBox.Show("Error: No process called " + processName + " found. Activation failed.");
+                        string s1 = Resources.ResourceManager.GetString("processNotFoundWarningString1");
+                        string s2 = Resources.ResourceManager.GetString("processNotFoundWarningString2");
+                        MessageBox.Show(s1 + processName + s2);
                         e.Cancel = true;
                         break;
                     }
                     else
                     {
-                        Console.WriteLine("Found process base address at: " + MainForm.gameConfig.ProcessBaseAddress);
+                        Console.WriteLine(Resources.ResourceManager.GetString("foundProcessBaseAddressString") + MainForm.gameConfig.ProcessBaseAddress);
                     }
 
                     // Calculate initial destination addresses.
@@ -220,7 +223,7 @@ namespace SoniFight
                             {
                                 SoundPlayer.LoadSample(t.sampleKey, true); // ...but continuous trigger samples do!
                             }
-                        }                        
+                        }
                     }
 
                     // Set our process grabbing background worker to cancel
@@ -228,7 +231,7 @@ namespace SoniFight
 
                     // This sets cancellation to pending, which we handle in the associated doWork method
                     // to actually perform the cancellation.
-                    processConnectionBW.CancelAsync();
+                    processConnectionBGW.CancelAsync();
                 }
 
                 // Only poll in our background worker twice per second
@@ -242,11 +245,11 @@ namespace SoniFight
             Console.WriteLine("Attempting to connect to process: " + processName);
 
             // Set up the background worker to connect to our game process without freezing the UI and kick it off.
-            processConnectionBW = new BackgroundWorker();
-            processConnectionBW.DoWork += connectToProcess;
-            processConnectionBW.WorkerReportsProgress = false;
-            processConnectionBW.WorkerSupportsCancellation = true;
-            processConnectionBW.RunWorkerAsync();
+            processConnectionBGW = new BackgroundWorker();
+            processConnectionBGW.DoWork += connectToProcess;
+            processConnectionBGW.WorkerReportsProgress = false;
+            processConnectionBGW.WorkerSupportsCancellation = true;
+            processConnectionBGW.RunWorkerAsync();
 
             return true;
         }
@@ -258,8 +261,8 @@ namespace SoniFight
 
             // Check we have a config directory
             if (String.IsNullOrEmpty(ConfigDirectory))
-            {
-                MessageBox.Show("Validation Error: GameConfig directory cannot be blank.");
+            {   
+                MessageBox.Show( Resources.ResourceManager.GetString("configDirCannotBeBlankString") );
                 return false;
             }
 
@@ -396,7 +399,7 @@ namespace SoniFight
             } // End of loop over all watches in the watchList
 
             // Ensure watch ids are unique
-            if (idList.Count != idList.Distinct().Count() )
+            if (idList.Count != idList.Distinct().Count())
             {
                 MessageBox.Show("Validation Error: Watch Id values must be unique.");
                 return false;
@@ -497,7 +500,7 @@ namespace SoniFight
 
             // Moan if we have more than 1 clock trigger (but we will accept no clock triggers for games like Doom etc. which do not have a clock)
             if (clockTriggersFound > 1)
-            {   
+            {
                 s = "Validation Error: There is more than a single active trigger marked isClock and we may only have one. Triggers marked isClock: ";
                 for (int i = 0; i < clockTriggerIdList.Count; ++i)
                 {
@@ -510,7 +513,7 @@ namespace SoniFight
                 }
 
                 MessageBox.Show(s);
-                return false;                
+                return false;
             }
 
             // Ensure trigger ids are unique
@@ -522,7 +525,7 @@ namespace SoniFight
 
             // Made it this far? Then indicate that we're hot to trot...            
             return true;
-        }        
+        }
 
         // Method to calculate the address of all features - called once per polling event
         public void calcAllWatchAddresses()
@@ -531,9 +534,8 @@ namespace SoniFight
             {
                 watchList[watchLoop].DestinationAddress = Utils.findFeatureAddress(ProcessHandle, processBaseAddress, watchList[watchLoop].PointerList);
             }
-        }        
+        }
 
     } // End of GameConfig class  
 
 } // End of namespace
-

@@ -1,6 +1,8 @@
 ﻿using System.Xml.Serialization;
 
-namespace SoniFight
+using au.edu.federation.SoniFight.Properties;
+
+namespace au.edu.federation.SoniFight
 {
     public class Trigger
     {
@@ -19,15 +21,15 @@ namespace SoniFight
             DistancePitchDescending,  // Used in continuous triggers only
             DistancePitchAscending    // Used in continuous triggers only
         }
-        
+
         // Enum of different types of triggers
         public enum TriggerType
-        {            
-            Normal,      // Activates a sonification event when criteria is met. Normal triggers may play multiple times.
-            Continuous,  // Activates a looped sonification event (e.g. distance between players). 
-            Modifier     // Modifies a continuous trigger.
+        {
+            Normal,     // Activates a sonification event when criteria is met. Normal triggers may play multiple times.
+            Continuous, // Activates a looped sonification event (e.g. distance between players). 
+            Modifier    // Modifies a continuous trigger.
         }
-        
+
         // Enum of when a trigger may be allowed to activate
         public enum AllowanceType
         {
@@ -39,7 +41,7 @@ namespace SoniFight
         // ---------- Properties ----------       
 
         // The unique ID of this trigger
-        public int id;
+        public int id= -1;
 
         // A brief name and description (optional, but useful)
         public string name;
@@ -65,10 +67,10 @@ namespace SoniFight
         // triggers use this for the second watch with which to calculate a percentage, and modifier triggers use this
         // as the continuous trigger to modify.
         public int secondaryId;
-        
+
         // The type of comparison to make, i.e. EqualTo, LessThan, LessThanOrEqualTo etc.
         public ComparisonType comparisonType;
-                
+
         // Properties for the sample to play along with its associated default speed and volume (defaults: 1.0 - i.e. full volume, standard playback speed)
         // Note: The sampleFilename field is used as the text to say if we are using tolk for sonification of this trigger.
         public string sampleFilename;
@@ -85,10 +87,10 @@ namespace SoniFight
         // A current sample speed for continuous triggers whose speed may change with distance
         [XmlIgnore]
         public float currentSampleSpeed;
-        
+
         // Is this trigger the clock which we use to determine whether we're InGame or InMenu?
         public bool isClock;
-        
+
         // Whether we should use this trigger or not
         public bool active;
 
@@ -108,8 +110,8 @@ namespace SoniFight
         // Default constructor required for XML serialization
         public Trigger()
         {
-            name        = "CHANGE_ME";
-            description = "CHANGE_ME";
+            name        = Resources.ResourceManager.GetString("changeMeString");
+            description = Resources.ResourceManager.GetString("changeMeString");
 
             triggerType    = TriggerType.Normal;
             comparisonType = Trigger.ComparisonType.EqualTo;
@@ -119,7 +121,7 @@ namespace SoniFight
             secondaryId = -1;
             value       = -1;
 
-            sampleFilename = "NONE";
+            sampleFilename = Resources.ResourceManager.GetString("noneString");
             sampleVolume   = 1.0f;
             sampleSpeed    = 1.0f;
 
@@ -134,7 +136,7 @@ namespace SoniFight
         {
             id = source.id;
 
-            name        = source.name + "-CLONE";
+            name        = source.name + Resources.ResourceManager.GetString("cloneString");
             description = source.description;
 
             triggerType    = source.triggerType;

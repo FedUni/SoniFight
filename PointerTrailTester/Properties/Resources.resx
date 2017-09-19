@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ProcessNameLabel" xml:space="preserve">
-    <value>Process Name (without .EXE suffix)</value>
+  <data name="argumentExceptionString" xml:space="preserve">
+    <value>Illegal pointer trail - argument exception: </value>
+  </data>
+  <data name="formatExceptionString" xml:space="preserve">
+    <value>Illegal pointer trail - do not prefix pointer hops with 0x or such and separate each hop with comma.</value>
+  </data>
+  <data name="invalidPointerString" xml:space="preserve">
+    <value>INVALID POINTER TRAIL</value>
+  </data>
+  <data name="notConnectedString" xml:space="preserve">
+    <value>NOT CONNECTED TO PROCESS</value>
+  </data>
+  <data name="overflowExceptionString" xml:space="preserve">
+    <value>Illegal pointer trail - individual pointer hop value exceeds 32-bit limit.</value>
   </data>
 </root>

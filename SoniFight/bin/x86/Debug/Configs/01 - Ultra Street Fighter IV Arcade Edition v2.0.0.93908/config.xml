@@ -6313,7 +6313,7 @@
       <secondaryId>342</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>NONE</sampleFilename>
-      <sampleSpeed>0.5</sampleSpeed>
+      <sampleSpeed>2</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <useTolk>false</useTolk>
       <isClock>false</isClock>

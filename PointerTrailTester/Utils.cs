@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using au.edu.federation.PointerTrailTester.Properties;
 
 namespace au.edu.federation.PointerTrailTester
 {
@@ -12,12 +13,12 @@ namespace au.edu.federation.PointerTrailTester
         // Kernel hook to read process memory. Note: Even on 64-bit systems the kernel is called kernel32.
         [DllImport("kernel32.dll")]
         public static extern bool ReadProcessMemory(int hProcess, int lpBaseAddress, byte[] lpBuffer, int dwSize, ref int lpNumberOfBytesRead);
-        
+
         // Find the process in the processName property and set the processBaseAddress property ready for use
         public static int findProcessBaseAddress(string processName)
         {
             Process[] processArray = Process.GetProcessesByName(processName);
-            
+
             if (processArray.Length > 0)
             {
                 // Sleep before returning process base address (prevents crashing when we only just found the process but the base address hasn't been fully established yet)
@@ -27,9 +28,7 @@ namespace au.edu.federation.PointerTrailTester
 
             return 0;
         }
-
-        // Take base address and a list of hex values (as strings) and return the final feature address
-        //protected int findFeatureAddress(int baseAddress, List<string> hexPointerTrail)
+                
         // Take base address and a list of hex values (as strings) and return the final feature address
         public static int findFeatureAddress(int processHandle, int baseAddress, List<string> hexPointerTrail)
         {
@@ -49,6 +48,12 @@ namespace au.edu.federation.PointerTrailTester
                 catch (FormatException)
                 {
                     Program.validPointerTrail = false;
+                    return 0;
+                }
+                catch (OverflowException oe)
+                {
+                    Program.validPointerTrail = false;
+                    MessageBox.Show(Resources.ResourceManager.GetString("overflowExceptionString") + oe.Message);
                     return 0;
                 }
 
@@ -94,7 +99,7 @@ namespace au.edu.federation.PointerTrailTester
         // Read and return an int
         public static Int32 getIntFromAddress(int processHandle, int address)
         {
-            int bytesRead = 0;            
+            int bytesRead = 0;
             byte[] buf = new byte[4];
             ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
             return BitConverter.ToInt32(buf, 0);
@@ -102,7 +107,7 @@ namespace au.edu.federation.PointerTrailTester
 
         // Read and return a short
         public static Int16 getShortFromAddress(int processHandle, int address)
-        {   
+        {
             int bytesRead = 0;
             byte[] buf = new byte[2];
             ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
@@ -262,7 +267,7 @@ namespace au.edu.federation.PointerTrailTester
                    .Where(x => !string.IsNullOrWhiteSpace(x))
                    .ToList();
         }
-        
+
     } // End of Utils class
 
 } // End of namespace
