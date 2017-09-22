@@ -898,7 +898,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to suppressed as dependent trigger .
+        ///   Looks up a localized string similar to  suppressed as dependent trigger .
         /// </summary>
         internal static string suppressedAsDependentString {
             get {
@@ -907,7 +907,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suppressed moving to InGame state because clock is 0 or.
+        ///   Looks up a localized string similar to Suppressed moving to InGame state because clock is 0 or .
         /// </summary>
         internal static string suppressedGameStateChangeString {
             get {

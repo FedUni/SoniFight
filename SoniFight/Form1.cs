@@ -260,6 +260,9 @@ namespace au.edu.federation.SoniFight
             string configDir = ".\\Configs\\" + gameConfig.ConfigDirectory;
             string configPath = configDir + "\\config.xml";
 
+            // Ensure we don't have any accidental double backslashes in our path
+            configPath = configPath.Replace("\\\\", "\\");
+
             // Try to create the directory. Note: If the directory already exists then this does nothing.
             Directory.CreateDirectory(configDir);
 
@@ -267,18 +270,7 @@ namespace au.edu.federation.SoniFight
             Utils.WriteToXmlFile(configPath, gameConfig);
         }
 
-        // Remove all the controls from a TableLayoutPanel
-        private void clearPanel(TableLayoutPanel p)
-        {
-            p.Visible = false;
-
-            for (int i = (p.Controls.Count) - 1; i >= 0; --i)
-            {
-                p.Controls[i].Dispose();
-            }
-
-            p.Visible = true;
-        }
+        
 
         // Method to rebuild the treeview of the current gameconfig
         private void RebuildTreeViewFromGameConfig()
@@ -418,7 +410,7 @@ namespace au.edu.federation.SoniFight
         {
             // Get the panel, clear it and set some layout properties
             TableLayoutPanel panel = this.gcPanel;
-            clearPanel(panel);
+            Utils.clearTableLayoutPanel(panel);
             panel.Padding = padding;
             panel.AutoSize = true;
             panel.Anchor = AnchorStyles.Right;
@@ -1663,7 +1655,7 @@ namespace au.edu.federation.SoniFight
 
             // Get the panel and remove all controls
             TableLayoutPanel panel = this.gcPanel;
-            clearPanel(panel);
+            Utils.clearTableLayoutPanel(panel);
             panel.Padding = padding;
 
             currentWatch = new Watch();
@@ -1695,7 +1687,7 @@ namespace au.edu.federation.SoniFight
 
             // Get the panel and remove all controls
             TableLayoutPanel panel = this.gcPanel;
-            clearPanel(panel);
+            Utils.clearTableLayoutPanel(panel);
             panel.Padding = padding;
 
             // Create a new trigger and add it to the list
@@ -1731,7 +1723,7 @@ namespace au.edu.federation.SoniFight
 
             // Get the panel and remove all controls
             TableLayoutPanel panel = this.gcPanel;
-            clearPanel(panel);
+            Utils.clearTableLayoutPanel(panel);
             panel.Padding = padding;
 
             // Create a new trigger and use the copy constructor to make it a deep-copy of the existing current trigger
@@ -1769,7 +1761,7 @@ namespace au.edu.federation.SoniFight
 
             // Get the panel and remove all controls
             TableLayoutPanel panel = this.gcPanel;
-            clearPanel(panel);
+            Utils.clearTableLayoutPanel(panel);
             panel.Padding = padding;
 
             // Create a new trigger and use the one parameter Trigger constructor to make it a deep-copy of the existing current trigger

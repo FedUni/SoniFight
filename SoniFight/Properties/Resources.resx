@@ -469,10 +469,10 @@
     <value>String (UTF-8)</value>
   </data>
   <data name="suppressedAsDependentString" xml:space="preserve">
-    <value>suppressed as dependent trigger </value>
+    <value> suppressed as dependent trigger </value>
   </data>
   <data name="suppressedGameStateChangeString" xml:space="preserve">
-    <value>Suppressed moving to InGame state because clock is 0 or</value>
+    <value>Suppressed moving to InGame state because clock is 0 or </value>
   </data>
   <data name="tolkActiveString" xml:space="preserve">
     <value>Tolk: The active screen reader driver is: </value>

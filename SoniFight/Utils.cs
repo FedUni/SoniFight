@@ -345,6 +345,19 @@ namespace au.edu.federation.SoniFight
 
         // --------- UI Manipulation / Helper methods -------
 
+        // Remove all the controls from a TableLayoutPanel
+        public static void clearTableLayoutPanel(TableLayoutPanel p)
+        {
+            p.Visible = false;
+
+            for (int i = (p.Controls.Count) - 1; i >= 0; --i)
+            {
+                p.Controls[i].Dispose();
+            }
+
+            p.Visible = true;
+        }
+
         // Method to remove an aribtrary row from a TableLayoutPanel.
         // By default you cannot remove an arbitrary row from a table (only the last row), but
         // this method allows us to do so via a bunch of copy and pastes. Taken from stack overflow.

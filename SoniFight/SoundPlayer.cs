@@ -6,8 +6,13 @@ using au.edu.federation.SoniFight.Properties;
 
 namespace au.edu.federation.SoniFight
 {
+    interface ISoundEventStopReceiver
+    {
+        void OnSoundStopped(ISound sound, StopEventCause reason, object userData);
+    }
+
     // Class used to play and manipulate sonification events
-    public class SoundPlayer
+    public class SoundPlayer 
     {
         // We'll build up a dictionary (i.e. list of key-value pairs) mapping the sample filename to the actual loaded sample
         // which can be used by any given GameConfig        
@@ -16,10 +21,17 @@ namespace au.edu.federation.SoniFight
         // The sound engine object itself
         private static ISoundEngine soundEngine;
 
+        public static bool readyToPlayNextQueuedSample = true;
+
         // Constructor
         public SoundPlayer()
         {
             soundEngine = new ISoundEngine();
+        }
+
+        public void OnSoundStopped(ISound sound, StopEventCause reason, object userData)
+        {
+            Console.WriteLine("Sound: " + sound.ToString() + " stopped for reason: " + reason);
         }
 
         // Method to load a sample and specify whether it should loop or not when played
@@ -31,7 +43,7 @@ namespace au.edu.federation.SoniFight
             string shortKey = sampleKey.Substring(index, sampleKey.Length - index);
             Console.WriteLine("Loading sample: " + shortKey);
 
-            // Load the sound by playing it. Params: sample filename, loop, start paused
+            // Load the sound by playing it. Params: sample filename, loop, start paused, stream mode, enable sound effects
             ISound sound = soundEngine.Play2D(sampleKey, loopSample, true, StreamMode.AutoDetect, true);
 
             // Otherwise add to our sample list, increment the SAM and return true for success
@@ -40,13 +52,15 @@ namespace au.edu.federation.SoniFight
                 sampleDictionary.Add(sampleKey, sound);
             }
 
+            //soundEngine.StopAllSounds();
+
             return true;
         }
 
         // Method to return whether a specific sample is currently loaded
-        public static bool SampleLoaded(string sampleFilename)
+        public static bool SampleLoaded(string sampleKey)
         {
-            if (sampleDictionary.ContainsKey(sampleFilename))
+            if (sampleDictionary.ContainsKey(sampleKey))
             {
                 return true;
             }
@@ -56,7 +70,42 @@ namespace au.edu.federation.SoniFight
         // Method to return whether a specific sample is currently playing or not
         public static bool CurrentlyPlaying(string sampleKey)
         {
-            return soundEngine.IsCurrentlyPlaying(sampleKey);
+            ISound sample;
+            try
+            {
+                if (sampleDictionary.TryGetValue(sampleKey, out sample))
+                {
+                    if (soundEngine.IsCurrentlyPlaying(sampleKey) && !(sample.Paused))
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("NOPE!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Exception was: " + e.Message);
+            }
+            return false;
+        }
+
+        // NOTE: Samples which are paused return as playing, but we only want samples which are actually playing!
+        public static void printAllSamplesCurrentlyPlaying()
+        {
+            try
+            {
+                int x = 1;
+                foreach (KeyValuePair<string, ISound> sample in sampleDictionary)
+                {
+                    if (soundEngine.IsCurrentlyPlaying(sample.Key) && !sample.Value.Paused)
+                    {
+                        Console.WriteLine( (x++) + " currently playing " + sample.Key);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("MENTAL" + e.Message);
+            }
         }
 
         // Method to toggle a sample between paused and unpaused states
@@ -70,27 +119,53 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to toggle a sample between paused and unpaused states
-        public static void StopPlayingSample(string sampleKey)
+        /*** THIS METHOD DOES NOT WORK =( ***/
+        /*public static void StopPlayingSample(string sampleKey)
         {
             try
             {
                 ISound sample;
                 if (sampleDictionary.TryGetValue(sampleKey, out sample))
                 {
-                    sample.Stop();//.Paused = !sample.Paused;
+                    Console.WriteLine("About to stop sample with key: " + sampleKey);
                 }
+
+                sample.Stop(); //.Paused = !sample.Paused;
+
+                soundEngine.Update();
+
+                if ( IsSamplePlaying(sampleKey) )
+                {
+                    Console.WriteLine("Sample is still fucking playing!");
+                }
+                else
+                {
+                    Console.WriteLine("SAMPLE HAS FINALLY STOPPED PLAYING!");
+                }
+
+                
+
+
             }
             catch (Exception e)
             {
                 Console.WriteLine("BAD THINGS HAPPENED IN StopPlayingSample: " + e.Message);
                 Console.WriteLine(e.InnerException);
             }
-        }
+        }*/
 
         // Method to stop any playing sounds on the static soundEngine instance
         public static void StopAllSounds()
         {
+            Console.WriteLine("Stopping all sounds!");
             soundEngine.StopAllSounds();
+
+            
+        }
+
+        public static void PauseAllSounds(bool pauseState)
+        {
+            soundEngine.SetAllSoundsPaused(pauseState);
         }
 
         // Method to pause a currently playing sample
@@ -101,7 +176,12 @@ namespace au.edu.federation.SoniFight
             {
                 if (!sample.Paused)
                 {
+                    Console.WriteLine("Found non-paused sample - pausing: " + sampleKey);
                     sample.Paused = true;
+                }
+                else
+                {
+                    //Console.WriteLine("Skipping pause of already paused sample: " + sampleKey);
                 }
             }
         }
@@ -114,6 +194,7 @@ namespace au.edu.federation.SoniFight
             {
                 if (sample.Paused)
                 {
+                    Console.WriteLine("Actually flipping paused flag of sample: " + sampleKey);
                     sample.Paused = false;
                 }
             }
@@ -122,36 +203,39 @@ namespace au.edu.federation.SoniFight
         // Method to check if a given sample is paused or not
         public static bool IsPaused(string sampleKey)
         {
-            // Attempt to get the ISound (i.e. sample) with the given key name...
             ISound sample;
-            if (sampleDictionary.TryGetValue(sampleKey, out sample))
-            {
-                sample = sampleDictionary[sampleKey];
+            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
+            {   
+                Console.WriteLine("Found sample " + sampleKey + " and returning paused state of: " + sample.Paused);
                 return sample.Paused;
             }
-            else // Samples not loaded so key does not yet exist in dictionary? Then yes, I'd say we're paused.
-            {
-                return false;
-            }
+            
+            Console.WriteLine("Could not find sample to determine paused state: " + sampleKey);
+            return true;
+            
         }
 
+        // Method to change the volume of a given sample
         public static void ChangeSampleVolume(string sampleKey, float volume)
         {
             // If we're playing the sample...
             if (soundEngine.IsCurrentlyPlaying(sampleKey))
             {
-                // ...get access to it. If successfully found, modify its volume.
+                // ...get access to it. If successfully found, clamp the requested volume between zero and one and then set the new volume.
                 ISound sample = sampleDictionary[sampleKey];
+                if (volume < 0.0f) { volume = 0.0f; }
+                if (volume > 1.0f) { volume = 1.0f; }
                 sample.Volume = volume;
             }
         }
 
+        // Method to change the playback speed of a given sample
         public static void ChangeSampleSpeed(string sampleKey, float speed)
         {
             // If we're playing the sample...
             if (soundEngine.IsCurrentlyPlaying(sampleKey))
             {
-                // ...get access to it. If successfully found, modify its volume.
+                // ...get access to it. If successfully found, modify its speed.
                 ISound sample = sampleDictionary[sampleKey];
                 sample.PlaybackSpeed = speed;
             }
@@ -162,12 +246,16 @@ namespace au.edu.federation.SoniFight
         {
             try
             {
-                foreach (KeyValuePair<string, ISound> sample in sampleDictionary)
+                foreach (KeyValuePair<string, ISound> samplePair in sampleDictionary)
                 {
-                    if ( soundEngine.IsCurrentlyPlaying(sample.Key) )
+                    ISound sample;
+                    if (sampleDictionary.TryGetValue(samplePair.Key, out sample) && sample != null)
                     {
-                        Console.WriteLine("IsAnythingPlaying returns true for sample: " + sample.Key);
-                        return true;
+                        if (soundEngine.IsCurrentlyPlaying(samplePair.Key) && !sample.Paused)
+                        {
+                            //Console.WriteLine("IsAnythingPlaying returns true for sample: " + sample.Key);
+                            return true;
+                        }
                     }
                 }
             }
@@ -175,7 +263,7 @@ namespace au.edu.federation.SoniFight
             {
                 Console.WriteLine(Resources.ResourceManager.GetString("isAnythingPlayingExceptionString") + e.Message);
             }
-            Console.WriteLine("IsAnythingPlaying returns false!!!!!!!!!!!!!!!!!!");
+            //Console.WriteLine("IsAnythingPlaying returns false!!!!!!!!!!!!!!!!!!");
             return false;
         }
 
@@ -189,32 +277,33 @@ namespace au.edu.federation.SoniFight
             return false;
         }
 
-        
-        public static bool PlayingNormalInGameTrigger(List<Trigger> triggerList)
+        // Method to determine if we're current playing a normal InGame trigger (if we are, we'll queue any normal InGame triggers that match their trigger conditions)
+        // NOTE: Paused samples count as playing - be careful of this!
+        public static bool PlayingQueueableTrigger(List<Trigger> queueableTriggerList)
         {
-            foreach (Trigger t in triggerList)
+            foreach (Trigger t in queueableTriggerList)
             {
-                if (Program.gameState == Program.GameState.InGame   &&
-                    t.triggerType == Trigger.TriggerType.Normal     &&
-                    t.allowanceType == Trigger.AllowanceType.InGame &&
-                    !t.useTolk                                      &&
-                    soundEngine.IsCurrentlyPlaying(t.sampleKey) )
+                if (Program.gameState == Program.GameState.InGame && SoundPlayer.CurrentlyPlaying(t.sampleKey))
                 {
-                    Console.WriteLine(DateTime.Now +" Found playing sample: " + t.sampleFilename);
+                    //Console.WriteLine(DateTime.Now + " ******************************** Found playing sample: " + t.sampleFilename);
                     return true;
                 }
             }
             return false;
         }
-        
+            
 
-
-        // Method to check if any sample in the dictionary is currently playing
+        // Method to check if a given sample currently playing.
+        // WARNING: Paused samples count as playing!
         public static bool IsSamplePlaying(string sampleKey)
         {
-            if ( soundEngine.IsCurrentlyPlaying(sampleKey) )
+            ISound sample;
+            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
             {
-                return true;
+                if (soundEngine.IsCurrentlyPlaying(sampleKey) && !sample.Paused)
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -230,27 +319,38 @@ namespace au.edu.federation.SoniFight
         // Method to play the sample identified by the key at the volume and pitch provided
         public static void Play(string sampleKey, float volume, float pitch, bool loopSample)
         {
-            // If we have a sample loaded with a given filename...
-            if (sampleDictionary.ContainsKey(sampleKey))
+            ISound sample;
+            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
             {
-                ISound sample;
-                if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
-                {
-                    // ...then set the volume and pitch of the specified sample and then play it
-                    sample.Volume = volume;
-                    sample.PlaybackSpeed = pitch;
+                // Set volume and pitch then play the sample
+                sample.Volume = volume;
+                sample.PlaybackSpeed = pitch;
 
-                    // Sample, play looped, start-paused, stream-mode, enable-sound-effects
-                    sample = soundEngine.Play2D(sampleKey, loopSample, false, StreamMode.AutoDetect, true);
-                }
-                else
-                {
-                    Console.WriteLine(Resources.ResourceManager.GetString("sampleNotFoundString") + sampleKey);
-                }
-            }
-            else // Warn user of issue
+                // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
+                sample = soundEngine.Play2D(sampleKey, loopSample, false, StreamMode.AutoDetect, true);
+            }            
+        }
+
+        // Method to play the sample identified by the key at the volume and pitch provided
+        public static void PlayQueueableSample(string sampleKey, float volume, float pitch, bool loopSample)
+        {
+            ISound sample;
+            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
             {
-                Console.WriteLine(Resources.ResourceManager.GetString("keyNotFoundString") + sampleKey);
+               
+
+                // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
+                sample = soundEngine.Play2D(sampleKey, loopSample, false, StreamMode.AutoDetect, true);
+
+                // Set volume and pitch then play the sample
+                sample.Volume = volume;
+                sample.PlaybackSpeed = pitch;
+
+                sampleDictionary[sampleKey] = sample;
+
+                //sample.setSoundStopEventReceiver(au.edu.federation.SoniFight.SoundPlayer, "foo!");
+
+                readyToPlayNextQueuedSample = false;
             }
         }
 

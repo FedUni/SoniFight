@@ -479,8 +479,8 @@
           <target state="new">, Speed: </target>
         </trans-unit>
         <trans-unit id="suppressedGameStateChangeString" translate="yes" xml:space="preserve">
-          <source>Suppressed moving to InGame state because clock is 0 or</source>
-          <target state="new">Suppressed moving to InGame state because clock is 0 or</target>
+          <source>Suppressed moving to InGame state because clock is 0 or </source>
+          <target state="new">Suppressed moving to InGame state because clock is 0 or </target>
         </trans-unit>
         <trans-unit id="tolkActiveString" translate="yes" xml:space="preserve">
           <source>Tolk: The active screen reader driver is: </source>
@@ -519,8 +519,8 @@
           <target state="new"> failed. Depth: </target>
         </trans-unit>
         <trans-unit id="suppressedAsDependentString" translate="yes" xml:space="preserve">
-          <source>suppressed as dependent trigger </source>
-          <target state="new">suppressed as dependent trigger </target>
+          <source> suppressed as dependent trigger </source>
+          <target state="new"> suppressed as dependent trigger </target>
         </trans-unit>
         <trans-unit id="triggerWithTrailingSpaceString" translate="yes" xml:space="preserve">
           <source>Trigger </source>

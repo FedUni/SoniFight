@@ -48,6 +48,7 @@ namespace au.edu.federation.SoniFight
         // Our IrrKlang SoundPlayer instance
         static SoundPlayer soundplayer;
 
+        // Are we connected to the process specified in the current GameConfig?
         public static bool connectedToProcess = false;
         
         // We keep a queue of normal triggers so they can play in the order they came in without overlapping each other and turning into a cacophony
@@ -162,63 +163,49 @@ namespace au.edu.federation.SoniFight
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
-
-                            // Comparison failed? Return false.
-                            return false;
+                            return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.LessThan:
                             if ((t.previousValue > t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue < t.value))
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
-
-                            // Comparison failed? Return false.
-                            return false;
+                            return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.LessThanOrEqualTo:
                             if ((t.previousValue > t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue <= t.value))
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
-
-                            // Comparison failed? Return false.
-                            return false;
+                            return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.GreaterThan:
                             if ((t.previousValue < t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue > t.value))
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
-
-                            // Comparison failed? Return false.
-                            return false;
+                            return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.GreaterThanOrEqualTo:
                             if ((t.previousValue < t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue >= t.value))
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
-
-                            // Comparison failed? Return false.
-                            return false;
+                            return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.NotEqualTo:
                             if ((t.previousValue == t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue != t.value))
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
-
-                            // Comparison failed? Return false.
-                            return false;
+                            return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.Changed:
                             if (readValue != t.previousValue || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier)
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
-
-                            // Comparison failed? Return false.
-                            return false;
+                            return false; // Comparison failed? Return false.
                     }
                 }
                 catch (Exception e)
@@ -232,6 +219,7 @@ namespace au.edu.federation.SoniFight
             return false;
         }
 
+        
         // This is the DoWork method for the sonification BackgroundWorker
         public static void performSonification(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
@@ -247,7 +235,7 @@ namespace au.edu.federation.SoniFight
                 Console.WriteLine( Resources.ResourceManager.GetString("tolkActiveString") + screenReaderName);
                 if ( Tolk.HasSpeech() )
                 {
-                    Console.WriteLine( Resources.ResourceManager.GetString("tolkSpeechSupportedString"));
+                    Console.WriteLine( Resources.ResourceManager.GetString("tolkSpeechSupportedString") );
                 }
                 if ( Tolk.HasBraille() )
                 {
@@ -261,6 +249,16 @@ namespace au.edu.federation.SoniFight
 
             // Save some typing
             GameConfig gc = MainForm.gameConfig;
+
+            // Generate a list of triggers which can be queued in order to minimise the searching through all the triggers when determining if any are currently playing
+            List<Trigger> queueableTriggerList = new List<Trigger>();
+            foreach (Trigger trig in gc.triggerList)
+            {
+                if (!trig.useTolk && !trig.isClock && trig.triggerType == Trigger.TriggerType.Normal && !(trig.allowanceType == Trigger.AllowanceType.InMenu))
+                {
+                    queueableTriggerList.Add(trig);
+                }
+            }
 
             // Convert all trigger 'value' properties (which are of type dynamic) to their actual type
             // Note: This is a ONE-OFF operation that we only do at the start before the main sonification loop
@@ -323,14 +321,14 @@ namespace au.edu.federation.SoniFight
             dynamic readValue2;
             dynamic currentClock = null;
             dynamic lastClock = null;
+            bool foundMatch;
 
             // While we are providing sonification...            
             while (!e.Cancel)
             {
                 //Console.WriteLine("Game state is: " + gameState);
 
-                bool foundMatch = false; // Did we find a match to a sonification condition?             
-
+                
                 // Update all active watch destination addresses (this must happen once per poll)
                 Watch w;
                 for (int watchLoop = 0; watchLoop < gc.watchList.Count; ++watchLoop)
@@ -375,7 +373,8 @@ namespace au.edu.federation.SoniFight
                             lastClock = currentClock;
 
                             // ...set the current gamestate to be InGame.
-                            Program.gameState = GameState.InGame;                            
+                            Program.gameState = GameState.InGame;
+                            //Console.WriteLine("GameState is InGame.");
 
                             // This condition check stops us from moving briefly into the InGame state when the clock is reset between rounds or matches
                             if ((currentClock == 0 || lastClock == 0 || currentClock == MainForm.gameConfig.ClockMax) && Program.connectedToProcess)
@@ -390,6 +389,7 @@ namespace au.edu.federation.SoniFight
                         else // Current and last clock values the same? Then set the gamestate to be InMenu.
                         {
                             Program.gameState = GameState.InMenu;
+                            //Console.WriteLine("GameState is InMenu.");
 
                             // We might have simply paused the game here so we won't clear the normalInGameTriggerQueue so they resume playing on un-pause
                         }
@@ -400,8 +400,13 @@ namespace au.edu.federation.SoniFight
 
                 } // End of game state update block
 
-                // Check ONCE to see if there are any normal InGame triggers playing
-                bool currentlyPlayingNormalInGameTrigger = SoundPlayer.PlayingNormalInGameTrigger(gc.triggerList);
+                // Check to see if there are any normal InGame triggers playing
+                bool currentlyPlayingQueueableTrigger = SoundPlayer.PlayingQueueableTrigger(queueableTriggerList);
+                
+                //Console.WriteLine("Pre-trigger loop, currently playing normal is: " + currentlyPlayingNormalInGameTrigger);
+
+                // Initially say that we have not found a match to activate a sonification event
+                foundMatch = false;
 
                 // Process triggers to provide sonification
                 for (int triggerLoop = 0; triggerLoop < gc.triggerList.Count; ++triggerLoop)
@@ -416,24 +421,20 @@ namespace au.edu.federation.SoniFight
                         // If we're InMenu...
                         if (Program.gameState == GameState.InMenu)
                         {
-                            // ...and the continuous trigger is NOT paused...
-                            if (!SoundPlayer.IsPaused(t.sampleKey))
-                            {
-                                // ...then we pause it.
-                                SoundPlayer.PauseSample(t.sampleKey);
-                            }
-
-                            continue; // No need to process this continuous trigger any further - if it wasn't paused we've now paused it.
+                            SoundPlayer.PauseSample(t.sampleKey);
                         }
                         else // ...otherwise if we're InGame...
                         {
-                            // ...AND the sample is NOT playing, then we reset the volume and speed properties then resume it.
-                            if (SoundPlayer.IsPaused(t.sampleKey))
+                            // ...then start the continuous trigger sample playing again.
+                            if (SoundPlayer.SampleLoaded(t.sampleKey) && !SoundPlayer.IsSamplePlaying(t.sampleKey) && SoundPlayer.IsPaused(t.sampleKey) )
                             {
+                                // We'll change the continuous sample volume and speed
                                 t.currentSampleVolume = t.sampleVolume;
                                 t.currentSampleSpeed = t.sampleSpeed;
                                 SoundPlayer.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume);
                                 SoundPlayer.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
+
+                                Console.WriteLine("Resuming sample: " + t.sampleFilename);
                                 SoundPlayer.ResumeSample(t.sampleKey);
                             }
 
@@ -444,17 +445,17 @@ namespace au.edu.federation.SoniFight
                     } // End of if we have an active continuous trigger section
 
                     // There are other conditions under which we can skip processing triggers - such as...
-                    if ((t.allowanceType == Trigger.AllowanceType.InGame && Program.gameState == GameState.InMenu) ||  // ...if the trigger allowance and game state don't match...
-                        (t.allowanceType == Trigger.AllowanceType.InMenu && Program.gameState == GameState.InGame) ||  // ...both ways, or... 
-                        (Program.gameState != Program.previousGameState) ||                                            // ...if we haven't been in this game state for 2 'ticks' or...
-                        (t.isClock) ||                                                                                 // ...if this is the clock trigger or...
-                        (!t.active))                                                                                   // ...if the trigger is not active.
+                    if ( (t.allowanceType == Trigger.AllowanceType.InGame && Program.gameState == GameState.InMenu)  ||  // ...if the trigger allowance and game state don't match...
+                         (t.allowanceType == Trigger.AllowanceType.InMenu && Program.gameState == GameState.InGame)  ||  // ...both ways, or... 
+                         (Program.gameState != Program.previousGameState)                                            ||  // ...if we haven't been in this game state for 2 'ticks' or...
+                         (t.isClock)                                                                                 ||  // ...if this is the clock trigger or...
+                         (!t.active) )                                                                                   // ...if the trigger is not active.
                     {
                         // Skip the rest of the loop for this trigger
                         continue;
                     }
 
-                    // At this stage the trigger can be read and used - so let's get on with it...
+                    // At this point the trigger can be read and used - so let's get on with it...
 
                     // Read the value associated with the watch named by this trigger
                     // Note: We don't know the data type - but the watch itself knows the type, and 'getDynamicValueFromType'
@@ -510,7 +511,7 @@ namespace au.edu.federation.SoniFight
                                 break;
 
                             case Trigger.ComparisonType.DistanceVolumeAscending:
-                                percentage = (float)(1.0 - (currentRange / maxRange));
+                                percentage = (float)(1.0 - (currentRange / maxRange));                                
                                 t.currentSampleVolume = t.sampleVolume * percentage;
                                 if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
                                 {
@@ -524,7 +525,7 @@ namespace au.edu.federation.SoniFight
                                 if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
                                 {
                                     SoundPlayer.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
-                                }
+                                }                                
                                 break;
 
                             case Trigger.ComparisonType.DistancePitchAscending:
@@ -533,7 +534,7 @@ namespace au.edu.federation.SoniFight
                                 if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
                                 {
                                     SoundPlayer.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
-                                }
+                                }                                
                                 break;
                         }
 
@@ -542,7 +543,8 @@ namespace au.edu.federation.SoniFight
                     // Sonify for normal triggers...
                     else if (t.triggerType == Trigger.TriggerType.Normal)
                     {
-                        // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies
+                        // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies.
+                        // NOTE: Even if we're currently playing a normal sample we'll still check for matches and queue any matching triggers.
                         foundMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
 
                         // If we found a match...
@@ -561,53 +563,9 @@ namespace au.edu.federation.SoniFight
                                 {
                                     // Don't attempt to 'say' the sample name
                                     if (!t.useTolk)
-                                    {                                        
-                                        // If we're NOT currently playing a normal InGame trigger
-                                        if (!currentlyPlayingNormalInGameTrigger)
-                                        {
-                                            Console.WriteLine("333We can play a new or queued trigger.");
-
-                                            // If there's already a trigger waiting in the queue...
-                                            if (normalInGameTriggerQueue.Count > 0)
-                                            {
-                                                // ...add this trigger to the end of the queue...
-                                                normalInGameTriggerQueue.Enqueue(t);
-
-                                                // ...and get the next queued trigger from the from of the line.
-                                                t = normalInGameTriggerQueue.Dequeue();
-
-                                                Console.WriteLine("New queue size after dequeue: " + normalInGameTriggerQueue.Count);
-                                            }
-                                            /*else // Otherwise we add this trigger to the queue and then play it
-                                            {
-                                                // ...add this trigger to queue
-                                                //normalInGameTriggerQueue.Enqueue(t);
-                                            }*/
-
-                                            // Now print some debug useful for fine-tuning configs...
-                                            Console.WriteLine(Resources.ResourceManager.GetString("inGameSampleString") + t.sampleFilename +
-                                                              Resources.ResourceManager.GetString("triggerIdString") + t.id +
-                                                              Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
-                                                              Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
-
-                                            // ...and finally play the sample for this trigger. This will either be the trigger we just matched the
-                                            // condition for, or the next queued normal InGame trigger if there was one.
-                                            SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is because normal triggers don't loop
-
-                                            // Also, set that we're now playing a normal InGame trigger so that any further matches during this poll get added
-                                            // to the normalInGameTriggerQueue rather than played immediately.
-                                            currentlyPlayingNormalInGameTrigger = true;
-
-                                            //continue;
-                                        }
-                                        else // If we ARE currently playing a normal in-game trigger sample...
-                                        {
-                                            // ...then we just add this one to the queue for when the currently playing sample ends which will
-                                            // activate the above block to pull the next trigger from the queue during the next poll loop
-                                            normalInGameTriggerQueue.Enqueue(t);
-
-                                            Console.WriteLine("666New queue length is: " + normalInGameTriggerQueue.Count + " with last addition: " + t.sampleFilename);
-                                        }
+                                    {
+                                        // ...add this trigger to the end of the queue. We deal with the cueue later.
+                                        normalInGameTriggerQueue.Enqueue(t);
 
                                     } // End of screen reader active block
 
@@ -626,26 +584,25 @@ namespace au.edu.federation.SoniFight
                                     if (!t.useTolk)
                                     {
                                         // Stop any playing samples
-                                        SoundPlayer.StopAllSounds();
+                                        //SoundPlayer.StopAllSounds();
+                                        SoundPlayer.PauseAllSounds(true);
 
                                         // Print some debug useful for fine-tuning configs
-                                        Console.WriteLine(Resources.ResourceManager.GetString("inMenuSampleString") + t.sampleFilename +
+                                        Console.WriteLine(  Resources.ResourceManager.GetString("inMenuSampleString") + t.sampleFilename +
                                                             Resources.ResourceManager.GetString("triggerIdString") + t.id +
                                                             Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
                                                             Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
 
-                                        // Grab the time at which we played our last menu sonification event...
-                                        //lastMenuSonificationTime = DateTime.Now;
-
                                         // ...then play the sample.
-                                        SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is to NOT loop InMenu triggers - only continuous triggers can do that
+                                        SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is to NOT loop - only continuous triggers do that.
                                     }
 
                                 } // End of if sonification is via a sample section
 
                             } // End of if in InMenu gamestate section                                                        
 
-                        }
+                        } // End of found match section. However...
+                        
                     }
                     else // Type must be Trigger.TriggerType.Modifier
                     {
@@ -717,7 +674,7 @@ namespace au.edu.federation.SoniFight
 
                     } // End of modifier triggers section
 
-                    // If we have a queued menu trigger and we are now not playing, play the queued trigger and remove it from the menuTriggerQueue
+                    // If menu trigger and we are now not playing, play the queued trigger and remove it from the menuTriggerQueue
 
                     // Calculate how many milliseconds since the last menu sonification event
                     //double timeSinceLastMenuSonificationMS = ((TimeSpan)(DateTime.Now - lastMenuSonificationTime)).TotalMilliseconds;
@@ -749,13 +706,60 @@ namespace au.edu.federation.SoniFight
 
                 } // End of trigger sonification loop
 
-                // Do a final check to see if there's a queued normal InGame trigger to play 
-                if (normalInGameTriggerQueue.Count > 0)
+                
+
+                if (normalInGameTriggerQueue.Count > 0 && !(SoundPlayer.PlayingQueueableTrigger(queueableTriggerList)) )
+                {
+                    t = normalInGameTriggerQueue.Dequeue();
+
+                   
+
+                    // Now print some debug useful for fine-tuning configs...
+                    Console.WriteLine("BY JOVE!!!! "  + Resources.ResourceManager.GetString("inGameSampleString") + t.sampleFilename +
+                                      Resources.ResourceManager.GetString("triggerIdString") + t.id +
+                                      Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
+                                      Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
+
+                    // ...and finally play the sample for this trigger. This will either be the trigger we just matched the
+                    // condition for, or the next queued normal InGame trigger if there was one.
+                    SoundPlayer.PlayQueueableSample(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is because normal triggers don't loop
+                }
+
+                    /*
+                    // Now print some debug useful for fine-tuning configs...
+                    Console.WriteLine(Resources.ResourceManager.GetString("inGameSampleString") + t.sampleFilename +
+                                      Resources.ResourceManager.GetString("triggerIdString") + t.id +
+                                      Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
+                                      Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
+
+                    
+
+                    // Also, set that we're now playing a normal InGame trigger so that any further matches during this poll get added
+                    // to the normalInGameTriggerQueue rather than played immediately.
+                    currentlyPlayingQueueableTrigger = true;
+
+                    //continue;
+                    */
+            
+                                            /*
+                                            else // If we ARE currently playing a normal in-game trigger sample...
+                                            {
+                    // ...then we just add this one to the queue for when the currently playing sample ends which will
+                    // activate the above block to pull the next trigger from the queue during the next poll loop
+                    normalInGameTriggerQueue.Enqueue(t);
+
+                    Console.WriteLine(DateTime.Now + " - 666 Adding trigger. New queue length is: " + normalInGameTriggerQueue.Count + " with last addition: " + t.sampleFilename);
+                    */
+            
+
+                // Do a final check to see if there's a queued normal InGame trigger to play.
+                // NOTE: Without this section the queue builds up and doesn't get emptied properly.
+                /*if (normalInGameTriggerQueue.Count > 0)
                 {
                     // Are we already playing a normal InGame trigger?
                     currentlyPlayingNormalInGameTrigger = SoundPlayer.PlayingNormalInGameTrigger(gc.triggerList);
 
-                    // If not then
+                    // If not then...
                     if (!currentlyPlayingNormalInGameTrigger)
                     {
                         Console.WriteLine("555We can play a queued trigger.");
@@ -776,6 +780,7 @@ namespace au.edu.federation.SoniFight
                     }
 
                 } // End of final if there's a queued trigger block
+                */
 
                 // Did the user hit the stop button to cancel sonification? In which case do so!
                 if (sonificationBGW.CancellationPending && sonificationBGW.IsBusy)
@@ -786,7 +791,7 @@ namespace au.edu.federation.SoniFight
                 // Update the SoundEngine
                 SoundPlayer.updateEngine();
 
-                // Finally, once all watches have been looked at, we sleep for the amount of time specified in the GameConfig
+                // Finally, after looping over all triggers we sleep for the amount of time specified in the GameConfig
                 Thread.Sleep(MainForm.gameConfig.PollSleepMS);
 
             } // End of while !e.Cancel
