@@ -592,6 +592,42 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loading continuous sample: .
+        /// </summary>
+        internal static string loadingContinuousSampleString {
+            get {
+                return ResourceManager.GetString("loadingContinuousSampleString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading menu sample: .
+        /// </summary>
+        internal static string loadingMenuSampleString {
+            get {
+                return ResourceManager.GetString("loadingMenuSampleString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading normal sample: .
+        /// </summary>
+        internal static string loadingNormalSampleString {
+            get {
+                return ResourceManager.GetString("loadingNormalSampleString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WARNING: Aborting attempt to load sample for modifier trigger, and modifier triggers don&apos;t use samples..
+        /// </summary>
+        internal static string loadModifierSampleWarningString {
+            get {
+                return ResourceManager.GetString("loadModifierSampleWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Long.
         /// </summary>
         internal static string longString {
@@ -660,6 +696,15 @@ namespace au.edu.federation.SoniFight.Properties {
         internal static string notEqualToString {
             get {
                 return ResourceManager.GetString("notEqualToString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Playing queued normal sample gave us a null sound for: .
+        /// </summary>
+        internal static string nullSoundInQueuedSampleWarningString {
+            get {
+                return ResourceManager.GetString("nullSoundInQueuedSampleWarningString", resourceCulture);
             }
         }
         
@@ -880,6 +925,24 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Skipping sample load for inactive trigger: .
+        /// </summary>
+        internal static string skippingInactiveTriggerSampleString {
+            get {
+                return ResourceManager.GetString("skippingInactiveTriggerSampleString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skipping sample load for tolk trigger: .
+        /// </summary>
+        internal static string skippingTolkSampleLoadString {
+            get {
+                return ResourceManager.GetString("skippingTolkSampleLoadString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sonification stopped..
         /// </summary>
         internal static string sonificationStoppedString {
@@ -1074,6 +1137,15 @@ namespace au.edu.federation.SoniFight.Properties {
         internal static string triggerNameLabelString {
             get {
                 return ResourceManager.GetString("triggerNameLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigger sample stopped: .
+        /// </summary>
+        internal static string triggerSampleStoppedString {
+            get {
+                return ResourceManager.GetString("triggerSampleStoppedString", resourceCulture);
             }
         }
         

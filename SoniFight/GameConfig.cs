@@ -267,6 +267,8 @@ namespace au.edu.federation.SoniFight
         {
             Console.WriteLine("Attempting to connect to process: " + processName);
 
+            Program.connectedToProcess = false;
+
             // Set up the background worker to connect to our game process without freezing the UI and kick it off.
             processConnectionBGW = new BackgroundWorker();
             processConnectionBGW.DoWork += connectToProcess;

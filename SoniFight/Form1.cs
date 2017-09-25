@@ -208,6 +208,8 @@ namespace au.edu.federation.SoniFight
         {
             if (!running)
             {
+                Program.irrKlang = new SoundPlayer();
+
                 // Inflate game config from XML file
                 string pathToConfig = ".\\Configs\\" + MainForm.gameConfig.ConfigDirectory + "\\config.xml";
                 Console.WriteLine("About to read config: " + pathToConfig);
@@ -340,6 +342,8 @@ namespace au.edu.federation.SoniFight
 
                     this.Text = formTitle + Resources.ResourceManager.GetString("statusStoppedString");
                     running = false;
+
+                    Thread.Sleep(500);
                 }
 
                 if (creatingNewConfig)

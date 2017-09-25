@@ -543,4 +543,28 @@
   <data name="queuingTriggerString" xml:space="preserve">
     <value>Queuing Trigger </value>
   </data>
+  <data name="loadingContinuousSampleString" xml:space="preserve">
+    <value>Loading continuous sample: </value>
+  </data>
+  <data name="loadingMenuSampleString" xml:space="preserve">
+    <value>Loading menu sample: </value>
+  </data>
+  <data name="loadingNormalSampleString" xml:space="preserve">
+    <value>Loading normal sample: </value>
+  </data>
+  <data name="loadModifierSampleWarningString" xml:space="preserve">
+    <value>WARNING: Aborting attempt to load sample for modifier trigger, and modifier triggers don't use samples.</value>
+  </data>
+  <data name="nullSoundInQueuedSampleWarningString" xml:space="preserve">
+    <value>Playing queued normal sample gave us a null sound for: </value>
+  </data>
+  <data name="skippingInactiveTriggerSampleString" xml:space="preserve">
+    <value>Skipping sample load for inactive trigger: </value>
+  </data>
+  <data name="skippingTolkSampleLoadString" xml:space="preserve">
+    <value>Skipping sample load for tolk trigger: </value>
+  </data>
+  <data name="triggerSampleStoppedString" xml:space="preserve">
+    <value>Trigger sample stopped: </value>
+  </data>
 </root>

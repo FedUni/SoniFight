@@ -574,6 +574,38 @@
           <source>Queuing Trigger </source>
           <target state="new">Queuing Trigger </target>
         </trans-unit>
+        <trans-unit id="loadingContinuousSampleString" translate="yes" xml:space="preserve">
+          <source>Loading continuous sample: </source>
+          <target state="new">Loading continuous sample: </target>
+        </trans-unit>
+        <trans-unit id="loadingMenuSampleString" translate="yes" xml:space="preserve">
+          <source>Loading menu sample: </source>
+          <target state="new">Loading menu sample: </target>
+        </trans-unit>
+        <trans-unit id="loadingNormalSampleString" translate="yes" xml:space="preserve">
+          <source>Loading normal sample: </source>
+          <target state="new">Loading normal sample: </target>
+        </trans-unit>
+        <trans-unit id="loadModifierSampleWarningString" translate="yes" xml:space="preserve">
+          <source>WARNING: Aborting attempt to load sample for modifier trigger, and modifier triggers don't use samples.</source>
+          <target state="new">WARNING: Aborting attempt to load sample for modifier trigger, and modifier triggers don't use samples.</target>
+        </trans-unit>
+        <trans-unit id="nullSoundInQueuedSampleWarningString" translate="yes" xml:space="preserve">
+          <source>Playing queued normal sample gave us a null sound for: </source>
+          <target state="new">Playing queued normal sample gave us a null sound for: </target>
+        </trans-unit>
+        <trans-unit id="skippingInactiveTriggerSampleString" translate="yes" xml:space="preserve">
+          <source>Skipping sample load for inactive trigger: </source>
+          <target state="new">Skipping sample load for inactive trigger: </target>
+        </trans-unit>
+        <trans-unit id="skippingTolkSampleLoadString" translate="yes" xml:space="preserve">
+          <source>Skipping sample load for tolk trigger: </source>
+          <target state="new">Skipping sample load for tolk trigger: </target>
+        </trans-unit>
+        <trans-unit id="triggerSampleStoppedString" translate="yes" xml:space="preserve">
+          <source>Trigger sample stopped: </source>
+          <target state="new">Trigger sample stopped: </target>
+        </trans-unit>
       </group>
     </body>
   </file>

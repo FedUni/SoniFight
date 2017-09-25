@@ -455,24 +455,29 @@ namespace au.edu.federation.SoniFight
                             case Trigger.ComparisonType.DistanceVolumeDescending:
                                 percentage = (float)(currentRange / maxRange);
                                 t.currentSampleVolume = t.sampleVolume * percentage;
+                                t.currentSampleSpeed = t.sampleSpeed;
                                 Program.irrKlang.ChangeContinuousSampleVolume(t.sampleKey, t.currentSampleVolume);
                                 break;
 
                             case Trigger.ComparisonType.DistanceVolumeAscending:
                                 percentage = (float)(1.0 - (currentRange / maxRange));
                                 t.currentSampleVolume = t.sampleVolume * percentage;
+                                t.currentSampleSpeed = t.sampleSpeed;
                                 Program.irrKlang.ChangeContinuousSampleVolume(t.sampleKey, t.currentSampleVolume);
                                 break;
 
                             case Trigger.ComparisonType.DistancePitchDescending:
                                 percentage = (float)(currentRange / maxRange);
                                 t.currentSampleSpeed = t.sampleSpeed * percentage;
+                                t.currentSampleVolume = t.sampleVolume;                                
                                 Program.irrKlang.ChangeContinuousSampleSpeed(t.sampleKey, t.currentSampleSpeed);
                                 break;
 
                             case Trigger.ComparisonType.DistancePitchAscending:
                                 percentage = (float)(1.0 - (currentRange / maxRange));
-                                t.currentSampleSpeed = t.sampleSpeed * percentage;                                
+                                t.currentSampleSpeed = t.sampleSpeed * percentage;
+                                t.currentSampleVolume = t.sampleVolume;
+                                Console.WriteLine("Pitch ascending new speed: " + t.currentSampleSpeed + " and volume is: " + t.currentSampleVolume);
                                 Program.irrKlang.ChangeContinuousSampleSpeed(t.sampleKey, t.currentSampleSpeed);
                                 break;
                         }
@@ -614,11 +619,11 @@ namespace au.edu.federation.SoniFight
 
                             // TODO: Localise this output.
 
-                            /*Console.WriteLine("1--Found modifier match for trigger " + t.id + " and modification was NOT active.");
+                            Console.WriteLine("1--Found modifier match for trigger " + t.id + " and modification was NOT active.");
                             Console.WriteLine("1--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
                             Console.WriteLine("1--Modifier trigger's sample volume is: " + t.sampleVolume);
                             Console.WriteLine("1--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
-                            Console.WriteLine("1--Modifier trigger's sample speed is: " + t.sampleSpeed);*/
+                            Console.WriteLine("1--Modifier trigger's sample speed is: " + t.sampleSpeed);
 
                             // Add any volume or pitch changes to the continuous triggers playback
                             continuousTrigger.currentSampleVolume *= t.sampleVolume;
@@ -626,7 +631,7 @@ namespace au.edu.federation.SoniFight
                             Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
                             Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
 
-                            //Console.WriteLine("1--Multiplying gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
+                            Console.WriteLine("1--Multiplying gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
                         }
 
                         // Else modification already active on this continuous trigger? Do nothing.
@@ -638,11 +643,11 @@ namespace au.edu.federation.SoniFight
                         {
                             // TODO: Localise this output.
 
-                            /*Console.WriteLine("2--Did NOT find modifier match for trigger " + t.id + " and modification WAS active so needs resetting.");
+                            Console.WriteLine("2--Did NOT find modifier match for trigger " + t.id + " and modification WAS active so needs resetting.");
                             Console.WriteLine("2--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
                             Console.WriteLine("2--Modifier trigger's sample volume is: " + t.sampleVolume);
                             Console.WriteLine("2--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
-                            Console.WriteLine("2--Modifier trigger's sample speed is: " + t.sampleSpeed);*/
+                            Console.WriteLine("2--Modifier trigger's sample speed is: " + t.sampleSpeed);
 
                             // Set the flag on this modification trigger to say it's inactive
                             t.modificationActive = false;
@@ -653,7 +658,7 @@ namespace au.edu.federation.SoniFight
                             Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
                             Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
 
-                            //Console.WriteLine("2--Dividing gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
+                            Console.WriteLine("2--Dividing gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
                         }
 
                         // Else sonification already inactive after failing match? Do nothing.

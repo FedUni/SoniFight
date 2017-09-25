@@ -6232,7 +6232,7 @@
       <sampleVolume>0.5</sampleVolume>
       <useTolk>false</useTolk>
       <isClock>false</isClock>
-      <active>true</active>
+      <active>false</active>
     </Trigger>
     <Trigger>
       <id>343</id>
@@ -6266,7 +6266,7 @@
       <sampleVolume>0.5</sampleVolume>
       <useTolk>false</useTolk>
       <isClock>false</isClock>
-      <active>false</active>
+      <active>true</active>
     </Trigger>
     <Trigger>
       <id>345</id>
@@ -6305,7 +6305,7 @@
     <Trigger>
       <id>348</id>
       <name>Continuous Trigger Modifier - Pitch Change on P2 Crouch</name>
-      <description>Modifies continous sample speed on P2 crouch</description>
+      <description>Modifies continuous sample speed on P2 crouch</description>
       <value xsi:type="xsd:string">2</value>
       <triggerType>Modifier</triggerType>
       <allowanceType>InGame</allowanceType>
@@ -6327,14 +6327,14 @@
       <triggerType>Modifier</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>37</watchOneId>
-      <secondaryId>342</secondaryId>
+      <secondaryId>344</secondaryId>
       <comparisonType>EqualTo</comparisonType>
       <sampleFilename>NONE</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>0.5</sampleVolume>
+      <sampleVolume>1</sampleVolume>
       <useTolk>false</useTolk>
       <isClock>false</isClock>
-      <active>false</active>
+      <active>true</active>
     </Trigger>
     <Trigger>
       <id>351</id>
