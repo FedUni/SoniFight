@@ -46,7 +46,7 @@ namespace au.edu.federation.SoniFight
         public static AutoResetEvent resetEvent = new AutoResetEvent(false); // We use this to reset the worker
 
         // Our IrrKlang SoundPlayer instance
-        static SoundPlayer soundplayer;
+        public static SoundPlayer irrKlang = new SoundPlayer();
 
         // Are we connected to the process specified in the current GameConfig?
         public static bool connectedToProcess = false;
@@ -74,13 +74,13 @@ namespace au.edu.federation.SoniFight
             sonificationBGW.WorkerSupportsCancellation = true;  // We do want to be able to cancel the background worker
 
             // Initialise our irrKlang SoundPlayer class ready to play audio
-            Program.soundplayer = new SoundPlayer();
+            //Program.soundplayer = new SoundPlayer();
 
             // Main loop - we STAY on this line until the application terminates
             Application.Run(new MainForm());
 
             // IrrKlang cleanup (unload and samples and dispose of player)
-            SoundPlayer.ShutDown();
+            irrKlang.ShutDown();
         }
 
         // Method to determine if a trigger dependency has been met or not
@@ -327,7 +327,6 @@ namespace au.edu.federation.SoniFight
             while (!e.Cancel)
             {
                 //Console.WriteLine("Game state is: " + gameState);
-
                 
                 // Update all active watch destination addresses (this must happen once per poll)
                 Watch w;
@@ -398,12 +397,7 @@ namespace au.edu.federation.SoniFight
 
                     } // End of if a second or more has elapsed block                    
 
-                } // End of game state update block
-
-                // Check to see if there are any normal InGame triggers playing
-                bool currentlyPlayingQueueableTrigger = SoundPlayer.PlayingQueueableTrigger(queueableTriggerList);
-                
-                //Console.WriteLine("Pre-trigger loop, currently playing normal is: " + currentlyPlayingNormalInGameTrigger);
+                } // End of game state update block               
 
                 // Initially say that we have not found a match to activate a sonification event
                 foundMatch = false;
@@ -418,25 +412,28 @@ namespace au.edu.federation.SoniFight
                     // Note: This check must occur before the below 'should-we-skip-this-trigger' block to function correctly.
                     if (t.active && t.triggerType == Trigger.TriggerType.Continuous)
                     {
-                        // If we're InMenu...
+                        // If we're InMenu we stop all continuous samples.
                         if (Program.gameState == GameState.InMenu)
                         {
-                            SoundPlayer.PauseSample(t.sampleKey);
+                            Program.irrKlang.ContinuousEngine.StopAllSounds();
+                            Program.irrKlang.PlayingContinuousSamples = false;
                         }
-                        else // ...otherwise if we're InGame...
+                        else if (Program.gameState == GameState.InGame && !(Program.irrKlang.PlayingContinuousSamples)) // Just changed to InGame? Play any continuous sounds (check stops multiple play calls)
                         {
+                            Program.irrKlang.PlayContinuousSample(t);
+
                             // ...then start the continuous trigger sample playing again.
-                            if (SoundPlayer.SampleLoaded(t.sampleKey) && !SoundPlayer.IsSamplePlaying(t.sampleKey) && SoundPlayer.IsPaused(t.sampleKey) )
+                            /*if (Program.irrKlang.SampleLoaded(t.sampleKey) && !Program.irrKlang.IsSamplePlaying(t.sampleKey) && Program.irrKlang.IsPaused(t.sampleKey) )
                             {
                                 // We'll change the continuous sample volume and speed
                                 t.currentSampleVolume = t.sampleVolume;
                                 t.currentSampleSpeed = t.sampleSpeed;
-                                SoundPlayer.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume);
-                                SoundPlayer.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
+                                Program.irrKlang.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume);
+                                Program.irrKlang.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
 
                                 Console.WriteLine("Resuming sample: " + t.sampleFilename);
-                                SoundPlayer.ResumeSample(t.sampleKey);
-                            }
+                                Program.irrKlang.ResumeSample(t.sampleKey);
+                            }*/
 
                             // At this point we should be playing the continuous trigger, so we will NOT skip the rest of this iteration on the trigger
                             // so that any volume/speed adjustments can be made, if necessary.
@@ -503,39 +500,33 @@ namespace au.edu.federation.SoniFight
                         {
                             case Trigger.ComparisonType.DistanceVolumeDescending:
                                 percentage = (float)(currentRange / maxRange);
-                                t.currentSampleVolume = t.sampleVolume * percentage;
-                                if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
-                                {
-                                    SoundPlayer.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume);
-                                }
+                                t.currentSampleVolume = t.sampleVolume * percentage;                                
+                                Program.irrKlang.ChangeContinuousSampleVolume(t.sampleKey, t.currentSampleVolume);
                                 break;
 
                             case Trigger.ComparisonType.DistanceVolumeAscending:
                                 percentage = (float)(1.0 - (currentRange / maxRange));                                
-                                t.currentSampleVolume = t.sampleVolume * percentage;
-                                if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
-                                {
-                                    SoundPlayer.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume);
-                                }
+                                t.currentSampleVolume = t.sampleVolume * percentage;                                
+                                Program.irrKlang.ChangeContinuousSampleVolume(t.sampleKey, t.currentSampleVolume);
                                 break;
 
-                            case Trigger.ComparisonType.DistancePitchDescending:
+                            /*case Trigger.ComparisonType.DistancePitchDescending:
                                 percentage = (float)(currentRange / maxRange);
                                 t.currentSampleSpeed = t.sampleSpeed * percentage;
-                                if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
+                                if (Program.irrKlang.CurrentlyPlaying(t.sampleKey))
                                 {
-                                    SoundPlayer.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
+                                    Program.irrKlang.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
                                 }                                
                                 break;
 
                             case Trigger.ComparisonType.DistancePitchAscending:
                                 percentage = (float)(1.0 - (currentRange / maxRange));
                                 t.currentSampleSpeed = t.sampleSpeed * percentage;
-                                if (SoundPlayer.CurrentlyPlaying(t.sampleKey))
+                                if (Program.irrKlang.CurrentlyPlaying(t.sampleKey))
                                 {
-                                    SoundPlayer.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
+                                    Program.irrKlang.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
                                 }                                
-                                break;
+                                break;*/
                         }
 
                     } // End of if triggerType is Continuous and gameState is InGame block
@@ -564,10 +555,10 @@ namespace au.edu.federation.SoniFight
                                     // Don't attempt to 'say' the sample name
                                     if (!t.useTolk)
                                     {
-                                        // ...add this trigger to the end of the queue. We deal with the cueue later.
-                                        normalInGameTriggerQueue.Enqueue(t);
+                                        // Try to play the normal sample. If there's another normal sample playing then this sample will be added to the play queue in the SoundPlayer class.
+                                        Program.irrKlang.PlayNormalSample(t); 
 
-                                    } // End of screen reader active block
+                                    }
 
                                 } // End of if this trigger is a sample (not a screen reader based event) block
                             }
@@ -577,15 +568,15 @@ namespace au.edu.federation.SoniFight
                                 if (t.useTolk && screenReaderActive)
                                 {
                                     // ..then output the sonification event by saying the sample filename string.
-                                    Tolk.Output(t.sampleFilename);
+                                    Tolk.Speak(t.sampleFilename, true);
                                 }
                                 else // Sample is a sample file as opposed to screen reader output
                                 {
                                     if (!t.useTolk)
                                     {
                                         // Stop any playing samples
-                                        //SoundPlayer.StopAllSounds();
-                                        SoundPlayer.PauseAllSounds(true);
+                                        Program.irrKlang.StopMenuSounds();
+                                        //Program.irrKlang.PauseAllSounds(true);
 
                                         // Print some debug useful for fine-tuning configs
                                         Console.WriteLine(  Resources.ResourceManager.GetString("inMenuSampleString") + t.sampleFilename +
@@ -594,7 +585,7 @@ namespace au.edu.federation.SoniFight
                                                             Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
 
                                         // ...then play the sample.
-                                        SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is to NOT loop - only continuous triggers do that.
+                                        Program.irrKlang.PlayMenuSample(t);
                                     }
 
                                 } // End of if sonification is via a sample section
@@ -635,8 +626,8 @@ namespace au.edu.federation.SoniFight
                                 // Add any volume or pitch changes to the continuous triggers playback
                                 continuousTrigger.currentSampleVolume *= t.sampleVolume;
                                 continuousTrigger.currentSampleSpeed *= t.sampleSpeed;
-                                SoundPlayer.ChangeSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
-                                SoundPlayer.ChangeSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
+                                Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
+                                Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
 
                                 //Console.WriteLine("1--Multiplying gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
                             }
@@ -662,8 +653,8 @@ namespace au.edu.federation.SoniFight
                                 // Reset the volume and pitch of the continuous trigger based on the modification trigger's volume and pitch
                                 continuousTrigger.currentSampleVolume /= t.sampleVolume;
                                 continuousTrigger.currentSampleSpeed /= t.sampleSpeed;
-                                SoundPlayer.ChangeSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
-                                SoundPlayer.ChangeSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
+                                Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
+                                Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
 
                                 //Console.WriteLine("2--Dividing gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
                             }
@@ -673,6 +664,24 @@ namespace au.edu.federation.SoniFight
                         } // End of if we did NOT match the modifier condition
 
                     } // End of modifier triggers section
+
+
+
+                    if (!Program.irrKlang.PlayingNormalSample)
+                    {
+                        Program.irrKlang.PlayQueuedNormalSample();
+                    }
+
+
+
+
+
+
+
+
+
+
+
 
                     // If menu trigger and we are now not playing, play the queued trigger and remove it from the menuTriggerQueue
 
@@ -706,9 +715,9 @@ namespace au.edu.federation.SoniFight
 
                 } // End of trigger sonification loop
 
-                
+                /*
 
-                if ( (normalInGameTriggerQueue.Count > 0) && !(SoundPlayer.PlayingQueueableTrigger(queueableTriggerList)) )
+                if ((normalInGameTriggerQueue.Count > 0) 
                 {
                     t = normalInGameTriggerQueue.Dequeue();
 
@@ -723,8 +732,8 @@ namespace au.edu.federation.SoniFight
                     // ...and finally play the sample for this trigger. This will either be the trigger we just matched the
                     // condition for, or the next queued normal InGame trigger if there was one.
                     //SoundPlayer.PlayQueueableSample(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is because normal triggers don't loop
-                    SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is because normal triggers don't loop
-                }
+                    Program.irrKlang.PlayNormalSample(t);
+                }*/
 
                     /*
                     // Now print some debug useful for fine-tuning configs...
@@ -790,7 +799,7 @@ namespace au.edu.federation.SoniFight
                 }
 
                 // Update the SoundEngine
-                SoundPlayer.updateEngine();
+                Program.irrKlang.UpdateEngines();
 
                 // Finally, after looping over all triggers we sleep for the amount of time specified in the GameConfig
                 Thread.Sleep(MainForm.gameConfig.PollSleepMS);

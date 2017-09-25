@@ -558,6 +558,22 @@
           <source>Exception during IsAnythingPlaying check: </source>
           <target state="new">Exception during IsAnythingPlaying check: </target>
         </trans-unit>
+        <trans-unit id="normalSampleNullSoundWarningString" translate="yes" xml:space="preserve">
+          <source>Playing normal sample gave us a null sound for: </source>
+          <target state="new">Playing normal sample gave us a null sound for: </target>
+        </trans-unit>
+        <trans-unit id="playingQueuedTriggerString" translate="yes" xml:space="preserve">
+          <source>Playing Queued Trigger </source>
+          <target state="new">Playing Queued Trigger </target>
+        </trans-unit>
+        <trans-unit id="playingTriggerString" translate="yes" xml:space="preserve">
+          <source>Playing Trigger </source>
+          <target state="new">Playing Trigger </target>
+        </trans-unit>
+        <trans-unit id="queuingTriggerString" translate="yes" xml:space="preserve">
+          <source>Queuing Trigger </source>
+          <target state="new">Queuing Trigger </target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -646,11 +646,38 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Playing normal sample gave us a null sound for: .
+        /// </summary>
+        internal static string normalSampleNullSoundWarningString {
+            get {
+                return ResourceManager.GetString("normalSampleNullSoundWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not Equal To.
         /// </summary>
         internal static string notEqualToString {
             get {
                 return ResourceManager.GetString("notEqualToString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Playing Queued Trigger .
+        /// </summary>
+        internal static string playingQueuedTriggerString {
+            get {
+                return ResourceManager.GetString("playingQueuedTriggerString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Playing Trigger .
+        /// </summary>
+        internal static string playingTriggerString {
+            get {
+                return ResourceManager.GetString("playingTriggerString", resourceCulture);
             }
         }
         
@@ -705,6 +732,15 @@ namespace au.edu.federation.SoniFight.Properties {
         internal static string processNotFoundWarningString2 {
             get {
                 return ResourceManager.GetString("processNotFoundWarningString2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Queuing Trigger .
+        /// </summary>
+        internal static string queuingTriggerString {
+            get {
+                return ResourceManager.GetString("queuingTriggerString", resourceCulture);
             }
         }
         

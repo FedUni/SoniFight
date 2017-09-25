@@ -165,7 +165,7 @@ namespace au.edu.federation.SoniFight
             // Update our configs selected index so we can move back to it if the user goes from the edit to the main tabs
             MainForm.selectedConfigDropdownIndex = this.configsComboBox.SelectedIndex;
 
-            SoundPlayer.UnloadAllSamples();
+            Program.irrKlang.UnloadAllSamples();
         }
 
         // Method to cleanly close down the app
@@ -397,7 +397,7 @@ namespace au.edu.federation.SoniFight
             running = false;
             Thread.Sleep(500);
 
-            SoundPlayer.UnloadAllSamples();
+            Program.irrKlang.UnloadAllSamples();
         }
 
         // Method to refresh the main config selection dropdown menu

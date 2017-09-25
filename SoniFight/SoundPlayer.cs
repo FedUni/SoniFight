@@ -6,175 +6,284 @@ using au.edu.federation.SoniFight.Properties;
 
 namespace au.edu.federation.SoniFight
 {
-    interface ISoundEventStopReceiver
-    {
-        void OnSoundStopped(ISound sound, StopEventCause reason, object userData);
-    }
-
     // Class used to play and manipulate sonification events
-    public class SoundPlayer 
+    public class SoundPlayer : ISoundStopEventReceiver
     {
         // We'll build up a dictionary (i.e. list of key-value pairs) mapping the sample filename to the actual loaded sample
         // which can be used by any given GameConfig        
-        private static Dictionary<string, ISound> sampleDictionary = new Dictionary<string, ISound>();
+        private Dictionary<string, ISound> sampleDictionary = new Dictionary<string, ISound>();
 
-        // The sound engine object itself
-        private static ISoundEngine soundEngine;
+        // We also keep track of all samples which are currently playing. When we play them we add them to this list, when they
+        // stop they are removed from this list by the OnSoundStopped method (which is part of the ISoundStopEventReceiver interface).
+        private Queue<Trigger> playQueue = new Queue<Trigger>();
 
-        public static bool readyToPlayNextQueuedSample = true;
+        // The sound engine for menu samples
+        private ISoundEngine menuEngine;
+        public ISoundEngine MenuEngine
+        {
+            get { return menuEngine;  }
+            set { menuEngine = value; }
+        }
+
+        // The sound engine for normal samples (these may have AllowanceTypes of InGame or Any)
+        private ISoundEngine normalEngine;
+        public ISoundEngine NormalEngine
+        {
+            get { return normalEngine;  }
+            set { normalEngine = value; }
+        }
+
+        // The sound engine for continuously playing samples
+        private ISoundEngine continuousEngine;
+        public ISoundEngine ContinuousEngine
+        {
+            get { return continuousEngine;  }
+            set { continuousEngine = value; }
+        }
+
+        // Flag to keep track of whether we're currently playing any continuous samples
+        private bool playingContinuousSamples = false;
+        public bool PlayingContinuousSamples
+        {
+            get { return playingContinuousSamples;  }
+            set { playingContinuousSamples = value; }
+        }
+
+        private bool playingNormalSample = false;
+        public bool PlayingNormalSample
+        {
+            get { return playingNormalSample;  }
+            set { playingNormalSample = value; }
+        }
 
         // Constructor
         public SoundPlayer()
         {
-            soundEngine = new ISoundEngine();
-        }
+            menuEngine = new ISoundEngine();
+            normalEngine = new ISoundEngine();
+            continuousEngine = new ISoundEngine();
+        }        
 
-        public void OnSoundStopped(ISound sound, StopEventCause reason, object userData)
+        // OnSoundStopped handler method - this is used for triggers with a type of Normal and an allowance type of InGame or ANy ONLY -
+        // other types of triggers do not get assigned this OnSoundStopped handler.
+        void ISoundStopEventReceiver.OnSoundStopped(ISound sound, StopEventCause reason, object userData)
         {
-            Console.WriteLine("Sound: " + sound.ToString() + " stopped for reason: " + reason);
+            Console.WriteLine("Sound: " + sound.ToString() + " stopped for reason: " + reason + " userdata tostring: " + userData.ToString() );
+
+            // Set the flag that we are not playing a normal sample
+            PlayingNormalSample = false;
         }
 
         // Method to load a sample and specify whether it should loop or not when played
-        public static bool LoadSample(string sampleKey, bool loopSample)
+        public bool LoadSample(Trigger t)
         {
-            // Print just the sample name being loaded.
-            //NOTE: The key itself is of the form: ".\Configs\CONFIG_FOLDER_NAME\SAMPLE_NAME.FILE_EXTENSION"
-            int index = sampleKey.LastIndexOf("\\") + 1;
-            string shortKey = sampleKey.Substring(index, sampleKey.Length - index);
-            Console.WriteLine("Loading sample: " + shortKey);
-
-            // Load the sound by playing it. Params: sample filename, loop, start paused, stream mode, enable sound effects
-            ISound sound = soundEngine..Play2D(sampleKey, loopSample, true, StreamMode.AutoDetect, true);
-
-            // Otherwise add to our sample list, increment the SAM and return true for success
-            if (!sampleDictionary.ContainsKey(sampleKey))
+            if (t.triggerType == Trigger.TriggerType.Modifier)
             {
-                sampleDictionary.Add(sampleKey, sound);
+                Console.WriteLine("Modifier triggers do not use samples - they modify the samples of continuous triggers.");
+                return false;
             }
 
-            //soundEngine.StopAllSounds();
+            if (!t.active)
+            {
+                Console.WriteLine("Skipping inactive trigger: " + t.id + " - " + t.sampleFilename);
+                return false;
+            }
 
+            if (t.useTolk)
+            {
+                Console.WriteLine("Skipping tolk trigger: " + t.id + " - " + t.sampleFilename);
+                return false;
+            }
+
+            // Print just the sample name being loaded.
+            //NOTE: The key itself is of the form: ".\Configs\CONFIG_FOLDER_NAME\SAMPLE_NAME.FILE_EXTENSION"
+            int index = t.sampleKey.LastIndexOf("\\") + 1;
+            string shortKey = t.sampleKey.Substring(index, t.sampleKey.Length - index);
+
+            ISound sound = null;
+
+            // Load the sound by playing it, but stop it from playing immediately.
+            // Params: sample filename, loop, start paused, stream mode, enable sound effects
+
+            if (t.triggerType == Trigger.TriggerType.Continuous)
+            {
+                Console.WriteLine("Loading continous sample: " + shortKey);
+
+                // Params: key, loop, start paused, stream mode, allow effects
+                sound = continuousEngine.Play2D(t.sampleKey, true, true, StreamMode.AutoDetect, true);
+                continuousEngine.StopAllSounds();
+            }
+            else if (t.triggerType == Trigger.TriggerType.Normal)
+            {
+                if (t.allowanceType == Trigger.AllowanceType.InMenu)
+                {
+                    Console.WriteLine("Loading menu sample: " + shortKey);
+                    sound = menuEngine.Play2D(t.sampleKey, false, true, StreamMode.AutoDetect, true);
+                    menuEngine.StopAllSounds();
+                }
+                else // Allowance is InGame or Any
+                {
+                    Console.WriteLine("Loading normal sample: " + shortKey);
+                    sound = normalEngine.Play2D(t.sampleKey, false, true, StreamMode.AutoDetect, true);
+                    normalEngine.StopAllSounds();
+                    //sound.setSoundStopEventReceiver(this, t.sampleKey);
+                }
+            }
+
+            // Otherwise add to our sample list, increment the SAM and return true for success
+            if (!sampleDictionary.ContainsKey(t.sampleKey))
+            {
+                sampleDictionary.Add(t.sampleKey, sound);
+            }
+           
             return true;
         }
 
-        // Method to return whether a specific sample is currently loaded
-        public static bool SampleLoaded(string sampleKey)
+        // Method to play the sample identified by the key at the volume and pitch provided
+        public void PlayMenuSample(Trigger t)
         {
-            if (sampleDictionary.ContainsKey(sampleKey))
-            {
-                return true;
-            }
-            return false;
-        }
+            // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
+            ISound sound = menuEngine.Play2D(t.sampleKey, false, false, StreamMode.AutoDetect, true);
 
-        // Method to return whether a specific sample is currently playing or not
-        public static bool CurrentlyPlaying(string sampleKey)
-        {
-            /*** IMPORTANT: We CANNOT do this as paused samples return as playing, and we load all our samples by starting them paused!!! ***/
-            //return soundEngine.IsCurrentlyPlaying(sampleKey);
-            
-            ISound sample;
-            try
+            if (sound != null)
             {
-                if (sampleDictionary.TryGetValue(sampleKey, out sample))
-                {
-                    if ( (soundEngine.IsCurrentlyPlaying(sampleKey)) && !(sample.Paused) )
-                    {
-                        Console.WriteLine("CP says currently playing and not paused: " + sampleKey);
-                        return true;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("NOPE!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Exception was: " + e.Message);
-            }
-            return false;
-        }
-
-        // NOTE: Samples which are paused return as playing, but we only want samples which are actually playing!
-        public static void printAllSamplesCurrentlyPlaying()
-        {
-            try
-            {
-                int x = 1;
-                foreach (KeyValuePair<string, ISound> sample in sampleDictionary)
-                {
-                    if (soundEngine.IsCurrentlyPlaying(sample.Key) && !sample.Value.Paused)
-                    {
-                        Console.WriteLine( (x++) + " currently playing " + sample.Key);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("MENTAL" + e.Message);
+                // Set volume and pitch according to trigger
+                sound.Volume = t.sampleVolume;
+                sound.PlaybackSpeed = t.sampleSpeed;
             }
         }
 
-        // Method to toggle a sample between paused and unpaused states
-        public static void ToggleSamplePaused(string sampleKey)
+        // Method to play the sample identified by the key at the volume and pitch provided
+        public void PlayNormalSample(Trigger t)
         {
-            ISound sample;
-            if (sampleDictionary.TryGetValue(sampleKey, out sample))
+            // If we're already playing a normal trigger sample...
+            if (PlayingNormalSample)
             {
-                sample.Paused = !sample.Paused;
+                // ...then we enqueue this one for when the currently playing one has stopped.
+                playQueue.Enqueue(t);
+                Console.WriteLine(  Resources.ResourceManager.GetString("queuingTriggerString") +
+                                    Resources.ResourceManager.GetString("inGameSampleString") + t.sampleFilename);
             }
-        }
-
-        // Method to toggle a sample between paused and unpaused states
-        /*** THIS METHOD DOES NOT WORK =( ***/
-        /*public static void StopPlayingSample(string sampleKey)
-        {
-            try
+            else // If we're not playing a normal trigger sample then we can play this one right away.
             {
-                ISound sample;
-                if (sampleDictionary.TryGetValue(sampleKey, out sample))
+                Console.WriteLine(  Resources.ResourceManager.GetString("playingTriggerString") + 
+                                    Resources.ResourceManager.GetString("inGameSampleString") + t.sampleFilename +
+                                    Resources.ResourceManager.GetString("triggerIdString") + t.id +
+                                    Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
+                                    Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
+
+                // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
+                ISound sound = normalEngine.Play2D(t.sampleKey, false, false, StreamMode.AutoDetect, true);
+
+                if (sound != null)
                 {
-                    Console.WriteLine("About to stop sample with key: " + sampleKey);
-                }
+                    // Set volume and pitch according to trigger
+                    sound.Volume = t.sampleVolume;
+                    sound.PlaybackSpeed = t.sampleSpeed;
 
-                sample.Stop(); //.Paused = !sample.Paused;
+                    // Set sound stop event listener
+                    sound.setSoundStopEventReceiver(this, t.sampleKey);
 
-                soundEngine.Update();
+                    // Update the sound in the sample dictionary to be this specific sound instance
+                    sampleDictionary[t.sampleKey] = sound;
 
-                if ( IsSamplePlaying(sampleKey) )
-                {
-                    Console.WriteLine("Sample is still fucking playing!");
+                    PlayingNormalSample = true;
+
+                    //normalSamplePlaying = t.sampleKey;
                 }
                 else
                 {
-                    Console.WriteLine("SAMPLE HAS FINALLY STOPPED PLAYING!");
+                    Console.WriteLine( Resources.ResourceManager.GetString("normalSampleNullSoundWarningString") + t.sampleFilename);
                 }
 
-                
+            } // End of if we're not already playing a normal trigger sample block
 
+        } // End of method
 
-            }
-            catch (Exception e)
+        // Method to play the sample identified by the key at the volume and pitch provided
+        public void PlayQueuedNormalSample()
+        {
+            if (playQueue.Count > 0)
             {
-                Console.WriteLine("BAD THINGS HAPPENED IN StopPlayingSample: " + e.Message);
-                Console.WriteLine(e.InnerException);
+                Trigger t = playQueue.Dequeue();
+
+                Console.WriteLine("PLAYING QUEUED!!!! " + Resources.ResourceManager.GetString("inGameSampleString") + t.sampleFilename +
+                                      Resources.ResourceManager.GetString("triggerIdString") + t.id +
+                                      Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
+                                      Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
+
+                // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
+                ISound sound = normalEngine.Play2D(t.sampleKey, false, false, StreamMode.AutoDetect, true);
+
+                if (sound != null)
+                {
+                    // Set volume and pitch according to trigger
+                    sound.Volume = t.sampleVolume;
+                    sound.PlaybackSpeed = t.sampleSpeed;
+
+                    // Set sound stop event listener
+                    sound.setSoundStopEventReceiver(this, t.sampleKey);
+
+                    // Update the sound in the sample dictionary to be this specific sound instance
+                    sampleDictionary[t.sampleKey] = sound;
+
+                    PlayingNormalSample = true;
+
+                    //normalSamplePlaying = t.sampleKey;
+                }
+                else
+                {
+                    Console.WriteLine("Playing queued normal sample gave us a null sound for: " + t.sampleFilename);
+                }
             }
-        }*/
+        }
+
+        // Method to play the sample identified by the key at the volume and pitch provided
+        public void PlayContinuousSample(Trigger t)
+        {
+            // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
+            ISound sound = continuousEngine.Play2D(t.sampleKey, true, false, StreamMode.AutoDetect, true);
+
+            if (sound != null)
+            {
+                // Set volume and pitch according to trigger
+                sound.Volume = t.sampleVolume;
+                sound.PlaybackSpeed = t.sampleSpeed;
+
+                // Set sound stop event listener
+                //sound.setSoundStopEventReceiver(this, t.sampleKey);
+
+                // Update the sound in the sample dictionary to be this specific sound instance
+                sampleDictionary[t.sampleKey] = sound;
+
+                playingContinuousSamples = true;
+            }
+        }
 
         // Method to stop any playing sounds on the static soundEngine instance
-        public static void StopAllSounds()
-        {
-            Console.WriteLine("Stopping all sounds!");
-            soundEngine.StopAllSounds();
-
-            
+        public void StopMenuSounds()
+        {   
+            menuEngine.StopAllSounds();
         }
 
-        public static void PauseAllSounds(bool pauseState)
-        {
-            soundEngine.SetAllSoundsPaused(pauseState);
+        public void PauseNormalSound()
+        {   
+            normalEngine.SetAllSoundsPaused(true);
         }
+
+        public void ResumeNormalSound()
+        {
+            normalEngine.SetAllSoundsPaused(false);
+        }
+
 
         // Method to pause a currently playing sample
-        public static void PauseSample(string sampleKey)
+        public void PauseSample(string sampleKey)
         {
+            /*ISoundSource sample = soundEngine.pa.GetSoundSource(sampleKey);
+
+            sample.*/
+
             ISound sample;
             if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
             {
@@ -191,7 +300,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to resume a currently paused sample
-        public static void ResumeSample(string sampleKey)
+        public void ResumeSample(string sampleKey)
         {
             ISound sample;
             if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
@@ -205,7 +314,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to check if a given sample is paused or not
-        public static bool IsPaused(string sampleKey)
+        public bool IsPaused(string sampleKey)
         {
             ISound sample;
             if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
@@ -220,174 +329,65 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to change the volume of a given sample
-        public static void ChangeSampleVolume(string sampleKey, float volume)
+        public void ChangeContinuousSampleVolume(string sampleKey, float volume)
         {
-            // If we're playing the sample...
-            if (soundEngine.IsCurrentlyPlaying(sampleKey))
+            ISound sound = null;
+            if (sampleDictionary.TryGetValue(sampleKey, out sound) && sound != null)
             {
-                // ...get access to it. If successfully found, clamp the requested volume between zero and one and then set the new volume.
-                ISound sample = sampleDictionary[sampleKey];
                 if (volume < 0.0f) { volume = 0.0f; }
                 if (volume > 1.0f) { volume = 1.0f; }
-                sample.Volume = volume;
-            }
+                sound.Volume = volume;
+            }            
         }
 
         // Method to change the playback speed of a given sample
-        public static void ChangeSampleSpeed(string sampleKey, float speed)
+        public void ChangeContinuousSampleSpeed(string sampleKey, float speed)
         {
             // If we're playing the sample...
-            if (soundEngine.IsCurrentlyPlaying(sampleKey))
-            {
+            
                 // ...get access to it. If successfully found, modify its speed.
-                ISound sample = sampleDictionary[sampleKey];
-                sample.PlaybackSpeed = speed;
-            }
-        }
-
-        // Method to check if any sample in the dictionary is currently playing
-        public static bool IsAnythingPlaying()
-        {
-            try
-            {
-                foreach (KeyValuePair<string, ISound> samplePair in sampleDictionary)
-                {
-                    ISound sample;
-                    if (sampleDictionary.TryGetValue(samplePair.Key, out sample) && sample != null)
-                    {
-                        if (soundEngine.IsCurrentlyPlaying(samplePair.Key) && !sample.Paused)
-                        {
-                            //Console.WriteLine("IsAnythingPlaying returns true for sample: " + sample.Key);
-                            return true;
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(Resources.ResourceManager.GetString("isAnythingPlayingExceptionString") + e.Message);
-            }
-            //Console.WriteLine("IsAnythingPlaying returns false!!!!!!!!!!!!!!!!!!");
-            return false;
-        }
-
-        // Method to check if any sample in the dictionary is currently playing
-        public static bool IsThisNormalInGameTriggerPlaying(Trigger t)
-        {
-            if (soundEngine.IsCurrentlyPlaying(t.sampleKey))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        // Method to determine if we're current playing a normal InGame trigger (if we are, we'll queue any normal InGame triggers that match their trigger conditions)
-        // NOTE: Paused samples count as playing - be careful of this!
-        public static bool PlayingQueueableTrigger(List<Trigger> queueableTriggerList)
-        {
-            foreach (Trigger t in queueableTriggerList)
-            {
-                if ( (Program.gameState == Program.GameState.InGame) && (SoundPlayer.CurrentlyPlaying(t.sampleKey)) )
-                //if ( SoundPlayer.CurrentlyPlaying(t.sampleKey) )
-                {
-                    Console.WriteLine(DateTime.Now + " ******************************** Found playing sample: " + t.sampleFilename);
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        // Method to play the sample identified by the key at the volume and pitch provided
-        public static void PlayQueueableSample(string sampleKey, float volume, float pitch, bool loopSample)
-        {
-            ISound sample;
-            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
-            {
-
-
-                // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
-                sample = soundEngine.Play2D(sampleKey, loopSample, false, StreamMode.AutoDetect, true);
-
-                // Set volume and pitch then play the sample
-                sample.Volume = volume;
-                sample.PlaybackSpeed = pitch;
-
-                sampleDictionary[sampleKey] = sample;
-
-                //sample.setSoundStopEventReceiver(au.edu.federation.SoniFight.SoundPlayer, "foo!");
-
-                readyToPlayNextQueuedSample = false;
-            }
-        }
-
-
-        // Method to check if a given sample currently playing.
-        // WARNING: Paused samples count as playing!
-        public static bool IsSamplePlaying(string sampleKey)
-        {
-            ISound sample;
-            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
-            {
-                if (soundEngine.IsCurrentlyPlaying(sampleKey) && !sample.Paused)
-                {
-                    return true;
-                }
-            }
-            return false;
+                ISound sound = sampleDictionary[sampleKey];
+                sound.PlaybackSpeed = speed;
         }
 
         // Method to update the SoundEngine
-        public static void updateEngine()
+        public void UpdateEngines()
         {
             // We must call the Update method on the SoundEngine several times per second for everything to run smoothly, especially
             // when moving sounds around. As such, this is called from the main loop 1000 / POLL_SLEEP_MS times per second.
-            soundEngine.Update();
+            menuEngine.Update();
+            normalEngine.Update();
+            continuousEngine.Update();
         }
-
-        // Method to play the sample identified by the key at the volume and pitch provided
-        public static void Play(string sampleKey, float volume, float pitch, bool loopSample)
-        {
-            //ISound sample;
-            //if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
-            //{
-            ISound sample = sampleDictionary[sampleKey];
-
-            // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
-            sample = soundEngine.Play2D(sampleKey, loopSample, false, StreamMode.AutoDetect, true);
-
-            // Set volume and pitch
-            sample.Volume = volume;
-            sample.PlaybackSpeed = pitch;
-            //}            
-        }
-
-        
 
         // Method to unload all samples and clear the sample dictionary
-        public static void UnloadAllSamples()
+        public void UnloadAllSamples()
         {
-            soundEngine.StopAllSounds();
-
-            // Release all samples in the dictionary then clear it
-            /*foreach (KeyValuePair<string, ISound> sample in sampleDictionary)
-            {
-                Console.WriteLine("Releasing sample: " + sample.Key);
-                sample.Value.Dispose();
-            }*/
+            menuEngine.StopAllSounds();
+            normalEngine.StopAllSounds();
+            continuousEngine.StopAllSounds();
+            
             sampleDictionary.Clear();
+            playQueue.Clear();
 
             // Unload all samples and force garbage collection
-            soundEngine.RemoveAllSoundSources();
-            System.GC.Collect();
+            menuEngine.RemoveAllSoundSources();
+            normalEngine.RemoveAllSoundSources();
+            continuousEngine.RemoveAllSoundSources();
         }
 
-        public static void ShutDown()
+        // Method to unload all samples, dispose of the engines and perform garbage collection
+        public void ShutDown()
         {
-            // Free the samples and finally realease the irrKlang sound engine itself
             UnloadAllSamples();
-            soundEngine.Dispose();
+
+            menuEngine.Dispose();
+            normalEngine.Dispose();
+            continuousEngine.Dispose();
+
+            System.GC.Collect();
         }
 
     } // End of SoundPlayer class
 
-} // End of SoniFight namespace
+} // End of namespace

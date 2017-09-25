@@ -531,4 +531,16 @@
   <data name="isAnythingPlayingExceptionString" xml:space="preserve">
     <value>Exception during IsAnythingPlaying check: </value>
   </data>
+  <data name="normalSampleNullSoundWarningString" xml:space="preserve">
+    <value>Playing normal sample gave us a null sound for: </value>
+  </data>
+  <data name="playingQueuedTriggerString" xml:space="preserve">
+    <value>Playing Queued Trigger </value>
+  </data>
+  <data name="playingTriggerString" xml:space="preserve">
+    <value>Playing Trigger </value>
+  </data>
+  <data name="queuingTriggerString" xml:space="preserve">
+    <value>Queuing Trigger </value>
+  </data>
 </root>

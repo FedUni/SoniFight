@@ -212,17 +212,16 @@ namespace au.edu.federation.SoniFight
                         t.sampleKey = ".\\Configs\\" + configDirectory + t.sampleFilename;
 
                         // If the sample isn't loaded and it's not the clock or a modifier trigger (these don't use samples) and we're not using tolk...
-                        if (!SoundPlayer.SampleLoaded(t.sampleKey) && !t.isClock && t.triggerType != Trigger.TriggerType.Modifier && !t.useTolk)
+                        //if ( !(Program.irrKlang.SampleLoaded(t.sampleKey)) && !(t.isClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.useTolk) )
+                        if ( !(t.isClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.useTolk) )
                         {
                             // ...then load the sample for the trigger.
-                            if (t.triggerType != Trigger.TriggerType.Continuous)
-                            {
-                                SoundPlayer.LoadSample(t.sampleKey, false); // Normal trigger samples don't loop...                                
-                            }
-                            else
-                            {
-                                SoundPlayer.LoadSample(t.sampleKey, true); // ...but continuous trigger samples do!
-                            }
+                            // NOTE: The sample is loaded into the specific engine used for playback based on the trigger type
+                            Program.irrKlang.LoadSample(t);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Something is stupid!");
                         }
                     }
 
