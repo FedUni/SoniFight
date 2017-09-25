@@ -250,16 +250,6 @@ namespace au.edu.federation.SoniFight
             // Save some typing
             GameConfig gc = MainForm.gameConfig;
 
-            // Generate a list of triggers which can be queued in order to minimise the searching through all the triggers when determining if any are currently playing
-            List<Trigger> queueableTriggerList = new List<Trigger>();
-            foreach (Trigger trig in gc.triggerList)
-            {
-                if (!trig.useTolk && !trig.isClock && trig.triggerType == Trigger.TriggerType.Normal && !(trig.allowanceType == Trigger.AllowanceType.InMenu))
-                {
-                    queueableTriggerList.Add(trig);
-                }
-            }
-
             // Convert all trigger 'value' properties (which are of type dynamic) to their actual type
             // Note: This is a ONE-OFF operation that we only do at the start before the main sonification loop
             Trigger t;
@@ -341,6 +331,8 @@ namespace au.edu.federation.SoniFight
                     }
                 }
 
+                // ----- Process clock trigger to keep track of game state (if there is one) -----                
+
                 // Update the game state to be InGame or InMenu if we have a clock
                 if (gc.ClockTriggerId != -1)
                 {
@@ -388,9 +380,6 @@ namespace au.edu.federation.SoniFight
                         else // Current and last clock values the same? Then set the gamestate to be InMenu.
                         {
                             Program.gameState = GameState.InMenu;
-                            //Console.WriteLine("GameState is InMenu.");
-
-                            // We might have simply paused the game here so we won't clear the normalInGameTriggerQueue so they resume playing on un-pause
                         }
 
                         //Console.WriteLine("Program state is: " + Program.gameState);
@@ -398,70 +387,35 @@ namespace au.edu.federation.SoniFight
                     } // End of if a second or more has elapsed block                    
 
                 } // End of game state update block               
+                                
 
-                // Initially say that we have not found a match to activate a sonification event
-                foundMatch = false;
+                /*** NOTE: The below separate trigger lists are constructed in the GameConfig.connectToProcess method ***/
+                 
 
-                // Process triggers to provide sonification
-                for (int triggerLoop = 0; triggerLoop < gc.triggerList.Count; ++triggerLoop)
+                // ----- Process continuous triggers -----                
+
+                // If we're InMenu we stop all continuous samples...
+                if (Program.gameState == GameState.InMenu)
                 {
-                    // Grab a trigger
-                    t = MainForm.gameConfig.triggerList[triggerLoop];
-
-                    // Have an active continuous trigger?
-                    // Note: This check must occur before the below 'should-we-skip-this-trigger' block to function correctly.
-                    if (t.active && t.triggerType == Trigger.TriggerType.Continuous)
+                    Program.irrKlang.ContinuousEngine.StopAllSounds();
+                    Program.irrKlang.PlayingContinuousSamples = false;
+                }
+                else // ...otherwise we're InGame so start them ALL and set our flag to say continuous samples are playing.
+                {
+                    for (int continuousTriggerLoop = 0; continuousTriggerLoop < gc.continuousTriggerList.Count; ++continuousTriggerLoop)
                     {
-                        // If we're InMenu we stop all continuous samples.
-                        if (Program.gameState == GameState.InMenu)
-                        {
-                            Program.irrKlang.ContinuousEngine.StopAllSounds();
-                            Program.irrKlang.PlayingContinuousSamples = false;
-                        }
-                        else if (Program.gameState == GameState.InGame && !(Program.irrKlang.PlayingContinuousSamples)) // Just changed to InGame? Play any continuous sounds (check stops multiple play calls)
+                        // Grab a trigger
+                        t = MainForm.gameConfig.continuousTriggerList[continuousTriggerLoop];
+
+                        // Not already playing? Start the sample!
+                        if (!Program.irrKlang.PlayingContinuousSamples)
                         {
                             Program.irrKlang.PlayContinuousSample(t);
-
-                            // ...then start the continuous trigger sample playing again.
-                            /*if (Program.irrKlang.SampleLoaded(t.sampleKey) && !Program.irrKlang.IsSamplePlaying(t.sampleKey) && Program.irrKlang.IsPaused(t.sampleKey) )
-                            {
-                                // We'll change the continuous sample volume and speed
-                                t.currentSampleVolume = t.sampleVolume;
-                                t.currentSampleSpeed = t.sampleSpeed;
-                                Program.irrKlang.ChangeSampleVolume(t.sampleKey, t.currentSampleVolume);
-                                Program.irrKlang.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
-
-                                Console.WriteLine("Resuming sample: " + t.sampleFilename);
-                                Program.irrKlang.ResumeSample(t.sampleKey);
-                            }*/
-
-                            // At this point we should be playing the continuous trigger, so we will NOT skip the rest of this iteration on the trigger
-                            // so that any volume/speed adjustments can be made, if necessary.
                         }
 
-                    } // End of if we have an active continuous trigger section
+                        // Read the value associated with the watch named by this trigger
+                        readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
 
-                    // There are other conditions under which we can skip processing triggers - such as...
-                    if ( (t.allowanceType == Trigger.AllowanceType.InGame && Program.gameState == GameState.InMenu)  ||  // ...if the trigger allowance and game state don't match...
-                         (t.allowanceType == Trigger.AllowanceType.InMenu && Program.gameState == GameState.InGame)  ||  // ...both ways, or... 
-                         (Program.gameState != Program.previousGameState)                                            ||  // ...if we haven't been in this game state for 2 'ticks' or...
-                         (t.isClock)                                                                                 ||  // ...if this is the clock trigger or...
-                         (!t.active) )                                                                                   // ...if the trigger is not active.
-                    {
-                        // Skip the rest of the loop for this trigger
-                        continue;
-                    }
-
-                    // At this point the trigger can be read and used - so let's get on with it...
-
-                    // Read the value associated with the watch named by this trigger
-                    // Note: We don't know the data type - but the watch itself knows the type, and 'getDynamicValueFromType'
-                    // will ensure the correct data type is read.
-                    readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
-
-                    // Sonfiy for continuous events. Note: Continuous triggers may only be used in the InGame state!
-                    if (t.triggerType == Trigger.TriggerType.Continuous && Program.gameState == GameState.InGame)
-                    {
                         // Get the secondary watch associated with this continuous trigger
                         readValue2 = Utils.getWatchWithId(t.secondaryId).getDynamicValueFromType();
 
@@ -500,220 +454,282 @@ namespace au.edu.federation.SoniFight
                         {
                             case Trigger.ComparisonType.DistanceVolumeDescending:
                                 percentage = (float)(currentRange / maxRange);
-                                t.currentSampleVolume = t.sampleVolume * percentage;                                
+                                t.currentSampleVolume = t.sampleVolume * percentage;
                                 Program.irrKlang.ChangeContinuousSampleVolume(t.sampleKey, t.currentSampleVolume);
                                 break;
 
                             case Trigger.ComparisonType.DistanceVolumeAscending:
-                                percentage = (float)(1.0 - (currentRange / maxRange));                                
-                                t.currentSampleVolume = t.sampleVolume * percentage;                                
+                                percentage = (float)(1.0 - (currentRange / maxRange));
+                                t.currentSampleVolume = t.sampleVolume * percentage;
                                 Program.irrKlang.ChangeContinuousSampleVolume(t.sampleKey, t.currentSampleVolume);
                                 break;
 
-                            /*case Trigger.ComparisonType.DistancePitchDescending:
+                            case Trigger.ComparisonType.DistancePitchDescending:
                                 percentage = (float)(currentRange / maxRange);
                                 t.currentSampleSpeed = t.sampleSpeed * percentage;
-                                if (Program.irrKlang.CurrentlyPlaying(t.sampleKey))
-                                {
-                                    Program.irrKlang.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
-                                }                                
+                                Program.irrKlang.ChangeContinuousSampleSpeed(t.sampleKey, t.currentSampleSpeed);
                                 break;
 
                             case Trigger.ComparisonType.DistancePitchAscending:
                                 percentage = (float)(1.0 - (currentRange / maxRange));
-                                t.currentSampleSpeed = t.sampleSpeed * percentage;
-                                if (Program.irrKlang.CurrentlyPlaying(t.sampleKey))
-                                {
-                                    Program.irrKlang.ChangeSampleSpeed(t.sampleKey, t.currentSampleSpeed);
-                                }                                
-                                break;*/
+                                t.currentSampleSpeed = t.sampleSpeed * percentage;                                
+                                Program.irrKlang.ChangeContinuousSampleSpeed(t.sampleKey, t.currentSampleSpeed);
+                                break;
                         }
 
-                    } // End of if triggerType is Continuous and gameState is InGame block
+                    } // End of continuous trigger loop
 
-                    // Sonify for normal triggers...
-                    else if (t.triggerType == Trigger.TriggerType.Normal)
+                    // Only once we've set any/all continuous samples to play in the above loop do we set the flag so that multiple copies of the same trigger don't get activated!
+                    Program.irrKlang.PlayingContinuousSamples = true;
+
+                } // End of continuous trigger section
+
+
+                // ----- Process normal triggers ----- 
+
+                // Initially say that we have not found a match to activate a sonification event
+                //foundMatch = false;
+
+                for (int normalTriggerLoop = 0; normalTriggerLoop < gc.normalTriggerList.Count; ++normalTriggerLoop)
+                {
+                    // Grab a trigger
+                    t = MainForm.gameConfig.normalTriggerList[normalTriggerLoop];
+
+                    // Read the new value associated with the watch named by this trigger
+                    readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
+
+                    // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies.
+                    // NOTE: Even if we're currently playing a normal sample we'll still check for matches and queue any matching triggers.
+                    foundMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
+                    
+                    // If we found a match...
+                    if (foundMatch)
                     {
+                        // Gamestate is InGame and allowance type is either InGame or Any?
+                        if (Program.gameState == GameState.InGame && t.allowanceType != Trigger.AllowanceType.InMenu)
+                        {
+                            // If we're using a screen reader for the sonification event of this trigger...
+                            if (screenReaderActive && t.useTolk)
+                            {
+                                // ...then say the sample filename text. Final false means queue not interrupt anything currently being spoken.
+                                Tolk.Speak(t.sampleFilename, false);
+                            }
+                            else // Sample is file based
+                            {
+                                // Don't attempt to 'say' the sample name
+                                if (!t.useTolk)
+                                {
+                                    if (t.allowanceType == Trigger.AllowanceType.InMenu)
+                                    {
+                                        Program.irrKlang.PlayMenuSample(t);
+                                    }
+                                    else // Allowance type is InGame or Any
+                                    {
+                                        // Try to play the normal sample. If there's another normal sample playing then this sample will be added to the play queue in the SoundPlayer class.
+                                        Program.irrKlang.PlayNormalSample(t);
+                                    }
+                                }
+
+                            } // End of if this trigger is a sample (not a screen reader based event) block
+                        }
+                        else // Game state must be InMenu or allowance type is InMenu - either is fine.
+                        {
+                            // If we're using tolk and have an active screen reader...
+                            if (t.useTolk && screenReaderActive)
+                            {
+                                // ..then output the sonification event by saying the sample filename string. Final true means interupt any current speech.
+                                Tolk.Speak(t.sampleFilename, true);
+                            }
+                            else // Sample is a sample file as opposed to screen reader output
+                            {
+                                if (!t.useTolk)
+                                {
+                                    if (Program.gameState == GameState.InMenu && t.allowanceType != Trigger.AllowanceType.InGame) // i.e. allowance type is InMenu or Any
+                                    {
+                                        // Stop any playing samples
+                                        Program.irrKlang.StopMenuSounds();                                        
+
+                                        // ...then play the latest trigger sample.
+                                        Program.irrKlang.PlayMenuSample(t);
+                                    }
+                                    else // Allowance type must be Any
+                                    {
+
+                                    }
+                                }
+                            }
+
+                        } // End of if sonification is via a sample section
+
+                    } // End of found match section. 
+
+                    // Update our 'previousValue' ready for the next check (used if comparison type is 'Changed').
+                    // Note: We do this regardless of whether we found a match
+                    t.previousValue = readValue;
+
+                } // End of loop over normal triggers
+
+                /*
+                // There are other conditions under which we can skip processing triggers - such as...
+                if ( (t.allowanceType == Trigger.AllowanceType.InGame && Program.gameState == GameState.InMenu)  ||  // ...if the trigger allowance and game state don't match...
+                     (t.allowanceType == Trigger.AllowanceType.InMenu && Program.gameState == GameState.InGame)  ||  // ...both ways, or... 
+                     (Program.gameState != Program.previousGameState)                                            ||  // ...if we haven't been in this game state for 2 'ticks' or...
+                     (t.isClock)                                                                                 ||  // ...if this is the clock trigger or...
+                     (!t.active) )                                                                                   // ...if the trigger is not active.
+                {
+                    // Skip the rest of the loop for this trigger
+                    continue;
+                }
+                */
+
+
+
+                // ----- Process modifier triggers ----- 
+
+                // No need to reset foundMatch here, it gets overwritten with a new value below!
+
+                for (int modifierTriggerLoop = 0; modifierTriggerLoop < gc.modifierTriggerList.Count; ++modifierTriggerLoop)
+                {
+                    // Grab a trigger
+                    t = MainForm.gameConfig.modifierTriggerList[modifierTriggerLoop];
+
+                    // Read the new value associated with the watch named by this trigger
+                    readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
+
+                    // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies.
+                    foundMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
+                    
+                    // Get the continuous trigger related to this modifier trigger.
+                    // Note: We ALWAYS need this because even if we don't find a match, we may need to reset the volume/pitch of the continuous sample to it's non-modified state
+                    Trigger continuousTrigger = Utils.getTriggerWithId(t.secondaryId);
+                    
+                    // Modifier condition met? Okay...
+                    if (foundMatch)
+                    {
+                        // If this modifier trigger is NOT currently active we must activate it because we HAVE found a match for the modifier condition (i.e. foundMatch)
+                        if (!t.modificationActive)
+                        {
+                            // Set the flag on this modification trigger to say it's active
+                            t.modificationActive = true;
+
+                            // TODO: Localise this output.
+
+                            /*Console.WriteLine("1--Found modifier match for trigger " + t.id + " and modification was NOT active.");
+                            Console.WriteLine("1--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
+                            Console.WriteLine("1--Modifier trigger's sample volume is: " + t.sampleVolume);
+                            Console.WriteLine("1--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
+                            Console.WriteLine("1--Modifier trigger's sample speed is: " + t.sampleSpeed);*/
+
+                            // Add any volume or pitch changes to the continuous triggers playback
+                            continuousTrigger.currentSampleVolume *= t.sampleVolume;
+                            continuousTrigger.currentSampleSpeed *= t.sampleSpeed;
+                            Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
+                            Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
+
+                            //Console.WriteLine("1--Multiplying gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
+                        }
+
+                        // Else modification already active on this continuous trigger? Do nothing.
+                    }
+                    else // Did NOT match modifier condition. Do we need to reset the continous trigger?
+                    {
+                        // If this modifier trigger IS currently active and we failed the match we have to reset the continuous triggers playback conditions
+                        if (t.modificationActive)
+                        {
+                            // TODO: Localise this output.
+
+                            /*Console.WriteLine("2--Did NOT find modifier match for trigger " + t.id + " and modification WAS active so needs resetting.");
+                            Console.WriteLine("2--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
+                            Console.WriteLine("2--Modifier trigger's sample volume is: " + t.sampleVolume);
+                            Console.WriteLine("2--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
+                            Console.WriteLine("2--Modifier trigger's sample speed is: " + t.sampleSpeed);*/
+
+                            // Set the flag on this modification trigger to say it's inactive
+                            t.modificationActive = false;
+
+                            // Reset the volume and pitch of the continuous trigger based on the modification trigger's volume and pitch
+                            continuousTrigger.currentSampleVolume /= t.sampleVolume;
+                            continuousTrigger.currentSampleSpeed /= t.sampleSpeed;
+                            Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
+                            Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
+
+                            //Console.WriteLine("2--Dividing gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
+                        }
+
+                        // Else sonification already inactive after failing match? Do nothing.
+
+                    } // End of if we did NOT match the modifier condition
+
+                } // End of modifier triggers section
+
+
+                // ----- Process menu triggers -----
+                /*
+                if (Program.gameState == GameState.InMenu)
+                { 
+                    for (int menuTriggerLoop = 0; menuTriggerLoop < gc.menuTriggerList.Count; ++menuTriggerLoop)
+                    {
+                        // Grab a trigger
+                        t = MainForm.gameConfig.menuTriggerList[menuTriggerLoop];
+
+                        // Read the new value associated with the watch named by this trigger
+                        readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
+
                         // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies.
                         // NOTE: Even if we're currently playing a normal sample we'll still check for matches and queue any matching triggers.
                         foundMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
 
                         // If we found a match...
                         if (foundMatch)
-                        {
-                            // InGame? Fine - play the sample because we don't stop InGame triggers from overlapping too heavily.
-                            if (Program.gameState == GameState.InGame)
+                        {   
+                            // If we're using a screen reader for the sonification event of this trigger...
+                            if (screenReaderActive && t.useTolk)
                             {
-                                // If we're using a screen reader for the sonification event of this trigger...
-                                if (screenReaderActive && t.useTolk)
+                                // ...then the sample filename contains the text to say - so say it. Final truee means interrupt anything currently being spoken.
+                                Tolk.Speak(t.sampleFilename, true);
+                            }
+                            else // Sample is file based
+                            {
+                                // Don't attempt to 'say' the sample name
+                                if (!t.useTolk)
                                 {
-                                    // ...then the sample filename contains the text to say - so say it. Final false means do not interrupt anything currently being spoken.
-                                    Tolk.Speak(t.sampleFilename, false);
+                                    // Stop any playing samples
+                                    Program.irrKlang.StopMenuSounds();
+
+                                    // Print some debug useful for fine-tuning configs
+                                    Console.WriteLine(Resources.ResourceManager.GetString("inMenuSampleString") + t.sampleFilename +
+                                                      Resources.ResourceManager.GetString("triggerIdString") + t.id +
+                                                      Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
+                                                      Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
+
+                                    // ...then play the sample.
+                                    Program.irrKlang.PlayMenuSample(t);
                                 }
-                                else // Sample is file based
-                                {
-                                    // Don't attempt to 'say' the sample name
-                                    if (!t.useTolk)
-                                    {
-                                        // Try to play the normal sample. If there's another normal sample playing then this sample will be added to the play queue in the SoundPlayer class.
-                                        Program.irrKlang.PlayNormalSample(t); 
 
-                                    }
+                            } // End of if this trigger is a sample (not a screen reader based event) block
 
-                                } // End of if this trigger is a sample (not a screen reader based event) block
-                            }
-                            else // GameState must be InMenu
-                            {
-                                // If we're using tolk and have an active screen reader...
-                                if (t.useTolk && screenReaderActive)
-                                {
-                                    // ..then output the sonification event by saying the sample filename string.
-                                    Tolk.Speak(t.sampleFilename, true);
-                                }
-                                else // Sample is a sample file as opposed to screen reader output
-                                {
-                                    if (!t.useTolk)
-                                    {
-                                        // Stop any playing samples
-                                        Program.irrKlang.StopMenuSounds();
-                                        //Program.irrKlang.PauseAllSounds(true);
+                        } // End of found match section. 
 
-                                        // Print some debug useful for fine-tuning configs
-                                        Console.WriteLine(  Resources.ResourceManager.GetString("inMenuSampleString") + t.sampleFilename +
-                                                            Resources.ResourceManager.GetString("triggerIdString") + t.id +
-                                                            Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
-                                                            Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
+                        // Update our 'previousValue' ready for the next check (used if comparison type is 'Changed').
+                        // Note: We do this regardless of whether we found a match
+                        t.previousValue = readValue;
 
-                                        // ...then play the sample.
-                                        Program.irrKlang.PlayMenuSample(t);
-                                    }
+                    } // End of loop over menu triggers
 
-                                } // End of if sonification is via a sample section
+                } // End of if gamestate is InMenu block
 
-                            } // End of if in InMenu gamestate section                                                        
+                */
 
-                        } // End of found match section. However...
-                        
-                    }
-                    else // Type must be Trigger.TriggerType.Modifier
-                    {
-                        // Check our modifier trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies
-                        foundMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
+                // --- Pull normal sample from the queue and play it if we're not already playing a normal sample
 
-                        // Get the continuous trigger related to this modifier trigger.
-                        // Note: We ALWAYS need this because even if we don't find a match, we may need to reset the volume/pitch of the continuous sample to it's non-modified state
-                        Trigger continuousTrigger = Utils.getTriggerWithId(t.secondaryId);
+                if (!Program.irrKlang.PlayingNormalSample)
+                {
+                    Program.irrKlang.PlayQueuedNormalSample();
+                }
+                
+                    
 
-                        //Console.WriteLine("!!Cont vol: " + continuousTrigger.currentSampleVolume + ". Cont speed: " + continuousTrigger.currentSampleSpeed);
-
-                        // Modifier condition met? Okay...
-                        if (foundMatch)
-                        {
-                            // If this modifier trigger is NOT currently active we must activate it because we HAVE found a match for the modifier condition (i.e. foundMatch)
-                            if (!t.modificationActive)
-                            {
-                                // Set the flag on this modification trigger to say it's active
-                                t.modificationActive = true;
-                                
-                                // TODO: Localise this output.
-
-                                /*Console.WriteLine("1--Found modifier match for trigger " + t.id + " and modification was NOT active.");
-                                Console.WriteLine("1--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
-                                Console.WriteLine("1--Modifier trigger's sample volume is: " + t.sampleVolume);
-                                Console.WriteLine("1--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
-                                Console.WriteLine("1--Modifier trigger's sample speed is: " + t.sampleSpeed);*/
-
-                                // Add any volume or pitch changes to the continuous triggers playback
-                                continuousTrigger.currentSampleVolume *= t.sampleVolume;
-                                continuousTrigger.currentSampleSpeed *= t.sampleSpeed;
-                                Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
-                                Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
-
-                                //Console.WriteLine("1--Multiplying gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
-                            }
-
-                            // Else modification already active on this continuous trigger? Do nothing.
-                        }
-                        else // Did NOT match modifier condition. Do we need to reset the continous trigger?
-                        {
-                            // If this modifier trigger IS currently active and we failed the match we have to reset the continuous triggers playback conditions
-                            if (t.modificationActive)
-                            {
-                                // TODO: Localise this output.
-
-                                /*Console.WriteLine("2--Did NOT find modifier match for trigger " + t.id + " and modification WAS active so needs resetting.");
-                                Console.WriteLine("2--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
-                                Console.WriteLine("2--Modifier trigger's sample volume is: " + t.sampleVolume);
-                                Console.WriteLine("2--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
-                                Console.WriteLine("2--Modifier trigger's sample speed is: " + t.sampleSpeed);*/
-
-                                // Set the flag on this modification trigger to say it's inactive
-                                t.modificationActive = false;
-
-                                // Reset the volume and pitch of the continuous trigger based on the modification trigger's volume and pitch
-                                continuousTrigger.currentSampleVolume /= t.sampleVolume;
-                                continuousTrigger.currentSampleSpeed /= t.sampleSpeed;
-                                Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
-                                Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
-
-                                //Console.WriteLine("2--Dividing gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
-                            }
-
-                            // Else sonification already inactive after failing match? Do nothing.
-
-                        } // End of if we did NOT match the modifier condition
-
-                    } // End of modifier triggers section
-
-
-
-                    if (!Program.irrKlang.PlayingNormalSample)
-                    {
-                        Program.irrKlang.PlayQueuedNormalSample();
-                    }
-
-
-
-
-
-
-
-
-
-
-
-
-                    // If menu trigger and we are now not playing, play the queued trigger and remove it from the menuTriggerQueue
-
-                    // Calculate how many milliseconds since the last menu sonification event
-                    //double timeSinceLastMenuSonificationMS = ((TimeSpan)(DateTime.Now - lastMenuSonificationTime)).TotalMilliseconds;
-
-                    // If we have a queued menu trigger and either i.) We're not currently playing audio OR ii.) It's been at least half a second since the last menu sonification event...                    
-                    /*if (menuTriggerQueue.Count > 0 && timeSinceLastMenuSonificationMS > 500.0)
-                    {
-                        // ...then we play the queued sample!
-
-                        //Console.WriteLine("Playing from queue!");
-
-                        // This both gets the trigger and removes it from the queue in one fell swoop!
-                        Trigger menuTrigger = menuTriggerQueue.Dequeue();
-
-                        Console.WriteLine("Playing/removing queued sample: " + menuTrigger.sampleKey + " - trigger id: " + menuTrigger.id + " Volume: " + menuTrigger.sampleVolume + " Speed: " + t.sampleSpeed);
-
-                        //Console.WriteLine("*** MS last menu sonification = " + timeSinceLastMenuSonificationMS);
-
-                        // Mark the time at which we played the last menu sonification event...
-                        lastMenuSonificationTime = DateTime.Now;
-
-                        // ...then actually play the sample
-                        SoundPlayer.Play(menuTrigger.sampleKey, menuTrigger.sampleVolume, menuTrigger.sampleSpeed, false); // Final false is because we don't loop InMenu triggers
-                    }*/
-
-                    // Update our 'previousValue' ready for the next check (used if comparison type is 'Changed').
-                    // Note: We do this regardless of whether we found a match
-                    t.previousValue = readValue;
-
-                } // End of trigger sonification loop
+                //} // End of trigger sonification loop
 
                 /*
 

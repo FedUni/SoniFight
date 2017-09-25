@@ -68,7 +68,7 @@ namespace au.edu.federation.SoniFight
         // other types of triggers do not get assigned this OnSoundStopped handler.
         void ISoundStopEventReceiver.OnSoundStopped(ISound sound, StopEventCause reason, object userData)
         {
-            Console.WriteLine("Sound: " + sound.ToString() + " stopped for reason: " + reason + " userdata tostring: " + userData.ToString() );
+            Console.WriteLine("Sound: " + sound.ToString() + " stopped for reason: " + reason);
 
             // Set the flag that we are not playing a normal sample
             PlayingNormalSample = false;
@@ -147,6 +147,12 @@ namespace au.edu.federation.SoniFight
 
             if (sound != null)
             {
+                // Print some debug useful for fine-tuning configs
+                Console.WriteLine(Resources.ResourceManager.GetString("inMenuSampleString") + t.sampleFilename +
+                                  Resources.ResourceManager.GetString("triggerIdString") + t.id +
+                                  Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
+                                  Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
+
                 // Set volume and pitch according to trigger
                 sound.Volume = t.sampleVolume;
                 sound.PlaybackSpeed = t.sampleSpeed;
@@ -166,11 +172,11 @@ namespace au.edu.federation.SoniFight
             }
             else // If we're not playing a normal trigger sample then we can play this one right away.
             {
-                Console.WriteLine(  Resources.ResourceManager.GetString("playingTriggerString") + 
-                                    Resources.ResourceManager.GetString("inGameSampleString") + t.sampleFilename +
-                                    Resources.ResourceManager.GetString("triggerIdString") + t.id +
-                                    Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
-                                    Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
+                Console.WriteLine(Resources.ResourceManager.GetString("playingTriggerString") + 
+                                  Resources.ResourceManager.GetString("inGameSampleString") + t.sampleFilename +
+                                  Resources.ResourceManager.GetString("triggerIdString") + t.id +
+                                  Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
+                                  Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);
 
                 // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
                 ISound sound = normalEngine.Play2D(t.sampleKey, false, false, StreamMode.AutoDetect, true);
@@ -207,7 +213,7 @@ namespace au.edu.federation.SoniFight
             {
                 Trigger t = playQueue.Dequeue();
 
-                Console.WriteLine("PLAYING QUEUED!!!! " + Resources.ResourceManager.GetString("inGameSampleString") + t.sampleFilename +
+                Console.WriteLine(Resources.ResourceManager.GetString("playingQueuedTriggerString") + t.sampleFilename +
                                       Resources.ResourceManager.GetString("triggerIdString") + t.id +
                                       Resources.ResourceManager.GetString("volumeString") + t.sampleVolume +
                                       Resources.ResourceManager.GetString("speedString") + t.sampleSpeed);

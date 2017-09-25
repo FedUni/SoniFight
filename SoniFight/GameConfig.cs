@@ -88,8 +88,18 @@ namespace au.edu.federation.SoniFight
         // Lists of watches - these may be of various types
         public List<Watch> watchList = new List<Watch>();
 
-        // List of triggers
+        // List of triggers (all triggers to be saved)
         public List<Trigger> triggerList = new List<Trigger>();
+
+        // Trigger list broken up into categories for looping efficiency
+        [XmlIgnore]
+        public List<Trigger> menuTriggerList = new List<Trigger>();
+        [XmlIgnore]
+        public List<Trigger> normalTriggerList = new List<Trigger>();
+        [XmlIgnore]
+        public List<Trigger> continuousTriggerList = new List<Trigger>();
+        [XmlIgnore]
+        public List<Trigger> modifierTriggerList = new List<Trigger>();
 
         // The actual process attached to
         [XmlIgnore]
@@ -213,15 +223,29 @@ namespace au.edu.federation.SoniFight
 
                         // If the sample isn't loaded and it's not the clock or a modifier trigger (these don't use samples) and we're not using tolk...
                         //if ( !(Program.irrKlang.SampleLoaded(t.sampleKey)) && !(t.isClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.useTolk) )
-                        if ( !(t.isClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.useTolk) )
+                        if (!(t.isClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.useTolk))
                         {
                             // ...then load the sample for the trigger.
                             // NOTE: The sample is loaded into the specific engine used for playback based on the trigger type
                             Program.irrKlang.LoadSample(t);
                         }
-                        else
+
+                        // Only add active triggers to these separated lists, and don't add the clock
+                        if (t.active && !t.isClock)
                         {
-                            Console.WriteLine("Something is stupid!");
+                            if (t.triggerType == Trigger.TriggerType.Normal)
+                            {
+                                // This list contains ALL the normal triggers, such as those used for menus as well as those using tolk for sonification
+                                normalTriggerList.Add(t); 
+                            }
+                            else if (t.triggerType == Trigger.TriggerType.Continuous)
+                            {
+                                continuousTriggerList.Add(t);
+                            }                            
+                            else // if (t.triggerType == Trigger.TriggerType.Modifier)
+                            {
+                                modifierTriggerList.Add(t);
+                            }
                         }
                     }
 
