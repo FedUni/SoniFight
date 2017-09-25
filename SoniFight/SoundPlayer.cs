@@ -44,7 +44,7 @@ namespace au.edu.federation.SoniFight
             Console.WriteLine("Loading sample: " + shortKey);
 
             // Load the sound by playing it. Params: sample filename, loop, start paused, stream mode, enable sound effects
-            ISound sound = soundEngine.Play2D(sampleKey, loopSample, true, StreamMode.AutoDetect, true);
+            ISound sound = soundEngine..Play2D(sampleKey, loopSample, true, StreamMode.AutoDetect, true);
 
             // Otherwise add to our sample list, increment the SAM and return true for success
             if (!sampleDictionary.ContainsKey(sampleKey))
@@ -70,13 +70,17 @@ namespace au.edu.federation.SoniFight
         // Method to return whether a specific sample is currently playing or not
         public static bool CurrentlyPlaying(string sampleKey)
         {
+            /*** IMPORTANT: We CANNOT do this as paused samples return as playing, and we load all our samples by starting them paused!!! ***/
+            //return soundEngine.IsCurrentlyPlaying(sampleKey);
+            
             ISound sample;
             try
             {
                 if (sampleDictionary.TryGetValue(sampleKey, out sample))
                 {
-                    if (soundEngine.IsCurrentlyPlaying(sampleKey) && !(sample.Paused))
+                    if ( (soundEngine.IsCurrentlyPlaying(sampleKey)) && !(sample.Paused) )
                     {
+                        Console.WriteLine("CP says currently playing and not paused: " + sampleKey);
                         return true;
                     }
                 }
@@ -283,15 +287,39 @@ namespace au.edu.federation.SoniFight
         {
             foreach (Trigger t in queueableTriggerList)
             {
-                if (Program.gameState == Program.GameState.InGame && SoundPlayer.CurrentlyPlaying(t.sampleKey))
+                if ( (Program.gameState == Program.GameState.InGame) && (SoundPlayer.CurrentlyPlaying(t.sampleKey)) )
+                //if ( SoundPlayer.CurrentlyPlaying(t.sampleKey) )
                 {
-                    //Console.WriteLine(DateTime.Now + " ******************************** Found playing sample: " + t.sampleFilename);
+                    Console.WriteLine(DateTime.Now + " ******************************** Found playing sample: " + t.sampleFilename);
                     return true;
                 }
             }
             return false;
         }
-            
+
+        // Method to play the sample identified by the key at the volume and pitch provided
+        public static void PlayQueueableSample(string sampleKey, float volume, float pitch, bool loopSample)
+        {
+            ISound sample;
+            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
+            {
+
+
+                // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
+                sample = soundEngine.Play2D(sampleKey, loopSample, false, StreamMode.AutoDetect, true);
+
+                // Set volume and pitch then play the sample
+                sample.Volume = volume;
+                sample.PlaybackSpeed = pitch;
+
+                sampleDictionary[sampleKey] = sample;
+
+                //sample.setSoundStopEventReceiver(au.edu.federation.SoniFight.SoundPlayer, "foo!");
+
+                readyToPlayNextQueuedSample = false;
+            }
+        }
+
 
         // Method to check if a given sample currently playing.
         // WARNING: Paused samples count as playing!
@@ -319,40 +347,21 @@ namespace au.edu.federation.SoniFight
         // Method to play the sample identified by the key at the volume and pitch provided
         public static void Play(string sampleKey, float volume, float pitch, bool loopSample)
         {
-            ISound sample;
-            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
-            {
-                // Set volume and pitch then play the sample
-                sample.Volume = volume;
-                sample.PlaybackSpeed = pitch;
+            //ISound sample;
+            //if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
+            //{
+            ISound sample = sampleDictionary[sampleKey];
 
-                // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
-                sample = soundEngine.Play2D(sampleKey, loopSample, false, StreamMode.AutoDetect, true);
-            }            
+            // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
+            sample = soundEngine.Play2D(sampleKey, loopSample, false, StreamMode.AutoDetect, true);
+
+            // Set volume and pitch
+            sample.Volume = volume;
+            sample.PlaybackSpeed = pitch;
+            //}            
         }
 
-        // Method to play the sample identified by the key at the volume and pitch provided
-        public static void PlayQueueableSample(string sampleKey, float volume, float pitch, bool loopSample)
-        {
-            ISound sample;
-            if (sampleDictionary.TryGetValue(sampleKey, out sample) && sample != null)
-            {
-               
-
-                // Params: Sample, play looped, start-paused, stream-mode, enable-sound-effects
-                sample = soundEngine.Play2D(sampleKey, loopSample, false, StreamMode.AutoDetect, true);
-
-                // Set volume and pitch then play the sample
-                sample.Volume = volume;
-                sample.PlaybackSpeed = pitch;
-
-                sampleDictionary[sampleKey] = sample;
-
-                //sample.setSoundStopEventReceiver(au.edu.federation.SoniFight.SoundPlayer, "foo!");
-
-                readyToPlayNextQueuedSample = false;
-            }
-        }
+        
 
         // Method to unload all samples and clear the sample dictionary
         public static void UnloadAllSamples()

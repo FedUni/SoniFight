@@ -556,8 +556,8 @@ namespace au.edu.federation.SoniFight
                                 // If we're using a screen reader for the sonification event of this trigger...
                                 if (screenReaderActive && t.useTolk)
                                 {
-                                    // ...then the sample filename contains the text to say - so say it.
-                                    Tolk.Output(t.sampleFilename);
+                                    // ...then the sample filename contains the text to say - so say it. Final false means do not interrupt anything currently being spoken.
+                                    Tolk.Speak(t.sampleFilename, false);
                                 }
                                 else // Sample is file based
                                 {
@@ -708,7 +708,7 @@ namespace au.edu.federation.SoniFight
 
                 
 
-                if (normalInGameTriggerQueue.Count > 0 && !(SoundPlayer.PlayingQueueableTrigger(queueableTriggerList)) )
+                if ( (normalInGameTriggerQueue.Count > 0) && !(SoundPlayer.PlayingQueueableTrigger(queueableTriggerList)) )
                 {
                     t = normalInGameTriggerQueue.Dequeue();
 
@@ -722,7 +722,8 @@ namespace au.edu.federation.SoniFight
 
                     // ...and finally play the sample for this trigger. This will either be the trigger we just matched the
                     // condition for, or the next queued normal InGame trigger if there was one.
-                    SoundPlayer.PlayQueueableSample(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is because normal triggers don't loop
+                    //SoundPlayer.PlayQueueableSample(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is because normal triggers don't loop
+                    SoundPlayer.Play(t.sampleKey, t.sampleVolume, t.sampleSpeed, false); // Final false is because normal triggers don't loop
                 }
 
                     /*
