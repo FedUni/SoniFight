@@ -567,4 +567,7 @@
   <data name="triggerSampleStoppedString" xml:space="preserve">
     <value>Trigger sample stopped: </value>
   </data>
+  <data name="sayingTolkString" xml:space="preserve">
+    <value>Saying tolk string: </value>
+  </data>
 </root>

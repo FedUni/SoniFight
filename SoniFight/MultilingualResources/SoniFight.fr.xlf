@@ -606,6 +606,10 @@
           <source>Trigger sample stopped: </source>
           <target state="new">Trigger sample stopped: </target>
         </trans-unit>
+        <trans-unit id="sayingTolkString" translate="yes" xml:space="preserve">
+          <source>Saying tolk string: </source>
+          <target state="new">Saying tolk string: </target>
+        </trans-unit>
       </group>
     </body>
   </file>

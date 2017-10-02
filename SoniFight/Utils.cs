@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using au.edu.federation.SoniFight.Properties;
+using System.Text.RegularExpressions;
 
 namespace au.edu.federation.SoniFight
 {
@@ -658,6 +659,27 @@ namespace au.edu.federation.SoniFight
             }
             return highest + 1;
         }
+
+        // Method to substitute all watch braces with the value of that watch
+        // Heavy lifting done by Milosz Krajewski at: https://stackoverflow.com/questions/16537901/c-sharp-regex-match-curly-brackets-contents-only-exclude-braces
+        public static string substituteWatchValuesInString(Trigger t, string s)
+        {
+            // Easy case - just the value of this trigger's watch
+            s = s.Replace("{}", Convert.ToString(Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType()));
+
+            // Complex case - the value of other watches name-checked, for example {66} would have to be replaced with the value of watch 66 as a string
+            Regex regex = new Regex("(?<={)[^}]*(?=})");
+            MatchCollection matches = regex.Matches(s); //your matches: name, name@gmail.com
+            foreach (var match in matches) // e.g. you can loop through your matches like this
+            {
+                Console.WriteLine("Match: " + match);
+
+                this works now do the sub!
+            }
+
+            return s;
+        }
+        
 
     } // End of Utils class
 

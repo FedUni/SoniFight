@@ -6229,10 +6229,10 @@
       <comparisonType>DistanceVolumeAscending</comparisonType>
       <sampleFilename>Heavy-Wind-Mono.mp3</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>0.5</sampleVolume>
+      <sampleVolume>0.7</sampleVolume>
       <useTolk>false</useTolk>
       <isClock>false</isClock>
-      <active>false</active>
+      <active>true</active>
     </Trigger>
     <Trigger>
       <id>343</id>
@@ -6266,7 +6266,7 @@
       <sampleVolume>0.5</sampleVolume>
       <useTolk>false</useTolk>
       <isClock>false</isClock>
-      <active>true</active>
+      <active>false</active>
     </Trigger>
     <Trigger>
       <id>345</id>
@@ -6317,7 +6317,7 @@
       <sampleVolume>1</sampleVolume>
       <useTolk>false</useTolk>
       <isClock>false</isClock>
-      <active>false</active>
+      <active>true</active>
     </Trigger>
     <Trigger>
       <id>349</id>
@@ -6334,7 +6334,7 @@
       <sampleVolume>1</sampleVolume>
       <useTolk>false</useTolk>
       <isClock>false</isClock>
-      <active>true</active>
+      <active>false</active>
     </Trigger>
     <Trigger>
       <id>351</id>
@@ -6355,15 +6355,15 @@
     </Trigger>
     <Trigger>
       <id>352</id>
-      <name>Tolk Clock 85</name>
-      <description>Uses tolk to say 'Clock 85' when it hits 85</description>
-      <value xsi:type="xsd:string">85</value>
+      <name>Tolk Testing</name>
+      <description>Testing</description>
+      <value xsi:type="xsd:string">95</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <watchOneId>0</watchOneId>
       <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Clock 85</sampleFilename>
+      <sampleFilename>Clock 85 because the clock is {1}</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <useTolk>true</useTolk>
@@ -6382,5 +6382,5 @@ Unfortunately in some circumstances random sample playing may be unavoidable bec
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>99</ClockMax>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
+  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
 </GameConfig>

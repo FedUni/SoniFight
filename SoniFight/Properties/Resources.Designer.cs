@@ -862,6 +862,15 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Saying tolk string: .
+        /// </summary>
+        internal static string sayingTolkString {
+            get {
+                return ResourceManager.GetString("sayingTolkString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Screen Reader Text.
         /// </summary>
         internal static string screenReaderTextLabelString {

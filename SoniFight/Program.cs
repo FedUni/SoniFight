@@ -516,8 +516,14 @@ namespace au.edu.federation.SoniFight
                             // If we're using a screen reader for the sonification event of this trigger...
                             if (screenReaderActive && t.useTolk)
                             {
+                                string s = t.sampleFilename;
+                                s = s.Replace("{}", Convert.ToString( Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType() ) );
+                                Console.WriteLine(Resources.ResourceManager.GetString("sayingTolkString") + s);
+
                                 // ...then say the sample filename text. Final false means queue not interrupt anything currently being spoken.
-                                Tolk.Speak(t.sampleFilename, false);
+                                Tolk.Output(s, false);
+
+                                s = Utils.substituteWatchValuesInString(t, s);
                             }
                             else // Sample is file based
                             {
