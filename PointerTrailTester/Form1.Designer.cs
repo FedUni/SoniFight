@@ -1,4 +1,4 @@
-﻿namespace au.edu.federation.PointerTrailTester
+﻿namespace au.edu.federation.PointerChainTester
 {
     partial class Form1
     {

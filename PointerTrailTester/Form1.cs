@@ -3,9 +3,10 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
-using au.edu.federation.PointerTrailTester.Properties;
 
-namespace au.edu.federation.PointerTrailTester
+using au.edu.federation.PointerChainTester.Properties;
+
+namespace au.edu.federation.PointerChainTester
 {
     public partial class Form1 : Form
     {

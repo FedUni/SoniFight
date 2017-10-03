@@ -1,41 +1,302 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="fr" original="POINTERTRAILTESTER/PROPERTIES/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+  <file datatype="xml" source-language="en" target-language="fr" original="POINTERCHAINTESTER/PROPERTIES/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6810.0" tool-company="Microsoft" />
     </header>
     <body>
-      <group id="POINTERTRAILTESTER/PROPERTIES/RESOURCES.RESX" datatype="resx">
+      <group id="POINTERCHAINTESTER/PROPERTIES/RESOURCES.RESX" datatype="resx">
+        <trans-unit id="argumentExceptionString" translate="yes" xml:space="preserve">
+          <source>Illegal pointer chain - argument exception: </source>
+          <target state="translated">Chaîne de pointeur illégal - exception d'argument:</target>
+        </trans-unit>
+        <trans-unit id="formatExceptionString" translate="yes" xml:space="preserve">
+          <source>Illegal pointer chain - do not prefix pointer hops with 0x or such and separate each hop with comma.</source>
+          <target state="translated">Chaîne de pointeur illégal - ne préfixe pas le sauter du pointeur avec 0x ou tel et séparez chaque saut avec une virgule.</target>
+        </trans-unit>
+        <trans-unit id="invalidPointerString" translate="yes" xml:space="preserve">
+          <source>INVALID POINTER TRAIL</source>
+          <target state="translated">CHAÎNE DE POINTE ILLICITE</target>
+        </trans-unit>
         <trans-unit id="notConnectedString" translate="yes" xml:space="preserve">
           <source>NOT CONNECTED TO PROCESS</source>
           <target state="translated">NON CONNECTE AU PROCESSUS</target>
         </trans-unit>
-        <trans-unit id="invalidPointerString" translate="yes" xml:space="preserve">
-          <source>INVALID POINTER TRAIL</source>
-          <target state="translated">ILLÉGAL POINTER TRAIL</target>
-        </trans-unit>
-        <trans-unit id="argumentExceptionString" translate="yes" xml:space="preserve">
-          <source>Illegal pointer trail - argument exception: </source>
-          <target state="translated">Sentier de pointage illégal - exception d'argument: </target>
-        </trans-unit>
-        <trans-unit id="formatExceptionString" translate="yes" xml:space="preserve">
-          <source>Illegal pointer trail - do not prefix pointer hops with 0x or such and separate each hop with comma.</source>
-          <target state="translated">Sentier de pointage illégal - ne préfixe pas le pointeur de sauts avec 0x ou tel et séparez chaque saut avec une virgule.</target>
-        </trans-unit>
         <trans-unit id="overflowExceptionString" translate="yes" xml:space="preserve">
-          <source>Illegal pointer trail - individual pointer hop value exceeds 32-bit limit.</source>
-          <target state="translated">Sentier de pointage illégal - la valeur de saut de pointeur individuel dépasse la limite de 32 bits.</target>
+          <source>Illegal pointer chain - individual pointer hop value exceeds 32-bit limit.</source>
+          <target state="translated">Chaîne de pointeur illégal - la valeur de saut de pointeur individuel dépasse la limite de 32 bits.</target>
         </trans-unit>
       </group>
     </body>
   </file>
-  <file datatype="xml" source-language="en" target-language="fr" original="POINTERTRAILTESTER/FORM1.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+  <file datatype="xml" source-language="en" target-language="fr" original="POINTERCHAINTESTER/FORM1.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6810.0" tool-company="Microsoft" />
     </header>
     <body>
-      <group id="POINTERTRAILTESTER/FORM1.RESX" datatype="resx">
-        <trans-unit id="pictureBox1.Image" translate="no" extype="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64" xml:space="preserve">
+      <group id="POINTERCHAINTESTER/FORM1.RESX" datatype="resx">
+        <trans-unit id="processNameLabel.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Right</source>
+          <target state="needs-review-translation">Right</target>
+        </trans-unit>
+        <trans-unit id="processNameLabel.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="processNameLabel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>12, 61</source>
+          <target state="needs-review-translation">12, 61</target>
+        </trans-unit>
+        <trans-unit id="processNameLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>288, 16</source>
+          <target state="needs-review-translation">288, 16</target>
+        </trans-unit>
+        <trans-unit id="processNameLabel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>0</source>
+          <target state="needs-review-translation">0</target>
+        </trans-unit>
+        <trans-unit id="processNameLabel.Text" translate="yes" xml:space="preserve">
+          <source>Process Name (without .EXE suffix)</source>
+          <target state="translated">Nom du processus (sans suffixe .EXE)</target>
+        </trans-unit>
+        <trans-unit id="processNameLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
+          <source>MiddleRight</source>
+          <target state="needs-review-translation">MiddleRight</target>
+        </trans-unit>
+        <trans-unit id="processNameTextBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>306, 61</source>
+          <target state="needs-review-translation">306, 61</target>
+        </trans-unit>
+        <trans-unit id="processNameTextBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>249, 20</source>
+          <target state="needs-review-translation">249, 20</target>
+        </trans-unit>
+        <trans-unit id="processNameTextBox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>1</source>
+          <target state="needs-review-translation">1</target>
+        </trans-unit>
+        <trans-unit id="pointerTrailTextBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>306, 101</source>
+          <target state="needs-review-translation">306, 101</target>
+        </trans-unit>
+        <trans-unit id="pointerTrailTextBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>249, 20</source>
+          <target state="needs-review-translation">249, 20</target>
+        </trans-unit>
+        <trans-unit id="pointerTrailTextBox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>2</source>
+          <target state="needs-review-translation">2</target>
+        </trans-unit>
+        <trans-unit id="memoryAddressTextBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>306, 180</source>
+          <target state="needs-review-translation">306, 180</target>
+        </trans-unit>
+        <trans-unit id="memoryAddressTextBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>249, 20</source>
+          <target state="needs-review-translation">249, 20</target>
+        </trans-unit>
+        <trans-unit id="memoryAddressTextBox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>3</source>
+          <target state="needs-review-translation">3</target>
+        </trans-unit>
+        <trans-unit id="pointerTrailLabel.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Right</source>
+          <target state="needs-review-translation">Right</target>
+        </trans-unit>
+        <trans-unit id="pointerTrailLabel.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="pointerTrailLabel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>15, 101</source>
+          <target state="needs-review-translation">15, 101</target>
+        </trans-unit>
+        <trans-unit id="pointerTrailLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>285, 16</source>
+          <target state="needs-review-translation">285, 16</target>
+        </trans-unit>
+        <trans-unit id="pointerTrailLabel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>4</source>
+          <target state="needs-review-translation">4</target>
+        </trans-unit>
+        <trans-unit id="pointerTrailLabel.Text" translate="yes" xml:space="preserve">
+          <source>Pointer Chain (hex, comma separated)</source>
+          <target state="translated">Chaîne pointeur (hex, séparé par des virgules)</target>
+        </trans-unit>
+        <trans-unit id="pointerTrailLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
+          <source>MiddleRight</source>
+          <target state="needs-review-translation">MiddleRight</target>
+        </trans-unit>
+        <trans-unit id="dataTypeLabel.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Right</source>
+          <target state="needs-review-translation">Right</target>
+        </trans-unit>
+        <trans-unit id="dataTypeLabel.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="dataTypeLabel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>172, 139</source>
+          <target state="needs-review-translation">172, 139</target>
+        </trans-unit>
+        <trans-unit id="dataTypeLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>128, 16</source>
+          <target state="needs-review-translation">128, 16</target>
+        </trans-unit>
+        <trans-unit id="dataTypeLabel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>5</source>
+          <target state="needs-review-translation">5</target>
+        </trans-unit>
+        <trans-unit id="dataTypeLabel.Text" translate="yes" xml:space="preserve">
+          <source>Data Type</source>
+          <target state="translated">Type de Données</target>
+        </trans-unit>
+        <trans-unit id="dataTypeLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
+          <source>MiddleRight</source>
+          <target state="needs-review-translation">MiddleRight</target>
+        </trans-unit>
+        <trans-unit id="memoryAddressLabel.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Right</source>
+          <target state="needs-review-translation">Right</target>
+        </trans-unit>
+        <trans-unit id="memoryAddressLabel.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="memoryAddressLabel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>162, 180</source>
+          <target state="needs-review-translation">162, 180</target>
+        </trans-unit>
+        <trans-unit id="memoryAddressLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>138, 16</source>
+          <target state="needs-review-translation">138, 16</target>
+        </trans-unit>
+        <trans-unit id="memoryAddressLabel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>6</source>
+          <target state="needs-review-translation">6</target>
+        </trans-unit>
+        <trans-unit id="memoryAddressLabel.Text" translate="yes" xml:space="preserve">
+          <source>Memory Address (Hex)</source>
+          <target state="translated">Adresse Mémoire (Hex)</target>
+        </trans-unit>
+        <trans-unit id="memoryAddressLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
+          <source>MiddleRight</source>
+          <target state="needs-review-translation">MiddleRight</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Items" translate="yes" xml:space="preserve">
+          <source>Integer</source>
+          <target state="new">Integer</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Items1" translate="yes" xml:space="preserve">
+          <source>Short</source>
+          <target state="new">Short</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Items2" translate="yes" xml:space="preserve">
+          <source>Long</source>
+          <target state="new">Long</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Items3" translate="yes" xml:space="preserve">
+          <source>Float</source>
+          <target state="new">Float</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Items4" translate="yes" xml:space="preserve">
+          <source>Double</source>
+          <target state="new">Double</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Items5" translate="yes" xml:space="preserve">
+          <source>Boolean</source>
+          <target state="new">Boolean</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Items6" translate="yes" xml:space="preserve">
+          <source>String (UTF-8)</source>
+          <target state="new">String (UTF-8)</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Items7" translate="yes" xml:space="preserve">
+          <source>String (UTF-16)</source>
+          <target state="new">String (UTF-16)</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>306, 139</source>
+          <target state="needs-review-translation">306, 139</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>249, 21</source>
+          <target state="needs-review-translation">249, 21</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>7</source>
+          <target state="needs-review-translation">7</target>
+        </trans-unit>
+        <trans-unit id="titleLabel.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="titleLabel.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
+          <source>Microsoft Sans Serif, 20.25pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 20.25pt</target>
+        </trans-unit>
+        <trans-unit id="titleLabel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>69, 9</source>
+          <target state="needs-review-translation">69, 9</target>
+        </trans-unit>
+        <trans-unit id="titleLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>444, 31</source>
+          <target state="needs-review-translation">426, 31</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="titleLabel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>8</source>
+          <target state="needs-review-translation">8</target>
+        </trans-unit>
+        <trans-unit id="titleLabel.Text" translate="yes" xml:space="preserve">
+          <source>SoniFight Pointer Chain Tester v1.0</source>
+          <target state="new">SoniFight Pointer Chain Tester v1.0</target>
+        </trans-unit>
+        <trans-unit id="titleLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
+          <source>TopCenter</source>
+          <target state="needs-review-translation">TopCenter</target>
+        </trans-unit>
+        <trans-unit id="valueTextBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>306, 218</source>
+          <target state="needs-review-translation">306, 218</target>
+        </trans-unit>
+        <trans-unit id="valueTextBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>249, 20</source>
+          <target state="needs-review-translation">249, 20</target>
+        </trans-unit>
+        <trans-unit id="valueTextBox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>9</source>
+          <target state="needs-review-translation">9</target>
+        </trans-unit>
+        <trans-unit id="valueLabel.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Right</source>
+          <target state="needs-review-translation">Right</target>
+        </trans-unit>
+        <trans-unit id="valueLabel.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="valueLabel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>165, 218</source>
+          <target state="needs-review-translation">165, 218</target>
+        </trans-unit>
+        <trans-unit id="valueLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>135, 16</source>
+          <target state="needs-review-translation">135, 16</target>
+        </trans-unit>
+        <trans-unit id="valueLabel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>10</source>
+          <target state="needs-review-translation">10</target>
+        </trans-unit>
+        <trans-unit id="valueLabel.Text" translate="yes" xml:space="preserve">
+          <source>Value</source>
+          <target state="translated">Valeur</target>
+        </trans-unit>
+        <trans-unit id="valueLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
+          <source>MiddleRight</source>
+          <target state="needs-review-translation">MiddleRight</target>
+        </trans-unit>
+        <trans-unit id="pictureBox1.Image" translate="yes" extype="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64" xml:space="preserve">
           <source>
         iVBORw0KGgoAAAANSUhEUgAAAJQAAABjCAIAAADyyb4iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EwAACxMBAJqcGAAAAAd0SU1FB+EJDQQQIJgTQm4AAD/pSURBVHhe7X0HfB3FtffeKyDJS4EXQiAvIZSQ
@@ -313,7 +574,7 @@
         ylf8qlxGHYkcvp0v1+ESLnXY6X4x0gNpFo6RrugnAzeUNYbTMihUCWVxFXEXjJCLiWzOAMhP9oALRawQ
         Yn8ld46jMt5vBKfz/wDD+xZxXPsL8QAAAABJRU5ErkJggg==
 </source>
-          <target state="final">
+          <target state="needs-review-translation">
         iVBORw0KGgoAAAANSUhEUgAAAJQAAABjCAIAAADyyb4iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EwAACxMBAJqcGAAAAAd0SU1FB+EJDQQQIJgTQm4AAD/pSURBVHhe7X0HfB3FtffeKyDJS4EXQiAvIZSQ
         BEhCDcH0jmmmu2Dc1WXJNrjJvdu49957V71XvXdLlmTJsmX13rt0e/3+58zulcwL8JLvy5Pz+zi+3p2d
@@ -591,301 +852,33 @@
         Yn8ld46jMt5vBKfz/wDD+xZxXPsL8QAAAABJRU5ErkJggg==
 </target>
         </trans-unit>
-        <trans-unit id="processNameLabel.Location" translate="no" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>12, 61</source>
-          <target state="final">12, 61</target>
-        </trans-unit>
-        <trans-unit id="processNameLabel.Size" translate="no" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>288, 16</source>
-          <target state="final">288, 16</target>
-        </trans-unit>
-        <trans-unit id="processNameLabel.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>0</source>
-          <target state="new">0</target>
-        </trans-unit>
-        <trans-unit id="processNameLabel.Text" translate="yes" xml:space="preserve">
-          <source>Process Name (without .EXE suffix)</source>
-          <target state="translated">Nom du processus (sans suffixe .EXE)</target>
-        </trans-unit>
-        <trans-unit id="processNameTextBox.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>306, 61</source>
-          <target state="needs-review-translation">306, 61</target>
-        </trans-unit>
-        <trans-unit id="processNameTextBox.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>249, 20</source>
-          <target state="needs-review-translation">249, 20</target>
-        </trans-unit>
-        <trans-unit id="processNameTextBox.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>1</source>
-          <target state="new">1</target>
-        </trans-unit>
-        <trans-unit id="pointerTrailTextBox.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>306, 101</source>
-          <target state="needs-review-translation">306, 101</target>
-        </trans-unit>
-        <trans-unit id="pointerTrailTextBox.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>249, 20</source>
-          <target state="needs-review-translation">249, 20</target>
-        </trans-unit>
-        <trans-unit id="pointerTrailTextBox.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>2</source>
-          <target state="new">2</target>
-        </trans-unit>
-        <trans-unit id="memoryAddressTextBox.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>306, 180</source>
-          <target state="needs-review-translation">306, 180</target>
-        </trans-unit>
-        <trans-unit id="memoryAddressTextBox.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>249, 20</source>
-          <target state="needs-review-translation">249, 20</target>
-        </trans-unit>
-        <trans-unit id="memoryAddressTextBox.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>3</source>
-          <target state="new">3</target>
-        </trans-unit>
-        <trans-unit id="pointerTrailLabel.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>15, 101</source>
-          <target state="needs-review-translation">15, 101</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="pointerTrailLabel.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>285, 16</source>
-          <target state="needs-review-translation">285, 16</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="pointerTrailLabel.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>4</source>
-          <target state="new">4</target>
-        </trans-unit>
-        <trans-unit id="pointerTrailLabel.Text" translate="yes" xml:space="preserve">
-          <source>Pointer Trail (hex, comma separated)</source>
-          <target state="translated">Pointer Trail (hex, séparé par des virgules)</target>
-        </trans-unit>
-        <trans-unit id="dataTypeLabel.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>172, 139</source>
-          <target state="needs-review-translation">172, 139</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="dataTypeLabel.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>128, 16</source>
-          <target state="needs-review-translation">128, 16</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="dataTypeLabel.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>5</source>
-          <target state="new">5</target>
-        </trans-unit>
-        <trans-unit id="dataTypeLabel.Text" translate="yes" xml:space="preserve">
-          <source>Data Type</source>
-          <target state="translated">Type de données</target>
-        </trans-unit>
-        <trans-unit id="memoryAddressLabel.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>162, 180</source>
-          <target state="needs-review-translation">162, 180</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="memoryAddressLabel.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>138, 16</source>
-          <target state="needs-review-translation">138, 16</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="memoryAddressLabel.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>6</source>
-          <target state="new">6</target>
-        </trans-unit>
-        <trans-unit id="memoryAddressLabel.Text" translate="yes" xml:space="preserve">
-          <source>Memory  Address (Hex)</source>
-          <target state="translated">Adresse mémoire (Hex)</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.Items" translate="yes" xml:space="preserve">
-          <source>Integer</source>
-          <target state="new">Integer</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.Items1" translate="yes" xml:space="preserve">
-          <source>Short</source>
-          <target state="new">Short</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.Items2" translate="yes" xml:space="preserve">
-          <source>Long</source>
-          <target state="new">Long</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.Items3" translate="yes" xml:space="preserve">
-          <source>Float</source>
-          <target state="new">Float</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.Items4" translate="yes" xml:space="preserve">
-          <source>Double</source>
-          <target state="new">Double</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.Items5" translate="yes" xml:space="preserve">
-          <source>Boolean</source>
-          <target state="new">Boolean</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.Items6" translate="yes" xml:space="preserve">
-          <source>String (UTF-8)</source>
-          <target state="new">String (UTF-8)</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.Items7" translate="yes" xml:space="preserve">
-          <source>String (UTF-16)</source>
-          <target state="new">String (UTF-16)</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>306, 139</source>
-          <target state="needs-review-translation">306, 139</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>249, 21</source>
-          <target state="needs-review-translation">249, 21</target>
-        </trans-unit>
-        <trans-unit id="dataTypeComboBox.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>7</source>
-          <target state="new">7</target>
-        </trans-unit>
-        <trans-unit id="valueTextBox.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>306, 218</source>
-          <target state="needs-review-translation">306, 218</target>
-        </trans-unit>
-        <trans-unit id="valueTextBox.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>249, 20</source>
-          <target state="needs-review-translation">249, 20</target>
-        </trans-unit>
-        <trans-unit id="valueTextBox.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>9</source>
-          <target state="new">9</target>
-        </trans-unit>
-        <trans-unit id="valueLabel.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>165, 218</source>
-          <target state="needs-review-translation">175, 218</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="valueLabel.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>135, 16</source>
-          <target state="needs-review-translation">125, 16</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="valueLabel.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>10</source>
-          <target state="new">10</target>
-        </trans-unit>
-        <trans-unit id="valueLabel.Text" translate="yes" xml:space="preserve">
-          <source>Value</source>
-          <target state="translated">Valeur</target>
-        </trans-unit>
-        <trans-unit id="pictureBox1.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="pictureBox1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>12, 145</source>
-          <target state="new">12, 145</target>
+          <target state="needs-review-translation">12, 145</target>
         </trans-unit>
-        <trans-unit id="pictureBox1.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="pictureBox1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>154, 104</source>
-          <target state="new">154, 104</target>
+          <target state="needs-review-translation">154, 104</target>
         </trans-unit>
-        <trans-unit id="pictureBox1.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="pictureBox1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>11</source>
-          <target state="new">11</target>
+          <target state="needs-review-translation">11</target>
         </trans-unit>
-        <trans-unit id="$this.AutoScaleDimensions" translate="yes" xml:space="preserve" extype="System.Drawing.SizeF, System.Drawing">
+        <trans-unit id="$this.AutoScaleDimensions" translate="yes" extype="System.Drawing.SizeF, System.Drawing" xml:space="preserve">
           <source>6, 13</source>
-          <target state="new">6, 13</target>
+          <target state="needs-review-translation">6, 13</target>
         </trans-unit>
-        <trans-unit id="$this.ClientSize" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="$this.ClientSize" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>571, 261</source>
-          <target state="new">571, 261</target>
+          <target state="needs-review-translation">571, 261</target>
         </trans-unit>
         <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
-          <source>SoniFight Pointer Trail Tester v1.0</source>
-          <target state="new">SoniFight Pointer Trail Tester v1.0</target>
+          <source>SoniFight Pointer Chain Tester v1.0</source>
+          <target state="new">SoniFight Pointer Chain Tester v1.0</target>
         </trans-unit>
-        <trans-unit id="$this.Localizable" translate="no" xml:space="preserve" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
-          <source>True</source>
-          <target state="final">True</target>
-        </trans-unit>
-        <trans-unit id="titleLabel.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="$this.Localizable" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
-        </trans-unit>
-        <trans-unit id="titleLabel.Font" translate="yes" xml:space="preserve" extype="System.Drawing.Font, System.Drawing">
-          <source>Microsoft Sans Serif, 20.25pt</source>
-          <target state="needs-review-translation">Microsoft Sans Serif, 20.25pt</target>
-        </trans-unit>
-        <trans-unit id="titleLabel.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>69, 9</source>
-          <target state="needs-review-translation">69, 9</target>
-        </trans-unit>
-        <trans-unit id="titleLabel.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>426, 31</source>
-          <target state="needs-review-translation">426, 31</target>
-        </trans-unit>
-        <trans-unit id="titleLabel.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>8</source>
-          <target state="needs-review-translation">8</target>
-        </trans-unit>
-        <trans-unit id="titleLabel.Text" translate="yes" xml:space="preserve">
-          <source>SoniFight Pointer Trail Tester v1.0</source>
-          <target state="new">SoniFight Pointer Trail Tester v1.0</target>
-        </trans-unit>
-        <trans-unit id="titleLabel.TextAlign" translate="yes" xml:space="preserve" extype="System.Drawing.ContentAlignment, System.Drawing">
-          <source>TopCenter</source>
-          <target state="needs-review-translation">TopCenter</target>
-        </trans-unit>
-        <trans-unit id="processNameLabel.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-          <source>Right</source>
-          <target state="needs-review-translation">Right</target>
-        </trans-unit>
-        <trans-unit id="pointerTrailLabel.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-          <source>Right</source>
-          <target state="needs-review-translation">Right</target>
-        </trans-unit>
-        <trans-unit id="pointerTrailLabel.TextAlign" translate="yes" xml:space="preserve" extype="System.Drawing.ContentAlignment, System.Drawing">
-          <source>MiddleRight</source>
-          <target state="needs-review-translation">MiddleRight</target>
-        </trans-unit>
-        <trans-unit id="processNameLabel.TextAlign" translate="yes" xml:space="preserve" extype="System.Drawing.ContentAlignment, System.Drawing">
-          <source>MiddleRight</source>
-          <target state="needs-review-translation">MiddleRight</target>
-        </trans-unit>
-        <trans-unit id="dataTypeLabel.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-          <source>Right</source>
-          <target state="needs-review-translation">Right</target>
-        </trans-unit>
-        <trans-unit id="dataTypeLabel.TextAlign" translate="yes" xml:space="preserve" extype="System.Drawing.ContentAlignment, System.Drawing">
-          <source>MiddleRight</source>
-          <target state="needs-review-translation">MiddleRight</target>
-        </trans-unit>
-        <trans-unit id="memoryAddressLabel.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-          <source>Right</source>
-          <target state="needs-review-translation">Right</target>
-        </trans-unit>
-        <trans-unit id="memoryAddressLabel.TextAlign" translate="yes" xml:space="preserve" extype="System.Drawing.ContentAlignment, System.Drawing">
-          <source>MiddleRight</source>
-          <target state="needs-review-translation">MiddleRight</target>
-        </trans-unit>
-        <trans-unit id="valueLabel.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-          <source>Right</source>
-          <target state="needs-review-translation">Right</target>
-        </trans-unit>
-        <trans-unit id="valueLabel.TextAlign" translate="yes" xml:space="preserve" extype="System.Drawing.ContentAlignment, System.Drawing">
-          <source>MiddleRight</source>
-          <target state="needs-review-translation">MiddleRight</target>
-        </trans-unit>
-        <trans-unit id="processNameLabel.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
-        </trans-unit>
-        <trans-unit id="pointerTrailLabel.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
-        </trans-unit>
-        <trans-unit id="dataTypeLabel.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
-        </trans-unit>
-        <trans-unit id="memoryAddressLabel.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
-        </trans-unit>
-        <trans-unit id="valueLabel.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
         </trans-unit>
       </group>
     </body>

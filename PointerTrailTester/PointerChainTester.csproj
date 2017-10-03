@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{ECF3B871-5951-46C4-AA9B-42A4D56C2785}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>au.edu.federation.PointerTrailTester</RootNamespace>
+    <RootNamespace>au.edu.federation.PointerChainTester</RootNamespace>
     <AssemblyName>PointerTrailTester</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>au.edu.federation.PointerTrailTester.Program</StartupObject>
+    <StartupObject>au.edu.federation.PointerChainTester.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Label="MultilingualAppToolkit">
     <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using au.edu.federation.PointerTrailTester.Properties;
 
-namespace au.edu.federation.PointerTrailTester
+using au.edu.federation.PointerChainTester.Properties;
+
+namespace au.edu.federation.PointerChainTester
 {
     static class Utils
     {

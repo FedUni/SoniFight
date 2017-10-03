@@ -674,7 +674,7 @@ namespace au.edu.federation.SoniFight
             {
                 Console.WriteLine("Match: " + match);
 
-                this works now do the sub!
+                //this works now do the sub!
             }
 
             return s;

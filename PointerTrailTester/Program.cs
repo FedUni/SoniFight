@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Threading;
 
-namespace au.edu.federation.PointerTrailTester
+namespace au.edu.federation.PointerChainTester
 {
     static class Program
     {

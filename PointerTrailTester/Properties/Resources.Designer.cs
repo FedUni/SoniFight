@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace au.edu.federation.PointerTrailTester.Properties {
+namespace au.edu.federation.PointerChainTester.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace au.edu.federation.PointerTrailTester.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("au.edu.federation.PointerTrailTester.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("au.edu.federation.PointerChainTester.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace au.edu.federation.PointerTrailTester.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Illegal pointer trail - argument exception: .
+        ///   Looks up a localized string similar to Illegal pointer chain - argument exception: .
         /// </summary>
         public static string argumentExceptionString {
             get {
@@ -70,7 +70,7 @@ namespace au.edu.federation.PointerTrailTester.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Illegal pointer trail - do not prefix pointer hops with 0x or such and separate each hop with comma..
+        ///   Looks up a localized string similar to Illegal pointer chain - do not prefix pointer hops with 0x or such and separate each hop with comma..
         /// </summary>
         public static string formatExceptionString {
             get {
@@ -97,7 +97,7 @@ namespace au.edu.federation.PointerTrailTester.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Illegal pointer trail - individual pointer hop value exceeds 32-bit limit..
+        ///   Looks up a localized string similar to Illegal pointer chain - individual pointer hop value exceeds 32-bit limit..
         /// </summary>
         public static string overflowExceptionString {
             get {
