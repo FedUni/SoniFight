@@ -16,8 +16,8 @@ namespace au.edu.federation.SoniFight
         // Kernel hook to read process memory
         // Note: Even on 64-bit systems the kernel is called kernel32!
         [DllImport("kernel32.dll")]
-        public static extern bool ReadProcessMemory(int hProcess, int lpBaseAddress, byte[] lpBuffer, int dwSize, ref int lpNumberOfBytesRead);
-
+        public static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, int dwSize, ref int lpNumberOfBytesRead);
+        
         // Constants are implied static in C# - you cannot mark them as such.
         public const int MAX_STRING_LENGTH = 150;
 
@@ -158,7 +158,7 @@ namespace au.edu.federation.SoniFight
         // ------------ Process and Memory methods ----------
 
         // Method to find the process in the processName property and set the processBaseAddress property ready for use
-        public static int findProcessBaseAddress(string processName)
+        public static IntPtr findProcessBaseAddress(string processName)
         {
             Process[] processArray = Process.GetProcessesByName(processName);
 
@@ -166,19 +166,19 @@ namespace au.edu.federation.SoniFight
             {
                 // Sleep before returning process base address (prevents crashing when we only just found the process but the base address hasn't been fully established yet)
                 System.Threading.Thread.Sleep(1000);
-                return processArray[0].MainModule.BaseAddress.ToInt32();
+                return processArray[0].MainModule.BaseAddress;
             }
 
-            return 0;
+            return (IntPtr)0;
         }
 
         // Method to return a feature address given a process handle, base adress, and pointer trail as a list of hexadecimal strings
-        public static int findFeatureAddress(int processHandle, int baseAddress, List<string> hexPointerTrail)
+        public static IntPtr findFeatureAddress(IntPtr processHandle, IntPtr baseAddress, List<string> hexPointerTrail)
         {
             //Console.WriteLine("***Base address is: " + baseAddress);
 
             // Our feature address will change as this method runs, but we always start at the base address
-            int featureAddress = baseAddress;
+            IntPtr featureAddress = baseAddress;
 
             // Follow the pointer trail to find the final address of the feature
             // Note: If we remove the "minus one" part of the below loop we get the ACTUAL value of that feature (assuming it's an int like the clock)
@@ -198,7 +198,7 @@ namespace au.edu.federation.SoniFight
                 }
 
                 // ...otherwise, if this wasn't the final hop we read the address at that offset and go around the loop again.
-                featureAddress = getIntFromAddress(processHandle, featureAddress);
+                featureAddress = (IntPtr)getIntFromAddress(processHandle, featureAddress);
             }
 
             return featureAddress;
@@ -219,7 +219,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to read and return an int (4 bytes)
-        public static int getIntFromAddress(int processHandle, int address)
+        public static int getIntFromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
             byte[] buf = new byte[4];
@@ -228,7 +228,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to read and return a short (2 bytes)
-        public static short getShortFromAddress(int processHandle, int address)
+        public static short getShortFromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
             byte[] buf = new byte[2];
@@ -237,7 +237,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to read and return a long (8 bytes)
-        public static Int64 getLongFromAddress(int processHandle, int address)
+        public static Int64 getLongFromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
             byte[] buf = new byte[8];
@@ -246,7 +246,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to read and return a float (4 bytes)
-        public static float getFloatFromAddress(int processHandle, int address)
+        public static float getFloatFromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
             byte[] buf = new byte[4];
@@ -255,7 +255,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to read and return a double (8 bytes)
-        public static double getDoubleFromAddress(int processHandle, int address)
+        public static double getDoubleFromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
             byte[] buf = new byte[8];
@@ -264,7 +264,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to read and return a boolean (1 byte)
-        public static bool getBoolFromAddress(int processHandle, int address)
+        public static bool getBoolFromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
             byte[] buf = new byte[1];
@@ -273,7 +273,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to read and return a UTF-8 formatted string (1 byte per char - max of 33 chars returned)
-        public static string getUTF8FromAddress(int processHandle, int address)
+        public static string getUTF8FromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
 
@@ -309,7 +309,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to read and return a UTF-16 formatted string (2 bytes per char - max of 33 chars returned)
-        public static string getUTF16FromAddress(int processHandle, int address)
+        public static string getUTF16FromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
 

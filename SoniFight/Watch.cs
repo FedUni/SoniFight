@@ -122,9 +122,9 @@ namespace au.edu.federation.SoniFight
         // The destination address of the feature this watch is monitoring.
         // IMPORTANT: Triggers don't have destination addresses - WATCHES have a destination address (and one watch may be used by multiple triggers)
         [XmlIgnore]
-        private int destinationAddress;
+        private IntPtr destinationAddress;
         [XmlIgnore]
-        public int DestinationAddress
+        public IntPtr DestinationAddress
         {
             get { return destinationAddress;  }
             set { destinationAddress = value; }
@@ -142,7 +142,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to update the destination address of this watch. This is called once per poll on all watches.
-        public int updateDestinationAddress(int processHandle, int baseAddress)
+        public IntPtr updateDestinationAddress(IntPtr processHandle, IntPtr baseAddress)
         {
             // Our destination address will change as this method runs, but we start at the base address
             destinationAddress = baseAddress;
@@ -152,10 +152,21 @@ namespace au.edu.federation.SoniFight
             int offset = 0;
             for (int hopLoop = 0; hopLoop < pointerList.Count; ++hopLoop)
             {
+                // If we're running as and connecting to a 32-bit process then our pointers will be 32-bit...
+                /*if (!System.Environment.Is64BitProcess)
+                {
+                    offset = (IntPtr)Convert.ToInt32(pointerList[hopLoop], 16);
+                }
+                else // ...otherwise we're running as and connecting to a 64-bit process where each pointer will be 64-bit.
+                {
+                    offset = (IntPtr)Convert.ToInt64(pointerList[hopLoop], 16);
+                }*/
+
+                // Get the offset from a hexadecimal string value to an int
                 offset = Convert.ToInt32(pointerList[hopLoop], 16);
 
                 // Apply the offset
-                destinationAddress += offset;
+                destinationAddress = IntPtr.Add(destinationAddress, offset);
 
                 // Final hop? Then that's where we'll find our value so break out of the loop
                 if (hopLoop == (pointerList.Count - 1))
@@ -164,7 +175,7 @@ namespace au.edu.federation.SoniFight
                 }
 
                 // Not final hop? Then read the address at that offset and keep going.
-                destinationAddress = Utils.getIntFromAddress(processHandle, destinationAddress);
+                destinationAddress = (IntPtr)Utils.getIntFromAddress(processHandle, destinationAddress);
             }
 
             // At this point destination address should be correctly set ready for us to return

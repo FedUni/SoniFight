@@ -107,9 +107,9 @@ namespace au.edu.federation.SoniFight
 
         // The handle to the process we are connected to
         [XmlIgnore]
-        private int processHandle;
+        private IntPtr processHandle;
         [XmlIgnore]
-        public int ProcessHandle
+        public IntPtr ProcessHandle
         {
             get { return processHandle; }
             set { processHandle = value; }
@@ -117,9 +117,9 @@ namespace au.edu.federation.SoniFight
 
         // The base address of the process (this will likely change per run due to Address Space Layout Randomisation (ASLR))
         [XmlIgnore]
-        private int processBaseAddress;
+        private IntPtr processBaseAddress;
         [XmlIgnore]
-        public int ProcessBaseAddress
+        public IntPtr ProcessBaseAddress
         {
             get { return processBaseAddress; }
             set { processBaseAddress = value; }
@@ -184,11 +184,11 @@ namespace au.edu.federation.SoniFight
 
                     // Get the process handle
                     gameProcess = processArray[0];
-                    processHandle = (int)gameProcess.Handle;
+                    processHandle = gameProcess.Handle;
 
                     // Get the process base address
                     processBaseAddress = Utils.findProcessBaseAddress(processName);
-                    if (processBaseAddress == 0)
+                    if (processBaseAddress == (IntPtr)0)
                     {
                         string s1 = Resources.ResourceManager.GetString("processNotFoundWarningString1");
                         string s2 = Resources.ResourceManager.GetString("processNotFoundWarningString2");
