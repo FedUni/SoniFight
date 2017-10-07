@@ -10,8 +10,6 @@ namespace au.edu.federation.PointerChainTester
 {
     public partial class Form1 : Form
     {
-        //public static ResourceManager resources = new ResourceManager();
-
         // Background worker which will attempt to connect to the requested process without locking up the UI
         public static BackgroundWorker processConnectionBW = new BackgroundWorker();
 
@@ -169,11 +167,11 @@ namespace au.edu.federation.PointerChainTester
 
                         // Get the process handle
                         Program.gameProcess = Program.processArray[0];
-                        Program.processHandle = (int)Program.gameProcess.Handle;
+                        Program.processHandle = Program.gameProcess.Handle;
 
                         // Get the process base address
                         Program.processBaseAddress = Utils.findProcessBaseAddress(Program.processName);
-                        if (Program.processBaseAddress == 0)
+                        if (Program.processBaseAddress == (IntPtr)0)
                         {
                             break;
                         }
