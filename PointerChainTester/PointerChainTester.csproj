@@ -7,7 +7,7 @@
     <ProjectGuid>{ECF3B871-5951-46C4-AA9B-42A4D56C2785}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>au.edu.federation.PointerChainTester</RootNamespace>
-    <AssemblyName>PointerTrailTester</AssemblyName>
+    <AssemblyName>PointerChainTester</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -1672,10 +1672,10 @@ namespace au.edu.federation.SoniFight
 
             // Add a new watch entry as a child node to the "Watches" node
             TreeView tv = this.gcTreeView;
-            TreeNode watchesNode = Utils.FindNodeWithText(tv, "Watches");
+            TreeNode watchesNode = Utils.FindNodeWithText(tv, Resources.ResourceManager.GetString("watchesString"));
             tv.BeginUpdate();
             currentTreeNode = watchesNode.Nodes.Add( currentWatch.Id + Resources.ResourceManager.GetString("newWatchString") );
-            currentTreeNode.Tag = Resources.ResourceManager.GetString("watchTagString");
+            currentTreeNode.Tag = Resources.ResourceManager.GetString("watchString");
             tv.EndUpdate();
             tv.ExpandAll();
 

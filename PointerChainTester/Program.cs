@@ -45,9 +45,9 @@ namespace au.edu.federation.PointerChainTester
         static void Main()
         {
             // Localisation test code - uncomment to force French localisation etc.
-            CultureInfo cultureOverride = new CultureInfo("fr");
+            /*CultureInfo cultureOverride = new CultureInfo("fr");
             Thread.CurrentThread.CurrentUICulture = cultureOverride;
-            Thread.CurrentThread.CurrentCulture = cultureOverride;
+            Thread.CurrentThread.CurrentCulture = cultureOverride;*/
 
             // Kick off the form
             Application.EnableVisualStyles();

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoniFight", "SoniFight\SoniFight.csproj", "{A1690BCF-0566-49EF-B404-B0A455156D26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointerChainTester", "PointerTrailTester\PointerChainTester.csproj", "{ECF3B871-5951-46C4-AA9B-42A4D56C2785}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointerChainTester", "PointerChainTester\PointerChainTester.csproj", "{ECF3B871-5951-46C4-AA9B-42A4D56C2785}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
