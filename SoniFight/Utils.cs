@@ -668,14 +668,65 @@ namespace au.edu.federation.SoniFight
             s = s.Replace("{}", Convert.ToString(Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType()));
 
             // Complex case - the value of other watches name-checked, for example {66} would have to be replaced with the value of watch 66 as a string
-            Regex regex = new Regex("(?<={)[^}]*(?=})");
-            MatchCollection matches = regex.Matches(s); //your matches: name, name@gmail.com
-            foreach (var match in matches) // e.g. you can loop through your matches like this
-            {
-                Console.WriteLine("Match: " + match);
 
-                //this works now do the sub!
+            // Greedy regex to extract values from between curly braces.
+            // Note: While this works, it won't handle nested things (though it shouldn't have to), and I'm told it's not best practice so I'll use the non-greedy version below for now.
+            /* Regex regex = new Regex("(?<={)[^}]*(?=})");
+            foreach (Match match in matches) // e.g. you can loop through your matches like this
+            {
+                Console.WriteLine("Match value is: " + match.Value); // This will be the number between the curly braces
+
+                int watchId = Convert.ToInt32(group.Captures[captureCtr].Value);
+                dynamic watchValue = Utils.getWatchWithId(watchId).getDynamicValueFromType();
+                string watchValueString = Convert.ToString(watchValueString);
+                s = s.Replace(match.Value, Convert.ToString( Utils.getWatchWithId().getDynamicValueFromType()));
             }
+            */
+
+            // Non-greedy regex to extract values from between curly braces
+            Regex regex = new Regex("{(.*?)}");
+            
+            // Get the collection of matches (these matches contain the curly braces themselves)
+            MatchCollection matches = regex.Matches(s);
+
+            // Loop over each match in the match collection...
+            foreach (Match match in matches)
+            {
+                // match.Value would include the curly braces
+                // Console.WriteLine("Match value is: " + match.Value);
+                
+                // Loup over groups within each match
+                for (int groupCtr = 0; groupCtr < match.Groups.Count; ++groupCtr)
+                {
+                    // Grab a group
+                    Group group = match.Groups[groupCtr];
+                    //Console.WriteLine("   Group {0} has value {1}", groupCtr, group.Value);
+
+                    // Loop over each capture within that group
+                    for (int captureCtr = 0; captureCtr < group.Captures.Count; ++captureCtr)
+                    {
+                        //Console.WriteLine("      Capture {0}: {1}", captureCtr, group.Captures[captureCtr].Value);
+
+                        int watchId = Convert.ToInt32(group.Captures[captureCtr].Value);
+                        dynamic watchValue = Utils.getWatchWithId(watchId).getDynamicValueFromType();
+
+                        // If we found the watch we substitute the curly-brace-enclosed-value with the actual value of that watch in the string
+                        if (watchValue != null)
+                        {
+                            string watchValueString = Convert.ToString(watchValue);
+                            s = s.Replace(match.Value, watchValueString);
+                        }
+                        else // No watch with that ID? Subtitute a not found message
+                        {
+                            string notFound = " Watch not found " + match.Value + " ";
+                            s = s.Replace(match.Value, notFound);
+                        }
+
+                    } // End of loop over captures
+
+                } // End of loop over match groups
+
+            } // End of loop over regex matches
 
             return s;
         }

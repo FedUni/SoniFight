@@ -6363,7 +6363,7 @@
       <watchOneId>0</watchOneId>
       <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Clock 85 because the clock is {1}</sampleFilename>
+      <sampleFilename>Clock 95 because the clock is {1}</sampleFilename>
       <sampleSpeed>1</sampleSpeed>
       <sampleVolume>1</sampleVolume>
       <useTolk>true</useTolk>
@@ -6382,5 +6382,5 @@ Unfortunately in some circumstances random sample playing may be unavoidable bec
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>99</ClockMax>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
+  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
 </GameConfig>
