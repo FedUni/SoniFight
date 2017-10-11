@@ -871,6 +871,15 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to WARNING: Tolk output requested by no active screen reader for trigger with ID: .
+        /// </summary>
+        internal static string screenReaderNotActiveWarningString {
+            get {
+                return ResourceManager.GetString("screenReaderNotActiveWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Screen Reader Text.
         /// </summary>
         internal static string screenReaderTextLabelString {

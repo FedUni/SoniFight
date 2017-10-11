@@ -88,701 +88,701 @@
   </watchList>
   <triggerList>
     <Trigger>
-      <id>1</id>
-      <name>Clock trigger for InGame vs InMenu determination</name>
-      <description>Round timer. 90 down to 0 as an int</description>
-      <value xsi:type="xsd:string">90</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>1</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>NONE</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>true</isClock>
-      <active>true</active>
+      <Id>1</Id>
+      <Name>Clock trigger for InGame vs InMenu determination</Name>
+      <Description>Round timer. 90 down to 0 as an int</Description>
+      <Value xsi:type="xsd:string">90</Value>
+      <WatchOneId>1</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>NONE</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>true</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>2</id>
-      <name>P1 Health Half</name>
-      <description>Says half health</description>
-      <value xsi:type="xsd:string">0.5</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>2</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>Health-Half.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>2</Id>
+      <Name>P1 Health Half</Name>
+      <Description>Says half health</Description>
+      <Value xsi:type="xsd:string">0.5</Value>
+      <WatchOneId>2</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Health-Half.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>3</id>
-      <name>P1 Health Quarter</name>
-      <description>Says health quarter.</description>
-      <value xsi:type="xsd:string">0.25</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>2</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>Health-Quarter.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>3</Id>
+      <Name>P1 Health Quarter</Name>
+      <Description>Says health quarter.</Description>
+      <Value xsi:type="xsd:string">0.25</Value>
+      <WatchOneId>2</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Health-Quarter.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>4</id>
-      <name>P1 Health Low</name>
-      <description>Says health low when 10% or less.</description>
-      <value xsi:type="xsd:string">0.1</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>2</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>Health-Low.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>4</Id>
+      <Name>P1 Health Low</Name>
+      <Description>Says health low when 10% or less.</Description>
+      <Value xsi:type="xsd:string">0.1</Value>
+      <WatchOneId>2</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Health-Low.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>5</id>
-      <name>Clock 45</name>
-      <description>Says clock 45 at the halfway point of the round</description>
-      <value xsi:type="xsd:string">45</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>1</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Clock-45.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>5</Id>
+      <Name>Clock 45</Name>
+      <Description>Says clock 45 at the halfway point of the round</Description>
+      <Value xsi:type="xsd:string">45</Value>
+      <WatchOneId>1</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Clock-45.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>6</id>
-      <name>Clock 10</name>
-      <description>Says clock 10 when the clock hits that value.</description>
-      <value xsi:type="xsd:string">10</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>1</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Clock-10.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>6</Id>
+      <Name>Clock 10</Name>
+      <Description>Says clock 10 when the clock hits that value.</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchOneId>1</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Clock-10.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>7</id>
-      <name>P1 - One Third Bar - Enhanced</name>
-      <description>Says Enhanced when you get one third bar.</description>
-      <value xsi:type="xsd:string">0.33</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>3</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>Enhanced.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>7</Id>
+      <Name>P1 - One Third Bar - Enhanced</Name>
+      <Description>Says Enhanced when you get one third bar.</Description>
+      <Value xsi:type="xsd:string">0.33</Value>
+      <WatchOneId>3</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Enhanced.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>8</id>
-      <name>P1 - Two Thirds Bar - Breaker</name>
-      <description>Says breaker when player 1 gets two thirds bar.</description>
-      <value xsi:type="xsd:string">0.66</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>3</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>Breaker.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>8</Id>
+      <Name>P1 - Two Thirds Bar - Breaker</Name>
+      <Description>Says breaker when player 1 gets two thirds bar.</Description>
+      <Value xsi:type="xsd:string">0.66</Value>
+      <WatchOneId>3</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Breaker.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>9</id>
-      <name>P1 - Full Bar - X-Ray</name>
-      <description>Says X-Ray when player 1 gets full bar.</description>
-      <value xsi:type="xsd:string">1</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>3</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>X-Ray.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>9</Id>
+      <Name>P1 - Full Bar - X-Ray</Name>
+      <Description>Says X-Ray when player 1 gets full bar.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>3</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>X-Ray.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>10</id>
-      <name>P2 Health Half</name>
-      <description>Says half health.</description>
-      <value xsi:type="xsd:string">0.5</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>4</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>Health-Half-P2.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>10</Id>
+      <Name>P2 Health Half</Name>
+      <Description>Says half health.</Description>
+      <Value xsi:type="xsd:string">0.5</Value>
+      <WatchOneId>4</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Health-Half-P2.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>11</id>
-      <name>P2 Health Quarter</name>
-      <description>Says health quarter.</description>
-      <value xsi:type="xsd:string">0.25</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>4</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>Health-Quarter-P2.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>11</Id>
+      <Name>P2 Health Quarter</Name>
+      <Description>Says health quarter.</Description>
+      <Value xsi:type="xsd:string">0.25</Value>
+      <WatchOneId>4</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Health-Quarter-P2.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>12</id>
-      <name>P2 Health Low</name>
-      <description>Says health low when 10% or less.</description>
-      <value xsi:type="xsd:string">0.1</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>4</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <sampleFilename>Health-Low-P2.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>12</Id>
+      <Name>P2 Health Low</Name>
+      <Description>Says health low when 10% or less.</Description>
+      <Value xsi:type="xsd:string">0.1</Value>
+      <WatchOneId>4</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Health-Low-P2.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>13</id>
-      <name>P2 - One Third Bar - Enhanced</name>
-      <description>Says Enhanced when player 2 gets one third bar.</description>
-      <value xsi:type="xsd:string">0.33</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>5</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>Enhanced-P2.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>13</Id>
+      <Name>P2 - One Third Bar - Enhanced</Name>
+      <Description>Says Enhanced when player 2 gets one third bar.</Description>
+      <Value xsi:type="xsd:string">0.33</Value>
+      <WatchOneId>5</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Enhanced-P2.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>14</id>
-      <name>P2 - Two Thirds Bar - Breaker</name>
-      <description>Says breaker when player 2 gets two thirds bar.</description>
-      <value xsi:type="xsd:string">0.66</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>5</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>Breaker-P2.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>14</Id>
+      <Name>P2 - Two Thirds Bar - Breaker</Name>
+      <Description>Says breaker when player 2 gets two thirds bar.</Description>
+      <Value xsi:type="xsd:string">0.66</Value>
+      <WatchOneId>5</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Breaker-P2.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>15</id>
-      <name>P2 - Full Bar - X-Ray</name>
-      <description>Says X-Ray when player 2 gets full bar.</description>
-      <value xsi:type="xsd:string">1</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
-      <watchOneId>5</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <sampleFilename>X-Ray-P2.mp3</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>false</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>15</Id>
+      <Name>P2 - Full Bar - X-Ray</Name>
+      <Description>Says X-Ray when player 2 gets full bar.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>5</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>X-Ray-P2.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>16</id>
-      <name>Single Player Main Menu - Fight</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">0</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>24</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Fight</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>16</Id>
+      <Name>Single Player Main Menu - Fight</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>24</SecondaryId>
+      <SampleFilename>Fight</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>17</id>
-      <name>Single Player Main Menu - Story Mode</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">1</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>24</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Story Mode</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>17</Id>
+      <Name>Single Player Main Menu - Story Mode</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>24</SecondaryId>
+      <SampleFilename>Story Mode</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>18</id>
-      <name>Single Player Main Menu - Challenge Tower</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">2</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>24</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Challenge Tower</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>18</Id>
+      <Name>Single Player Main Menu - Challenge Tower</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>24</SecondaryId>
+      <SampleFilename>Challenge Tower</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>19</id>
-      <name>Single Player Main Menu - Training</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">3</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>24</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Training</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>19</Id>
+      <Name>Single Player Main Menu - Training</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>24</SecondaryId>
+      <SampleFilename>Training</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>20</id>
-      <name>Single Player Main Menu - Online</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">4</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>24</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Online</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>20</Id>
+      <Name>Single Player Main Menu - Online</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>24</SecondaryId>
+      <SampleFilename>Online</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>21</id>
-      <name>Single Player Main Menu - Extras</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">5</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>24</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Extras</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>21</Id>
+      <Name>Single Player Main Menu - Extras</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>24</SecondaryId>
+      <SampleFilename>Extras</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>22</id>
-      <name>Single Player Main Menu - Options</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">6</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>24</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Options</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>22</Id>
+      <Name>Single Player Main Menu - Options</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>24</SecondaryId>
+      <SampleFilename>Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>23</id>
-      <name>Single Player Main Menu - Exit Game</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">7</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>24</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Exit Game</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>23</Id>
+      <Name>Single Player Main Menu - Exit Game</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>24</SecondaryId>
+      <SampleFilename>Exit Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>24</id>
-      <name>Main menu - number of players 1</name>
-      <description>Says single player</description>
-      <value xsi:type="xsd:string">1</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>7</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Single Player</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>24</Id>
+      <Name>Main menu - number of players 1</Name>
+      <Description>Says single player</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>7</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Single Player</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>25</id>
-      <name>Main menu - number of players 2</name>
-      <description>Says 2 players</description>
-      <value xsi:type="xsd:string">2</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>7</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>2 Players</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>25</Id>
+      <Name>Main menu - number of players 2</Name>
+      <Description>Says 2 players</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchOneId>7</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>2 Players</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>26</id>
-      <name>Main menu - number of players 3</name>
-      <description>Says 3 players</description>
-      <value xsi:type="xsd:string">3</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>7</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>3 Players</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>26</Id>
+      <Name>Main menu - number of players 3</Name>
+      <Description>Says 3 players</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchOneId>7</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>3 Players</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>27</id>
-      <name>Main menu - number of players 4</name>
-      <description>Says 4 players</description>
-      <value xsi:type="xsd:string">4</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>7</watchOneId>
-      <secondaryId>-1</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>4 Players</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>27</Id>
+      <Name>Main menu - number of players 4</Name>
+      <Description>Says 4 players</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchOneId>7</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>4 Players</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>28</id>
-      <name>2 Player Main Menu - 0 Versus Mode</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">0</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>25</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Versus mode</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>28</Id>
+      <Name>2 Player Main Menu - 0 Versus Mode</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>25</SecondaryId>
+      <SampleFilename>Versus mode</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>29</id>
-      <name>2 Player Main Menu - 1 Team Ladder</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">1</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>25</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Team ladder</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>29</Id>
+      <Name>2 Player Main Menu - 1 Team Ladder</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>25</SecondaryId>
+      <SampleFilename>Team ladder</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>30</id>
-      <name>2 Player Main Menu - 2 Online</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">2</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>25</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Online</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>30</Id>
+      <Name>2 Player Main Menu - 2 Online</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>25</SecondaryId>
+      <SampleFilename>Online</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>31</id>
-      <name>2 Player Main Menu - 3 Extras</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">3</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>25</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Extras</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>31</Id>
+      <Name>2 Player Main Menu - 3 Extras</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>25</SecondaryId>
+      <SampleFilename>Extras</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>32</id>
-      <name>2 Player Main Menu - 4 Options</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">4</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>25</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Options</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>32</Id>
+      <Name>2 Player Main Menu - 4 Options</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>25</SecondaryId>
+      <SampleFilename>Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>33</id>
-      <name>2 Player Main Menu - 5 Exit Game</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">5</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>25</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Exit Game</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>33</Id>
+      <Name>2 Player Main Menu - 5 Exit Game</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>25</SecondaryId>
+      <SampleFilename>Exit Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>34</id>
-      <name>3 Player Main Menu - 0 Versus Mode</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">0</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>26</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Versus mode</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>34</Id>
+      <Name>3 Player Main Menu - 0 Versus Mode</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>26</SecondaryId>
+      <SampleFilename>Versus mode</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>35</id>
-      <name>3 Player Main Menu - 1 Extras</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">1</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>26</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Extras</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>35</Id>
+      <Name>3 Player Main Menu - 1 Extras</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>26</SecondaryId>
+      <SampleFilename>Extras</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>36</id>
-      <name>3 Player Main Menu - 2 Options</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">2</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>26</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Options</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>36</Id>
+      <Name>3 Player Main Menu - 2 Options</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>26</SecondaryId>
+      <SampleFilename>Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>37</id>
-      <name>3 Player Main Menu - 3 Exit Game</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">3</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>26</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Exit game</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>37</Id>
+      <Name>3 Player Main Menu - 3 Exit Game</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>26</SecondaryId>
+      <SampleFilename>Exit game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>38</id>
-      <name>4 Player Main Menu - 0 Versus Mode</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">0</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>27</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Versus mode</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>38</Id>
+      <Name>4 Player Main Menu - 0 Versus Mode</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>27</SecondaryId>
+      <SampleFilename>Versus mode</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>39</id>
-      <name>4 Player Main Menu - 1 Extras</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">1</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>27</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Extras</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>39</Id>
+      <Name>4 Player Main Menu - 1 Extras</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>27</SecondaryId>
+      <SampleFilename>Extras</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>40</id>
-      <name>4 Player Main Menu - 2 Options</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">2</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>27</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Options</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>40</Id>
+      <Name>4 Player Main Menu - 2 Options</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>27</SecondaryId>
+      <SampleFilename>Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
-      <id>41</id>
-      <name>4 Player Main Menu - 3 Exit Game</name>
-      <description>Says menu option using tolk</description>
-      <value xsi:type="xsd:string">3</value>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <watchOneId>6</watchOneId>
-      <secondaryId>27</secondaryId>
       <comparisonType>EqualTo</comparisonType>
-      <sampleFilename>Exit Game</sampleFilename>
-      <sampleSpeed>1</sampleSpeed>
-      <sampleVolume>1</sampleVolume>
-      <useTolk>true</useTolk>
-      <isClock>false</isClock>
-      <active>true</active>
+      <Id>41</Id>
+      <Name>4 Player Main Menu - 3 Exit Game</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchOneId>6</WatchOneId>
+      <SecondaryId>27</SecondaryId>
+      <SampleFilename>Exit Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
     </Trigger>
   </triggerList>
   <Description>Mortal Kombat 9 - Al Lansley 2017-10-07</Description>

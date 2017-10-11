@@ -613,7 +613,7 @@ namespace au.edu.federation.SoniFight
             for (int loop = 0; loop < MainForm.gameConfig.triggerList.Count; ++loop)
             {
                 t = MainForm.gameConfig.triggerList[loop];
-                if (t.id == id)
+                if (t.Id == id)
                     break;
             }
             return t;
@@ -652,9 +652,9 @@ namespace au.edu.federation.SoniFight
             int highest = 0;
             for (int loop = 0; loop < list.Count; ++loop)
             {
-                if (list[loop].id > highest)
+                if (list[loop].Id > highest)
                 {
-                    highest = list[loop].id;
+                    highest = list[loop].Id;
                 }
             }
             return highest + 1;
@@ -664,7 +664,7 @@ namespace au.edu.federation.SoniFight
         public static string substituteWatchValuesInString(Trigger t, string s)
         {
             // Easy case -just substitutethe value of this trigger's watch
-            s = s.Replace("{}", Convert.ToString(Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType()) );
+            s = s.Replace("{}", Convert.ToString(Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType()) );
 
             // Regex to find any remaining values in curly braces. Note: The returned match contains the curly braces, which is exactly what we want.
             Regex matchesWithBracesRegex = new Regex("{.*?}");
@@ -686,7 +686,7 @@ namespace au.edu.federation.SoniFight
 
                     s = s.Replace(match.Value, Convert.ToString(watchValue));
                 }
-                else // Couldn't parse text inside braces to int? Warn user.
+                else // Couldn't parse text inside braces to int? Warn user by substituting warning into tolk output.
                 {
                     s = s.Replace(match.Value, Resources.ResourceManager.GetString("watchValueParseFailString") + match.Value);
                 }

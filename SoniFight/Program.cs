@@ -92,7 +92,7 @@ namespace au.edu.federation.SoniFight
             // No dependent triggers (even if we ARE a dependent trigger at a recursive depth > 0)? Then we've already made a match so return true.
             // Also, if this is a modifier trigger and we've made a value match we'll return true (because modifier triggers are focussed on matching
             // a condition, not only when we pass a threshold!).
-            if (t.secondaryId == -1 || t.triggerType == Trigger.TriggerType.Modifier)
+            if (t.SecondaryId == -1 || t.triggerType == Trigger.TriggerType.Modifier)
             {
                 return true;
             }
@@ -101,14 +101,14 @@ namespace au.edu.federation.SoniFight
             // do not call the performComparison method.    
 
             // This trigger has a dependent trigger - so we grab it.
-            Trigger dependentT = Utils.getTriggerWithId(t.secondaryId);
+            Trigger dependentT = Utils.getTriggerWithId(t.SecondaryId);
 
             // If the dependent trigger is active, then our return type from THIS method is the return from checking the comparison
             // with the dependent trigger within this one (which has already matched or we wouldn't be here). This will recurse as
             // deep as the trigger dependencies are linked - fails after 5 linked dependencies to prevent cyclic dependency crash.
-            if (dependentT.active)
+            if (dependentT.Active)
             {
-                Watch dependentWatch = Utils.getWatchWithId(dependentT.watchOneId);
+                Watch dependentWatch = Utils.getWatchWithId(dependentT.WatchOneId);
 
                 // Watch of dependent trigger was not active? Then obviously we must fail as we're not updating the watch details.
                 if (!dependentWatch.Active)
@@ -125,7 +125,7 @@ namespace au.edu.federation.SoniFight
                     string s1 = Resources.ResourceManager.GetString("triggerWithTrailingSpaceString");
                     string s2 = Resources.ResourceManager.GetString("suppressedAsDependentString");
                     string s3 = Resources.ResourceManager.GetString("failedDepthString");
-                    Console.WriteLine(s1 + t.id + s2 + dependentT.id + s3 + recursiveDepth);
+                    Console.WriteLine(s1 + t.Id + s2 + dependentT.Id + s3 + recursiveDepth);
                 }
                 return dependentResult;
             }
@@ -151,7 +151,7 @@ namespace au.edu.federation.SoniFight
             //       when the value crosses the trigger threshold.
 
             // Guard against user moving to edit tab where triggers are temporarily reset and there is no previous value
-            if (t.previousValue != null)
+            if (t.PreviousValue != null)
             {
                 // Dynamic type comparisons may possibly fail so wrap 'em in try/catch
                 try
@@ -160,49 +160,49 @@ namespace au.edu.federation.SoniFight
                     switch (t.comparisonType)
                     {
                         case Trigger.ComparisonType.EqualTo:
-                            if ((t.previousValue != t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue == t.value))
+                            if ( (t.PreviousValue != t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue == t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.LessThan:
-                            if ((t.previousValue > t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue < t.value))
+                            if ( (t.PreviousValue > t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue < t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.LessThanOrEqualTo:
-                            if ((t.previousValue > t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue <= t.value))
+                            if ( (t.PreviousValue > t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue <= t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.GreaterThan:
-                            if ((t.previousValue < t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue > t.value))
+                            if ( (t.PreviousValue < t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue > t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.GreaterThanOrEqualTo:
-                            if ((t.previousValue < t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue >= t.value))
+                            if ( (t.PreviousValue < t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue >= t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.NotEqualTo:
-                            if ((t.previousValue == t.value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue != t.value))
+                            if ( (t.PreviousValue == t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue != t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.Changed:
-                            if (readValue != t.previousValue || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier)
+                            if (readValue != t.PreviousValue || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier)
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
@@ -258,47 +258,47 @@ namespace au.edu.federation.SoniFight
             {
                 t = MainForm.gameConfig.triggerList[triggerLoop];
 
-                switch (Utils.getWatchWithId(t.watchOneId).valueType)
+                switch (Utils.getWatchWithId(t.WatchOneId).valueType)
                 {
                     case Watch.ValueType.IntType:
-                        t.value = Convert.ChangeType(t.value, TypeCode.Int32);
-                        t.previousValue = new int();
-                        t.previousValue = t.value; // By value
+                        t.Value = Convert.ChangeType(t.Value, TypeCode.Int32);
+                        t.PreviousValue = new int();
+                        t.PreviousValue = t.Value; // By value
                         break;
                     case Watch.ValueType.ShortType:
-                        t.value = Convert.ChangeType(t.value, TypeCode.Int16);
-                        t.previousValue = new short();
-                        t.previousValue = t.value; // By value
+                        t.Value = Convert.ChangeType(t.Value, TypeCode.Int16);
+                        t.PreviousValue = new short();
+                        t.PreviousValue = t.Value; // By value
                         break;
                     case Watch.ValueType.LongType:
-                        t.value = Convert.ChangeType(t.value, TypeCode.Int64);
-                        t.previousValue = new long();
-                        t.previousValue = t.value; // By value
+                        t.Value = Convert.ChangeType(t.Value, TypeCode.Int64);
+                        t.PreviousValue = new long();
+                        t.PreviousValue = t.Value; // By value
                         break;
                     case Watch.ValueType.FloatType:
-                        t.value = Convert.ChangeType(t.value, TypeCode.Single);
-                        t.previousValue = new float();
-                        t.previousValue = t.value; // By value
+                        t.Value = Convert.ChangeType(t.Value, TypeCode.Single);
+                        t.PreviousValue = new float();
+                        t.PreviousValue = t.Value; // By value
                         break;
                     case Watch.ValueType.DoubleType:
-                        t.value = Convert.ChangeType(t.value, TypeCode.Double);
-                        t.previousValue = new double();
-                        t.previousValue = t.value; // By value
+                        t.Value = Convert.ChangeType(t.Value, TypeCode.Double);
+                        t.PreviousValue = new double();
+                        t.PreviousValue = t.Value; // By value
                         break;
                     case Watch.ValueType.BoolType:
-                        t.value = Convert.ChangeType(t.value, TypeCode.Boolean);
-                        t.previousValue = new bool();
-                        t.previousValue = t.value; // By value
+                        t.Value = Convert.ChangeType(t.Value, TypeCode.Boolean);
+                        t.PreviousValue = new bool();
+                        t.PreviousValue = t.Value; // By value
                         break;
                     case Watch.ValueType.StringUTF8Type:
                     case Watch.ValueType.StringUTF16Type:
-                        t.value = Convert.ChangeType(t.value, TypeCode.String);
-                        t.previousValue = t.value.ToString(); // Strings are reference types so we create a new copy to ensure value and previousValue don't point to the same thing!
+                        t.Value = Convert.ChangeType(t.Value, TypeCode.String);
+                        t.PreviousValue = t.Value.ToString(); // Strings are reference types so we create a new copy to ensure value and previousValue don't point to the same thing!
                         break;
                     default:
-                        t.value = Convert.ChangeType(t.value, TypeCode.Int32);
-                        t.previousValue = new int();
-                        t.previousValue = t.value; // By value
+                        t.Value = Convert.ChangeType(t.Value, TypeCode.Int32);
+                        t.PreviousValue = new int();
+                        t.PreviousValue = t.Value; // By value
                         break;
                 }
 
@@ -341,7 +341,7 @@ namespace au.edu.federation.SoniFight
                     t = Utils.getTriggerWithId(gc.ClockTriggerId);
 
                     // Read the value on it
-                    currentClock = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
+                    currentClock = Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType();
 
                     // Check if a round-tick has passed
                     endTime = DateTime.Now;
@@ -415,13 +415,13 @@ namespace au.edu.federation.SoniFight
                         }
 
                         // Read the value associated with the watch named by this trigger
-                        readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
+                        readValue = Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType();
 
                         // Get the secondary watch associated with this continuous trigger
-                        readValue2 = Utils.getWatchWithId(t.secondaryId).getDynamicValueFromType();
+                        readValue2 = Utils.getWatchWithId(t.SecondaryId).getDynamicValueFromType();
 
                         // The trigger value acts as the range between watch values for continuous triggers
-                        dynamic maxRange = t.value;
+                        dynamic maxRange = t.Value;
 
                         // Get the range and make it absolute (i.e. positive)
                         dynamic currentRange = Math.Abs(readValue - readValue2);
@@ -455,31 +455,31 @@ namespace au.edu.federation.SoniFight
                         {
                             case Trigger.ComparisonType.DistanceVolumeDescending:
                                 percentage = (float)(currentRange / maxRange);
-                                t.currentSampleVolume = t.sampleVolume * percentage;
-                                t.currentSampleSpeed = t.sampleSpeed;
-                                Program.irrKlang.ChangeContinuousSampleVolume(t.sampleKey, t.currentSampleVolume);
+                                t.CurrentSampleVolume = t.SampleVolume * percentage;
+                                t.CurrentSampleSpeed = t.SampleSpeed;
+                                Program.irrKlang.ChangeContinuousSampleVolume(t.SampleKey, t.CurrentSampleVolume);
                                 break;
 
                             case Trigger.ComparisonType.DistanceVolumeAscending:
                                 percentage = (float)(1.0 - (currentRange / maxRange));
-                                t.currentSampleVolume = t.sampleVolume * percentage;
-                                t.currentSampleSpeed = t.sampleSpeed;
-                                Program.irrKlang.ChangeContinuousSampleVolume(t.sampleKey, t.currentSampleVolume);
+                                t.CurrentSampleVolume = t.SampleVolume * percentage;
+                                t.CurrentSampleSpeed = t.SampleSpeed;
+                                Program.irrKlang.ChangeContinuousSampleVolume(t.SampleKey, t.CurrentSampleVolume);
                                 break;
 
                             case Trigger.ComparisonType.DistancePitchDescending:
                                 percentage = (float)(currentRange / maxRange);
-                                t.currentSampleSpeed = t.sampleSpeed * percentage;
-                                t.currentSampleVolume = t.sampleVolume;                                
-                                Program.irrKlang.ChangeContinuousSampleSpeed(t.sampleKey, t.currentSampleSpeed);
+                                t.CurrentSampleSpeed = t.SampleSpeed * percentage;
+                                t.CurrentSampleVolume = t.SampleVolume;                                
+                                Program.irrKlang.ChangeContinuousSampleSpeed(t.SampleKey, t.CurrentSampleSpeed);
                                 break;
 
                             case Trigger.ComparisonType.DistancePitchAscending:
                                 percentage = (float)(1.0 - (currentRange / maxRange));
-                                t.currentSampleSpeed = t.sampleSpeed * percentage;
-                                t.currentSampleVolume = t.sampleVolume;
-                                Console.WriteLine("Pitch ascending new speed: " + t.currentSampleSpeed + " and volume is: " + t.currentSampleVolume);
-                                Program.irrKlang.ChangeContinuousSampleSpeed(t.sampleKey, t.currentSampleSpeed);
+                                t.CurrentSampleSpeed = t.SampleSpeed * percentage;
+                                t.CurrentSampleVolume = t.SampleVolume;
+                                Console.WriteLine("Pitch ascending new speed: " + t.CurrentSampleSpeed + " and volume is: " + t.CurrentSampleVolume);
+                                Program.irrKlang.ChangeContinuousSampleSpeed(t.SampleKey, t.CurrentSampleSpeed);
                                 break;
                         }
 
@@ -502,11 +502,11 @@ namespace au.edu.federation.SoniFight
                     t = MainForm.gameConfig.normalTriggerList[normalTriggerLoop];
 
                     // Read the new value associated with the watch named by this trigger
-                    readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
+                    readValue = Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType();
 
                     // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies.
                     // NOTE: Even if we're currently playing a normal sample we'll still check for matches and queue any matching triggers.
-                    foundMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
+                    foundMatch = performComparison(t, Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType(), 0);
                     
                     // If we found a match...
                     if (foundMatch)
@@ -515,60 +515,61 @@ namespace au.edu.federation.SoniFight
                         if (Program.gameState == GameState.InGame && t.allowanceType != Trigger.AllowanceType.InMenu)
                         {
                             // If we're using a screen reader for the sonification event of this trigger...
-                            if (screenReaderActive && t.useTolk)
+                            if (t.UseTolk)
                             {
-                                string s = t.sampleFilename;
-                                s = s.Replace("{}", Convert.ToString( Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType() ) );
-                                Console.WriteLine(Resources.ResourceManager.GetString("sayingTolkString") + s);
-
-                                // ...then say the sample filename text. Final false means queue not interrupt anything currently being spoken.
-                                Tolk.Output(s, false);
-
-                                s = Utils.substituteWatchValuesInString(t, s);
-                            }
-                            else // Sample is file based
-                            {
-                                // Don't attempt to 'say' the sample name
-                                if (!t.useTolk)
+                                if (screenReaderActive)
                                 {
-                                    if (t.allowanceType == Trigger.AllowanceType.InMenu)
-                                    {
-                                        Program.irrKlang.PlayMenuSample(t);
-                                    }
-                                    else // Allowance type is InGame or Any
-                                    {
-                                        // Try to play the normal sample. If there's another normal sample playing then this sample will be added to the play queue in the SoundPlayer class.
-                                        Program.irrKlang.PlayNormalSample(t);
-                                    }
-                                }
+                                    // Substitute all curly braces and braces with number with the watch values
+                                    string s = Utils.substituteWatchValuesInString(t, t.SampleFilename);
+                                    Console.WriteLine(Resources.ResourceManager.GetString("sayingTolkString") + s);
 
-                            } // End of if this trigger is a sample (not a screen reader based event) block
+                                    // ...then say the sample filename text. Final false means queue not interrupt anything currently being spoken.
+                                    Tolk.Output(s, false);
+                                }
+                                else
+                                {
+                                    Console.WriteLine(Resources.ResourceManager.GetString("screenReaderNotActiveWarningString") + t.Id);
+                                }
+                            }
+                            else // Audio is file based
+                            {   
+                                if (t.allowanceType == Trigger.AllowanceType.InMenu)
+                                {
+                                    Program.irrKlang.PlayMenuSample(t);
+                                }
+                                else // Allowance type is InGame or Any
+                                {
+                                    // Try to play the normal sample. If there's another normal sample playing then this sample will be added to the play queue in the SoundPlayer class.
+                                    Program.irrKlang.PlayNormalSample(t);
+                                }
+                            }
                         }
-                        else // Game state must be InMenu or allowance type is InMenu - either is fine.
+                        else // Game state must be InMenu or allowance type is InMenu or Any - either is fine.
                         {
-                            // If we're using tolk and have an active screen reader...
-                            if (t.useTolk && screenReaderActive)
+                            // If we're using tolk...
+                            if (t.UseTolk)
                             {
-                                // ..then output the sonification event by saying the sample filename string. Final true means interupt any current speech.
-                                Tolk.Speak(t.sampleFilename, true);
-                            }
-                            else // Sample is a sample file as opposed to screen reader output
-                            {
-                                if (!t.useTolk)
+                                if (screenReaderActive)
                                 {
-                                    if (Program.gameState == GameState.InMenu && t.allowanceType != Trigger.AllowanceType.InGame) // i.e. allowance type is InMenu or Any
-                                    {
-                                        // Stop any playing samples
-                                        Program.irrKlang.StopMenuSounds();                                        
+                                    // Substitute all curly braces and braces with number with the watch values
+                                    string s = Utils.substituteWatchValuesInString(t, t.SampleFilename);
+                                    Console.WriteLine(Resources.ResourceManager.GetString("sayingTolkString") + s);
 
-                                        // ...then play the latest trigger sample.
-                                        Program.irrKlang.PlayMenuSample(t);
-                                    }
-                                    else // Allowance type must be Any
-                                    {
-
-                                    }
+                                    // ..then output the sonification event by saying the sample filename string. Final true means interupt any current speech.
+                                    Tolk.Speak(s, true);
                                 }
+                                else
+                                {
+                                    Console.WriteLine( Resources.ResourceManager.GetString("screenReaderNotActiveWarningString") + t.Id );
+                                }
+                            }
+                            else // Audio is file based
+                            {                                
+                                // Stop any playing samples
+                                Program.irrKlang.StopMenuSounds();
+
+                                // ...then play the latest trigger sample on the menu engine instance (because the game state is recognised as InMenu)
+                                Program.irrKlang.PlayMenuSample(t);                                                             
                             }
 
                         } // End of if sonification is via a sample section
@@ -577,7 +578,7 @@ namespace au.edu.federation.SoniFight
 
                     // Update our 'previousValue' ready for the next check (used if comparison type is 'Changed').
                     // Note: We do this regardless of whether we found a match
-                    t.previousValue = readValue;
+                    t.PreviousValue = readValue;
 
                 } // End of loop over normal triggers
 
@@ -586,7 +587,7 @@ namespace au.edu.federation.SoniFight
                 if ( (t.allowanceType == Trigger.AllowanceType.InGame && Program.gameState == GameState.InMenu)  ||  // ...if the trigger allowance and game state don't match...
                      (t.allowanceType == Trigger.AllowanceType.InMenu && Program.gameState == GameState.InGame)  ||  // ...both ways, or... 
                      (Program.gameState != Program.previousGameState)                                            ||  // ...if we haven't been in this game state for 2 'ticks' or...
-                     (t.isClock)                                                                                 ||  // ...if this is the clock trigger or...
+                     (t.IsClock)                                                                                 ||  // ...if this is the clock trigger or...
                      (!t.active) )                                                                                   // ...if the trigger is not active.
                 {
                     // Skip the rest of the loop for this trigger
@@ -606,39 +607,39 @@ namespace au.edu.federation.SoniFight
                     t = MainForm.gameConfig.modifierTriggerList[modifierTriggerLoop];
 
                     // Read the new value associated with the watch named by this trigger
-                    readValue = Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType();
+                    readValue = Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType();
 
                     // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies.
-                    foundMatch = performComparison(t, Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType(), 0);
+                    foundMatch = performComparison(t, Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType(), 0);
                     
                     // Get the continuous trigger related to this modifier trigger.
                     // Note: We ALWAYS need this because even if we don't find a match, we may need to reset the volume/pitch of the continuous sample to it's non-modified state
-                    Trigger continuousTrigger = Utils.getTriggerWithId(t.secondaryId);
+                    Trigger continuousTrigger = Utils.getTriggerWithId(t.SecondaryId);
                     
                     // Modifier condition met? Okay...
                     if (foundMatch)
                     {
                         // If this modifier trigger is NOT currently active we must activate it because we HAVE found a match for the modifier condition (i.e. foundMatch)
-                        if (!t.modificationActive)
+                        if (!t.ModificationActive)
                         {
                             // Set the flag on this modification trigger to say it's active
-                            t.modificationActive = true;
+                            t.ModificationActive = true;
 
                             // TODO: Localise this output.
 
-                            Console.WriteLine("1--Found modifier match for trigger " + t.id + " and modification was NOT active.");
-                            Console.WriteLine("1--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
-                            Console.WriteLine("1--Modifier trigger's sample volume is: " + t.sampleVolume);
-                            Console.WriteLine("1--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
-                            Console.WriteLine("1--Modifier trigger's sample speed is: " + t.sampleSpeed);
+                            Console.WriteLine("1--Found modifier match for trigger " + t.Id + " and modification was NOT active.");
+                            Console.WriteLine("1--Continuous trigger's current sample volume is: " + continuousTrigger.CurrentSampleVolume);
+                            Console.WriteLine("1--Modifier trigger's sample volume is: " + t.SampleVolume);
+                            Console.WriteLine("1--Continuous trigger's current sample speed is: " + continuousTrigger.CurrentSampleSpeed);
+                            Console.WriteLine("1--Modifier trigger's sample speed is: " + t.SampleSpeed);
 
                             // Add any volume or pitch changes to the continuous triggers playback
-                            continuousTrigger.currentSampleVolume *= t.sampleVolume;
-                            continuousTrigger.currentSampleSpeed *= t.sampleSpeed;
-                            Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
-                            Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
+                            continuousTrigger.CurrentSampleVolume *= t.SampleVolume;
+                            continuousTrigger.CurrentSampleSpeed *= t.SampleSpeed;
+                            Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleVolume);
+                            Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleSpeed);
 
-                            Console.WriteLine("1--Multiplying gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
+                            Console.WriteLine("1--Multiplying gives new volume of: " + continuousTrigger.CurrentSampleVolume + " and speed of: " + continuousTrigger.CurrentSampleSpeed);
                         }
 
                         // Else modification already active on this continuous trigger? Do nothing.
@@ -646,26 +647,26 @@ namespace au.edu.federation.SoniFight
                     else // Did NOT match modifier condition. Do we need to reset the continous trigger?
                     {
                         // If this modifier trigger IS currently active and we failed the match we have to reset the continuous triggers playback conditions
-                        if (t.modificationActive)
+                        if (t.ModificationActive)
                         {
                             // TODO: Localise this output.
 
-                            Console.WriteLine("2--Did NOT find modifier match for trigger " + t.id + " and modification WAS active so needs resetting.");
-                            Console.WriteLine("2--Continuous trigger's current sample volume is: " + continuousTrigger.currentSampleVolume);
-                            Console.WriteLine("2--Modifier trigger's sample volume is: " + t.sampleVolume);
-                            Console.WriteLine("2--Continuous trigger's current sample speed is: " + continuousTrigger.currentSampleSpeed);
-                            Console.WriteLine("2--Modifier trigger's sample speed is: " + t.sampleSpeed);
+                            Console.WriteLine("2--Did NOT find modifier match for trigger " + t.Id + " and modification WAS active so needs resetting.");
+                            Console.WriteLine("2--Continuous trigger's current sample volume is: " + continuousTrigger.CurrentSampleVolume);
+                            Console.WriteLine("2--Modifier trigger's sample volume is: " + t.SampleVolume);
+                            Console.WriteLine("2--Continuous trigger's current sample speed is: " + continuousTrigger.CurrentSampleSpeed);
+                            Console.WriteLine("2--Modifier trigger's sample speed is: " + t.SampleSpeed);
 
                             // Set the flag on this modification trigger to say it's inactive
-                            t.modificationActive = false;
+                            t.ModificationActive = false;
 
                             // Reset the volume and pitch of the continuous trigger based on the modification trigger's volume and pitch
-                            continuousTrigger.currentSampleVolume /= t.sampleVolume;
-                            continuousTrigger.currentSampleSpeed /= t.sampleSpeed;
-                            Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.sampleKey, continuousTrigger.currentSampleVolume);
-                            Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.sampleKey, continuousTrigger.currentSampleSpeed);
+                            continuousTrigger.CurrentSampleVolume /= t.SampleVolume;
+                            continuousTrigger.CurrentSampleSpeed /= t.SampleSpeed;
+                            Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleVolume);
+                            Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleSpeed);
 
-                            Console.WriteLine("2--Dividing gives new volume of: " + continuousTrigger.currentSampleVolume + " and speed of: " + continuousTrigger.currentSampleSpeed);
+                            Console.WriteLine("2--Dividing gives new volume of: " + continuousTrigger.CurrentSampleVolume + " and speed of: " + continuousTrigger.CurrentSampleSpeed);
                         }
 
                         // Else sonification already inactive after failing match? Do nothing.

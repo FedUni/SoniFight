@@ -312,7 +312,7 @@ namespace au.edu.federation.SoniFight
             // Add all trigger nodes
             foreach (Trigger t in gameConfig.triggerList)
             {
-                string s = t.id + "-" + t.name;
+                string s = t.Id + "-" + t.name;
                 tempNode = triggerNode.Nodes.Add(s);
                 tempNode.Tag = Resources.ResourceManager.GetString("triggerString");
             }
@@ -855,9 +855,9 @@ namespace au.edu.federation.SoniFight
                 String s = "";
                 for (int loop = 0; loop < gameConfig.triggerList.Count; ++loop)
                 {
-                    if (gameConfig.triggerList[loop].watchOneId == currentWatch.Id)
+                    if (gameConfig.triggerList[loop].WatchOneId == currentWatch.Id)
                     {
-                        s += Convert.ToString(gameConfig.triggerList[loop].id) + ", ";
+                        s += Convert.ToString(gameConfig.triggerList[loop].Id) + ", ";
                         foundTriggerUsing = true;
                     }
                 }
@@ -970,7 +970,7 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(idLabel, 0, row); // Control, Column, Row
 
                 TextBox idTB = new TextBox();
-                idTB.Text = currentTrigger.id.ToString();
+                idTB.Text = currentTrigger.Id.ToString();
 
                 idTB.TextChanged += (object sender, EventArgs ea) =>
                 {
@@ -978,8 +978,8 @@ namespace au.edu.federation.SoniFight
                     bool result = Int32.TryParse(idTB.Text, out x);
                     if (result)
                     {
-                        currentTrigger.id = x;
-                        currentTreeNode.Text = currentTrigger.id + "-" + currentTrigger.name;
+                        currentTrigger.Id = x;
+                        currentTreeNode.Text = currentTrigger.Id + "-" + currentTrigger.name;
                     }
                     else
                     {
@@ -989,7 +989,7 @@ namespace au.edu.federation.SoniFight
                         }
                         else // Field empty? Invalidate it so we can catch it in the save section
                         {
-                            currentTrigger.id = -1;
+                            currentTrigger.Id = -1;
                         }
                     }
                 };
@@ -1014,7 +1014,7 @@ namespace au.edu.federation.SoniFight
                 nameTB.TextChanged += (object sender, EventArgs ea) =>
                 {
                     currentTrigger.name = nameTB.Text;
-                    currentTreeNode.Text = currentTrigger.id + "-" + currentTrigger.name;
+                    currentTreeNode.Text = currentTrigger.Id + "-" + currentTrigger.name;
                 };
                 nameTB.Tag = "nameTB";
                 nameTB.Anchor = AnchorStyles.Right;
@@ -1034,8 +1034,8 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(descLabel, 0, row); // Control, Column, Row
 
                 TextBox descTB = new TextBox();
-                descTB.Text = currentTrigger.description.ToString();
-                descTB.TextChanged += (object sender, EventArgs ea) => { currentTrigger.description = descTB.Text; };
+                descTB.Text = currentTrigger.Description.ToString();
+                descTB.TextChanged += (object sender, EventArgs ea) => { currentTrigger.Description = descTB.Text; };
                 descTB.Anchor = AnchorStyles.Right;
                 descTB.Dock = DockStyle.Fill;
                 descTB.Margin = padding;
@@ -1133,7 +1133,7 @@ namespace au.edu.federation.SoniFight
 
                 panel.Controls.Add(watch1Label, 0, row); // Control, Column, Row
 
-                watch1TB.Text = currentTrigger.watchOneId.ToString();
+                watch1TB.Text = currentTrigger.WatchOneId.ToString();
                 watch1TB.Anchor = AnchorStyles.Left;
                 watch1TB.Dock = DockStyle.Fill;
                 watch1TB.Margin = padding;
@@ -1144,7 +1144,7 @@ namespace au.edu.federation.SoniFight
                     bool result = Int32.TryParse(watch1TB.Text, out x);
                     if (result)
                     {
-                        currentTrigger.watchOneId = x;
+                        currentTrigger.WatchOneId = x;
                     }
                     else
                     {
@@ -1154,7 +1154,7 @@ namespace au.edu.federation.SoniFight
                         }
                         else // Field empty? Invalidate it so we can catch it in the save section
                         {
-                            currentTrigger.watchOneId = -1;
+                            currentTrigger.WatchOneId = -1;
                         }
                     }
                 };
@@ -1183,7 +1183,7 @@ namespace au.edu.federation.SoniFight
                 secondaryIdLabel.Margin = padding;
                 panel.Controls.Add(secondaryIdLabel, 0, row); // Control, Column, Row
 
-                secondaryIdTB.Text = currentTrigger.secondaryId.ToString();
+                secondaryIdTB.Text = currentTrigger.SecondaryId.ToString();
                 secondaryIdTB.Anchor = AnchorStyles.Left;
                 secondaryIdTB.Dock = DockStyle.Fill;
                 secondaryIdTB.Margin = padding;
@@ -1194,7 +1194,7 @@ namespace au.edu.federation.SoniFight
                     bool result = Int32.TryParse(secondaryIdTB.Text, out x);
                     if (result)
                     {
-                        currentTrigger.secondaryId = x;
+                        currentTrigger.SecondaryId = x;
                     }
                     else
                     {
@@ -1204,7 +1204,7 @@ namespace au.edu.federation.SoniFight
                         }
                         else // Field empty? Invalidate it so we can catch it in the save section
                         {
-                            currentTrigger.secondaryId = -1;
+                            currentTrigger.SecondaryId = -1;
                         }
                     }
                 };
@@ -1223,7 +1223,7 @@ namespace au.edu.federation.SoniFight
                 // Note: valueTB is created above so we can access it in the comparison type dropdown
                 // Also: This TextBox will toggle to ReadOnly if the comparison type is distance, and editable if it's
                 //       anything else. See the above trigger type ComboBox row.
-                valueTB.Text = currentTrigger.value.ToString();
+                valueTB.Text = currentTrigger.Value.ToString();
 
                 // Set a max of 33 chars
                 valueTB.MaxLength = Program.TEXT_COMPARISON_CHAR_LIMIT;
@@ -1232,7 +1232,7 @@ namespace au.edu.federation.SoniFight
                 valueTB.TextChanged += (object sender, EventArgs ea) => {
 
                     // Trim whitespace
-                    currentTrigger.value = valueTB.Text.TrimEnd();
+                    currentTrigger.Value = valueTB.Text.TrimEnd();
 
                 };
                 
@@ -1257,15 +1257,15 @@ namespace au.edu.federation.SoniFight
                 sampleSelectionPanel.Dock = DockStyle.Fill;
                 sampleSelectionPanel.Margin = padding;
 
-                sampleFilenameTB.Text = currentTrigger.sampleFilename;
+                sampleFilenameTB.Text = currentTrigger.SampleFilename;
                 sampleFilenameTB.Anchor = AnchorStyles.Right;
                 sampleFilenameTB.Dock = DockStyle.Fill;
                 sampleFilenameTB.Margin = new System.Windows.Forms.Padding(0);
 
                 // Disable sample field if we're the clock trigger
-                if (currentTrigger.isClock) { sampleFilenameTB.Enabled = false; }
+                if (currentTrigger.IsClock) { sampleFilenameTB.Enabled = false; }
 
-                sampleFilenameTB.TextChanged += (object sender, EventArgs ea) => { currentTrigger.sampleFilename = sampleFilenameTB.Text; };
+                sampleFilenameTB.TextChanged += (object sender, EventArgs ea) => { currentTrigger.SampleFilename = sampleFilenameTB.Text; };
 
                 sampleSelectionPanel.Controls.Add(sampleFilenameTB);
 
@@ -1282,10 +1282,10 @@ namespace au.edu.federation.SoniFight
                 tolkCheckbox.Dock = DockStyle.Right;
                 tolkCheckbox.AutoSize = true;
                 tolkCheckbox.Padding = padding;
-                tolkCheckbox.Checked = currentTrigger.useTolk;
+                tolkCheckbox.Checked = currentTrigger.UseTolk;
 
                 // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
-                if (currentTrigger.useTolk)
+                if (currentTrigger.UseTolk)
                 {
                     sampleFilenameButton.Enabled = false;
                     sampleVolumeTB.Enabled = false;
@@ -1312,10 +1312,10 @@ namespace au.edu.federation.SoniFight
 
                 tolkCheckbox.CheckedChanged += (object sender, EventArgs ea) => {
                     // Update the new isClock status on our trigger
-                    currentTrigger.useTolk = tolkCheckbox.Checked;
+                    currentTrigger.UseTolk = tolkCheckbox.Checked;
 
                     // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
-                    if (currentTrigger.useTolk)
+                    if (currentTrigger.UseTolk)
                     {
                         sampleFilenameButton.Enabled = false;
                         sampleVolumeTB.Enabled = false;
@@ -1348,7 +1348,7 @@ namespace au.edu.federation.SoniFight
                     if (file.ShowDialog() == DialogResult.OK)
                     {
                         // Note: Filename gives you the full path to the file, SafeFilename gives you ONLY the filename including extension, which is what we want
-                        currentTrigger.sampleFilename = file.SafeFileName;
+                        currentTrigger.SampleFilename = file.SafeFileName;
                         sampleFilenameTB.Text = file.SafeFileName;
                     }
                 };
@@ -1366,7 +1366,7 @@ namespace au.edu.federation.SoniFight
                     sampleFilenameButton.Enabled = true;
                 }
 
-                if (currentTrigger.useTolk)
+                if (currentTrigger.UseTolk)
                 {
                     sampleFilenameButton.Enabled = false;
                 }
@@ -1384,13 +1384,13 @@ namespace au.edu.federation.SoniFight
 
                 panel.Controls.Add(sampleVolumeLabel, 0, row); // Control, Column, Row
 
-                sampleVolumeTB.Text = currentTrigger.sampleVolume.ToString();
+                sampleVolumeTB.Text = currentTrigger.SampleVolume.ToString();
                 sampleVolumeTB.Anchor = AnchorStyles.Left;
                 sampleVolumeTB.Dock = DockStyle.Fill;
                 sampleVolumeTB.Margin = padding;
 
                 // Disable sample volume field if we're the clock trigger or using tolk
-                if (currentTrigger.isClock || currentTrigger.useTolk)
+                if (currentTrigger.IsClock || currentTrigger.UseTolk)
                 {   
                     sampleVolumeTB.Enabled = false;
                     sampleVolumeTB.Update();
@@ -1401,7 +1401,7 @@ namespace au.edu.federation.SoniFight
                     bool result = float.TryParse(sampleVolumeTB.Text, out x);
                     if (result)
                     {
-                        currentTrigger.sampleVolume = x;
+                        currentTrigger.SampleVolume = x;
                     }
                     else
                     {
@@ -1411,7 +1411,7 @@ namespace au.edu.federation.SoniFight
                         }
                         else // Field empty? Invalidate it so we can catch it in the save section
                         {
-                            currentTrigger.sampleVolume = -1.0f;
+                            currentTrigger.SampleVolume = -1.0f;
                         }
                     }
                 };
@@ -1427,13 +1427,13 @@ namespace au.edu.federation.SoniFight
                 sampleSpeedLabel.Margin = padding;
                 panel.Controls.Add(sampleSpeedLabel, 0, row); // Control, Column, Row
 
-                sampleSpeedTB.Text = currentTrigger.sampleSpeed.ToString();
+                sampleSpeedTB.Text = currentTrigger.SampleSpeed.ToString();
                 sampleSpeedTB.Anchor = AnchorStyles.Left;
                 sampleSpeedTB.Dock = DockStyle.Fill;
                 sampleSpeedTB.Margin = padding;
 
                 // Disable sample speed field if we're not the clock trigger
-                if (currentTrigger.isClock || currentTrigger.useTolk) { sampleSpeedTB.Enabled = false; }
+                if (currentTrigger.IsClock || currentTrigger.UseTolk) { sampleSpeedTB.Enabled = false; }
 
                 sampleSpeedTB.TextChanged += (object sender, EventArgs ea) => {
                     float x;
@@ -1443,7 +1443,7 @@ namespace au.edu.federation.SoniFight
                         // Cap if necessary and set sample speed
                         if (x > GameConfig.MAX_SAMPLE_PLAYBACK_SPEED) { x = GameConfig.MAX_SAMPLE_PLAYBACK_SPEED; }
                         if (x < GameConfig.MIN_SAMPLE_PLAYBACK_SPEED) { x = GameConfig.MIN_SAMPLE_PLAYBACK_SPEED; }
-                        currentTrigger.sampleSpeed = x;
+                        currentTrigger.SampleSpeed = x;
                     }
                     else
                     {
@@ -1456,7 +1456,7 @@ namespace au.edu.federation.SoniFight
                         }
                         else // Field empty? Invalidate it so we can catch it in the save section
                         {
-                            currentTrigger.sampleSpeed = -1.0f;
+                            currentTrigger.SampleSpeed = -1.0f;
                         }
                     }
                 };
@@ -1473,10 +1473,10 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(isClockLabel, 0, row); // Control, Column, Row
 
                 CheckBox isClockCB = new CheckBox();
-                isClockCB.Checked = currentTrigger.isClock;
+                isClockCB.Checked = currentTrigger.IsClock;
 
                 // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
-                if (currentTrigger.isClock)
+                if (currentTrigger.IsClock)
                 {
                     sampleFilenameTB.Enabled = false;
                     sampleFilenameButton.Enabled = false;
@@ -1491,7 +1491,7 @@ namespace au.edu.federation.SoniFight
                     valueTB.Enabled = true;
 
                     // If we are NOT using tolk then we enable volume, speed and file buttons
-                    if (!currentTrigger.useTolk)
+                    if (!currentTrigger.UseTolk)
                     {
                         sampleVolumeTB.Enabled = true;
                         sampleSpeedTB.Enabled = true;
@@ -1513,10 +1513,10 @@ namespace au.edu.federation.SoniFight
 
                 isClockCB.CheckedChanged += (object sender, EventArgs ea) => {
                     // Update the new isClock status on our trigger
-                    currentTrigger.isClock = isClockCB.Checked;
+                    currentTrigger.IsClock = isClockCB.Checked;
 
                     // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
-                    if (currentTrigger.isClock)
+                    if (currentTrigger.IsClock)
                     {
                         sampleFilenameTB.Enabled = false;
                         sampleFilenameButton.Enabled = false;
@@ -1534,7 +1534,7 @@ namespace au.edu.federation.SoniFight
                         tolkCheckbox.Enabled = true;
 
                         // // If we are NOT using tolk then we enable volume, speed and file buttons
-                        if (!currentTrigger.useTolk)
+                        if (!currentTrigger.UseTolk)
                         {
                             sampleVolumeTB.Enabled = true;
                             sampleSpeedTB.Enabled = true;
@@ -1584,7 +1584,7 @@ namespace au.edu.federation.SoniFight
                 triggerAllowanceCB.Dock = DockStyle.Fill;
                 triggerAllowanceCB.Margin = padding;                                
 
-                if (currentTrigger.isClock)
+                if (currentTrigger.IsClock)
                 {
                     triggerAllowanceCB.Enabled = false;
                 }
@@ -1606,8 +1606,8 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(activeLabel, 0, row); // Control, Column, Row
 
                 CheckBox activeCB = new CheckBox();
-                activeCB.Checked = currentTrigger.active;
-                activeCB.CheckedChanged += (object sender, EventArgs ea) => { currentTrigger.active = activeCB.Checked; };
+                activeCB.Checked = currentTrigger.Active;
+                activeCB.CheckedChanged += (object sender, EventArgs ea) => { currentTrigger.Active = activeCB.Checked; };
                 activeCB.Anchor = AnchorStyles.Right;
                 activeCB.Dock = DockStyle.Fill;
                 activeCB.Margin = padding;
@@ -1696,14 +1696,14 @@ namespace au.edu.federation.SoniFight
 
             // Create a new trigger and add it to the list
             currentTrigger = new Trigger();
-            currentTrigger.id = Utils.getNextTriggerIndex(gameConfig.triggerList);
+            currentTrigger.Id = Utils.getNextTriggerIndex(gameConfig.triggerList);
             gameConfig.triggerList.Add(currentTrigger);
 
             // Add a new watch entry as a child node to the "Triggers" node
             TreeView tv = this.gcTreeView;
             TreeNode triggersNode = Utils.FindNodeWithText( tv, Resources.ResourceManager.GetString("triggersString") );
             tv.BeginUpdate();
-            currentTreeNode = triggersNode.Nodes.Add( currentTrigger.id + Resources.ResourceManager.GetString("newTriggerString") );
+            currentTreeNode = triggersNode.Nodes.Add( currentTrigger.Id + Resources.ResourceManager.GetString("newTriggerString") );
             currentTreeNode.Tag = Resources.ResourceManager.GetString("triggerString");
             tv.EndUpdate();
             tv.ExpandAll();
@@ -1734,14 +1734,14 @@ namespace au.edu.federation.SoniFight
             currentTrigger = new Trigger(currentTrigger);
 
             // Update the id to the next available free id value and add the trigger to the trigger list
-            currentTrigger.id = Utils.getNextTriggerIndex(gameConfig.triggerList);
+            currentTrigger.Id = Utils.getNextTriggerIndex(gameConfig.triggerList);
             gameConfig.triggerList.Add(currentTrigger);
 
             // Add a new watch entry as a child node to the "Triggers" node
             TreeView tv = this.gcTreeView;
             TreeNode triggersNode = Utils.FindNodeWithText( tv, Resources.ResourceManager.GetString("triggersString") );
             tv.BeginUpdate();
-            currentTreeNode = triggersNode.Nodes.Add(currentTrigger.id + "-" + currentTrigger.name);
+            currentTreeNode = triggersNode.Nodes.Add(currentTrigger.Id + "-" + currentTrigger.name);
             currentTreeNode.Tag = Resources.ResourceManager.GetString("triggerString");
             tv.EndUpdate();
             tv.ExpandAll();

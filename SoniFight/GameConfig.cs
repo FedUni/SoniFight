@@ -219,11 +219,11 @@ namespace au.edu.federation.SoniFight
                     foreach (Trigger t in triggerList)
                     {
                         // Construct the sample key used for the dictionary
-                        t.sampleKey = ".\\Configs\\" + configDirectory + t.sampleFilename;
+                        t.SampleKey = ".\\Configs\\" + configDirectory + t.SampleFilename;
 
                         // If the sample isn't loaded and it's not the clock or a modifier trigger (these don't use samples) and we're not using tolk...
-                        //if ( !(Program.irrKlang.SampleLoaded(t.sampleKey)) && !(t.isClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.useTolk) )
-                        if (!(t.isClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.useTolk))
+                        //if ( !(Program.irrKlang.SampleLoaded(t.sampleKey)) && !(t.IsClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.useTolk) )
+                        if (!(t.IsClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.UseTolk))
                         {
                             // ...then load the sample for the trigger.
                             // NOTE: The sample is loaded into the specific engine used for playback based on the trigger type
@@ -231,7 +231,7 @@ namespace au.edu.federation.SoniFight
                         }
 
                         // Only add active triggers to these separated lists, and don't add the clock
-                        if (t.active && !t.isClock)
+                        if (t.Active && !t.IsClock)
                         {
                             if (t.triggerType == Trigger.TriggerType.Normal)
                             {
@@ -443,39 +443,39 @@ namespace au.edu.federation.SoniFight
             List<int> clockTriggerIdList = new List<int>();
             foreach (Trigger t in triggerList)
             {
-                idList.Add(t.id);
+                idList.Add(t.Id);
 
                 // Ensire trigger id is => 0
-                if (t.id < 0)
+                if (t.Id < 0)
                 {
                     MessageBox.Show("Validation Error: Triggers must have unique ids with a minumum value of 0.");
                     return false;
                 }
 
                 // Ensure sample filename exists
-                if (!t.isClock)
+                if (!t.IsClock)
                 {
-                    if (string.IsNullOrEmpty(t.sampleFilename))
+                    if ( string.IsNullOrEmpty(t.SampleFilename) )
                     {
-                        MessageBox.Show("Validation Error: A sample name must be provided to play trigger with Id: " + t.id);
+                        MessageBox.Show("Validation Error: A sample name must be provided to play trigger with Id: " + t.Id);
                         return false;
                     }
                 }
                 else // Found clock trigger?
                 {
                     // If the clock trigger is active then track it so we can ensure we only have a single active clock trigger later on (no more, no less)
-                    if (t.active)
+                    if (t.Active)
                     {
                         // Set this game config's clock trigger id so we can go straight to it rather than finding it per poll
-                        clockTriggerId = t.id;
-                        clockTriggerIdList.Add(t.id);
+                        clockTriggerId = t.Id;
+                        clockTriggerIdList.Add(t.Id);
                         ++clockTriggersFound;
                     }
                 }
 
                 // Ensure sample volume is a float within the valid range (the clock trigger doesn't use a sample)
-                s = t.sampleVolume.ToString();
-                if (!t.isClock)
+                s = t.SampleVolume.ToString();
+                if (!t.IsClock)
                 {
                     if (!string.IsNullOrEmpty(s))
                     {
@@ -492,14 +492,14 @@ namespace au.edu.federation.SoniFight
                     }
                     else
                     {
-                        MessageBox.Show("Validation Error: Missing sample volume on trigger with Id: " + t.id);
+                        MessageBox.Show("Validation Error: Missing sample volume on trigger with Id: " + t.Id);
                         return false;
                     }
                 }
 
                 // Ensure sample volume rate is a float within the valid range (the clock trigger doesn't use a sample)
-                s = t.sampleSpeed.ToString();
-                if (!t.isClock)
+                s = t.SampleSpeed.ToString();
+                if (!t.IsClock)
                 {
                     if (!string.IsNullOrEmpty(s))
                     {
@@ -516,7 +516,7 @@ namespace au.edu.federation.SoniFight
                     }
                     else
                     {
-                        MessageBox.Show("Validation Error: Missing sample speed on trigger with Id: " + t.id);
+                        MessageBox.Show("Validation Error: Missing sample speed on trigger with Id: " + t.Id);
                         return false;
                     }
                 }
