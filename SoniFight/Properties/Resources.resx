@@ -570,4 +570,7 @@
   <data name="sayingTolkString" xml:space="preserve">
     <value>Saying tolk string: </value>
   </data>
+  <data name="watchValueParseFailString" xml:space="preserve">
+    <value>WARNING: Could not get watch ID from parsing the following to int: </value>
+  </data>
 </root>

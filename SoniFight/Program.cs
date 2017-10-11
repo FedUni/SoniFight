@@ -65,8 +65,7 @@ namespace au.edu.federation.SoniFight
             Thread.CurrentThread.CurrentUICulture = cultureOverride;
             Thread.CurrentThread.CurrentCulture = cultureOverride;*/
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            
 
             // Prepare sonficiation background worker...
             sonificationBGW.DoWork += performSonification;      // Specify the work method - this runs when RunWorkerAsync is called
@@ -76,7 +75,9 @@ namespace au.edu.federation.SoniFight
             // Initialise our irrKlang SoundPlayer class ready to play audio
             //Program.soundplayer = new SoundPlayer();
 
-            // Main loop - we STAY on this line until the application terminates
+            // Setup display and display form. Note: we STAY on this line until the form closes (i.e. the application terminates).
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
 
             // IrrKlang cleanup (unload and samples and dispose of player)

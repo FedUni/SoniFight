@@ -1418,5 +1418,14 @@ namespace au.edu.federation.SoniFight.Properties {
                 return ResourceManager.GetString("watchString", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WARNING: Could not get watch ID from parsing the following to int: .
+        /// </summary>
+        internal static string watchValueParseFailString {
+            get {
+                return ResourceManager.GetString("watchValueParseFailString", resourceCulture);
+            }
+        }
     }
 }

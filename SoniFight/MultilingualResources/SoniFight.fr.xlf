@@ -610,6 +610,10 @@
           <source>Saying tolk string: </source>
           <target state="new">Saying tolk string: </target>
         </trans-unit>
+        <trans-unit id="watchValueParseFailString" translate="yes" xml:space="preserve">
+          <source>WARNING: Could not get watch ID from parsing the following to int: </source>
+          <target state="new">WARNING: Could not get watch ID from parsing the following to int: </target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -660,77 +660,41 @@ namespace au.edu.federation.SoniFight
             return highest + 1;
         }
 
-        // Method to substitute all watch braces with the value of that watch
-        // Heavy lifting done by Milosz Krajewski at: https://stackoverflow.com/questions/16537901/c-sharp-regex-match-curly-brackets-contents-only-exclude-braces
+        // Method to substitute all watch curly braces with the value of this trigger's watch for {}, or the value of the numbered watch in the case of things like {123}
         public static string substituteWatchValuesInString(Trigger t, string s)
         {
-            // Easy case - just the value of this trigger's watch
-            s = s.Replace("{}", Convert.ToString(Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType()));
+            // Easy case -just substitutethe value of this trigger's watch
+            s = s.Replace("{}", Convert.ToString(Utils.getWatchWithId(t.watchOneId).getDynamicValueFromType()) );
 
-            // Complex case - the value of other watches name-checked, for example {66} would have to be replaced with the value of watch 66 as a string
+            // Regex to find any remaining values in curly braces. Note: The returned match contains the curly braces, which is exactly what we want.
+            Regex matchesWithBracesRegex = new Regex("{.*?}");
 
-            // Greedy regex to extract values from between curly braces.
-            // Note: While this works, it won't handle nested things (though it shouldn't have to), and I'm told it's not best practice so I'll use the non-greedy version below for now.
-            /* Regex regex = new Regex("(?<={)[^}]*(?=})");
-            foreach (Match match in matches) // e.g. you can loop through your matches like this
-            {
-                Console.WriteLine("Match value is: " + match.Value); // This will be the number between the curly braces
+            // Get the collection of matches
+            MatchCollection matches = matchesWithBracesRegex.Matches(s);
 
-                int watchId = Convert.ToInt32(group.Captures[captureCtr].Value);
-                dynamic watchValue = Utils.getWatchWithId(watchId).getDynamicValueFromType();
-                string watchValueString = Convert.ToString(watchValueString);
-                s = s.Replace(match.Value, Convert.ToString( Utils.getWatchWithId().getDynamicValueFromType()));
-            }
-            */
-
-            // Non-greedy regex to extract values from between curly braces
-            Regex regex = new Regex("{(.*?)}");
-            
-            // Get the collection of matches (these matches contain the curly braces themselves)
-            MatchCollection matches = regex.Matches(s);
-
-            // Loop over each match in the match collection...
+            // Loop over each match
             foreach (Match match in matches)
             {
-                // match.Value would include the curly braces
-                // Console.WriteLine("Match value is: " + match.Value);
-                
-                // Loup over groups within each match
-                for (int groupCtr = 0; groupCtr < match.Groups.Count; ++groupCtr)
+                // Strip start and end curly brace to leave just watch ID as a string
+                string valueString = match.Value.Substring(1, match.Value.Length - 2);
+
+                // Convert watch ID to an int, then get the watch with that ID, get its value and substitute the value
+                int valueInt = -1;
+                if (int.TryParse(valueString, System.Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, out valueInt))
                 {
-                    // Grab a group
-                    Group group = match.Groups[groupCtr];
-                    //Console.WriteLine("   Group {0} has value {1}", groupCtr, group.Value);
+                    dynamic watchValue = Utils.getWatchWithId(valueInt).getDynamicValueFromType();
 
-                    // Loop over each capture within that group
-                    for (int captureCtr = 0; captureCtr < group.Captures.Count; ++captureCtr)
-                    {
-                        //Console.WriteLine("      Capture {0}: {1}", captureCtr, group.Captures[captureCtr].Value);
+                    s = s.Replace(match.Value, Convert.ToString(watchValue));
+                }
+                else // Couldn't parse text inside braces to int? Warn user.
+                {
+                    s = s.Replace(match.Value, Resources.ResourceManager.GetString("watchValueParseFailString") + match.Value);
+                }
 
-                        int watchId = Convert.ToInt32(group.Captures[captureCtr].Value);
-                        dynamic watchValue = Utils.getWatchWithId(watchId).getDynamicValueFromType();
-
-                        // If we found the watch we substitute the curly-brace-enclosed-value with the actual value of that watch in the string
-                        if (watchValue != null)
-                        {
-                            string watchValueString = Convert.ToString(watchValue);
-                            s = s.Replace(match.Value, watchValueString);
-                        }
-                        else // No watch with that ID? Subtitute a not found message
-                        {
-                            string notFound = " Watch not found " + match.Value + " ";
-                            s = s.Replace(match.Value, notFound);
-                        }
-
-                    } // End of loop over captures
-
-                } // End of loop over match groups
-
-            } // End of loop over regex matches
+            } // End of loop over matches
 
             return s;
-        }
-        
+        }        
 
     } // End of Utils class
 
