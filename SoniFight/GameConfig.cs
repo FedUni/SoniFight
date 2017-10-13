@@ -32,6 +32,13 @@ namespace au.edu.federation.SoniFight
         public const float MIN_SAMPLE_PLAYBACK_SPEED = 0.1f;
         public const float MAX_SAMPLE_PLAYBACK_SPEED = 4.0f;
 
+        // Constants for minimum and maximum allowable 'CLOCK MAX' values
+        public const int MIN_CLOCK_MAX = 20;
+        public const int MAX_CLOCK_MAX = 100;
+
+        // How long to wait in milliseconds before re-polling the process list to find the process we're interested in.
+        public const int FIND_PROCESS_SLEEP_MS = 500;
+
         // Description of this config
         private string description = "GameConfig description";
         public string Description
@@ -65,8 +72,8 @@ namespace au.edu.federation.SoniFight
             set { clockTickMS = value; }
         }
 
-        // The maximum value for the clock in a given game. Default: 99
-        // Used to stop SoniFight from switching to InGame mode between rounds.
+        // The maximum value for the clock in a given game. Default: 99. This is used internally but not saved to XML.
+        // Note: This is used to stop SoniFight from switching to InGame mode between rounds.
         private int clockMax = 99;
         public int ClockMax
         {
@@ -75,8 +82,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // GameConfigs for fighting games will typically use a clock trigger to determine the in-game vs in-menu state. However, 
-        // if sonifying other games like Doom or such for low ammo or health then there's no clock.
-        [XmlIgnore]
+        // if sonifying other games like Doom or such for low ammo or health then there's no clock. This is used internally but not saved to XML.
         private int clockTriggerId = -1;
         [XmlIgnore]
         public int ClockTriggerId
@@ -91,7 +97,7 @@ namespace au.edu.federation.SoniFight
         // List of triggers (all triggers to be saved)
         public List<Trigger> triggerList = new List<Trigger>();
 
-        // Trigger list broken up into categories for looping efficiency
+        // Trigger list broken up into categories for looping efficiency. These are used internally but not saved to XML.
         [XmlIgnore]
         public List<Trigger> menuTriggerList = new List<Trigger>();
         [XmlIgnore]
@@ -101,12 +107,10 @@ namespace au.edu.federation.SoniFight
         [XmlIgnore]
         public List<Trigger> modifierTriggerList = new List<Trigger>();
 
-        // The actual process attached to
-        [XmlIgnore]
+        // The actual process attached to. This is used internally but not saved to XML.
         private Process gameProcess;
 
-        // The handle to the process we are connected to
-        [XmlIgnore]
+        // The handle to the process we are connected to. This is used internally but not saved to XML.
         private IntPtr processHandle;
         [XmlIgnore]
         public IntPtr ProcessHandle
@@ -115,8 +119,7 @@ namespace au.edu.federation.SoniFight
             set { processHandle = value; }
         }
 
-        // The base address of the process (this will likely change per run due to Address Space Layout Randomisation (ASLR))
-        [XmlIgnore]
+        // The base address of the process (this will likely change per run due to Address Space Layout Randomisation (ASLR)). This is used internally but not saved to XML.
         private IntPtr processBaseAddress;
         [XmlIgnore]
         public IntPtr ProcessBaseAddress
@@ -125,11 +128,23 @@ namespace au.edu.federation.SoniFight
             set { processBaseAddress = value; }
         }
 
-        // We must validate the gameconfig to activate it - this occurs via the validate method.
+        // We must validate the gameconfig to activate it - this occurs via the validate method. This is used internally but not saved to XML.
+        private bool valid = false;
         [XmlIgnore]
-        public bool valid = false;
+        public bool Valid
+        {
+            get { return valid;  }
+            set { valid = value; }
+        }
+
+        // Flag to keep track of whether this config is active. This is used internally but not saved to XML.
+        private bool active = false;
         [XmlIgnore]
-        public bool active = false;
+        public bool Active
+        {
+            get { return active;  }
+            set { active = value; }
+        }
 
         // The name of the directory containing this GameConfig object and its associated samples
         private string configDirectory;
@@ -137,6 +152,22 @@ namespace au.edu.federation.SoniFight
         {
             get { return configDirectory; }
             set { configDirectory = value; }
+        }
+
+        // The master volume for normal triggers
+        private float normalTriggerMasterVolume = 1.0f;
+        public float NormalTriggerMasterVolume
+        {
+            get { return normalTriggerMasterVolume;  }
+            set { normalTriggerMasterVolume = value; }
+        }
+
+        // The master volume for continuous triggers
+        private float continuousTriggerMasterVolume = 1.0f;
+        public float ContinuousTriggerMasterVolume
+        {
+            get { return continuousTriggerMasterVolume;  }
+            set { continuousTriggerMasterVolume = value; }
         }
 
         // Blank constructor req'd for XML serialisation
@@ -159,7 +190,7 @@ namespace au.edu.federation.SoniFight
         [XmlIgnore]
         public static BackgroundWorker processConnectionBGW = new BackgroundWorker();
 
-        [XmlIgnore]
+        // The array of processes returned when we ask the system for them (used to try to find the specific process we've been asked for)
         private Process[] processArray = null;
 
         // DoWork method for the process connection background worker
@@ -257,15 +288,15 @@ namespace au.edu.federation.SoniFight
                     processConnectionBGW.CancelAsync();
                 }
 
-                // Only poll in our background worker twice per second
-                Thread.Sleep(500);
+                // Only poll in our background worker to find the process twice per second
+                Thread.Sleep(FIND_PROCESS_SLEEP_MS);
             }
         }
 
         // Method to activate this GameConfig
         public bool activate()
         {
-            Console.WriteLine("Attempting to connect to process: " + processName);
+            Console.WriteLine(Resources.ResourceManager.GetString("attemptingToConnectToProcessString") + processName);
 
             Program.connectedToProcess = false;
 
@@ -361,7 +392,7 @@ namespace au.edu.federation.SoniFight
                 if (Int32.TryParse(s, out i))
                 {
                     // If we're here we got an int - now we need to check if it's within the valid range
-                    if (i < 30 || i > 100)
+                    if (i < MIN_CLOCK_MAX || i > MAX_CLOCK_MAX)
                     {
                         MessageBox.Show("Validation Error: Clock max must be an integer between 30 and 100.");
                         return false;
@@ -369,13 +400,13 @@ namespace au.edu.federation.SoniFight
                 }
                 else
                 {
-                    MessageBox.Show("Validation Error: Could not parse clock max value " + s + " to int.");
+                    MessageBox.Show("Validation Error: Could not parse clock max value to int: " + s);
                     return false;
                 }
             }
             else // Null or empty poll sleep value?
             {
-                MessageBox.Show("Validation Error: Clock max must be an integer between 30 and 100.");
+                MessageBox.Show("Validation Error: Clock max must be an integer between 20 and 100.");
                 return false;
             }
 
@@ -386,7 +417,7 @@ namespace au.edu.federation.SoniFight
                 return false;
             }
 
-            // Ensure that each watch id is a unique value, no id is -1 (i.e. blank) and that each watch has a pointer trail which is not empty
+            // Ensure that each watch id is a unique value, no id is -1 (i.e. blank) and that each watch has a pointer chain which is not empty
             List<int> idList = new List<int>();
             foreach (Watch w in watchList)
             {
@@ -400,10 +431,10 @@ namespace au.edu.federation.SoniFight
 
                 if (w.PointerList.Count == 0)
                 {
-                    MessageBox.Show("Validation Error: Watch with id " + w.Id + " has an empty pointer trail.");
+                    MessageBox.Show("Validation Error: Watch with id " + w.Id + " has an empty pointer chain.");
                     return false;
                 }
-                else // Have a pointer trail? Great - ensure it's valid
+                else // Have a pointer chain? Great - ensure it's valid
                 {
                     int x;
                     foreach (string pointerValue in w.PointerList)
@@ -473,10 +504,11 @@ namespace au.edu.federation.SoniFight
                     }
                 }
 
-                // Ensure sample volume is a float within the valid range (the clock trigger doesn't use a sample)
-                s = t.SampleVolume.ToString();
-                if (!t.IsClock)
+                // For file based samples (but not the clock trigger) we'll validate the sample volume and speed
+                if (!t.UseTolk || !t.IsClock)
                 {
+                    // Ensure sample volume is a float within the valid range (the clock trigger doesn't use a sample)
+                    s = t.SampleVolume.ToString();                    
                     if (!string.IsNullOrEmpty(s))
                     {
                         float f;
@@ -495,12 +527,9 @@ namespace au.edu.federation.SoniFight
                         MessageBox.Show("Validation Error: Missing sample volume on trigger with Id: " + t.Id);
                         return false;
                     }
-                }
 
-                // Ensure sample volume rate is a float within the valid range (the clock trigger doesn't use a sample)
-                s = t.SampleSpeed.ToString();
-                if (!t.IsClock)
-                {
+                    // Ensure sample volume rate is a float within the valid range (the clock trigger doesn't use a sample)
+                    s = t.SampleSpeed.ToString();                    
                     if (!string.IsNullOrEmpty(s))
                     {
                         float f;
@@ -519,7 +548,8 @@ namespace au.edu.federation.SoniFight
                         MessageBox.Show("Validation Error: Missing sample speed on trigger with Id: " + t.Id);
                         return false;
                     }
-                }
+
+                } // End of sample volume and speed validation for non-tolk triggers which aren't the clock section
 
             } // End of loop over triggers
 
@@ -545,6 +575,48 @@ namespace au.edu.federation.SoniFight
             if (idList.Count != idList.Distinct().Count())
             {
                 MessageBox.Show("Validation Error: Trigger Id values must be unique.");
+                return false;
+            }
+
+            // Ensure normal trigger master volume is a float within the valid range
+            s = normalTriggerMasterVolume.ToString();
+            if (!string.IsNullOrEmpty(s))
+            {
+                float f;
+                if (float.TryParse(s, out f))
+                {
+                    // If we're here we got an int - now we need to check if it's within the valid range
+                    if (f < MIN_SAMPLE_VOLUME || f > MAX_SAMPLE_VOLUME)
+                    {
+                        MessageBox.Show("Validation Error: Normal trigger master volume volume must be between " + MIN_SAMPLE_VOLUME + " and " + MAX_SAMPLE_VOLUME + " inclusive.");
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Validation Error: Missing normal trigger master volume.");
+                return false;
+            }
+
+            // Ensure continuous trigger master volume is a float within the valid range
+            s = continuousTriggerMasterVolume.ToString();
+            if (!string.IsNullOrEmpty(s))
+            {
+                float f;
+                if (float.TryParse(s, out f))
+                {
+                    // If we're here we got an int - now we need to check if it's within the valid range
+                    if (f < MIN_SAMPLE_VOLUME || f > MAX_SAMPLE_VOLUME)
+                    {
+                        MessageBox.Show("Validation Error: Continuous trigger master volume volume must be between " + MIN_SAMPLE_VOLUME + " and " + MAX_SAMPLE_VOLUME + " inclusive.");
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Validation Error: Missing continuous trigger master volume.");
                 return false;
             }
 

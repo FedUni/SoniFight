@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.processNameLabel = new System.Windows.Forms.Label();
             this.processNameTextBox = new System.Windows.Forms.TextBox();
-            this.pointerTrailTextBox = new System.Windows.Forms.TextBox();
+            this.pointerChainTextBox = new System.Windows.Forms.TextBox();
             this.memoryAddressTextBox = new System.Windows.Forms.TextBox();
             this.pointerTrailLabel = new System.Windows.Forms.Label();
             this.dataTypeLabel = new System.Windows.Forms.Label();
@@ -56,8 +56,8 @@
             // 
             // pointerTrailTextBox
             // 
-            resources.ApplyResources(this.pointerTrailTextBox, "pointerTrailTextBox");
-            this.pointerTrailTextBox.Name = "pointerTrailTextBox";
+            resources.ApplyResources(this.pointerChainTextBox, "pointerTrailTextBox");
+            this.pointerChainTextBox.Name = "pointerTrailTextBox";
             // 
             // memoryAddressTextBox
             // 
@@ -132,7 +132,7 @@
             this.Controls.Add(this.dataTypeLabel);
             this.Controls.Add(this.pointerTrailLabel);
             this.Controls.Add(this.memoryAddressTextBox);
-            this.Controls.Add(this.pointerTrailTextBox);
+            this.Controls.Add(this.pointerChainTextBox);
             this.Controls.Add(this.processNameTextBox);
             this.Controls.Add(this.processNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -149,7 +149,7 @@
 
         private System.Windows.Forms.Label processNameLabel;
         private System.Windows.Forms.TextBox processNameTextBox;
-        private System.Windows.Forms.TextBox pointerTrailTextBox;
+        private System.Windows.Forms.TextBox pointerChainTextBox;
         private System.Windows.Forms.TextBox memoryAddressTextBox;
         private System.Windows.Forms.Label pointerTrailLabel;
         private System.Windows.Forms.Label dataTypeLabel;

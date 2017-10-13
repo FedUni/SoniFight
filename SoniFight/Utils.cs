@@ -92,10 +92,10 @@ namespace au.edu.federation.SoniFight
             return obj;
 
         } // End of ReadFromXmlFile method
-
+        
+        // Range parsing code based on Chris Fazzio's code on StackOverflow. Dupe removal added by me.
         // NOTE: This method is not used at the current time, but may come in useful in the future so leaving alone.
-        // Range parsing code based on Chris Fazzio's code on StackOverflow. Dupe removal added by me. Source:
-        // http://stackoverflow.com/questions/40161/does-c-sharp-have-built-in-support-for-parsing-page-number-strings
+        // Adapted from: http://stackoverflow.com/questions/40161/does-c-sharp-have-built-in-support-for-parsing-page-number-strings
         public static int[] ParseIntRange(string ranges)
         {
             // Split on commas
@@ -172,27 +172,25 @@ namespace au.edu.federation.SoniFight
             return (IntPtr)0;
         }
 
-        // Method to return a feature address given a process handle, base adress, and pointer trail as a list of hexadecimal strings
-        public static IntPtr findFeatureAddress(IntPtr processHandle, IntPtr baseAddress, List<string> hexPointerTrail)
+        // Method to return a feature address given a process handle, base adress, and pointer chain as a list of hexadecimal strings
+        public static IntPtr findFeatureAddress(IntPtr processHandle, IntPtr baseAddress, List<string> hexPointerChain)
         {
-            //Console.WriteLine("***Base address is: " + baseAddress);
-
             // Our feature address will change as this method runs, but we always start at the base address
             IntPtr featureAddress = baseAddress;
 
-            // Follow the pointer trail to find the final address of the feature
+            // Follow the pointer chain to find the final address of the feature
             // Note: If we remove the "minus one" part of the below loop we get the ACTUAL value of that feature (assuming it's an int like the clock)
             int offset = 0;
-            for (int loop = 0; loop < hexPointerTrail.Count; loop++)
+            for (int loop = 0; loop < hexPointerChain.Count; loop++)
             {
                 // Get our offset string as an int
-                offset = Convert.ToInt32(hexPointerTrail.ElementAt(loop), 16);
+                offset = Convert.ToInt32(hexPointerChain.ElementAt(loop), 16);
 
                 // Apply the offset
                 featureAddress += offset;
 
-                // If this was the final value of the pointer trail we've followed the entire trails so break out of the loop here...
-                if (loop == (hexPointerTrail.Count - 1))
+                // If this was the final value of the pointer chain then we've followed the entire chain so break out of the loop here...
+                if (loop == (hexPointerChain.Count - 1))
                 {
                     break;
                 }
@@ -204,7 +202,7 @@ namespace au.edu.federation.SoniFight
             return featureAddress;
         }
 
-        // Method to add a hex value, specified as a string, to the pointer trail
+        // Method to add a hex value, specified as a string, to the pointer chain
         public static bool addHexValueToPointerTrail(List<string> pointerList, string hexValue)
         {
             int i = 0;
@@ -362,7 +360,7 @@ namespace au.edu.federation.SoniFight
         // Method to remove an aribtrary row from a TableLayoutPanel.
         // By default you cannot remove an arbitrary row from a table (only the last row), but
         // this method allows us to do so via a bunch of copy and pastes. Taken from stack overflow.
-        // Source: http://stackoverflow.com/questions/15535214/removing-a-specific-row-in-tablelayoutpanel
+        // Adapted from: http://stackoverflow.com/questions/15535214/removing-a-specific-row-in-tablelayoutpanel
         public static void removeRow(TableLayoutPanel panel, int rowIndex)
         {
             // Delete all controls of row that we want to delete
@@ -393,13 +391,13 @@ namespace au.edu.federation.SoniFight
         // Note: This method is never used at present, but may come in useful later on so leaving in.
         public static void moveRowsDownByOne(TableLayoutPanel panel, int startingRowIndex)
         {
-            //Console.WriteLine("Running move rows down by one - starting at row index: " + startingRowIndex);
-
+            // Stop updating the TableLayoutPanel while we modify it
             panel.SuspendLayout();
 
             // Add a new row to the table
             panel.RowCount++;
 
+            // Loop over all rows from the bottom up moving everything up by one
             for (int rowLoop = panel.RowCount - 1; rowLoop >= startingRowIndex; rowLoop--)
             {
                 for (int columnLoop = 0; columnLoop < panel.ColumnCount; columnLoop++)
@@ -407,13 +405,14 @@ namespace au.edu.federation.SoniFight
                     var control = panel.GetControlFromPosition(columnLoop, rowLoop);
                     if (control != null)
                     {
-                        Console.WriteLine("Moving control from row: " + rowLoop + " column " + columnLoop + " to row " + (rowLoop + 1) + " column " + columnLoop);
+                        //Console.WriteLine("Moving control from row: " + rowLoop + " column " + columnLoop + " to row " + (rowLoop + 1) + " column " + columnLoop);
                         panel.SetRow(control, rowLoop + 1);
                         panel.SetColumn(control, columnLoop);
                     }
                 }
             }
 
+            // We can now update the TableLayoutPanel again now that we've finished moving everything up one row
             panel.ResumeLayout();
         }
 
@@ -678,7 +677,7 @@ namespace au.edu.federation.SoniFight
                 // Strip start and end curly brace to leave just watch ID as a string
                 string valueString = match.Value.Substring(1, match.Value.Length - 2);
 
-                // Convert watch ID to an int, then get the watch with that ID, get its value and substitute the value
+                // Convert watch ID to an int, then get the watch with that ID, get its value and substitute the value into the string we're constructing
                 int valueInt = -1;
                 if (int.TryParse(valueString, System.Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, out valueInt))
                 {
@@ -693,6 +692,7 @@ namespace au.edu.federation.SoniFight
 
             } // End of loop over matches
 
+            // Finally return the string with all substitutions made
             return s;
         }        
 

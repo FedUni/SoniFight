@@ -229,12 +229,12 @@ namespace au.edu.federation.SoniFight
                 MainForm.gameConfig.ConfigDirectory = this.configsComboBox.GetItemText(this.configsComboBox.SelectedItem);
 
                 // Validate and activate our gameconfig
-                gameConfig.valid = gameConfig.validate();
-                gameConfig.active = gameConfig.activate();
+                gameConfig.Valid = gameConfig.validate();
+                gameConfig.Active = gameConfig.activate();
 
                 // If we have a valid, active config and we're not already running then start our sonification background worker,
                 // which calls the 'performSonification' method.
-                if (gameConfig.valid && gameConfig.active)
+                if (gameConfig.Valid && gameConfig.Active)
                 {
                     Program.sonificationBGW.RunWorkerAsync();
                     this.Text = formTitle + Resources.ResourceManager.GetString("statusRunningString") + gameConfig.ConfigDirectory;
@@ -272,8 +272,6 @@ namespace au.edu.federation.SoniFight
             Utils.WriteToXmlFile(configPath, gameConfig);
         }
 
-        
-
         // Method to rebuild the treeview of the current gameconfig
         private void RebuildTreeViewFromGameConfig()
         {
@@ -282,40 +280,40 @@ namespace au.edu.federation.SoniFight
 
             tv.BeginUpdate();
 
-            // Remove all nodes
-            tv.Nodes.Clear();
+                // Remove all nodes
+                tv.Nodes.Clear();
 
-            /*** NOTE: Node tags are used to identify the type of node and display the correct UI for that node. ***/
+                /*** NOTE: Node tags are used to identify the type of node and display the correct UI for that node. ***/
 
-            // Add the root node
-            TreeNode rootNode = tv.Nodes.Add( Resources.ResourceManager.GetString("gameConfigString") );
-            rootNode.Tag = Resources.ResourceManager.GetString("gameConfigTagString");
-            tv.SelectedNode = rootNode;
+                // Add the root node
+                TreeNode rootNode = tv.Nodes.Add( Resources.ResourceManager.GetString("gameConfigString") );
+                rootNode.Tag = Resources.ResourceManager.GetString("gameConfigTagString");
+                tv.SelectedNode = rootNode;
 
-            // Add the "Watches" node (parent of all watch nodes)
-            TreeNode watchNode = rootNode.Nodes.Add( Resources.ResourceManager.GetString("watchesString") );
-            watchNode.Tag = Resources.ResourceManager.GetString("watchesString");
+                // Add the "Watches" node (parent of all watch nodes)
+                TreeNode watchNode = rootNode.Nodes.Add( Resources.ResourceManager.GetString("watchesString") );
+                watchNode.Tag = Resources.ResourceManager.GetString("watchesString");
 
-            // Add the "Triggers" node (parent of all trigger nodes)
-            TreeNode triggerNode = rootNode.Nodes.Add( Resources.ResourceManager.GetString("triggersString") );
-            triggerNode.Tag = Resources.ResourceManager.GetString("triggersString");
+                // Add the "Triggers" node (parent of all trigger nodes)
+                TreeNode triggerNode = rootNode.Nodes.Add( Resources.ResourceManager.GetString("triggersString") );
+                triggerNode.Tag = Resources.ResourceManager.GetString("triggersString");
 
-            // Add all watch nodes
-            TreeNode tempNode;
-            foreach (Watch w in gameConfig.watchList)
-            {
-                string s = w.Id + "-" + w.Name;
-                tempNode = watchNode.Nodes.Add(s);
-                tempNode.Tag = Resources.ResourceManager.GetString("watchString");
-            }
+                // Add all watch nodes
+                TreeNode tempNode;
+                foreach (Watch w in gameConfig.watchList)
+                {
+                    string s = w.Id + "-" + w.Name;
+                    tempNode = watchNode.Nodes.Add(s);
+                    tempNode.Tag = Resources.ResourceManager.GetString("watchString");
+                }
 
-            // Add all trigger nodes
-            foreach (Trigger t in gameConfig.triggerList)
-            {
-                string s = t.Id + "-" + t.name;
-                tempNode = triggerNode.Nodes.Add(s);
-                tempNode.Tag = Resources.ResourceManager.GetString("triggerString");
-            }
+                // Add all trigger nodes
+                foreach (Trigger t in gameConfig.triggerList)
+                {
+                    string s = t.Id + "-" + t.Name;
+                    tempNode = triggerNode.Nodes.Add(s);
+                    tempNode.Tag = Resources.ResourceManager.GetString("triggerString");
+                }
 
             tv.EndUpdate();
 
@@ -423,7 +421,7 @@ namespace au.edu.federation.SoniFight
             // Update the current node to be the node which triggered this method
             currentTreeNode = tvea.Node;
 
-            /* NOTE: This section was previously done with a switch statement, but they require constant values, and localised values aren't constant, hence change to if/then/else. */
+            /* NOTE: This section was previously done with a switch statement, but they require constant values, and localised values aren't constant, hence the change to if/then/else. */
 
             // We always start at rown zero
             int row = 0;
@@ -588,18 +586,96 @@ namespace au.edu.federation.SoniFight
 				panel.Controls.Add(clockMaxTB, 1, row); // Control, Column, Row
 				row++;
 
-				// ----- Row 5 - Config description -----                
-				Label descLabel = new Label();
+                // ----- Row 5 - Normal trigger master volume ---
+                Label normalTriggerMasterVolumeLabel = new Label();
+                normalTriggerMasterVolumeLabel.AutoSize = true;
+                normalTriggerMasterVolumeLabel.Text = Resources.ResourceManager.GetString("normalTriggerMasterVolumeString");
+                normalTriggerMasterVolumeLabel.Anchor = AnchorStyles.Right;
+                normalTriggerMasterVolumeLabel.Margin = padding;
+
+                panel.Controls.Add(normalTriggerMasterVolumeLabel, 0, row); // Control, Column, Row
+
+                TextBox normalTriggerMasterVolumeTB = new TextBox();
+                normalTriggerMasterVolumeTB.Text = gameConfig.NormalTriggerMasterVolume.ToString();
+                normalTriggerMasterVolumeTB.Anchor = AnchorStyles.Left;
+                normalTriggerMasterVolumeTB.Dock = DockStyle.Fill;
+                normalTriggerMasterVolumeTB.Margin = padding;
+
+                normalTriggerMasterVolumeTB.TextChanged += (object sender, EventArgs ea) => {
+                    float x;
+                    bool result = float.TryParse(normalTriggerMasterVolumeTB.Text, out x);
+                    if (result)
+                    {
+                        gameConfig.NormalTriggerMasterVolume = x;
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(normalTriggerMasterVolumeTB.Text.ToString()))
+                        {
+                            MessageBox.Show(Resources.ResourceManager.GetString("normalTriggerMasterVolumeWarningString"));
+                        }
+                        else // Field empty? Set to 'full' volume of 1.0f
+                        {
+                            gameConfig.NormalTriggerMasterVolume = 1.0f;
+                        }
+                    }
+                };
+
+                panel.Controls.Add(normalTriggerMasterVolumeTB, 1, row); // Control, Column, Row
+                row++;
+
+                // ----- Row 6 - Continuous trigger master volume ---
+                Label continuousTriggerMasterVolumeLabel = new Label();
+                continuousTriggerMasterVolumeLabel.AutoSize = true;
+                continuousTriggerMasterVolumeLabel.Text = Resources.ResourceManager.GetString("continuousTriggerMasterVolumeString");
+                continuousTriggerMasterVolumeLabel.Anchor = AnchorStyles.Right;
+                continuousTriggerMasterVolumeLabel.Margin = padding;
+
+                panel.Controls.Add(continuousTriggerMasterVolumeLabel, 0, row); // Control, Column, Row
+
+                TextBox continuousTriggerMasterVolumeTB = new TextBox();
+                continuousTriggerMasterVolumeTB.Text = gameConfig.ContinuousTriggerMasterVolume.ToString();
+                continuousTriggerMasterVolumeTB.Anchor = AnchorStyles.Left;
+                continuousTriggerMasterVolumeTB.Dock = DockStyle.Fill;
+                continuousTriggerMasterVolumeTB.Margin = padding;
+
+                continuousTriggerMasterVolumeTB.TextChanged += (object sender, EventArgs ea) => {
+                    float x;
+                    bool result = float.TryParse(continuousTriggerMasterVolumeTB.Text, out x);
+                    if (result)
+                    {
+                        gameConfig.ContinuousTriggerMasterVolume = x;
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(continuousTriggerMasterVolumeTB.Text.ToString()))
+                        {
+                            MessageBox.Show(Resources.ResourceManager.GetString("continuousTriggerMasterVolumeWarningString"));
+                        }
+                        else // Field empty? Set to 'full' volume of 1.0f
+                        {
+                            gameConfig.ContinuousTriggerMasterVolume = 1.0f;
+                        }
+                    }
+                };
+
+                panel.Controls.Add(continuousTriggerMasterVolumeTB, 1, row); // Control, Column, Row
+                row++;
+
+                // ----- Row 7 - Config description -----                
+                Label descLabel = new Label();
 				descLabel.AutoSize = true;
 				descLabel.Text = Resources.ResourceManager.GetString("descriptionLabelString");
-				descLabel.Anchor = AnchorStyles.Right;
+				descLabel.Anchor = AnchorStyles.None;
 				descLabel.Margin = padding;
 
-				panel.Controls.Add(descLabel, 0, row); // Control, Column, Row
+                panel.SetColumnSpan(descLabel, 2); // Span both colums 
+
+                panel.Controls.Add(descLabel, 0, row); // Control, Column, Row
 
 				TextBox descTB = new TextBox();
 				descTB.Multiline = true;
-				descTB.Height = descTB.Font.Height * 23 + padding.Horizontal; // Set height to be enough for 23 lines
+				descTB.Height = descTB.Font.Height * 15 + padding.Horizontal; // Set height to be enough for 15 lines
 
 				// Replace all \n newlines with \r\n sp it properly linebreaks on returns
 				gameConfig.Description = gameConfig.Description.Replace("\n", Environment.NewLine);
@@ -609,8 +685,11 @@ namespace au.edu.federation.SoniFight
 				descTB.Anchor = AnchorStyles.Right;
 				descTB.Dock = DockStyle.Fill;
 				descTB.Margin = padding;
+                descTB.ScrollBars = ScrollBars.Vertical;
+                panel.SetColumnSpan(descTB, 2); // Span both colums 
+                
 
-				panel.Controls.Add(descTB, 1, row); // Control, Column, Row
+                panel.Controls.Add(descTB, 1, row); // Control, Column, Row
 				row++;
 						
 				// Set all columns and rows to autosize - this is hit on moving to the Edit tab so carrys over into all further UI setups because
@@ -979,7 +1058,7 @@ namespace au.edu.federation.SoniFight
                     if (result)
                     {
                         currentTrigger.Id = x;
-                        currentTreeNode.Text = currentTrigger.Id + "-" + currentTrigger.name;
+                        currentTreeNode.Text = currentTrigger.Id + "-" + currentTrigger.Name;
                     }
                     else
                     {
@@ -1010,11 +1089,11 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(nameLabel, 0, row); // Control, Column, Row
 
                 TextBox nameTB = new TextBox();
-                nameTB.Text = currentTrigger.name.ToString();
+                nameTB.Text = currentTrigger.Name.ToString();
                 nameTB.TextChanged += (object sender, EventArgs ea) =>
                 {
-                    currentTrigger.name = nameTB.Text;
-                    currentTreeNode.Text = currentTrigger.Id + "-" + currentTrigger.name;
+                    currentTrigger.Name = nameTB.Text;
+                    currentTreeNode.Text = currentTrigger.Id + "-" + currentTrigger.Name;
                 };
                 nameTB.Tag = "nameTB";
                 nameTB.Anchor = AnchorStyles.Right;
@@ -1741,7 +1820,7 @@ namespace au.edu.federation.SoniFight
             TreeView tv = this.gcTreeView;
             TreeNode triggersNode = Utils.FindNodeWithText( tv, Resources.ResourceManager.GetString("triggersString") );
             tv.BeginUpdate();
-            currentTreeNode = triggersNode.Nodes.Add(currentTrigger.Id + "-" + currentTrigger.name);
+            currentTreeNode = triggersNode.Nodes.Add(currentTrigger.Id + "-" + currentTrigger.Name);
             currentTreeNode.Tag = Resources.ResourceManager.GetString("triggerString");
             tv.EndUpdate();
             tv.ExpandAll();
@@ -1778,7 +1857,7 @@ namespace au.edu.federation.SoniFight
             TreeView tv = this.gcTreeView;
             TreeNode triggersNode = Utils.FindNodeWithText(tv, Resources.ResourceManager.GetString("watchesString") );
             tv.BeginUpdate();
-            currentTreeNode = triggersNode.Nodes.Add(currentWatch.Id + "-" + currentWatch.name);
+            currentTreeNode = triggersNode.Nodes.Add(currentWatch.Id + "-" + currentWatch.Name);
             currentTreeNode.Tag = Resources.ResourceManager.GetString("watchString");
             tv.EndUpdate();
             tv.ExpandAll();

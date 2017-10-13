@@ -103,8 +103,8 @@
           <target state="new">Watch Description</target>
         </trans-unit>
         <trans-unit id="watchDescriptionString1" translate="yes" xml:space="preserve">
-          <source>A watch is a memory location expressed as a pointer trail leading to the address of a value of interest, and the type of data to read from that memory address.</source>
-          <target state="new">A watch is a memory location expressed as a pointer trail leading to the address of a value of interest, and the type of data to read from that memory address.</target>
+          <source>A watch is a memory location expressed as a pointer chain leading to the address of a value of interest, and the type of data to read from that memory address.</source>
+          <target state="new">A watch is a memory location expressed as a pointer chain leading to the address of a value of interest, and the type of data to read from that memory address.</target>
         </trans-unit>
         <trans-unit id="watchDescriptionString2" translate="yes" xml:space="preserve">
           <source>Each watch must have a unique watch ID specified as an integer greater than or equal to zero, and may optionally have a name and description.</source>
@@ -617,6 +617,26 @@
         <trans-unit id="screenReaderNotActiveWarningString" translate="yes" xml:space="preserve">
           <source>WARNING: Tolk output requested by no active screen reader for trigger with ID: </source>
           <target state="new">WARNING: Tolk output requested by no active screen reader for trigger with ID: </target>
+        </trans-unit>
+        <trans-unit id="attemptingToConnectToProcessString" translate="yes" xml:space="preserve">
+          <source>Attempting to connect to process: </source>
+          <target state="new">Attempting to connect to process: </target>
+        </trans-unit>
+        <trans-unit id="continuousTriggerMasterVolumeString" translate="yes" xml:space="preserve">
+          <source>Continuous Trigger Master Volume</source>
+          <target state="new">Continuous Trigger Master Volume</target>
+        </trans-unit>
+        <trans-unit id="continuousTriggerMasterVolumeWarningString" translate="yes" xml:space="preserve">
+          <source>WARNING: Continuous trigger master volume must be a value between 0.0 and 1.0</source>
+          <target state="new">WARNING: Continuous trigger master volume must be a value between 0.0 and 1.0</target>
+        </trans-unit>
+        <trans-unit id="normalTriggerMasterVolumeString" translate="yes" xml:space="preserve">
+          <source>Normal Trigger Master Volume</source>
+          <target state="new">Normal Trigger Master Volume</target>
+        </trans-unit>
+        <trans-unit id="normalTriggerMasterVolumeWarningString" translate="yes" xml:space="preserve">
+          <source>WARNING: Normal trigger master volume must be a value between 0.0 and 1.0</source>
+          <target state="new">WARNING: Normal trigger master volume must be a value between 0.0 and 1.0</target>
         </trans-unit>
       </group>
     </body>

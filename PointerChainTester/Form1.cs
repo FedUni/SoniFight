@@ -84,7 +84,7 @@ namespace au.edu.federation.PointerChainTester
                     }
                     valueTextBox.Text = Convert.ToString(value);
 
-                } // End of we-have-a-valid-pointer-trail section
+                } // End of we-have-a-valid-pointer-chain section
 
             } // End of if we're connected to the requested process section
 
@@ -109,10 +109,10 @@ namespace au.edu.federation.PointerChainTester
                 Program.processName = processNameTextBox.Text;
             };
 
-            // Add pointer trail TB text change handler
-            pointerTrailTextBox.TextChanged += (object s, EventArgs ea) =>
+            // Add pointer chain TB text change handler
+            pointerChainTextBox.TextChanged += (object s, EventArgs ea) =>
             {   
-                Program.pointerList = Utils.CommaSeparatedStringToStringList(pointerTrailTextBox.Text);
+                Program.pointerList = Utils.CommaSeparatedStringToStringList(pointerChainTextBox.Text);
                 int x;
                 foreach (string pointerValue in Program.pointerList)
                 {

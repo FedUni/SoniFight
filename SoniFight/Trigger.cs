@@ -40,8 +40,9 @@ namespace au.edu.federation.SoniFight
 
         // ---------- Properties ----------       
 
+        // NOTE: Properties marked as private are not saved to XML, so we do not need the [XmlIgnore] tag on the line before they're declared.
+
         // The unique ID of this trigger
-        [XmlIgnore]
         private int id = -1;
         public int Id
         { 
@@ -49,16 +50,15 @@ namespace au.edu.federation.SoniFight
             set { id = value; }
         }
 
-        // A brief name and description (optional, but useful)
-        [XmlIgnore]
-        public string name;
+        // The name of this trigger
+        private string name;
         public string Name
         {
             get { return name;  }
             set { name = value; }
         }
 
-        [XmlIgnore]
+        // A brief description of this trigger
         private string description;
         public string Description
         {
@@ -67,7 +67,6 @@ namespace au.edu.federation.SoniFight
         }
 
         // This is the value we activate this trigger on when there is a match with the value read from this triggers watch
-        [XmlIgnore]
         private dynamic value;
         public dynamic Value
         {
@@ -76,7 +75,6 @@ namespace au.edu.federation.SoniFight
         }
 
         // The last value read on this trigger. Used so we can activate only on crossing thresholds rather than repeatedly. This is used internally but not saved to XML.
-        [XmlIgnore]
         private dynamic previousValue;
         [XmlIgnore]
         public dynamic PreviousValue
@@ -95,7 +93,6 @@ namespace au.edu.federation.SoniFight
         public ComparisonType comparisonType;
 
         // The watch used to read data for this trigger.
-        [XmlIgnore]
         private int watchOneId;
         public int WatchOneId
         {
@@ -106,7 +103,6 @@ namespace au.edu.federation.SoniFight
         // An optional secondary if for a watch or trigger. Normal triggers use this for dependent triggers, continuous
         // triggers use this for the second watch with which to calculate a percentage, and modifier triggers use this
         // as the continuous trigger to modify.
-        [XmlIgnore]
         private int secondaryId;
         public int SecondaryId
         {
@@ -114,9 +110,8 @@ namespace au.edu.federation.SoniFight
             set { secondaryId = value; }
         }
 
-        // Properties for the sample to play along with its associated default speed and volume (defaults: 1.0 - i.e. full volume, standard playback speed)
+        // The filename of the sample.
         // Note: The sampleFilename field is used as the text to say if we are using tolk for sonification of this trigger.
-        [XmlIgnore]
         private string sampleFilename;
         public string SampleFilename
         {
@@ -124,7 +119,7 @@ namespace au.edu.federation.SoniFight
             set { sampleFilename = value; }
         }
 
-        [XmlIgnore]
+        // The speed to play the sample. Range: 0.0f to 1.0f.
         private float sampleSpeed;
         public float SampleSpeed
         {
@@ -132,7 +127,7 @@ namespace au.edu.federation.SoniFight
             set { sampleSpeed = value; }
         }
 
-        [XmlIgnore]
+        // The volume to play the sample. Range: 0.0f to 1.0f.
         private float sampleVolume;
         public float SampleVolume
         {
@@ -141,7 +136,6 @@ namespace au.edu.federation.SoniFight
         }
 
         // Whether this trigger uses Tolk to generate the sonification event (true) or if it uses a sample file (false).
-        [XmlIgnore]
         private bool useTolk;
         public bool UseTolk
         {
@@ -170,7 +164,6 @@ namespace au.edu.federation.SoniFight
         }
 
         // Is this trigger the clock which we use to determine whether we're InGame or InMenu?
-        [XmlIgnore]
         private bool isClock;
         public bool IsClock
         {
@@ -178,8 +171,7 @@ namespace au.edu.federation.SoniFight
             set { isClock = value; }
         }
 
-        // Whether we should use this trigger or not
-        [XmlIgnore]
+        // Whether this trigger is active so will be used (true) or not (false).
         private bool active;
         public bool Active
         {

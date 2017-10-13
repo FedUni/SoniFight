@@ -256,7 +256,7 @@
     <value>Watch Description</value>
   </data>
   <data name="watchDescriptionString1" xml:space="preserve">
-    <value>A watch is a memory location expressed as a pointer trail leading to the address of a value of interest, and the type of data to read from that memory address.</value>
+    <value>A watch is a memory location expressed as a pointer chain leading to the address of a value of interest, and the type of data to read from that memory address.</value>
   </data>
   <data name="watchDescriptionString2" xml:space="preserve">
     <value>Each watch must have a unique watch ID specified as an integer greater than or equal to zero, and may optionally have a name and description.</value>
@@ -575,5 +575,20 @@
   </data>
   <data name="watchValueParseFailString" xml:space="preserve">
     <value>WARNING: Could not get watch ID from parsing the following to int: </value>
+  </data>
+  <data name="attemptingToConnectToProcessString" xml:space="preserve">
+    <value>Attempting to connect to process: </value>
+  </data>
+  <data name="continuousTriggerMasterVolumeString" xml:space="preserve">
+    <value>Continuous Trigger Master Volume</value>
+  </data>
+  <data name="continuousTriggerMasterVolumeWarningString" xml:space="preserve">
+    <value>WARNING: Continuous trigger master volume must be a value between 0.0 and 1.0</value>
+  </data>
+  <data name="normalTriggerMasterVolumeString" xml:space="preserve">
+    <value>Normal Trigger Master Volume</value>
+  </data>
+  <data name="normalTriggerMasterVolumeWarningString" xml:space="preserve">
+    <value>WARNING: Normal trigger master volume must be a value between 0.0 and 1.0</value>
   </data>
 </root>

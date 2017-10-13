@@ -162,7 +162,7 @@ namespace au.edu.federation.SoniFight
                                   Resources.ResourceManager.GetString("speedString") + t.SampleSpeed);
 
                 // Set volume and pitch according to trigger
-                sound.Volume = t.SampleVolume;
+                sound.Volume = t.SampleVolume * MainForm.gameConfig.NormalTriggerMasterVolume;
                 sound.PlaybackSpeed = t.SampleSpeed;
             }
         }
@@ -193,7 +193,7 @@ namespace au.edu.federation.SoniFight
                 if (sound != null)
                 {
                     // Set volume and pitch according to trigger
-                    sound.Volume = t.SampleVolume;
+                    sound.Volume = t.SampleVolume * MainForm.gameConfig.NormalTriggerMasterVolume;
                     sound.PlaybackSpeed = t.SampleSpeed;
 
                     // Set sound stop event listener
@@ -235,7 +235,7 @@ namespace au.edu.federation.SoniFight
                 if (sound != null)
                 {
                     // Set volume and pitch according to trigger
-                    sound.Volume = t.SampleVolume;
+                    sound.Volume = t.SampleVolume * MainForm.gameConfig.NormalTriggerMasterVolume;
                     sound.PlaybackSpeed = t.SampleSpeed;
 
                     // Set sound stop event listener
@@ -263,7 +263,7 @@ namespace au.edu.federation.SoniFight
             if (sound != null)
             {
                 // Set volume and pitch according to trigger
-                sound.Volume = t.SampleVolume;
+                sound.Volume = t.SampleVolume * MainForm.gameConfig.ContinuousTriggerMasterVolume;
                 sound.PlaybackSpeed = t.SampleSpeed;
 
                 // Update the sound in the sample dictionary to be this specific sound instance

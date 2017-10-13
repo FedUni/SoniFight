@@ -124,6 +124,15 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Attempting to connect to process: .
+        /// </summary>
+        internal static string attemptingToConnectToProcessString {
+            get {
+                return ResourceManager.GetString("attemptingToConnectToProcessString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Warning: Got node with unrecognised Tag of: .
         /// </summary>
         internal static string badTreeNodeTagWarningString {
@@ -264,6 +273,24 @@ namespace au.edu.federation.SoniFight.Properties {
         internal static string continuousTriggerIdLabelString {
             get {
                 return ResourceManager.GetString("continuousTriggerIdLabelString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continuous Trigger Master Volume.
+        /// </summary>
+        internal static string continuousTriggerMasterVolumeString {
+            get {
+                return ResourceManager.GetString("continuousTriggerMasterVolumeString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WARNING: Continuous trigger master volume must be a value between 0.0 and 1.0.
+        /// </summary>
+        internal static string continuousTriggerMasterVolumeWarningString {
+            get {
+                return ResourceManager.GetString("continuousTriggerMasterVolumeWarningString", resourceCulture);
             }
         }
         
@@ -687,6 +714,24 @@ namespace au.edu.federation.SoniFight.Properties {
         internal static string normalSampleNullSoundWarningString {
             get {
                 return ResourceManager.GetString("normalSampleNullSoundWarningString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal Trigger Master Volume.
+        /// </summary>
+        internal static string normalTriggerMasterVolumeString {
+            get {
+                return ResourceManager.GetString("normalTriggerMasterVolumeString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WARNING: Normal trigger master volume must be a value between 0.0 and 1.0.
+        /// </summary>
+        internal static string normalTriggerMasterVolumeWarningString {
+            get {
+                return ResourceManager.GetString("normalTriggerMasterVolumeWarningString", resourceCulture);
             }
         }
         
@@ -1339,7 +1384,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A watch is a memory location expressed as a pointer trail leading to the address of a value of interest, and the type of data to read from that memory address..
+        ///   Looks up a localized string similar to A watch is a memory location expressed as a pointer chain leading to the address of a value of interest, and the type of data to read from that memory address..
         /// </summary>
         internal static string watchDescriptionString1 {
             get {
