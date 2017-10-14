@@ -1,9 +1,11 @@
 # SoniFight #
 
-SoniFight is utility software to provide additional sonification to fighting games for visually impaired players. It is written in C# and released under the MIT license. Please see LICENSE.txt for further details, including separate licensing details for the embedded IrrKlang audio library. If you want to quickly get an idea of what the SoniFight software can do then a demonstration video can be found here: LINK_TO_YOUTUBE_VID.
+SoniFight is a Windows application designed to provide additional sonification cues to video games for blind or visually impaired players. It is written in C# and released under the MIT license. Please see LICENSE.txt for further details, including separate licensing details for the embedded tolk and irrKlang libraries.
 
-To run SoniFight either download a release or build the Visual Studio 2015 project provided, then launch the SoniFight executable, choose a game config from the dropdown menu for the game you want to play and then click the "Run Selected Config" button. SoniFight presently ships with game configs to add sonification to Ultra Street Fighter IV Arcade Edition and Mortal Kombat 9 (aka Mortal Kombat Komplete Edition).
+If you want to quickly get an idea of what the SoniFight software can do then a demonstration video can be found here: LINK_TO_YOUTUBE_VID.
 
-Once running, SoniFight will locate the game process and provide additional sonification cues such as clock, health and bar status updates for both players. In the Street Figher config there are also triggers for a large number of menu options.
+To run SoniFight either download a release or build the Visual Studio 2017 project provided, then launch the SoniFight executable, choose a game config from the dropdown menu for the game you want to play and click the "Run Selected Config" button then launch the associated game. Once running, SoniFight will locate the game process and provide additional sonification cues as specified in the game configuration file.
 
-SoniFight also contains a user interface where you can create your own game configs for games of your choice. To learn more about creating your own game configs as well as how the software operates through 'watches' and 'triggers', please see the provided user documentation.
+SoniFight presently ships with game configs to add sonification to Street Fighter 4, Mortal Kombat 9, Doom (2016) and DiveKick.
+
+SoniFight also contains a comprehensive user interface where you can create your own game configs for games of your choice. To learn more about creating your own game configs as well as how the software operates through 'watches' and 'triggers', or to take a look at the answers to some frequently asked questions please see the provided user documentation.
