@@ -78,18 +78,27 @@ namespace au.edu.federation.SoniFight
         // Method to load a sample and specify whether it should loop or not when played
         public bool LoadSample(Trigger t)
         {
+            // We allow triggers without sample because they can be used as dependent triggers
+            if ( string.IsNullOrEmpty( t.SampleFilename.Trim() ) )
+            {
+                return false;
+            }
+
+            // Modifier triggers don't use samples, so if we're trying to load a sample for one it's an error and we'll inform the user
             if (t.triggerType == Trigger.TriggerType.Modifier)
             {
                 Resources.ResourceManager.GetString("loadModifierSampleWarningString");
                 return false;
             }
 
+            // Non-active trigger? Then we don't need to load the sample for it.
             if (!t.Active)
             {
                 Console.WriteLine(Resources.ResourceManager.GetString("skippingInactiveTriggerSampleString") + t.Id + " - " + t.SampleFilename);
                 return false;
             }
 
+            // Trigger uses tolk? Then we don't need to load a sample for it.
             if (t.UseTolk)
             {
                 Console.WriteLine(Resources.ResourceManager.GetString("skippingTolkSampleLoadString") + t.Id + " - " + t.SampleFilename);

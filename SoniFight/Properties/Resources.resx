@@ -571,7 +571,7 @@
     <value>Saying tolk string: </value>
   </data>
   <data name="screenReaderNotActiveWarningString" xml:space="preserve">
-    <value>WARNING: Tolk output requested by no active screen reader for trigger with ID: </value>
+    <value>WARNING: Tolk output requested but no active screen reader for trigger with ID: </value>
   </data>
   <data name="watchValueParseFailString" xml:space="preserve">
     <value>WARNING: Could not get watch ID from parsing the following to int: </value>

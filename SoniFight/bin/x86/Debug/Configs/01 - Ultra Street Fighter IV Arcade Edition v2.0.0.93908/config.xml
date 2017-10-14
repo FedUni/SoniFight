@@ -503,6 +503,21 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
+    <Watch>
+      <valueType>StringUTF16Type</valueType>
+      <Id>38</Id>
+      <Name>Button Config Submenu Text</Name>
+      <Description>Matches "Select the type of controller you wish"</Description>
+      <PointerList>
+        <string>6A99BC</string>
+        <string>2F4</string>
+        <string>738</string>
+        <string>154</string>
+        <string>320</string>
+        <string>376</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
@@ -2843,7 +2858,7 @@
       <Description>Control binding as int. Range 0 through 19.</Description>
       <Value xsi:type="xsd:string">0</Value>
       <WatchOneId>21</WatchOneId>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryId>353</SecondaryId>
       <SampleFilename>Controls-Up.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6370,6 +6385,23 @@
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>353</Id>
+      <Name>Button settings submenu</Name>
+      <Description>Dependent trigger to suppress nonsensical triggers between rounds</Description>
+      <Value xsi:type="xsd:string">Select the type of controller you</Value>
+      <WatchOneId>38</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename />
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
   </triggerList>
   <Description>Street Fighter IV GameConfig - Al Lansley - 2017-08-16
 
@@ -6382,7 +6414,7 @@ Unfortunately in some circumstances random sample playing may be unavoidable bec
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>99</ClockMax>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
+  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
   <NormalTriggerMasterVolume>0.7</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
 </GameConfig>

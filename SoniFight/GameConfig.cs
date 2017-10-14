@@ -483,16 +483,20 @@ namespace au.edu.federation.SoniFight
                     return false;
                 }
 
-                // Ensure sample filename exists
-                if (!t.IsClock)
+                // Ensure sample filename exists - NOPE! Some triggers may be dependent triggers that do not require a sample, they're simply
+                // there to stop OTHER triggers from playing when it might make no sense for them to do so (such as between rounds if/when
+                // memory gets re-used and we get a false-positive sonification event).
+                /*if (!t.IsClock)
                 {
                     if ( string.IsNullOrEmpty(t.SampleFilename) )
                     {
                         MessageBox.Show("Validation Error: A sample name must be provided to play trigger with Id: " + t.Id);
                         return false;
                     }
-                }
-                else // Found clock trigger?
+                }*/
+
+                // Found clock trigger?
+                if (t.IsClock)
                 {
                     // If the clock trigger is active then track it so we can ensure we only have a single active clock trigger later on (no more, no less)
                     if (t.Active)
