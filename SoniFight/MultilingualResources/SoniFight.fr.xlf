@@ -615,8 +615,8 @@
           <target state="new">WARNING: Could not get watch ID from parsing the following to int: </target>
         </trans-unit>
         <trans-unit id="screenReaderNotActiveWarningString" translate="yes" xml:space="preserve">
-          <source>WARNING: Tolk output requested by no active screen reader for trigger with ID: </source>
-          <target state="new">WARNING: Tolk output requested by no active screen reader for trigger with ID: </target>
+          <source>WARNING: Tolk output requested but no active screen reader for trigger with ID: </source>
+          <target state="new">WARNING: Tolk output requested but no active screen reader for trigger with ID: </target>
         </trans-unit>
         <trans-unit id="attemptingToConnectToProcessString" translate="yes" xml:space="preserve">
           <source>Attempting to connect to process: </source>

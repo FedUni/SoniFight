@@ -281,6 +281,8 @@ namespace au.edu.federation.SoniFight
             // We'll keep a char count to abort after a set number of chars if bad things happen
             int charCount = 0;
 
+            // TODO: This is really inefficient. Modify to make a single call that reads 33 chars then discard anything after a null char.
+
             string s = "";
             do
             {
@@ -316,6 +318,8 @@ namespace au.edu.federation.SoniFight
 
             // We'll keep a char count to abort after a set number of chars if bad things happen
             int charCount = 0;
+
+            // TODO: This is really inefficient. Modify to make a single call that reads 33 chars then discard anything after a null char.
 
             string s = "";
             do

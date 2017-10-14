@@ -114,7 +114,6 @@ namespace au.edu.federation.SoniFight
 
             // Load the sound by playing it, but stop it from playing immediately.
             // Params: sample filename, loop, start paused, stream mode, enable sound effects
-
             if (t.triggerType == Trigger.TriggerType.Continuous)
             {
                 Console.WriteLine(Resources.ResourceManager.GetString("loadingContinuousSampleString") + shortKey);
@@ -282,17 +281,19 @@ namespace au.edu.federation.SoniFight
             }
         }
 
-        // Method to stop any playing sounds on the static soundEngine instance
+        // Method to stop any playing sounds on the menu soundEngine instance (where sounds interupt each other)
         public void StopMenuSounds()
         {   
             menuEngine.StopAllSounds();
         }
 
+        // Method to pause any playing sounds on the normal 'InGame' soundEngine instance (where sounds get queued)
         public void PauseNormalSound()
         {   
             normalEngine.SetAllSoundsPaused(true);
         }
 
+        // Method to resume any paused sounds on the normal 'InGame' soundEngine instance (where sounds get queued)
         public void ResumeNormalSound()
         {
             normalEngine.SetAllSoundsPaused(false);
