@@ -694,7 +694,27 @@ namespace au.edu.federation.SoniFight
 
             // Finally return the string with all substitutions made
             return s;
-        }        
+        }
+
+        // Method to return the specific trigger with a given id value
+        public static bool configUsesTolk()
+        {
+            Trigger t = null;
+            for (int loop = 0; loop < MainForm.gameConfig.triggerList.Count; ++loop)
+            {
+                // Grab a trigger
+                t = MainForm.gameConfig.triggerList[loop];
+
+                // If it's active and uses tolk then yes, this config uses tolk so return true
+                if (t.Active && t.UseTolk)
+                {
+                    return true;
+                }
+            }
+
+            // Didn't find an active tolk-using trigger in our search? Return false;
+            return false;
+        }
 
     } // End of Utils class
 

@@ -6383,6 +6383,6 @@ Unfortunately in some circumstances random sample playing may be unavoidable bec
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>99</ClockMax>
   <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
-  <NormalTriggerMasterVolume>0.2</NormalTriggerMasterVolume>
+  <NormalTriggerMasterVolume>0.7</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
 </GameConfig>

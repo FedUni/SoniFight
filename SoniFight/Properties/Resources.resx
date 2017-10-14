@@ -187,7 +187,7 @@
     <value>None</value>
   </data>
   <data name="pointerListLabelString" xml:space="preserve">
-    <value>Pointer List (comma-separated hex no prefixes)</value>
+    <value>Pointer Chain (comma-separated hex, no prefixes)</value>
   </data>
   <data name="pollSleepLabelString" xml:space="preserve">
     <value>Poll Sleep (Milliseconds)</value>
@@ -590,5 +590,14 @@
   </data>
   <data name="normalTriggerMasterVolumeWarningString" xml:space="preserve">
     <value>WARNING: Normal trigger master volume must be a value between 0.0 and 1.0</value>
+  </data>
+  <data name="noString" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="usesTolkString" xml:space="preserve">
+    <value>Uses Tolk</value>
+  </data>
+  <data name="yesString" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>

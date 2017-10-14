@@ -21,28 +21,28 @@ namespace au.edu.federation.SoniFight
         public static GameConfig gameConfig;
 
         // String versions of the type of data watches can use
-        string[] dataTypesArray = { Resources.ResourceManager.GetString("integerString"),     // "Integer"
-                                    Resources.ResourceManager.GetString("shortString"),       // "Short"
-                                    Resources.ResourceManager.GetString("longString"),        // "Long"
-                                    Resources.ResourceManager.GetString("floatString"),       // "Float"
-                                    Resources.ResourceManager.GetString("doubleString"),      // "Double"
-                                    Resources.ResourceManager.GetString("booleanString"),     // "Boolean"
-                                    Resources.ResourceManager.GetString("stringUTF8String"),  // "String (UTF-8)"
-                                    Resources.ResourceManager.GetString("stringUTF16String")  // "String (UTF-16)"
+        string[] dataTypesArray = { Resources.ResourceManager.GetString("integerString"),    // "Integer"
+                                    Resources.ResourceManager.GetString("shortString"),      // "Short"
+                                    Resources.ResourceManager.GetString("longString"),       // "Long"
+                                    Resources.ResourceManager.GetString("floatString"),      // "Float"
+                                    Resources.ResourceManager.GetString("doubleString"),     // "Double"
+                                    Resources.ResourceManager.GetString("booleanString"),    // "Boolean"
+                                    Resources.ResourceManager.GetString("stringUTF8String"), // "String (UTF-8)"
+                                    Resources.ResourceManager.GetString("stringUTF16String") // "String (UTF-16)"
                                   };
 
         // String versions of the comparison types we can use
-        string[] comparisonTypesArray = { Resources.ResourceManager.GetString("equalToString"),                   // "Equal To"
-                                          Resources.ResourceManager.GetString("lessThanString"),                  // "Less Than"
-                                          Resources.ResourceManager.GetString("lessThanOrEqualToString"),         // "Less Than Or Equal To"
-                                          Resources.ResourceManager.GetString("greaterThanString"),               // "Greater Than"
-                                          Resources.ResourceManager.GetString("greaterThanOrEqualToString"),      // "Greater Than Or Equal To"
-                                          Resources.ResourceManager.GetString("notEqualToString"),                // "Not Equal To"
-                                          Resources.ResourceManager.GetString("changedString"),                   // "Changed"
-                                          Resources.ResourceManager.GetString("distanceVolumeDescendingString"),  // "Distance - Volume Descending (Cont. Only)"
-                                          Resources.ResourceManager.GetString("distanceVolumeAscendingString"),   // "Distance - Volume Ascending (Cont. Only)"
-                                          Resources.ResourceManager.GetString("distancePitchDescendingString"),   // "Distance - Pitch Descending (Cont. Only)"
-                                          Resources.ResourceManager.GetString("distancePitchAscendingString")     // "Distance - Pitch Ascending (Cont. Only)"
+        string[] comparisonTypesArray = { Resources.ResourceManager.GetString("equalToString"),                  // "Equal To"
+                                          Resources.ResourceManager.GetString("lessThanString"),                 // "Less Than"
+                                          Resources.ResourceManager.GetString("lessThanOrEqualToString"),        // "Less Than Or Equal To"
+                                          Resources.ResourceManager.GetString("greaterThanString"),              // "Greater Than"
+                                          Resources.ResourceManager.GetString("greaterThanOrEqualToString"),     // "Greater Than Or Equal To"
+                                          Resources.ResourceManager.GetString("notEqualToString"),               // "Not Equal To"
+                                          Resources.ResourceManager.GetString("changedString"),                  // "Changed"
+                                          Resources.ResourceManager.GetString("distanceVolumeDescendingString"), // "Distance - Volume Descending (Cont. Only)"
+                                          Resources.ResourceManager.GetString("distanceVolumeAscendingString"),  // "Distance - Volume Ascending (Cont. Only)"
+                                          Resources.ResourceManager.GetString("distancePitchDescendingString"),  // "Distance - Pitch Descending (Cont. Only)"
+                                          Resources.ResourceManager.GetString("distancePitchAscendingString")    // "Distance - Pitch Ascending (Cont. Only)"
                                         };
 
         // String versions of the trigger types
@@ -52,9 +52,9 @@ namespace au.edu.federation.SoniFight
                                      };
 
         // String versions of the trigger allowance types
-        string[] allowanceTypesArray = { Resources.ResourceManager.GetString("allowanceTypeAnyString"),     // "Any"
-                                         Resources.ResourceManager.GetString("allowanceTypeInGameString"),  // "In-Game"
-                                         Resources.ResourceManager.GetString("allowanceTypeInMenuString")   // "In-Menu"
+        string[] allowanceTypesArray = { Resources.ResourceManager.GetString("allowanceTypeAnyString"),    // "Any"
+                                         Resources.ResourceManager.GetString("allowanceTypeInGameString"), // "In-Game"
+                                         Resources.ResourceManager.GetString("allowanceTypeInMenuString")  // "In-Menu"
                                        };
 
         // Initial config dropdown index
@@ -450,6 +450,7 @@ namespace au.edu.federation.SoniFight
 				dirTB.Anchor = AnchorStyles.Right;
 				dirTB.Dock = DockStyle.Fill;
 				dirTB.Margin = padding;
+                dirTB.ReadOnly = true;
 
 				panel.Controls.Add(dirTB, 1, row); // Control, Column, Row                        
 				row++;
@@ -662,7 +663,35 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(continuousTriggerMasterVolumeTB, 1, row); // Control, Column, Row
                 row++;
 
-                // ----- Row 7 - Config description -----                
+                // ----- Row 7 - Uses tolk -----
+                Label usesTolkLabel = new Label();
+                usesTolkLabel.AutoSize = true;
+                usesTolkLabel.Text = Resources.ResourceManager.GetString("usesTolkString");
+                usesTolkLabel.Anchor = AnchorStyles.Right;
+                usesTolkLabel.Margin = padding;
+                panel.Controls.Add(usesTolkLabel, 0, row); // Control, Column, Row
+
+                TextBox usesTolkTB = new TextBox();
+
+                // Set the text to yes or no based on whether we have an active, tolk-using trigger in this config or not
+                if ( Utils.configUsesTolk() )
+                {
+                    usesTolkTB.Text = Resources.ResourceManager.GetString("yesString");
+                }
+                else
+                {
+                    usesTolkTB.Text = Resources.ResourceManager.GetString("noString");
+                }
+
+                usesTolkTB.Anchor = AnchorStyles.Left;
+                usesTolkTB.Dock = DockStyle.Fill;
+                usesTolkTB.Margin = padding;
+                usesTolkTB.ReadOnly = true;
+
+                panel.Controls.Add(usesTolkTB, 1, row); // Control, Column, Row
+                row++;
+
+                // ----- Row 8 - Config description -----                
                 Label descLabel = new Label();
 				descLabel.AutoSize = true;
 				descLabel.Text = Resources.ResourceManager.GetString("descriptionLabelString");
@@ -675,7 +704,7 @@ namespace au.edu.federation.SoniFight
 
 				TextBox descTB = new TextBox();
 				descTB.Multiline = true;
-				descTB.Height = descTB.Font.Height * 15 + padding.Horizontal; // Set height to be enough for 15 lines
+				descTB.Height = descTB.Font.Height * 10 + padding.Horizontal; // Set height to be enough for 15 lines
 
 				// Replace all \n newlines with \r\n sp it properly linebreaks on returns
 				gameConfig.Description = gameConfig.Description.Replace("\n", Environment.NewLine);

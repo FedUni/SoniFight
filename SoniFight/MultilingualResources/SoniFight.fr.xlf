@@ -135,8 +135,8 @@
           <target state="new"> cannot be cast to int. Do not prefix pointer hops with 0x or such.</target>
         </trans-unit>
         <trans-unit id="pointerListLabelString" translate="yes" xml:space="preserve">
-          <source>Pointer List (comma-separated hex no prefixes)</source>
-          <target state="new">Pointer List (comma-separated hex no prefixes)</target>
+          <source>Pointer Chain (comma-separated hex, no prefixes)</source>
+          <target state="new">Pointer Chain (comma-separated hex, no prefixes)</target>
         </trans-unit>
         <trans-unit id="watchIdLabelString" translate="yes" xml:space="preserve">
           <source>Watch ID (unique int zero or greater)</source>
@@ -637,6 +637,18 @@
         <trans-unit id="normalTriggerMasterVolumeWarningString" translate="yes" xml:space="preserve">
           <source>WARNING: Normal trigger master volume must be a value between 0.0 and 1.0</source>
           <target state="new">WARNING: Normal trigger master volume must be a value between 0.0 and 1.0</target>
+        </trans-unit>
+        <trans-unit id="noString" translate="yes" xml:space="preserve">
+          <source>No</source>
+          <target state="new">No</target>
+        </trans-unit>
+        <trans-unit id="yesString" translate="yes" xml:space="preserve">
+          <source>Yes</source>
+          <target state="new">Yes</target>
+        </trans-unit>
+        <trans-unit id="usesTolkString" translate="yes" xml:space="preserve">
+          <source>Uses Tolk</source>
+          <target state="new">Uses Tolk</target>
         </trans-unit>
       </group>
     </body>

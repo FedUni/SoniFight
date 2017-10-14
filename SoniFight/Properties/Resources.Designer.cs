@@ -736,6 +736,15 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string noString {
+            get {
+                return ResourceManager.GetString("noString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not Equal To.
         /// </summary>
         internal static string notEqualToString {
@@ -772,7 +781,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pointer List (comma-separated hex no prefixes).
+        ///   Looks up a localized string similar to Pointer Chain (comma-separated hex, no prefixes).
         /// </summary>
         internal static string pointerListLabelString {
             get {
@@ -1312,6 +1321,15 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uses Tolk.
+        /// </summary>
+        internal static string usesTolkString {
+            get {
+                return ResourceManager.GetString("usesTolkString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Tolk.
         /// </summary>
         internal static string useTolkLabelString {
@@ -1479,6 +1497,15 @@ namespace au.edu.federation.SoniFight.Properties {
         internal static string watchValueParseFailString {
             get {
                 return ResourceManager.GetString("watchValueParseFailString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string yesString {
+            get {
+                return ResourceManager.GetString("yesString", resourceCulture);
             }
         }
     }
