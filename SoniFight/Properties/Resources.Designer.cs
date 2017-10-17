@@ -466,7 +466,16 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Found process base address at: .
+        ///   Looks up a localized string similar to WARNING: Pointer chain format exception..
+        /// </summary>
+        internal static string formatExceptionString {
+            get {
+                return ResourceManager.GetString("formatExceptionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Found process base address at hex address: .
         /// </summary>
         internal static string foundProcessBaseAddressString {
             get {

@@ -136,28 +136,33 @@ namespace au.edu.federation.SoniFight
         }
 
         // Method to update the destination address of this watch. This is called once per poll on all watches.
-        public IntPtr updateDestinationAddress(IntPtr processHandle, IntPtr baseAddress)
+        /*public void updateDestinationAddress(IntPtr processHandle, IntPtr baseAddress)
         {
             // Our destination address will change as this method runs, but we start at the base address
-            destinationAddress = baseAddress;
+            destinationAddress = Utils.findFeatureAddress(processHandle, baseAddress, this.PointerList);// baseAddress;
+        }*/
 
+        /*
             // Follow the pointer chain to find the final address of the feature.
             // Note: If we remove the "minus one" part of the below loop we get the ACTUAL value of that feature (assuming it's an int like the clock)
             int offset = 0;
             for (int hopLoop = 0; hopLoop < pointerList.Count; ++hopLoop)
             {
-                // If we're running as and connecting to a 32-bit process then our pointers will be 32-bit...
-                /*if (!System.Environment.Is64BitProcess)
-                {
-                    offset = (IntPtr)Convert.ToInt32(pointerList[hopLoop], 16);
-                }
-                else // ...otherwise we're running as and connecting to a 64-bit process where each pointer will be 64-bit.
-                {
-                    offset = (IntPtr)Convert.ToInt64(pointerList[hopLoop], 16);
-                }*/
+                
 
-                // Get the offset from a hexadecimal string value to an int
-                offset = Convert.ToInt32(pointerList[hopLoop], 16);
+                if (Program.is64Bit)
+                {
+                    long desinationAddressLong = featureAddress.ToInt64();
+                    long offsetLong = (long)offset; // I genuinely don't know why the cast to long works but converting ToInt64 doesn't - but that's how it is.
+                    featureAddress = new IntPtr(featureAddressLong + offsetLong);
+                    // Get the offset from a hexadecimal string value to an int
+                    offset = Convert.ToInt64(pointerList[hopLoop], 16);
+                }
+                else // We must be a 32-bit process
+                {
+                    // Get the offset from a hexadecimal string value to an int
+                    offset = Convert.ToInt32(pointerList[hopLoop], 16);
+                }
 
                 // Apply the offset
                 destinationAddress = IntPtr.Add(destinationAddress, offset);
@@ -174,7 +179,7 @@ namespace au.edu.federation.SoniFight
 
             // At this point destination address should be correctly set ready for us to return
             return destinationAddress;
-        }
+        }*/
 
     } // End of Watch class
 

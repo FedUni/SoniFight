@@ -269,7 +269,15 @@ namespace au.edu.federation.SoniFight
             Directory.CreateDirectory(configDir);
 
             // Finally, if the GameConfig is valid write it to file
-            Utils.WriteToXmlFile(configPath, gameConfig);
+            bool success = Utils.WriteToXmlFile(configPath, gameConfig);
+
+            // If we've saved successfully then we'll set our creating new config flag to false to make the directory location textbox readonly
+            if (success)
+            {
+                creatingNewConfig = false;
+            }
+
+
         }
 
         // Method to rebuild the treeview of the current gameconfig
@@ -344,12 +352,8 @@ namespace au.edu.federation.SoniFight
                     Thread.Sleep(500);
                 }
 
-                if (creatingNewConfig)
-                {
-                    //MessageBox.Show("Creating new config via flag!");
-                    creatingNewConfig = false;
-                }
-                else // Loading existing config?
+                // Loading an existing config? Okay...
+                if (!creatingNewConfig)
                 {
                     // Read GameConfig object from file
                     string pathToConfig = ".\\Configs\\" + this.configsComboBox.Text + "\\config.xml";
@@ -450,7 +454,12 @@ namespace au.edu.federation.SoniFight
 				dirTB.Anchor = AnchorStyles.Right;
 				dirTB.Dock = DockStyle.Fill;
 				dirTB.Margin = padding;
-                dirTB.ReadOnly = true;
+
+                // If we didn't get here from clicking the create new config button then the directory location should be read-only
+                if (!creatingNewConfig)
+                {
+                    dirTB.ReadOnly = true;                    
+                }
 
 				panel.Controls.Add(dirTB, 1, row); // Control, Column, Row                        
 				row++;

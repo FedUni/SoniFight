@@ -38,13 +38,20 @@ namespace au.edu.federation.PointerChainTester
 
             // Follow the pointer trail to find the final address of the feature
             // Note: If we remove the "minus one" part of the below loop we get the ACTUAL value of that feature (assuming it's an int like the clock)
-            int offset = 0;
-            for (int loop = 0; loop < hexPointerTrail.Count; loop++)
+            IntPtr offset = (IntPtr)0;
+            for (int loop = 0; loop < hexPointerTrail.Count; ++loop)
             {
                 // Get our offset string as an int
                 try
                 {
-                    offset = Convert.ToInt32(hexPointerTrail.ElementAt(loop), 16);
+                    if (Program.is64Bit)
+                    {
+                        offset = (IntPtr)Convert.ToInt64(hexPointerTrail.ElementAt(loop), 16);
+                    }
+                    else
+                    {
+                        offset = (IntPtr)Convert.ToInt32(hexPointerTrail.ElementAt(loop), 16);
+                    }
                 }
                 catch (FormatException)
                 {
@@ -59,16 +66,36 @@ namespace au.edu.federation.PointerChainTester
                 }
 
                 // Apply the offset
-                featureAddress += offset;
-
+                if (Program.is64Bit)
+                {
+                    long featureAddressLong = featureAddress.ToInt64();
+                    long offsetLong = (long)offset; // I genuinely don't know why the cast to long works but converting ToInt64 doesn't - but that's how it is.
+                    featureAddress = new IntPtr(featureAddressLong + offsetLong);
+                }
+                else
+                {
+                    int featureAddressInt = featureAddress.ToInt32();
+                    int offsetInt = (int)offset; // Should cast instead of convert here as well?
+                    featureAddress = new IntPtr(featureAddressInt + offsetInt);
+                }
+                
+                // At the last value? Then our feature address has been found and we can exit the loop
                 if (loop == (hexPointerTrail.Count - 1))
                 {
                     break;
                 }
 
-                // Read the address at that offset
-                featureAddress = (IntPtr)getIntFromAddress(processHandle, featureAddress);
-            }
+                // Read the address at that offset, grabbing a long if we're running in 64-bit mode and an int if we're in 32-bit mode
+                if (Program.is64Bit)
+                {
+                    featureAddress = (IntPtr)getLongFromAddress(processHandle, featureAddress);
+                }
+                else
+                {
+                    featureAddress = (IntPtr)getIntFromAddress(processHandle, featureAddress);
+                }
+
+            } // End of loop over pointer hops
 
             // Set the validPointerTrail flag to false if it was empty, or true if it made its way through the above without hitting the FormatException
             if (hexPointerTrail.Count == 0)

@@ -316,7 +316,7 @@
     <value>Delete Trigger</value>
   </data>
   <data name="foundProcessBaseAddressString" xml:space="preserve">
-    <value>Found process base address at: </value>
+    <value>Found process base address at hex address: </value>
   </data>
   <data name="isClockLabelString" xml:space="preserve">
     <value>Is Clock?</value>
@@ -599,5 +599,8 @@
   </data>
   <data name="yesString" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="formatExceptionString" xml:space="preserve">
+    <value>WARNING: Pointer chain format exception.</value>
   </data>
 </root>

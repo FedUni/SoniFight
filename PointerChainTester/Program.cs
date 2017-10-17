@@ -39,6 +39,8 @@ namespace au.edu.federation.PointerChainTester
         public static IntPtr processBaseAddress; // The base address of the process we found
         public static IntPtr featureAddress;     // The feature address after following the pointer trail
 
+        public static bool is64Bit;              // Flag to keep track of whether we're running as a 32-bit or 64-bit process
+
         // The pointer trail to find our feature address as a list of strings
         public static List<string> pointerList = new List<string>();
 
@@ -48,6 +50,16 @@ namespace au.edu.federation.PointerChainTester
         [STAThread]
         static void Main()
         {
+            // Set our 64-bit flag depending on whether this is the 32-bit or 64-bit build of the pointer chain tester
+            if (System.Environment.Is64BitProcess)
+            {
+                is64Bit = true;
+            }
+            else
+            {
+                is64Bit = false;
+            }
+
             // Localisation test code - uncomment to force French localisation etc.
             /*CultureInfo cultureOverride = new CultureInfo("fr");
             Thread.CurrentThread.CurrentUICulture = cultureOverride;

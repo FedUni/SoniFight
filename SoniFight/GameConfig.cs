@@ -219,6 +219,8 @@ namespace au.edu.federation.SoniFight
 
                     // Get the process base address
                     processBaseAddress = Utils.findProcessBaseAddress(processName);
+
+                    // Got a bad address because something went wrong? Moan!
                     if (processBaseAddress == (IntPtr)0)
                     {
                         string s1 = Resources.ResourceManager.GetString("processNotFoundWarningString1");
@@ -227,9 +229,21 @@ namespace au.edu.federation.SoniFight
                         e.Cancel = true;
                         break;
                     }
-                    else
+                    else // Got what we think is a valid address? Great.
                     {
-                        Console.WriteLine(Resources.ResourceManager.GetString("foundProcessBaseAddressString") + MainForm.gameConfig.ProcessBaseAddress);
+                        string s;
+                        if (Program.is64Bit)
+                        {
+                            long hexBaseAddressLong = (long)MainForm.gameConfig.ProcessBaseAddress;
+                            s = Convert.ToString(hexBaseAddressLong, 16);
+                        }
+                        else // We're a 32-bit process
+                        {
+                            int hexBaseAddressInt = (int)MainForm.gameConfig.ProcessBaseAddress;
+                            s = Convert.ToString(hexBaseAddressInt, 16);
+                        }
+                        //string hexBaseAddress = Convert.ToInt64(MainForm.gameConfig.ProcessBaseAddress, 16);
+                        Console.WriteLine(Resources.ResourceManager.GetString("foundProcessBaseAddressString") + s);// hexBaseAddress);// MainForm.gameConfig.ProcessBaseAddress);
                     }
 
                     // Calculate initial destination addresses.

@@ -33,8 +33,10 @@ namespace au.edu.federation.SoniFight
         /// <param name="filePath">The file path to write the object instance to.</param>
         /// <param name="objectToWrite">The object instance to write to the file.</param>
         /// <param name="append">If false the file will be overwritten if it already exists. If true the contents will be appended to the file.</param>
-        public static void WriteToXmlFile<T>(string filePath, T objectToWrite, bool append = false) where T : new()
+        public static bool WriteToXmlFile<T>(string filePath, T objectToWrite, bool append = false) where T : new()
         {
+            bool success = false;
+
             TextWriter writer = null;
             try
             {
@@ -43,6 +45,8 @@ namespace au.edu.federation.SoniFight
                 serializer.Serialize(writer, objectToWrite);
 
                 Console.WriteLine( Resources.ResourceManager.GetString("fileSavedSuccessfullyString") + filePath);
+
+                success = true;
             }
             catch (Exception e)
             {
@@ -57,6 +61,8 @@ namespace au.edu.federation.SoniFight
                     writer.Close();
                 }
             }
+
+            return success;
         }
 
         /// <summary>
@@ -172,6 +178,94 @@ namespace au.edu.federation.SoniFight
             return (IntPtr)0;
         }
 
+        // Take base address and a list of hex values (as strings) and return the final feature address
+        public static IntPtr findFeatureAddress(IntPtr processHandle, IntPtr baseAddress, List<string> hexPointerTrail)
+        {
+            // Our final address will change as this method runs, but we start at the base address
+            IntPtr featureAddress = baseAddress;
+
+            // Follow the pointer trail to find the final address of the feature
+            // Note: If we remove the "minus one" part of the below loop we get the ACTUAL value of that feature (assuming it's an int like the clock)
+            IntPtr offset = (IntPtr)0;
+            for (int loop = 0; loop < hexPointerTrail.Count; ++loop)
+            {
+                // Get our offset string as an int
+                try
+                {
+                    if (Program.is64Bit)
+                    {
+                        offset = (IntPtr)Convert.ToInt64(hexPointerTrail.ElementAt(loop), 16);
+                    }
+                    else
+                    {
+                        offset = (IntPtr)Convert.ToInt32(hexPointerTrail.ElementAt(loop), 16);
+                    }
+                }
+                catch (FormatException fe)
+                {
+                    //Program.validPointerTrail = false;
+                    MessageBox.Show(Resources.ResourceManager.GetString("formatExceptionString") + fe.Message);
+                    return (IntPtr)0;
+                }
+                catch (OverflowException oe)
+                {
+                    //Program.validPointerTrail = false;
+                    MessageBox.Show(Resources.ResourceManager.GetString("overflowExceptionString") + oe.Message);
+                    return (IntPtr)0;
+                }
+
+                // Apply the offset
+                if (Program.is64Bit)
+                {
+                    long featureAddressLong = featureAddress.ToInt64();
+                    long offsetLong = (long)offset; // I genuinely don't know why the cast to long works but converting ToInt64 doesn't - but that's how it is.
+                    featureAddress = new IntPtr(featureAddressLong + offsetLong);
+                }
+                else
+                {
+                    int featureAddressInt = featureAddress.ToInt32();
+                    int offsetInt = (int)offset; // Should cast instead of convert here as well?
+                    featureAddress = new IntPtr(featureAddressInt + offsetInt);
+                }
+
+                // At the last value? Then our feature address has been found and we can exit the loop
+                if (loop == (hexPointerTrail.Count - 1))
+                {
+                    break;
+                }
+
+                // Read the address at that offset, grabbing a long if we're running in 64-bit mode and an int if we're in 32-bit mode
+                if (Program.is64Bit)
+                {
+                    featureAddress = (IntPtr)getLongFromAddress(processHandle, featureAddress);
+                }
+                else
+                {
+                    featureAddress = (IntPtr)getIntFromAddress(processHandle, featureAddress);
+                }
+
+            } // End of loop over pointer hops
+
+            /*
+            // Set the validPointerTrail flag to false if it was empty, or true if it made its way through the above without hitting the FormatException
+            if (hexPointerTrail.Count == 0)
+            {
+                Program.validPointerTrail = false;
+            }
+            else
+            {
+                Program.validPointerTrail = true;
+            }
+            */
+
+            long hexBaseAddressLong = (long)featureAddress;
+            string s = Convert.ToString(hexBaseAddressLong, 16);
+            Console.WriteLine("Returning feature address of: " + s);
+
+            return featureAddress;
+        }
+
+        /*
         // Method to return a feature address given a process handle, base adress, and pointer chain as a list of hexadecimal strings
         public static IntPtr findFeatureAddress(IntPtr processHandle, IntPtr baseAddress, List<string> hexPointerChain)
         {
@@ -201,15 +295,28 @@ namespace au.edu.federation.SoniFight
 
             return featureAddress;
         }
+        */
 
         // Method to add a hex value, specified as a string, to the pointer chain
         public static bool addHexValueToPointerTrail(List<string> pointerList, string hexValue)
         {
-            int i = 0;
-            if (int.TryParse(hexValue, System.Globalization.NumberStyles.HexNumber, System.Globalization.CultureInfo.InvariantCulture, out i))
+            if (Program.is64Bit)
             {
-                pointerList.Add(hexValue);
-                return true;
+                long l;
+                if (long.TryParse(hexValue, System.Globalization.NumberStyles.HexNumber, System.Globalization.CultureInfo.InvariantCulture, out l))
+                {
+                    pointerList.Add(hexValue);
+                    return true;
+                }
+            }
+            else // We are running as a 32-bit process
+            {
+                int i;
+                if (int.TryParse(hexValue, System.Globalization.NumberStyles.HexNumber, System.Globalization.CultureInfo.InvariantCulture, out i))
+                {
+                    pointerList.Add(hexValue);
+                    return true;
+                }
             }
 
             // Not a valid string representation of a hexadecimal number? Fail!
@@ -222,6 +329,10 @@ namespace au.edu.federation.SoniFight
             int bytesRead = 0;
             byte[] buf = new byte[4];
             ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
+            
+            //int foo = BitConverter.ToInt32(buf, 0);
+            //Console.WriteLine("Read value:" + foo);
+
             return BitConverter.ToInt32(buf, 0);
         }
 

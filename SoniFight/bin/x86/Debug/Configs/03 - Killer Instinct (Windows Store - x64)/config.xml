@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <watchList>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>1</Id>
+      <Name>Clock</Name>
+      <Description>Round timer from 99 down to 0 as int</Description>
+      <PointerList>
+        <string>31DE8E8</string>
+        <string>368</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+  </watchList>
+  <triggerList>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>1</Id>
+      <Name>Clock</Name>
+      <Description>Clock watch for InGame and InMenu determination</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchOneId>1</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>None</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>true</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>2</Id>
+      <Name>Clock 95</Name>
+      <Description>Says 95</Description>
+      <Value xsi:type="xsd:string">95</Value>
+      <WatchOneId>1</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>95</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+  </triggerList>
+  <Description>Killer Instinct, Windows Store Edition (64-bit) - Al Lansley - 2017-10-17
+
+Basic triggers.</Description>
+  <ProcessName>KillerInstinct_UWPx64_r</ProcessName>
+  <PollSleepMS>100</PollSleepMS>
+  <ClockTickMS>2000</ClockTickMS>
+  <ClockMax>99</ClockMax>
+  <ConfigDirectory>03 - Killer Instinct (Windows Store - x64)</ConfigDirectory>
+  <NormalTriggerMasterVolume>0.7</NormalTriggerMasterVolume>
+  <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
+</GameConfig>

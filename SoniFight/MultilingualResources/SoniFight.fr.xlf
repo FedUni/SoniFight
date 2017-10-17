@@ -355,8 +355,8 @@
           <target state="new">Validation Error: GameConfig directory cannot be blank.</target>
         </trans-unit>
         <trans-unit id="foundProcessBaseAddressString" translate="yes" xml:space="preserve">
-          <source>Found process base address at: </source>
-          <target state="new">Found process base address at: </target>
+          <source>Found process base address at hex address: </source>
+          <target state="new">Found process base address at hex address: </target>
         </trans-unit>
         <trans-unit id="processNotFoundWarningString1" translate="yes" xml:space="preserve">
           <source>Error: No process called </source>
@@ -649,6 +649,10 @@
         <trans-unit id="usesTolkString" translate="yes" xml:space="preserve">
           <source>Uses Tolk</source>
           <target state="new">Uses Tolk</target>
+        </trans-unit>
+        <trans-unit id="formatExceptionString" translate="yes" xml:space="preserve">
+          <source>WARNING: Pointer chain format exception.</source>
+          <target state="new">WARNING: Pointer chain format exception.</target>
         </trans-unit>
       </group>
     </body>

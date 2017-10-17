@@ -1,0 +1,6 @@
+The AlinkWarningWorkaround.targets is to force use of the x64 tools when building 64-bit versions.
+Further reading: 
+https://stackoverflow.com/questions/25365616/alink-warning-al1073-referenced-assembly-mscorlib-dll-targets-a-different-p
+
+In particular:
+https://stackoverflow.com/questions/25365616/alink-warning-al1073-referenced-assembly-mscorlib-dll-targets-a-different-p/41945190#41945190
