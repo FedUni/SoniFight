@@ -238,11 +238,11 @@ namespace au.edu.federation.SoniFight
         public static void performSonification(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             // Load tolk library ready for use
-            //Tolk.Load();
+            Tolk.Load();
 
             // Try to detect a screen reader and set a flag if we find one so we know we can use it for sonification events.
             bool screenReaderActive = false;
-            /*string screenReaderName = Tolk.DetectScreenReader();
+            string screenReaderName = Tolk.DetectScreenReader();
             if (screenReaderName != null)
             {
                 screenReaderActive = true;
@@ -259,7 +259,7 @@ namespace au.edu.federation.SoniFight
             else
             {
                 Console.WriteLine( Resources.ResourceManager.GetString("tolkNoScreenReaderFoundString") );
-            }*/
+            }
 
             // Save some typing
             GameConfig gc = MainForm.gameConfig;
@@ -286,6 +286,11 @@ namespace au.edu.federation.SoniFight
                     case Watch.ValueType.LongType:
                         t.Value = Convert.ChangeType(t.Value, TypeCode.Int64);
                         t.PreviousValue = new long();
+                        t.PreviousValue = t.Value; // By value
+                        break;
+                    case Watch.ValueType.UnsignedIntType:
+                        t.Value = Convert.ChangeType(t.Value, TypeCode.UInt32);
+                        t.PreviousValue = new uint();
                         t.PreviousValue = t.Value; // By value
                         break;
                     case Watch.ValueType.FloatType:
@@ -851,7 +856,7 @@ namespace au.edu.federation.SoniFight
             } // End of while !e.Cancel
 
             // Unload tolk when we're stopping sonification
-            //Tolk.Unload();
+            Tolk.Unload();
 
             // If we're here then the background worker must have been cancelled so we call stopSonification
             stopSonification(e);

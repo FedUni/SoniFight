@@ -246,22 +246,12 @@ namespace au.edu.federation.SoniFight
 
             } // End of loop over pointer hops
 
-            /*
-            // Set the validPointerTrail flag to false if it was empty, or true if it made its way through the above without hitting the FormatException
-            if (hexPointerTrail.Count == 0)
-            {
-                Program.validPointerTrail = false;
-            }
-            else
-            {
-                Program.validPointerTrail = true;
-            }
-            */
+            // We can output this as a hex address if we want to...
+            //long hexBaseAddressLong = (long)featureAddress;
+            //string s = Convert.ToString(hexBaseAddressLong, 16);
+            //Console.WriteLine("Returning feature address of: " + s);
 
-            long hexBaseAddressLong = (long)featureAddress;
-            string s = Convert.ToString(hexBaseAddressLong, 16);
-            Console.WriteLine("Returning feature address of: " + s);
-
+            // Note: This address is in base-10 (not hexadecimal)
             return featureAddress;
         }
 
@@ -329,11 +319,16 @@ namespace au.edu.federation.SoniFight
             int bytesRead = 0;
             byte[] buf = new byte[4];
             ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
-            
-            //int foo = BitConverter.ToInt32(buf, 0);
-            //Console.WriteLine("Read value:" + foo);
-
             return BitConverter.ToInt32(buf, 0);
+        }
+
+        // Method to read and return an unsigned int (4 bytes)
+        public static uint getUnsignedIntFromAddress(IntPtr processHandle, IntPtr address)
+        {
+            int bytesRead = 0;
+            byte[] buf = new byte[4];
+            ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
+            return BitConverter.ToUInt32(buf, 0);
         }
 
         // Method to read and return a short (2 bytes)
@@ -552,14 +547,16 @@ namespace au.edu.federation.SoniFight
                 case 2:
                     return Watch.ValueType.LongType;
                 case 3:
-                    return Watch.ValueType.FloatType;
+                    return Watch.ValueType.UnsignedIntType;
                 case 4:
-                    return Watch.ValueType.DoubleType;
+                    return Watch.ValueType.FloatType;
                 case 5:
-                    return Watch.ValueType.BoolType;
+                    return Watch.ValueType.DoubleType;
                 case 6:
-                    return Watch.ValueType.StringUTF8Type;
+                    return Watch.ValueType.BoolType;
                 case 7:
+                    return Watch.ValueType.StringUTF8Type;
+                case 8:
                     return Watch.ValueType.StringUTF16Type;
                 default:
                     return Watch.ValueType.IntType;
@@ -577,16 +574,18 @@ namespace au.edu.federation.SoniFight
                     return 1;
                 case Watch.ValueType.LongType:
                     return 2;
-                case Watch.ValueType.FloatType:
+                case Watch.ValueType.UnsignedIntType:
                     return 3;
-                case Watch.ValueType.DoubleType:
+                case Watch.ValueType.FloatType:
                     return 4;
-                case Watch.ValueType.BoolType:
+                case Watch.ValueType.DoubleType:
                     return 5;
-                case Watch.ValueType.StringUTF8Type:
+                case Watch.ValueType.BoolType:
                     return 6;
-                case Watch.ValueType.StringUTF16Type:
+                case Watch.ValueType.StringUTF8Type:
                     return 7;
+                case Watch.ValueType.StringUTF16Type:
+                    return 8;
                 default:
                     return 0;
             }

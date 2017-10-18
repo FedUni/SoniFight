@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PointerTrailTester")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("PointerChainTester")]
+[assembly: AssemblyDescription("An application to test pointer chains.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PointerTrailTester")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright ©  2017 - Alastair Lansley / Federation University Australia")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -603,4 +603,7 @@
   <data name="formatExceptionString" xml:space="preserve">
     <value>WARNING: Pointer chain format exception.</value>
   </data>
+  <data name="unsignedIntString" xml:space="preserve">
+    <value>Unsigned Integer</value>
+  </data>
 </root>

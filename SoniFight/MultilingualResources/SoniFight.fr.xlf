@@ -654,6 +654,10 @@
           <source>WARNING: Pointer chain format exception.</source>
           <target state="new">WARNING: Pointer chain format exception.</target>
         </trans-unit>
+        <trans-unit id="unsignedIntString" translate="yes" xml:space="preserve">
+          <source>Unsigned Integer</source>
+          <target state="new">Unsigned Integer</target>
+        </trans-unit>
       </group>
     </body>
   </file>

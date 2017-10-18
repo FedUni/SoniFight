@@ -51,6 +51,8 @@
   </triggerList>
   <Description>Killer Instinct, Windows Store Edition (64-bit) - Al Lansley - 2017-10-17
 
+IMPORTANT: You must run this config with the 64-bit version of SoniFight because the Killer Instinct application itself is 64-bit.
+
 Basic triggers.</Description>
   <ProcessName>KillerInstinct_UWPx64_r</ProcessName>
   <PollSleepMS>100</PollSleepMS>

@@ -18,6 +18,7 @@ namespace au.edu.federation.SoniFight
             IntType,
             ShortType,
             LongType,
+            UnsignedIntType,
             FloatType,
             DoubleType,
             BoolType,
@@ -112,7 +113,10 @@ namespace au.edu.federation.SoniFight
                     return (Int16)Utils.getShortFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
 
                 case Watch.ValueType.LongType:
-                    return (Int16)Utils.getLongFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
+                    return (Int64)Utils.getLongFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
+
+                case Watch.ValueType.UnsignedIntType:
+                    return (UInt32)Utils.getUnsignedIntFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
 
                 case Watch.ValueType.FloatType:
                     return (float)Utils.getFloatFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
@@ -132,54 +136,10 @@ namespace au.edu.federation.SoniFight
                 default:
                     MessageBox.Show(Resources.ResourceManager.GetString("unrecognisedValueTypeWarningString") + valueType.ToString());
                     return null;
-            }
-        }
 
-        // Method to update the destination address of this watch. This is called once per poll on all watches.
-        /*public void updateDestinationAddress(IntPtr processHandle, IntPtr baseAddress)
-        {
-            // Our destination address will change as this method runs, but we start at the base address
-            destinationAddress = Utils.findFeatureAddress(processHandle, baseAddress, this.PointerList);// baseAddress;
-        }*/
+            } // End of switch
 
-        /*
-            // Follow the pointer chain to find the final address of the feature.
-            // Note: If we remove the "minus one" part of the below loop we get the ACTUAL value of that feature (assuming it's an int like the clock)
-            int offset = 0;
-            for (int hopLoop = 0; hopLoop < pointerList.Count; ++hopLoop)
-            {
-                
-
-                if (Program.is64Bit)
-                {
-                    long desinationAddressLong = featureAddress.ToInt64();
-                    long offsetLong = (long)offset; // I genuinely don't know why the cast to long works but converting ToInt64 doesn't - but that's how it is.
-                    featureAddress = new IntPtr(featureAddressLong + offsetLong);
-                    // Get the offset from a hexadecimal string value to an int
-                    offset = Convert.ToInt64(pointerList[hopLoop], 16);
-                }
-                else // We must be a 32-bit process
-                {
-                    // Get the offset from a hexadecimal string value to an int
-                    offset = Convert.ToInt32(pointerList[hopLoop], 16);
-                }
-
-                // Apply the offset
-                destinationAddress = IntPtr.Add(destinationAddress, offset);
-
-                // Final hop? Then that's where we'll find our value so break out of the loop
-                if (hopLoop == (pointerList.Count - 1))
-                {
-                    break;
-                }
-
-                // Not final hop? Then read the address at that offset and keep going.
-                destinationAddress = (IntPtr)Utils.getIntFromAddress(processHandle, destinationAddress);
-            }
-
-            // At this point destination address should be correctly set ready for us to return
-            return destinationAddress;
-        }*/
+        } // End of getDynamicValueFromType method
 
     } // End of Watch class
 

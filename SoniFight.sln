@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoniFight", "SoniFight\Soni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointerChainTester", "PointerChainTester\PointerChainTester.csproj", "{ECF3B871-5951-46C4-AA9B-42A4D56C2785}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{240132BD-19E2-4338-8C5F-8C56B63699FF}"
-	ProjectSection(SolutionItems) = preProject
-		AlinkWarningWorkaround.targets = AlinkWarningWorkaround.targets
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

@@ -518,6 +518,77 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
+    <Watch>
+      <valueType>StringUTF16Type</valueType>
+      <Id>39</Id>
+      <Name>Versus submenu text</Name>
+      <Description>String matches - see listed triggers.</Description>
+      <PointerList>
+        <string>132FDC</string>
+        <string>180</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>40</Id>
+      <Name>P1 costume/colour/action/win-quote</Name>
+      <Description>Short matches. Range 0 to 3</Description>
+      <PointerList>
+        <string>8B88DC</string>
+        <string>14</string>
+        <string>4</string>
+        <string>48</string>
+        <string>3C</string>
+        <string>46C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>41</Id>
+      <Name>P1 Costume number</Name>
+      <Description>Int matches. Range 0 to however many costumes char has.</Description>
+      <PointerList>
+        <string>8B88DC</string>
+        <string>14</string>
+        <string>4</string>
+        <string>48</string>
+        <string>3C</string>
+        <string>470</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>42</Id>
+      <Name>P1 Colour number</Name>
+      <Description>Int matches. Range 0 to however many colours char has.</Description>
+      <PointerList>
+        <string>8B88DC</string>
+        <string>14</string>
+        <string>4</string>
+        <string>48</string>
+        <string>3C</string>
+        <string>474</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>UnsignedIntType</valueType>
+      <Id>43</Id>
+      <Name>P1 Personal Action</Name>
+      <Description>Int matches. Range 0 or IntMax for "None"</Description>
+      <PointerList>
+        <string>8B88DC</string>
+        <string>14</string>
+        <string>4</string>
+        <string>48</string>
+        <string>3C</string>
+        <string>478</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
@@ -6399,6 +6470,448 @@
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>354</Id>
+      <Name>Versus submenu - Player Vs. Player</Name>
+      <Description>Says Player Vs. Player</Description>
+      <Value xsi:type="xsd:string">Fight against another player.</Value>
+      <WatchOneId>39</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Player versus player</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>355</Id>
+      <Name>Versus submenu - Player Vs. CPU</Name>
+      <Description>Says Player Vs. CPU</Description>
+      <Value xsi:type="xsd:string">Fight against the CPU.</Value>
+      <WatchOneId>39</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Player versus CPU</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>356</Id>
+      <Name>Versus submenu - CPU Vs. CPU</Name>
+      <Description>Says CPU Vs. CPU</Description>
+      <Value xsi:type="xsd:string">Watch the CPU fight itself.</Value>
+      <WatchOneId>39</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>CPU versus CPU</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>357</Id>
+      <Name>P1 Char Select - Costume</Name>
+      <Description>Says costume. Matches 0 as int.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchOneId>40</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Costume</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>358</Id>
+      <Name>P1 Char Select - Colour</Name>
+      <Description>Says colour. Matches 1 as int.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>40</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Colour</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>359</Id>
+      <Name>P1 Char Select - Personal Action</Name>
+      <Description>Says personal action. Matches 2 as int.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchOneId>40</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Personal Action</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>360</Id>
+      <Name>P1 Char Select - Win Quote</Name>
+      <Description>Says win quote. Matches 3 as int.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchOneId>40</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Win Quote</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>361</Id>
+      <Name>P1 Costume Select - Original</Name>
+      <Description>Says original. Matches 0 as int.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchOneId>41</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Original</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>362</Id>
+      <Name>P1 Costume Select - Alternate 1</Name>
+      <Description>Says alternate 1. Matches 1 as int.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>41</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Alternate 1</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>363</Id>
+      <Name>P1 Costume Select - Alternate 2</Name>
+      <Description>Says alternate 2. Matches 2 as int.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchOneId>41</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Alternate 2</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>364</Id>
+      <Name>P1 Costume Select - Alternate 3</Name>
+      <Description>Says alternate 3. Matches 2 as int.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchOneId>41</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Alternate 3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>365</Id>
+      <Name>P1 Colour Number 1</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>1</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>366</Id>
+      <Name>P1 Colour Number 2</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>2</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>367</Id>
+      <Name>P1 Colour Number 3</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>368</Id>
+      <Name>P1 Colour Number 4</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>4</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>369</Id>
+      <Name>P1 Colour Number 5</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>5</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>370</Id>
+      <Name>P1 Colour Number 6</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>6</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>371</Id>
+      <Name>P1 Colour Number 7</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>7</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>372</Id>
+      <Name>P1 Colour Number 8</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>8</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>373</Id>
+      <Name>P1 Colour Number 9</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>9</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>374</Id>
+      <Name>P1 Colour Number 10</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">9</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>10</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>375</Id>
+      <Name>P1 Colour Number 11</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>11</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>376</Id>
+      <Name>P1 Colour Number 12</Name>
+      <Description>Says colour number. Matches int.</Description>
+      <Value xsi:type="xsd:string">11</Value>
+      <WatchOneId>42</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>12</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>377</Id>
+      <Name>P1 Personal Action 1</Name>
+      <Description>Says personal action. Matches unsigned int.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>1</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>378</Id>
+      <Name>P1 Personal Action 2</Name>
+      <Description>Says personal action none. Matches max unsigned int 1</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>2</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>379</Id>
+      <Name>P1 Personal Action None</Name>
+      <Description>Says personal action none. Matches max unsigned int (FF FF FF FF).</Description>
+      <Value xsi:type="xsd:string">4294967295</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>None</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>

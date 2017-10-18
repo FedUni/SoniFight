@@ -1330,6 +1330,15 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unsigned Integer.
+        /// </summary>
+        internal static string unsignedIntString {
+            get {
+                return ResourceManager.GetString("unsignedIntString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uses Tolk.
         /// </summary>
         internal static string usesTolkString {

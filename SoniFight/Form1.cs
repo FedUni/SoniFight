@@ -24,6 +24,7 @@ namespace au.edu.federation.SoniFight
         string[] dataTypesArray = { Resources.ResourceManager.GetString("integerString"),    // "Integer"
                                     Resources.ResourceManager.GetString("shortString"),      // "Short"
                                     Resources.ResourceManager.GetString("longString"),       // "Long"
+                                    Resources.ResourceManager.GetString("unsignedIntString"),       // "Unsigned Int"
                                     Resources.ResourceManager.GetString("floatString"),      // "Float"
                                     Resources.ResourceManager.GetString("doubleString"),     // "Double"
                                     Resources.ResourceManager.GetString("booleanString"),    // "Boolean"
@@ -1581,7 +1582,7 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(sampleSpeedTB, 1, row); // Control, Column, Row
                 row++;
 
-                // ----- Row 11 - Active Flag -----            
+                // ----- Row 11 - isClock Flag -----            
                 Label isClockLabel = new Label();
                 isClockLabel.AutoSize = true;
                 isClockLabel.Text = Resources.ResourceManager.GetString("isClockLabelString");
@@ -1592,7 +1593,7 @@ namespace au.edu.federation.SoniFight
                 CheckBox isClockCB = new CheckBox();
                 isClockCB.Checked = currentTrigger.IsClock;
 
-                // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
+                // If we're the clock disable the UI for audio and comparison type.
                 if (currentTrigger.IsClock)
                 {
                     sampleFilenameTB.Enabled = false;
@@ -1601,11 +1602,13 @@ namespace au.edu.federation.SoniFight
                     sampleVolumeTB.Enabled = false;
                     sampleSpeedTB.Enabled = false;
                     tolkCheckbox.Enabled = false;
+                    compTypeCB.Enabled = false;
                 }
                 else // We are not the clock trigger
                 {
                     // Re-enable the value checkbox
                     valueTB.Enabled = true;
+                    compTypeCB.Enabled = true;
 
                     // If we are NOT using tolk then we enable volume, speed and file buttons
                     if (!currentTrigger.UseTolk)
@@ -1641,14 +1644,14 @@ namespace au.edu.federation.SoniFight
                         sampleVolumeTB.Enabled = false;
                         sampleSpeedTB.Enabled = false;
                         tolkCheckbox.Enabled = false;
+                        compTypeCB.Enabled = false;
                     }
                     else // This is not the clock trigger
                     {
-                        // Re-enable the secondary Id textbox along with the sample volume and speed textboxes
+                        // Re-enable the secondary Id, useTolk checkbox and comparison type
                         valueTB.Enabled = true;
-
-                        // Re-enabled tolk checkbox
                         tolkCheckbox.Enabled = true;
+                        compTypeCB.Enabled = true;
 
                         // // If we are NOT using tolk then we enable volume, speed and file buttons
                         if (!currentTrigger.UseTolk)
