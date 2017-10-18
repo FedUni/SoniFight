@@ -532,8 +532,8 @@
     <Watch>
       <valueType>IntType</valueType>
       <Id>40</Id>
-      <Name>P1 costume/colour/action/win-quote</Name>
-      <Description>Short matches. Range 0 to 3</Description>
+      <Name>P1 Arcade - Costume/Colour/Action/Win-Quote</Name>
+      <Description>Integer - matches range 0 to 3</Description>
       <PointerList>
         <string>8B88DC</string>
         <string>14</string>
@@ -586,6 +586,36 @@
         <string>48</string>
         <string>3C</string>
         <string>478</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>UnsignedIntType</valueType>
+      <Id>44</Id>
+      <Name>P1 Win Quote</Name>
+      <Description>Unsigned Int matches. Range 0 to num quotes, then IntMax for "Random"</Description>
+      <PointerList>
+        <string>8B88DC</string>
+        <string>14</string>
+        <string>4</string>
+        <string>48</string>
+        <string>3C</string>
+        <string>47C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>45</Id>
+      <Name>P1 Versus - Costume/Colour/Action/Win-Quote</Name>
+      <Description>Integer matches. Range 0 to 3</Description>
+      <PointerList>
+        <string>8B88DC</string>
+        <string>94</string>
+        <string>4</string>
+        <string>48</string>
+        <string>5C</string>
+        <string>46C</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
@@ -6870,7 +6900,7 @@
       <comparisonType>EqualTo</comparisonType>
       <Id>377</Id>
       <Name>P1 Personal Action 1</Name>
-      <Description>Says personal action. Matches unsigned int.</Description>
+      <Description>Says personal action number. Matches unsigned int.</Description>
       <Value xsi:type="xsd:string">0</Value>
       <WatchOneId>43</WatchOneId>
       <SecondaryId>-1</SecondaryId>
@@ -6887,7 +6917,7 @@
       <comparisonType>EqualTo</comparisonType>
       <Id>378</Id>
       <Name>P1 Personal Action 2</Name>
-      <Description>Says personal action none. Matches max unsigned int 1</Description>
+      <Description>Says personal action number. Matches max unsigned int 1</Description>
       <Value xsi:type="xsd:string">1</Value>
       <WatchOneId>43</WatchOneId>
       <SecondaryId>-1</SecondaryId>
@@ -6903,12 +6933,352 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>379</Id>
+      <Name>P1 Personal Action 3</Name>
+      <Description>Says personal action number. Matches unsigned int.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>380</Id>
+      <Name>P1 Personal Action 4</Name>
+      <Description>Says personal action number. Matches unsigned int</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>4</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>381</Id>
+      <Name>P1 Personal Action 5</Name>
+      <Description>Says personal action number. Matches nsigned int.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>5</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>382</Id>
+      <Name>P1 Personal Action 6</Name>
+      <Description>Says personal action number. Matches unsigned int.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>6</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>383</Id>
+      <Name>P1 Personal Action 7</Name>
+      <Description>Says personal action number. Matches unsigned int.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>7</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>384</Id>
+      <Name>P1 Personal Action 8</Name>
+      <Description>Says personal action number. Matches unsigned int.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>8</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>385</Id>
+      <Name>P1 Personal Action 9</Name>
+      <Description>Says personal action number. Matches unsigned int.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>9</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>386</Id>
       <Name>P1 Personal Action None</Name>
       <Description>Says personal action none. Matches max unsigned int (FF FF FF FF).</Description>
       <Value xsi:type="xsd:string">4294967295</Value>
       <WatchOneId>43</WatchOneId>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>None</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>387</Id>
+      <Name>P1 Win Quote 1</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>1</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>388</Id>
+      <Name>P1 Win Quote 2</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>2</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>389</Id>
+      <Name>P1 Win Quote 3</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>390</Id>
+      <Name>P1 Win Quote 4</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>4</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>391</Id>
+      <Name>P1 Win Quote 5</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>5</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>392</Id>
+      <Name>P1 Win Quote 6</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>6</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>393</Id>
+      <Name>P1 Win Quote 7</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>7</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>394</Id>
+      <Name>P1 Win Quote 8</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>8</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>395</Id>
+      <Name>P1 Win Quote 9</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>9</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>396</Id>
+      <Name>P1 Win Quote 10</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">9</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>10</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>397</Id>
+      <Name>P1 Win Quote 11</Name>
+      <Description>Win quote number as unsigned int.</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>11</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>398</Id>
+      <Name>P1 Win Quote Random</Name>
+      <Description>Win quote number as unsigned int. This one matches uint max and says "Random".</Description>
+      <Value xsi:type="xsd:string">4294967295</Value>
+      <WatchOneId>44</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>Random</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>399</Id>
+      <Name>P1 Personal Action 10</Name>
+      <Description>Says personal action number. Matches unsigned int.</Description>
+      <Value xsi:type="xsd:string">9</Value>
+      <WatchOneId>43</WatchOneId>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename>10</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
