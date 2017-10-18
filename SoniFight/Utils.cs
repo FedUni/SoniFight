@@ -457,6 +457,7 @@ namespace au.edu.federation.SoniFight
         // Remove all the controls from a TableLayoutPanel
         public static void clearTableLayoutPanel(TableLayoutPanel p)
         {
+            p.SuspendLayout();
             p.Visible = false;
 
             for (int i = (p.Controls.Count) - 1; i >= 0; --i)
@@ -464,8 +465,13 @@ namespace au.edu.federation.SoniFight
                 p.Controls[i].Dispose();
             }
 
+            p.ResumeLayout();
             p.Visible = true;
+
+            // Force garbage collection so memory usage stays low
+            System.GC.Collect();
         }
+        
 
         // Method to remove an aribtrary row from a TableLayoutPanel.
         // By default you cannot remove an arbitrary row from a table (only the last row), but
@@ -849,5 +855,56 @@ namespace au.edu.federation.SoniFight
         }
 
     } // End of Utils class
+
+
+    /* Attempt to stop winforms flickering - taken from: https://stackoverflow.com/questions/8900099/tablelayoutpanel-responds-very-slowly-to-events/10038782#10038782
+     * 
+     * Doesn't work if I replace the gcPanel as a CoTableLayoutPanel, not toggling the Visible flag doesn't seem to help either.
+
+
+    public class CoTableLayoutPanel : TableLayoutPanel
+    {
+        protected override void OnCreateControl()
+        {
+            base.OnCreateControl();
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.CacheText, true);
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= NativeMethods.WS_EX_COMPOSITED;
+                return cp;
+            }
+        }
+
+        public void BeginUpdate()
+        {
+            NativeMethods.SendMessage(this.Handle, NativeMethods.WM_SETREDRAW, IntPtr.Zero, IntPtr.Zero);
+        }
+
+        public void EndUpdate()
+        {
+            NativeMethods.SendMessage(this.Handle, NativeMethods.WM_SETREDRAW, new IntPtr(1), IntPtr.Zero);
+            Parent.Invalidate(true);
+        }
+    }
+
+    public static class NativeMethods
+    {
+        public static int WM_SETREDRAW = 0x000B; //uint WM_SETREDRAW
+        public static int WS_EX_COMPOSITED = 0x02000000;
+
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam); //UInt32 Msg
+    }
+
+    */
+
+
+
 
 } // End of namespace

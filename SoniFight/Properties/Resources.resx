@@ -187,7 +187,7 @@
     <value>None</value>
   </data>
   <data name="pointerListLabelString" xml:space="preserve">
-    <value>Pointer Chain (comma-separated hex, no prefixes)</value>
+    <value>Pointer Chain (in hex with commas)</value>
   </data>
   <data name="pollSleepLabelString" xml:space="preserve">
     <value>Poll Sleep (Milliseconds)</value>
@@ -265,7 +265,7 @@
     <value>Only watches that are marked as active will be used - this allows you to disable a watch while still keeping the data around in your GameConfig for later use, if you wish.</value>
   </data>
   <data name="watchDescriptionString4" xml:space="preserve">
-    <value>Please consult the user documentation for further details on identifying pointer trails for use in watches.</value>
+    <value>Please consult the user documentation for further details on identifying pointer chains for use in watches.</value>
   </data>
   <data name="watchesString" xml:space="preserve">
     <value>Watches</value>

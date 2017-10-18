@@ -33,6 +33,7 @@
             System.Windows.Forms.PictureBox fedUniPictureBox;
             this.tabControl = new System.Windows.Forms.TabControl();
             this.mainTabPage = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.quitButton = new System.Windows.Forms.Button();
             this.createConfigButton = new System.Windows.Forms.Button();
             this.stopConfigButton = new System.Windows.Forms.Button();
@@ -41,6 +42,8 @@
             this.configsComboBox = new System.Windows.Forms.ComboBox();
             this.appTitleLabel = new System.Windows.Forms.Label();
             this.editTabPage = new System.Windows.Forms.TabPage();
+            this.holderPanel = new System.Windows.Forms.Panel();
+            this.gcPanel = new System.Windows.Forms.TableLayoutPanel();
             this.saveConfigButton = new System.Windows.Forms.Button();
             this.cloneTriggerButton = new System.Windows.Forms.Button();
             this.addTriggerButton = new System.Windows.Forms.Button();
@@ -48,18 +51,15 @@
             this.addWatchButton = new System.Windows.Forms.Button();
             this.currentUILabel = new System.Windows.Forms.Label();
             this.gcTreeView = new System.Windows.Forms.TreeView();
-            this.holderPanel = new System.Windows.Forms.Panel();
-            this.gcPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             irrKlangPictureBox = new System.Windows.Forms.PictureBox();
             fedUniPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(irrKlangPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(fedUniPictureBox)).BeginInit();
             this.tabControl.SuspendLayout();
             this.mainTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.editTabPage.SuspendLayout();
             this.holderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // irrKlangPictureBox
@@ -98,6 +98,12 @@
             resources.ApplyResources(this.mainTabPage, "mainTabPage");
             this.mainTabPage.Name = "mainTabPage";
             this.mainTabPage.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // quitButton
             // 
@@ -160,6 +166,18 @@
             this.editTabPage.Name = "editTabPage";
             this.editTabPage.UseVisualStyleBackColor = true;
             // 
+            // holderPanel
+            // 
+            this.holderPanel.Controls.Add(this.gcPanel);
+            resources.ApplyResources(this.holderPanel, "holderPanel");
+            this.holderPanel.Name = "holderPanel";
+            // 
+            // gcPanel
+            // 
+            this.gcPanel.BackColor = System.Drawing.Color.AntiqueWhite;
+            resources.ApplyResources(this.gcPanel, "gcPanel");
+            this.gcPanel.Name = "gcPanel";
+            // 
             // saveConfigButton
             // 
             resources.ApplyResources(this.saveConfigButton, "saveConfigButton");
@@ -206,24 +224,6 @@
             this.gcTreeView.Name = "gcTreeView";
             this.gcTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.gcTreeView_AfterSelect);
             // 
-            // holderPanel
-            // 
-            this.holderPanel.Controls.Add(this.gcPanel);
-            resources.ApplyResources(this.holderPanel, "holderPanel");
-            this.holderPanel.Name = "holderPanel";
-            // 
-            // gcPanel
-            // 
-            resources.ApplyResources(this.gcPanel, "gcPanel");
-            this.gcPanel.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.gcPanel.Name = "gcPanel";
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -237,10 +237,10 @@
             this.tabControl.ResumeLayout(false);
             this.mainTabPage.ResumeLayout(false);
             this.mainTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.editTabPage.ResumeLayout(false);
             this.editTabPage.PerformLayout();
             this.holderPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,7 +265,10 @@
         private System.Windows.Forms.Button cloneWatchButton;
         private System.Windows.Forms.Button addWatchButton;
         private System.Windows.Forms.Panel holderPanel;
+
         private System.Windows.Forms.TableLayoutPanel gcPanel;
+        //private au.edu.federation.SoniFight.CoTableLayoutPanel gcPanel;
+
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

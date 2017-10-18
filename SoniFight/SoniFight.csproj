@@ -61,13 +61,13 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  <ItemGroup Condition=" '$(Platform)' == 'x86' ">
     <Reference Include="irrKlang.NET4, Version=1.0.5235.17346, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\lib32\irrKlang\irrKlang.NET4.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  <ItemGroup Condition=" '$(Platform)' == 'x64' ">
     <Reference Include="irrKlang.NET4, Version=1.0.5235.17346, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\lib64\irrKlang\irrKlang.NET4.dll</HintPath>
@@ -148,7 +148,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>  
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  <ItemGroup Condition=" '$(Platform)' == 'x86' ">
     <Content Include="lib\lib32\irrKlang\ikpFlac.dll">
 	  <Link>ikpFlac.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -178,21 +178,26 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  <ItemGroup Condition=" '$(Platform)' == 'x64' ">
     <Content Include="lib\lib64\irrKlang\ikpFlac.dll">
+	  <Link>ikpFlac.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="lib\lib64\irrKlang\ikpMP3.dll">
+	<Link>ikpMP3.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="lib\lib64\irrKlang\irrKlang.NET4.dll" />
     <Content Include="lib\lib64\tolk\nvdaControllerClient64.dll">
+	  <Link>nvdaControllerClient64.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="lib\lib64\tolk\SAAPI64.dll">
+	  <Link>SAAPI64.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="lib\lib64\tolk\Tolk.dll">
+	  <Link>Tolk.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

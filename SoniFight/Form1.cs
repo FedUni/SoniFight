@@ -85,7 +85,19 @@ namespace au.edu.federation.SoniFight
 
             populateMainConfigsBox();
         }
-        
+
+        // Make all controls support double buffering (so we don't have to do so on each control created).
+        // Source of tip: https://stackoverflow.com/a/25648710/1868200
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000; // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
+
         // Read all the directories in the Configs folder and use each directory text as an item in the main GameConfig ComboBox
         private void populateMainConfigsBox()
         {
@@ -413,11 +425,16 @@ namespace au.edu.federation.SoniFight
             populateMainConfigsBox();
         }
 
+        // Method to rebuild the details panel depending on the selected node of the TreeView
         private void gcTreeView_AfterSelect(object senderender, TreeViewEventArgs tvea)
         {
             // Get the panel, clear it and set some layout properties
             TableLayoutPanel panel = this.gcPanel;
             Utils.clearTableLayoutPanel(panel);
+            
+            panel.SuspendLayout();
+            panel.Visible = false;
+
             panel.Padding = padding;
             panel.AutoSize = true;
             panel.Anchor = AnchorStyles.Right;
@@ -1763,6 +1780,8 @@ namespace au.edu.federation.SoniFight
                 MessageBox.Show( Resources.ResourceManager.GetString("badTreeNodeTagWarningString") + currentTreeNode.Tag.ToString() );
             } // End of switch
 
+            // Resume the layout logic of the panel and make it visible
+            panel.ResumeLayout();
             panel.Visible = true;
 
         } // End of gcTreeView_AfterSelect method

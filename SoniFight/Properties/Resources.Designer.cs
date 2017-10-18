@@ -790,7 +790,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pointer Chain (comma-separated hex, no prefixes).
+        ///   Looks up a localized string similar to Pointer Chain (in hex with commas).
         /// </summary>
         internal static string pointerListLabelString {
             get {
@@ -1447,7 +1447,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please consult the user documentation for further details on identifying pointer trails for use in watches..
+        ///   Looks up a localized string similar to Please consult the user documentation for further details on identifying pointer chains for use in watches..
         /// </summary>
         internal static string watchDescriptionString4 {
             get {
