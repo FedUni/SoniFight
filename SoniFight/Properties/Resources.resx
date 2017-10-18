@@ -202,7 +202,7 @@
     <value>Sonification stopped.</value>
   </data>
   <data name="statusRunningString" xml:space="preserve">
-    <value>Status: Running. Config:</value>
+    <value>Status: Running. Config: </value>
   </data>
   <data name="statusStoppedString" xml:space="preserve">
     <value>Status: Stopped</value>
@@ -385,7 +385,7 @@
     <value>Use Tolk</value>
   </data>
   <data name="watch1LabelString" xml:space="preserve">
-    <value>Watch 1 ID</value>
+    <value>Watch ID / List</value>
   </data>
   <data name="allowanceTypeAnyString" xml:space="preserve">
     <value>Any</value>

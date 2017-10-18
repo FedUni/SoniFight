@@ -95,7 +95,9 @@
       <Name>Clock trigger for InGame vs InMenu determination</Name>
       <Description>Round timer. 90 down to 0 as an int</Description>
       <Value xsi:type="xsd:string">90</Value>
-      <WatchOneId>1</WatchOneId>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>NONE</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -112,7 +114,9 @@
       <Name>P1 Health Half</Name>
       <Description>Says half health</Description>
       <Value xsi:type="xsd:string">0.5</Value>
-      <WatchOneId>2</WatchOneId>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Health-Half.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -129,7 +133,9 @@
       <Name>P1 Health Quarter</Name>
       <Description>Says health quarter.</Description>
       <Value xsi:type="xsd:string">0.25</Value>
-      <WatchOneId>2</WatchOneId>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Health-Quarter.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -146,7 +152,9 @@
       <Name>P1 Health Low</Name>
       <Description>Says health low when 10% or less.</Description>
       <Value xsi:type="xsd:string">0.1</Value>
-      <WatchOneId>2</WatchOneId>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Health-Low.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -163,7 +171,9 @@
       <Name>Clock 45</Name>
       <Description>Says clock 45 at the halfway point of the round</Description>
       <Value xsi:type="xsd:string">45</Value>
-      <WatchOneId>1</WatchOneId>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Clock-45.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -180,7 +190,9 @@
       <Name>Clock 10</Name>
       <Description>Says clock 10 when the clock hits that value.</Description>
       <Value xsi:type="xsd:string">10</Value>
-      <WatchOneId>1</WatchOneId>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Clock-10.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -197,7 +209,9 @@
       <Name>P1 - One Third Bar - Enhanced</Name>
       <Description>Says Enhanced when you get one third bar.</Description>
       <Value xsi:type="xsd:string">0.33</Value>
-      <WatchOneId>3</WatchOneId>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Enhanced.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -214,7 +228,9 @@
       <Name>P1 - Two Thirds Bar - Breaker</Name>
       <Description>Says breaker when player 1 gets two thirds bar.</Description>
       <Value xsi:type="xsd:string">0.66</Value>
-      <WatchOneId>3</WatchOneId>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Breaker.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -231,7 +247,9 @@
       <Name>P1 - Full Bar - X-Ray</Name>
       <Description>Says X-Ray when player 1 gets full bar.</Description>
       <Value xsi:type="xsd:string">1</Value>
-      <WatchOneId>3</WatchOneId>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>X-Ray.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -248,7 +266,9 @@
       <Name>P2 Health Half</Name>
       <Description>Says half health.</Description>
       <Value xsi:type="xsd:string">0.5</Value>
-      <WatchOneId>4</WatchOneId>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Health-Half-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -265,7 +285,9 @@
       <Name>P2 Health Quarter</Name>
       <Description>Says health quarter.</Description>
       <Value xsi:type="xsd:string">0.25</Value>
-      <WatchOneId>4</WatchOneId>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Health-Quarter-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -282,7 +304,9 @@
       <Name>P2 Health Low</Name>
       <Description>Says health low when 10% or less.</Description>
       <Value xsi:type="xsd:string">0.1</Value>
-      <WatchOneId>4</WatchOneId>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Health-Low-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -299,7 +323,9 @@
       <Name>P2 - One Third Bar - Enhanced</Name>
       <Description>Says Enhanced when player 2 gets one third bar.</Description>
       <Value xsi:type="xsd:string">0.33</Value>
-      <WatchOneId>5</WatchOneId>
+      <WatchIdList>
+        <int>5</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Enhanced-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -316,7 +342,9 @@
       <Name>P2 - Two Thirds Bar - Breaker</Name>
       <Description>Says breaker when player 2 gets two thirds bar.</Description>
       <Value xsi:type="xsd:string">0.66</Value>
-      <WatchOneId>5</WatchOneId>
+      <WatchIdList>
+        <int>5</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Breaker-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -333,7 +361,9 @@
       <Name>P2 - Full Bar - X-Ray</Name>
       <Description>Says X-Ray when player 2 gets full bar.</Description>
       <Value xsi:type="xsd:string">1</Value>
-      <WatchOneId>5</WatchOneId>
+      <WatchIdList>
+        <int>5</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>X-Ray-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -350,7 +380,9 @@
       <Name>Single Player Main Menu - Fight</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">0</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>24</SecondaryId>
       <SampleFilename>Fight</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -367,7 +399,9 @@
       <Name>Single Player Main Menu - Story Mode</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">1</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>24</SecondaryId>
       <SampleFilename>Story Mode</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -384,7 +418,9 @@
       <Name>Single Player Main Menu - Challenge Tower</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">2</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>24</SecondaryId>
       <SampleFilename>Challenge Tower</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -401,7 +437,9 @@
       <Name>Single Player Main Menu - Training</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">3</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>24</SecondaryId>
       <SampleFilename>Training</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -418,7 +456,9 @@
       <Name>Single Player Main Menu - Online</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">4</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>24</SecondaryId>
       <SampleFilename>Online</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -435,7 +475,9 @@
       <Name>Single Player Main Menu - Extras</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">5</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>24</SecondaryId>
       <SampleFilename>Extras</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -452,7 +494,9 @@
       <Name>Single Player Main Menu - Options</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">6</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>24</SecondaryId>
       <SampleFilename>Options</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -469,7 +513,9 @@
       <Name>Single Player Main Menu - Exit Game</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">7</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>24</SecondaryId>
       <SampleFilename>Exit Game</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -486,7 +532,9 @@
       <Name>Main menu - number of players 1</Name>
       <Description>Says single player</Description>
       <Value xsi:type="xsd:string">1</Value>
-      <WatchOneId>7</WatchOneId>
+      <WatchIdList>
+        <int>7</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>Single Player</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -503,7 +551,9 @@
       <Name>Main menu - number of players 2</Name>
       <Description>Says 2 players</Description>
       <Value xsi:type="xsd:string">2</Value>
-      <WatchOneId>7</WatchOneId>
+      <WatchIdList>
+        <int>7</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>2 Players</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -520,7 +570,9 @@
       <Name>Main menu - number of players 3</Name>
       <Description>Says 3 players</Description>
       <Value xsi:type="xsd:string">3</Value>
-      <WatchOneId>7</WatchOneId>
+      <WatchIdList>
+        <int>7</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>3 Players</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -537,7 +589,9 @@
       <Name>Main menu - number of players 4</Name>
       <Description>Says 4 players</Description>
       <Value xsi:type="xsd:string">4</Value>
-      <WatchOneId>7</WatchOneId>
+      <WatchIdList>
+        <int>7</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>4 Players</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -554,7 +608,9 @@
       <Name>2 Player Main Menu - 0 Versus Mode</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">0</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>25</SecondaryId>
       <SampleFilename>Versus mode</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -571,7 +627,9 @@
       <Name>2 Player Main Menu - 1 Team Ladder</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">1</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>25</SecondaryId>
       <SampleFilename>Team ladder</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -588,7 +646,9 @@
       <Name>2 Player Main Menu - 2 Online</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">2</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>25</SecondaryId>
       <SampleFilename>Online</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -605,7 +665,9 @@
       <Name>2 Player Main Menu - 3 Extras</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">3</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>25</SecondaryId>
       <SampleFilename>Extras</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -622,7 +684,9 @@
       <Name>2 Player Main Menu - 4 Options</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">4</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>25</SecondaryId>
       <SampleFilename>Options</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -639,7 +703,9 @@
       <Name>2 Player Main Menu - 5 Exit Game</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">5</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>25</SecondaryId>
       <SampleFilename>Exit Game</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -656,7 +722,9 @@
       <Name>3 Player Main Menu - 0 Versus Mode</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">0</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>26</SecondaryId>
       <SampleFilename>Versus mode</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -673,7 +741,9 @@
       <Name>3 Player Main Menu - 1 Extras</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">1</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>26</SecondaryId>
       <SampleFilename>Extras</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -690,7 +760,9 @@
       <Name>3 Player Main Menu - 2 Options</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">2</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>26</SecondaryId>
       <SampleFilename>Options</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -707,7 +779,9 @@
       <Name>3 Player Main Menu - 3 Exit Game</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">3</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>26</SecondaryId>
       <SampleFilename>Exit game</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -724,7 +798,9 @@
       <Name>4 Player Main Menu - 0 Versus Mode</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">0</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>27</SecondaryId>
       <SampleFilename>Versus mode</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -741,7 +817,9 @@
       <Name>4 Player Main Menu - 1 Extras</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">1</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>27</SecondaryId>
       <SampleFilename>Extras</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -758,7 +836,9 @@
       <Name>4 Player Main Menu - 2 Options</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">2</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>27</SecondaryId>
       <SampleFilename>Options</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -775,7 +855,9 @@
       <Name>4 Player Main Menu - 3 Exit Game</Name>
       <Description>Says menu option using tolk</Description>
       <Value xsi:type="xsd:string">3</Value>
-      <WatchOneId>6</WatchOneId>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
       <SecondaryId>27</SecondaryId>
       <SampleFilename>Exit Game</SampleFilename>
       <SampleSpeed>1</SampleSpeed>

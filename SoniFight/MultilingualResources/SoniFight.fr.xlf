@@ -23,8 +23,8 @@
           <target state="new">No configs found in Configs directory!</target>
         </trans-unit>
         <trans-unit id="statusRunningString" translate="yes" xml:space="preserve">
-          <source>Status: Running. Config:</source>
-          <target state="new">Status: Running. Config:</target>
+          <source>Status: Running. Config: </source>
+          <target state="new">Status: Running. Config: </target>
         </trans-unit>
         <trans-unit id="gameConfigString" translate="yes" xml:space="preserve">
           <source>Game Config</source>
@@ -267,8 +267,8 @@
           <target state="new">Use Tolk</target>
         </trans-unit>
         <trans-unit id="watch1LabelString" translate="yes" xml:space="preserve">
-          <source>Watch 1 ID</source>
-          <target state="new">Watch 1 ID</target>
+          <source>Watch ID / List</source>
+          <target state="new">Watch ID / List</target>
         </trans-unit>
         <trans-unit id="addTriggerLabelString" translate="yes" xml:space="preserve">
           <source>Add Trigger</source>

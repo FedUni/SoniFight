@@ -973,12 +973,20 @@ namespace au.edu.federation.SoniFight
                 String s = "";
                 for (int loop = 0; loop < gameConfig.triggerList.Count; ++loop)
                 {
-                    if (gameConfig.triggerList[loop].WatchOneId == currentWatch.Id)
+                    Trigger tempTrigger = gameConfig.triggerList[loop];
+
+                    for (int watchIdLoop = 0; watchIdLoop < tempTrigger.WatchIdList.Count; ++watchIdLoop)
                     {
-                        s += Convert.ToString(gameConfig.triggerList[loop].Id) + ", ";
-                        foundTriggerUsing = true;
-                    }
-                }
+
+                        if (tempTrigger.WatchIdList[watchIdLoop] == currentWatch.Id)
+                        {
+                            s += Convert.ToString(gameConfig.triggerList[loop].Id) + ", ";
+                            foundTriggerUsing = true;
+                        }
+
+                    } // End of loop over watch IDs in this trigger
+
+                } // End of loop over triggers
 
                 // Didn't find any triggers using this watch - fair enough. Say so.
                 if (!foundTriggerUsing)
@@ -1251,30 +1259,16 @@ namespace au.edu.federation.SoniFight
 
                 panel.Controls.Add(watch1Label, 0, row); // Control, Column, Row
 
-                watch1TB.Text = currentTrigger.WatchOneId.ToString();
+                //watch1TB.Text = currentTrigger.WatchIdList.ToString();
+                watch1TB.Text = string.Join(" ", currentTrigger.WatchIdList); // (.NET 4.0 only)
+
                 watch1TB.Anchor = AnchorStyles.Left;
                 watch1TB.Dock = DockStyle.Fill;
                 watch1TB.Margin = padding;
 
                 watch1TB.TextChanged += (object sender, EventArgs ea) =>
-                {
-                    int x;
-                    bool result = Int32.TryParse(watch1TB.Text, out x);
-                    if (result)
-                    {
-                        currentTrigger.WatchOneId = x;
-                    }
-                    else
-                    {
-                        if (!string.IsNullOrEmpty(watch1TB.Text.ToString()))
-                        {
-                            MessageBox.Show( Resources.ResourceManager.GetString("watch1IdWarningString") );
-                        }
-                        else // Field empty? Invalidate it so we can catch it in the save section
-                        {
-                            currentTrigger.WatchOneId = -1;
-                        }
-                    }
+                {   
+                    currentTrigger.WatchIdList = Utils.stringToIntList(watch1TB.Text.ToString());                    
                 };
 
                 panel.Controls.Add(watch1TB, 1, row); // Control, Column, Row

@@ -1,6 +1,7 @@
 ﻿using System.Xml.Serialization;
 
 using au.edu.federation.SoniFight.Properties;
+using System.Collections.Generic;
 
 namespace au.edu.federation.SoniFight
 {
@@ -75,12 +76,12 @@ namespace au.edu.federation.SoniFight
         }
 
         // The last value read on this trigger. Used so we can activate only on crossing thresholds rather than repeatedly. This is used internally but not saved to XML.
-        private dynamic previousValue;
+        private List<dynamic> previousValueList;
         [XmlIgnore]
-        public dynamic PreviousValue
+        public List<dynamic> PreviousValueList
         {
-            get { return previousValue;  }
-            set { previousValue = value; }
+            get { return previousValueList;  }
+            set { previousValueList = value; }
         }
 
         // Is this a normal, continuous or modifier trigger?
@@ -93,11 +94,11 @@ namespace au.edu.federation.SoniFight
         public ComparisonType comparisonType;
 
         // The watch used to read data for this trigger.
-        private int watchOneId;
-        public int WatchOneId
+        private List<int> watchIdList;
+        public List<int> WatchIdList
         {
-            get { return watchOneId;  }
-            set { watchOneId = value; }
+            get { return watchIdList;  }
+            set { watchIdList = value; }
         }
 
         // An optional secondary if for a watch or trigger. Normal triggers use this for dependent triggers, continuous
@@ -212,9 +213,11 @@ namespace au.edu.federation.SoniFight
             comparisonType = Trigger.ComparisonType.EqualTo;
             allowanceType  = Trigger.AllowanceType.Any;
 
-            WatchOneId  = -1;
+            WatchIdList = new List<int>();
             SecondaryId = -1;
             Value       = -1;
+
+            PreviousValueList = new List<dynamic>();
 
             SampleFilename = Resources.ResourceManager.GetString("noneString");
             SampleVolume   = 1.0f;
@@ -231,14 +234,33 @@ namespace au.edu.federation.SoniFight
         {
             Id = source.Id;
 
-            Name        = source.Name + Resources.ResourceManager.GetString("cloneString");
+            /* TODO: Make this so it becomes CLONE(2), CLONE(3) and so on, not CLONE-CLONE, CLONE-CLONE-CLONE etc.
+            string fullSuffix = source.Name.Substring( source.Name.LastIndexOf('-') + 1);
+            if (fullSuffix.Equals(Resources.ResourceManager.GetString("cloneString"))
+            {
+                Name = source.Name + "(2)";
+            }
+            else
+            {
+                Name = source.Name + Resources.ResourceManager.GetString("cloneString");
+            }*/
+
+            Name = source.Name + Resources.ResourceManager.GetString("cloneString");
             Description = source.Description;
 
             triggerType    = source.triggerType;
             comparisonType = source.comparisonType;
             allowanceType  = source.allowanceType;
 
-            WatchOneId  = source.WatchOneId;
+            // Deep-copy the watch ID list so we don't end up accidentally modifiying the source Trigger
+            WatchIdList = new List<int>();
+            for (int loop = 0; loop < source.WatchIdList.Count; ++loop)
+            {
+                WatchIdList.Add(source.WatchIdList[loop]);
+            }
+
+            PreviousValueList = new List<dynamic>();
+
             SecondaryId = source.SecondaryId;
             Value       = source.Value;
 

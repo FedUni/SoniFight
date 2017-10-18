@@ -1042,7 +1042,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status: Running. Config:.
+        ///   Looks up a localized string similar to Status: Running. Config: .
         /// </summary>
         internal static string statusRunningString {
             get {
@@ -1393,7 +1393,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Watch 1 ID.
+        ///   Looks up a localized string similar to Watch ID / List.
         /// </summary>
         internal static string watch1LabelString {
             get {

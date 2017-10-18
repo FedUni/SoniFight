@@ -777,7 +777,10 @@ namespace au.edu.federation.SoniFight
         public static string substituteWatchValuesInString(Trigger t, string s)
         {
             // Easy case -just substitutethe value of this trigger's watch
-            s = s.Replace("{}", Convert.ToString(Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType()) );
+            if (t.WatchIdList.Count > 0)
+            {
+                s = s.Replace("{}", Convert.ToString(Utils.getWatchWithId(t.WatchIdList[0]).getDynamicValueFromType()));
+            }
 
             // Regex to find any remaining values in curly braces. Note: The returned match contains the curly braces, which is exactly what we want.
             Regex matchesWithBracesRegex = new Regex("{.*?}");
@@ -810,7 +813,7 @@ namespace au.edu.federation.SoniFight
             return s;
         }
 
-        // Method to return the specific trigger with a given id value
+        // Method to return whether the current game config uses tolk or not
         public static bool configUsesTolk()
         {
             Trigger t = null;
@@ -828,6 +831,21 @@ namespace au.edu.federation.SoniFight
 
             // Didn't find an active tolk-using trigger in our search? Return false;
             return false;
+        }
+
+        // Method to parse a space-separated string containing ints into a list of ints
+        public static List<int> stringToIntList(string s)
+        {
+            s = s.Trim();
+            try
+            {
+                return new List<int>(Array.ConvertAll(s.Split(' '), int.Parse));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Failed string to int list conversion: " + e.Message);
+                return null;
+            }
         }
 
     } // End of Utils class

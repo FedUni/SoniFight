@@ -63,6 +63,24 @@ namespace au.edu.federation.SoniFight
         [STAThread]
         static void Main()
         {
+            /*string listString = "1 23 456";
+            List<int> myList = Utils.stringToIntList(listString);
+            string converted = string.Join(" ", myList); // (.NET 4.0 only)
+            Console.WriteLine("Original: " + listString);
+            Console.WriteLine("Converted: " + converted);
+            */
+
+            /*List<int> foo = new List<int>();
+
+            foo[0] = int(123);
+
+            Console.WriteLine("Element 0 is: " + foo[0]);*/
+
+
+
+
+
+
             // Set our 64-bit flag depending on whether this is the 32-bit or 64-bit build of the pointer chain tester
             if (System.Environment.Is64BitProcess)
             {
@@ -115,32 +133,40 @@ namespace au.edu.federation.SoniFight
 
             // This trigger has a dependent trigger - so we grab it.
             Trigger dependentT = Utils.getTriggerWithId(t.SecondaryId);
-
+            
             // If the dependent trigger is active, then our return type from THIS method is the return from checking the comparison
             // with the dependent trigger within this one (which has already matched or we wouldn't be here). This will recurse as
             // deep as the trigger dependencies are linked - fails after 5 linked dependencies to prevent cyclic dependency crash.
             if (dependentT.Active)
             {
-                Watch dependentWatch = Utils.getWatchWithId(dependentT.WatchOneId);
+                // For the sake of my sanity we'll only take the first watch Id from the watch Ids in this dependent trigger
+                if (dependentT.WatchIdList.Count > 0)
+                {
+                    Watch dependentWatch = Utils.getWatchWithId(dependentT.WatchIdList[0]);
 
-                // Watch of dependent trigger was not active? Then obviously we must fail as we're not updating the watch details.
-                if (!dependentWatch.Active)
+                    // Watch of dependent trigger was not active? Then obviously we must fail as we're not updating the watch details.
+                    if (!dependentWatch.Active)
+                    {
+                        return false;
+                    }
+
+                    // Does the dependent trigger match its target condition?
+                    bool dependentResult = performComparison(dependentT, dependentWatch.getDynamicValueFromType(), recursiveDepth + 1);
+
+                    // No? Then provide feedback that we'll be supressing this trigger because its dependent trigger failed.
+                    if (!dependentResult)
+                    {
+                        string s1 = Resources.ResourceManager.GetString("triggerWithTrailingSpaceString");
+                        string s2 = Resources.ResourceManager.GetString("suppressedAsDependentString");
+                        string s3 = Resources.ResourceManager.GetString("failedDepthString");
+                        Console.WriteLine(s1 + t.Id + s2 + dependentT.Id + s3 + recursiveDepth);
+                    }
+                    return dependentResult;
+                }
+                else // For some bizarre reason the dependent trigger has an empty watch ID list? Return false to say the dependence check failed
                 {
                     return false;
                 }
-
-                // Does the dependent trigger match its target condition?
-                bool dependentResult = performComparison(dependentT, dependentWatch.getDynamicValueFromType(), recursiveDepth + 1);
-
-                // No? Then provide feedback that we'll be supressing this trigger because its dependent trigger failed.
-                if (!dependentResult)
-                {   
-                    string s1 = Resources.ResourceManager.GetString("triggerWithTrailingSpaceString");
-                    string s2 = Resources.ResourceManager.GetString("suppressedAsDependentString");
-                    string s3 = Resources.ResourceManager.GetString("failedDepthString");
-                    Console.WriteLine(s1 + t.Id + s2 + dependentT.Id + s3 + recursiveDepth);
-                }
-                return dependentResult;
             }
             else // Dependent trigger was not active so dependency fails and we record no-match as the end result.
             {
@@ -164,7 +190,7 @@ namespace au.edu.federation.SoniFight
             //       when the value crosses the trigger threshold.
 
             // Guard against user moving to edit tab where triggers are temporarily reset and there is no previous value
-            if (t.PreviousValue != null)
+            if (t.PreviousValueList[0] != null)
             {
                 // Dynamic type comparisons may possibly fail so wrap 'em in try/catch
                 try
@@ -173,49 +199,49 @@ namespace au.edu.federation.SoniFight
                     switch (t.comparisonType)
                     {
                         case Trigger.ComparisonType.EqualTo:
-                            if ( (t.PreviousValue != t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue == t.Value) )
+                            if ( (t.PreviousValueList[0] != t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue == t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.LessThan:
-                            if ( (t.PreviousValue > t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue < t.Value) )
+                            if ( (t.PreviousValueList[0] > t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue < t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.LessThanOrEqualTo:
-                            if ( (t.PreviousValue > t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue <= t.Value) )
+                            if ( (t.PreviousValueList[0] > t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue <= t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.GreaterThan:
-                            if ( (t.PreviousValue < t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue > t.Value) )
+                            if ( (t.PreviousValueList[0] < t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue > t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.GreaterThanOrEqualTo:
-                            if ( (t.PreviousValue < t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue >= t.Value) )
+                            if ( (t.PreviousValueList[0] < t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue >= t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.NotEqualTo:
-                            if ( (t.PreviousValue == t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue != t.Value) )
+                            if ( (t.PreviousValueList[0] == t.Value || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier) && (readValue != t.Value) )
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.Changed:
-                            if (readValue != t.PreviousValue || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier)
+                            if (readValue != t.PreviousValueList[0] || recursiveDepth > 0 || t.triggerType == Trigger.TriggerType.Modifier)
                             {
                                 return dependenceCheck(t, recursiveDepth);
                             }
@@ -264,61 +290,77 @@ namespace au.edu.federation.SoniFight
             // Save some typing
             GameConfig gc = MainForm.gameConfig;
 
-            // Convert all trigger 'value' properties (which are of type dynamic) to their actual type
-            // Note: This is a ONE-OFF operation that we only do at the start before the main sonification loop
+            // Convert all trigger 'value' properties (which are of type dynamic) to their actual type.
+            // Note: This is a one-off operation that we only do at the start before the main sonification loop.
             Trigger t;
             for (int triggerLoop = 0; triggerLoop < gc.triggerList.Count; ++triggerLoop)
             {
                 t = MainForm.gameConfig.triggerList[triggerLoop];
 
-                switch (Utils.getWatchWithId(t.WatchOneId).valueType)
+                // As each trigger may be tied to more than one watch we have to loop over them all
+                for (int watchIdLoop = 0; watchIdLoop < t.WatchIdList.Count; ++watchIdLoop)
                 {
-                    case Watch.ValueType.IntType:
-                        t.Value = Convert.ChangeType(t.Value, TypeCode.Int32);
-                        t.PreviousValue = new int();
-                        t.PreviousValue = t.Value; // By value
-                        break;
-                    case Watch.ValueType.ShortType:
-                        t.Value = Convert.ChangeType(t.Value, TypeCode.Int16);
-                        t.PreviousValue = new short();
-                        t.PreviousValue = t.Value; // By value
-                        break;
-                    case Watch.ValueType.LongType:
-                        t.Value = Convert.ChangeType(t.Value, TypeCode.Int64);
-                        t.PreviousValue = new long();
-                        t.PreviousValue = t.Value; // By value
-                        break;
-                    case Watch.ValueType.UnsignedIntType:
-                        t.Value = Convert.ChangeType(t.Value, TypeCode.UInt32);
-                        t.PreviousValue = new uint();
-                        t.PreviousValue = t.Value; // By value
-                        break;
-                    case Watch.ValueType.FloatType:
-                        t.Value = Convert.ChangeType(t.Value, TypeCode.Single);
-                        t.PreviousValue = new float();
-                        t.PreviousValue = t.Value; // By value
-                        break;
-                    case Watch.ValueType.DoubleType:
-                        t.Value = Convert.ChangeType(t.Value, TypeCode.Double);
-                        t.PreviousValue = new double();
-                        t.PreviousValue = t.Value; // By value
-                        break;
-                    case Watch.ValueType.BoolType:
-                        t.Value = Convert.ChangeType(t.Value, TypeCode.Boolean);
-                        t.PreviousValue = new bool();
-                        t.PreviousValue = t.Value; // By value
-                        break;
-                    case Watch.ValueType.StringUTF8Type:
-                    case Watch.ValueType.StringUTF16Type:
-                        t.Value = Convert.ChangeType(t.Value, TypeCode.String);
-                        t.PreviousValue = t.Value.ToString(); // Strings are reference types so we create a new copy to ensure value and previousValue don't point to the same thing!
-                        break;
-                    default:
-                        t.Value = Convert.ChangeType(t.Value, TypeCode.Int32);
-                        t.PreviousValue = new int();
-                        t.PreviousValue = t.Value; // By value
-                        break;
-                }
+
+                    try
+                    {
+                        switch (Utils.getWatchWithId(t.WatchIdList[watchIdLoop]).valueType)
+                        {
+                            case Watch.ValueType.IntType:
+                                t.Value = Convert.ChangeType(t.Value, TypeCode.Int32);
+                                t.PreviousValueList.Add(new int());
+                                t.PreviousValueList[watchIdLoop] = t.Value; // By value
+                                break;
+                            case Watch.ValueType.ShortType:
+                                t.Value = Convert.ChangeType(t.Value, TypeCode.Int16);
+                                t.PreviousValueList.Add(new short());
+                                t.PreviousValueList[watchIdLoop] = t.Value; // By value
+                                break;
+                            case Watch.ValueType.LongType:
+                                t.Value = Convert.ChangeType(t.Value, TypeCode.Int64);
+                                t.PreviousValueList.Add(new long());
+                                t.PreviousValueList[watchIdLoop] = t.Value; // By value
+                                break;
+                            case Watch.ValueType.UnsignedIntType:
+                                t.Value = Convert.ChangeType(t.Value, TypeCode.UInt32);
+                                t.PreviousValueList.Add(new uint());
+                                t.PreviousValueList[watchIdLoop] = t.Value; // By value
+                                break;
+                            case Watch.ValueType.FloatType:
+                                t.Value = Convert.ChangeType(t.Value, TypeCode.Single);
+                                t.PreviousValueList.Add(new float());
+                                t.PreviousValueList[watchIdLoop] = t.Value; // By value
+                                break;
+                            case Watch.ValueType.DoubleType:
+                                t.Value = Convert.ChangeType(t.Value, TypeCode.Double);
+                                t.PreviousValueList.Add(new double());
+                                t.PreviousValueList[watchIdLoop] = t.Value; // By value
+                                break;
+                            case Watch.ValueType.BoolType:
+                                t.Value = Convert.ChangeType(t.Value, TypeCode.Boolean);
+                                t.PreviousValueList.Add(new bool());
+                                t.PreviousValueList[watchIdLoop] = t.Value; // By value
+                                break;
+                            case Watch.ValueType.StringUTF8Type:
+                            case Watch.ValueType.StringUTF16Type:
+                                t.Value = Convert.ChangeType(t.Value, TypeCode.String);
+                                t.PreviousValueList.Add(t.Name); // Doesn't matter what string we add here because we immediately overwrite it velow
+                                t.PreviousValueList[watchIdLoop] = t.Value.ToString(); // Strings are reference types so we create a new copy to ensure value and previousValue don't point to the same thing!
+                                break;
+                            default:
+                                t.Value = Convert.ChangeType(t.Value, TypeCode.Int32);
+                                t.PreviousValueList.Add(new int());
+                                t.PreviousValueList[watchIdLoop] = t.Value; // By value
+                                break;
+
+                        } // End of switch
+
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.Message);
+                    }
+
+                } // End of loop over watches in trigger watchIdList
 
             } // End of loop over triggers
 
@@ -357,55 +399,60 @@ namespace au.edu.federation.SoniFight
                 // Update the game state to be InGame or InMenu if we have a clock
                 if (gc.ClockTriggerId != -1)
                 {
+                    //Console.WriteLine("Have a clock trigger with id: " + gc.ClockTriggerId);
+
                     // Grab the clock trigger
                     t = Utils.getTriggerWithId(gc.ClockTriggerId);
 
                     // Read the value on it
-                    currentClock = Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType();
+                    if (t.WatchIdList.Count > 0)
+                    { 
+                        currentClock = Utils.getWatchWithId(t.WatchIdList[0]).getDynamicValueFromType();
 
-                    // Check if a round-tick has passed
-                    endTime = DateTime.Now;
-                    double elapsedMilliseconds = ((TimeSpan)(endTime - startTime)).TotalMilliseconds;
+                        // Check if a round-tick has passed
+                        endTime = DateTime.Now;
+                        double elapsedMilliseconds = ((TimeSpan)(endTime - startTime)).TotalMilliseconds;
 
-                    // If a GameConfig clock-tick has has passed (i.e. a second or such)
-                    if (elapsedMilliseconds >= MainForm.gameConfig.ClockTickMS)
-                    {
-                        //Console.WriteLine("A clock tick has passed.");
-
-                        // Reset the start time
-                        startTime = DateTime.Now;
-
-                        // Update the previous gamestate
-                        Program.previousGameState = Program.gameState;
-
-                        // If the current and last clocks differ...
-                        if (currentClock != lastClock)
+                        // If a GameConfig clock-tick has has passed (i.e. a second or such)
+                        if (elapsedMilliseconds >= MainForm.gameConfig.ClockTickMS)
                         {
-                            // ...update the last clock to be the current clock and...
-                            lastClock = currentClock;
+                            //Console.WriteLine("A clock tick has passed.");
 
-                            // ...set the current gamestate to be InGame.
-                            Program.gameState = GameState.InGame;
-                            //Console.WriteLine("GameState is InGame.");
+                            // Reset the start time
+                            startTime = DateTime.Now;
 
-                            // This condition check stops us from moving briefly into the InGame state when the clock is reset between rounds or matches
-                            if ((currentClock == 0 || lastClock == 0 || currentClock == MainForm.gameConfig.ClockMax) && Program.connectedToProcess)
+                            // Update the previous gamestate
+                            Program.previousGameState = Program.gameState;
+
+                            // If the current and last clocks differ...
+                            if (currentClock != lastClock)
                             {
-                                Console.WriteLine(Resources.ResourceManager.GetString("suppressedGameStateChangeString") + MainForm.gameConfig.ClockMax);
-                                Program.gameState = GameState.InMenu;
+                                // ...update the last clock to be the current clock and...
+                                lastClock = currentClock;
 
-                                // If the clock is 0 or ClockMax or we've lost connection to the process we clear the normalInGameTriggerQueue
-                                normalInGameTriggerQueue.Clear();
+                                // ...set the current gamestate to be InGame.
+                                Program.gameState = GameState.InGame;
+
+                                // This condition check stops us from moving briefly into the InGame state when the clock is reset between rounds or matches
+                                if ((currentClock == 0 || lastClock == 0 || currentClock == MainForm.gameConfig.ClockMax) && Program.connectedToProcess)
+                                {
+                                    Console.WriteLine(Resources.ResourceManager.GetString("suppressedGameStateChangeString") + MainForm.gameConfig.ClockMax);
+                                    Program.gameState = GameState.InMenu;
+
+                                    // If the clock is 0 or ClockMax or we've lost connection to the process we clear the normalInGameTriggerQueue
+                                    normalInGameTriggerQueue.Clear();
+                                }
                             }
-                        }
-                        else // Current and last clock values the same? Then set the gamestate to be InMenu.
-                        {
-                            Program.gameState = GameState.InMenu;
-                        }
+                            else // Current and last clock values the same? Then set the gamestate to be InMenu.
+                            {
+                                Program.gameState = GameState.InMenu;
+                            }
 
-                        //Console.WriteLine("Program state is: " + Program.gameState);
+                            //Console.WriteLine("Program state is: " + Program.gameState);
 
-                    } // End of if a second or more has elapsed block                    
+                        } // End of if a clock tick has elapsed section
+
+                    } // End of if we have a watch ID for the clock section
 
                 } // End of game state update block               
                                 
@@ -435,7 +482,7 @@ namespace au.edu.federation.SoniFight
                         }
 
                         // Read the value associated with the watch named by this trigger
-                        readValue = Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType();
+                        readValue = Utils.getWatchWithId(t.WatchIdList[0]).getDynamicValueFromType();
 
                         // Get the secondary watch associated with this continuous trigger
                         readValue2 = Utils.getWatchWithId(t.SecondaryId).getDynamicValueFromType();
@@ -521,84 +568,91 @@ namespace au.edu.federation.SoniFight
                     // Grab a trigger
                     t = MainForm.gameConfig.normalTriggerList[normalTriggerLoop];
 
-                    // Read the new value associated with the watch named by this trigger
-                    readValue = Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType();
-
-                    // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies.
-                    // NOTE: Even if we're currently playing a normal sample we'll still check for matches and queue any matching triggers.
-                    foundMatch = performComparison(t, Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType(), 0);
-                    
-                    // If we found a match...
-                    if (foundMatch)
+                    // As each trigger may look at multiple watches, we must compare the trigger value against each watch
+                    //Console.WriteLine("watch id list count is: " + t.WatchIdList.Count);
+                    for (int watchIdLoop = 0; watchIdLoop < t.WatchIdList.Count; ++watchIdLoop)
                     {
-                        // Gamestate is InGame and allowance type is either InGame or Any?
-                        if (Program.gameState == GameState.InGame && t.allowanceType != Trigger.AllowanceType.InMenu)
-                        {
-                            // If we're using a screen reader for the sonification event of this trigger...
-                            if (t.UseTolk)
-                            {
-                                if (screenReaderActive)
-                                {
-                                    // Substitute all curly braces and braces with number with the watch values
-                                    string s = Utils.substituteWatchValuesInString(t, t.SampleFilename);
-                                    Console.WriteLine(Resources.ResourceManager.GetString("sayingTolkString") + s);
 
-                                    // ...then say the sample filename text. Final false means queue not interrupt anything currently being spoken.
-                                    Tolk.Output(s, false);
-                                }
-                                else
+                        // Read the new value associated with the watch named by this trigger
+                        readValue = Utils.getWatchWithId(t.WatchIdList[watchIdLoop]).getDynamicValueFromType();
+
+                        // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies.
+                        // NOTE: Even if we're currently playing a normal sample we'll still check for matches and queue any matching triggers.
+                        foundMatch = performComparison(t, Utils.getWatchWithId(t.WatchIdList[watchIdLoop]).getDynamicValueFromType(), 0);
+
+                        // If we found a match...
+                        if (foundMatch)
+                        {
+                            // Gamestate is InGame and allowance type is either InGame or Any?
+                            if (Program.gameState == GameState.InGame && t.allowanceType != Trigger.AllowanceType.InMenu)
+                            {
+                                // If we're using a screen reader for the sonification event of this trigger...
+                                if (t.UseTolk)
                                 {
-                                    Console.WriteLine(Resources.ResourceManager.GetString("screenReaderNotActiveWarningString") + t.Id);
+                                    if (screenReaderActive)
+                                    {
+                                        // Substitute all curly braces and braces with number with the watch values
+                                        string s = Utils.substituteWatchValuesInString(t, t.SampleFilename);
+                                        Console.WriteLine(DateTime.Now + " Trigger activated " + t.Id + " " + Resources.ResourceManager.GetString("sayingTolkString") + s);
+
+                                        // ...then say the sample filename text. Final false means queue not interrupt anything currently being spoken.
+                                        Tolk.Output(s, false);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine(Resources.ResourceManager.GetString("screenReaderNotActiveWarningString") + t.Id);
+                                    }
+                                }
+                                else // Audio is file based
+                                {
+                                    if (t.allowanceType == Trigger.AllowanceType.InMenu)
+                                    {
+                                        Program.irrKlang.PlayMenuSample(t);
+                                    }
+                                    else // Allowance type is InGame or Any
+                                    {
+                                        // Try to play the normal sample. If there's another normal sample playing then this sample will be added to the play queue in the SoundPlayer class.
+                                        Program.irrKlang.PlayNormalSample(t);
+                                    }
                                 }
                             }
-                            else // Audio is file based
-                            {   
-                                if (t.allowanceType == Trigger.AllowanceType.InMenu)
+                            else // Game state must be InMenu or allowance type is InMenu or Any - either is fine.
+                            {
+                                // If we're using tolk...
+                                if (t.UseTolk)
                                 {
+                                    if (screenReaderActive)
+                                    {
+                                        // Substitute all curly braces and braces with number with the watch values
+                                        string s = Utils.substituteWatchValuesInString(t, t.SampleFilename);
+                                        Console.WriteLine(DateTime.Now + " Trigger activated " + t.Id + " " + Resources.ResourceManager.GetString("sayingTolkString") + s);
+
+                                        // ..then output the sonification event by saying the sample filename string. Final true means interupt any current speech.
+                                        Tolk.Speak(s, true);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine(Resources.ResourceManager.GetString("screenReaderNotActiveWarningString") + t.Id);
+                                    }
+                                }
+                                else // Audio is file based
+                                {
+                                    // Stop any playing samples
+                                    Program.irrKlang.StopMenuSounds();
+
+                                    // ...then play the latest trigger sample on the menu engine instance (because the game state is recognised as InMenu)
                                     Program.irrKlang.PlayMenuSample(t);
                                 }
-                                else // Allowance type is InGame or Any
-                                {
-                                    // Try to play the normal sample. If there's another normal sample playing then this sample will be added to the play queue in the SoundPlayer class.
-                                    Program.irrKlang.PlayNormalSample(t);
-                                }
-                            }
-                        }
-                        else // Game state must be InMenu or allowance type is InMenu or Any - either is fine.
-                        {
-                            // If we're using tolk...
-                            if (t.UseTolk)
-                            {
-                                if (screenReaderActive)
-                                {
-                                    // Substitute all curly braces and braces with number with the watch values
-                                    string s = Utils.substituteWatchValuesInString(t, t.SampleFilename);
-                                    Console.WriteLine(Resources.ResourceManager.GetString("sayingTolkString") + s);
 
-                                    // ..then output the sonification event by saying the sample filename string. Final true means interupt any current speech.
-                                    Tolk.Speak(s, true);
-                                }
-                                else
-                                {
-                                    Console.WriteLine( Resources.ResourceManager.GetString("screenReaderNotActiveWarningString") + t.Id );
-                                }
-                            }
-                            else // Audio is file based
-                            {                                
-                                // Stop any playing samples
-                                Program.irrKlang.StopMenuSounds();
+                            } // End of if sonification is via a sample section
 
-                                // ...then play the latest trigger sample on the menu engine instance (because the game state is recognised as InMenu)
-                                Program.irrKlang.PlayMenuSample(t);                                                             
-                            }
+                        } // End of found match section. 
 
-                        } // End of if sonification is via a sample section
+                        // Update our 'previousValue' ready for the next check (used if comparison type is 'Changed').
+                        // Note: We do this regardless of whether we found a match                        
+                        t.PreviousValueList[watchIdLoop] = readValue;
 
-                    } // End of found match section. 
-
-                    // Update our 'previousValue' ready for the next check (used if comparison type is 'Changed').
-                    // Note: We do this regardless of whether we found a match
-                    t.PreviousValue = readValue;
+                    } // End of loop over watch IDs in watchIDList within each trigger
 
                 } // End of loop over normal triggers
 
@@ -626,72 +680,77 @@ namespace au.edu.federation.SoniFight
                     // Grab a trigger
                     t = MainForm.gameConfig.modifierTriggerList[modifierTriggerLoop];
 
-                    // Read the new value associated with the watch named by this trigger
-                    readValue = Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType();
-
-                    // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies.
-                    foundMatch = performComparison(t, Utils.getWatchWithId(t.WatchOneId).getDynamicValueFromType(), 0);
-                    
-                    // Get the continuous trigger related to this modifier trigger.
-                    // Note: We ALWAYS need this because even if we don't find a match, we may need to reset the volume/pitch of the continuous sample to it's non-modified state
-                    Trigger continuousTrigger = Utils.getTriggerWithId(t.SecondaryId);
-                    
-                    // Modifier condition met? Okay...
-                    if (foundMatch)
+                    // As each trigger may look at multiple watches, we must compare the trigger value against each watch
+                    for (int watchIdLoop = 0; watchIdLoop < t.WatchIdList.Count; ++watchIdLoop)
                     {
-                        // If this modifier trigger is NOT currently active we must activate it because we HAVE found a match for the modifier condition (i.e. foundMatch)
-                        if (!t.ModificationActive)
+                        // Read the new value associated with the watch named by this trigger
+                        readValue = Utils.getWatchWithId(t.WatchIdList[watchIdLoop]).getDynamicValueFromType();
+
+                        // Check our trigger for a match. Final 0 means we're kicking this off at the top level with no recursive trigger dependencies.
+                        foundMatch = performComparison(t, Utils.getWatchWithId(t.WatchIdList[watchIdLoop]).getDynamicValueFromType(), 0);
+
+                        // Get the continuous trigger related to this modifier trigger.
+                        // Note: We ALWAYS need this because even if we don't find a match, we may need to reset the volume/pitch of the continuous sample to it's non-modified state
+                        Trigger continuousTrigger = Utils.getTriggerWithId(t.SecondaryId);
+
+                        // Modifier condition met? Okay...
+                        if (foundMatch)
                         {
-                            // Set the flag on this modification trigger to say it's active
-                            t.ModificationActive = true;
+                            // If this modifier trigger is NOT currently active we must activate it because we HAVE found a match for the modifier condition (i.e. foundMatch)
+                            if (!t.ModificationActive)
+                            {
+                                // Set the flag on this modification trigger to say it's active
+                                t.ModificationActive = true;
 
-                            // TODO: Localise this output.
+                                // TODO: Localise this output.
 
-                            Console.WriteLine("1--Found modifier match for trigger " + t.Id + " and modification was NOT active.");
-                            Console.WriteLine("1--Continuous trigger's current sample volume is: " + continuousTrigger.CurrentSampleVolume);
-                            Console.WriteLine("1--Modifier trigger's sample volume is: " + t.SampleVolume);
-                            Console.WriteLine("1--Continuous trigger's current sample speed is: " + continuousTrigger.CurrentSampleSpeed);
-                            Console.WriteLine("1--Modifier trigger's sample speed is: " + t.SampleSpeed);
+                                Console.WriteLine("1--Found modifier match for trigger " + t.Id + " and modification was NOT active.");
+                                Console.WriteLine("1--Continuous trigger's current sample volume is: " + continuousTrigger.CurrentSampleVolume);
+                                Console.WriteLine("1--Modifier trigger's sample volume is: " + t.SampleVolume);
+                                Console.WriteLine("1--Continuous trigger's current sample speed is: " + continuousTrigger.CurrentSampleSpeed);
+                                Console.WriteLine("1--Modifier trigger's sample speed is: " + t.SampleSpeed);
 
-                            // Add any volume or pitch changes to the continuous triggers playback
-                            continuousTrigger.CurrentSampleVolume *= t.SampleVolume;
-                            continuousTrigger.CurrentSampleSpeed *= t.SampleSpeed;
-                            Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleVolume);
-                            Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleSpeed);
+                                // Add any volume or pitch changes to the continuous triggers playback
+                                continuousTrigger.CurrentSampleVolume *= t.SampleVolume;
+                                continuousTrigger.CurrentSampleSpeed *= t.SampleSpeed;
+                                Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleVolume);
+                                Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleSpeed);
 
-                            Console.WriteLine("1--Multiplying gives new volume of: " + continuousTrigger.CurrentSampleVolume + " and speed of: " + continuousTrigger.CurrentSampleSpeed);
+                                Console.WriteLine("1--Multiplying gives new volume of: " + continuousTrigger.CurrentSampleVolume + " and speed of: " + continuousTrigger.CurrentSampleSpeed);
+                            }
+
+                            // Else modification already active on this continuous trigger? Do nothing.
                         }
-
-                        // Else modification already active on this continuous trigger? Do nothing.
-                    }
-                    else // Did NOT match modifier condition. Do we need to reset the continous trigger?
-                    {
-                        // If this modifier trigger IS currently active and we failed the match we have to reset the continuous triggers playback conditions
-                        if (t.ModificationActive)
+                        else // Did NOT match modifier condition. Do we need to reset the continous trigger?
                         {
-                            // TODO: Localise this output.
+                            // If this modifier trigger IS currently active and we failed the match we have to reset the continuous triggers playback conditions
+                            if (t.ModificationActive)
+                            {
+                                // TODO: Localise this output.
 
-                            Console.WriteLine("2--Did NOT find modifier match for trigger " + t.Id + " and modification WAS active so needs resetting.");
-                            Console.WriteLine("2--Continuous trigger's current sample volume is: " + continuousTrigger.CurrentSampleVolume);
-                            Console.WriteLine("2--Modifier trigger's sample volume is: " + t.SampleVolume);
-                            Console.WriteLine("2--Continuous trigger's current sample speed is: " + continuousTrigger.CurrentSampleSpeed);
-                            Console.WriteLine("2--Modifier trigger's sample speed is: " + t.SampleSpeed);
+                                Console.WriteLine("2--Did NOT find modifier match for trigger " + t.Id + " and modification WAS active so needs resetting.");
+                                Console.WriteLine("2--Continuous trigger's current sample volume is: " + continuousTrigger.CurrentSampleVolume);
+                                Console.WriteLine("2--Modifier trigger's sample volume is: " + t.SampleVolume);
+                                Console.WriteLine("2--Continuous trigger's current sample speed is: " + continuousTrigger.CurrentSampleSpeed);
+                                Console.WriteLine("2--Modifier trigger's sample speed is: " + t.SampleSpeed);
 
-                            // Set the flag on this modification trigger to say it's inactive
-                            t.ModificationActive = false;
+                                // Set the flag on this modification trigger to say it's inactive
+                                t.ModificationActive = false;
 
-                            // Reset the volume and pitch of the continuous trigger based on the modification trigger's volume and pitch
-                            continuousTrigger.CurrentSampleVolume /= t.SampleVolume;
-                            continuousTrigger.CurrentSampleSpeed /= t.SampleSpeed;
-                            Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleVolume);
-                            Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleSpeed);
+                                // Reset the volume and pitch of the continuous trigger based on the modification trigger's volume and pitch
+                                continuousTrigger.CurrentSampleVolume /= t.SampleVolume;
+                                continuousTrigger.CurrentSampleSpeed /= t.SampleSpeed;
+                                Program.irrKlang.ChangeContinuousSampleVolume(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleVolume);
+                                Program.irrKlang.ChangeContinuousSampleSpeed(continuousTrigger.SampleKey, continuousTrigger.CurrentSampleSpeed);
 
-                            Console.WriteLine("2--Dividing gives new volume of: " + continuousTrigger.CurrentSampleVolume + " and speed of: " + continuousTrigger.CurrentSampleSpeed);
-                        }
+                                Console.WriteLine("2--Dividing gives new volume of: " + continuousTrigger.CurrentSampleVolume + " and speed of: " + continuousTrigger.CurrentSampleSpeed);
+                            }
 
-                        // Else sonification already inactive after failing match? Do nothing.
+                            // Else sonification already inactive after failing match? Do nothing.
 
-                    } // End of if we did NOT match the modifier condition
+                        } // End of if we did NOT match the modifier condition
+
+                    } // End of loop over watches in watchIdList of trigger
 
                 } // End of modifier triggers section
 

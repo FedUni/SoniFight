@@ -22,7 +22,9 @@
       <Name>Clock</Name>
       <Description>Clock watch for InGame and InMenu determination</Description>
       <Value xsi:type="xsd:int">-1</Value>
-      <WatchOneId>1</WatchOneId>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>None</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -39,7 +41,9 @@
       <Name>Clock 95</Name>
       <Description>Says 95</Description>
       <Value xsi:type="xsd:string">95</Value>
-      <WatchOneId>1</WatchOneId>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
       <SecondaryId>-1</SecondaryId>
       <SampleFilename>95</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
