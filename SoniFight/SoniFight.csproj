@@ -68,18 +68,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Platform)' == 'x64' ">
-    <Reference Include="irrKlang.NET4, Version=1.0.5235.17346, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="irrKlang.NET4, Version=1.0.5235.17346, Culture=neutral, processorArchitecture=x64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\lib64\irrKlang\irrKlang.NET4.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="OpenGL.Net, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OpenGL.Net.0.6.1\lib\net461\OpenGL.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenGL.Net.WinForms, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OpenGL.Net.WinForms.0.6.1\lib\net461\OpenGL.Net.WinForms.dll</HintPath>
-    </Reference>
+  <ItemGroup>    
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -149,12 +143,12 @@
     <None Include="App.config" />
   </ItemGroup>  
   <ItemGroup Condition=" '$(Platform)' == 'x86' ">
-    <Content Include="lib\lib32\irrKlang\ikpFlac.dll">
-	  <Link>ikpFlac.dll</Link>
+    <Content Include="lib\lib32\irrKlang\ikpFlac_32.dll">
+	  <Link>ikpFlac_32.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="lib\lib32\irrKlang\ikpMP3.dll">
-	  <Link>ikpMp3.dll</Link>
+    <Content Include="lib\lib32\irrKlang\ikpMP3_32.dll">
+	  <Link>ikpMp3_32.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="lib\lib32\irrKlang\irrKlang.NET4.dll">
@@ -179,12 +173,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup Condition=" '$(Platform)' == 'x64' ">
-    <Content Include="lib\lib64\irrKlang\ikpFlac.dll">
-	  <Link>ikpFlac.dll</Link>
+    <Content Include="lib\lib64\irrKlang\ikpFlac_64.dll">
+	  <Link>ikpFlac_64.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="lib\lib64\irrKlang\ikpMP3.dll">
-	<Link>ikpMP3.dll</Link>
+    <Content Include="lib\lib64\irrKlang\ikpMP3_64.dll">
+	<Link>ikpMP3_64.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="lib\lib64\irrKlang\irrKlang.NET4.dll" />

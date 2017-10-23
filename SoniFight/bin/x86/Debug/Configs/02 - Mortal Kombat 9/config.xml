@@ -85,6 +85,21 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
+    <Watch>
+      <valueType>ShortType</valueType>
+      <Id>8</Id>
+      <Name>Current menu screen as short</Name>
+      <Description>The number of the submenu as short. Has odd numbers, probably enums.</Description>
+      <PointerList>
+        <string>9E8228</string>
+        <string>1FC</string>
+        <string>90</string>
+        <string>10</string>
+        <string>3C</string>
+        <string>6D8</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
@@ -866,6 +881,196 @@
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>42</Id>
+      <Name>Single Player submenu 0 - Ladder</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryId>48</SecondaryId>
+      <SampleFilename>Ladder</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>43</Id>
+      <Name>Single Player submenu 1 - Tag Ladder</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryId>48</SecondaryId>
+      <SampleFilename>Tag Ladder</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>44</Id>
+      <Name>Single Player submenu 2 - Test Your Luck</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryId>48</SecondaryId>
+      <SampleFilename>Test Your Luck</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>45</Id>
+      <Name>Single Player submenu 3 - Test Your Might</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryId>48</SecondaryId>
+      <SampleFilename>Test Your Might</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>46</Id>
+      <Name>Single Player submenu 4 - Test Your Sight</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryId>48</SecondaryId>
+      <SampleFilename>Test Your Sight</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>47</Id>
+      <Name>Single Player submenu 5 - Test Your Strike</Name>
+      <Description>Says menu option using tolk</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryId>48</SecondaryId>
+      <SampleFilename>Test Your Strike</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>48</Id>
+      <Name>Current screen is fight submenu DEPENDENT</Name>
+      <Description>Dependent trigger</Description>
+      <Value xsi:type="xsd:string">-23152</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename />
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>49</Id>
+      <Name>Current screen is training submenu DEPENDENT</Name>
+      <Description>Dependent trigger</Description>
+      <Value xsi:type="xsd:string">-23032</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename />
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>50</Id>
+      <Name>Current screen is extras submenu DEPENDENT</Name>
+      <Description>Dependent trigger</Description>
+      <Value xsi:type="xsd:string">-22892</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename />
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>51</Id>
+      <Name>Current screen is options submenu DEPENDENT</Name>
+      <Description>Dependent trigger</Description>
+      <Value xsi:type="xsd:string">-22584</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryId>-1</SecondaryId>
+      <SampleFilename />
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
   </triggerList>
   <Description>Mortal Kombat 9 - Al Lansley 2017-10-14
 
@@ -874,7 +1079,7 @@ This config uses sample-based output for health, clock and gauge values - as wel
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>90</ClockMax>
-  <ConfigDirectory>02 - Mortal Kombat 9</ConfigDirectory>
+  <ConfigDirectory>02 - Mortal Kombat 9\</ConfigDirectory>
   <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
 </GameConfig>

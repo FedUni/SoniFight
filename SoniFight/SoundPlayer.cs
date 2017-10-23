@@ -1,5 +1,9 @@
-﻿using System;
+﻿//extern alias x86;
+//extern alias x64;
+
+using System;
 using System.Collections.Generic;
+
 using IrrKlang;
 
 using au.edu.federation.SoniFight.Properties;

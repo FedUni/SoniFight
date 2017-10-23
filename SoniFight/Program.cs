@@ -287,6 +287,8 @@ namespace au.edu.federation.SoniFight
                 Console.WriteLine( Resources.ResourceManager.GetString("tolkNoScreenReaderFoundString") );
             }
 
+            Console.WriteLine("************ Screen reader is: " + screenReaderName);
+
             // Save some typing
             GameConfig gc = MainForm.gameConfig;
 
