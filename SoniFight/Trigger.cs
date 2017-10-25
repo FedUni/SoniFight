@@ -27,6 +27,7 @@ namespace au.edu.federation.SoniFight
         public enum TriggerType
         {
             Normal,     // Activates a sonification event when criteria is met. Normal triggers may play multiple times.
+            Dependent,  // Does not play a sound, but must be met to allow a normal trigger to activate if that normal trigger depends on the condition of one or more dependent triggers being met
             Continuous, // Activates a looped sonification event (e.g. distance between players). 
             Modifier    // Modifies a continuous trigger.
         }
@@ -75,8 +76,9 @@ namespace au.edu.federation.SoniFight
             set { this.value = value; }
         }
 
-        // The last value read on this trigger. Used so we can activate only on crossing thresholds rather than repeatedly. This is used internally but not saved to XML.
-        private List<dynamic> previousValueList;
+        // The last value read on this trigger
+        // Note: This is a list because a trigger may have multiple watches so it can be re-used, and each watch will have its own previous value
+        private dynamic previousValueList;
         [XmlIgnore]
         public List<dynamic> PreviousValueList
         {
@@ -101,14 +103,14 @@ namespace au.edu.federation.SoniFight
             set { watchIdList = value; }
         }
 
-        // An optional secondary if for a watch or trigger. Normal triggers use this for dependent triggers, continuous
+        // An optional list of secondary IDs for a watch or trigger. Normal triggers use this for dependent triggers, continuous
         // triggers use this for the second watch with which to calculate a percentage, and modifier triggers use this
         // as the continuous trigger to modify.
-        private int secondaryId;
-        public int SecondaryId
+        private List<int> secondaryIdList;
+        public List<int> SecondaryIdList
         {
-            get { return secondaryId;  }
-            set { secondaryId = value; }
+            get { return secondaryIdList;  }
+            set { secondaryIdList = value; }
         }
 
         // The filename of the sample.
@@ -214,7 +216,8 @@ namespace au.edu.federation.SoniFight
             allowanceType  = Trigger.AllowanceType.Any;
 
             WatchIdList = new List<int>();
-            SecondaryId = -1;
+            SecondaryIdList = new List<int>();
+            SecondaryIdList.Add(-1);
             Value       = -1;
 
             PreviousValueList = new List<dynamic>();
@@ -259,9 +262,14 @@ namespace au.edu.federation.SoniFight
                 WatchIdList.Add(source.WatchIdList[loop]);
             }
 
-            PreviousValueList = new List<dynamic>();
+            SecondaryIdList = new List<int>();
+            for (int loop = 0; loop < source.SecondaryIdList.Count; ++loop)
+            {
+                SecondaryIdList.Add(source.SecondaryIdList[loop]);
+            }
 
-            SecondaryId = source.SecondaryId;
+            PreviousValueList = new List<dynamic>();
+            
             Value       = source.Value;
 
             SampleFilename = source.SampleFilename;

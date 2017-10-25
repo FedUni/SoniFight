@@ -692,7 +692,9 @@
       <WatchIdList>
         <int>0</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>NONE</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -711,7 +713,9 @@
       <WatchIdList>
         <int>0</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Clock-Fifty.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -730,7 +734,9 @@
       <WatchIdList>
         <int>0</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Clock-Twenty-Five.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -749,7 +755,9 @@
       <WatchIdList>
         <int>0</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Clock-Ten.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -768,7 +776,9 @@
       <WatchIdList>
         <int>1</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Health-Five-Hundred-P1.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -787,7 +797,9 @@
       <WatchIdList>
         <int>1</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Health-Two-Fifty-P1.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -806,7 +818,9 @@
       <WatchIdList>
         <int>1</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Health-Low-P1.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -825,7 +839,9 @@
       <WatchIdList>
         <int>3</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Super-One-P1.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -844,7 +860,9 @@
       <WatchIdList>
         <int>3</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Super-Two-P1.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -863,7 +881,9 @@
       <WatchIdList>
         <int>3</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Super-Three-P1.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -882,7 +902,9 @@
       <WatchIdList>
         <int>3</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Super-Full-P1.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -901,7 +923,9 @@
       <WatchIdList>
         <int>5</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Ultra-Half-P1.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -920,7 +944,9 @@
       <WatchIdList>
         <int>5</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Ultra-Full-P1.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -939,7 +965,9 @@
       <WatchIdList>
         <int>4</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Super-One-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -958,7 +986,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-0-arcade.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -977,7 +1007,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-1-versus.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -996,7 +1028,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-2-multiplayer-battle.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1015,7 +1049,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-3-challenge.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1034,7 +1070,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-4-training.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1053,7 +1091,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-5-player-data.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1072,7 +1112,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-6-options.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1091,7 +1133,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-7-game-manual.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1110,7 +1154,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-8-steam-store.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1129,7 +1175,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-9-benchmark.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1148,7 +1196,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>main-menu-10-quit.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1167,7 +1217,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-difficulty.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1186,7 +1238,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-rounds.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1205,7 +1259,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-time-limit.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1224,7 +1280,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-bonus-stages.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1243,7 +1301,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-fight-request-is-on.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1262,7 +1322,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-request-time-limit.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1281,7 +1343,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-request-region.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1300,7 +1364,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-request-opponent-skill.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1319,7 +1385,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-record-replay.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1338,7 +1406,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-fight-request-is-off.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1357,7 +1427,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-request-rounds.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1376,7 +1448,9 @@
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-easiest.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1395,7 +1469,9 @@
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-very-easy.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1414,7 +1490,9 @@
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-easy.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1433,7 +1511,9 @@
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-medium.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1452,7 +1532,9 @@
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-medium-hard.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1471,7 +1553,9 @@
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-hard.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1490,7 +1574,9 @@
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-very-hard.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1509,7 +1595,9 @@
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-hardest.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1528,7 +1616,9 @@
       <WatchIdList>
         <int>9</int>
       </WatchIdList>
-      <SecondaryId>31</SecondaryId>
+      <SecondaryIdList>
+        <int>31</int>
+      </SecondaryIdList>
       <SampleFilename>one.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1547,7 +1637,9 @@
       <WatchIdList>
         <int>9</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>three.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1566,7 +1658,9 @@
       <WatchIdList>
         <int>9</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>five.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1585,7 +1679,9 @@
       <WatchIdList>
         <int>9</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>seven.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1604,7 +1700,9 @@
       <WatchIdList>
         <int>10</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>thirty.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1623,7 +1721,9 @@
       <WatchIdList>
         <int>10</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>sixty.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1642,7 +1742,9 @@
       <WatchIdList>
         <int>10</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>ninety-nine.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1661,7 +1763,9 @@
       <WatchIdList>
         <int>10</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Infinite.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1680,7 +1784,9 @@
       <WatchIdList>
         <int>11</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>on.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1699,7 +1805,9 @@
       <WatchIdList>
         <int>11</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>off.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1718,7 +1826,9 @@
       <WatchIdList>
         <int>12</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Any.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1737,7 +1847,9 @@
       <WatchIdList>
         <int>12</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>one.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1756,7 +1868,9 @@
       <WatchIdList>
         <int>12</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>three.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1775,7 +1889,9 @@
       <WatchIdList>
         <int>12</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>five.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1794,7 +1910,9 @@
       <WatchIdList>
         <int>13</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Thirty.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1813,7 +1931,9 @@
       <WatchIdList>
         <int>13</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Sixty.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1832,7 +1952,9 @@
       <WatchIdList>
         <int>13</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Ninety-Nine.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1851,7 +1973,9 @@
       <WatchIdList>
         <int>13</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Any.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1870,7 +1994,9 @@
       <WatchIdList>
         <int>14</int>
       </WatchIdList>
-      <SecondaryId>36</SecondaryId>
+      <SecondaryIdList>
+        <int>36</int>
+      </SecondaryIdList>
       <SampleFilename>Any.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1889,7 +2015,9 @@
       <WatchIdList>
         <int>14</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Same.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1908,7 +2036,9 @@
       <WatchIdList>
         <int>15</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Any.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1927,7 +2057,9 @@
       <WatchIdList>
         <int>15</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>same-skill.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1946,7 +2078,9 @@
       <WatchIdList>
         <int>15</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>more-skilled.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1965,7 +2099,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-00-Ryu.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1984,7 +2120,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-01-Ken.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2003,7 +2141,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-02-Chun-Li.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2022,7 +2162,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-03-E-Honda.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2041,7 +2183,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-04-Blanka.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2060,7 +2204,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-05-Zangief.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2079,7 +2225,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-06-Guile.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2098,7 +2246,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-07-Dhalsim.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2117,7 +2267,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-08-Balrog.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2136,7 +2288,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-09-Vega.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2155,7 +2309,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-10-Sagat.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2174,7 +2330,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-11-M-Bison.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2193,7 +2351,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-12-C-Viper.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2212,7 +2372,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-13-Rufus.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2231,7 +2393,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-14-El-Fuerte.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2250,7 +2414,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-15-Able.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2269,7 +2435,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-16-Seth.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2288,7 +2456,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-17-Akuma.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2307,7 +2477,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-18-Gouken.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2326,7 +2498,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-19-T-Hawk.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2345,7 +2519,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-20-Cammy.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2364,7 +2540,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-21-Fei-Long.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2383,7 +2561,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-22-Dee-Jay.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2402,7 +2582,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-23-Sakura.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2421,7 +2603,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-24-Rose.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2440,7 +2624,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-25-Gen.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2459,7 +2645,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-26-Dan.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2478,7 +2666,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-27-Guy.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2497,7 +2687,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-28-Cody.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2516,7 +2708,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-29-Ibuki.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2535,7 +2729,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-30-Makoto.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2554,7 +2750,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-31-Dudley.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2573,7 +2771,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-32-Adon.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2592,7 +2792,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-33-Hakan.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2611,7 +2813,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-34-Juri.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2630,7 +2834,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-35-Yun.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2649,7 +2855,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-36-Yang.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2668,7 +2876,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-37-Evil-Ryu.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2687,7 +2897,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-38-Oni.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2706,7 +2918,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-39-Rolento.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2725,7 +2939,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-40-Elena.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2744,7 +2960,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-41-Poison.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2763,7 +2981,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-42-Hugo.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2782,7 +3002,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-43-Decapre.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2801,7 +3023,9 @@
       <WatchIdList>
         <int>16</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Random.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2820,7 +3044,9 @@
       <WatchIdList>
         <int>2</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Health-Five-Hundred-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2839,7 +3065,9 @@
       <WatchIdList>
         <int>2</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Health-Two-Fifty-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2858,7 +3086,9 @@
       <WatchIdList>
         <int>2</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Health-Low-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2877,7 +3107,9 @@
       <WatchIdList>
         <int>4</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Super-Two-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2896,7 +3128,9 @@
       <WatchIdList>
         <int>4</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Super-Three-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2915,7 +3149,9 @@
       <WatchIdList>
         <int>4</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Super-Full-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2934,7 +3170,9 @@
       <WatchIdList>
         <int>17</int>
       </WatchIdList>
-      <SecondaryId>38</SecondaryId>
+      <SecondaryIdList>
+        <int>38</int>
+      </SecondaryIdList>
       <SampleFilename>on.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2953,7 +3191,9 @@
       <WatchIdList>
         <int>17</int>
       </WatchIdList>
-      <SecondaryId>38</SecondaryId>
+      <SecondaryIdList>
+        <int>38</int>
+      </SecondaryIdList>
       <SampleFilename>off.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2972,7 +3212,9 @@
       <WatchIdList>
         <int>18</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>MB-Menu-Ranked-Match.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -2991,7 +3233,9 @@
       <WatchIdList>
         <int>18</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>MB-Menu-Endless-Battle.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3010,7 +3254,9 @@
       <WatchIdList>
         <int>18</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>MB-Menu-Team-Battle.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3029,7 +3275,9 @@
       <WatchIdList>
         <int>18</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>MB-Menu-Tournament.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3048,7 +3296,9 @@
       <WatchIdList>
         <int>18</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>MB-Menu-Online-Training.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3067,7 +3317,9 @@
       <WatchIdList>
         <int>18</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>MB-Menu-Replay-Channel.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3086,7 +3338,9 @@
       <WatchIdList>
         <int>18</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>MB-Menu-Leaderboards.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3105,7 +3359,9 @@
       <WatchIdList>
         <int>18</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Lounge-Menus-Quick-Match.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3124,7 +3380,9 @@
       <WatchIdList>
         <int>18</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Lounge-Menus-Custom-Match.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3143,7 +3401,9 @@
       <WatchIdList>
         <int>18</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Lounge-Menus-Create-Match.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3162,7 +3422,9 @@
       <WatchIdList>
         <int>19</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Ultra-Half-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3181,7 +3443,9 @@
       <WatchIdList>
         <int>19</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Ultra-Full-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3200,7 +3464,9 @@
       <WatchIdList>
         <int>20</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Options-Menu-0-Button-Config.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3219,7 +3485,9 @@
       <WatchIdList>
         <int>20</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Options-Menu-1-Sound-Settings.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3238,7 +3506,9 @@
       <WatchIdList>
         <int>20</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Options-Menu-2-Screen-Config.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3257,7 +3527,9 @@
       <WatchIdList>
         <int>20</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Options-Menu-3-Graphics-Settings.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3276,7 +3548,9 @@
       <WatchIdList>
         <int>20</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Options-Menu-4-Upload-To-YouTube.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3295,7 +3569,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>353</SecondaryId>
+      <SecondaryIdList>
+        <int>353</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Up.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3314,7 +3590,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Down.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3333,7 +3611,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Left.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3352,7 +3632,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Right.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3371,7 +3653,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Start.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3390,7 +3674,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Select.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3409,7 +3695,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Light-Punch.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3428,7 +3716,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Medium-Punch.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3447,7 +3737,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Heavy-Punch.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3466,7 +3758,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-LP+MP+HP.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3485,7 +3779,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Light-Kick.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3504,7 +3800,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Medium-Kick.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3523,7 +3821,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Heavy-Kick.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3542,7 +3842,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-LK+MK+HK.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3561,7 +3863,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Throw.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3580,7 +3884,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Focus-Attack.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3599,7 +3905,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Personal-Action.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3618,7 +3926,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Red-Focus.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3637,7 +3947,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Reload.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3656,7 +3968,9 @@
       <WatchIdList>
         <int>21</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Memory.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3675,7 +3989,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Resolution.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3694,7 +4010,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-VSync.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3713,7 +4031,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Framerate.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3732,7 +4052,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Antialiasing.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3751,7 +4073,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Filtering.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3770,7 +4094,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Model-Quality.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3789,7 +4115,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Stage-Quality.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3808,7 +4136,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Soft-Shadow.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3827,7 +4157,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Self-Shadow.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3846,7 +4178,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Motion-Blur.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3865,7 +4199,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Particles.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3884,7 +4220,9 @@
       <WatchIdList>
         <int>22</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Settings-Menu-Extra-Effect.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3903,7 +4241,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-fight-request-is-off.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3922,7 +4262,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-00-Ryu-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3941,7 +4283,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-01-Ken-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3960,7 +4304,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-02-Chun-Li-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3979,7 +4325,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-03-E-Honda-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -3998,7 +4346,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-04-Blanka-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4017,7 +4367,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-05-Zangief-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4036,7 +4388,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-06-Guile-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4055,7 +4409,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-07-Dhalsim-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4074,7 +4430,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-08-Balrog-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4093,7 +4451,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-09-Vega-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4112,7 +4472,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-10-Sagat-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4131,7 +4493,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-11-M-Bison-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4150,7 +4514,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-12-C-Viper-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4169,7 +4535,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-13-Rufus-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4188,7 +4556,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-14-El-Fuerte-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4207,7 +4577,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-15-Able-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4226,7 +4598,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-16-Seth-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4245,7 +4619,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-17-Akuma-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4264,7 +4640,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-18-Gouken-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4283,7 +4661,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-19-T-Hawk-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4302,7 +4682,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-20-Cammy-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4321,7 +4703,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-21-Fei-Long-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4340,7 +4724,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-22-Dee-Jay-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4359,7 +4745,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-23-Sakura-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4378,7 +4766,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-24-Rose-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4397,7 +4787,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-25-Gen-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4416,7 +4808,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-26-Dan-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4435,7 +4829,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-27-Guy-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4454,7 +4850,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-28-Cody-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4473,7 +4871,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-29-Ibuki-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4492,7 +4892,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-30-Makoto-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4511,7 +4913,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-31-Dudley-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4530,7 +4934,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-32-Adon-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4549,7 +4955,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-33-Hakan-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4568,7 +4976,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-34-Juri-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4587,7 +4997,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-35-Yun-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4606,7 +5018,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-36-Yang-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4625,7 +5039,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-37-Evil-Ryu-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4644,7 +5060,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-38-Oni-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4663,7 +5081,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-39-Rolento-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4682,7 +5102,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-40-Elena-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4701,7 +5123,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-41-Poison-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4720,7 +5144,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-42-Hugo-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4739,7 +5165,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-43-Decapre-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4758,7 +5186,9 @@
       <WatchIdList>
         <int>23</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Character-44-Random-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4777,7 +5207,9 @@
       <WatchIdList>
         <int>24</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Pause-Menu-Continue.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4796,7 +5228,9 @@
       <WatchIdList>
         <int>24</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Pause-Menu-Restart.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4815,7 +5249,9 @@
       <WatchIdList>
         <int>24</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Pause-Menu-Training-Options.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4834,7 +5270,9 @@
       <WatchIdList>
         <int>24</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Options-Menu-0-Button-Config.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4853,7 +5291,9 @@
       <WatchIdList>
         <int>24</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Pause-Menu-Command-List.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4872,7 +5312,9 @@
       <WatchIdList>
         <int>24</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Pause-Menu-Character-Change.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4891,7 +5333,9 @@
       <WatchIdList>
         <int>24</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Memory.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4910,7 +5354,9 @@
       <WatchIdList>
         <int>24</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Controls-Reload.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4929,7 +5375,9 @@
       <WatchIdList>
         <int>24</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Pause-Menu-Disable-Fight-Request.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4948,7 +5396,9 @@
       <WatchIdList>
         <int>24</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Pause-Menu-Exit.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4967,7 +5417,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Action.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -4986,7 +5438,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Guard.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5005,7 +5459,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Stand.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5024,7 +5480,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Counter-Hit.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5043,7 +5501,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Stun.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5062,7 +5522,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Super-Gauge.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5081,7 +5543,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Revenge-Gauge.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5100,7 +5564,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Attack-Data.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5119,7 +5585,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Input-Display.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5138,7 +5606,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-menu-difficulty.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5157,7 +5627,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Network-Simulation.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5176,7 +5648,9 @@
       <WatchIdList>
         <int>25</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Menu-Defaults.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5195,7 +5669,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Action-Stand.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5214,7 +5690,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Action-Crouch.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5233,7 +5711,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Action-Jump.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5252,7 +5732,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Action-CPU.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5271,7 +5753,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Action-Human.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5290,7 +5774,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Action-Record.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5309,7 +5795,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Action-Playback.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5328,7 +5816,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Guard-No-Block.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5347,7 +5837,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Guard-Auto-Block.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5366,7 +5858,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Guard-All-Block.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5385,7 +5879,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Random.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5404,7 +5900,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Normal.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5423,7 +5921,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Stand-Quick.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5442,7 +5942,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Stand-Delay.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5461,7 +5963,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Random.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5480,7 +5984,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Off.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5499,7 +6005,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>On.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5518,7 +6026,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Random.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5537,7 +6047,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Normal.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5556,7 +6068,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Stun-Constant.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5575,7 +6089,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Training-Options-Stun-None.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5594,7 +6110,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Normal.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5613,7 +6131,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Max-Start.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5632,7 +6152,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Infinite.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5651,7 +6173,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Refill.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5670,7 +6194,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Normal.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5689,7 +6215,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Max-Start.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5708,7 +6236,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Infinite.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5727,7 +6257,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Refill.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5746,7 +6278,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Off.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5765,7 +6299,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>On.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5784,7 +6320,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Off.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5803,7 +6341,9 @@
       <WatchIdList>
         <int>26</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>On.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5822,7 +6362,9 @@
       <WatchIdList>
         <int>27</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-easiest.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5841,7 +6383,9 @@
       <WatchIdList>
         <int>27</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-very-easy.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5860,7 +6404,9 @@
       <WatchIdList>
         <int>27</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-easy.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5879,7 +6425,9 @@
       <WatchIdList>
         <int>27</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-medium.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5898,7 +6446,9 @@
       <WatchIdList>
         <int>27</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-medium-hard.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5917,7 +6467,9 @@
       <WatchIdList>
         <int>27</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-hard.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5936,7 +6488,9 @@
       <WatchIdList>
         <int>27</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-very-hard.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5955,7 +6509,9 @@
       <WatchIdList>
         <int>27</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>arcade-difficulty-hardest.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5974,7 +6530,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>240</SecondaryId>
+      <SecondaryIdList>
+        <int>240</int>
+      </SecondaryIdList>
       <SampleFilename>Zero.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -5993,7 +6551,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>One.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6012,7 +6572,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Two.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6031,7 +6593,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Three.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6050,7 +6614,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Four.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6069,7 +6635,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Five.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6088,7 +6656,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Six.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6107,7 +6677,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Seven.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6126,7 +6698,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Eight.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6145,7 +6719,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Nine.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6164,7 +6740,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Ten.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6183,7 +6761,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Eleven.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6202,7 +6782,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Twelve.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6221,7 +6803,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Thirteen.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6240,7 +6824,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Fourteen.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6259,7 +6845,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Fifteen.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6278,7 +6866,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Sixteen.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6297,7 +6887,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Seventeen.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6316,7 +6908,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Eighteen.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6335,7 +6929,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Nineteen.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6354,7 +6950,9 @@
       <WatchIdList>
         <int>28</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Twenty.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6373,7 +6971,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>162</SecondaryId>
+      <SecondaryIdList>
+        <int>162</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-00-640x480.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6392,7 +6992,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>162</SecondaryId>
+      <SecondaryIdList>
+        <int>162</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-01-720x480.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6411,7 +7013,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>162</SecondaryId>
+      <SecondaryIdList>
+        <int>162</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-02-720x576.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6430,7 +7034,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-03-800x600.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6449,7 +7055,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-04-1024x768.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6468,7 +7076,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-05-1152x864.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6487,7 +7097,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-06-1176x664.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6506,7 +7118,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-07-1280x720.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6525,7 +7139,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-08-1280x768.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6544,7 +7160,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-09-1280x800.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6563,7 +7181,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-10-1280x960.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6582,7 +7202,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-11-1280x1024.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6601,7 +7223,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-12-1360x768.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6620,7 +7244,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-13-1366x768.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6639,7 +7265,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-14-1440x900.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6658,7 +7286,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-15-1600x900.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6677,7 +7307,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-16-1600x1024.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6696,7 +7328,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-17-1680x1050.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6715,7 +7349,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-18-1768x992.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6734,7 +7370,9 @@
       <WatchIdList>
         <int>30</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>On.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6753,7 +7391,9 @@
       <WatchIdList>
         <int>30</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Off.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6772,7 +7412,9 @@
       <WatchIdList>
         <int>31</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Framerate-Variable.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6791,7 +7433,9 @@
       <WatchIdList>
         <int>31</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Framerate-Fixed.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6810,7 +7454,9 @@
       <WatchIdList>
         <int>31</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Framerate-Smooth.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6829,7 +7475,9 @@
       <WatchIdList>
         <int>32</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-None.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6848,7 +7496,9 @@
       <WatchIdList>
         <int>32</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-2x.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6867,7 +7517,9 @@
       <WatchIdList>
         <int>32</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-4x.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6886,7 +7538,9 @@
       <WatchIdList>
         <int>32</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-8x.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6905,7 +7559,9 @@
       <WatchIdList>
         <int>32</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-C8x.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6924,7 +7580,9 @@
       <WatchIdList>
         <int>32</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-C16x.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6943,7 +7601,9 @@
       <WatchIdList>
         <int>32</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-C16xQ.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6962,7 +7622,9 @@
       <WatchIdList>
         <int>33</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-Default-2x.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -6981,7 +7643,9 @@
       <WatchIdList>
         <int>33</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Off.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7000,7 +7664,9 @@
       <WatchIdList>
         <int>33</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-2x.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7019,7 +7685,9 @@
       <WatchIdList>
         <int>33</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-4x.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7038,7 +7706,9 @@
       <WatchIdList>
         <int>33</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-8x.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7057,7 +7727,9 @@
       <WatchIdList>
         <int>34</int>
       </WatchIdList>
-      <SecondaryId>35</SecondaryId>
+      <SecondaryIdList>
+        <int>35</int>
+      </SecondaryIdList>
       <SampleFilename>Heavy-Wind-Mono.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>0.6</SampleVolume>
@@ -7076,7 +7748,9 @@
       <WatchIdList>
         <int>34</int>
       </WatchIdList>
-      <SecondaryId>35</SecondaryId>
+      <SecondaryIdList>
+        <int>35</int>
+      </SecondaryIdList>
       <SampleFilename>Heavy-Wind-Mono.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>0.7</SampleVolume>
@@ -7095,7 +7769,9 @@
       <WatchIdList>
         <int>34</int>
       </WatchIdList>
-      <SecondaryId>35</SecondaryId>
+      <SecondaryIdList>
+        <int>35</int>
+      </SecondaryIdList>
       <SampleFilename>Heavy-Wind-Mono.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7114,7 +7790,9 @@
       <WatchIdList>
         <int>34</int>
       </WatchIdList>
-      <SecondaryId>35</SecondaryId>
+      <SecondaryIdList>
+        <int>35</int>
+      </SecondaryIdList>
       <SampleFilename>Heavy-Wind-Mono.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>0.5</SampleVolume>
@@ -7133,7 +7811,9 @@
       <WatchIdList>
         <int>33</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Graphics-16x.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7152,7 +7832,9 @@
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Resolution-19-1920x1080.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7171,7 +7853,9 @@
       <WatchIdList>
         <int>37</int>
       </WatchIdList>
-      <SecondaryId>342</SecondaryId>
+      <SecondaryIdList>
+        <int>342</int>
+      </SecondaryIdList>
       <SampleFilename>NONE</SampleFilename>
       <SampleSpeed>2</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7190,7 +7874,9 @@
       <WatchIdList>
         <int>37</int>
       </WatchIdList>
-      <SecondaryId>344</SecondaryId>
+      <SecondaryIdList>
+        <int>344</int>
+      </SecondaryIdList>
       <SampleFilename>NONE</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7209,7 +7895,9 @@
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>versus-menu-edition-select.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7228,7 +7916,9 @@
       <WatchIdList>
         <int>0</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Clock 95 because the clock is {1}</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7247,7 +7937,9 @@
       <WatchIdList>
         <int>38</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename />
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7266,7 +7958,9 @@
       <WatchIdList>
         <int>39</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Player versus player</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7285,7 +7979,9 @@
       <WatchIdList>
         <int>39</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Player versus CPU</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7304,7 +8000,9 @@
       <WatchIdList>
         <int>39</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>CPU versus CPU</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7323,7 +8021,9 @@
       <WatchIdList>
         <int>45</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Costume</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7342,7 +8042,9 @@
       <WatchIdList>
         <int>45</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Colour</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7361,7 +8063,9 @@
       <WatchIdList>
         <int>45</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Personal Action</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7380,7 +8084,9 @@
       <WatchIdList>
         <int>45</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Win Quote</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7399,7 +8105,9 @@
       <WatchIdList>
         <int>46</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Original</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7418,7 +8126,9 @@
       <WatchIdList>
         <int>46</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Alternate 1</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7437,7 +8147,9 @@
       <WatchIdList>
         <int>46</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Alternate 2</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7456,7 +8168,9 @@
       <WatchIdList>
         <int>46</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Alternate 3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7475,7 +8189,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>1</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7494,7 +8210,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>2</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7513,7 +8231,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7532,7 +8252,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>4</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7551,7 +8273,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>5</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7570,7 +8294,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>6</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7589,7 +8315,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>7</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7608,7 +8336,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>8</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7627,7 +8357,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>9</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7646,7 +8378,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>10</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7665,7 +8399,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>11</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7684,7 +8420,9 @@
       <WatchIdList>
         <int>47</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>12</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7703,7 +8441,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>1</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7722,7 +8462,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>2</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7741,7 +8483,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7760,7 +8504,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>4</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7779,7 +8525,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>5</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7798,7 +8546,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>6</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7817,7 +8567,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>7</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7836,7 +8588,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>8</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7855,7 +8609,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>9</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7874,7 +8630,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>None</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7893,7 +8651,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>1</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7912,7 +8672,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>2</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7931,7 +8693,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7950,7 +8714,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>4</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7969,7 +8735,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>5</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -7988,7 +8756,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>6</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -8007,7 +8777,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>7</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -8026,7 +8798,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>8</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -8045,7 +8819,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>9</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -8064,7 +8840,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>10</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -8083,7 +8861,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>11</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -8102,7 +8882,9 @@
       <WatchIdList>
         <int>49</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>Random</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -8121,7 +8903,9 @@
       <WatchIdList>
         <int>48</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
       <SampleFilename>10</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -8147,7 +8931,7 @@ Unfortunately in some circumstances random sample playing may be unavoidable bec
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>99</ClockMax>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908 - Copy\</ConfigDirectory>
+  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
   <NormalTriggerMasterVolume>0.7</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
 </GameConfig>

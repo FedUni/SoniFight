@@ -44,7 +44,7 @@
       <WatchIdList>
         <int>1</int>
       </WatchIdList>
-      <SecondaryId>-1</SecondaryId>
+      <SecondaryIdList><int>-1</int></SecondaryIdList>
       <SampleFilename>95</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>

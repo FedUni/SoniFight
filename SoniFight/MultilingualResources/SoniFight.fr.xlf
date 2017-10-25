@@ -514,10 +514,6 @@
           <source>Changed</source>
           <target state="new">Changed</target>
         </trans-unit>
-        <trans-unit id="failedDepthString" translate="yes" xml:space="preserve">
-          <source> failed. Depth: </source>
-          <target state="new"> failed. Depth: </target>
-        </trans-unit>
         <trans-unit id="suppressedAsDependentString" translate="yes" xml:space="preserve">
           <source> suppressed as dependent trigger </source>
           <target state="new"> suppressed as dependent trigger </target>
@@ -657,6 +653,10 @@
         <trans-unit id="unsignedIntString" translate="yes" xml:space="preserve">
           <source>Unsigned Integer</source>
           <target state="new">Unsigned Integer</target>
+        </trans-unit>
+        <trans-unit id="triggerTypeDependentString" translate="yes" xml:space="preserve">
+          <source>Dependent</source>
+          <target state="new">Dependent</target>
         </trans-unit>
       </group>
     </body>

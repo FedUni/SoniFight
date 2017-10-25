@@ -669,8 +669,10 @@ namespace au.edu.federation.SoniFight
                 case 0:
                     return Trigger.TriggerType.Normal;
                 case 1:
-                    return Trigger.TriggerType.Continuous;
+                    return Trigger.TriggerType.Dependent;
                 case 2:
+                    return Trigger.TriggerType.Continuous;
+                case 3:
                     return Trigger.TriggerType.Modifier;
                 default:
                     return Trigger.TriggerType.Normal;
@@ -684,10 +686,12 @@ namespace au.edu.federation.SoniFight
             {
                 case Trigger.TriggerType.Normal:
                     return 0;
-                case Trigger.TriggerType.Continuous:
+                case Trigger.TriggerType.Dependent:
                     return 1;
-                case Trigger.TriggerType.Modifier:
+                case Trigger.TriggerType.Continuous:
                     return 2;
+                case Trigger.TriggerType.Modifier:
+                    return 3;
                 default:
                     return 0;
             }

@@ -430,15 +430,6 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  failed. Depth: .
-        /// </summary>
-        internal static string failedDepthString {
-            get {
-                return ResourceManager.GetString("failedDepthString", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to GameConfig saved successfully: .
         /// </summary>
         internal static string fileSavedSuccessfullyString {
@@ -1272,6 +1263,15 @@ namespace au.edu.federation.SoniFight.Properties {
         internal static string triggerTypeContinuousString {
             get {
                 return ResourceManager.GetString("triggerTypeContinuousString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependent.
+        /// </summary>
+        internal static string triggerTypeDependentString {
+            get {
+                return ResourceManager.GetString("triggerTypeDependentString", resourceCulture);
             }
         }
         

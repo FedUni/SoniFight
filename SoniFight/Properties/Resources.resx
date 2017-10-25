@@ -423,9 +423,6 @@
   <data name="equalToString" xml:space="preserve">
     <value>Equal To</value>
   </data>
-  <data name="failedDepthString" xml:space="preserve">
-    <value> failed. Depth: </value>
-  </data>
   <data name="floatString" xml:space="preserve">
     <value>Float</value>
   </data>
@@ -605,5 +602,8 @@
   </data>
   <data name="unsignedIntString" xml:space="preserve">
     <value>Unsigned Integer</value>
+  </data>
+  <data name="triggerTypeDependentString" xml:space="preserve">
+    <value>Dependent</value>
   </data>
 </root>

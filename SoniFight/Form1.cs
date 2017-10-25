@@ -48,6 +48,7 @@ namespace au.edu.federation.SoniFight
 
         // String versions of the trigger types
         string[] triggerTypesArray = { Resources.ResourceManager.GetString("triggerTypeNormalString"),     // "Normal",
+                                       Resources.ResourceManager.GetString("triggerTypeDependentString"),  // "Dependent"
                                        Resources.ResourceManager.GetString("triggerTypeContinuousString"), // "Continuous"
                                        Resources.ResourceManager.GetString("triggerTypeModifierString")    // "Modifier"
                                      };
@@ -1096,6 +1097,7 @@ namespace au.edu.federation.SoniFight
                 TextBox sampleSpeedTB = new TextBox();
                 Label tolkLabel = new Label();
                 CheckBox tolkCheckbox = new CheckBox();
+                CheckBox isClockCB = new CheckBox();
 
                 // Get the current watch we're working from based on the index of the currently selected treenode
                 // Note: Each child of a parent treenode starts at index 0, so we can use this index as the
@@ -1204,15 +1206,24 @@ namespace au.edu.federation.SoniFight
                     currentTrigger.triggerType = Utils.GetTriggerTypeFromInt(triggerTypeCB.SelectedIndex);
 
                     // If we're a modifier trigger we disable the sample name textbox, otherwise it's left or made active
-                    if (currentTrigger.triggerType == Trigger.TriggerType.Modifier)
+                    if (currentTrigger.triggerType == Trigger.TriggerType.Modifier || currentTrigger.triggerType == Trigger.TriggerType.Dependent)
                     {
                         sampleFilenameTB.Enabled = false;
                         sampleFilenameButton.Enabled = false;
+                        sampleSpeedTB.Enabled = false;
+                        sampleVolumeTB.Enabled = false;
+                        tolkCheckbox.Enabled = false;
+                        isClockCB.Enabled = false;                        
                     }
                     else
                     {
                         sampleFilenameTB.Enabled = true;
                         sampleFilenameButton.Enabled = true;
+                        sampleSpeedTB.Enabled = true;
+                        sampleVolumeTB.Enabled = true;
+                        tolkCheckbox.Enabled = true;
+                        isClockCB.Enabled = true;
+                        valueTB.Enabled = true;
                     }
 
                     // Display the appropriate label for the 'watch2' field and set whether the tolk checkbox is active or not
@@ -1221,6 +1232,11 @@ namespace au.edu.federation.SoniFight
                         case Trigger.TriggerType.Normal:
                             secondaryIdLabel.Text = Resources.ResourceManager.GetString("dependentTriggerIdLabelString");
                             tolkCheckbox.Enabled = true;
+                            break;
+                        case Trigger.TriggerType.Dependent:
+                            secondaryIdLabel.Text = Resources.ResourceManager.GetString("dependentTriggerIdLabelString");
+                            tolkCheckbox.Enabled = false;
+                            currentTreeNode.BackColor = Color.DodgerBlue;
                             break;
                         case Trigger.TriggerType.Continuous:
                             secondaryIdLabel.Text = Resources.ResourceManager.GetString("watch2IdLabelString");
@@ -1298,21 +1314,42 @@ namespace au.edu.federation.SoniFight
                 switch (currentTrigger.triggerType)
                 {
                     case Trigger.TriggerType.Normal:
+                    case Trigger.TriggerType.Dependent:
                         secondaryIdLabel.Text = Resources.ResourceManager.GetString("secondaryIdLabelDependentIdString");
+
+                        string dependentTriggerString = "";
+                        for (int loop = 0; loop < currentTrigger.SecondaryIdList.Count; ++loop)
+                        {
+                            dependentTriggerString += currentTrigger.SecondaryIdList[loop];
+                            if (loop != currentTrigger.SecondaryIdList.Count - 1)
+                            {
+                                dependentTriggerString += " ";
+                            }
+                        }
+                        secondaryIdTB.Text = dependentTriggerString;
                         break;
                     case Trigger.TriggerType.Continuous:
                         secondaryIdLabel.Text = Resources.ResourceManager.GetString("secondaryIdLabelWatch2IdString");
+                        secondaryIdTB.Text = currentTrigger.SecondaryIdList[0].ToString();
                         break;
                     case Trigger.TriggerType.Modifier:
                         secondaryIdLabel.Text = Resources.ResourceManager.GetString("secondaryIdLabelContinuousTriggerIdString");
+                        secondaryIdTB.Text = currentTrigger.SecondaryIdList[0].ToString();
                         break;
                 }
+
+                secondaryIdTB.TextChanged += (object sender, EventArgs ea) =>
+                {
+                    currentTrigger.SecondaryIdList = Utils.stringToIntList(secondaryIdTB.Text);
+                    
+                };
+                
 
                 secondaryIdLabel.Anchor = AnchorStyles.Right;
                 secondaryIdLabel.Margin = padding;
                 panel.Controls.Add(secondaryIdLabel, 0, row); // Control, Column, Row
 
-                secondaryIdTB.Text = currentTrigger.SecondaryId.ToString();
+                secondaryIdTB.Text = currentTrigger.SecondaryIdList[0].ToString();
                 secondaryIdTB.Anchor = AnchorStyles.Left;
                 secondaryIdTB.Dock = DockStyle.Fill;
                 secondaryIdTB.Margin = padding;
@@ -1323,7 +1360,7 @@ namespace au.edu.federation.SoniFight
                     bool result = Int32.TryParse(secondaryIdTB.Text, out x);
                     if (result)
                     {
-                        currentTrigger.SecondaryId = x;
+                        currentTrigger.SecondaryIdList[0] = x;
                     }
                     else
                     {
@@ -1333,7 +1370,19 @@ namespace au.edu.federation.SoniFight
                         }
                         else // Field empty? Invalidate it so we can catch it in the save section
                         {
-                            currentTrigger.SecondaryId = -1;
+                            if (currentTrigger.SecondaryIdList == null)
+                            {
+                                currentTrigger.SecondaryIdList = new List<int>();
+                            }
+
+                            if (currentTrigger.SecondaryIdList.Count != 0)
+                            {
+                                currentTrigger.SecondaryIdList[0] = -1;
+                            }
+                            else
+                            {
+                                currentTrigger.SecondaryIdList.Add(-1);
+                            }
                         }
                     }
                 };
@@ -1392,7 +1441,7 @@ namespace au.edu.federation.SoniFight
                 sampleFilenameTB.Margin = new System.Windows.Forms.Padding(0);
 
                 // Disable sample field if we're the clock trigger
-                if (currentTrigger.IsClock) { sampleFilenameTB.Enabled = false; }
+                if (currentTrigger.IsClock || currentTrigger.triggerType == Trigger.TriggerType.Dependent) { sampleFilenameTB.Enabled = false; }
 
                 sampleFilenameTB.TextChanged += (object sender, EventArgs ea) => { currentTrigger.SampleFilename = sampleFilenameTB.Text; };
 
@@ -1414,7 +1463,7 @@ namespace au.edu.federation.SoniFight
                 tolkCheckbox.Checked = currentTrigger.UseTolk;
 
                 // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
-                if (currentTrigger.UseTolk)
+                if (currentTrigger.UseTolk || currentTrigger.triggerType == Trigger.TriggerType.Dependent)
                 {
                     sampleFilenameButton.Enabled = false;
                     sampleVolumeTB.Enabled = false;
@@ -1444,7 +1493,7 @@ namespace au.edu.federation.SoniFight
                     currentTrigger.UseTolk = tolkCheckbox.Checked;
 
                     // If we're the clock disable the sample textbox and button + the value textbox (unused for clock triggers - criteria is 'did it change?')
-                    if (currentTrigger.UseTolk)
+                    if (currentTrigger.UseTolk || currentTrigger.triggerType == Trigger.TriggerType.Dependent)
                     {
                         sampleFilenameButton.Enabled = false;
                         sampleVolumeTB.Enabled = false;
@@ -1483,8 +1532,8 @@ namespace au.edu.federation.SoniFight
                 };
                 sampleSelectionPanel.Controls.Add(sampleFilenameButton);
 
-                // If we're a modifier trigger we disable the sample name textbox and sample selection button, otherwise it's left or made active
-                if (currentTrigger.triggerType == Trigger.TriggerType.Modifier)
+                // If we're a modifier or dependent trigger we disable the sample name textbox and sample selection button, otherwise it's left or made active
+                if (currentTrigger.triggerType == Trigger.TriggerType.Modifier || currentTrigger.triggerType == Trigger.TriggerType.Dependent)
                 {
                     sampleFilenameTB.Enabled = false;
                     sampleFilenameButton.Enabled = false;
@@ -1495,7 +1544,7 @@ namespace au.edu.federation.SoniFight
                     sampleFilenameButton.Enabled = true;
                 }
 
-                if (currentTrigger.UseTolk)
+                if (currentTrigger.UseTolk || currentTrigger.triggerType == Trigger.TriggerType.Dependent)
                 {
                     sampleFilenameButton.Enabled = false;
                 }
@@ -1518,8 +1567,8 @@ namespace au.edu.federation.SoniFight
                 sampleVolumeTB.Dock = DockStyle.Fill;
                 sampleVolumeTB.Margin = padding;
 
-                // Disable sample volume field if we're the clock trigger or using tolk
-                if (currentTrigger.IsClock || currentTrigger.UseTolk)
+                // Disable sample volume field if we're the clock trigger, or using tolk, or are a dependent trigger
+                if (currentTrigger.IsClock || currentTrigger.UseTolk || currentTrigger.triggerType == Trigger.TriggerType.Dependent)
                 {   
                     sampleVolumeTB.Enabled = false;
                     sampleVolumeTB.Update();
@@ -1561,8 +1610,11 @@ namespace au.edu.federation.SoniFight
                 sampleSpeedTB.Dock = DockStyle.Fill;
                 sampleSpeedTB.Margin = padding;
 
-                // Disable sample speed field if we're not the clock trigger
-                if (currentTrigger.IsClock || currentTrigger.UseTolk) { sampleSpeedTB.Enabled = false; }
+                // Disable sample speed field if we're the clock, or using tolk, or are a dependent trigger
+                if (currentTrigger.IsClock || currentTrigger.UseTolk || currentTrigger.triggerType == Trigger.TriggerType.Dependent)
+                {
+                    sampleSpeedTB.Enabled = false;
+                }
 
                 sampleSpeedTB.TextChanged += (object sender, EventArgs ea) => {
                     float x;
@@ -1601,7 +1653,7 @@ namespace au.edu.federation.SoniFight
                 isClockLabel.Margin = padding;
                 panel.Controls.Add(isClockLabel, 0, row); // Control, Column, Row
 
-                CheckBox isClockCB = new CheckBox();
+               
                 isClockCB.Checked = currentTrigger.IsClock;
 
                 // If we're the clock disable the UI for audio and comparison type.
@@ -1615,7 +1667,7 @@ namespace au.edu.federation.SoniFight
                     tolkCheckbox.Enabled = false;
                     compTypeCB.Enabled = false;
                 }
-                else // We are not the clock trigger
+                else // We are not the clock trigger or we are not a dependent trigger
                 {
                     // Re-enable the value checkbox
                     valueTB.Enabled = true;

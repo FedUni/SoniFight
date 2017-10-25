@@ -141,7 +141,7 @@ namespace au.edu.federation.SoniFight
                 else // Allowance is InGame or Any
                 {
                     Console.WriteLine(Resources.ResourceManager.GetString("loadingNormalSampleString") + shortKey);
-
+                    
                     // Generate ISound for sample on normal engine then stop all normal sounds
                     // Params: key, loop, start paused, stream mode, allow effects
                     sound = normalEngine.Play2D(t.SampleKey, false, true, StreamMode.AutoDetect, true);

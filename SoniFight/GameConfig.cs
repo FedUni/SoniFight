@@ -266,21 +266,21 @@ namespace au.edu.federation.SoniFight
                         // Construct the sample key used for the dictionary
                         t.SampleKey = ".\\Configs\\" + configDirectory + t.SampleFilename;
 
-                        // If the sample isn't loaded and it's not the clock or a modifier trigger (these don't use samples) and we're not using tolk...
-                        //if ( !(Program.irrKlang.SampleLoaded(t.sampleKey)) && !(t.IsClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.useTolk) )
-                        if (!(t.IsClock) && (t.triggerType != Trigger.TriggerType.Modifier) && !(t.UseTolk))
+                        // Note: Yes, all the below if conditions could be combined into one. But it's simpler to understand what's going on if they're not.
+
+                        // We only load samples for active triggers which do not use tolk, are not the clock and are not modifier or dependent triggers.
+                        if (t.Active && !t.UseTolk && !t.IsClock && (t.triggerType == Trigger.TriggerType.Normal || t.triggerType == Trigger.TriggerType.Continuous))
                         {
-                            // ...then load the sample for the trigger.
                             // NOTE: The sample is loaded into the specific engine used for playback based on the trigger type
-                            Program.irrKlang.LoadSample(t);
+                            Program.irrKlang.LoadSample(t);                            
                         }
 
                         // Only add active triggers to these separated lists, and don't add the clock
                         if (t.Active && !t.IsClock)
                         {
-                            if (t.triggerType == Trigger.TriggerType.Normal)
+                            if (t.triggerType == Trigger.TriggerType.Normal || t.triggerType == Trigger.TriggerType.Dependent)
                             {
-                                // This list contains ALL the normal triggers, such as those used for menus as well as those using tolk for sonification
+                                // This list contains ALL the normal triggers and dependent triggers
                                 normalTriggerList.Add(t); 
                             }
                             else if (t.triggerType == Trigger.TriggerType.Continuous)
@@ -488,6 +488,7 @@ namespace au.edu.federation.SoniFight
             List<int> clockTriggerIdList = new List<int>();
             foreach (Trigger t in triggerList)
             {
+                // We'll build up a list of all trigger ids just so we can verify that each is unique
                 idList.Add(t.Id);
 
                 // Ensire trigger id is => 0
