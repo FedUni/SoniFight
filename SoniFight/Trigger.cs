@@ -217,7 +217,6 @@ namespace au.edu.federation.SoniFight
 
             WatchIdList = new List<int>();
             SecondaryIdList = new List<int>();
-            SecondaryIdList.Add(-1);
             Value       = -1;
 
             PreviousValueList = new List<dynamic>();
@@ -262,6 +261,7 @@ namespace au.edu.federation.SoniFight
                 WatchIdList.Add(source.WatchIdList[loop]);
             }
 
+            // Deep-copy the secondary ID list
             SecondaryIdList = new List<int>();
             for (int loop = 0; loop < source.SecondaryIdList.Count; ++loop)
             {

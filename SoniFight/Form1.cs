@@ -21,15 +21,15 @@ namespace au.edu.federation.SoniFight
         public static GameConfig gameConfig;
 
         // String versions of the type of data watches can use
-        string[] dataTypesArray = { Resources.ResourceManager.GetString("integerString"),    // "Integer"
-                                    Resources.ResourceManager.GetString("shortString"),      // "Short"
-                                    Resources.ResourceManager.GetString("longString"),       // "Long"
-                                    Resources.ResourceManager.GetString("unsignedIntString"),       // "Unsigned Int"
-                                    Resources.ResourceManager.GetString("floatString"),      // "Float"
-                                    Resources.ResourceManager.GetString("doubleString"),     // "Double"
-                                    Resources.ResourceManager.GetString("booleanString"),    // "Boolean"
-                                    Resources.ResourceManager.GetString("stringUTF8String"), // "String (UTF-8)"
-                                    Resources.ResourceManager.GetString("stringUTF16String") // "String (UTF-16)"
+        string[] dataTypesArray = { Resources.ResourceManager.GetString("integerString"),     // "Integer"
+                                    Resources.ResourceManager.GetString("shortString"),       // "Short"
+                                    Resources.ResourceManager.GetString("longString"),        // "Long"
+                                    Resources.ResourceManager.GetString("unsignedIntString"), // "Unsigned Int"
+                                    Resources.ResourceManager.GetString("floatString"),       // "Float"
+                                    Resources.ResourceManager.GetString("doubleString"),      // "Double"
+                                    Resources.ResourceManager.GetString("booleanString"),     // "Boolean"
+                                    Resources.ResourceManager.GetString("stringUTF8String"),  // "String (UTF-8)"
+                                    Resources.ResourceManager.GetString("stringUTF16String")  // "String (UTF-16)"
                                   };
 
         // String versions of the comparison types we can use
@@ -62,7 +62,7 @@ namespace au.edu.federation.SoniFight
         // Initial config dropdown index
         static int selectedConfigDropdownIndex = 0;
 
-        // Details panel settings
+        // Details panel padding for UI elements
         private Padding padding = new System.Windows.Forms.Padding(5);
 
         // Flag for when to create a new config rather than attempt to load one from a config folder on tab index changed
@@ -144,7 +144,7 @@ namespace au.edu.federation.SoniFight
                 gameConfig.ConfigDirectory = "";
                 gameConfig.Description = "";
                 gameConfig.ProcessName = "";
-                gameConfig.PollSleepMS = 10;
+                gameConfig.PollSleepMS = 100;
                 gameConfig.watchList.Clear();
                 gameConfig.triggerList.Clear();
             }
@@ -290,7 +290,10 @@ namespace au.edu.federation.SoniFight
             {
                 creatingNewConfig = false;
             }
-
+            else
+            {
+                MessageBox.Show("ERROR: Failed to write config file. I don't know any more - it just didn't work out.");
+            }
 
         }
 
@@ -1197,6 +1200,27 @@ namespace au.edu.federation.SoniFight
 
                 panel.Controls.Add(triggerTypeLabel, 0, row); // Control, Column, Row
 
+                // If we're a modifier or dependent trigger we disable the audio/sample UI elements, otherwise they're left active
+                if (currentTrigger.triggerType == Trigger.TriggerType.Modifier || currentTrigger.triggerType == Trigger.TriggerType.Dependent)
+                {
+                    sampleFilenameTB.Enabled = false;
+                    sampleFilenameButton.Enabled = false;
+                    sampleSpeedTB.Enabled = false;
+                    sampleVolumeTB.Enabled = false;
+                    tolkCheckbox.Enabled = false;
+                    isClockCB.Enabled = false;
+                }
+                else
+                {
+                    sampleFilenameTB.Enabled = true;
+                    sampleFilenameButton.Enabled = true;
+                    sampleSpeedTB.Enabled = true;
+                    sampleVolumeTB.Enabled = true;
+                    tolkCheckbox.Enabled = true;
+                    isClockCB.Enabled = true;
+                    valueTB.Enabled = true;
+                }
+
                 ComboBox triggerTypeCB = new ComboBox();
                 triggerTypeCB.DropDownStyle = ComboBoxStyle.DropDownList;
                 triggerTypeCB.Items.AddRange(triggerTypesArray);
@@ -1370,18 +1394,10 @@ namespace au.edu.federation.SoniFight
                         }
                         else // Field empty? Invalidate it so we can catch it in the save section
                         {
-                            if (currentTrigger.SecondaryIdList == null)
+                            if (currentTrigger.SecondaryIdList == null || currentTrigger.SecondaryIdList.Count == 0)
                             {
-                                currentTrigger.SecondaryIdList = new List<int>();
-                            }
-
-                            if (currentTrigger.SecondaryIdList.Count != 0)
-                            {
+                                currentTrigger.SecondaryIdList = new List<int>(1);
                                 currentTrigger.SecondaryIdList[0] = -1;
-                            }
-                            else
-                            {
-                                currentTrigger.SecondaryIdList.Add(-1);
                             }
                         }
                     }
@@ -1479,13 +1495,13 @@ namespace au.edu.federation.SoniFight
                 }
 
                 // Tolk is only available for normal triggers
-                if (currentTrigger.triggerType != Trigger.TriggerType.Normal)
+                if (currentTrigger.triggerType == Trigger.TriggerType.Normal)
                 {
-                    tolkCheckbox.Enabled = false;
+                    tolkCheckbox.Enabled = true;
                 }
                 else
                 {
-                    tolkCheckbox.Enabled = true;
+                    tolkCheckbox.Enabled = false;
                 }
 
                 tolkCheckbox.CheckedChanged += (object sender, EventArgs ea) => {
@@ -1753,30 +1769,30 @@ namespace au.edu.federation.SoniFight
                 triggerAllowanceLabel.Margin = padding;
                 panel.Controls.Add(triggerAllowanceLabel, 0, row); // Allowance, Column, Row
 
-                ComboBox triggerAllowanceCB = new ComboBox();
-                triggerAllowanceCB.DropDownStyle = ComboBoxStyle.DropDownList;
-                triggerAllowanceCB.Items.AddRange(allowanceTypesArray);
-                triggerAllowanceCB.SelectedIndex = Utils.GetIntFromAllowanceType(currentTrigger.allowanceType);
+                ComboBox triggerAllowanceComboBox = new ComboBox();
+                triggerAllowanceComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                triggerAllowanceComboBox.Items.AddRange(allowanceTypesArray);
+                triggerAllowanceComboBox.SelectedIndex = Utils.GetIntFromAllowanceType(currentTrigger.allowanceType);
 
-                triggerAllowanceCB.SelectedIndexChanged += (object o, EventArgs ae) =>
+                triggerAllowanceComboBox.SelectedIndexChanged += (object o, EventArgs ae) =>
                 {
                     currentTrigger.allowanceType = Utils.GetAllowanceTypeFromInt(triggerAllowanceCB.SelectedIndex);
                 };
-                
-                triggerAllowanceCB.Anchor = AnchorStyles.Left;
-                triggerAllowanceCB.Dock = DockStyle.Fill;
-                triggerAllowanceCB.Margin = padding;                                
+
+                triggerAllowanceComboBox.Anchor = AnchorStyles.Left;
+                triggerAllowanceComboBox.Dock = DockStyle.Fill;
+                triggerAllowanceComboBox.Margin = padding;                                
 
                 if (currentTrigger.IsClock)
                 {
-                    triggerAllowanceCB.Enabled = false;
+                    triggerAllowanceComboBox.Enabled = false;
                 }
                 else
                 {
-                    triggerAllowanceCB.Enabled = true;
+                    triggerAllowanceComboBox.Enabled = true;
                 }
 
-                panel.Controls.Add(triggerAllowanceCB, 1, row); // Control, Column, Row
+                panel.Controls.Add(triggerAllowanceComboBox, 1, row); // Control, Column, Row
                 row++;
 
                 // ----- Row 13 - Active Flag -----            
