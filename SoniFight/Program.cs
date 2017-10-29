@@ -12,6 +12,9 @@ namespace au.edu.federation.SoniFight
 {
     static class Program
     {
+        //[System.Runtime.InteropServices.DllImport("kernel32.dll")]
+        //private static extern bool AttachConsole(int dwProcessId);
+
         // Please note: The program will only handle one GameConfig at any given time and this is
         // stored as a public static object in the Form.cs file.
 
@@ -34,10 +37,7 @@ namespace au.edu.federation.SoniFight
 
         // DateTime objects to use to determine if one second has passed (at which point we check if the clock has changed)
         static DateTime startTime, endTime;
-
-        // The time that we played our last sonification event
-        //static DateTime lastMenuSonificationTime = DateTime.Now;
-
+        
         // Maximum characters to compare when doing string comparisons
         public static int TEXT_COMPARISON_CHAR_LIMIT = 33;
 
@@ -72,20 +72,22 @@ namespace au.edu.federation.SoniFight
             {
                 is64Bit = false;
             }
+            
+            // At some point we may wish to have this as a Windows Application (not a Console Application) and attach a console to it.
+            // This comes with some caveats like you can't cleanly pipe output to file from it, so I'll leave it for now. In the below
+            // AttachConsole call -1 means attach to the parent process, and we also need the native AttachConsole method from kernel32.dll.
+            //AttachConsole(-1);
 
             // Localisation test code - uncomment to force French localisation etc.
             /*CultureInfo cultureOverride = new CultureInfo("fr");
             Thread.CurrentThread.CurrentUICulture = cultureOverride;
             Thread.CurrentThread.CurrentCulture = cultureOverride;*/
-            
+
             // Prepare sonficiation background worker...
             sonificationBGW.DoWork += performSonification;      // Specify the work method - this runs when RunWorkerAsync is called
             sonificationBGW.WorkerReportsProgress = false;      // We do not want progress reports
             sonificationBGW.WorkerSupportsCancellation = true;  // We do want to be able to cancel the background worker
-
-            // Initialise our irrKlang SoundPlayer class ready to play audio
-            //Program.soundplayer = new SoundPlayer();
-
+            
             // Setup display and display form. Note: we STAY on this line until the form closes (i.e. the application terminates).
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -189,12 +191,7 @@ namespace au.edu.federation.SoniFight
         // except when the trigger's comparison type is 'changed'.
         public static bool performDependentComparison(Trigger t, dynamic watchValue)
         {
-            // Note: Normal triggers may call this method, because normal triggers that make a sound may be used as dependent triggers - but we'll always return false
-            /*if (!(t.triggerType == Trigger.TriggerType.Dependent))
-            {
-                //MessageBox.Show("WARNING: Trigger which is not of type dependent called performDependentComparison. Trigger id: " + t.Id);
-                return false;
-            }*/
+            // Note: Normal triggers that make a sound may be co-opted to work as dependent triggers, and we won't stop them.
 
             // Dynamic type comparisons may possibly fail so wrap 'em in try/catch
             try

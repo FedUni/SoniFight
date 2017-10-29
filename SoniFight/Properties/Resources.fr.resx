@@ -12,4 +12,343 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="statusStoppedString" xml:space="preserve">
+    <value>Statut: Arrêté</value>
+  </data>
+  <data name="configDirCreationFailedString" xml:space="preserve">
+    <value>Erreur: Échec de la création du répertoire de configuration - créez manuellement un répertoire appelé "Configs" dans le même dossier que l'exécutable SoniFight.</value>
+  </data>
+  <data name="missingConfigDirString" xml:space="preserve">
+    <value>Erreur: le répertoire Configs n'existe pas dans le même dossier que l'exécutable SoniFight - cliquez sur OK pour créer un dossier.</value>
+  </data>
+  <data name="noConfigsFoundString" xml:space="preserve">
+    <value>Aucune config trouvée dans le répertoire Configs!</value>
+  </data>
+  <data name="statusRunningString" xml:space="preserve">
+    <value>Statut: en cours d'exécution. Config:</value>
+  </data>
+  <data name="sonificationStoppedString" xml:space="preserve">
+    <value>La sonification s'est arrêtée.</value>
+  </data>
+  <data name="gameConfigMainUILabelString" xml:space="preserve">
+    <value>GameConfig réglages généraux</value>
+  </data>
+  <data name="pollSleepLabelString" xml:space="preserve">
+    <value>Poll Sleep (Millisecondes)</value>
+  </data>
+  <data name="processNameLabelString" xml:space="preserve">
+    <value>Nom du processus</value>
+  </data>
+  <data name="clockMaxWarningString" xml:space="preserve">
+    <value>Attention: Clock max MS doit être un nombre entier compris entre 30 et 100.</value>
+  </data>
+  <data name="clockTickLabelString" xml:space="preserve">
+    <value>Horloge Tick (Millisecondes)</value>
+  </data>
+  <data name="clockTickWarningString" xml:space="preserve">
+    <value>Attention: La coche d'horloge doit être une valeur entière positive spécifiée en millisecondes.</value>
+  </data>
+  <data name="pollSleepWarningString" xml:space="preserve">
+    <value>Avertissement: La durée du sondage doit être une valeur entière positive spécifiée en millisecondes.</value>
+  </data>
+  <data name="descriptionLabelString" xml:space="preserve">
+    <value>La description</value>
+  </data>
+  <data name="deserialiseFailString1" xml:space="preserve">
+    <value>Erreur: Désérialisation de gameconfig de</value>
+  </data>
+  <data name="deserialiseFailString2" xml:space="preserve">
+    <value>a échoué. Abandonner.</value>
+  </data>
+  <data name="watchDescriptionString1" xml:space="preserve">
+    <value>Une montre est un emplacement de mémoire exprimé sous la forme d'une chaîne de pointeurs conduisant à l'adresse d'une valeur d'intérêt, et le type de données à lire à partir de cette adresse de mémoire.</value>
+  </data>
+  <data name="watchDescriptionString2" xml:space="preserve">
+    <value>Chaque montre doit avoir un identifiant de montre unique spécifié comme un nombre entier supérieur ou égal à zéro, et peut éventuellement avoir un nom et une description.</value>
+  </data>
+  <data name="watchDescriptionString3" xml:space="preserve">
+    <value>Seules les montres marquées comme actives seront utilisées - cela vous permet de désactiver une montre tout en conservant les données dans votre GameConfig pour une utilisation ultérieure, si vous le souhaitez.</value>
+  </data>
+  <data name="watchDescriptionString4" xml:space="preserve">
+    <value>Veuillez consulter la documentation de l'utilisateur pour plus de détails sur l'identification des chaînes de pointeurs à utiliser dans les montres.</value>
+  </data>
+  <data name="watchSettingsLabelString" xml:space="preserve">
+    <value>Watch Paramètres</value>
+  </data>
+  <data name="illegalPointerString1" xml:space="preserve">
+    <value>Valeur du pointeur illégal</value>
+  </data>
+  <data name="illegalPointerString2" xml:space="preserve">
+    <value>en watch avec id</value>
+  </data>
+  <data name="illegalPointerString3" xml:space="preserve">
+    <value>ne peut pas être converti en int. Ne préfixez pas les sauts de pointeurs avec 0x ou tel.</value>
+  </data>
+  <data name="pointerListLabelString" xml:space="preserve">
+    <value>Chaîne de pointeur (en hex avec des virgules)</value>
+  </data>
+  <data name="watchIdLabelString" xml:space="preserve">
+    <value>Watch ID (unique int zéro ou supérieur)</value>
+  </data>
+  <data name="watchIdWarningString" xml:space="preserve">
+    <value>Attention: L'identifiant de la montre doit être une valeur entière.</value>
+  </data>
+  <data name="watchNameLabelString" xml:space="preserve">
+    <value>Watch Nom</value>
+  </data>
+  <data name="activeLabelString" xml:space="preserve">
+    <value>Actif</value>
+  </data>
+  <data name="noneString" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
+  <data name="triggersUsingThisWatchLabelString" xml:space="preserve">
+    <value>Triggers Utilisant Cette Watch</value>
+  </data>
+  <data name="valueTypeLabelString" xml:space="preserve">
+    <value>Type de Valeur</value>
+  </data>
+  <data name="deleteWatchButtonString" xml:space="preserve">
+    <value>Effacer Watch</value>
+  </data>
+  <data name="triggerDescriptionLabelString" xml:space="preserve">
+    <value>Description du Trigger</value>
+  </data>
+  <data name="triggerDescriptionString1" xml:space="preserve">
+    <value>Un trigger est une condition qui peut activer un événement de sonification lorsque cette condition de déclenchement est remplie</value>
+  </data>
+  <data name="triggerDescriptionString2" xml:space="preserve">
+    <value>Les triggers utilisent des watches, identifiées par leurs valeurs d'ID numériques, pour lire les données et les comparer à certaines conditions.</value>
+  </data>
+  <data name="triggerDescriptionString3" xml:space="preserve">
+    <value>Chaque trigger doit avoir un ID de déclencheur unique spécifié comme un nombre entier supérieur ou égal à zéro et une condition de correspondance.</value>
+  </data>
+  <data name="triggerDescriptionString4" xml:space="preserve">
+    <value>Veuillez consulter la documentation utilisateur pour en savoir plus sur la configuration et l'utilisation triggers.</value>
+  </data>
+  <data name="triggerSettingsLabelString" xml:space="preserve">
+    <value>Paramètres de Trigger</value>
+  </data>
+  <data name="triggerIdLabelString" xml:space="preserve">
+    <value>Trigger ID (unique int zéro ou supérieur)</value>
+  </data>
+  <data name="triggerIdWarningString" xml:space="preserve">
+    <value>Attention: L'ID de déclencheur doit être une valeur entière.</value>
+  </data>
+  <data name="triggerNameLabelString" xml:space="preserve">
+    <value>Nom du Trigger</value>
+  </data>
+  <data name="triggerTypeLabelString" xml:space="preserve">
+    <value>Type de Trigger</value>
+  </data>
+  <data name="continuousTriggerIdLabelString" xml:space="preserve">
+    <value>ID de Trigger Continu</value>
+  </data>
+  <data name="dependentTriggerIdLabelString" xml:space="preserve">
+    <value>ID de Trigger Dépendant / Liste</value>
+  </data>
+  <data name="badTreeNodeTagWarningString" xml:space="preserve">
+    <value>Attention: noeud obtenu avec le tag non reconnu de:</value>
+  </data>
+  <data name="comparisonTypeLabelString" xml:space="preserve">
+    <value>Type de Comparaison</value>
+  </data>
+  <data name="sampleFilenameLabelString" xml:space="preserve">
+    <value>Nom de Fichier Audio (sans chemin)</value>
+  </data>
+  <data name="screenReaderTextLabelString" xml:space="preserve">
+    <value>Texte du Lecteur D'écran</value>
+  </data>
+  <data name="secondaryIdLabelContinuousTriggerIdString" xml:space="preserve">
+    <value>ID de Trigger Continu</value>
+  </data>
+  <data name="secondaryIdLabelDependentIdString" xml:space="preserve">
+    <value>ID Trigger Dépendant</value>
+  </data>
+  <data name="secondaryIdWarningString" xml:space="preserve">
+    <value>Avertissement: L'ID secondaire pour ce type de trigger doit être une valeur entière unique.</value>
+  </data>
+  <data name="selectSampleButtonString" xml:space="preserve">
+    <value>Sélectionnez un fichier audio</value>
+  </data>
+  <data name="triggerValueMaxRangeLabelString" xml:space="preserve">
+    <value>Valeur de Trigger / Plage Maximale</value>
+  </data>
+  <data name="useTolkLabelString" xml:space="preserve">
+    <value>Utilisation Tolk</value>
+  </data>
+  <data name="watch1LabelString" xml:space="preserve">
+    <value>Watch ID / Liste</value>
+  </data>
+  <data name="addTriggerLabelString" xml:space="preserve">
+    <value>Ajouter Trigger</value>
+  </data>
+  <data name="addWatchLabelString" xml:space="preserve">
+    <value>Ajouter Watch</value>
+  </data>
+  <data name="allowanceTypeLabelString" xml:space="preserve">
+    <value>Type d'allocation</value>
+  </data>
+  <data name="changeMeString" xml:space="preserve">
+    <value>CHANGE MOI</value>
+  </data>
+  <data name="deleteTriggerButtonString" xml:space="preserve">
+    <value>Effacer Trigger</value>
+  </data>
+  <data name="isClockLabelString" xml:space="preserve">
+    <value>Est-ce que Clock?</value>
+  </data>
+  <data name="newWatchString" xml:space="preserve">
+    <value>-NOUVEAU_WATCH</value>
+  </data>
+  <data name="sampleSpeedLabelString" xml:space="preserve">
+    <value>Vitesse de l'échantillon (plage: 0.1 à 4.0)</value>
+  </data>
+  <data name="sampleSpeedWarningString1" xml:space="preserve">
+    <value>Attention: la vitesse de l'échantillon doit être une valeur entre</value>
+  </data>
+  <data name="sampleSpeedWarningString2" xml:space="preserve">
+    <value> et </value>
+  </data>
+  <data name="sampleVolumeLabelString" xml:space="preserve">
+    <value>Volume d'échantillon (gamme: 0.0 à 1.0)</value>
+  </data>
+  <data name="sampleVolumeWarningString" xml:space="preserve">
+    <value>Attention: le volume de l'échantillon doit être compris entre 0.0 et 1.0.</value>
+  </data>
+  <data name="cloneWatchLabelString" xml:space="preserve">
+    <value>Cloner Watch</value>
+  </data>
+  <data name="cloneWatchWarningString" xml:space="preserve">
+    <value>Vous devez sélectionner une montre avant d'opter pour cloner cette montre.</value>
+  </data>
+  <data name="newTriggerString" xml:space="preserve">
+    <value>-NOUVEAU_TRIGGER</value>
+  </data>
+  <data name="triggerCloneWarningString" xml:space="preserve">
+    <value>Vous devez sélectionner un trigger avant d'opter pour cloner ce trigger.</value>
+  </data>
+  <data name="configDirCannotBeBlankString" xml:space="preserve">
+    <value>Erreur de validation: Le répertoire GameConfig ne peut pas être vide.</value>
+  </data>
+  <data name="foundProcessBaseAddressString" xml:space="preserve">
+    <value>Adresse de base de processus trouvée à l'adresse hexadécimale:</value>
+  </data>
+  <data name="processNotFoundWarningString1" xml:space="preserve">
+    <value>Erreur: Aucun processus appelé</value>
+  </data>
+  <data name="processNotFoundWarningString2" xml:space="preserve">
+    <value> a trouvé. Activation echouée.</value>
+  </data>
+  <data name="dynamicTypeComparisonExceptionString" xml:space="preserve">
+    <value>Exception de comparaison de type dynamique. L'erreur exacte est:</value>
+  </data>
+  <data name="speedString" xml:space="preserve">
+    <value>, La vitesse: </value>
+  </data>
+  <data name="suppressedGameStateChangeString" xml:space="preserve">
+    <value>Désactivé passant à l'état InGame car l'horloge est 0 ou </value>
+  </data>
+  <data name="tolkActiveString" xml:space="preserve">
+    <value>Tolk: Le pilote du lecteur d'écran actif est:</value>
+  </data>
+  <data name="tolkBrailleSupportedString" xml:space="preserve">
+    <value>Tolk: Ce pilote de lecteur d'écran prend en charge le braille.</value>
+  </data>
+  <data name="tolkNoScreenReaderFoundString" xml:space="preserve">
+    <value>Tolk: Aucun des lecteurs d'écran pris en charge ne fonctionne.</value>
+  </data>
+  <data name="tolkSpeechSupportedString" xml:space="preserve">
+    <value>Tolk: Ce pilote de lecteur d'écran prend en charge la parole.</value>
+  </data>
+  <data name="unrecognisedValueTypeWarningString" xml:space="preserve">
+    <value>ValueType non reconnu dans la méthode getDynamicValueFromType:</value>
+  </data>
+  <data name="deserialiseFailedString" xml:space="preserve">
+    <value>Impossible de désérialiser la configuration à partir du fichier XML:</value>
+  </data>
+  <data name="fileSavedSuccessfullyString" xml:space="preserve">
+    <value>GameConfig enregistré avec succès: </value>
+  </data>
+  <data name="fileSaveFailedString" xml:space="preserve">
+    <value>Impossible de sérialiser GameConfig en XML:</value>
+  </data>
+  <data name="keyNotFoundString" xml:space="preserve">
+    <value>Attention: Exemple de clé introuvable dans le dictionnaire:</value>
+  </data>
+  <data name="sampleNotFoundString" xml:space="preserve">
+    <value>Attention: échantillon non trouvé:</value>
+  </data>
+  <data name="isAnythingPlayingExceptionString" xml:space="preserve">
+    <value>Exception lors de la vérification de IsAnythingPlaying:</value>
+  </data>
+  <data name="normalSampleNullSoundWarningString" xml:space="preserve">
+    <value>Jouer un échantillon normal nous a donné un son nul pour:</value>
+  </data>
+  <data name="playingQueuedTriggerString" xml:space="preserve">
+    <value>Jouer trigger en file d'attente </value>
+  </data>
+  <data name="playingTriggerString" xml:space="preserve">
+    <value>En jouan Trigger </value>
+  </data>
+  <data name="queuingTriggerString" xml:space="preserve">
+    <value>Faire la Queue Trigger </value>
+  </data>
+  <data name="loadingContinuousSampleString" xml:space="preserve">
+    <value>Chargement de l'échantillon continu: </value>
+  </data>
+  <data name="loadingMenuSampleString" xml:space="preserve">
+    <value>Chargement du sample de menu: </value>
+  </data>
+  <data name="loadingNormalSampleString" xml:space="preserve">
+    <value>Chargement de l'échantillon normal: </value>
+  </data>
+  <data name="loadModifierSampleWarningString" xml:space="preserve">
+    <value>Avertissement: La tentative d'abandon de l'échantillon pour déclencher un modificateur et les déclencheurs de modification n'utilisent pas d'échantillons.</value>
+  </data>
+  <data name="nullSoundInQueuedSampleWarningString" xml:space="preserve">
+    <value>Jouer un échantillon normal mis en file d'attente nous a donné un son nul pour: </value>
+  </data>
+  <data name="skippingInactiveTriggerSampleString" xml:space="preserve">
+    <value>Ignorer la charge de l'échantillon pour le trigger inactif: </value>
+  </data>
+  <data name="skippingTolkSampleLoadString" xml:space="preserve">
+    <value>Interruption de la charge de l'échantillon pour le trigger tolk: </value>
+  </data>
+  <data name="triggerSampleStoppedString" xml:space="preserve">
+    <value>L'échantillon de trigger s'est arrêté: </value>
+  </data>
+  <data name="sayingTolkString" xml:space="preserve">
+    <value>Dire tolk string: </value>
+  </data>
+  <data name="watchValueParseFailString" xml:space="preserve">
+    <value>AVERTISSEMENT: Impossible d'obtenir l'ID de la montre en analysant le suivant dans int: </value>
+  </data>
+  <data name="screenReaderNotActiveWarningString" xml:space="preserve">
+    <value>Attention: sortie Tolk demandée mais pas de lecteur d'écran actif pour trigger avec ID:</value>
+  </data>
+  <data name="attemptingToConnectToProcessString" xml:space="preserve">
+    <value>Tentative de connexion au processus: </value>
+  </data>
+  <data name="continuousTriggerMasterVolumeString" xml:space="preserve">
+    <value>Volume maître de trigger continu</value>
+  </data>
+  <data name="continuousTriggerMasterVolumeWarningString" xml:space="preserve">
+    <value>Attention: le volume principal du trigger doit être compris entre 0.0 et 1.0</value>
+  </data>
+  <data name="normalTriggerMasterVolumeWarningString" xml:space="preserve">
+    <value>Avertissement: le volume maître du déclencheur normal doit être compris entre 0.0 et 1.0</value>
+  </data>
+  <data name="noString" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="yesString" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="usesTolkString" xml:space="preserve">
+    <value>Utilise Tolk</value>
+  </data>
+  <data name="formatExceptionString" xml:space="preserve">
+    <value>Avertissement: exception de format de chaîne de pointeur.</value>
+  </data>
 </root>

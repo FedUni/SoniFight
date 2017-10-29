@@ -8,23 +8,23 @@
       <group id="SONIFIGHT/PROPERTIES/RESOURCES.RESX" datatype="resx">
         <trans-unit id="statusStoppedString" translate="yes" xml:space="preserve">
           <source>Status: Stopped</source>
-          <target state="new">Status: Stopped</target>
+          <target state="translated">Statut: Arrêté</target>
         </trans-unit>
         <trans-unit id="configDirCreationFailedString" translate="yes" xml:space="preserve">
           <source>Error: Configs directory creation failed - please manually create a directory called \"Configs\" in the same folder as the SoniFight executable.</source>
-          <target state="new">Error: Configs directory creation failed - please manually create a directory called \"Configs\" in the same folder as the SoniFight executable.</target>
+          <target state="translated">Erreur: Échec de la création du répertoire de configuration - créez manuellement un répertoire appelé "Configs" dans le même dossier que l'exécutable SoniFight.</target>
         </trans-unit>
         <trans-unit id="missingConfigDirString" translate="yes" xml:space="preserve">
           <source>Error: Configs directory does not exist in same folder as SoniFight executable - click OK to create folder.</source>
-          <target state="new">Error: Configs directory does not exist in same folder as SoniFight executable - click OK to create folder.</target>
+          <target state="translated">Erreur: le répertoire Configs n'existe pas dans le même dossier que l'exécutable SoniFight - cliquez sur OK pour créer un dossier.</target>
         </trans-unit>
         <trans-unit id="noConfigsFoundString" translate="yes" xml:space="preserve">
           <source>No configs found in Configs directory!</source>
-          <target state="new">No configs found in Configs directory!</target>
+          <target state="translated">Aucune config trouvée dans le répertoire Configs!</target>
         </trans-unit>
         <trans-unit id="statusRunningString" translate="yes" xml:space="preserve">
           <source>Status: Running. Config: </source>
-          <target state="new">Status: Running. Config: </target>
+          <target state="translated">Statut: en cours d'exécution. Config:</target>
         </trans-unit>
         <trans-unit id="gameConfigString" translate="yes" xml:space="preserve">
           <source>Game Config</source>
@@ -36,7 +36,7 @@
         </trans-unit>
         <trans-unit id="sonificationStoppedString" translate="yes" xml:space="preserve">
           <source>Sonification stopped.</source>
-          <target state="new">Sonification stopped.</target>
+          <target state="translated">La sonification s'est arrêtée.</target>
         </trans-unit>
         <trans-unit id="triggersString" translate="yes" xml:space="preserve">
           <source>Triggers</source>
@@ -56,15 +56,15 @@
         </trans-unit>
         <trans-unit id="gameConfigMainUILabelString" translate="yes" xml:space="preserve">
           <source>GameConfig General Settings</source>
-          <target state="new">GameConfig General Settings</target>
+          <target state="translated">GameConfig réglages généraux</target>
         </trans-unit>
         <trans-unit id="pollSleepLabelString" translate="yes" xml:space="preserve">
           <source>Poll Sleep (Milliseconds)</source>
-          <target state="new">Poll Sleep (Milliseconds)</target>
+          <target state="translated">Poll Sleep (Millisecondes)</target>
         </trans-unit>
         <trans-unit id="processNameLabelString" translate="yes" xml:space="preserve">
           <source>Process Name</source>
-          <target state="new">Process Name</target>
+          <target state="translated">Nom du processus</target>
         </trans-unit>
         <trans-unit id="clockMaxLabelString" translate="yes" xml:space="preserve">
           <source>Clock Max</source>
@@ -72,151 +72,151 @@
         </trans-unit>
         <trans-unit id="clockMaxWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Clock max MS must be an integer between 30 and 100.</source>
-          <target state="new">Warning: Clock max MS must be an integer between 30 and 100.</target>
+          <target state="translated">Attention: Clock max MS doit être un nombre entier compris entre 30 et 100.</target>
         </trans-unit>
         <trans-unit id="clockTickLabelString" translate="yes" xml:space="preserve">
           <source>Clock Tick (Milliseconds)</source>
-          <target state="new">Clock Tick (Milliseconds)</target>
+          <target state="translated">Horloge Tick (Millisecondes)</target>
         </trans-unit>
         <trans-unit id="clockTickWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Clock tick must be a positive integer value specified in milliseconds.</source>
-          <target state="new">Warning: Clock tick must be a positive integer value specified in milliseconds.</target>
+          <target state="translated">Attention: La coche d'horloge doit être une valeur entière positive spécifiée en millisecondes.</target>
         </trans-unit>
         <trans-unit id="pollSleepWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Poll sleep must be a positive integer value specified in milliseconds.</source>
-          <target state="new">Warning: Poll sleep must be a positive integer value specified in milliseconds.</target>
+          <target state="translated">Avertissement: La durée du sondage doit être une valeur entière positive spécifiée en millisecondes.</target>
         </trans-unit>
         <trans-unit id="descriptionLabelString" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="new">Description</target>
+          <target state="translated">La description</target>
         </trans-unit>
         <trans-unit id="deserialiseFailString1" translate="yes" xml:space="preserve">
           <source>Error: Deserialising gameconfig from </source>
-          <target state="new">Error: Deserialising gameconfig from </target>
+          <target state="translated">Erreur: Désérialisation de gameconfig de</target>
         </trans-unit>
         <trans-unit id="deserialiseFailString2" translate="yes" xml:space="preserve">
           <source> has failed. Aborting.</source>
-          <target state="new"> has failed. Aborting.</target>
+          <target state="translated">a échoué. Abandonner.</target>
         </trans-unit>
-        <trans-unit id="watchDescriptionLabelString" translate="yes" xml:space="preserve">
+        <trans-unit id="watchDescriptionLabelString" translate="no" xml:space="preserve">
           <source>Watch Description</source>
-          <target state="new">Watch Description</target>
+          <target state="final">Watch Description</target>
         </trans-unit>
         <trans-unit id="watchDescriptionString1" translate="yes" xml:space="preserve">
           <source>A watch is a memory location expressed as a pointer chain leading to the address of a value of interest, and the type of data to read from that memory address.</source>
-          <target state="new">A watch is a memory location expressed as a pointer chain leading to the address of a value of interest, and the type of data to read from that memory address.</target>
+          <target state="translated">Une montre est un emplacement de mémoire exprimé sous la forme d'une chaîne de pointeurs conduisant à l'adresse d'une valeur d'intérêt, et le type de données à lire à partir de cette adresse de mémoire.</target>
         </trans-unit>
         <trans-unit id="watchDescriptionString2" translate="yes" xml:space="preserve">
           <source>Each watch must have a unique watch ID specified as an integer greater than or equal to zero, and may optionally have a name and description.</source>
-          <target state="new">Each watch must have a unique watch ID specified as an integer greater than or equal to zero, and may optionally have a name and description.</target>
+          <target state="translated">Chaque montre doit avoir un identifiant de montre unique spécifié comme un nombre entier supérieur ou égal à zéro, et peut éventuellement avoir un nom et une description.</target>
         </trans-unit>
         <trans-unit id="watchDescriptionString3" translate="yes" xml:space="preserve">
           <source>Only watches that are marked as active will be used - this allows you to disable a watch while still keeping the data around in your GameConfig for later use, if you wish.</source>
-          <target state="new">Only watches that are marked as active will be used - this allows you to disable a watch while still keeping the data around in your GameConfig for later use, if you wish.</target>
+          <target state="translated">Seules les montres marquées comme actives seront utilisées - cela vous permet de désactiver une montre tout en conservant les données dans votre GameConfig pour une utilisation ultérieure, si vous le souhaitez.</target>
         </trans-unit>
         <trans-unit id="watchDescriptionString4" translate="yes" xml:space="preserve">
           <source>Please consult the user documentation for further details on identifying pointer chains for use in watches.</source>
-          <target state="new">Please consult the user documentation for further details on identifying pointer chains for use in watches.</target>
+          <target state="translated">Veuillez consulter la documentation de l'utilisateur pour plus de détails sur l'identification des chaînes de pointeurs à utiliser dans les montres.</target>
         </trans-unit>
         <trans-unit id="watchSettingsLabelString" translate="yes" xml:space="preserve">
           <source>Watch Settings</source>
-          <target state="new">Watch Settings</target>
+          <target state="translated">Watch Paramètres</target>
         </trans-unit>
         <trans-unit id="illegalPointerString1" translate="yes" xml:space="preserve">
           <source>Illegal Pointer Value </source>
-          <target state="new">Illegal Pointer Value </target>
+          <target state="translated">Valeur du pointeur illégal</target>
         </trans-unit>
         <trans-unit id="illegalPointerString2" translate="yes" xml:space="preserve">
           <source> in watch with id </source>
-          <target state="new"> in watch with id </target>
+          <target state="translated">en watch avec id</target>
         </trans-unit>
         <trans-unit id="illegalPointerString3" translate="yes" xml:space="preserve">
           <source> cannot be cast to int. Do not prefix pointer hops with 0x or such.</source>
-          <target state="new"> cannot be cast to int. Do not prefix pointer hops with 0x or such.</target>
+          <target state="translated">ne peut pas être converti en int. Ne préfixez pas les sauts de pointeurs avec 0x ou tel.</target>
         </trans-unit>
         <trans-unit id="pointerListLabelString" translate="yes" xml:space="preserve">
           <source>Pointer Chain (in hex with commas)</source>
-          <target state="new">Pointer Chain (in hex with commas)</target>
+          <target state="translated">Chaîne de pointeur (en hex avec des virgules)</target>
         </trans-unit>
         <trans-unit id="watchIdLabelString" translate="yes" xml:space="preserve">
           <source>Watch ID (unique int zero or greater)</source>
-          <target state="new">Watch ID (unique int zero or greater)</target>
+          <target state="translated">Watch ID (unique int zéro ou supérieur)</target>
         </trans-unit>
         <trans-unit id="watchIdWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Watch ID must be an integer value.</source>
-          <target state="new">Warning: Watch ID must be an integer value.</target>
+          <target state="translated">Attention: L'identifiant de la montre doit être une valeur entière.</target>
         </trans-unit>
         <trans-unit id="watchNameLabelString" translate="yes" xml:space="preserve">
           <source>Watch Name</source>
-          <target state="new">Watch Name</target>
+          <target state="translated">Watch Nom</target>
         </trans-unit>
         <trans-unit id="activeLabelString" translate="yes" xml:space="preserve">
           <source>Active</source>
-          <target state="new">Active</target>
+          <target state="translated">Actif</target>
         </trans-unit>
         <trans-unit id="noneString" translate="yes" xml:space="preserve">
           <source>None</source>
-          <target state="new">None</target>
+          <target state="translated">Aucun</target>
         </trans-unit>
         <trans-unit id="triggersUsingThisWatchLabelString" translate="yes" xml:space="preserve">
           <source>Triggers Using This Watch</source>
-          <target state="new">Triggers Using This Watch</target>
+          <target state="translated">Triggers Utilisant Cette Watch</target>
         </trans-unit>
         <trans-unit id="valueTypeLabelString" translate="yes" xml:space="preserve">
           <source>Value Type</source>
-          <target state="new">Value Type</target>
+          <target state="translated">Type de Valeur</target>
         </trans-unit>
         <trans-unit id="deleteWatchButtonString" translate="yes" xml:space="preserve">
           <source>Delete Watch</source>
-          <target state="new">Delete Watch</target>
+          <target state="translated">Effacer Watch</target>
         </trans-unit>
         <trans-unit id="triggerDescriptionLabelString" translate="yes" xml:space="preserve">
           <source>Trigger Description</source>
-          <target state="new">Trigger Description</target>
+          <target state="translated">Description du Trigger</target>
         </trans-unit>
         <trans-unit id="triggerDescriptionString1" translate="yes" xml:space="preserve">
           <source>A trigger is a condition which can activate a sonification event when that trigger condition is met.</source>
-          <target state="new">A trigger is a condition which can activate a sonification event when that trigger condition is met.</target>
+          <target state="translated">Un trigger est une condition qui peut activer un événement de sonification lorsque cette condition de déclenchement est remplie</target>
         </trans-unit>
         <trans-unit id="triggerDescriptionString2" translate="yes" xml:space="preserve">
           <source>Triggers use watches, as identified by their numeric ID values, to read data and compare that data to certain conditions.</source>
-          <target state="new">Triggers use watches, as identified by their numeric ID values, to read data and compare that data to certain conditions.</target>
+          <target state="translated">Les triggers utilisent des watches, identifiées par leurs valeurs d'ID numériques, pour lire les données et les comparer à certaines conditions.</target>
         </trans-unit>
         <trans-unit id="triggerDescriptionString3" translate="yes" xml:space="preserve">
           <source>Each trigger must have a unique trigger ID specified as an integer greater than or equal to zero, and a condition to match against.</source>
-          <target state="new">Each trigger must have a unique trigger ID specified as an integer greater than or equal to zero, and a condition to match against.</target>
+          <target state="translated">Chaque trigger doit avoir un ID de déclencheur unique spécifié comme un nombre entier supérieur ou égal à zéro et une condition de correspondance.</target>
         </trans-unit>
         <trans-unit id="triggerDescriptionString4" translate="yes" xml:space="preserve">
           <source>Please consult the user documentation to learn more about how to set and use triggers.</source>
-          <target state="new">Please consult the user documentation to learn more about how to set and use triggers.</target>
+          <target state="translated">Veuillez consulter la documentation utilisateur pour en savoir plus sur la configuration et l'utilisation triggers.</target>
         </trans-unit>
         <trans-unit id="triggerSettingsLabelString" translate="yes" xml:space="preserve">
           <source>Trigger Settings</source>
-          <target state="new">Trigger Settings</target>
+          <target state="translated">Paramètres de Trigger</target>
         </trans-unit>
         <trans-unit id="triggerIdLabelString" translate="yes" xml:space="preserve">
           <source>Trigger ID (unique int zero or greater)</source>
-          <target state="new">Trigger ID (unique int zero or greater)</target>
+          <target state="translated">Trigger ID (unique int zéro ou supérieur)</target>
         </trans-unit>
         <trans-unit id="triggerIdWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Trigger ID must be an integer value.</source>
-          <target state="new">Warning: Trigger ID must be an integer value.</target>
+          <target state="translated">Attention: L'ID de déclencheur doit être une valeur entière.</target>
         </trans-unit>
         <trans-unit id="triggerNameLabelString" translate="yes" xml:space="preserve">
           <source>Trigger Name</source>
-          <target state="new">Trigger Name</target>
+          <target state="translated">Nom du Trigger</target>
         </trans-unit>
         <trans-unit id="triggerTypeLabelString" translate="yes" xml:space="preserve">
           <source>Trigger Type</source>
-          <target state="new">Trigger Type</target>
+          <target state="translated">Type de Trigger</target>
         </trans-unit>
         <trans-unit id="continuousTriggerIdLabelString" translate="yes" xml:space="preserve">
           <source>Continuous Trigger ID</source>
-          <target state="new">Continuous Trigger ID</target>
+          <target state="translated">ID de Trigger Continu</target>
         </trans-unit>
         <trans-unit id="dependentTriggerIdLabelString" translate="yes" xml:space="preserve">
           <source>Dependent Trigger ID / List</source>
-          <target state="new">Dependent Trigger ID / List</target>
+          <target state="translated">ID de Trigger Dépendant / Liste</target>
         </trans-unit>
         <trans-unit id="watch2IdLabelString" translate="yes" xml:space="preserve">
           <source>Watch 2 ID</source>
@@ -224,27 +224,27 @@
         </trans-unit>
         <trans-unit id="badTreeNodeTagWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Got node with unrecognised Tag of: </source>
-          <target state="new">Warning: Got node with unrecognised Tag of: </target>
+          <target state="translated">Attention: noeud obtenu avec le tag non reconnu de:</target>
         </trans-unit>
         <trans-unit id="comparisonTypeLabelString" translate="yes" xml:space="preserve">
           <source>Comparison Type</source>
-          <target state="new">Comparison Type</target>
+          <target state="translated">Type de Comparaison</target>
         </trans-unit>
         <trans-unit id="sampleFilenameLabelString" translate="yes" xml:space="preserve">
           <source>Sample Filename (without path)</source>
-          <target state="new">Sample Filename (without path)</target>
+          <target state="translated">Nom de Fichier Audio (sans chemin)</target>
         </trans-unit>
         <trans-unit id="screenReaderTextLabelString" translate="yes" xml:space="preserve">
           <source>Screen Reader Text</source>
-          <target state="new">Screen Reader Text</target>
+          <target state="translated">Texte du Lecteur D'écran</target>
         </trans-unit>
         <trans-unit id="secondaryIdLabelContinuousTriggerIdString" translate="yes" xml:space="preserve">
           <source>Continuous Trigger ID</source>
-          <target state="new">Continuous Trigger ID</target>
+          <target state="translated">ID de Trigger Continu</target>
         </trans-unit>
         <trans-unit id="secondaryIdLabelDependentIdString" translate="yes" xml:space="preserve">
           <source>Dependent Trigger ID</source>
-          <target state="new">Dependent Trigger ID</target>
+          <target state="translated">ID Trigger Dépendant</target>
         </trans-unit>
         <trans-unit id="secondaryIdLabelWatch2IdString" translate="yes" xml:space="preserve">
           <source>Watch 2 ID</source>
@@ -252,119 +252,119 @@
         </trans-unit>
         <trans-unit id="secondaryIdWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Secondary ID for this trigger type must be a single integer value.</source>
-          <target state="new">Warning: Secondary ID for this trigger type must be a single integer value.</target>
+          <target state="translated">Avertissement: L'ID secondaire pour ce type de trigger doit être une valeur entière unique.</target>
         </trans-unit>
         <trans-unit id="selectSampleButtonString" translate="yes" xml:space="preserve">
           <source>Select Sample File</source>
-          <target state="new">Select Sample File</target>
+          <target state="translated">Sélectionnez un fichier audio</target>
         </trans-unit>
         <trans-unit id="triggerValueMaxRangeLabelString" translate="yes" xml:space="preserve">
           <source>Trigger Value / Max Range</source>
-          <target state="new">Trigger Value / Max Range</target>
+          <target state="translated">Valeur de Trigger / Plage Maximale</target>
         </trans-unit>
         <trans-unit id="useTolkLabelString" translate="yes" xml:space="preserve">
           <source>Use Tolk</source>
-          <target state="new">Use Tolk</target>
+          <target state="translated">Utilisation Tolk</target>
         </trans-unit>
         <trans-unit id="watch1LabelString" translate="yes" xml:space="preserve">
           <source>Watch ID / List</source>
-          <target state="new">Watch ID / List</target>
+          <target state="translated">Watch ID / Liste</target>
         </trans-unit>
         <trans-unit id="addTriggerLabelString" translate="yes" xml:space="preserve">
           <source>Add Trigger</source>
-          <target state="new">Add Trigger</target>
+          <target state="translated">Ajouter Trigger</target>
         </trans-unit>
         <trans-unit id="addWatchLabelString" translate="yes" xml:space="preserve">
           <source>Add Watch</source>
-          <target state="new">Add Watch</target>
+          <target state="translated">Ajouter Watch</target>
         </trans-unit>
         <trans-unit id="allowanceTypeLabelString" translate="yes" xml:space="preserve">
           <source>Allowance Type</source>
-          <target state="new">Allowance Type</target>
+          <target state="translated">Type d'allocation</target>
         </trans-unit>
         <trans-unit id="changeMeString" translate="yes" xml:space="preserve">
           <source>CHANGE ME</source>
-          <target state="new">CHANGE ME</target>
+          <target state="translated">CHANGE MOI</target>
         </trans-unit>
         <trans-unit id="deleteTriggerButtonString" translate="yes" xml:space="preserve">
           <source>Delete Trigger</source>
-          <target state="new">Delete Trigger</target>
+          <target state="translated">Effacer Trigger</target>
         </trans-unit>
         <trans-unit id="isClockLabelString" translate="yes" xml:space="preserve">
           <source>Is Clock?</source>
-          <target state="new">Is Clock?</target>
+          <target state="translated">Est-ce que Clock?</target>
         </trans-unit>
         <trans-unit id="newWatchString" translate="yes" xml:space="preserve">
           <source>-NEW_WATCH</source>
-          <target state="new">-NEW_WATCH</target>
+          <target state="translated">-NOUVEAU_WATCH</target>
         </trans-unit>
         <trans-unit id="sampleSpeedLabelString" translate="yes" xml:space="preserve">
           <source>Sample Speed (Range: 0.1 to 4.0)</source>
-          <target state="new">Sample Speed (Range: 0.1 to 4.0)</target>
+          <target state="translated">Vitesse de l'échantillon (plage: 0.1 à 4.0)</target>
         </trans-unit>
         <trans-unit id="sampleSpeedWarningString1" translate="yes" xml:space="preserve">
           <source>Warning: Sample speed must be a value between </source>
-          <target state="new">Warning: Sample speed must be a value between </target>
+          <target state="translated">Attention: la vitesse de l'échantillon doit être une valeur entre</target>
         </trans-unit>
         <trans-unit id="sampleSpeedWarningString2" translate="yes" xml:space="preserve">
           <source> and </source>
-          <target state="new"> and </target>
+          <target state="translated"> et </target>
         </trans-unit>
-        <trans-unit id="sampleSpeedWarningString3" translate="yes" xml:space="preserve">
+        <trans-unit id="sampleSpeedWarningString3" translate="no" xml:space="preserve">
           <source>.</source>
-          <target state="new">.</target>
+          <target state="final">.</target>
         </trans-unit>
         <trans-unit id="sampleVolumeLabelString" translate="yes" xml:space="preserve">
           <source>Sample Volume (Range: 0.0 to 1.0)</source>
-          <target state="new">Sample Volume (Range: 0.0 to 1.0)</target>
+          <target state="translated">Volume d'échantillon (gamme: 0.0 à 1.0)</target>
         </trans-unit>
         <trans-unit id="sampleVolumeWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Sample volume must be a value between 0.0 and 1.0.</source>
-          <target state="new">Warning: Sample volume must be a value between 0.0 and 1.0.</target>
+          <target state="translated">Attention: le volume de l'échantillon doit être compris entre 0.0 et 1.0.</target>
         </trans-unit>
-        <trans-unit id="watchString" translate="yes" xml:space="preserve">
+        <trans-unit id="watchString" translate="no" xml:space="preserve">
           <source>Watch</source>
-          <target state="new">Watch</target>
+          <target state="final">Watch</target>
         </trans-unit>
-        <trans-unit id="triggerString" translate="yes" xml:space="preserve">
+        <trans-unit id="triggerString" translate="no" xml:space="preserve">
           <source>Trigger</source>
-          <target state="new">Trigger</target>
+          <target state="final">Trigger</target>
         </trans-unit>
         <trans-unit id="cloneWatchLabelString" translate="yes" xml:space="preserve">
           <source>Clone Watch</source>
-          <target state="new">Clone Watch</target>
+          <target state="translated">Cloner Watch</target>
         </trans-unit>
         <trans-unit id="cloneWatchWarningString" translate="yes" xml:space="preserve">
           <source>You must select a watch before opting to clone that watch.</source>
-          <target state="new">You must select a watch before opting to clone that watch.</target>
+          <target state="translated">Vous devez sélectionner une montre avant d'opter pour cloner cette montre.</target>
         </trans-unit>
         <trans-unit id="newTriggerString" translate="yes" xml:space="preserve">
           <source>-NEW_TRIGGER</source>
-          <target state="new">-NEW_TRIGGER</target>
+          <target state="translated">-NOUVEAU_TRIGGER</target>
         </trans-unit>
         <trans-unit id="triggerCloneWarningString" translate="yes" xml:space="preserve">
           <source>You must select a trigger before opting to clone that trigger.</source>
-          <target state="new">You must select a trigger before opting to clone that trigger.</target>
+          <target state="translated">Vous devez sélectionner un trigger avant d'opter pour cloner ce trigger.</target>
         </trans-unit>
-        <trans-unit id="cloneTriggerLabelString" translate="yes" xml:space="preserve">
+        <trans-unit id="cloneTriggerLabelString" translate="no" xml:space="preserve">
           <source>Clone Trigger</source>
-          <target state="new">Clone Trigger</target>
+          <target state="final">Clone Trigger</target>
         </trans-unit>
         <trans-unit id="configDirCannotBeBlankString" translate="yes" xml:space="preserve">
           <source>Validation Error: GameConfig directory cannot be blank.</source>
-          <target state="new">Validation Error: GameConfig directory cannot be blank.</target>
+          <target state="translated">Erreur de validation: Le répertoire GameConfig ne peut pas être vide.</target>
         </trans-unit>
         <trans-unit id="foundProcessBaseAddressString" translate="yes" xml:space="preserve">
           <source>Found process base address at hex address: </source>
-          <target state="new">Found process base address at hex address: </target>
+          <target state="translated">Adresse de base de processus trouvée à l'adresse hexadécimale:</target>
         </trans-unit>
         <trans-unit id="processNotFoundWarningString1" translate="yes" xml:space="preserve">
           <source>Error: No process called </source>
-          <target state="new">Error: No process called </target>
+          <target state="translated">Erreur: Aucun processus appelé</target>
         </trans-unit>
         <trans-unit id="processNotFoundWarningString2" translate="yes" xml:space="preserve">
           <source> found. Activation failed.</source>
-          <target state="new"> found. Activation failed.</target>
+          <target state="translated"> a trouvé. Activation echouée.</target>
         </trans-unit>
         <trans-unit id="booleanString" translate="yes" xml:space="preserve">
           <source>Boolean</source>
@@ -468,7 +468,7 @@
         </trans-unit>
         <trans-unit id="dynamicTypeComparisonExceptionString" translate="yes" xml:space="preserve">
           <source>Dynamic type comparison exception. Exact error is: </source>
-          <target state="new">Dynamic type comparison exception. Exact error is: </target>
+          <target state="translated">Exception de comparaison de type dynamique. L'erreur exacte est:</target>
         </trans-unit>
         <trans-unit id="inGameSampleString" translate="yes" xml:space="preserve">
           <source>InGame Sample: </source>
@@ -476,27 +476,27 @@
         </trans-unit>
         <trans-unit id="speedString" translate="yes" xml:space="preserve">
           <source>, Speed: </source>
-          <target state="new">, Speed: </target>
+          <target state="translated">, La vitesse: </target>
         </trans-unit>
         <trans-unit id="suppressedGameStateChangeString" translate="yes" xml:space="preserve">
           <source>Suppressed moving to InGame state because clock is 0 or </source>
-          <target state="new">Suppressed moving to InGame state because clock is 0 or </target>
+          <target state="translated">Désactivé passant à l'état InGame car l'horloge est 0 ou </target>
         </trans-unit>
         <trans-unit id="tolkActiveString" translate="yes" xml:space="preserve">
           <source>Tolk: The active screen reader driver is: </source>
-          <target state="new">Tolk: The active screen reader driver is: </target>
+          <target state="translated">Tolk: Le pilote du lecteur d'écran actif est:</target>
         </trans-unit>
         <trans-unit id="tolkBrailleSupportedString" translate="yes" xml:space="preserve">
           <source>Tolk: This screen reader driver supports braille.</source>
-          <target state="new">Tolk: This screen reader driver supports braille.</target>
+          <target state="translated">Tolk: Ce pilote de lecteur d'écran prend en charge le braille.</target>
         </trans-unit>
         <trans-unit id="tolkNoScreenReaderFoundString" translate="yes" xml:space="preserve">
           <source>Tolk: None of the supported screen readers are running.</source>
-          <target state="new">Tolk: None of the supported screen readers are running.</target>
+          <target state="translated">Tolk: Aucun des lecteurs d'écran pris en charge ne fonctionne.</target>
         </trans-unit>
         <trans-unit id="tolkSpeechSupportedString" translate="yes" xml:space="preserve">
           <source>Tolk: This screen reader driver supports speech.</source>
-          <target state="new">Tolk: This screen reader driver supports speech.</target>
+          <target state="translated">Tolk: Ce pilote de lecteur d'écran prend en charge la parole.</target>
         </trans-unit>
         <trans-unit id="triggerIdString" translate="yes" xml:space="preserve">
           <source>, Trigger ID: </source>
@@ -528,103 +528,103 @@
         </trans-unit>
         <trans-unit id="unrecognisedValueTypeWarningString" translate="yes" xml:space="preserve">
           <source>Unrecognised ValueType in getDynamicValueFromType method: </source>
-          <target state="new">Unrecognised ValueType in getDynamicValueFromType method: </target>
+          <target state="translated">ValueType non reconnu dans la méthode getDynamicValueFromType:</target>
         </trans-unit>
         <trans-unit id="deserialiseFailedString" translate="yes" xml:space="preserve">
           <source>Could not deserialize config from XML file: </source>
-          <target state="new">Could not deserialize config from XML file: </target>
+          <target state="translated">Impossible de désérialiser la configuration à partir du fichier XML:</target>
         </trans-unit>
         <trans-unit id="fileSavedSuccessfullyString" translate="yes" xml:space="preserve">
           <source>GameConfig saved successfully: </source>
-          <target state="new">GameConfig saved successfully: </target>
+          <target state="translated">GameConfig enregistré avec succès: </target>
         </trans-unit>
         <trans-unit id="fileSaveFailedString" translate="yes" xml:space="preserve">
           <source>Could not serialize GameConfig to XML: </source>
-          <target state="new">Could not serialize GameConfig to XML: </target>
+          <target state="translated">Impossible de sérialiser GameConfig en XML:</target>
         </trans-unit>
         <trans-unit id="keyNotFoundString" translate="yes" xml:space="preserve">
           <source>Warning: Sample key not found in dictionary: </source>
-          <target state="new">Warning: Sample key not found in dictionary: </target>
+          <target state="translated">Attention: Exemple de clé introuvable dans le dictionnaire:</target>
         </trans-unit>
         <trans-unit id="sampleNotFoundString" translate="yes" xml:space="preserve">
           <source>Warning: Sample not found: </source>
-          <target state="new">Warning: Sample not found: </target>
+          <target state="translated">Attention: échantillon non trouvé:</target>
         </trans-unit>
         <trans-unit id="isAnythingPlayingExceptionString" translate="yes" xml:space="preserve">
           <source>Exception during IsAnythingPlaying check: </source>
-          <target state="new">Exception during IsAnythingPlaying check: </target>
+          <target state="translated">Exception lors de la vérification de IsAnythingPlaying:</target>
         </trans-unit>
         <trans-unit id="normalSampleNullSoundWarningString" translate="yes" xml:space="preserve">
           <source>Playing normal sample gave us a null sound for: </source>
-          <target state="new">Playing normal sample gave us a null sound for: </target>
+          <target state="translated">Jouer un échantillon normal nous a donné un son nul pour:</target>
         </trans-unit>
         <trans-unit id="playingQueuedTriggerString" translate="yes" xml:space="preserve">
           <source>Playing Queued Trigger </source>
-          <target state="new">Playing Queued Trigger </target>
+          <target state="translated">Jouer trigger en file d'attente </target>
         </trans-unit>
         <trans-unit id="playingTriggerString" translate="yes" xml:space="preserve">
           <source>Playing Trigger </source>
-          <target state="new">Playing Trigger </target>
+          <target state="translated">En jouan Trigger </target>
         </trans-unit>
         <trans-unit id="queuingTriggerString" translate="yes" xml:space="preserve">
           <source>Queuing Trigger </source>
-          <target state="new">Queuing Trigger </target>
+          <target state="translated">Faire la Queue Trigger </target>
         </trans-unit>
         <trans-unit id="loadingContinuousSampleString" translate="yes" xml:space="preserve">
           <source>Loading continuous sample: </source>
-          <target state="new">Loading continuous sample: </target>
+          <target state="translated">Chargement de l'échantillon continu: </target>
         </trans-unit>
         <trans-unit id="loadingMenuSampleString" translate="yes" xml:space="preserve">
           <source>Loading menu sample: </source>
-          <target state="new">Loading menu sample: </target>
+          <target state="translated">Chargement du sample de menu: </target>
         </trans-unit>
         <trans-unit id="loadingNormalSampleString" translate="yes" xml:space="preserve">
           <source>Loading normal sample: </source>
-          <target state="new">Loading normal sample: </target>
+          <target state="translated">Chargement de l'échantillon normal: </target>
         </trans-unit>
         <trans-unit id="loadModifierSampleWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Aborting attempt to load sample for modifier trigger, and modifier triggers don't use samples.</source>
-          <target state="new">Warning: Aborting attempt to load sample for modifier trigger, and modifier triggers don't use samples.</target>
+          <target state="translated">Avertissement: La tentative d'abandon de l'échantillon pour déclencher un modificateur et les déclencheurs de modification n'utilisent pas d'échantillons.</target>
         </trans-unit>
         <trans-unit id="nullSoundInQueuedSampleWarningString" translate="yes" xml:space="preserve">
           <source>Playing queued normal sample gave us a null sound for: </source>
-          <target state="new">Playing queued normal sample gave us a null sound for: </target>
+          <target state="translated">Jouer un échantillon normal mis en file d'attente nous a donné un son nul pour: </target>
         </trans-unit>
         <trans-unit id="skippingInactiveTriggerSampleString" translate="yes" xml:space="preserve">
           <source>Skipping sample load for inactive trigger: </source>
-          <target state="new">Skipping sample load for inactive trigger: </target>
+          <target state="translated">Ignorer la charge de l'échantillon pour le trigger inactif: </target>
         </trans-unit>
         <trans-unit id="skippingTolkSampleLoadString" translate="yes" xml:space="preserve">
           <source>Skipping sample load for tolk trigger: </source>
-          <target state="new">Skipping sample load for tolk trigger: </target>
+          <target state="translated">Interruption de la charge de l'échantillon pour le trigger tolk: </target>
         </trans-unit>
         <trans-unit id="triggerSampleStoppedString" translate="yes" xml:space="preserve">
           <source>Trigger sample stopped: </source>
-          <target state="new">Trigger sample stopped: </target>
+          <target state="translated">L'échantillon de trigger s'est arrêté: </target>
         </trans-unit>
         <trans-unit id="sayingTolkString" translate="yes" xml:space="preserve">
           <source>Saying tolk string: </source>
-          <target state="new">Saying tolk string: </target>
+          <target state="translated">Dire tolk string: </target>
         </trans-unit>
         <trans-unit id="watchValueParseFailString" translate="yes" xml:space="preserve">
           <source>WARNING: Could not get watch ID from parsing the following to int: </source>
-          <target state="new">WARNING: Could not get watch ID from parsing the following to int: </target>
+          <target state="translated">AVERTISSEMENT: Impossible d'obtenir l'ID de la montre en analysant le suivant dans int: </target>
         </trans-unit>
         <trans-unit id="screenReaderNotActiveWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Tolk output requested but no active screen reader for trigger with ID: </source>
-          <target state="new">Warning: Tolk output requested but no active screen reader for trigger with ID: </target>
+          <target state="translated">Attention: sortie Tolk demandée mais pas de lecteur d'écran actif pour trigger avec ID:</target>
         </trans-unit>
         <trans-unit id="attemptingToConnectToProcessString" translate="yes" xml:space="preserve">
           <source>Attempting to connect to process: </source>
-          <target state="new">Attempting to connect to process: </target>
+          <target state="translated">Tentative de connexion au processus: </target>
         </trans-unit>
         <trans-unit id="continuousTriggerMasterVolumeString" translate="yes" xml:space="preserve">
           <source>Continuous Trigger Master Volume</source>
-          <target state="new">Continuous Trigger Master Volume</target>
+          <target state="translated">Volume maître de trigger continu</target>
         </trans-unit>
         <trans-unit id="continuousTriggerMasterVolumeWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Continuous trigger master volume must be a value between 0.0 and 1.0</source>
-          <target state="new">Warning: Continuous trigger master volume must be a value between 0.0 and 1.0</target>
+          <target state="translated">Attention: le volume principal du trigger doit être compris entre 0.0 et 1.0</target>
         </trans-unit>
         <trans-unit id="normalTriggerMasterVolumeString" translate="yes" xml:space="preserve">
           <source>Normal Trigger Master Volume</source>
@@ -632,23 +632,23 @@
         </trans-unit>
         <trans-unit id="normalTriggerMasterVolumeWarningString" translate="yes" xml:space="preserve">
           <source>Warning: Normal trigger master volume must be a value between 0.0 and 1.0</source>
-          <target state="new">Warning: Normal trigger master volume must be a value between 0.0 and 1.0</target>
+          <target state="translated">Avertissement: le volume maître du déclencheur normal doit être compris entre 0.0 et 1.0</target>
         </trans-unit>
         <trans-unit id="noString" translate="yes" xml:space="preserve">
           <source>No</source>
-          <target state="new">No</target>
+          <target state="translated">Non</target>
         </trans-unit>
         <trans-unit id="yesString" translate="yes" xml:space="preserve">
           <source>Yes</source>
-          <target state="new">Yes</target>
+          <target state="translated">Oui</target>
         </trans-unit>
         <trans-unit id="usesTolkString" translate="yes" xml:space="preserve">
           <source>Uses Tolk</source>
-          <target state="new">Uses Tolk</target>
+          <target state="translated">Utilise Tolk</target>
         </trans-unit>
         <trans-unit id="formatExceptionString" translate="yes" xml:space="preserve">
           <source>Warning: Pointer chain format exception.</source>
-          <target state="new">Warning: Pointer chain format exception.</target>
+          <target state="translated">Avertissement: exception de format de chaîne de pointeur.</target>
         </trans-unit>
         <trans-unit id="unsignedIntString" translate="yes" xml:space="preserve">
           <source>Unsigned Integer</source>
@@ -1986,9 +1986,9 @@
           <source>0</source>
           <target state="needs-review-translation">0</target>
         </trans-unit>
-        <trans-unit id="appTitleLabel.Text" translate="yes" xml:space="preserve">
+        <trans-unit id="appTitleLabel.Text" translate="no" xml:space="preserve">
           <source>SoniFight v1.0</source>
-          <target state="new">SoniFight v1.0</target>
+          <target state="final">SoniFight v1.0</target>
         </trans-unit>
         <trans-unit id="appTitleLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
           <source>MiddleCenter</source>
@@ -2108,7 +2108,7 @@
         </trans-unit>
         <trans-unit id="addTriggerButton.Text" translate="yes" xml:space="preserve">
           <source>Add Trigger</source>
-          <target state="translated">Ajouter un déclencheur</target>
+          <target state="translated">Ajouter un trigger</target>
         </trans-unit>
         <trans-unit id="cloneWatchButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
           <source>Microsoft Sans Serif, 12pt</source>

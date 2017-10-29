@@ -541,6 +541,12 @@ namespace au.edu.federation.SoniFight
                         sampleVolumeTB.Enabled = true;
                     }
                 }
+                else // If we're using tolk then the sample filename button, sample speed and sample volume UI elements should be disabled
+                {
+                    sampleFilenameButton.Enabled = false;
+                    sampleSpeedTB.Enabled = false;
+                    sampleVolumeTB.Enabled = false;
+                }
 
                 // No sample or text allowed for dependent or modifier triggers
                 if (currentTrigger.triggerType == Trigger.TriggerType.Dependent || currentTrigger.triggerType == Trigger.TriggerType.Modifier)
@@ -559,9 +565,15 @@ namespace au.edu.federation.SoniFight
                 tolkCheckbox.Enabled = false;
             }
 
+            // Continuous triggers cannot use tolk so the sample filename button should always be available. We will also uncheck the useTolk checkbox at this point.
+            // Note: We could optionally untick the useTolk checkbox here, but we won't.
+            if (currentTrigger.triggerType == Trigger.TriggerType.Continuous)
+            {
+                sampleFilenameTB.Enabled = true;
+                tolkCheckbox.Checked = false;
+            }
 
         } // End of updateTriggerUIElementStates method
-
         
         // Method to rebuild the details panel depending on the selected node of the TreeView
         private void gcTreeView_AfterSelect(object senderender, TreeViewEventArgs tvea)
@@ -1238,9 +1250,7 @@ namespace au.edu.federation.SoniFight
             else if ( currentTreeNode.Tag.ToString().Equals(Resources.ResourceManager.GetString("triggerString")) )
             {
                 // Set main UI panel label
-                currentUILabel.Text = Resources.ResourceManager.GetString("triggerSettingsLabelString");
-
-                
+                currentUILabel.Text = Resources.ResourceManager.GetString("triggerSettingsLabelString");                
 
                 // Get the current watch we're working from based on the index of the currently selected treenode
                 // Note: Each child of a parent treenode starts at index 0, so we can use this index as the
@@ -1459,16 +1469,10 @@ namespace au.edu.federation.SoniFight
                         break;
                 }
 
-                /*secondaryIdTB.TextChanged += (object sender, EventArgs ea) =>
-                {
-                    currentTrigger.SecondaryIdList = Utils.stringToIntList(secondaryIdTB.Text);                    
-                };*/
-
                 secondaryIdLabel.Anchor = AnchorStyles.Right;
                 secondaryIdLabel.Margin = padding;
                 panel.Controls.Add(secondaryIdLabel, 0, row); // Control, Column, Row
-
-
+                
                 // Set the text on the secondary ID list textbox to be a string version of the secondary ID list if the list isn't empty
                 if (currentTrigger.SecondaryIdList.Count > 0)
                 {
@@ -1631,7 +1635,7 @@ namespace au.edu.federation.SoniFight
                 {
                     OpenFileDialog file = new OpenFileDialog();
 
-                    file.InitialDirectory = ".\\Configs\\" + gameConfig.ConfigDirectory; // Open dialog in gameconfig directory
+                    file.InitialDirectory = Environment.CurrentDirectory + "\\Configs\\" + gameConfig.ConfigDirectory; // Open dialog in gameconfig directory
 
                     if (file.ShowDialog() == DialogResult.OK)
                     {
@@ -1739,10 +1743,8 @@ namespace au.edu.federation.SoniFight
                 isClockLabel.Anchor = AnchorStyles.Right;
                 isClockLabel.Margin = padding;
                 panel.Controls.Add(isClockLabel, 0, row); // Control, Column, Row
-
-               
-                isClockCB.Checked = currentTrigger.IsClock;
-                
+                               
+                isClockCB.Checked = currentTrigger.IsClock;                
 
                 isClockCB.CheckedChanged += (object sender, EventArgs ea) => {
                     // Update the new isClock status on our trigger
@@ -1905,6 +1907,7 @@ namespace au.edu.federation.SoniFight
             tv.Focus();
         }
 
+        // Method to clone the currently selected trigger
         private void cloneTriggerButton_Click(object senderender, EventArgs e)
         {
             currentUILabel.Text = Resources.ResourceManager.GetString("cloneTriggerLabelString");
@@ -1943,6 +1946,7 @@ namespace au.edu.federation.SoniFight
             tv.Focus();
         }
 
+        // Method to clone the currently selected watch
         private void cloneWatchButton_Click(object senderender, EventArgs e)
         {
             currentUILabel.Text = Resources.ResourceManager.GetString("cloneWatchLabelString");

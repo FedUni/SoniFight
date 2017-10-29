@@ -27,21 +27,6 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
-    <Watch>
-      <valueType>IntType</valueType>
-      <Id>3</Id>
-      <Name>Menu screen</Name>
-      <Description>Integer - variety of values based on the menu we're on.</Description>
-      <PointerList>
-        <string>31EA360</string>
-        <string>358</string>
-        <string>640</string>
-        <string>38</string>
-        <string>150</string>
-        <string>130</string>
-      </PointerList>
-      <Active>true</Active>
-    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
@@ -215,15 +200,7 @@
   </triggerList>
   <Description>Killer Instinct, Windows Store Edition (64-bit) - Al Lansley - 2017-10-26
 
-
-
-
-
 IMPORTANT: You must run this config with the 64-bit version of SoniFight because the Killer Instinct application itself is 64-bit.
-
-
-
-
 
 Basic triggers - this config is very much a work-in-progress!</Description>
   <ProcessName>KillerInstinct_UWPx64_r</ProcessName>

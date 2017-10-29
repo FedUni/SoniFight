@@ -248,9 +248,9 @@
           <source>8</source>
           <target state="needs-review-translation">8</target>
         </trans-unit>
-        <trans-unit id="titleLabel.Text" translate="yes" xml:space="preserve">
+        <trans-unit id="titleLabel.Text" translate="no" xml:space="preserve">
           <source>SoniFight Pointer Chain Tester v1.0</source>
-          <target state="new">SoniFight Pointer Chain Tester v1.0</target>
+          <target state="final">SoniFight Pointer Chain Tester v1.0</target>
         </trans-unit>
         <trans-unit id="titleLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
           <source>TopCenter</source>

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("An application to test pointer chains.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PointerTrailTester")]
+[assembly: AssemblyProduct("SoniFight Pointer Chain Tester")]
 [assembly: AssemblyCopyright("Copyright ©  2017 - Alastair Lansley / Federation University Australia")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

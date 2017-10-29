@@ -1,7 +1,7 @@
-﻿using System.Xml.Serialization;
+﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 using au.edu.federation.SoniFight.Properties;
-using System.Collections.Generic;
 
 namespace au.edu.federation.SoniFight
 {
@@ -236,16 +236,7 @@ namespace au.edu.federation.SoniFight
         {
             Id = source.Id;
 
-            /* TODO: Make this so it becomes CLONE(2), CLONE(3) and so on, not CLONE-CLONE, CLONE-CLONE-CLONE etc.
-            string fullSuffix = source.Name.Substring( source.Name.LastIndexOf('-') + 1);
-            if (fullSuffix.Equals(Resources.ResourceManager.GetString("cloneString"))
-            {
-                Name = source.Name + "(2)";
-            }
-            else
-            {
-                Name = source.Name + Resources.ResourceManager.GetString("cloneString");
-            }*/
+            /* TODO: Make this so it becomes CLONE(2), CLONE(3) and so on, not CLONE-CLONE, CLONE-CLONE-CLONE etc. */
 
             Name = source.Name + Resources.ResourceManager.GetString("cloneString");
             Description = source.Description;

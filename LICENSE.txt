@@ -10,6 +10,18 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
+SoniFight Included Samples
+---------------------------
+
+The following samples were downloaded from http://www.freesfx.co.uk and used as continuous trigger samples in the Street Fighter 4 game config:
+
+Heavy Wind:
+http://www.freesfx.co.uk/download/?type=mp3&id=16257
+
+High Voltage Electrical Arcing:
+http://www.freesfx.co.uk/download/?type=mp3&id=14427
+
+
 irrKlang License
 ----------------
 

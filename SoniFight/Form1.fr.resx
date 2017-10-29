@@ -635,7 +635,7 @@
     <value>5</value>
   </data>
   <data name="addTriggerButton.Text" xml:space="preserve">
-    <value>Ajouter un déclencheur</value>
+    <value>Ajouter un trigger</value>
   </data>
   <data name="cloneWatchButton.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>

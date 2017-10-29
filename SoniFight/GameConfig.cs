@@ -137,7 +137,7 @@ namespace au.edu.federation.SoniFight
             set { valid = value; }
         }
 
-        // Flag to keep track of whether this config is active. This is used internally but not saved to XML.
+        // Flag to keep track of whether this config is currently active. This is used internally but not saved to XML.
         private bool active = false;
         [XmlIgnore]
         public bool Active
@@ -175,16 +175,6 @@ namespace au.edu.federation.SoniFight
         {
             processConnectionBGW.WorkerSupportsCancellation = true;
         }
-
-        public void setDescription(string configDescription)
-        {
-            // Limit string description to 150 chars
-            if (configDescription.Length > MAX_STRING_LENGTH) { description = configDescription.Substring(0, MAX_STRING_LENGTH); }
-            else { description = configDescription; }
-        }
-        public void setProcessName(string procName) { processName = procName; }
-
-        public void setPollSleepMS(int i) { pollSleepMS = i; }
 
         // Background worker so we can attempt to connect to a game process without locking up the UI
         [XmlIgnore]
@@ -491,25 +481,13 @@ namespace au.edu.federation.SoniFight
                 // We'll build up a list of all trigger ids just so we can verify that each is unique
                 idList.Add(t.Id);
 
-                // Ensire trigger id is => 0
+                // Ensure trigger id is => 0
                 if (t.Id < 0)
                 {
                     MessageBox.Show("Validation Error: Triggers must have unique ids with a minumum value of 0.");
                     return false;
                 }
-
-                // Ensure sample filename exists - NOPE! Some triggers may be dependent triggers that do not require a sample, they're simply
-                // there to stop OTHER triggers from playing when it might make no sense for them to do so (such as between rounds if/when
-                // memory gets re-used and we get a false-positive sonification event).
-                /*if (!t.IsClock)
-                {
-                    if ( string.IsNullOrEmpty(t.SampleFilename) )
-                    {
-                        MessageBox.Show("Validation Error: A sample name must be provided to play trigger with Id: " + t.Id);
-                        return false;
-                    }
-                }*/
-
+                
                 // Found clock trigger?
                 if (t.IsClock)
                 {
@@ -641,16 +619,8 @@ namespace au.edu.federation.SoniFight
 
             // Made it this far? Then indicate that we're hot to trot...            
             return true;
-        }
 
-        // Method to calculate the address of all features - called once per polling event
-        public void calcAllWatchAddresses()
-        {
-            for (int watchLoop = 0; watchLoop < watchList.Count; ++watchLoop)
-            {
-                watchList[watchLoop].DestinationAddress = Utils.findFeatureAddress(ProcessHandle, processBaseAddress, watchList[watchLoop].PointerList);
-            }
-        }
+        } // End of validate method
 
     } // End of GameConfig class  
 
