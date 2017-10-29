@@ -63,6 +63,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Sound-Wave-Headphones.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -121,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\PointerTrailTester.fr.xlf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sound-Wave-Headphones.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="AlinkWarningWorkaround.targets" />
