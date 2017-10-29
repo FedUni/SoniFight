@@ -160,10 +160,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>NONE</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -184,10 +180,6 @@
         <int>2</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Health-Half.mp3</SampleFilename>
@@ -210,10 +202,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Health-Quarter.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -234,10 +222,6 @@
         <int>2</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Health-Low.mp3</SampleFilename>
@@ -260,10 +244,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Clock-45.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -284,10 +264,6 @@
         <int>1</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Clock-10.mp3</SampleFilename>
@@ -310,10 +286,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Enhanced.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -334,10 +306,6 @@
         <int>3</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Breaker.mp3</SampleFilename>
@@ -360,10 +328,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>X-Ray.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -384,10 +348,6 @@
         <int>4</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Health-Half-P2.mp3</SampleFilename>
@@ -410,10 +370,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Health-Quarter-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -434,10 +390,6 @@
         <int>4</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Health-Low-P2.mp3</SampleFilename>
@@ -460,10 +412,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Enhanced-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -484,10 +432,6 @@
         <int>5</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Breaker-P2.mp3</SampleFilename>
@@ -510,10 +454,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>X-Ray-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -534,10 +474,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>24</int>
       </SecondaryIdList>
       <SampleFilename>Fight</SampleFilename>
@@ -559,10 +495,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>24</int>
         <int>52</int>
       </SecondaryIdList>
@@ -585,10 +517,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>24</int>
         <int>52</int>
       </SecondaryIdList>
@@ -611,10 +539,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>24</int>
         <int>52</int>
       </SecondaryIdList>
@@ -637,10 +561,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>24</int>
         <int>52</int>
       </SecondaryIdList>
@@ -663,10 +583,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>24</int>
         <int>52</int>
       </SecondaryIdList>
@@ -689,10 +605,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>24</int>
         <int>52</int>
       </SecondaryIdList>
@@ -715,10 +627,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>24</int>
         <int>52</int>
       </SecondaryIdList>
@@ -742,10 +650,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>1 Player</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -766,10 +670,6 @@
         <int>7</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>2 Players</SampleFilename>
@@ -792,10 +692,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>3 Players</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -817,10 +713,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>4 Players</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -841,10 +733,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>25</int>
       </SecondaryIdList>
       <SampleFilename>Versus mode</SampleFilename>
@@ -866,10 +754,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>25</int>
       </SecondaryIdList>
       <SampleFilename>Team ladder</SampleFilename>
@@ -891,10 +775,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>25</int>
       </SecondaryIdList>
       <SampleFilename>Online</SampleFilename>
@@ -916,10 +796,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>25</int>
       </SecondaryIdList>
       <SampleFilename>Extras</SampleFilename>
@@ -941,10 +817,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>25</int>
       </SecondaryIdList>
       <SampleFilename>Options</SampleFilename>
@@ -966,10 +838,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>25</int>
       </SecondaryIdList>
       <SampleFilename>Exit Game</SampleFilename>
@@ -991,10 +859,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>26</int>
       </SecondaryIdList>
       <SampleFilename>Versus mode</SampleFilename>
@@ -1016,10 +880,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>26</int>
       </SecondaryIdList>
       <SampleFilename>Extras</SampleFilename>
@@ -1041,10 +901,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>26</int>
       </SecondaryIdList>
       <SampleFilename>Options</SampleFilename>
@@ -1066,10 +922,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>26</int>
       </SecondaryIdList>
       <SampleFilename>Exit game</SampleFilename>
@@ -1091,10 +943,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>27</int>
       </SecondaryIdList>
       <SampleFilename>Versus mode</SampleFilename>
@@ -1116,10 +964,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>27</int>
       </SecondaryIdList>
       <SampleFilename>Extras</SampleFilename>
@@ -1141,10 +985,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>27</int>
       </SecondaryIdList>
       <SampleFilename>Options</SampleFilename>
@@ -1166,10 +1006,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>27</int>
       </SecondaryIdList>
       <SampleFilename>Exit Game</SampleFilename>
@@ -1191,10 +1027,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>48</int>
       </SecondaryIdList>
       <SampleFilename>Ladder</SampleFilename>
@@ -1216,10 +1048,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>48</int>
       </SecondaryIdList>
       <SampleFilename>Tag Ladder</SampleFilename>
@@ -1241,10 +1069,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>48</int>
       </SecondaryIdList>
       <SampleFilename>Test Your Luck</SampleFilename>
@@ -1266,10 +1090,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>48</int>
       </SecondaryIdList>
       <SampleFilename>Test Your Might</SampleFilename>
@@ -1291,10 +1111,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>48</int>
       </SecondaryIdList>
       <SampleFilename>Test Your Sight</SampleFilename>
@@ -1316,10 +1132,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>48</int>
       </SecondaryIdList>
       <SampleFilename>Test Your Strike</SampleFilename>
@@ -1342,10 +1154,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename />
       <SampleSpeed>1</SampleSpeed>
@@ -1366,10 +1174,6 @@
         <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename />
@@ -1392,10 +1196,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename />
       <SampleSpeed>1</SampleSpeed>
@@ -1416,10 +1216,6 @@
         <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename />
@@ -1442,10 +1238,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename />
       <SampleSpeed>1</SampleSpeed>
@@ -1466,10 +1258,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>51</int>
       </SecondaryIdList>
       <SampleFilename>Controller</SampleFilename>
@@ -1491,10 +1279,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>51</int>
       </SecondaryIdList>
       <SampleFilename>Keyboard</SampleFilename>
@@ -1516,10 +1300,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>51</int>
       </SecondaryIdList>
       <SampleFilename>Gameplay</SampleFilename>
@@ -1541,10 +1321,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>51</int>
       </SecondaryIdList>
       <SampleFilename>Audio</SampleFilename>
@@ -1566,10 +1342,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>51</int>
       </SecondaryIdList>
       <SampleFilename>Video</SampleFilename>
@@ -1591,10 +1363,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>51</int>
       </SecondaryIdList>
       <SampleFilename>Social Messaging</SampleFilename>
@@ -1616,10 +1384,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>49</int>
       </SecondaryIdList>
       <SampleFilename>Tutorial</SampleFilename>
@@ -1641,10 +1405,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>49</int>
       </SecondaryIdList>
       <SampleFilename>Fatality Tutorial</SampleFilename>
@@ -1666,10 +1426,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>49</int>
       </SecondaryIdList>
       <SampleFilename>Practice</SampleFilename>
@@ -1691,10 +1447,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>49</int>
       </SecondaryIdList>
       <SampleFilename>Tag Team Practice</SampleFilename>
@@ -1716,10 +1468,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>50</int>
       </SecondaryIdList>
       <SampleFilename>Crypt</SampleFilename>
@@ -1741,10 +1489,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>50</int>
       </SecondaryIdList>
       <SampleFilename>Necropolis</SampleFilename>
@@ -1766,10 +1510,6 @@
         <int>6</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>50</int>
       </SecondaryIdList>
       <SampleFilename>Credits</SampleFilename>
@@ -1792,10 +1532,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Device</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -1816,10 +1552,6 @@
         <int>9</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Music</SampleFilename>
@@ -1842,10 +1574,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Effects</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -1866,10 +1594,6 @@
         <int>9</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Announcer</SampleFilename>
@@ -1892,10 +1616,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Ambience</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -1917,10 +1637,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
-        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Dialog</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -1941,7 +1657,6 @@
         <int>10</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>{}</SampleFilename>

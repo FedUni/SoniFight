@@ -847,16 +847,35 @@ namespace au.edu.federation.SoniFight
         public static List<int> stringToIntList(string s)
         {
             s = s.Trim();
-            try
+
+            List<int> tempList = new List<int>();
+            
+            string[] tempStringArray = s.Split(' ');
+
+            for (int loop = 0; loop < tempStringArray.Length; ++loop)
             {
-                return new List<int>(Array.ConvertAll(s.Split(' '), int.Parse));
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Failed string to int list conversion: " + e.Message);
-                return null;
-            }
-        }
+                try
+                {
+                    string valueString = tempStringArray[loop];
+                    int valueInt = Convert.ToInt32(valueString);
+
+                    //if (int.TryParse(valueString, System.Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, out valueInt))
+                    //{
+                        tempList.Add(valueInt);
+                    //}
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Warning: Failed string to int list conversion: " + e.Message);
+                    return null;
+                }
+
+            } // End of loop over elements of split string
+
+            return tempList;
+
+        } // End of stringToIntList method
 
     } // End of Utils class
 
@@ -905,10 +924,6 @@ namespace au.edu.federation.SoniFight
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam); //UInt32 Msg
     }
-
     */
-
-
-
 
 } // End of namespace

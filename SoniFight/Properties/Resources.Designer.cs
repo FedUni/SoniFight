@@ -286,7 +286,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WARNING: Continuous trigger master volume must be a value between 0.0 and 1.0.
+        ///   Looks up a localized string similar to Warning: Continuous trigger master volume must be a value between 0.0 and 1.0.
         /// </summary>
         internal static string continuousTriggerMasterVolumeWarningString {
             get {
@@ -313,7 +313,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dependent Trigger ID.
+        ///   Looks up a localized string similar to Dependent Trigger ID / List.
         /// </summary>
         internal static string dependentTriggerIdLabelString {
             get {
@@ -457,7 +457,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WARNING: Pointer chain format exception..
+        ///   Looks up a localized string similar to Warning: Pointer chain format exception..
         /// </summary>
         internal static string formatExceptionString {
             get {
@@ -592,7 +592,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WARNING - Sample key not found in dictionary: .
+        ///   Looks up a localized string similar to Warning: Sample key not found in dictionary: .
         /// </summary>
         internal static string keyNotFoundString {
             get {
@@ -646,7 +646,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WARNING: Aborting attempt to load sample for modifier trigger, and modifier triggers don&apos;t use samples..
+        ///   Looks up a localized string similar to Warning: Aborting attempt to load sample for modifier trigger, and modifier triggers don&apos;t use samples..
         /// </summary>
         internal static string loadModifierSampleWarningString {
             get {
@@ -727,7 +727,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WARNING: Normal trigger master volume must be a value between 0.0 and 1.0.
+        ///   Looks up a localized string similar to Warning: Normal trigger master volume must be a value between 0.0 and 1.0.
         /// </summary>
         internal static string normalTriggerMasterVolumeWarningString {
             get {
@@ -853,7 +853,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WARNING - Sample not found: .
+        ///   Looks up a localized string similar to Warning: Sample not found: .
         /// </summary>
         internal static string sampleNotFoundString {
             get {
@@ -925,7 +925,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WARNING: Tolk output requested but no active screen reader for trigger with ID: .
+        ///   Looks up a localized string similar to Warning: Tolk output requested but no active screen reader for trigger with ID: .
         /// </summary>
         internal static string screenReaderNotActiveWarningString {
             get {
@@ -970,7 +970,7 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warning: Secondary ID must be an integer value..
+        ///   Looks up a localized string similar to Warning: Secondary ID for this trigger type must be a single integer value..
         /// </summary>
         internal static string secondaryIdWarningString {
             get {

@@ -145,7 +145,7 @@
     <value>Delete Watch</value>
   </data>
   <data name="dependentTriggerIdLabelString" xml:space="preserve">
-    <value>Dependent Trigger ID</value>
+    <value>Dependent Trigger ID / List</value>
   </data>
   <data name="descriptionLabelString" xml:space="preserve">
     <value>Description</value>
@@ -367,7 +367,7 @@
     <value>Watch 2 ID</value>
   </data>
   <data name="secondaryIdWarningString" xml:space="preserve">
-    <value>Warning: Secondary ID must be an integer value.</value>
+    <value>Warning: Secondary ID for this trigger type must be a single integer value.</value>
   </data>
   <data name="selectSampleButtonString" xml:space="preserve">
     <value>Select Sample File</value>
@@ -517,10 +517,10 @@
     <value>Could not serialize GameConfig to XML: </value>
   </data>
   <data name="keyNotFoundString" xml:space="preserve">
-    <value>WARNING - Sample key not found in dictionary: </value>
+    <value>Warning: Sample key not found in dictionary: </value>
   </data>
   <data name="sampleNotFoundString" xml:space="preserve">
-    <value>WARNING - Sample not found: </value>
+    <value>Warning: Sample not found: </value>
   </data>
   <data name="unrecognisedValueTypeWarningString" xml:space="preserve">
     <value>Unrecognised ValueType in getDynamicValueFromType method: </value>
@@ -550,7 +550,7 @@
     <value>Loading normal sample: </value>
   </data>
   <data name="loadModifierSampleWarningString" xml:space="preserve">
-    <value>WARNING: Aborting attempt to load sample for modifier trigger, and modifier triggers don't use samples.</value>
+    <value>Warning: Aborting attempt to load sample for modifier trigger, and modifier triggers don't use samples.</value>
   </data>
   <data name="nullSoundInQueuedSampleWarningString" xml:space="preserve">
     <value>Playing queued normal sample gave us a null sound for: </value>
@@ -568,7 +568,7 @@
     <value>Saying tolk string: </value>
   </data>
   <data name="screenReaderNotActiveWarningString" xml:space="preserve">
-    <value>WARNING: Tolk output requested but no active screen reader for trigger with ID: </value>
+    <value>Warning: Tolk output requested but no active screen reader for trigger with ID: </value>
   </data>
   <data name="watchValueParseFailString" xml:space="preserve">
     <value>WARNING: Could not get watch ID from parsing the following to int: </value>
@@ -580,13 +580,13 @@
     <value>Continuous Trigger Master Volume</value>
   </data>
   <data name="continuousTriggerMasterVolumeWarningString" xml:space="preserve">
-    <value>WARNING: Continuous trigger master volume must be a value between 0.0 and 1.0</value>
+    <value>Warning: Continuous trigger master volume must be a value between 0.0 and 1.0</value>
   </data>
   <data name="normalTriggerMasterVolumeString" xml:space="preserve">
     <value>Normal Trigger Master Volume</value>
   </data>
   <data name="normalTriggerMasterVolumeWarningString" xml:space="preserve">
-    <value>WARNING: Normal trigger master volume must be a value between 0.0 and 1.0</value>
+    <value>Warning: Normal trigger master volume must be a value between 0.0 and 1.0</value>
   </data>
   <data name="noString" xml:space="preserve">
     <value>No</value>
@@ -598,7 +598,7 @@
     <value>Yes</value>
   </data>
   <data name="formatExceptionString" xml:space="preserve">
-    <value>WARNING: Pointer chain format exception.</value>
+    <value>Warning: Pointer chain format exception.</value>
   </data>
   <data name="unsignedIntString" xml:space="preserve">
     <value>Unsigned Integer</value>

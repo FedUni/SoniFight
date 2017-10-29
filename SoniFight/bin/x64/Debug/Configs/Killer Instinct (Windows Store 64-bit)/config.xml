@@ -15,7 +15,7 @@
     <Watch>
       <valueType>IntType</valueType>
       <Id>2</Id>
-      <Name>Main Menu</Name>
+      <Name>Main Menu options</Name>
       <Description>Integer, range 0 through 4.</Description>
       <PointerList>
         <string>31EA360</string>
@@ -24,6 +24,21 @@
         <string>38</string>
         <string>150</string>
         <string>B0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>3</Id>
+      <Name>Menu screen</Name>
+      <Description>Integer - variety of values based on the menu we're on.</Description>
+      <PointerList>
+        <string>31EA360</string>
+        <string>358</string>
+        <string>640</string>
+        <string>38</string>
+        <string>150</string>
+        <string>130</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
@@ -55,16 +70,37 @@
       <allowanceType>InGame</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>2</Id>
-      <Name>Clock 95</Name>
-      <Description>Says 95</Description>
-      <Value xsi:type="xsd:string">95</Value>
+      <Name>Clock 50</Name>
+      <Description>50</Description>
+      <Value xsi:type="xsd:string">50</Value>
       <WatchIdList>
         <int>1</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>95</SampleFilename>
+      <SampleFilename>50</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>3</Id>
+      <Name>Clock 10</Name>
+      <Description>Says 10</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>10</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -75,7 +111,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <Id>3</Id>
+      <Id>4</Id>
       <Name>Main Menu 0 - Shadow Lords</Name>
       <Description>Says menu text</Description>
       <Value xsi:type="xsd:string">0</Value>
@@ -96,7 +132,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <Id>4</Id>
+      <Id>5</Id>
       <Name>Main Menu 1 - Single Player</Name>
       <Description>Says menu text</Description>
       <Value xsi:type="xsd:string">1</Value>
@@ -117,7 +153,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <Id>5</Id>
+      <Id>6</Id>
       <Name>Main Menu 2 - Multi Player</Name>
       <Description>Says menu text</Description>
       <Value xsi:type="xsd:string">2</Value>
@@ -138,7 +174,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <Id>6</Id>
+      <Id>7</Id>
       <Name>Main Menu 3 - Store</Name>
       <Description>Says menu text</Description>
       <Value xsi:type="xsd:string">3</Value>
@@ -159,7 +195,7 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <Id>7</Id>
+      <Id>8</Id>
       <Name>Main Menu 4 - Exit</Name>
       <Description>Says menu text</Description>
       <Value xsi:type="xsd:string">4</Value>
@@ -177,16 +213,24 @@
       <Active>true</Active>
     </Trigger>
   </triggerList>
-  <Description>Killer Instinct, Windows Store Edition (64-bit) - Al Lansley - 2017-10-17
+  <Description>Killer Instinct, Windows Store Edition (64-bit) - Al Lansley - 2017-10-26
+
+
+
+
 
 IMPORTANT: You must run this config with the 64-bit version of SoniFight because the Killer Instinct application itself is 64-bit.
 
-Basic triggers.</Description>
+
+
+
+
+Basic triggers - this config is very much a work-in-progress!</Description>
   <ProcessName>KillerInstinct_UWPx64_r</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>2000</ClockTickMS>
   <ClockMax>99</ClockMax>
-  <ConfigDirectory>Killer Instinct (Windows Store 64-bit)\</ConfigDirectory>
+  <ConfigDirectory>Killer Instinct (Windows Store 64-bit)</ConfigDirectory>
   <NormalTriggerMasterVolume>0.7</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
 </GameConfig>
