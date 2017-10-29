@@ -75,6 +75,6 @@ namespace au.edu.federation.PointerChainTester
             Form1.processConnectionBW.Dispose();
         }
 
-    } // End of class
+    } // End of Program class
 
 } // End of namespace

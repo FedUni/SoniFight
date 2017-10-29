@@ -39,6 +39,9 @@ namespace au.edu.federation.SoniFight
         // How long to wait in milliseconds before re-polling the process list to find the process we're interested in.
         public const int FIND_PROCESS_SLEEP_MS = 500;
 
+        // The version of GameConfig this is. This may change in the future.
+        public int GameConfigFileVersion = 1;
+
         // Description of this config
         private string description = "GameConfig description";
         public string Description
