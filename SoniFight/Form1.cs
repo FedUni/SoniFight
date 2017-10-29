@@ -1433,6 +1433,18 @@ namespace au.edu.federation.SoniFight
                         // ...and move the text carrat to the end of the line so the user can try again
                         watch1TB.Select(watch1TB.Text.Length, 0);
                     }
+                    else // Watch list is valid - so check each watch exists and warn if not.
+                    {
+                        for (int loop = 0; loop < currentTrigger.WatchIdList.Count; ++loop)
+                        {
+                            Watch tempW = Utils.getWatchWithId(currentTrigger.WatchIdList[loop]);
+
+                            if (tempW == null)
+                            {
+                                MessageBox.Show("Warning: Trigger " + currentTrigger.Id + " uses watch with ID " + currentTrigger.WatchIdList[loop] + " but such watch exists!");
+                            }
+                        }
+                    }
                 };
 
                 panel.Controls.Add(watch1TB, 1, row); // Control, Column, Row
@@ -1487,7 +1499,7 @@ namespace au.edu.federation.SoniFight
                     // Normal triggers may have multiple dependent triggers
                     if (currentTrigger.triggerType == Trigger.TriggerType.Normal)
                     {
-                        if ( string.IsNullOrEmpty(secondaryIdTB.Text.ToString()) )
+                        if ( string.IsNullOrEmpty( secondaryIdTB.Text.ToString() ) || secondaryIdTB.Text.Equals("-") )
                         {
                             currentTrigger.SecondaryIdList = new List<int>();
                             currentTrigger.SecondaryIdList.Add(-1);
@@ -1514,9 +1526,27 @@ namespace au.edu.federation.SoniFight
                                 // ...and move the text carrat to the end of the line so the user can try again
                                 secondaryIdTB.Select(secondaryIdTB.Text.Length, 0);
                             }
-                        }
+                            else // Valid list of ints - but does each trigger exist? Warn user if not.
+                            {
+                                for (int loop = 0; loop < currentTrigger.SecondaryIdList.Count; ++loop)
+                                {
+                                    if (currentTrigger.SecondaryIdList[loop] != -1)
+                                    {
+                                        Trigger tempT = Utils.getTriggerWithId(currentTrigger.SecondaryIdList[loop]);
+
+                                        if (tempT == null)
+                                        {
+                                            MessageBox.Show("Warning: Trigger " + currentTrigger.Id + " has a dependency on trigger " + currentTrigger.SecondaryIdList[loop] + " but no such trigger exists!");
+                                        }
+                                    }
+
+                                } // End of loop block
+
+                            } // End of secondaryIdList was not null section
+
+                        } // End of parse string to int list block
                     }
-                    else // Triggers which are of dependent, modifier or continuous may only have a single value in this field
+                    else // Triggers which are of dependent, modifier or continuous types may only have a single value in this field
                     {
                         int x;
                         bool result = Int32.TryParse(secondaryIdTB.Text, out x);
@@ -1526,7 +1556,7 @@ namespace au.edu.federation.SoniFight
                         }
                         else
                         {
-                            if (!string.IsNullOrEmpty(secondaryIdTB.Text.ToString()))
+                            if (!string.IsNullOrEmpty(secondaryIdTB.Text.ToString()) && !string.Equals(secondaryIdTB.Text.ToString(), "-"))
                             {
                                 MessageBox.Show(Resources.ResourceManager.GetString("secondaryIdWarningString"));
                             }

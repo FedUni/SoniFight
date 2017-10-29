@@ -505,21 +505,6 @@
     </Watch>
     <Watch>
       <valueType>StringUTF16Type</valueType>
-      <Id>38</Id>
-      <Name>Button Config Submenu Text</Name>
-      <Description>Matches "Select the type of controller you wish"</Description>
-      <PointerList>
-        <string>6A99BC</string>
-        <string>2F4</string>
-        <string>738</string>
-        <string>154</string>
-        <string>320</string>
-        <string>376</string>
-      </PointerList>
-      <Active>true</Active>
-    </Watch>
-    <Watch>
-      <valueType>StringUTF16Type</valueType>
       <Id>39</Id>
       <Name>Versus submenu text</Name>
       <Description>String matches - see listed triggers.</Description>
@@ -3570,7 +3555,7 @@
         <int>21</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>353</int>
+        <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Controls-Up.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7907,48 +7892,6 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>InGame</allowanceType>
-      <comparisonType>EqualTo</comparisonType>
-      <Id>352</Id>
-      <Name>Tolk Testing</Name>
-      <Description>Testing</Description>
-      <Value xsi:type="xsd:string">95</Value>
-      <WatchIdList>
-        <int>0</int>
-      </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
-      <SampleFilename>Clock 95 because the clock is {1}</SampleFilename>
-      <SampleSpeed>1</SampleSpeed>
-      <SampleVolume>1</SampleVolume>
-      <UseTolk>true</UseTolk>
-      <IsClock>false</IsClock>
-      <Active>true</Active>
-    </Trigger>
-    <Trigger>
-      <triggerType>Normal</triggerType>
-      <allowanceType>Any</allowanceType>
-      <comparisonType>EqualTo</comparisonType>
-      <Id>353</Id>
-      <Name>Button settings submenu</Name>
-      <Description>Dependent trigger to suppress nonsensical triggers between rounds</Description>
-      <Value xsi:type="xsd:string">Select the type of controller you</Value>
-      <WatchIdList>
-        <int>38</int>
-      </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
-      <SampleFilename />
-      <SampleSpeed>1</SampleSpeed>
-      <SampleVolume>1</SampleVolume>
-      <UseTolk>false</UseTolk>
-      <IsClock>false</IsClock>
-      <Active>true</Active>
-    </Trigger>
-    <Trigger>
-      <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>354</Id>
@@ -8916,22 +8859,16 @@
   </triggerList>
   <Description>Street Fighter IV GameConfig - Al Lansley - 2017-08-16
 
-
-
 This config ships with SoniFight and provides alerts for clock values, health, super bar and ultra bar for both players - as well as a large number of (but not all possible) menu sonification events to assist in navigating menus and selecting characters without the need to memorise menu options.
-
-
 
 Known Issues: At present there are some occassional non-sensical sonifications, such as between rounds, but there may be ways to avoid this as I've added some functionality to allow recursive "dependent triggers" on any normal trigger. By this I mean, you can specify a dependent trigger (by id number), and if the main trigger matches conditions but the dependent doesn't - then the original trigger sample isn't played. See the docs for more details.
 
-
-
-Unfortunately in some circumstances random sample playing may be unavoidable because memory gets re-used for storing various data and there isn't too much that can be done about this issue besides disabling the offending trigger(s) [which is a perfectly acceptable solution] - because we're either watching a memory address for a change in its status, or we aren't - and there isn't any middle ground. Use what works best for you.</Description>
+Unfortunately in some circumstances random sample playing may be unavoidable because memory gets re-used for storing various elements of data and there isn't too much that can be done about this issue besides disabling the offending trigger(s) [which may be a perfectly acceptable solution] - because we're either watching a memory address for a change in its status, or we aren't - and there isn't any middle ground. Use what works best for you.</Description>
   <ProcessName>SSFIV</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>99</ClockMax>
-  <ConfigDirectory>01 - Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
+  <ConfigDirectory>Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
   <NormalTriggerMasterVolume>0.7</NormalTriggerMasterVolume>
-  <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
+  <ContinuousTriggerMasterVolume>0.5</ContinuousTriggerMasterVolume>
 </GameConfig>

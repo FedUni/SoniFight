@@ -259,8 +259,9 @@ namespace au.edu.federation.SoniFight
                 SecondaryIdList.Add(source.SecondaryIdList[loop]);
             }
 
+            // Create previous value list and give it an entry for each watch
             PreviousValueList = new List<dynamic>();
-            
+
             Value       = source.Value;
 
             SampleFilename = source.SampleFilename;

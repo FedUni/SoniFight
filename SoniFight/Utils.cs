@@ -729,7 +729,7 @@ namespace au.edu.federation.SoniFight
             }
         }
 
-        // Method to return the specific trigger with a given id value
+        // Method to return the specific trigger with a given id value. If no such trigger exists we return null.
         public static Trigger getTriggerWithId(int id)
         {
             Trigger t = null;
@@ -737,12 +737,12 @@ namespace au.edu.federation.SoniFight
             {
                 t = MainForm.gameConfig.triggerList[loop];
                 if (t.Id == id)
-                    break;
+                    return t;
             }
-            return t;
+            return null;
         }
 
-        // Method to return the specific watch with a given id value
+        // Method to return the specific watch with a given id value. If not such watch exists we return null.
         public static Watch getWatchWithId(int id)
         {
             Watch w = null;
@@ -750,9 +750,9 @@ namespace au.edu.federation.SoniFight
             {
                 w = MainForm.gameConfig.watchList[loop];
                 if (w.Id == id)
-                    break;
+                    return w;
             }
-            return w;
+            return null;
         }
 
         // Method to return the next highest value to use as the next new watch id

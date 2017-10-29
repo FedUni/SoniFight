@@ -118,7 +118,7 @@ namespace au.edu.federation.SoniFight
             }*/
 
             // Guard against user moving to edit tab where triggers are temporarily reset and there is no previous value
-            //if (t.PreviousValueList[watchIndex] != null)
+            if (t.PreviousValueList.Count > 0)
             {
                 // Dynamic type comparisons may possibly fail so wrap 'em in try/catch
                 try
@@ -178,10 +178,14 @@ namespace au.edu.federation.SoniFight
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(Resources.ResourceManager.GetString("dynamicTypeComparisonExceptionString") + e.Message);
+                    Console.WriteLine(t.Id + " threw as " + Resources.ResourceManager.GetString("dynamicTypeComparisonExceptionString") + e.Message);
                 }
 
-            } // End of it t.previousValue != null block
+            }
+            else // If the previous value list count is zero we add this value to the list
+            {
+                t.PreviousValueList.Add(t.Value);
+            }
 
             // No matches? False it is, then!
             return false;
@@ -606,14 +610,11 @@ namespace au.edu.federation.SoniFight
                                     // Is the dependency on the dependent trigger met?
                                     dependentTriggerMatch = performDependentComparison(depT, depW.getDynamicValueFromType());
 
-                                    
-
-
                                     // If we did NOT find a dependent trigger match then we break with that flag as false which means we won't perform the sonification
                                     if (!dependentTriggerMatch)
                                     {
-                                        /*Console.WriteLine("No match on dependent trigger " + depT.Id + " - looking for " + depT.Value + " and got: " + depW.getDynamicValueFromType());
-                                        Console.WriteLine("Are these values the same?: " + (depT.Value == depW.getDynamicValueFromType()));
+                                        Console.WriteLine("No match on dependent trigger " + depT.Id + " - looking for " + depT.Value + " and got: " + depW.getDynamicValueFromType());
+                                        /*Console.WriteLine("Are these values the same?: " + (depT.Value == depW.getDynamicValueFromType()));
                                         Console.WriteLine("Dependent trigger's value is: " + depT.Value + " and previous value is: " + depT.PreviousValueList[0]);*/
 
                                         break;
@@ -627,10 +628,10 @@ namespace au.edu.federation.SoniFight
 
                             } // End of is secondary ID list is not -1 and we're not on the first watch in the watch list block
 
-                            if (dependentTriggerMatch)
+                            /*if (dependentTriggerMatch)
                             {
                                 Console.WriteLine("All dependent triggers matched");
-                            }
+                            }*/
 
                             // Our trigger matched and any/all dependent triggers also matched so we can proceess the sonification event
                             if (dependentTriggerMatch)
