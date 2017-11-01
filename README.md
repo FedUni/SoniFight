@@ -12,3 +12,5 @@ SoniFight presently ships with game configs to add sonification to the following
 - Killer Instinct (Windows Store edition, 64-bit), (proof-of-concept).
 
 SoniFight also contains a comprehensive user interface where you can create your own game configs for games of your choice. To learn more about creating your own game configs as well as how the software operates through 'watches' and 'triggers', or to take a look at the answers to some frequently asked questions please see the provided user documentation.
+
+An additional repository exists at https://github.com/alansley/SoniFightConfigs which can be used for updated configs or config submissions between software releases.
