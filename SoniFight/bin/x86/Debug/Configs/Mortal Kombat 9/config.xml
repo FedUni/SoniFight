@@ -87,62 +87,26 @@
       <Active>true</Active>
     </Watch>
     <Watch>
-      <valueType>ShortType</valueType>
+      <valueType>IntType</valueType>
       <Id>8</Id>
-      <Name>Current menu screen as short</Name>
-      <Description>The number of the submenu as short. Has odd numbers, probably enums.</Description>
+      <Name>Player 1 character selection</Name>
+      <Description>Integer in range 0 through 32, but 27 is skipped.</Description>
       <PointerList>
-        <string>9E8228</string>
-        <string>1FC</string>
-        <string>90</string>
-        <string>10</string>
-        <string>3C</string>
-        <string>6D8</string>
+        <string>A89BA4</string>
+        <string>8C</string>
+        <string>160</string>
+        <string>518</string>
+        <string>24</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
     <Watch>
       <valueType>IntType</valueType>
       <Id>9</Id>
-      <Name>Main menu for single player-CLONE</Name>
-      <Description>Audio menu options. Values are 1 through 5</Description>
+      <Name>Difficulty setting as integer</Name>
+      <Description>Range is 0 (beginner) through 4 (expert)</Description>
       <PointerList>
-        <string>9E8228</string>
-        <string>1FC</string>
-        <string>90</string>
-        <string>10</string>
-        <string>3C</string>
-        <string>17A0</string>
-      </PointerList>
-      <Active>true</Active>
-    </Watch>
-    <Watch>
-      <valueType>IntType</valueType>
-      <Id>10</Id>
-      <Name>Music volume. Integer from 0 to 20.</Name>
-      <Description>Music volume</Description>
-      <PointerList>
-        <string>51AE00</string>
-        <string>18</string>
-        <string>778</string>
-        <string>210</string>
-        <string>B0</string>
-        <string>228</string>
-      </PointerList>
-      <Active>true</Active>
-    </Watch>
-    <Watch>
-      <valueType>IntType</valueType>
-      <Id>11</Id>
-      <Name>Effects volume. Integer from 0 to 20.</Name>
-      <Description>Sound effects volume</Description>
-      <PointerList>
-        <string>51AE00</string>
-        <string>28</string>
-        <string>778</string>
-        <string>210</string>
-        <string>B0</string>
-        <string>28718</string>
+        <string>A89D10</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
@@ -159,9 +123,7 @@
       <WatchIdList>
         <int>1</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>NONE</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -180,9 +142,7 @@
       <WatchIdList>
         <int>2</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Health-Half.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -201,9 +161,7 @@
       <WatchIdList>
         <int>2</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Health-Quarter.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -222,9 +180,7 @@
       <WatchIdList>
         <int>2</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Health-Low.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -243,9 +199,7 @@
       <WatchIdList>
         <int>1</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Clock-45.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -264,9 +218,7 @@
       <WatchIdList>
         <int>1</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Clock-10.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -285,9 +237,7 @@
       <WatchIdList>
         <int>3</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Enhanced.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -306,9 +256,7 @@
       <WatchIdList>
         <int>3</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Breaker.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -327,9 +275,7 @@
       <WatchIdList>
         <int>3</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>X-Ray.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -348,9 +294,7 @@
       <WatchIdList>
         <int>4</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Health-Half-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -369,9 +313,7 @@
       <WatchIdList>
         <int>4</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Health-Quarter-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -390,9 +332,7 @@
       <WatchIdList>
         <int>4</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Health-Low-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -411,9 +351,7 @@
       <WatchIdList>
         <int>5</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Enhanced-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -432,9 +370,7 @@
       <WatchIdList>
         <int>5</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Breaker-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -453,9 +389,7 @@
       <WatchIdList>
         <int>5</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>X-Ray-P2.mp3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -474,9 +408,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>24</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Fight</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -495,10 +427,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>24</int>
-        <int>52</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Story Mode</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -517,10 +446,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>24</int>
-        <int>52</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Challenge Tower</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -539,10 +465,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>24</int>
-        <int>52</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Training</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -561,10 +484,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>24</int>
-        <int>52</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Online</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -583,10 +503,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>24</int>
-        <int>52</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Extras</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -605,10 +522,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>24</int>
-        <int>52</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Options</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -627,10 +541,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>24</int>
-        <int>52</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Exit Game</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -643,16 +554,14 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>24</Id>
-      <Name>Menus - 1 Player</Name>
-      <Description>Says 1 player</Description>
+      <Name>Main menu - number of players 1</Name>
+      <Description>Says single player</Description>
       <Value xsi:type="xsd:string">1</Value>
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
-      <SampleFilename>1 Player</SampleFilename>
+      <SecondaryIdList />
+      <SampleFilename>Single Player</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -664,15 +573,13 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>25</Id>
-      <Name>Menus - 2 Players</Name>
+      <Name>Main menu - number of players 2</Name>
       <Description>Says 2 players</Description>
       <Value xsi:type="xsd:string">2</Value>
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>2 Players</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -685,15 +592,13 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>26</Id>
-      <Name>Menus - 3 Players</Name>
+      <Name>Main menu - number of players 3</Name>
       <Description>Says 3 players</Description>
       <Value xsi:type="xsd:string">3</Value>
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>3 Players</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -706,15 +611,13 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>27</Id>
-      <Name>Menus - 4 Players</Name>
+      <Name>Main menu - number of players 4</Name>
       <Description>Says 4 players</Description>
       <Value xsi:type="xsd:string">4</Value>
       <WatchIdList>
         <int>7</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>4 Players</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -733,9 +636,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>25</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Versus mode</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -754,9 +655,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>25</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Team ladder</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -775,9 +674,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>25</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Online</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -796,9 +693,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>25</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Extras</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -817,9 +712,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>25</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Options</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -838,9 +731,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>25</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Exit Game</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -859,9 +750,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>26</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Versus mode</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -880,9 +769,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>26</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Extras</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -901,9 +788,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>26</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Options</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -922,9 +807,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>26</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Exit game</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -943,9 +826,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>27</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Versus mode</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -964,9 +845,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>27</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Extras</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -985,9 +864,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>27</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Options</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1006,9 +883,7 @@
       <WatchIdList>
         <int>6</int>
       </WatchIdList>
-      <SecondaryIdList>
-        <int>27</int>
-      </SecondaryIdList>
+      <SecondaryIdList />
       <SampleFilename>Exit Game</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
@@ -1021,16 +896,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>42</Id>
-      <Name>Single Player submenu 0 - Ladder</Name>
-      <Description>Says menu option using tolk</Description>
+      <Name>Character selection 0 - Scorpion</Name>
+      <Description>Says character name</Description>
       <Value xsi:type="xsd:string">0</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>48</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Ladder</SampleFilename>
+      <SampleFilename>Scorpion</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1042,16 +917,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>43</Id>
-      <Name>Single Player submenu 1 - Tag Ladder</Name>
-      <Description>Says menu option using tolk</Description>
+      <Name>Character selection 1 - Liu Kang</Name>
+      <Description>Says character name</Description>
       <Value xsi:type="xsd:string">1</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>48</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Tag Ladder</SampleFilename>
+      <SampleFilename>Liu Kang</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1063,16 +938,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>44</Id>
-      <Name>Single Player submenu 2 - Test Your Luck</Name>
-      <Description>Says menu option using tolk</Description>
+      <Name>Character selection 2 - Kung Lao</Name>
+      <Description>Says character name</Description>
       <Value xsi:type="xsd:string">2</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>48</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Test Your Luck</SampleFilename>
+      <SampleFilename>Kung Lao</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1084,16 +959,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>45</Id>
-      <Name>Single Player submenu 3 - Test Your Might</Name>
-      <Description>Says menu option using tolk</Description>
+      <Name>Character selection 3 - Sub-Zero</Name>
+      <Description>Says character name</Description>
       <Value xsi:type="xsd:string">3</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>48</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Test Your Might</SampleFilename>
+      <SampleFilename>Sub Zero</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1105,16 +980,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>46</Id>
-      <Name>Single Player submenu 4 - Test Your Sight</Name>
-      <Description>Says menu option using tolk</Description>
+      <Name>Character selection 4 - Sindel</Name>
+      <Description>Says character name</Description>
       <Value xsi:type="xsd:string">4</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>48</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Test Your Sight</SampleFilename>
+      <SampleFilename>Sindel</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1126,16 +1001,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>47</Id>
-      <Name>Single Player submenu 5 - Test Your Strike</Name>
-      <Description>Says menu option using tolk</Description>
+      <Name>Character selection 5 - Ermac</Name>
+      <Description>Says character name</Description>
       <Value xsi:type="xsd:string">5</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>48</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Test Your Strike</SampleFilename>
+      <SampleFilename>Ermac</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1143,107 +1018,107 @@
       <Active>true</Active>
     </Trigger>
     <Trigger>
-      <triggerType>Dependent</triggerType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>48</Id>
-      <Name>Current screen is fight submenu DEPENDENT</Name>
-      <Description>Dependent trigger</Description>
-      <Value xsi:type="xsd:string">-23152</Value>
+      <Name>Character selection 6 - Reptile</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">6</Value>
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename />
+      <SampleFilename>Reptile</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
-      <UseTolk>false</UseTolk>
+      <UseTolk>true</UseTolk>
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>
     <Trigger>
-      <triggerType>Dependent</triggerType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>49</Id>
-      <Name>Current screen is training submenu DEPENDENT</Name>
-      <Description>Dependent trigger</Description>
-      <Value xsi:type="xsd:string">-23032</Value>
+      <Name>Character selection 7 - Kitana</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">7</Value>
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename />
+      <SampleFilename>Kitana</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
-      <UseTolk>false</UseTolk>
+      <UseTolk>true</UseTolk>
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>
     <Trigger>
-      <triggerType>Dependent</triggerType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>50</Id>
-      <Name>Current screen is extras submenu DEPENDENT</Name>
-      <Description>Dependent trigger</Description>
-      <Value xsi:type="xsd:string">-22892</Value>
+      <Name>Character selection 8 - Johnny Cage</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">8</Value>
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename />
+      <SampleFilename>Johnny Cage</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
-      <UseTolk>false</UseTolk>
+      <UseTolk>true</UseTolk>
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>
     <Trigger>
-      <triggerType>Dependent</triggerType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>51</Id>
-      <Name>Current screen is options submenu DEPENDENT</Name>
-      <Description>Dependent trigger</Description>
-      <Value xsi:type="xsd:string">-22584</Value>
+      <Name>Character selection 9 - Jade</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">9</Value>
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename />
+      <SampleFilename>Jade</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
-      <UseTolk>false</UseTolk>
+      <UseTolk>true</UseTolk>
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>
     <Trigger>
-      <triggerType>Dependent</triggerType>
+      <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>52</Id>
-      <Name>Current screen is main menu DEPENDENT</Name>
-      <Description>Dependent trigger</Description>
-      <Value xsi:type="xsd:string">-23872</Value>
+      <Name>Character selection 10 - Mileena</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">10</Value>
       <WatchIdList>
         <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename />
+      <SampleFilename>Mileena</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
-      <UseTolk>false</UseTolk>
+      <UseTolk>true</UseTolk>
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>
@@ -1252,16 +1127,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>53</Id>
-      <Name>Options Menu 0 - Controller</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">0</Value>
+      <Name>Character selection 11 - Nightwolf</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">11</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>51</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Controller</SampleFilename>
+      <SampleFilename>Nightwolf</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1273,16 +1148,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>54</Id>
-      <Name>Options Menu 1 - Keyboard</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">1</Value>
+      <Name>Character selection 12 - Cyrax</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">12</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>51</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Keyboard</SampleFilename>
+      <SampleFilename>Cyrax</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1294,16 +1169,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>55</Id>
-      <Name>Options Menu 2 - Gameplay</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">2</Value>
+      <Name>Character selection 13 - Noob</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">13</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>51</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Gameplay</SampleFilename>
+      <SampleFilename>Noob</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1315,16 +1190,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>56</Id>
-      <Name>Options Menu 3 - Audio</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">3</Value>
+      <Name>Character selection 14 - Smoke</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">14</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>51</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Audio</SampleFilename>
+      <SampleFilename>Smoke</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1336,16 +1211,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>57</Id>
-      <Name>Options Menu 4 - Video</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">4</Value>
+      <Name>Character selection 15 - Sektor</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">15</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>51</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Video</SampleFilename>
+      <SampleFilename>Sektor</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1357,16 +1232,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>58</Id>
-      <Name>Options Menu 5 - Social Messaging</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">5</Value>
+      <Name>Character selection 16 - Sonya Blade</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">16</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>51</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Social Messaging</SampleFilename>
+      <SampleFilename>Sonya Blade</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1378,16 +1253,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>59</Id>
-      <Name>Training Menu 0 - Tutorial</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">0</Value>
+      <Name>Character selection 17 - Jax</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">17</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>49</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Tutorial</SampleFilename>
+      <SampleFilename>Jax</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1399,16 +1274,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>60</Id>
-      <Name>Training Menu 1 - Fatality Tutorial</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">1</Value>
+      <Name>Character selection 18 - Kano</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">18</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>49</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Fatality Tutorial</SampleFilename>
+      <SampleFilename>Kano</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1420,16 +1295,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>61</Id>
-      <Name>Training Menu 2 - Practice</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">2</Value>
+      <Name>Character selection 19 - Stryker</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">19</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>49</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Practice</SampleFilename>
+      <SampleFilename>Stryker</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1441,16 +1316,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>62</Id>
-      <Name>Training Menu 3 - Tag Team Practice</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">3</Value>
+      <Name>Character selection 20 - Shang Tsung</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">20</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>49</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Tag Team Practice</SampleFilename>
+      <SampleFilename>Shang Tsung</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1462,16 +1337,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>63</Id>
-      <Name>Extras Menu 0 - Krypt</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">0</Value>
+      <Name>Character selection 21 - Baraka</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">21</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>50</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Crypt</SampleFilename>
+      <SampleFilename>Baraka</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1483,16 +1358,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>64</Id>
-      <Name>Extras Menu 1 - Nekropolis</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">1</Value>
+      <Name>Character selection 22 - Kabal</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">22</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>50</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Necropolis</SampleFilename>
+      <SampleFilename>Kabal</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1504,16 +1379,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>65</Id>
-      <Name>Extras Menu 2 - Kredits</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">2</Value>
+      <Name>Character selection 23 - Raiden</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">23</Value>
       <WatchIdList>
-        <int>6</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>50</int>
+        <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Credits</SampleFilename>
+      <SampleFilename>Raiden</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1525,16 +1400,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>66</Id>
-      <Name>Audio Menu 1 - Device</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">1</Value>
+      <Name>Character selection 25 - Seheeva </Name>
+      <Description>Says character name - NOTE: There is no char 24.</Description>
+      <Value xsi:type="xsd:string">25</Value>
       <WatchIdList>
-        <int>9</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Device</SampleFilename>
+      <SampleFilename>Sheeva</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1546,16 +1421,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>67</Id>
-      <Name>Audio Menu 2 - Music</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">2</Value>
+      <Name>Character selection 26 - Quan Chi</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">26</Value>
       <WatchIdList>
-        <int>9</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Music</SampleFilename>
+      <SampleFilename>Quan Chi</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1567,16 +1442,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>68</Id>
-      <Name>Audio Menu 3 - Effects</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">3</Value>
+      <Name>Character selection 28 - Cyber Sub-Zero</Name>
+      <Description>Says character name. Note: There is no char 27.</Description>
+      <Value xsi:type="xsd:string">28</Value>
       <WatchIdList>
-        <int>9</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Effects</SampleFilename>
+      <SampleFilename>Cyber Sub Zero</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1588,16 +1463,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>69</Id>
-      <Name>Audio Menu 4 - Announcer</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">4</Value>
+      <Name>Character selection 29 - Skarlet</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">29</Value>
       <WatchIdList>
-        <int>9</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Announcer</SampleFilename>
+      <SampleFilename>Skarlet</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1609,16 +1484,16 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>70</Id>
-      <Name>Audio Menu 5 - Ambience</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">5</Value>
+      <Name>Character selection 30 - Kenshi</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">30</Value>
       <WatchIdList>
-        <int>9</int>
+        <int>8</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Ambience</SampleFilename>
+      <SampleFilename>Kenshi</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1630,16 +1505,58 @@
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>71</Id>
-      <Name>Audio Menu 6 - Dialog</Name>
-      <Description>Says menu option using tolk</Description>
-      <Value xsi:type="xsd:string">6</Value>
+      <Name>Character selection 31 - Rain</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">31</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Rain</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>72</Id>
+      <Name>Character selection 32 - Freddy Krueger</Name>
+      <Description>Says character name</Description>
+      <Value xsi:type="xsd:string">32</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Freddy Krueger</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>73</Id>
+      <Name>Difficulty 0 - Beginner</Name>
+      <Description>Says difficulty setting</Description>
+      <Value xsi:type="xsd:string">0</Value>
       <WatchIdList>
         <int>9</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Dialog</SampleFilename>
+      <SampleFilename>Beginner</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1649,18 +1566,18 @@
     <Trigger>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <comparisonType>Changed</comparisonType>
-      <Id>72</Id>
-      <Name>Music volume</Name>
-      <Description>Volume as int between 0 and 20. Says value via tolk.</Description>
-      <Value xsi:type="xsd:int">-1</Value>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>74</Id>
+      <Name>Difficulty 1 - Easy</Name>
+      <Description>Says difficulty setting</Description>
+      <Value xsi:type="xsd:string">1</Value>
       <WatchIdList>
-        <int>10</int>
+        <int>9</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>{}</SampleFilename>
+      <SampleFilename>Easy</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1670,18 +1587,60 @@
     <Trigger>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
-      <comparisonType>Changed</comparisonType>
-      <Id>73</Id>
-      <Name>Effects volume</Name>
-      <Description>Volume as int between 0 and 20. Says value via tolk.</Description>
-      <Value xsi:type="xsd:int">-1</Value>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>75</Id>
+      <Name>Difficulty 2 - Medium</Name>
+      <Description>Says difficulty setting</Description>
+      <Value xsi:type="xsd:string">2</Value>
       <WatchIdList>
-        <int>11</int>
+        <int>9</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>{}</SampleFilename>
+      <SampleFilename>Medium</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>76</Id>
+      <Name>Difficulty 3 - Hard</Name>
+      <Description>Says difficulty setting</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Hard</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>77</Id>
+      <Name>Difficulty 4 - Expert</Name>
+      <Description>Says difficulty setting</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Expert</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -1696,7 +1655,7 @@ This config uses sample-based output for health, clock and gauge values - as wel
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>90</ClockMax>
-  <ConfigDirectory>Mortal Kombat 9</ConfigDirectory>
+  <ConfigDirectory>02 - Mortal Kombat 9</ConfigDirectory>
   <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
 </GameConfig>
