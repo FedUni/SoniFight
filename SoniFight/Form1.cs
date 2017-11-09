@@ -603,7 +603,7 @@ namespace au.edu.federation.SoniFight
             isClockCB = new CheckBox();
             triggerTypeLabel = new Label();
             triggerAllowanceComboBox = new ComboBox();
-
+            
             panel.Padding = padding;
             panel.AutoSize = true;
             panel.Anchor = AnchorStyles.Right;
@@ -1341,6 +1341,19 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(descTB, 1, row); // Control, Column, Row
                 row++;
 
+                // Add a simulated horizontal rule between this section and the next
+
+                // Create a label to be used as a simulated hrule
+                Label hrule = new Label();
+                hrule.AutoSize = false;
+                hrule.Anchor = AnchorStyles.Right;
+                hrule.Dock = DockStyle.Fill;
+                hrule.Height = 2;
+                hrule.BorderStyle = BorderStyle.Fixed3D;
+                panel.SetColumnSpan(hrule, 2);
+                panel.Controls.Add(hrule, 0, row);
+                row++;
+
                 // -----  Row 3 - Trigger type (Normal, Dependent, Continuous, Modifier) -----                
                 triggerTypeLabel.AutoSize = true;
                 triggerTypeLabel.Text = Resources.ResourceManager.GetString("triggerTypeLabelString");
@@ -1608,7 +1621,18 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(valueTB, 1, row); // Control, Column, Row
                 row++;
 
-                // ----- Row 8 - Sampel filename / tolk output text row -----                
+                // Create a label to be used as a simulated hrule
+                hrule = new Label();
+                hrule.AutoSize = false;
+                hrule.Anchor = AnchorStyles.Right;
+                hrule.Dock = DockStyle.Fill;
+                hrule.Height = 2;
+                hrule.BorderStyle = BorderStyle.Fixed3D;
+                panel.SetColumnSpan(hrule, 2);
+                panel.Controls.Add(hrule, 0, row);
+                row++;
+
+                // ----- Row 8 - Sample filename / tolk output text row -----                
                 sampleFilenameLabel.AutoSize = true;
                 sampleFilenameLabel.Text = Resources.ResourceManager.GetString("sampleFilenameLabelString");
                 sampleFilenameLabel.Anchor = AnchorStyles.Right;
