@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GameConfigFileVersion>1</GameConfigFileVersion>
+  <watchList>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>1</Id>
+      <Name>Main menu options</Name>
+      <Description>Options are 0 through 5 as integer</Description>
+      <PointerList>
+        <string>2FFD50</string>
+        <string>90</string>
+        <string>44</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+  </watchList>
+  <triggerList>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>1</Id>
+      <Name>Main menu 0 - Exit</Name>
+      <Description>Says menu option via tolk</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Exit</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>2</Id>
+      <Name>Main menu 1 - Story</Name>
+      <Description>Says menu option via tolk</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Story</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>3</Id>
+      <Name>Main menu 2 - Versus</Name>
+      <Description>Says menu option via tolk</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Versus</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>4</Id>
+      <Name>Main menu 3 - Online</Name>
+      <Description>Says menu option via tolk</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Online</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>5</Id>
+      <Name>Main menu 4 - How To Play</Name>
+      <Description>Says menu option via tolk</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>How To Play</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>6</Id>
+      <Name>Main menu 5 - Options</Name>
+      <Description>Says menu option via tolk</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+  </triggerList>
+  <Description>2017-11-02 - Al Lansley</Description>
+  <ProcessName>DivekickD3D11</ProcessName>
+  <PollSleepMS>100</PollSleepMS>
+  <ClockTickMS>1000</ClockTickMS>
+  <ClockMax>20</ClockMax>
+  <ConfigDirectory>DiveKick (Steam)</ConfigDirectory>
+  <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
+  <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
+</GameConfig>

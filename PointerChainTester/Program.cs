@@ -51,14 +51,7 @@ namespace au.edu.federation.PointerChainTester
         static void Main()
         {
             // Set our 64-bit flag depending on whether this is the 32-bit or 64-bit build of the pointer chain tester
-            if (System.Environment.Is64BitProcess)
-            {
-                is64Bit = true;
-            }
-            else
-            {
-                is64Bit = false;
-            }
+            is64Bit = System.Environment.Is64BitProcess;
 
             // Localisation test code - uncomment to force French localisation etc.
             /*CultureInfo cultureOverride = new CultureInfo("fr");

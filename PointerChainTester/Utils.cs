@@ -184,7 +184,7 @@ namespace au.edu.federation.PointerChainTester
         {
             int bytesRead = 0;
 
-            // We'll read one UTF-16 character at a time
+            // We'll read one UTF-8 character at a time
             byte[] buf = new byte[1];
 
             // We'll keep a char count to abort after a set number of chars if bad things happen
@@ -193,7 +193,7 @@ namespace au.edu.federation.PointerChainTester
             string s = "";
             do
             {
-                // Reset how many bytes we've read then read 2 bytes of data
+                // Reset how many bytes we've read then read 1 byte of data
                 bytesRead = 0;
                 ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
 
@@ -203,10 +203,10 @@ namespace au.edu.federation.PointerChainTester
                     break;
                 }
 
-                // (Implied else) Add the UTF-16 representation of the 2-bytes to our string
-                s += System.Text.Encoding.Unicode.GetString(buf);
+                // (Implied else) Add the UTF-8 representation of the byte to our string
+                s += System.Text.Encoding.ASCII.GetString(buf);
 
-                // Move along by 2 bytes (text being read is UTF16)
+                // Move along by 1 byte (text being read is UTF-8)
                 address += 1;
 
             } while (!((buf[0] == 0) || (++charCount >= Program.TEXT_COMPARISON_CHAR_LIMIT))); // Quit when we read a null-terminator [00] or hit 33 chars

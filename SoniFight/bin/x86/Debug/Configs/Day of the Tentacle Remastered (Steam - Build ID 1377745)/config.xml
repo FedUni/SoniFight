@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GameConfigFileVersion>1</GameConfigFileVersion>
+  <watchList>
+    <Watch>
+      <valueType>StringUTF8Type</valueType>
+      <Id>1</Id>
+      <Name>Currently highlighted item</Name>
+      <Description>The text when you highlight an item</Description>
+      <PointerList>
+        <string>356AFC</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>UnsignedIntType</valueType>
+      <Id>2</Id>
+      <Name>Right-click menu option as an int</Name>
+      <Description>0 = Open, 1 = Close, 3 = Push, 4 = Pull, 5 = Use, Look = 6, Pick up = 7. Cancel is int max.</Description>
+      <PointerList>
+        <string>322DAC</string>
+        <string>4</string>
+        <string>17C</string>
+        <string>320</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+  </watchList>
+  <triggerList>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <Id>1</Id>
+      <Name>Mouse over text</Name>
+      <Description>Says the item the mouse is currently hovering over</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>2</Id>
+      <Name>Open 0</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Open {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>3</Id>
+      <Name>Push 3</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Push {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>4</Id>
+      <Name>Pull 4</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Pull {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>5</Id>
+      <Name>Use 5</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Use {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>6</Id>
+      <Name>Look At 6</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Look At {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>7</Id>
+      <Name>Pick Up 7</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Pick Up {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>8</Id>
+      <Name>Cancel</Name>
+      <Description>This is the UINT max value - used when not highlighting anything.</Description>
+      <Value xsi:type="xsd:string">4294967295</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Cancel</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>9</Id>
+      <Name>Give 2</Name>
+      <Description>Says give then the highlighted item</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Give {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>10</Id>
+      <Name>Close 1</Name>
+      <Description>Says close then the highlighted item</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Close {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+  </triggerList>
+  <Description>Initial Config - Al lansley - 2017-11-10
+
+Outputs currently selected object </Description>
+  <ProcessName>Dott</ProcessName>
+  <PollSleepMS>100</PollSleepMS>
+  <ClockTickMS>1000</ClockTickMS>
+  <ClockMax>99</ClockMax>
+  <ConfigDirectory>Day of the Tentacle Remastered\</ConfigDirectory>
+  <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
+  <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
+</GameConfig>
