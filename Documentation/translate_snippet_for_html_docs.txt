@@ -1,4 +1,4 @@
-Web translation snippet - place this between after the body tag and before the <div class="WordSection1"> element:
+Web translation snippet - place this between the body tag and before the <div class="WordSection1"> element:
 
 
 <div id="google_translate_element"></div><script>
