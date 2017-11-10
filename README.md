@@ -8,7 +8,9 @@ To run SoniFight either download a release or build the Visual Studio 2017 proje
 
 SoniFight presently ships with game configs to add sonification to the following games:
 - Street Fighter 4 (good),
-- Mortal Kombat 9, (okay), and
+- Mortal Kombat 9, (good),
+- Day of the Tentacle Remastered (potentially ideal),
+- Divekick (main menus only), and
 - Killer Instinct (Windows Store edition, 64-bit), (proof-of-concept).
 
 SoniFight also contains a comprehensive user interface where you can create your own game configs for games of your choice. To learn more about creating your own game configs as well as how the software operates through 'watches' and 'triggers', or to take a look at the answers to some frequently asked questions please see the provided user documentation.
