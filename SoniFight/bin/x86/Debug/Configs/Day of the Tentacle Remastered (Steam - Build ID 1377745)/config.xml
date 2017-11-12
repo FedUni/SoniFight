@@ -46,8 +46,8 @@
       <PointerList>
         <string>322DAC</string>
         <string>4</string>
-        <string>17C</string>
-        <string>C2C0</string>
+        <string>180</string>
+        <string>100</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
@@ -465,7 +465,7 @@
       <comparisonType>Changed</comparisonType>
       <Id>19</Id>
       <Name>Speech option</Name>
-      <Description>Note - this doesn't say the text, just the number - click the option to start that conversation option</Description>
+      <Description>This doesn't say the text, just the option number</Description>
       <Value xsi:type="xsd:int">-1</Value>
       <WatchIdList>
         <int>4</int>
