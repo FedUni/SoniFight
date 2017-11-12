@@ -64,6 +64,21 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
+    <Watch>
+      <valueType>ShortType</valueType>
+      <Id>6</Id>
+      <Name>Options watch as short for fullscreen</Name>
+      <Description>This works in fullscreen, the other options watch doesn't</Description>
+      <PointerList>
+        <string>2D48E0</string>
+        <string>230</string>
+        <string>70C</string>
+        <string>2AC</string>
+        <string>35C</string>
+        <string>26E</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
@@ -522,6 +537,174 @@
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>{}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>23</Id>
+      <Name>Options - New Game FULLSCREEN</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17332</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>New Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>24</Id>
+      <Name>Options - Bonus FULLSCREEN</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17455</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Bonus</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>25</Id>
+      <Name>Options - Options FULLSCREEN</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17495</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>26</Id>
+      <Name>Options - Quit FULLSCREEN</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17537</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Quit</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>27</Id>
+      <Name>Options - Load Game FULLSCREEN</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17588</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Load Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>28</Id>
+      <Name>Options - Resume Game FULLSCREEN</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17567</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Resume Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>29</Id>
+      <Name>Options - Save Game FULLSCREEN</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17598</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Save Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>30</Id>
+      <Name>Options - Load Game FULLSCREEN save 2</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17602</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Load Game</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
