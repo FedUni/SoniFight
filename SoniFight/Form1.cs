@@ -12,7 +12,7 @@ namespace au.edu.federation.SoniFight
     public partial class MainForm : Form
     {
         // Used in window title
-        private static string formTitle = "SoniFight v1.0 "; // Do not localise this - SoniFight is SoniFight.
+        private static string formTitle = "SoniFight "; // Do not localise this - SoniFight is SoniFight.
 
         // Are we current running a gameconfig? Initially no!
         bool running = false;

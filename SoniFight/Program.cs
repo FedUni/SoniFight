@@ -360,7 +360,7 @@ namespace au.edu.federation.SoniFight
                     }
                     catch (Exception exception)
                     {
-                        MessageBox.Show(exception.Message);
+                        MessageBox.Show("Trigger " + t.Id + " failed initial type conversion: " + exception.Message);
                     }
 
                 } // End of loop over watches in trigger watchIdList
@@ -681,8 +681,12 @@ namespace au.edu.federation.SoniFight
                                             string s = Utils.substituteWatchValuesInString(t, t.SampleFilename);
                                             Console.WriteLine(DateTime.Now + " Trigger activated " + t.Id + " " + Resources.ResourceManager.GetString("sayingTolkString") + s);
 
-                                            // ..then output the sonification event by saying the sample filename string. Final true means interupt any current speech.
-                                            Tolk.Speak(s, true);
+
+                                            if (!string.IsNullOrWhiteSpace(s))
+                                            {
+                                                // ..then output the sonification event by saying the sample filename string. Final true means interupt any current speech.
+                                                Tolk.Speak(s, true);
+                                            }
                                         }
                                         else
                                         {

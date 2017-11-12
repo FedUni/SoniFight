@@ -943,7 +943,7 @@
     <value>0</value>
   </data>
   <data name="appTitleLabel.Text" xml:space="preserve">
-    <value>SoniFight v1.0</value>
+    <value>SoniFight v1.1.1</value>
   </data>
   <data name="appTitleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -1288,7 +1288,7 @@
     <value>874, 541</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>SoniFight v1.0 - Status: Stopped</value>
+    <value>SoniFight Status: Stopped</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

@@ -25,6 +25,45 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>3</Id>
+      <Name>Options watch as an unsigned int</Name>
+      <Description>Values are arbitrary</Description>
+      <PointerList>
+        <string>338F80</string>
+        <string>2EC</string>
+        <string>14</string>
+        <string>274</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>4</Id>
+      <Name>Speech option as an int</Name>
+      <Description>Values are 0 and upwards</Description>
+      <PointerList>
+        <string>322DAC</string>
+        <string>4</string>
+        <string>17C</string>
+        <string>C2C0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>StringUTF8Type</valueType>
+      <Id>5</Id>
+      <Name>Use object with text</Name>
+      <Description>CHANGE ME</Description>
+      <PointerList>
+        <string>322DAC</string>
+        <string>4</string>
+        <string>17C</string>
+        <string>C0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
@@ -237,15 +276,268 @@
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>11</Id>
+      <Name>Options - New Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">1138147328</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>New Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>12</Id>
+      <Name>Options - Bonus</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">1142688427</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Bonus</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>13</Id>
+      <Name>Options - Options</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">1145462785</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>14</Id>
+      <Name>Options - Quit</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">1147221334</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Quit</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>15</Id>
+      <Name>Options - Resume Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">1149655723</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Resume Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>16</Id>
+      <Name>Options - Load Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">1150322006</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Load Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>17</Id>
+      <Name>Options - Save Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">1150616918</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Save Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>18</Id>
+      <Name>Talk To 8</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Talk To {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <Id>19</Id>
+      <Name>Speech option</Name>
+      <Description>Note - this doesn't say the text, just the number - click the option to start that conversation option</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>20</int>
+      </SecondaryIdList>
+      <SampleFilename>Speech option {}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Dependent</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>NotEqualTo</comparisonType>
+      <Id>20</Id>
+      <Name>Speech option -1 avoider (DEPENDENT)</Name>
+      <Description>This trigger stops the config saying speech option -1 after selecting a speech option</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename />
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>21</Id>
+      <Name>Options - Load Game ALTERNATE TRIGGER</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">1149874176</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Load Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <Id>22</Id>
+      <Name>Use object with trigger</Name>
+      <Description>Says use object with whatever other object named</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>5</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
   </triggerList>
-  <Description>Initial Config - Al lansley - 2017-11-10
+  <Description>Al lansley - 2017-11-12
 
-Outputs currently selected object </Description>
+Outputs currently selected object.
+Should also output new game / load game / save game etc prompts from options screen, but the memory location seems to change when in fullscreen mode so a second watch to these items will need to be found. </Description>
   <ProcessName>Dott</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>99</ClockMax>
-  <ConfigDirectory>Day of the Tentacle Remastered\</ConfigDirectory>
+  <ConfigDirectory>Day of the Tentacle Remastered (Steam - Build ID 1377745)\</ConfigDirectory>
   <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
 </GameConfig>
