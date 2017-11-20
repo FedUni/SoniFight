@@ -3,14 +3,27 @@
   <GameConfigFileVersion>1</GameConfigFileVersion>
   <watchList>
     <Watch>
-      <valueType>IntType</valueType>
+      <valueType>StringUTF8Type</valueType>
       <Id>1</Id>
-      <Name>Main menu options</Name>
-      <Description>Options are 0 through 5 as integer</Description>
+      <Name>Currently selected item (UTF-8 string)</Name>
+      <Description>The item highlighted by the mouse cursor as a string</Description>
       <PointerList>
-        <string>2FFD50</string>
-        <string>90</string>
-        <string>44</string>
+        <string>1989B88</string>
+        <string>20</string>
+        <string>48</string>
+        <string>20</string>
+        <string>130</string>
+        <string>3D</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>ShortType</valueType>
+      <Id>2</Id>
+      <Name>Speech options as short</Name>
+      <Description>Values are 1 byte - option 1 is 23, option 2 is 24, option 3 is 25, option 4 is 26</Description>
+      <PointerList>
+        <string>1885704</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
@@ -18,19 +31,19 @@
   <triggerList>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>InMenu</allowanceType>
-      <comparisonType>EqualTo</comparisonType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Changed</comparisonType>
       <Id>1</Id>
-      <Name>Main menu 0 - Exit</Name>
-      <Description>Says menu option via tolk</Description>
-      <Value xsi:type="xsd:string">0</Value>
+      <Name>Say currently highlighted item</Name>
+      <Description>Highlighted item as UTF-8 string</Description>
+      <Value xsi:type="xsd:string">foo</Value>
       <WatchIdList>
         <int>1</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Exit</SampleFilename>
+      <SampleFilename>{}</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -39,19 +52,19 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>InMenu</allowanceType>
+      <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>2</Id>
-      <Name>Main menu 1 - Story</Name>
-      <Description>Says menu option via tolk</Description>
-      <Value xsi:type="xsd:string">1</Value>
+      <Name>Speech option 1</Name>
+      <Description>Matches on 23 as short</Description>
+      <Value xsi:type="xsd:string">23</Value>
       <WatchIdList>
-        <int>1</int>
+        <int>2</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Story</SampleFilename>
+      <SampleFilename>Speech option 1</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -60,19 +73,19 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>InMenu</allowanceType>
+      <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>3</Id>
-      <Name>Main menu 2 - Versus</Name>
-      <Description>Says menu option via tolk</Description>
-      <Value xsi:type="xsd:string">2</Value>
+      <Name>Speech option 2</Name>
+      <Description>Matches on 24 as short</Description>
+      <Value xsi:type="xsd:string">24</Value>
       <WatchIdList>
-        <int>1</int>
+        <int>2</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Versus</SampleFilename>
+      <SampleFilename>Speech option 2</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -81,19 +94,19 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>InMenu</allowanceType>
+      <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>4</Id>
-      <Name>Main menu 3 - Online</Name>
-      <Description>Says menu option via tolk</Description>
-      <Value xsi:type="xsd:string">3</Value>
+      <Name>Speech option 3</Name>
+      <Description>Matches on 25 as short</Description>
+      <Value xsi:type="xsd:string">25</Value>
       <WatchIdList>
-        <int>1</int>
+        <int>2</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>Online</SampleFilename>
+      <SampleFilename>Speech option 3</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -102,40 +115,19 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>InMenu</allowanceType>
+      <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <Id>5</Id>
-      <Name>Main menu 4 - How To Play</Name>
-      <Description>Says menu option via tolk</Description>
-      <Value xsi:type="xsd:string">4</Value>
+      <Name>Speech option 4</Name>
+      <Description>Matches on 26 as short</Description>
+      <Value xsi:type="xsd:string">26</Value>
       <WatchIdList>
-        <int>1</int>
+        <int>2</int>
       </WatchIdList>
       <SecondaryIdList>
         <int>-1</int>
       </SecondaryIdList>
-      <SampleFilename>How To Play</SampleFilename>
-      <SampleSpeed>1</SampleSpeed>
-      <SampleVolume>1</SampleVolume>
-      <UseTolk>true</UseTolk>
-      <IsClock>false</IsClock>
-      <Active>true</Active>
-    </Trigger>
-    <Trigger>
-      <triggerType>Normal</triggerType>
-      <allowanceType>InMenu</allowanceType>
-      <comparisonType>EqualTo</comparisonType>
-      <Id>6</Id>
-      <Name>Main menu 5 - Options</Name>
-      <Description>Says menu option via tolk</Description>
-      <Value xsi:type="xsd:string">5</Value>
-      <WatchIdList>
-        <int>1</int>
-      </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
-      <SampleFilename>Options</SampleFilename>
+      <SampleFilename>Speech option 4</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>
@@ -143,14 +135,18 @@
       <Active>true</Active>
     </Trigger>
   </triggerList>
-  <Description>2017-11-02 - Al Lansley
+  <Description>2017-11-20 - Al Lansley
 
-Work in progress.</Description>
-  <ProcessName>DivekickD3D11</ProcessName>
+This is the version running on ScummVM downloaded from Good Old Games.
+
+Work in progress.
+
+You'll probably want to press F5 and turn the speech and text mode to "Speech Only", otherwise this config will pick up and say the text that is currently being spoken by the game.</Description>
+  <ProcessName>scummvm</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
-  <ClockMax>20</ClockMax>
-  <ConfigDirectory>DiveKick (Steam - Build ID 779573)</ConfigDirectory>
+  <ClockMax>99</ClockMax>
+  <ConfigDirectory>Beneath a Steel Sky (v0.0372 cd)\</ConfigDirectory>
   <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
 </GameConfig>

@@ -1002,6 +1002,7 @@
         <trans-unit id="irrKlangPictureBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>663, 451</source>
           <target state="needs-review-translation">663, 451</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="irrKlangPictureBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>190, 55</source>
@@ -1837,6 +1838,7 @@
         <trans-unit id="pictureBox1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>460, 141</source>
           <target state="needs-review-translation">460, 141</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="pictureBox1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>342, 296</source>
@@ -1941,6 +1943,7 @@
         <trans-unit id="refreshButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>132, 38</source>
           <target state="needs-review-translation">132, 38</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="refreshButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>2</source>
@@ -1961,6 +1964,7 @@
         <trans-unit id="configsComboBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>843, 32</source>
           <target state="needs-review-translation">843, 32</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="configsComboBox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>1</source>
@@ -1981,6 +1985,7 @@
         <trans-unit id="appTitleLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>860, 46</source>
           <target state="needs-review-translation">860, 46</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="appTitleLabel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>0</source>
@@ -2005,6 +2010,7 @@
         <trans-unit id="mainTabPage.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>866, 515</source>
           <target state="needs-review-translation">866, 515</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="mainTabPage.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>0</source>
@@ -2025,6 +2031,7 @@
         <trans-unit id="editTabPage.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>866, 515</source>
           <target state="needs-review-translation">866, 515</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="editTabPage.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>1</source>
@@ -2045,6 +2052,7 @@
         <trans-unit id="tabControl.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>874, 541</source>
           <target state="needs-review-translation">874, 541</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="tabControl.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>0</source>
@@ -2232,6 +2240,7 @@
         <trans-unit id="$this.ClientSize" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>874, 541</source>
           <target state="needs-review-translation">874, 541</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
           <source>SoniFight Status: Stopped</source>

@@ -6,6 +6,8 @@ using System.Windows.Forms;
 using System.Threading;
 
 using au.edu.federation.SoniFight.Properties;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace au.edu.federation.SoniFight
 {
@@ -271,9 +273,59 @@ namespace au.edu.federation.SoniFight
                     this.Text = formTitle + Resources.ResourceManager.GetString("statusRunningString") + gameConfig.ConfigDirectory;
                     running = true;
                 }
+
+            } // End of if !running block
+
+            /*** SECTION WHERE WE TRY TO LAUNCH THE GAME AND CHANGE ITS REGION - DOESN'T WORK, USE PROPERTIES | LANGUAGES DROPDOWN FROM WITHIN STEAM
+
+            // If not running then attempt to launch the game process so we can control the Culture of it.
+
+            string processNameWithPath = gameConfig.ProcessName;
+
+            Console.WriteLine("Initial full process name with path (single backslashes): " + processNameWithPath);
+
+            
+
+            // Cut down full path to just process name, i.e. "C:\Games\StreetFighter\ssfiv.exe" would be cut down to "ssfiv"
+            int lastSlashPos = processNameWithPath.LastIndexOf("\\") + 1;
+            string justProcessName = processNameWithPath.Substring(lastSlashPos, processNameWithPath.Length - lastSlashPos); 
+            Console.WriteLine("Just process name: " + justProcessName);
+
+            string processNameWithEscapedPath = Regex.Replace(processNameWithPath, @"\\", @"\\"); // Replace all single backslashes with double backslashes
+            Console.WriteLine("Escaped full path: " + processNameWithEscapedPath);
+
+            string processLaunchPath = processNameWithEscapedPath + ".exe";
+            Console.WriteLine("Process launch path: " + processLaunchPath);
+
+            // Try to find process
+            Process[] processArray = Process.GetProcessesByName(justProcessName);
+
+            // Process is not already running, so attempt to launch it
+            if (processArray.Length <= 0)
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+
+                string foo = @"C:\Program Files (x86)\Steam\Steam.exe";
+                string bar = " -applaunch 45760' -nosplash";
+                string foobar = foo + bar;
+
+                // Assign file name
+                startInfo.FileName = @"C:\Program Files (x86)\Steam\Steam.exe"; //@"C:\\Program Files (x86)\\Steam\\Steam.exe -applaunch 45760 -nosplash";// processLaunchPath;
+
+                startInfo.Arguments = "-applaunch 45760 -nosplash";
+
+                // Start the process without creating new window (default is false) - process will create its own window on launch
+                //startInfo.CreateNoWindow = true;
+
+                // Do not execute the process from the shell, launch it directly from this executable
+                //startInfo.UseShellExecute = false;
+
+                Process.Start(startInfo);
             }
 
-        } // End of runConfig_Click method
+            ***/
+
+        }
 
         // Method to save the current GameConfig to its config.xml file
         private void saveConfig_Click(object senderender, EventArgs e)

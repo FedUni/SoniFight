@@ -7742,7 +7742,7 @@
       <SampleVolume>0.7</SampleVolume>
       <UseTolk>false</UseTolk>
       <IsClock>false</IsClock>
-      <Active>true</Active>
+      <Active>false</Active>
     </Trigger>
     <Trigger>
       <triggerType>Continuous</triggerType>
@@ -7784,7 +7784,7 @@
       <SampleVolume>0.5</SampleVolume>
       <UseTolk>false</UseTolk>
       <IsClock>false</IsClock>
-      <Active>false</Active>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
@@ -7847,7 +7847,7 @@
       <SampleVolume>1</SampleVolume>
       <UseTolk>false</UseTolk>
       <IsClock>false</IsClock>
-      <Active>true</Active>
+      <Active>false</Active>
     </Trigger>
     <Trigger>
       <triggerType>Modifier</triggerType>
@@ -7868,7 +7868,7 @@
       <SampleVolume>1</SampleVolume>
       <UseTolk>false</UseTolk>
       <IsClock>false</IsClock>
-      <Active>false</Active>
+      <Active>true</Active>
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
@@ -8869,7 +8869,7 @@ Unfortunately in some circumstances random sample playing may be unavoidable bec
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>99</ClockMax>
-  <ConfigDirectory>Ultra Street Fighter IV Arcade Edition v2.0.0.93908</ConfigDirectory>
+  <ConfigDirectory>Ultra Street Fighter IV Arcade Edition v2.0.0.93908\</ConfigDirectory>
   <NormalTriggerMasterVolume>0.7</NormalTriggerMasterVolume>
-  <ContinuousTriggerMasterVolume>0.5</ContinuousTriggerMasterVolume>
+  <ContinuousTriggerMasterVolume>0.15</ContinuousTriggerMasterVolume>
 </GameConfig>

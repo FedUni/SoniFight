@@ -57,6 +57,9 @@ namespace au.edu.federation.SoniFight
         // Flag to keep track of whether we're running as a 32-bit or 64-bit process
         public static bool is64Bit;
 
+        public static CultureInfo cultureOverride;
+        public static CultureInfo cultureUIOverride;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -72,17 +75,33 @@ namespace au.edu.federation.SoniFight
             {
                 is64Bit = false;
             }
-            
+
             // At some point we may wish to have this as a Windows Application (not a Console Application) and attach a console to it.
             // This comes with some caveats like you can't cleanly pipe output to file from it, so I'll leave it for now. In the below
             // AttachConsole call -1 means attach to the parent process, and we also need the native AttachConsole method from kernel32.dll.
             //AttachConsole(-1);
 
-            // Localisation test code - uncomment to force French localisation etc.
-            /*CultureInfo cultureOverride = new CultureInfo("fr");
-            Thread.CurrentThread.CurrentUICulture = cultureOverride;
-            Thread.CurrentThread.CurrentCulture = cultureOverride;*/
+            // ----- Localisation test code - uncomment to force French localisation etc. -----
 
+            // Specify cultures for internal and UI work
+            //cultureOverride = CultureInfo("fr"); // Force internal culture to be the invariant culture - we could force english with: cultureOverride = new CultureInfo("en");
+            //cultureUIOverride = new CultureInfo("fr"); // CultureInfo.InvariantCulture; // Force UI culture to be invariant culture - we could force french with: cultureUIOverride = new CultureInfo("fr");
+
+            cultureOverride = CultureInfo.InvariantCulture;   // Force internal culture to be the invariant culture - we could force english with: cultureOverride = new CultureInfo("en");
+            //CultureInfo cultureUIOverride = CultureInfo.InvariantCulture; // Force UI culture to be invariant culture - we could force french with: cultureUIOverride = new CultureInfo("fr");
+
+            // Apply those cultures to current thread
+            Thread.CurrentThread.CurrentCulture = cultureOverride;
+            //Thread.CurrentThread.CurrentUICulture = cultureUIOverride;
+            Console.WriteLine("The current culture is: " + CultureInfo.CurrentCulture);
+            Console.WriteLine("The current UI culture is: " + CultureInfo.CurrentUICulture);
+            
+            // Attempt to force all threads created by this thread (hopefully including those in background workers) to have the same culture as this thread
+            CultureInfo.DefaultThreadCurrentCulture = cultureOverride;
+            //CultureInfo.DefaultThreadCurrentUICulture = cultureUIOverride;
+            
+            // ----- End of localisation section -----
+            
             // Prepare sonficiation background worker...
             sonificationBGW.DoWork += performSonification;      // Specify the work method - this runs when RunWorkerAsync is called
             sonificationBGW.WorkerReportsProgress = false;      // We do not want progress reports
@@ -102,6 +121,8 @@ namespace au.edu.federation.SoniFight
         // Note: Because a trigger may be associated with a number of watches we must provide the index of the watch value we're comparing against.
         public static bool performComparison(Trigger t, dynamic watchValue, int watchIndex)
         {
+
+
             // Note: Continuous triggers do NOT call this method because their job is not to compare to a specific value, it's to compare
             //       two values and give a percentage (e.g. player 1 x-location and player 2 x-location).
 
@@ -117,6 +138,9 @@ namespace au.edu.federation.SoniFight
                 triggerDependencyCount = 0;
             }*/
 
+            string stringA = "";
+            string stringB = "";
+
             // Guard against user moving to edit tab where triggers are temporarily reset and there is no previous value
             if (t.PreviousValueList.Count > 0)
             {
@@ -127,9 +151,19 @@ namespace au.edu.federation.SoniFight
                     switch (t.comparisonType)
                     {
                         case Trigger.ComparisonType.EqualTo:
-                            if ((t.PreviousValueList[watchIndex] != t.Value || t.triggerType == Trigger.TriggerType.Modifier) && (watchValue == t.Value))
+
+                            // We'll perform all 'equal-to' comparisons as strings
+                            stringA = Convert.ToString(watchValue, Program.cultureOverride);
+                            stringB = Convert.ToString(t.Value, Program.cultureOverride);
+                            string previousValueString = Convert.ToString(t.PreviousValueList[watchIndex], Program.cultureOverride);
+
+                            // Params: first string, second string, case sensitive, culture for comparison
+                            // A result of zero means these strings are identical
+                            int previousResult = string.Compare(stringA, previousValueString, false, CultureInfo.InvariantCulture);
+                            if ((string.Compare(stringA, stringB, false, CultureInfo.InvariantCulture) == 0 || t.triggerType == Trigger.TriggerType.Modifier) &&
+                                (previousResult != 0) )
                             {
-                                return true;
+                                return true; // Strings are identical we have a match
                             }
                             return false; // Comparison failed? Return false.
 
@@ -169,11 +203,24 @@ namespace au.edu.federation.SoniFight
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.Changed:
-                            if (t.PreviousValueList[watchIndex] != watchValue || t.triggerType == Trigger.TriggerType.Modifier)
+
+                            // NOTE: The changed comparison uses the current watch value and the previous value - it does NOT use the current trigger value, which we
+                            //       don't care about.
+
+                            // We'll perform all 'changed' comparisons as strings
+                            stringA = Convert.ToString(watchValue, Program.cultureOverride);
+                            stringB = Convert.ToString(t.PreviousValueList[watchIndex], Program.cultureOverride);
+
+                            // Params: first string, second string, case sensitive, culture for comparison
+                            // A result of zero means these strings are identical
+                            if ( string.Compare(stringA, stringB, false, CultureInfo.InvariantCulture) == 0)
                             {
-                                return true;
+                                return false; // Same, so have not changed
                             }
-                            return false; // Comparison failed? Return false.
+                            return true;
+
+                            // Another option we could use in this changed comparison is to say that a change to a blank string does not count as a change.
+                            // Worth thinking about, but I won't put it in just yet.
                     }
                 }
                 catch (Exception e)
@@ -544,7 +591,7 @@ namespace au.edu.federation.SoniFight
                                 percentage = (float)(1.0 - (currentRange / maxRange));
                                 t.CurrentSampleSpeed = t.SampleSpeed * percentage;
                                 t.CurrentSampleVolume = t.SampleVolume;
-                                Console.WriteLine("Pitch ascending new speed: " + t.CurrentSampleSpeed + " and volume is: " + t.CurrentSampleVolume);
+                                //Console.WriteLine("Pitch ascending new speed: " + t.CurrentSampleSpeed + " and volume is: " + t.CurrentSampleVolume);
                                 Program.irrKlang.ChangeContinuousSampleSpeed(t.SampleKey, t.CurrentSampleSpeed);
                                 break;
                         }

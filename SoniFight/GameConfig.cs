@@ -189,12 +189,16 @@ namespace au.edu.federation.SoniFight
         // DoWork method for the process connection background worker
         public void connectToProcess(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
+            // Get the process base address
+            //int lastSlashPos = processName.LastIndexOf("\\") + 1;
+            //string justProcessName = processName.Substring(lastSlashPos, processName.Length - lastSlashPos);
+
             // Not connected and we're not cancelling? Then using the background worker...
             while (!Program.connectedToProcess && !processConnectionBGW.CancellationPending)
             {
                 // Find all instances of the named process running on the local computer.
                 // This will return an empty array if the process isn't running.
-                processArray = Process.GetProcessesByName(processName);
+                processArray = Process.GetProcessesByName(processName); // (justProcessName);
 
                 // Not found? Indicate we're trying...
                 if (processArray.Length < 1)
@@ -211,7 +215,7 @@ namespace au.edu.federation.SoniFight
                     processHandle = gameProcess.Handle;
 
                     // Get the process base address
-                    processBaseAddress = Utils.findProcessBaseAddress(processName);
+                    processBaseAddress = Utils.findProcessBaseAddress(processName); //(justProcessName);
 
                     // Got a bad address because something went wrong? Moan!
                     if (processBaseAddress == (IntPtr)0)
