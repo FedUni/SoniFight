@@ -1992,8 +1992,8 @@
           <target state="needs-review-translation">0</target>
         </trans-unit>
         <trans-unit id="appTitleLabel.Text" translate="no" xml:space="preserve">
-          <source>SoniFight v1.1.1</source>
-          <target state="final">SoniFight v1.1.1</target>
+          <source>SoniFight v1.1.2</source>
+          <target state="final">SoniFight v1.1.2</target>
         </trans-unit>
         <trans-unit id="appTitleLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
           <source>MiddleCenter</source>
