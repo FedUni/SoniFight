@@ -2263,6 +2263,14 @@
           <source>Fill</source>
           <target state="needs-review-translation">Fill</target>
         </trans-unit>
+        <trans-unit id="runConfigButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="runConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
       </group>
     </body>
   </file>

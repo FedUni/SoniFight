@@ -6,8 +6,9 @@ using System.Windows.Forms;
 using System.Threading;
 
 using au.edu.federation.SoniFight.Properties;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
+
+//using System.Diagnostics;
+//using System.Text.RegularExpressions;
 
 namespace au.edu.federation.SoniFight
 {
@@ -633,7 +634,19 @@ namespace au.edu.federation.SoniFight
             // Get the panel, clear it and set some layout properties
             TableLayoutPanel panel = this.gcPanel;
             Utils.clearTableLayoutPanel(panel);
-            
+
+            /*
+            // Create a ToolTip and specify its settings
+            ToolTip toolTip = new ToolTip();
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 1000;
+            toolTip.ReshowDelay = 200;
+            toolTip.ShowAlways = false;
+            // Then do stuff like
+            dirLabel.AccessibleRole = AccessibleRole.ToolTip;
+            toolTip.SetToolTip(dirLabel, dirLabel.Text.ToString());
+            */
+
             panel.SuspendLayout();
             panel.Visible = false;
 
@@ -680,7 +693,7 @@ namespace au.edu.federation.SoniFight
                 // ----- Row 0 - Config directory -----                
 				Label dirLabel = new Label();
 				dirLabel.AutoSize = true;
-				dirLabel.Text = Resources.ResourceManager.GetString("directoryLabelString");
+				dirLabel.Text = Resources.ResourceManager.GetString("directoryLabelString");                
 				dirLabel.Anchor = AnchorStyles.Right;
 				dirLabel.Margin = padding;
 
@@ -1524,8 +1537,11 @@ namespace au.edu.federation.SoniFight
                     case Trigger.TriggerType.Normal:
                     case Trigger.TriggerType.Dependent:
                         secondaryIdLabel.Text = Resources.ResourceManager.GetString("secondaryIdLabelDependentIdString");
+                        
+                        // Set the text on the textbox to be a space separated version of the secondary Id List
+                        secondaryIdTB.Text = string.Join(" ", currentTrigger.SecondaryIdList);
 
-                        string dependentTriggerString = "";
+                        /*string dependentTriggerString = "";
                         for (int loop = 0; loop < currentTrigger.SecondaryIdList.Count; ++loop)
                         {
                             dependentTriggerString += currentTrigger.SecondaryIdList[loop];
@@ -1534,7 +1550,7 @@ namespace au.edu.federation.SoniFight
                                 dependentTriggerString += " ";
                             }
                         }
-                        secondaryIdTB.Text = dependentTriggerString;
+                        secondaryIdTB.Text = dependentTriggerString;*/
                         break;
                     case Trigger.TriggerType.Continuous:
                         secondaryIdLabel.Text = Resources.ResourceManager.GetString("secondaryIdLabelWatch2IdString");
@@ -1551,10 +1567,11 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(secondaryIdLabel, 0, row); // Control, Column, Row
                 
                 // Set the text on the secondary ID list textbox to be a string version of the secondary ID list if the list isn't empty
-                if (currentTrigger.SecondaryIdList.Count > 0)
+                /*if (currentTrigger.SecondaryIdList.Count > 0)
                 {
                     secondaryIdTB.Text = currentTrigger.SecondaryIdList[0].ToString();
-                }
+                }*/
+
                 secondaryIdTB.Anchor = AnchorStyles.Left;
                 secondaryIdTB.Dock = DockStyle.Fill;
                 secondaryIdTB.Margin = padding;

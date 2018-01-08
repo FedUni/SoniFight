@@ -146,7 +146,7 @@ You'll probably want to press F5 and turn the speech and text mode to "Speech On
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>99</ClockMax>
-  <ConfigDirectory>Beneath a Steel Sky (v0.0372 cd)\</ConfigDirectory>
+  <ConfigDirectory>Beneath a Steel Sky (v0.0372 cd)</ConfigDirectory>
   <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
 </GameConfig>

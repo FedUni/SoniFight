@@ -121,8 +121,6 @@ namespace au.edu.federation.SoniFight
         // Note: Because a trigger may be associated with a number of watches we must provide the index of the watch value we're comparing against.
         public static bool performComparison(Trigger t, dynamic watchValue, int watchIndex)
         {
-
-
             // Note: Continuous triggers do NOT call this method because their job is not to compare to a specific value, it's to compare
             //       two values and give a percentage (e.g. player 1 x-location and player 2 x-location).
 
