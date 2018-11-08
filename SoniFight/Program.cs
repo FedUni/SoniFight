@@ -107,13 +107,26 @@ namespace au.edu.federation.SoniFight
             sonificationBGW.WorkerReportsProgress = false;      // We do not want progress reports
             sonificationBGW.WorkerSupportsCancellation = true;  // We do want to be able to cancel the background worker
             
-            // Setup display and display form. Note: we STAY on this line until the form closes (i.e. the application terminates).
+            // Setup visual styles and rendering context
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
 
-            // IrrKlang cleanup (unload and samples and dispose of player)
-            irrKlang.ShutDown();
+            // Run the app, catching any exception that gets raised and always closing down cleanly
+            try
+            {
+                Application.Run(new MainForm());
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                // IrrKlang cleanup (unload and samples and dispose of player)
+                irrKlang.ShutDown();
+            }
+
+            
         }
 
 

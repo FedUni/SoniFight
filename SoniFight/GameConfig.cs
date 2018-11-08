@@ -110,6 +110,10 @@ namespace au.edu.federation.SoniFight
         [XmlIgnore]
         public List<Trigger> modifierTriggerList = new List<Trigger>();
 
+        // List of hotkeys we create (before we register them) when parsing a config
+        [XmlIgnore]
+        public List<Hotkey> hotkeyList = new List<Hotkey>();
+
         // The actual process attached to. This is used internally but not saved to XML.
         private Process gameProcess;
 
@@ -248,7 +252,7 @@ namespace au.edu.federation.SoniFight
                     // TODO: Remove this and see if it still works!
                     for (int watchLoop = 0; watchLoop < watchList.Count; watchLoop++)
                     {
-                        watchList[watchLoop].DestinationAddress = Utils.findFeatureAddress(processHandle, processBaseAddress, watchList[watchLoop].PointerList);
+                        watchList[watchLoop].DestinationAddress = Utils.findFeatureAddress(processHandle, processBaseAddress, watchList[watchLoop].PointerList);                        
                     }
 
                     // Get configDirectory in correct state (relative path ending with a backslash)
@@ -257,7 +261,7 @@ namespace au.edu.federation.SoniFight
                         configDirectory += "\\";
                     }
 
-                    // Load all samples
+                    // Load all samples and build up trigger lists & hotkey list
                     foreach (Trigger t in triggerList)
                     {
                         // Construct the sample key used for the dictionary
@@ -288,6 +292,14 @@ namespace au.edu.federation.SoniFight
                             {
                                 modifierTriggerList.Add(t);
                             }
+                        }
+
+                        // Trigger has a hotkey? Add it to the hotkey list.
+                        if (t.hotkeyActive)
+                        {
+                            // Set the id value of the trigger and add it to the list of hotkeys to register
+                            t.hotkey.Id = t.Id;
+                            hotkeyList.Add(t.hotkey);
                         }
                     }
 

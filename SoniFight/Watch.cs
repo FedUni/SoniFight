@@ -97,7 +97,7 @@ namespace au.edu.federation.SoniFight
         {
             get { return active;  }
             set { active = value; }
-        }
+        }        
 
         // ---------- Methods ----------
 

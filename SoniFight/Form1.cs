@@ -14,6 +14,12 @@ namespace au.edu.federation.SoniFight
 {
     public partial class MainForm : Form
     {
+        // Provide PInvoke signatures for methods to register and unregister hotkeys
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
         // Used in window title
         private static string formTitle = "SoniFight "; // Do not localise this - SoniFight is SoniFight.
 
@@ -108,7 +114,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // Make all controls support double buffering (so we don't have to do so on each control created).
-        // Source of tip: https://stackoverflow.com/a/25648710/1868200
+        // Source: https://stackoverflow.com/a/25648710/1868200
         protected override CreateParams CreateParams
         {
             get
@@ -220,6 +226,46 @@ namespace au.edu.federation.SoniFight
             // Note: Once here SoundPlayer.ShutDown() will be called from the main method because we've been stuck in this form loop up until then.
         }
 
+        // Method to register global hotkeys 
+        private void registerHotkeys()
+        {
+            
+            foreach (Hotkey h in gameConfig.hotkeyList)
+            {                
+                RegisterHotKey( this.Handle, h.Id, h.modifierCode, h.key.GetHashCode() );
+            }
+        }
+
+        // Overridden method to respond to hotkeys
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+
+            if (m.Msg == 0x0312) // 0x0312 corresponds to 'WM_HOTKEY'
+            {
+                /* Note that the three lines below are not needed if you only want to register one hotkey.
+                 * The below lines are useful in case you want to register multiple keys, which you can use a switch with the id as argument, or if you want to know which key/modifier was pressed for some particular reason. */
+
+                //Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);                  // The key of the hotkey that was pressed.
+                //KeyModifier modifier = (KeyModifier)((int)m.LParam & 0xFFFF);       // The modifier of the hotkey that was pressed.
+
+                int id = m.WParam.ToInt32();                                        // The id of the hotkey that was pressed.
+
+
+                MessageBox.Show("Hotkey with id " + id + " has been pressed!");
+                // do something
+            }
+        }
+
+        // Method to unregister global hotkeys 
+        private void unregisterHotkeys()
+        {            
+            foreach (Hotkey h in gameConfig.hotkeyList)
+            {
+                UnregisterHotKey(this.Handle, h.Id);
+            }
+        }
+
         // Method to set up creation of a new GameConfig
         private void createNewConfigButton_Click(object senderender, EventArgs e)
         {
@@ -232,6 +278,7 @@ namespace au.edu.federation.SoniFight
             gameConfig.PollSleepMS = 100;
             gameConfig.watchList.Clear();
             gameConfig.triggerList.Clear();
+            gameConfig.hotkeyList.Clear();
 
             // ...then change to the Edit tab!
             this.tabControl.SelectedIndex = 1;
@@ -272,6 +319,9 @@ namespace au.edu.federation.SoniFight
                 {
                     Program.sonificationBGW.RunWorkerAsync();
                     this.Text = formTitle + Resources.ResourceManager.GetString("statusRunningString") + gameConfig.ConfigDirectory;
+
+                    registerHotkeys();
+
                     running = true;
                 }
 
@@ -1690,6 +1740,35 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(valueTB, 1, row); // Control, Column, Row
                 row++;
 
+                /*** COMMENTED UNTIL COMPLETED!
+                 
+
+                // ----- Row 8 - Hotkey options row -----                
+                Panel hotkeyOptionsPanel = new Panel();
+                hotkeyOptionsPanel.Height = 30;
+                hotkeyOptionsPanel.Anchor = AnchorStyles.Left;
+                hotkeyOptionsPanel.Dock = DockStyle.Fill;
+                hotkeyOptionsPanel.Margin = padding;
+
+                CheckBox hkAltCheckbox = new CheckBox();
+                hkAltCheckbox.Anchor = AnchorStyles.Right;
+                hkAltCheckbox.Dock = DockStyle.Left;
+                hkAltCheckbox.AutoSize = true;
+                hkAltCheckbox.Padding = padding;
+                hkAltCheckbox.Checked = currentTrigger.hotkey.usesShift();
+                hkAltCheckbox.Text = "Shift";
+
+                hkAltCheckbox.CheckedChanged += (object sender, EventArgs ea) => {
+                    currentTrigger.hotkey.updateModifierCode(hkAltCheckbox.Checked, false, false, false);
+                };
+
+                // Add the hotkey checkbox
+                hotkeyOptionsPanel.Controls.Add(hkAltCheckbox);
+
+                // Finally add the hotkey panel
+                panel.Controls.Add(hotkeyOptionsPanel, 1, row); // Control, Column, Row
+                row++;
+
                 // Create a label to be used as a simulated hrule
                 hrule = new Label();
                 hrule.AutoSize = false;
@@ -1699,9 +1778,11 @@ namespace au.edu.federation.SoniFight
                 hrule.BorderStyle = BorderStyle.Fixed3D;
                 panel.SetColumnSpan(hrule, 2);
                 panel.Controls.Add(hrule, 0, row);
-                row++;
+                row++; 
 
-                // ----- Row 8 - Sample filename / tolk output text row -----                
+                ***/
+
+                // ----- Row 9 - Sample filename / tolk output text row -----                
                 sampleFilenameLabel.AutoSize = true;
                 sampleFilenameLabel.Text = Resources.ResourceManager.GetString("sampleFilenameLabelString");
                 sampleFilenameLabel.Anchor = AnchorStyles.Right;
@@ -1773,7 +1854,7 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(sampleSelectionPanel, 1, row);
                 row++;
 
-                // ----- Row 9 - Trigger sample volume ---
+                // ----- Row 10 - Trigger sample volume ---
                 Label sampleVolumeLabel = new Label();
                 sampleVolumeLabel.AutoSize = true;
                 sampleVolumeLabel.Text = Resources.ResourceManager.GetString("sampleVolumeLabelString");
@@ -1817,7 +1898,7 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(sampleVolumeTB, 1, row); // Control, Column, Row
                 row++;
 
-                // ----- Row 10 - Trigger sample rate ---
+                // ----- Row 11 - Trigger sample rate ---
                 Label sampleSpeedLabel = new Label();
                 sampleSpeedLabel.AutoSize = true;
                 sampleSpeedLabel.Text = Resources.ResourceManager.GetString("sampleSpeedLabelString");
@@ -1859,7 +1940,7 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(sampleSpeedTB, 1, row); // Control, Column, Row
                 row++;
 
-                // ----- Row 11 - isClock Flag -----            
+                // ----- Row 12 - isClock Flag -----            
                 Label isClockLabel = new Label();
                 isClockLabel.AutoSize = true;
                 isClockLabel.Text = Resources.ResourceManager.GetString("isClockLabelString");
@@ -1883,7 +1964,7 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(isClockCB, 1, row); // Control, Column, Row
                 row++;
 
-                // ----- Row 12 - Allowance Type (Any / InGame / InMenu) row -----
+                // ----- Row 13 - Allowance Type (Any / InGame / InMenu) row -----
                 Label triggerAllowanceLabel = new Label();
                 triggerAllowanceLabel.AutoSize = true;
                 triggerAllowanceLabel.Text = Resources.ResourceManager.GetString("allowanceTypeLabelString");
@@ -1908,7 +1989,7 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(triggerAllowanceComboBox, 1, row); // Control, Column, Row
                 row++;
 
-                // ----- Row 13 - Active Flag -----            
+                // ----- Row 14 - Active Flag -----            
                 Label activeLabel = new Label();
                 activeLabel.AutoSize = true;
                 activeLabel.Text = Resources.ResourceManager.GetString("activeLabelString");
@@ -1927,7 +2008,7 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(activeCB, 1, row); // Control, Column, Row
                 row++;
 
-                // ----- Row 14 - Delete Trigger -----
+                // ----- Row 15 - Delete Trigger -----
                 Button deleteTriggerBtn = new Button();
                 deleteTriggerBtn.AutoSize = true;
                 deleteTriggerBtn.Text = Resources.ResourceManager.GetString("deleteTriggerButtonString");
@@ -1961,7 +2042,7 @@ namespace au.edu.federation.SoniFight
             else // Didn't recognise tree node tag? Moan!
             {   
                 MessageBox.Show( Resources.ResourceManager.GetString("badTreeNodeTagWarningString") + currentTreeNode.Tag.ToString() );
-            } // End of switch
+            }
 
             // Resume the layout logic of the panel and make it visible
             panel.ResumeLayout();
