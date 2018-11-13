@@ -1,0 +1,5466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GameConfigFileVersion>1</GameConfigFileVersion>
+  <watchList>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>0</Id>
+      <Name>Clock watch</Name>
+      <Description>Range is 99 down to 0 as an int</Description>
+      <PointerList>
+        <string>A55278</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>1</Id>
+      <Name>Main menu</Name>
+      <Description>The option selected in the main menu</Description>
+      <PointerList>
+        <string>114289C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>2</Id>
+      <Name>P1 Health</Name>
+      <Description>Player 1 health as int. Range is approx 13000 down to 0.</Description>
+      <PointerList>
+        <string>7C6C28</string>
+        <string>95C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>3</Id>
+      <Name>P2 Health</Name>
+      <Description>Player 2 health as int. Range is approx 13000 down to 0.</Description>
+      <PointerList>
+        <string>7C6C2C</string>
+        <string>95C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>4</Id>
+      <Name>P1 Barrier</Name>
+      <Description>Player 1's barrier guage as int. Range is 10000 to 0.</Description>
+      <PointerList>
+        <string>7C6C28</string>
+        <string>4DD0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>5</Id>
+      <Name>P2 Barrier</Name>
+      <Description>Player 2's barrier guage as int. Range is 10000 to 0.</Description>
+      <PointerList>
+        <string>7C6C2C</string>
+        <string>4DD0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>6</Id>
+      <Name>P1 Special</Name>
+      <Description>Player 1's special guage as an int. Range is 10000 to 0.</Description>
+      <PointerList>
+        <string>7C6C28</string>
+        <string>4DB4</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>7</Id>
+      <Name>P2 Special</Name>
+      <Description>Player 2's special guage as an int. Range is 10000 to 0.</Description>
+      <PointerList>
+        <string>7C6C2C</string>
+        <string>4DB4</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>8</Id>
+      <Name>P1 Character Selected</Name>
+      <Description>Which character is selected as int. Range is 18 down to 0.</Description>
+      <PointerList>
+        <string>D31158</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>9</Id>
+      <Name>P2 Character Selected</Name>
+      <Description>Which character is selected as int. Range is 18 down to 0.</Description>
+      <PointerList>
+        <string>D3115C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>10</Id>
+      <Name>Pause menu options</Name>
+      <Description>Pause menu options as int in range 0 to 4</Description>
+      <PointerList>
+        <string>F7DF80</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>11</Id>
+      <Name>Quit to main menu confirmation</Name>
+      <Description>OK / Cancel options as ints 0 and 1 respectively.</Description>
+      <PointerList>
+        <string>F475B8</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>12</Id>
+      <Name>Options Menu</Name>
+      <Description>Options menu options as in in range 0 to 7</Description>
+      <PointerList>
+        <string>10EFB90</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>13</Id>
+      <Name>Sound and Language Menu Options</Name>
+      <Description>Submenu options as an in in range 0 to 6</Description>
+      <PointerList>
+        <string>110DB50</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>14</Id>
+      <Name>Background Music Volume</Name>
+      <Description>Music volume as an in in range 0 to 100</Description>
+      <PointerList>
+        <string>8013FC</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>15</Id>
+      <Name>Voice Volume</Name>
+      <Description>Voice volume as an int in range 0 to 100</Description>
+      <PointerList>
+        <string>801400</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>16</Id>
+      <Name>Sound Effects Volume</Name>
+      <Description>SFX volume as an int in range 0 to 100</Description>
+      <PointerList>
+        <string>801404</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>17</Id>
+      <Name>Voice Language</Name>
+      <Description>Voice language as an int. 0 is Japanese, 1 is English.</Description>
+      <PointerList>
+        <string>80140C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>18</Id>
+      <Name>Text Language</Name>
+      <Description>Text language as an int. 0 is J, 1 is E, 2 is Chinese, 3 is Korean.</Description>
+      <PointerList>
+        <string>801408</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>19</Id>
+      <Name>Player 1 Keyboard 1 Buttons Menu Options</Name>
+      <Description>Buttons bindings as int. Range is 0 through 16.</Description>
+      <PointerList>
+        <string>10370C8</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>20</Id>
+      <Name>Controller 1 Change</Name>
+      <Description>P1 controller as an int. 0 is keyboard 1 and 1 is controller 1.</Description>
+      <PointerList>
+        <string>1036CC8</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>21</Id>
+      <Name>Player 1 Controller 1 Buttons Menu Options</Name>
+      <Description>P1 button bindings for controller 1 as int in range 0 to 12.</Description>
+      <PointerList>
+        <string>101B718</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>22</Id>
+      <Name>Game Options Menu Selected Option</Name>
+      <Description>Selection as an in in range 0 to 8.</Description>
+      <PointerList>
+        <string>10F8640</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>23</Id>
+      <Name>Game Difficulty</Name>
+      <Description>Game difficulty as an int in range 0 (beginner) to 5 (hell)</Description>
+      <PointerList>
+        <string>8013C4</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>24</Id>
+      <Name>Number of Rounds (Arcade)</Name>
+      <Description>Number of rounds as int from 0 (1 round) to 4 (5 rounds) to win.</Description>
+      <PointerList>
+        <string>8013C8</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>25</Id>
+      <Name>Number of Rounds (Versus)</Name>
+      <Description>Number of rounds as int from 0 (1 round) to 4 (5 rounds) to win.</Description>
+      <PointerList>
+        <string>8013CC</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>26</Id>
+      <Name>Time Limit (Arcade)</Name>
+      <Description>Time limit setting as an int in range 0 (30 secs) to 5 (infinite).</Description>
+      <PointerList>
+        <string>8013D4</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>27</Id>
+      <Name>Time Limit (Versus)</Name>
+      <Description>Time limit setting as an int in range 0 (30 secs) to 5 (infinite).</Description>
+      <PointerList>
+        <string>8013D8</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>28</Id>
+      <Name>System Voice</Name>
+      <Description>System voice selection as int in range 5, 7-20 inclusive.</Description>
+      <PointerList>
+        <string>8E44C4</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>29</Id>
+      <Name>Astral Heat BGM Setting</Name>
+      <Description>Whether to play the Astral Heat background music (1) or not (0).</Description>
+      <PointerList>
+        <string>8E44D8</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>30</Id>
+      <Name>Display Settings Menu</Name>
+      <Description>Selected option as an int in range 0 to 8.</Description>
+      <PointerList>
+        <string>11030B8</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>31</Id>
+      <Name>Display FPS Setting</Name>
+      <Description>Integer. Either 0 for off or 1 for on.</Description>
+      <PointerList>
+        <string>77B71C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>32</Id>
+      <Name>Light Bloom Effect Setting</Name>
+      <Description>An int. 1 if OFF and 0 is ON for this (e.g. they're swapped!)</Description>
+      <PointerList>
+        <string>7C6C08</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>33</Id>
+      <Name>Anti-aliasing Setting</Name>
+      <Description>Int. Goes 0 for 4x, 1 for 2x, 2 for off.</Description>
+      <PointerList>
+        <string>7C6C0C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>34</Id>
+      <Name>Upper HUD Offset value</Name>
+      <Description>Int in range +50 to -50.</Description>
+      <PointerList>
+        <string>8013EC</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>35</Id>
+      <Name>Lower HUD Offset value</Name>
+      <Description>Int in range +50 to -50.</Description>
+      <PointerList>
+        <string>8013F0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>36</Id>
+      <Name>Resolution setting</Name>
+      <Description>Int in the range 0 through 5 (windows) 0 through 13 fullscreen.</Description>
+      <PointerList>
+        <string>11095E4</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>37</Id>
+      <Name>Windows / Fullscreen Mode</Name>
+      <Description>Int. 1 is windowed, 0 is fullscreen.</Description>
+      <PointerList>
+        <string>7C6C10</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+  </watchList>
+  <triggerList>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>1</Id>
+      <Name>Main menu - Tutorial</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Tutorial</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>2</Id>
+      <Name>Main menu - Arcade</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Arcade</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>3</Id>
+      <Name>Main menu - Versus</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Versus</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>4</Id>
+      <Name>Main menu - Score Attack</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Score Attack</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>5</Id>
+      <Name>Main menu - Unlimitedmars</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Unlimitedmars</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>6</Id>
+      <Name>Main menu - Training</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Training</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>7</Id>
+      <Name>Main menu - Challenge</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Challenge</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>8</Id>
+      <Name>Main menu - Abyss</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Abyss</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>9</Id>
+      <Name>Main menu - Story</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Story</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>10</Id>
+      <Name>Main menu - Gallery</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">9</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Gallery</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>11</Id>
+      <Name>Main menu - Replay Theatre</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Replay Theatre</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>12</Id>
+      <Name>Main menu - Network</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">11</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Network</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>13</Id>
+      <Name>Main menu - Option</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">12</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Option</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>14</Id>
+      <Name>Main menu - Exit</Name>
+      <Description>Says the currently highlighted menu option</Description>
+      <Value xsi:type="xsd:string">13</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Exit</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>15</Id>
+      <Name>Clock trigger</Name>
+      <Description>Monitors the game clock which controls in-game / in-menu</Description>
+      <Value xsi:type="xsd:string">999</Value>
+      <WatchIdList>
+        <int>0</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename />
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>true</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>16</Id>
+      <Name>Clock 50 / Half-time</Name>
+      <Description>Lets you know the round is half way through</Description>
+      <Value xsi:type="xsd:string">50</Value>
+      <WatchIdList>
+        <int>0</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Clock 50</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>17</Id>
+      <Name>Clock 25</Name>
+      <Description>Lets you know the round timer has 25 seconds left</Description>
+      <Value xsi:type="xsd:string">25</Value>
+      <WatchIdList>
+        <int>0</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Clock 25</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InGame</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>18</Id>
+      <Name>Clock 10</Name>
+      <Description>Lets you know the round is nearly over</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchIdList>
+        <int>0</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Clock 10</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>LessThanOrEqualTo</comparisonType>
+      <Id>19</Id>
+      <Name>P1 5000 health</Name>
+      <Description>Player 1's health gets to 5000</Description>
+      <Value xsi:type="xsd:string">5000</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P1 Half Health</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>LessThanOrEqualTo</comparisonType>
+      <Id>20</Id>
+      <Name>P1 1000 health</Name>
+      <Description>Player 1's health gets to 1000</Description>
+      <Value xsi:type="xsd:string">1000</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P1 Low Health</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>LessThanOrEqualTo</comparisonType>
+      <Id>21</Id>
+      <Name>P2 5000 health</Name>
+      <Description>Player 2's health gets to 5000</Description>
+      <Value xsi:type="xsd:string">5000</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P2 Half Health</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>LessThanOrEqualTo</comparisonType>
+      <Id>22</Id>
+      <Name>P2 1000 health</Name>
+      <Description>Player 2's health gets to 1000</Description>
+      <Value xsi:type="xsd:string">1000</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P2 Low Health</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>23</Id>
+      <Name>P1 Barrier Full</Name>
+      <Description>Says when player 1's barrier guage is full.</Description>
+      <Value xsi:type="xsd:string">10000</Value>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P1 Barrier Full</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>LessThanOrEqualTo</comparisonType>
+      <Id>24</Id>
+      <Name>P1 Barrier Half (Falling)</Name>
+      <Description>Says when player 1's barrier guage depletes to half.</Description>
+      <Value xsi:type="xsd:string">5000</Value>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P1 Barrier Half</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>GreaterThanOrEqualTo</comparisonType>
+      <Id>25</Id>
+      <Name>P1 Barrier Half (Rising)</Name>
+      <Description>Says when player 1's barrier guage rises to half.</Description>
+      <Value xsi:type="xsd:string">5000</Value>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P1 Barrier Half</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>26</Id>
+      <Name>P1 Barrier Gone</Name>
+      <Description>Says when player 1's barrier guage is completely empty.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P1 Trigger Gone</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>27</Id>
+      <Name>P2 Barrier Full</Name>
+      <Description>Says when player 2's barrier guage is full.</Description>
+      <Value xsi:type="xsd:string">10000</Value>
+      <WatchIdList>
+        <int>5</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P2 Barrier Full</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>LessThanOrEqualTo</comparisonType>
+      <Id>28</Id>
+      <Name>P2 Barrier Half (Falling)</Name>
+      <Description>Says when player 2's barrier guage depletes to half.</Description>
+      <Value xsi:type="xsd:string">5000</Value>
+      <WatchIdList>
+        <int>5</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P2 Barrier Half</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>GreaterThanOrEqualTo</comparisonType>
+      <Id>29</Id>
+      <Name>P2 Barrier Half (Rising)</Name>
+      <Description>Says when player 2's barrier guage rises to half.</Description>
+      <Value xsi:type="xsd:string">5000</Value>
+      <WatchIdList>
+        <int>5</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P2 Barrier Half</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>30</Id>
+      <Name>P2 Barrier Gone</Name>
+      <Description>Says when player 2's barrier guage is completely empty.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>5</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P2 Trigger Gone</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>GreaterThanOrEqualTo</comparisonType>
+      <Id>31</Id>
+      <Name>P1 Special Half</Name>
+      <Description>Says when player 1's special guage is half full.</Description>
+      <Value xsi:type="xsd:string">5000</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P1 Special Half</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>32</Id>
+      <Name>P1 Special Full</Name>
+      <Description>Says when player 1's special guage is full.</Description>
+      <Value xsi:type="xsd:string">10000</Value>
+      <WatchIdList>
+        <int>6</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P1 Special Full</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>GreaterThanOrEqualTo</comparisonType>
+      <Id>33</Id>
+      <Name>P2 Special Half</Name>
+      <Description>Says when player 2's special guage is half full.</Description>
+      <Value xsi:type="xsd:string">5000</Value>
+      <WatchIdList>
+        <int>7</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P2 Special Half</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>34</Id>
+      <Name>P2 Special Full</Name>
+      <Description>Says when player 2's special guage is full.</Description>
+      <Value xsi:type="xsd:string">10000</Value>
+      <WatchIdList>
+        <int>7</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P2 Special Full</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>35</Id>
+      <Name>P1 Char Select 0 - Ragna the Bloodedge</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ragna the Bloodedge</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>36</Id>
+      <Name>P1 Char Select 1 - Jin Kisaragi</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Jin Kisaragi</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>37</Id>
+      <Name>P1 Char Select 2 - Noel Vermillion</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Noel Vermillion</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>38</Id>
+      <Name>P1 Char Select 3 - Rachel Alucard</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Rachel Alucard</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>39</Id>
+      <Name>P1 Char Select 4 - Taokaka</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Taokaka</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>40</Id>
+      <Name>P1 Char Select 5 - Iron Tager</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Iron Tager</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>41</Id>
+      <Name>P1 Char Select 6 - Litchi Faye Ling</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Litchi Faye Ling</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>42</Id>
+      <Name>P1 Char Select 7 - Arakune</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Arakune</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>43</Id>
+      <Name>P1 Char Select 8 - Bang Shishigami</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Bang Shishigami</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>44</Id>
+      <Name>P1 Char Select 9 - Carl Clover</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">9</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Carl Clover</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>45</Id>
+      <Name>P1 Char Select 10 - Hakumen</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Hakumen</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>46</Id>
+      <Name>P1 Char Select 11 - Lambda 11</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">11</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Lambda 11</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>47</Id>
+      <Name>P1 Char Select 12 - Tsubaki Yayoi</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">12</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Tsubaki Yayoi</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>48</Id>
+      <Name>P1 Char Select 13 - Hazama</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">13</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Hazama</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>49</Id>
+      <Name>P1 Char Select 14 - Mu 12</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">14</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Mu 12</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>50</Id>
+      <Name>P1 Char Select 15 - Makoto Nanaya</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">15</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Makoto Nanaya</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>51</Id>
+      <Name>P1 Char Select 16 - Valkenhayn R Hellsing</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">16</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Valkenhayn R Hellsing</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>52</Id>
+      <Name>P1 Char Select 17 - Platinum the Trinity</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">17</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Platinum the Trinity</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>53</Id>
+      <Name>P1 Char Select 18 - Relius Clover</Name>
+      <Description>Says the name of the character P1 has highlighted.</Description>
+      <Value xsi:type="xsd:string">18</Value>
+      <WatchIdList>
+        <int>8</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Relius Clover</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>54</Id>
+      <Name>P2 Char Select 0 - Ragna the Bloodedge</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ragna the Bloodedge</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>55</Id>
+      <Name>P2 Char Select 1 - Jin Kisaragi</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Jin Kisaragi</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>56</Id>
+      <Name>P2 Char Select 2 - Noel Vermillion</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Noel Vermillion</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>57</Id>
+      <Name>P2 Char Select 3 - Rachel Alucard</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Rachel Alucard</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>58</Id>
+      <Name>P2 Char Select 4 - Taokaka</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Taokaka</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>59</Id>
+      <Name>P2 Char Select 5 - Iron Tager</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Iron Tager</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>60</Id>
+      <Name>P2 Char Select 6 - Litchi Faye Ling</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Litchi Faye Ling</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>61</Id>
+      <Name>P2 Char Select 7 - Arakune</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Arakune</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>62</Id>
+      <Name>P2 Char Select 8 - Bang Shishigami</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Bang Shishigami</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>63</Id>
+      <Name>P2 Char Select 9 - Carl Clover</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">9</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Carl Clover</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>64</Id>
+      <Name>P2 Char Select 10 - Hakumen</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Hakumen</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>65</Id>
+      <Name>P2 Char Select 11 - Lambda 11</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">11</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Lambda 11</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>66</Id>
+      <Name>P2 Char Select 12 - Tsubaki Yayoi</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">12</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Tsubaki Yayoi</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>67</Id>
+      <Name>P2 Char Select 13 - Hazama</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">13</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Hazama</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>68</Id>
+      <Name>P2 Char Select 14 - Mu 12</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">14</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Mu 12</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>69</Id>
+      <Name>P2 Char Select 15 - Makoto Nanaya</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">15</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Makoto Nanaya</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>70</Id>
+      <Name>P2 Char Select 16 - Valkenhayn R Hellsing</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">16</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Valkenhayn R Hellsing</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>71</Id>
+      <Name>P2 Char Select 17 - Platinum the Trinity</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">17</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Platinum the Trinity</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>72</Id>
+      <Name>P2 Char Select 18 - Relius Clover</Name>
+      <Description>Says the name of the character P2 has highlighted.</Description>
+      <Value xsi:type="xsd:string">18</Value>
+      <WatchIdList>
+        <int>9</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Relius Clover</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>73</Id>
+      <Name>Pause menu option 0 - Command List</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Command List</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>74</Id>
+      <Name>Pause menu option 1 - Button Settings</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Button Settings</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>75</Id>
+      <Name>Arcade pause menu option 2 - Hide Menu</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>80</int>
+      </SecondaryIdList>
+      <SampleFilename>Hide Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>76</Id>
+      <Name>Arcade pause menu option 3 - Main Menu</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Main Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>77</Id>
+      <Name>Arcade pause menu option 4 - Close</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>80</int>
+      </SecondaryIdList>
+      <SampleFilename>Close Pause Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>78</Id>
+      <Name>Quit to main menu 0 - OK</Name>
+      <Description>Says OK</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>11</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>OK</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>79</Id>
+      <Name>Quit to main menu 1 - Cancel</Name>
+      <Description>Says Cancel</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>11</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Cancel</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Dependent</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>80</Id>
+      <Name>Dependent - Main Menu Arcade Mode Selected</Name>
+      <Description>This is a dependent trigger for the in-game pause menus to ensure we're on arcade mode.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>None</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>81</Id>
+      <Name>Pause menu versus option 2 - Character Select</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>82</int>
+      </SecondaryIdList>
+      <SampleFilename>Character Select</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Dependent</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>82</Id>
+      <Name>Dependent - Main Menu Versus Mode Selected</Name>
+      <Description>This is a dependent trigger for the in-game pause menus to ensure we're on versus mode.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>None</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>83</Id>
+      <Name>Pause menu versus option 3 - Hide Menu</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>82</int>
+      </SecondaryIdList>
+      <SampleFilename>Hide Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>84</Id>
+      <Name>Pause menu versus option 3 - Main Menu</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>82</int>
+      </SecondaryIdList>
+      <SampleFilename>Main Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>85</Id>
+      <Name>Pause menu versus option 4 - Close Pause Menu</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>82</int>
+      </SecondaryIdList>
+      <SampleFilename>Close Pause Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Dependent</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>86</Id>
+      <Name>Dependent - Main Menu Score Attack Selected</Name>
+      <Description>This is a dependent trigger for the in-game pause menus to ensure we're on arcade mode.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>None</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>87</Id>
+      <Name>Score attack pause menu option 2 - Hide Menu</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>86</int>
+      </SecondaryIdList>
+      <SampleFilename>Hide Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>88</Id>
+      <Name>Score attack pause menu option 3 - Main Menu</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>86</int>
+      </SecondaryIdList>
+      <SampleFilename>Main Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>89</Id>
+      <Name>Score attack pause menu option 4 - Close</Name>
+      <Description>Says the selected pause menu option.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>10</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>86</int>
+      </SecondaryIdList>
+      <SampleFilename>Close Pause Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>90</Id>
+      <Name>Options menu 0 - System Options</Name>
+      <Description>Says selected options menu option.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>12</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>System Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>91</Id>
+      <Name>Options menu 1 - Game Options</Name>
+      <Description>Says selected options menu option.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>12</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Game Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>92</Id>
+      <Name>Options menu 2 - Display Settings</Name>
+      <Description>Says selected options menu option.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>12</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Display Settings</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>93</Id>
+      <Name>Options menu 3 - Sound and Language</Name>
+      <Description>Says selected options menu option.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>12</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Sound and Language</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>94</Id>
+      <Name>Options menu 4 - Network Options</Name>
+      <Description>Says selected options menu option.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>12</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Network Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>95</Id>
+      <Name>Options menu 5 - Button Settings</Name>
+      <Description>Says selected options menu option.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>12</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Button Settings</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>96</Id>
+      <Name>Options menu 6 - Leaderboard</Name>
+      <Description>Says selected options menu option.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>12</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Leaderboard</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>97</Id>
+      <Name>Options menu 6 - Exit</Name>
+      <Description>Says selected options menu option.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>12</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Exit to Main Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>98</Id>
+      <Name>Sound Options 0 - Background Music Volume</Name>
+      <Description>Says selected option.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>13</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Background Music Volume</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>99</Id>
+      <Name>Sound Options 1 - Voice Volume</Name>
+      <Description>Says selected option.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>13</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Voice Volume</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>100</Id>
+      <Name>Sound Options 2 - Sound Effect Volume</Name>
+      <Description>Says selected option.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>13</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Sound Effect Volume</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>101</Id>
+      <Name>Sound Options 3 - Voice Language</Name>
+      <Description>Says selected option.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>13</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Voice Language</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>102</Id>
+      <Name>Sound Options 4 - Text Language</Name>
+      <Description>Says selected option.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>13</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Text Language</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>103</Id>
+      <Name>Sound Options 5 - Restore Defaults</Name>
+      <Description>Says selected option.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>13</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Restore Defaults</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>104</Id>
+      <Name>Sound Options 6 - Return to Main Menu</Name>
+      <Description>Says selected option.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>13</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Return to Main Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <Id>105</Id>
+      <Name>Background Music Volume Changed</Name>
+      <Description>Says new background music volume value.</Description>
+      <Value xsi:type="xsd:string">-1</Value>
+      <WatchIdList>
+        <int>14</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <Id>106</Id>
+      <Name>Voice Volume Changed</Name>
+      <Description>Says new voice volume value.</Description>
+      <Value xsi:type="xsd:string">-1</Value>
+      <WatchIdList>
+        <int>15</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <Id>107</Id>
+      <Name>Sound Effects Volume Changed</Name>
+      <Description>Says new sound effects volume value.</Description>
+      <Value xsi:type="xsd:string">-1</Value>
+      <WatchIdList>
+        <int>16</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>108</Id>
+      <Name>Voice Language 0 - Japanese</Name>
+      <Description>Says voice language.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>17</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Japanese</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>109</Id>
+      <Name>Voice Language 1 - English</Name>
+      <Description>Says voice language.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>17</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>English</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>110</Id>
+      <Name>Text Language 0 - Japanese</Name>
+      <Description>Says voice language.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>18</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Japanese</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>111</Id>
+      <Name>Text Language 1 - English</Name>
+      <Description>Says voice language.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>18</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>English</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>112</Id>
+      <Name>Text Language 2 - Chinese</Name>
+      <Description>Says voice language.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>18</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Chinese</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>113</Id>
+      <Name>Text Language 3 - Korean</Name>
+      <Description>Says voice language.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>18</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Korean</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>114</Id>
+      <Name>P1 Button Bindings 0 - End</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>End</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>115</Id>
+      <Name>P1 Button Bindings 1 - Restore Defaults</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Restore Defaults</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>116</Id>
+      <Name>P1 Button Bindings 2 - Up</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Up</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>117</Id>
+      <Name>P1 Button Bindings 3 - Down</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Down</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>118</Id>
+      <Name>P1 Button Bindings 4 - Left</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Left</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>119</Id>
+      <Name>P1 Button Bindings 5 - Right</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Right</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>120</Id>
+      <Name>P1 Button Bindings 6 - A / Weak</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>A / Weak</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>121</Id>
+      <Name>P1 Button Bindings 7 - B / Medium</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>B / Medium</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>122</Id>
+      <Name>P1 Button Bindings 8 - C / Strong</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>C / Strong</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>123</Id>
+      <Name>P1 Button Bindings 9 - D / Drive</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">9</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>D / Drive</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>124</Id>
+      <Name>P1 Button Bindings 10 - AP / Taunt</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>AP / Taunt</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>125</Id>
+      <Name>P1 Button Bindings 11 - A plus B</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">11</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>A plus B</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>126</Id>
+      <Name>P1 Button Bindings 12 - B plus C</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">12</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>B plus C</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>127</Id>
+      <Name>P1 Button Bindings 13 - A plus B plus C</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">13</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>A plus B plus C</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>128</Id>
+      <Name>P1 Button Bindings 14 - A plus B plus C plus D</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">14</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>A plus B plus C plus D</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>129</Id>
+      <Name>P1 Button Bindings 15 - Function 1</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">15</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Function 1</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>130</Id>
+      <Name>P1 Button Bindings 16 - Function 2</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">16</Value>
+      <WatchIdList>
+        <int>19</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Function 2</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>131</Id>
+      <Name>Controller 1 option 0 - Keyboard</Name>
+      <Description>Says keyboard 1.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>20</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Keyboard 1</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>132</Id>
+      <Name>Controller 1 option 1 - Controller</Name>
+      <Description>Says controller 1.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>20</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Controller 1</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>133</Id>
+      <Name>P1 Controller 1 Button Bindings 0 - End</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>End</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>134</Id>
+      <Name>P1 Controller 1 Button Bindings 1 - Restore Defaults</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Restore Defaults</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>135</Id>
+      <Name>P1 Controller 1 Bindings 2 - A / Weak</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>A / Weak</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>136</Id>
+      <Name>P1 Controller 1 Bindings 3 - B / Medium</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>B / Medium</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>137</Id>
+      <Name>P1 Controller 1 Button Bindings 4 - C / Strong</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>C / Strong</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>138</Id>
+      <Name>P1 Controller 1 Button Bindings 5 - D / Drive</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>D / Drive</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>139</Id>
+      <Name>P1 Controller 1 Button Bindings 6 - AP / Taunt</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>AP / Taunt</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>140</Id>
+      <Name>P1 Controller 1 Bindings 7 - A plus B</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>A plus B</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>141</Id>
+      <Name>P1 Controller 1 Bindings 8 - B plus C</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>B plus C</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>142</Id>
+      <Name>P1 Controller 1 Bindings 9 - A plus B plus C</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">9</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>A plus B plus C</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>143</Id>
+      <Name>P1 Controller 1 Bindings 10 - A plus B plus C plus D</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>A plus B plus C plus D</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>144</Id>
+      <Name>P1 Controller 1 Bindings 11 - Function 1</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">11</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Function 1</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>145</Id>
+      <Name>P1 Controller 1 Bindings 12 - Function 2</Name>
+      <Description>Says highlighted button binding option for player 1.</Description>
+      <Value xsi:type="xsd:string">12</Value>
+      <WatchIdList>
+        <int>21</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Function 2</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>146</Id>
+      <Name>Game Options 0 - Game Difficulty</Name>
+      <Description>Says Game Options menu selected item.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>22</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Game Difficulty</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>147</Id>
+      <Name>Game Options 1 - Number of Rounds (Arcade)</Name>
+      <Description>Says Game Options menu selected item.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>22</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Number of Rounds Arcade</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>148</Id>
+      <Name>Game Options 2 - Number of Rounds (Versus)</Name>
+      <Description>Says Game Options menu selected item.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>22</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Number of Rounds Versus</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>149</Id>
+      <Name>Game Options 3 - Time Limit (Arcade)</Name>
+      <Description>Says Game Options menu selected item.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>22</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Time Limit Arcade</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>150</Id>
+      <Name>Game Options 4 - Time Limit (Versus)</Name>
+      <Description>Says Game Options menu selected item.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>22</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Time Limit Versus</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>151</Id>
+      <Name>Game Options 5 - System Voice</Name>
+      <Description>Says Game Options menu selected item.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>22</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>System Voice</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>152</Id>
+      <Name>Game Options 6 - Astral Heat Background Music</Name>
+      <Description>Says Game Options menu selected item.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>22</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Astral Heat Background Music</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>153</Id>
+      <Name>Game Options 7 - Restore Defaults</Name>
+      <Description>Says Game Options menu selected item.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>22</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Restore Defaults</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>154</Id>
+      <Name>Game Options 8 - Return to Options Menu</Name>
+      <Description>Says Game Options menu selected item.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>22</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Return to Options Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>155</Id>
+      <Name>Game Difficulty 0 - Beginner</Name>
+      <Description>Says the game difficulty setting.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>23</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Beginner</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>156</Id>
+      <Name>Game Difficulty 1 - Easy</Name>
+      <Description>Says the game difficulty setting.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>23</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Easy</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>157</Id>
+      <Name>Game Difficulty 2 - Normal</Name>
+      <Description>Says the game difficulty setting.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>23</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Normal</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>158</Id>
+      <Name>Game Difficulty 3 - Hard</Name>
+      <Description>Says the game difficulty setting.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>23</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Hard</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>159</Id>
+      <Name>Game Difficulty 4 - Very Hard</Name>
+      <Description>Says the game difficulty setting.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>23</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Very Hard</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>160</Id>
+      <Name>Game Difficulty 5 - Hell</Name>
+      <Description>Says the game difficulty setting.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>23</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Hell</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>161</Id>
+      <Name>Rounds to Win Arcade 0 - 1 Round</Name>
+      <Description>Says how many rounds req'd to win match.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>24</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>1 round to win</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>162</Id>
+      <Name>Rounds to Win Arcade 1 - 2 Rounds</Name>
+      <Description>Says how many rounds req'd to win match.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>24</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>2 rounds to win</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>163</Id>
+      <Name>Rounds to Win Arcade 2 - 3 Rounds</Name>
+      <Description>Says how many rounds req'd to win match.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>24</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>3 rounds to win</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>164</Id>
+      <Name>Rounds to Win Arcade 3 - 4 Rounds</Name>
+      <Description>Says how many rounds req'd to win match.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>24</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>4 rounds to win</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>165</Id>
+      <Name>Rounds to Win Arcade 4 - 5 Rounds</Name>
+      <Description>Says how many rounds req'd to win match.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>24</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>5 rounds to win</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>166</Id>
+      <Name>Rounds to Win Versus 0 - 1 Round</Name>
+      <Description>Says how many rounds req'd to win match.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>25</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>1 round to win</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>167</Id>
+      <Name>Rounds to Win Versus 1 - 2 Rounds</Name>
+      <Description>Says how many rounds req'd to win match.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>25</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>2 rounds to win</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>168</Id>
+      <Name>Rounds to Win Versus 2 - 3 Rounds</Name>
+      <Description>Says how many rounds req'd to win match.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>25</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>3 rounds to win</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>169</Id>
+      <Name>Rounds to Win Versus 3 - 4 Rounds</Name>
+      <Description>Says how many rounds req'd to win match.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>25</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>4 rounds to win</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>170</Id>
+      <Name>Rounds to Win Versus 4 - 5 Rounds</Name>
+      <Description>Says how many rounds req'd to win match.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>25</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>5 rounds to win</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>171</Id>
+      <Name>Time Limit Arcade 0 - 30 seconds</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>26</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>30 Seconds</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>172</Id>
+      <Name>Time Limit Arcade 1 - 45 seconds</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>26</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>45 Seconds</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>173</Id>
+      <Name>Time Limit Arcade 2 - 60 seconds</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>26</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>60 Seconds</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>174</Id>
+      <Name>Time Limit Arcade 3 - 75 seconds</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>26</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>75 Seconds</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>175</Id>
+      <Name>Time Limit Arcade 4 - 99 seconds</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>26</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>99 Seconds</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>176</Id>
+      <Name>Time Limit Arcade 5 - Infinite</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>26</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Infinite</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>177</Id>
+      <Name>Time Limit Versus 0 - 30 seconds</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>27</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>30 Seconds</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>178</Id>
+      <Name>Time Limit Versus 1 - 45 seconds</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>27</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>45 Seconds</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>179</Id>
+      <Name>Time Limit Versus 2 - 60 seconds</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>27</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>60 Seconds</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>180</Id>
+      <Name>Time Limit Versus 3 - 75 seconds</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>27</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>75 Seconds</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>181</Id>
+      <Name>Time Limit Versus 4 - 99 seconds</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>27</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>99 Seconds</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>182</Id>
+      <Name>Time Limit Versus 5 - Infinite</Name>
+      <Description>Says time limit setting for arcade mode.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>27</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Infinite</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>183</Id>
+      <Name>System Voice 5 - Sawashiro Miyuki A</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Sawashiro Miyuki A</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>184</Id>
+      <Name>System Voice 7 - Ueda Kana A</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ueda Kana A</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>185</Id>
+      <Name>System Voice 8 - Ueda Kana B</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ueda Kana B</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>186</Id>
+      <Name>System Voice 9 - Kondo Kanako A</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">9</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Kondo Kanoko A</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>187</Id>
+      <Name>System Voice 10 - Kondo Kanako B</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Kondo Kanoko B</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>188</Id>
+      <Name>System Voice 11 - Takahashi Chiaki A</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">11</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Takahashi Chiaki A</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>189</Id>
+      <Name>System Voice 12 - Takahashi Chiaki B</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">12</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Takahashi Chiaki B</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>190</Id>
+      <Name>System Voice 13 - Imai Asami A</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">13</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Imai Asami A</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>191</Id>
+      <Name>System Voice 14 - Imai Asami B</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">14</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Imai Asami B</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>192</Id>
+      <Name>System Voice 15 - Isomura Tomomi A</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">15</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Isomura Tomomi A</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>193</Id>
+      <Name>System Voice 16 - Isomura Tomomi B</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">16</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Isomura Tomomi B</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>194</Id>
+      <Name>System Voice 17 - Yuuki Aoi A</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">17</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Yuuki Aoi A</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>195</Id>
+      <Name>System Voice 18 - Yuuki Aoi B</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">18</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Yuuki Aoi B</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>196</Id>
+      <Name>System Voice 19 - Matsuura Chie A</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">19</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Matsuura Chie A</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>197</Id>
+      <Name>System Voice 20 - Matsuura Chie B</Name>
+      <Description>Says system voice setting.</Description>
+      <Value xsi:type="xsd:string">20</Value>
+      <WatchIdList>
+        <int>28</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Matsuura Chie B</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>198</Id>
+      <Name>Astral Heat BGM 0 - Off</Name>
+      <Description>Says off.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>29</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Off</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>199</Id>
+      <Name>Astral Heat BGM 1 - On</Name>
+      <Description>Says on.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>29</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>On</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>200</Id>
+      <Name>Display Settings 0 - Display FPS</Name>
+      <Description>Says selected display settings option.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>30</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Display FPS is {31}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>201</Id>
+      <Name>Display Settings 1 - Light Bloom Effect</Name>
+      <Description>Says selected display settings option.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>30</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Light Bloom Effect</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>202</Id>
+      <Name>Display Settings 2 - Anti-aliasing</Name>
+      <Description>Says selected display settings option.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>30</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Anti-alias</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>203</Id>
+      <Name>Display Settings 3 - Upper HUD Offset</Name>
+      <Description>Says selected display settings option.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>30</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Upper HUD Offset</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>204</Id>
+      <Name>Display Settings 4 - Lower HUD Offset</Name>
+      <Description>Says selected display settings option.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>30</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Lower HUD Offset</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>205</Id>
+      <Name>Display Settings 5 - Resolution Setting</Name>
+      <Description>Says selected display settings option.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>30</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Resolution Setting</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>206</Id>
+      <Name>Display Settings 6 - Screen Mode</Name>
+      <Description>Says selected display settings option.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>30</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Screen Mode</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>207</Id>
+      <Name>Display Settings 7 - Restore Defaults</Name>
+      <Description>Says selected display settings option.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>30</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Restore Defaults</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>208</Id>
+      <Name>Display Settings 8 - Return to Options Menu</Name>
+      <Description>Says selected display settings option.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>30</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Return to Options Menu</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>209</Id>
+      <Name>Display FPS 0 - Off</Name>
+      <Description>Says whether we're displaying the frames per second.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>31</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Off</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>false</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>210</Id>
+      <Name>Display FPS 1 - On</Name>
+      <Description>Says whether we're displaying the frames per second.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>31</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>On</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>false</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>211</Id>
+      <Name>Light Bloom Effect 0 - On</Name>
+      <Description>Yes, 0 is the ON setting for the light bloom effect.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>32</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>On</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>212</Id>
+      <Name>Light Bloom Effect 1 - Off</Name>
+      <Description>Yes, 1 is the OFF setting for the light bloom effect.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>32</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Off</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>213</Id>
+      <Name>Anti-Aliasing 0 - 4 times</Name>
+      <Description>Says anti-aliasing selection.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>33</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>4 times</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>214</Id>
+      <Name>Anti-Aliasing 1 - 2 times</Name>
+      <Description>Says anti-aliasing selection.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>33</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>2 times</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>215</Id>
+      <Name>Anti-Aliasing 2- Off</Name>
+      <Description>Says anti-aliasing selection.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>33</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Off</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <Id>216</Id>
+      <Name>Upper HUD Offset value</Name>
+      <Description>Says offset on change.</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>34</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <Id>217</Id>
+      <Name>Lower HUD Offset value</Name>
+      <Description>Says offset on change.</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>35</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>218</Id>
+      <Name>Resolution Windowed 0 - 1024x576</Name>
+      <Description>Says resolution setting</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>226</int>
+      </SecondaryIdList>
+      <SampleFilename>1024 by 576</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>219</Id>
+      <Name>Resolution Windowed 1 - 1280x720</Name>
+      <Description>Says resolution setting</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>226</int>
+      </SecondaryIdList>
+      <SampleFilename>1280 by 720</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>220</Id>
+      <Name>Resolution Windowed 2 - 1600x900</Name>
+      <Description>Says resolution setting</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>226</int>
+      </SecondaryIdList>
+      <SampleFilename>1600 by 900</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>221</Id>
+      <Name>Resolution Windowed 3 - 1024x614</Name>
+      <Description>Says resolution setting</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>226</int>
+      </SecondaryIdList>
+      <SampleFilename>1024 by 614</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>222</Id>
+      <Name>Resolution Windowed 4 - 1280x768</Name>
+      <Description>Says resolution setting</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>226</int>
+      </SecondaryIdList>
+      <SampleFilename>1280 by 768</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>223</Id>
+      <Name>Resolution Windowed 5 - 1600x960</Name>
+      <Description>Says resolution setting</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>226</int>
+      </SecondaryIdList>
+      <SampleFilename>1600 by 960</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>224</Id>
+      <Name>Screen Mode 0 - Fullscreen</Name>
+      <Description>Says fullscreen.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>37</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Fullscreen</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>225</Id>
+      <Name>Screen Mode 1 - Windowed</Name>
+      <Description>Says windowed.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>37</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Windowed</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Dependent</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>226</Id>
+      <Name>Dependent screen mode windowed</Name>
+      <Description>CHANGE ME</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>37</int>
+      </WatchIdList>
+      <SecondaryIdList />
+      <SampleFilename>None</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Dependent</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>227</Id>
+      <Name>Dependent screen mode fullscreen</Name>
+      <Description>CHANGE ME</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>37</int>
+      </WatchIdList>
+      <SecondaryIdList />
+      <SampleFilename>None</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>228</Id>
+      <Name>Resolution Fullscreen 0 - 1024x768</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1024 by 768</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>229</Id>
+      <Name>Resolution Fullscreen 1 - 1152x864</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1152 by 864</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>230</Id>
+      <Name>Resolution Fullscreen 2 - 1280x720 Arcade</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1280 by 720 Arcade</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>231</Id>
+      <Name>Resolution Fullscreen 3 - 1280x720 Full</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1280 by 720 Full</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>232</Id>
+      <Name>Resolution Fullscreen 4 - 1280x768</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1280 by 768</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>233</Id>
+      <Name>Resolution Fullscreen 5 - 1280x800</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1280 by 800</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>234</Id>
+      <Name>Resolution Fullscreen 6 - 1280x960</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1280 by 960</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>235</Id>
+      <Name>Resolution Fullscreen 7 - 1366x768 Arcade</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1366 by 768 Arcade</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>236</Id>
+      <Name>Resolution Fullscreen 8 - 1366x768 Full</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1366 by 768 Full</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>237</Id>
+      <Name>Resolution Fullscreen 9 - 1600x900 Arcade</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">9</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1600 by 900 Arcade</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>238</Id>
+      <Name>Resolution Fullscreen 10 - 1600x900 Full</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1600 by 900 Full</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>239</Id>
+      <Name>Resolution Fullscreen 11 - 1680x1050</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">11</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1680 by 1050</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>240</Id>
+      <Name>Resolution Fullscreen 12 - 1920x1080 Arcade</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">12</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1920 by 1080 Arcade</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>241</Id>
+      <Name>Resolution Fullscreen 13 - 1920x1080 Full</Name>
+      <Description>Says fullscreen resolution on change.</Description>
+      <Value xsi:type="xsd:string">13</Value>
+      <WatchIdList>
+        <int>36</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>227</int>
+      </SecondaryIdList>
+      <SampleFilename>1920 by 1080 Full</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+  </triggerList>
+  <Description>Please note that if you're using the NVDA screen reader and use a keyboard to play this game then in-game trigger announcements will be cut short or even skipped entirely when a key is pressed - this is simply how NVDA operates. As such, it is advised to use a joypad or joystick to play the game which will mitigate this issue.
+
+Also, the in-game sound effects are quite loud in this game - so to hear the sonification events via your screen reader it would be best to decrease the game audio output levels from the main menu's options menu.
+
+You can find frame data for the characters here:
+http://www.dustloop.com/wiki/index.php/BBCSE/Frame_Data
+
+Al Lansley 2018-11-14</Description>
+  <ProcessName>bbcse</ProcessName>
+  <PollSleepMS>100</PollSleepMS>
+  <ClockTickMS>1000</ClockTickMS>
+  <ClockMax>99</ClockMax>
+  <ConfigDirectory>BlazBlue Continuum Shift Extend (Steam WIP)\</ConfigDirectory>
+  <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
+  <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
+</GameConfig>
