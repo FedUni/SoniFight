@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Threading;
 
 using au.edu.federation.SoniFight.Properties;
+using DavyKager;
 
 //using System.Diagnostics;
 //using System.Text.RegularExpressions;
@@ -101,11 +102,21 @@ namespace au.edu.federation.SoniFight
         private Label triggerTypeLabel = new Label();
         private ComboBox triggerAllowanceComboBox = new ComboBox();
 
+        // Flag to keep track of whether we've loaded the Tolk library
+        private static bool tolkLoaded = false;
+
         // Constructor
         public MainForm()
         {
             InitializeComponent();
             gameConfig = new GameConfig();
+
+            // Load tolk library ready for use and flip the flag so we only ever load it once
+            if (!tolkLoaded)
+            {
+                Tolk.Load();
+                tolkLoaded = true;
+            }
 
             // Initially we aren't running so we add that the current status is stopped to the window title
             this.Text = formTitle + Resources.ResourceManager.GetString("statusStoppedString");
@@ -313,6 +324,10 @@ namespace au.edu.federation.SoniFight
                 gameConfig.Valid = gameConfig.validate();
                 gameConfig.Active = gameConfig.activate();
 
+                // Brief delay then announce that we're running if tolk is available. Delay is so announcing the button doesn't overwrite our speech, final true means interupt!
+                Thread.Sleep(100);
+                Tolk.Output("SoniFight running config" + gameConfig.ConfigDirectory, true);
+
                 // If we have a valid, active config and we're not already running then start our sonification background worker,
                 // which calls the 'performSonification' method.
                 if (gameConfig.Valid && gameConfig.Active)
@@ -486,7 +501,9 @@ namespace au.edu.federation.SoniFight
                     this.Text = formTitle + Resources.ResourceManager.GetString("statusStoppedString");
                     running = false;
 
+                    // Pause then announce we've stopped
                     Thread.Sleep(500);
+                    Tolk.Output("SoniFight stopped", false);
                 }
 
                 // Loading an existing config? Okay...
@@ -541,6 +558,8 @@ namespace au.edu.federation.SoniFight
             Thread.Sleep(500);
 
             Program.irrKlang.UnloadAllSamples();
+
+            Tolk.Output("SoniFight stopped", true);
         }
 
         // Method to refresh the main config selection dropdown menu

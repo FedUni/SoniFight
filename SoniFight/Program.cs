@@ -325,7 +325,7 @@ namespace au.edu.federation.SoniFight
         // This is the DoWork method for the sonification BackgroundWorker
         public static void performSonification(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            // Load tolk library ready for use
+            // Load tolk read for use
             Tolk.Load();
 
             // Try to detect a screen reader and set a flag if we find one so we know we can use it for sonification events.

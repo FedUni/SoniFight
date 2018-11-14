@@ -484,7 +484,7 @@ namespace au.edu.federation.SoniFight
                 return false;
             }
 
-            // Ensure we have at least one watch
+            // Ensure we have at least one trigger
             if (triggerList.Count == 0)
             {
                 MessageBox.Show("Validation Error: GameConfig does not have any triggers.");

@@ -949,7 +949,7 @@
     <value>0</value>
   </data>
   <data name="appTitleLabel.Text" xml:space="preserve">
-    <value>SoniFight v1.1.2</value>
+    <value>SoniFight v1.1.3</value>
   </data>
   <data name="appTitleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -993,151 +993,22 @@
   <data name="&gt;&gt;mainTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;holderPanel.Name" xml:space="preserve">
-    <value>holderPanel</value>
-  </data>
-  <data name="&gt;&gt;holderPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;holderPanel.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;holderPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;saveConfigButton.Name" xml:space="preserve">
-    <value>saveConfigButton</value>
-  </data>
-  <data name="&gt;&gt;saveConfigButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveConfigButton.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;saveConfigButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cloneTriggerButton.Name" xml:space="preserve">
-    <value>cloneTriggerButton</value>
-  </data>
-  <data name="&gt;&gt;cloneTriggerButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cloneTriggerButton.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;cloneTriggerButton.ZOrder" xml:space="preserve">
+  <data name="gcPanel.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;addTriggerButton.Name" xml:space="preserve">
-    <value>addTriggerButton</value>
-  </data>
-  <data name="&gt;&gt;addTriggerButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addTriggerButton.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;addTriggerButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cloneWatchButton.Name" xml:space="preserve">
-    <value>cloneWatchButton</value>
-  </data>
-  <data name="&gt;&gt;cloneWatchButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cloneWatchButton.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;cloneWatchButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;addWatchButton.Name" xml:space="preserve">
-    <value>addWatchButton</value>
-  </data>
-  <data name="&gt;&gt;addWatchButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addWatchButton.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;addWatchButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;currentUILabel.Name" xml:space="preserve">
-    <value>currentUILabel</value>
-  </data>
-  <data name="&gt;&gt;currentUILabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;currentUILabel.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;currentUILabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;gcTreeView.Name" xml:space="preserve">
-    <value>gcTreeView</value>
-  </data>
-  <data name="&gt;&gt;gcTreeView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gcTreeView.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;gcTreeView.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="editTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="editTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="editTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>866, 515</value>
-  </data>
-  <data name="editTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="editTabPage.Text" xml:space="preserve">
-    <value>Edit Config</value>
-  </data>
-  <data name="&gt;&gt;editTabPage.Name" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;editTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;editTabPage.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;editTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="gcPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="gcPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>874, 541</value>
+  <data name="gcPanel.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="gcPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>508, 475</value>
   </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+  <data name="gcPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;gcPanel.Name" xml:space="preserve">
@@ -1174,36 +1045,6 @@
     <value>editTabPage</value>
   </data>
   <data name="&gt;&gt;holderPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gcPanel.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="gcPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gcPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="gcPanel.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="gcPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>508, 475</value>
-  </data>
-  <data name="gcPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;gcPanel.Name" xml:space="preserve">
-    <value>gcPanel</value>
-  </data>
-  <data name="&gt;&gt;gcPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gcPanel.Parent" xml:space="preserve">
-    <value>holderPanel</value>
-  </data>
-  <data name="&gt;&gt;gcPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="saveConfigButton.Font" type="System.Drawing.Font, System.Drawing">
@@ -1391,6 +1232,57 @@
   </data>
   <data name="&gt;&gt;gcTreeView.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="editTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="editTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="editTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>866, 515</value>
+  </data>
+  <data name="editTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="editTabPage.Text" xml:space="preserve">
+    <value>Edit Config</value>
+  </data>
+  <data name="&gt;&gt;editTabPage.Name" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;editTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editTabPage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;editTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>874, 541</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

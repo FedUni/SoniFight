@@ -220,8 +220,10 @@ namespace au.edu.federation.SoniFight
             allowanceType  = Trigger.AllowanceType.Any;
 
             WatchIdList = new List<int>();
+
             SecondaryIdList = new List<int>();
-            Value       = -1;
+
+            Value = -1;
 
             PreviousValueList = new List<dynamic>();
 
@@ -232,7 +234,7 @@ namespace au.edu.federation.SoniFight
             Active             = true;
             IsClock            = false;
             ModificationActive = false;
-            UseTolk            = false;
+            UseTolk            = true;  // Changed using tolk to default as it's far more likely to be used than samples (creating samples is time consuming!)
 
             hotkey = new Hotkey();
         }
