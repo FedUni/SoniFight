@@ -1,6 +1,6 @@
 # SoniFight #
 
-SUPER QUICK START: To use SoniFight, please download a pre-compiled release from: https://github.com/FedUni/SoniFight/releases
+SUPER QUICK START: To use SoniFight, please download a pre-compiled release from: https://github.com/FedUni/SoniFight/releases then run either the SoniFight_x86.bat file for 32-bit games (it's likely this is the one you want) or SoniFight_x64.bat for 64-bit games (currrently proof of concept only).
 
 SoniFight is a Windows application designed to provide additional sonification cues to video games for blind or visually impaired players. It is written in C# and released under the MIT license. Please see LICENSE.txt for further details, including separate licensing details for the embedded tolk and irrKlang libraries.
 
