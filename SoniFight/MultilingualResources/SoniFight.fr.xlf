@@ -658,6 +658,14 @@
           <source>Dependent</source>
           <target state="new">Dependent</target>
         </trans-unit>
+        <trans-unit id="decreasedString" translate="yes" xml:space="preserve">
+          <source>Decreased</source>
+          <target state="new">Decreased</target>
+        </trans-unit>
+        <trans-unit id="increasedString" translate="yes" xml:space="preserve">
+          <source>Increased</source>
+          <target state="new">Increased</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -1992,8 +2000,8 @@
           <target state="needs-review-translation">0</target>
         </trans-unit>
         <trans-unit id="appTitleLabel.Text" translate="no" xml:space="preserve">
-          <source>SoniFight v1.1.3</source>
-          <target state="final">SoniFight v1.1.3</target>
+          <source>SoniFight v1.1.5</source>
+          <target state="final">SoniFight v1.1.5</target>
         </trans-unit>
         <trans-unit id="appTitleLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
           <source>MiddleCenter</source>
@@ -2265,7 +2273,7 @@
         </trans-unit>
         <trans-unit id="runConfigButton.AccessibleName" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="translated">Run Selected Config</target>
         </trans-unit>
         <trans-unit id="runConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
           <source></source>

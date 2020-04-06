@@ -615,12 +615,16 @@ namespace au.edu.federation.SoniFight
                 case 6:
                     return Trigger.ComparisonType.Changed;
                 case 7:
-                    return Trigger.ComparisonType.DistanceVolumeDescending;
+                    return Trigger.ComparisonType.Increased;
                 case 8:
-                    return Trigger.ComparisonType.DistanceVolumeAscending;
+                    return Trigger.ComparisonType.Decreased;
                 case 9:
-                    return Trigger.ComparisonType.DistancePitchDescending;
+                    return Trigger.ComparisonType.DistanceVolumeDescending;
                 case 10:
+                    return Trigger.ComparisonType.DistanceVolumeAscending;
+                case 11:
+                    return Trigger.ComparisonType.DistancePitchDescending;
+                case 12:
                     return Trigger.ComparisonType.DistancePitchAscending;
                 default:
                     return Trigger.ComparisonType.EqualTo;
@@ -645,15 +649,19 @@ namespace au.edu.federation.SoniFight
                 case Trigger.ComparisonType.NotEqualTo:
                     return 5;
                 case Trigger.ComparisonType.Changed:
-                    return 6;
-                case Trigger.ComparisonType.DistanceVolumeDescending:
+                    return 6;                
+                case Trigger.ComparisonType.Increased:
                     return 7;
-                case Trigger.ComparisonType.DistanceVolumeAscending:
+                case Trigger.ComparisonType.Decreased:
                     return 8;
-                case Trigger.ComparisonType.DistancePitchDescending:
+                case Trigger.ComparisonType.DistanceVolumeDescending:
                     return 9;
-                case Trigger.ComparisonType.DistancePitchAscending:
+                case Trigger.ComparisonType.DistanceVolumeAscending:
                     return 10;
+                case Trigger.ComparisonType.DistancePitchDescending:
+                    return 11;
+                case Trigger.ComparisonType.DistancePitchAscending:
+                    return 12;
                 default:
                     return 0;
             }

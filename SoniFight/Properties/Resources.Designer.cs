@@ -295,6 +295,15 @@ namespace au.edu.federation.SoniFight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Decreased.
+        /// </summary>
+        internal static string decreasedString {
+            get {
+                return ResourceManager.GetString("decreasedString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete Trigger.
         /// </summary>
         internal static string deleteTriggerButtonString {
@@ -543,6 +552,15 @@ namespace au.edu.federation.SoniFight.Properties {
         internal static string illegalPointerString3 {
             get {
                 return ResourceManager.GetString("illegalPointerString3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increased.
+        /// </summary>
+        internal static string increasedString {
+            get {
+                return ResourceManager.GetString("increasedString", resourceCulture);
             }
         }
         

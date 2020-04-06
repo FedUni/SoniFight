@@ -12,11 +12,11 @@ namespace au.edu.federation.SoniFight
 {
     static class Program
     {
-        //[System.Runtime.InteropServices.DllImport("kernel32.dll")]
-        //private static extern bool AttachConsole(int dwProcessId);
+        // Note: The program will only handle one GameConfig at any given time and this is stored as a public static object in the Form.cs file.
 
-        // Please note: The program will only handle one GameConfig at any given time and this is
-        // stored as a public static object in the Form.cs file.
+        // Uncomment if we want to attach a console to this application when running as a windows application (see below AttachConsole call)
+        [System.Runtime.InteropServices.DllImport("kernel32.dll")]
+        private static extern bool AttachConsole(int dwProcessId);
 
         // We need to know whether the game is currently playing a live round or is in a menu.
         // We'll modify this enum based on whether the clock has changed in the last second or not. Live is so, InMenu otherwise.
@@ -35,8 +35,8 @@ namespace au.edu.federation.SoniFight
         //       just between rounds, so it'll trigger InGame sonification between rounds, which we don't particularly want.
         public static GameState previousGameState = GameState.InMenu;
 
-        // DateTime objects to use to determine if one second has passed (at which point we check if the clock has changed)
-        static DateTime startTime, endTime;
+        // DateTime objects to use to determine if an in-game clock tick has occured (used in fighting games)
+        static DateTime clockStartTime, clockEndTime;
         
         // Maximum characters to compare when doing string comparisons
         public static int TEXT_COMPARISON_CHAR_LIMIT = 33;
@@ -50,15 +50,19 @@ namespace au.edu.federation.SoniFight
 
         // Are we connected to the process specified in the current GameConfig?
         public static bool connectedToProcess = false;
-        
+
+        // Are we currently reconnecting to the process specified in the current GameConfig?
+        public static bool reconnectingToProcess = false;
+
         // We keep a queue of normal triggers so they can play in the order they came in without overlapping each other and turning into a cacophony
         static Queue<Trigger> normalInGameTriggerQueue = new Queue<Trigger>();
 
         // Flag to keep track of whether we're running as a 32-bit or 64-bit process
         public static bool is64Bit;
 
-        public static CultureInfo cultureOverride;
-        public static CultureInfo cultureUIOverride;
+        // Get an instance of the invariant culture so we can override current/currentUI/thread/threadUI cultures with it and compare strings in this manner.
+        // Also: Having this means we don't have to insantiate a new instance all the time (like when performing string comparisons) to it'll take load off the garbage collector.
+        private static CultureInfo invariantCulture = CultureInfo.InvariantCulture;
 
         /// <summary>
         /// The main entry point for the application.
@@ -76,32 +80,39 @@ namespace au.edu.federation.SoniFight
                 is64Bit = false;
             }
 
+            
             // At some point we may wish to have this as a Windows Application (not a Console Application) and attach a console to it.
             // This comes with some caveats like you can't cleanly pipe output to file from it, so I'll leave it for now. In the below
             // AttachConsole call -1 means attach to the parent process, and we also need the native AttachConsole method from kernel32.dll.
-            //AttachConsole(-1);
+            AttachConsole(-1);
 
-            // ----- Localisation test code - uncomment to force French localisation etc. -----
+            // ----- Culture Localisation -----
 
-            // Specify cultures for internal and UI work
-            //cultureOverride = CultureInfo("fr"); // Force internal culture to be the invariant culture - we could force english with: cultureOverride = new CultureInfo("en");
-            //cultureUIOverride = new CultureInfo("fr"); // CultureInfo.InvariantCulture; // Force UI culture to be invariant culture - we could force french with: cultureUIOverride = new CultureInfo("fr");
+            Console.WriteLine();
+            Console.WriteLine("Original culture           : " + CultureInfo.CurrentCulture.DisplayName);
+            Console.WriteLine("Original UI culture        : " + CultureInfo.CurrentUICulture.DisplayName);
+            string temp;
+            if (CultureInfo.DefaultThreadCurrentCulture == null)   { temp = "null"; } else { temp = CultureInfo.DefaultThreadCurrentCulture.DisplayName;   }
+            Console.WriteLine("Original default culture   : " + temp);
+            if (CultureInfo.DefaultThreadCurrentUICulture == null) { temp = "null"; } else { temp = CultureInfo.DefaultThreadCurrentUICulture.DisplayName; }
+            Console.WriteLine("Original default UI culture: " + temp);
+            Console.WriteLine("Attempting culture modification...");
 
-            cultureOverride = CultureInfo.InvariantCulture;   // Force internal culture to be the invariant culture - we could force english with: cultureOverride = new CultureInfo("en");
-            //CultureInfo cultureUIOverride = CultureInfo.InvariantCulture; // Force UI culture to be invariant culture - we could force french with: cultureUIOverride = new CultureInfo("fr");
+            // Specify current, UI and default threads should all use CultureInfo.InvariantCulture
+            // Note: We can force specific cultures via calls to: new CultureInfo("en"), or, new CultureInfo("fr") etc.
+            Thread.CurrentThread.CurrentCulture       = invariantCulture; // This thread
+            Thread.CurrentThread.CurrentUICulture     = invariantCulture; // This UI thread
+            CultureInfo.DefaultThreadCurrentCulture   = invariantCulture; // All future threads            
+            CultureInfo.DefaultThreadCurrentUICulture = invariantCulture; // All future UI threads            
 
-            // Apply those cultures to current thread
-            Thread.CurrentThread.CurrentCulture = cultureOverride;
-            //Thread.CurrentThread.CurrentUICulture = cultureUIOverride;
-            Console.WriteLine("The current culture is: " + CultureInfo.CurrentCulture);
-            Console.WriteLine("The current UI culture is: " + CultureInfo.CurrentUICulture);
-            
-            // Attempt to force all threads created by this thread (hopefully including those in background workers) to have the same culture as this thread
-            CultureInfo.DefaultThreadCurrentCulture = cultureOverride;
-            //CultureInfo.DefaultThreadCurrentUICulture = cultureUIOverride;
-            
+            Console.WriteLine("New thread culture    : " + CultureInfo.CurrentCulture.DisplayName);
+            Console.WriteLine("New UI culture        : " + CultureInfo.CurrentUICulture.DisplayName);
+            Console.WriteLine("New default culture   : " + CultureInfo.DefaultThreadCurrentCulture.DisplayName);
+            Console.WriteLine("New default UI culture: " + CultureInfo.DefaultThreadCurrentUICulture.DisplayName);
+            Console.WriteLine();
+
             // ----- End of localisation section -----
-            
+
             // Prepare sonficiation background worker...
             sonificationBGW.DoWork += performSonification;      // Specify the work method - this runs when RunWorkerAsync is called
             sonificationBGW.WorkerReportsProgress = false;      // We do not want progress reports
@@ -124,11 +135,9 @@ namespace au.edu.federation.SoniFight
             {
                 // IrrKlang cleanup (unload and samples and dispose of player)
                 irrKlang.ShutDown();
-            }
-
-            
+            }            
         }
-
+  
 
         // This method checks for successful comparisons between a trigger and the value read from a watch.
         // Note: Because a trigger may be associated with a number of watches we must provide the index of the watch value we're comparing against.
@@ -164,14 +173,14 @@ namespace au.edu.federation.SoniFight
                         case Trigger.ComparisonType.EqualTo:
 
                             // We'll perform all 'equal-to' comparisons as strings
-                            stringA = Convert.ToString(watchValue, Program.cultureOverride);
-                            stringB = Convert.ToString(t.Value, Program.cultureOverride);
-                            string previousValueString = Convert.ToString(t.PreviousValueList[watchIndex], Program.cultureOverride);
+                            stringA = Convert.ToString(watchValue,invariantCulture);
+                            stringB = Convert.ToString(t.Value, invariantCulture);
+                            string previousValueString = Convert.ToString(t.PreviousValueList[watchIndex], invariantCulture);
 
                             // Params: first string, second string, case sensitive, culture for comparison
                             // A result of zero means these strings are identical
-                            int previousResult = string.Compare(stringA, previousValueString, false, CultureInfo.InvariantCulture);
-                            if ((string.Compare(stringA, stringB, false, CultureInfo.InvariantCulture) == 0 || t.triggerType == Trigger.TriggerType.Modifier) &&
+                            int previousResult = string.Compare(stringA, previousValueString, false, invariantCulture);
+                            if ((string.Compare(stringA, stringB, false, invariantCulture) == 0 || t.triggerType == Trigger.TriggerType.Modifier) &&
                                 (previousResult != 0) )
                             {
                                 return true; // Strings are identical we have a match
@@ -217,21 +226,34 @@ namespace au.edu.federation.SoniFight
 
                             // NOTE: The changed comparison uses the current watch value and the previous value - it does NOT use the current trigger value, which we
                             //       don't care about.
+                            //       Another option we could use in this changed comparison is to say that a change to a blank string does not count as a change.
+                            //       Worth thinking about, but I won't put it in just yet.
 
                             // We'll perform all 'changed' comparisons as strings
-                            stringA = Convert.ToString(watchValue, Program.cultureOverride);
-                            stringB = Convert.ToString(t.PreviousValueList[watchIndex], Program.cultureOverride);
+                            stringA = Convert.ToString(watchValue, invariantCulture);
+                            stringB = Convert.ToString(t.PreviousValueList[watchIndex], invariantCulture);
 
                             // Params: first string, second string, case sensitive, culture for comparison
                             // A result of zero means these strings are identical
-                            if ( string.Compare(stringA, stringB, false, CultureInfo.InvariantCulture) == 0)
+                            if ( string.Compare(stringA, stringB, false, invariantCulture) == 0)
                             {
                                 return false; // Same, so have not changed
                             }
                             return true;
 
-                            // Another option we could use in this changed comparison is to say that a change to a blank string does not count as a change.
-                            // Worth thinking about, but I won't put it in just yet.
+                        case Trigger.ComparisonType.Increased:
+                            if (t.PreviousValueList[watchIndex] < watchValue || t.triggerType == Trigger.TriggerType.Modifier)
+                            {
+                                return true;
+                            }
+                            return false; // Comparison failed? Return false.
+
+                        case Trigger.ComparisonType.Decreased:
+                            if (t.PreviousValueList[watchIndex] > watchValue || t.triggerType == Trigger.TriggerType.Modifier)
+                            {
+                                return true;
+                            }
+                            return false; // Comparison failed? Return false.
                     }
                 }
                 catch (Exception e)
@@ -250,7 +272,7 @@ namespace au.edu.federation.SoniFight
         }
 
         // This method checks for a comparison between a dependent trigger's value and a given value. It does NOT check against previous values of that dependent trigger
-        // except when the trigger's comparison type is 'changed'.
+        // except when the trigger's comparison type is 'changed', 'increased', 'decreased'.
         public static bool performDependentComparison(Trigger t, dynamic watchValue)
         {
             // Note: Normal triggers that make a sound may be co-opted to work as dependent triggers, and we won't stop them.
@@ -310,6 +332,20 @@ namespace au.edu.federation.SoniFight
                         }
                         return false; // Comparison failed? Return false.
 
+                    case Trigger.ComparisonType.Increased:
+                        if (t.PreviousValueList[0] < watchValue)
+                        {
+                            return true;
+                        }
+                        return false; // Comparison failed? Return false.
+
+                    case Trigger.ComparisonType.Decreased:
+                        if (t.PreviousValueList[0] > watchValue)
+                        {
+                            return true;
+                        }
+                        return false; // Comparison failed? Return false.
+
                 } // End of switch block
 
             }
@@ -325,7 +361,7 @@ namespace au.edu.federation.SoniFight
         // This is the DoWork method for the sonification BackgroundWorker
         public static void performSonification(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            // Load tolk read for use
+            // Load tolk ready for use
             Tolk.Load();
 
             // Try to detect a screen reader and set a flag if we find one so we know we can use it for sonification events.
@@ -335,14 +371,8 @@ namespace au.edu.federation.SoniFight
             {
                 screenReaderActive = true;
                 Console.WriteLine( Resources.ResourceManager.GetString("tolkActiveString") + screenReaderName);
-                if ( Tolk.HasSpeech() )
-                {
-                    Console.WriteLine( Resources.ResourceManager.GetString("tolkSpeechSupportedString") );
-                }
-                if ( Tolk.HasBraille() )
-                {
-                    Console.WriteLine( Resources.ResourceManager.GetString("tolkBrailleSupportedString") );
-                }
+                if ( Tolk.HasSpeech()  ) { Console.WriteLine( Resources.ResourceManager.GetString("tolkSpeechSupportedString") );  }
+                if ( Tolk.HasBraille() ) { Console.WriteLine( Resources.ResourceManager.GetString("tolkBrailleSupportedString") ); }
             }
             else
             {
@@ -404,7 +434,7 @@ namespace au.edu.federation.SoniFight
                             case Watch.ValueType.StringUTF8Type:
                             case Watch.ValueType.StringUTF16Type:
                                 t.Value = Convert.ChangeType(t.Value, TypeCode.String);
-                                t.PreviousValueList.Add(t.Name); // Doesn't matter what string we add here because we immediately overwrite it velow
+                                t.PreviousValueList.Add(t.Name);                       // Doesn't matter what string we add here because we immediately overwrite it below
                                 t.PreviousValueList[watchIdLoop] = t.Value.ToString(); // Strings are reference types so we create a new copy to ensure value and previousValue don't point to the same thing!
                                 break;
                             default:
@@ -426,7 +456,7 @@ namespace au.edu.federation.SoniFight
             } // End of loop over triggers
 
             // Get the time and the current clock
-            startTime = DateTime.Now;
+            clockStartTime = DateTime.Now;
 
             // Declare a few vars once here to maintain scope throughout the 'game-loop'
             dynamic watchValue;
@@ -467,8 +497,8 @@ namespace au.edu.federation.SoniFight
                         currentClock = Utils.getWatchWithId(t.WatchIdList[0]).getDynamicValueFromType();
 
                         // Check if a round-tick has passed
-                        endTime = DateTime.Now;
-                        double elapsedMilliseconds = ((TimeSpan)(endTime - startTime)).TotalMilliseconds;
+                        clockEndTime = DateTime.Now;
+                        double elapsedMilliseconds = ((TimeSpan)(clockEndTime - clockStartTime)).TotalMilliseconds;
 
                         // If a GameConfig clock-tick has has passed (i.e. a second or such)
                         if (elapsedMilliseconds >= MainForm.gameConfig.ClockTickMS)
@@ -476,7 +506,7 @@ namespace au.edu.federation.SoniFight
                             //Console.WriteLine("A clock tick has passed.");
 
                             // Reset the start time
-                            startTime = DateTime.Now;
+                            clockStartTime = DateTime.Now;
 
                             // Update the previous gamestate
                             Program.previousGameState = Program.gameState;
@@ -525,7 +555,7 @@ namespace au.edu.federation.SoniFight
                     Program.irrKlang.ContinuousEngine.StopAllSounds();
                     Program.irrKlang.PlayingContinuousSamples = false;
                 }
-                else // ...otherwise we're InGame so start them ALL and set our flag to say continuous samples are playing.
+                else // ...otherwise we're InGame so start all continuous trigger samples and set our flag to say they're playing.
                 {
                     for (int continuousTriggerLoop = 0; continuousTriggerLoop < gc.continuousTriggerList.Count; ++continuousTriggerLoop)
                     {
@@ -613,8 +643,6 @@ namespace au.edu.federation.SoniFight
                     Program.irrKlang.PlayingContinuousSamples = true;
 
                 } // End of continuous trigger section
-
-
                 
 
                 // ----- Process normal triggers ----- 
@@ -904,6 +932,20 @@ namespace au.edu.federation.SoniFight
 
                 // Update the SoundEngine
                 Program.irrKlang.UpdateEngines();
+
+                // Have we lost connection to the process? (e.g. the game process has been closed)
+                //if (GameConfig.GetProcessArray().Length == 0) { }
+                //STONKS
+                if (gc.gameProcess.HasExited && !reconnectingToProcess)
+                {
+                    Console.WriteLine("Lost connection to game process - attempting to reconnect.");
+                    connectedToProcess = false;
+                    reconnectingToProcess = true;
+
+                    // Wait five seconds to let the process completely close - and then attempt to reconnect to it
+                    Thread.Sleep(5000);
+                    gc.activate();
+                }                
 
                 // Finally, after looping over all triggers we sleep for the amount of time specified in the GameConfig
                 Thread.Sleep(MainForm.gameConfig.PollSleepMS);

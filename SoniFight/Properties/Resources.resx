@@ -606,4 +606,10 @@
   <data name="triggerTypeDependentString" xml:space="preserve">
     <value>Dependent</value>
   </data>
+  <data name="decreasedString" xml:space="preserve">
+    <value>Decreased</value>
+  </data>
+  <data name="increasedString" xml:space="preserve">
+    <value>Increased</value>
+  </data>
 </root>

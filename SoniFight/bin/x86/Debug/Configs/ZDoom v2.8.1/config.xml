@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GameConfigFileVersion>1</GameConfigFileVersion>
+  <watchList>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>1</Id>
+      <Name>Current ammo</Name>
+      <Description>How much ammunition you have for the current weapon as an int</Description>
+      <PointerList>
+        <string>3AA420</string>
+        <string>5C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>2</Id>
+      <Name>Health</Name>
+      <Description>Health value as an int (range is 200 down to 0)</Description>
+      <PointerList>
+        <string>1AA09C</string>
+        <string>0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>3</Id>
+      <Name>Armour</Name>
+      <Description>Armour value as int, range is 200 down to 0</Description>
+      <PointerList>
+        <string>34C5DC</string>
+        <string>320</string>
+        <string>8</string>
+        <string>1E8</string>
+        <string>14</string>
+        <string>294</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>FloatType</valueType>
+      <Id>4</Id>
+      <Name>Player X-Location</Name>
+      <Description>X-Location on map as float, range is +/- a few thousand</Description>
+      <PointerList>
+        <string>19D4</string>
+        <string>BC</string>
+        <string>14</string>
+        <string>4C</string>
+        <string>420</string>
+        <string>64</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>FloatType</valueType>
+      <Id>5</Id>
+      <Name>Player Y-Location</Name>
+      <Description>Y-Location on map as float, range is +/- a few thousand</Description>
+      <PointerList>
+        <string>19D4</string>
+        <string>BC</string>
+        <string>14</string>
+        <string>4C</string>
+        <string>420</string>
+        <string>6C</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+  </watchList>
+  <triggerList>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>LessThanOrEqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>1</Id>
+      <Name>Ammo low warning</Name>
+      <Description>Says "Ammo ten" when you have 10 bullets in the current weapon</Description>
+      <Value xsi:type="xsd:string">10</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ammo 10</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Increased</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>2</Id>
+      <Name>Ammo increased</Name>
+      <Description>Say current ammo value when you've picked up more ammo</Description>
+      <Value xsi:type="xsd:string">-1</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ammo {}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>3</Id>
+      <Name>Health changed</Name>
+      <Description>Says "Health &lt;THE_HEALTH_VALUE&gt;" on change</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Health {}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Increased</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>4</Id>
+      <Name>Armour increased</Name>
+      <Description>Says "Armour &lt;THE_ARMOUR_VALUE&gt;" on increase</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Armour {}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>5</Id>
+      <Name>Low Ammo 5</Name>
+      <Description>Says when you have this many bullets in current weapon</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ammo 5</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>6</Id>
+      <Name>Low Ammo 4</Name>
+      <Description>Says when you have this many bullets in current weapon</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ammo 4</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>7</Id>
+      <Name>Low Ammo 3</Name>
+      <Description>Says when you have this many bullets in current weapon</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ammo 3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>8</Id>
+      <Name>Low Ammo 2</Name>
+      <Description>Says when you have this many bullets in current weapon</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ammo 2</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>9</Id>
+      <Name>Low Ammo 1</Name>
+      <Description>Says when you have this many bullets in current weapon</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Ammo 1</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+  </triggerList>
+  <Description />
+  <ProcessName>zdoom</ProcessName>
+  <PollSleepMS>100</PollSleepMS>
+  <ClockTickMS>1000</ClockTickMS>
+  <ClockMax>99</ClockMax>
+  <ConfigDirectory>ZDoom v2.8.1\</ConfigDirectory>
+  <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
+  <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
+</GameConfig>

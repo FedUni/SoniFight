@@ -949,7 +949,7 @@
     <value>0</value>
   </data>
   <data name="appTitleLabel.Text" xml:space="preserve">
-    <value>SoniFight v1.1.3</value>
+    <value>SoniFight v1.1.5</value>
   </data>
   <data name="appTitleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>

@@ -736,4 +736,7 @@
   <data name="gcPanel.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="runConfigButton.AccessibleName" xml:space="preserve">
+    <value>Run Selected Config</value>
+  </data>
 </root>

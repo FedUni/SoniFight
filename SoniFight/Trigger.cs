@@ -17,6 +17,8 @@ namespace au.edu.federation.SoniFight
             GreaterThanOrEqualTo,
             NotEqualTo,
             Changed,
+            Increased,
+            Decreased,
             DistanceVolumeDescending, // Used in continuous triggers only
             DistanceVolumeAscending,  // Used in continuous triggers only
             DistancePitchDescending,  // Used in continuous triggers only

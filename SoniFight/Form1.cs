@@ -50,6 +50,8 @@ namespace au.edu.federation.SoniFight
                                           Resources.ResourceManager.GetString("greaterThanOrEqualToString"),     // "Greater Than Or Equal To"
                                           Resources.ResourceManager.GetString("notEqualToString"),               // "Not Equal To"
                                           Resources.ResourceManager.GetString("changedString"),                  // "Changed"
+                                          Resources.ResourceManager.GetString("increasedString"),                // "Increased"
+                                          Resources.ResourceManager.GetString("decreasedString"),                // "Decreased"
                                           Resources.ResourceManager.GetString("distanceVolumeDescendingString"), // "Distance - Volume Descending (Cont. Only)"
                                           Resources.ResourceManager.GetString("distanceVolumeAscendingString"),  // "Distance - Volume Ascending (Cont. Only)"
                                           Resources.ResourceManager.GetString("distancePitchDescendingString"),  // "Distance - Pitch Descending (Cont. Only)"
