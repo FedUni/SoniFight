@@ -31,15 +31,16 @@ namespace au.edu.federation.SoniFight
         public static GameConfig gameConfig;
 
         // String versions of the type of data watches can use
-        string[] dataTypesArray = { Resources.ResourceManager.GetString("integerString"),     // "Integer"
-                                    Resources.ResourceManager.GetString("shortString"),       // "Short"
-                                    Resources.ResourceManager.GetString("longString"),        // "Long"
-                                    Resources.ResourceManager.GetString("unsignedIntString"), // "Unsigned Int"
-                                    Resources.ResourceManager.GetString("floatString"),       // "Float"
-                                    Resources.ResourceManager.GetString("doubleString"),      // "Double"
-                                    Resources.ResourceManager.GetString("booleanString"),     // "Boolean"
-                                    Resources.ResourceManager.GetString("stringUTF8String"),  // "String (UTF-8)"
-                                    Resources.ResourceManager.GetString("stringUTF16String")  // "String (UTF-16)"
+        string[] dataTypesArray = { Resources.ResourceManager.GetString("integerString"),      // "Integer"
+                                    Resources.ResourceManager.GetString("shortString"),        // "Short"
+                                    Resources.ResourceManager.GetString("longString"),         // "Long"
+                                    Resources.ResourceManager.GetString("unsignedIntString"),  // "Unsigned Int"
+                                    Resources.ResourceManager.GetString("floatString"),        // "Float"
+                                    Resources.ResourceManager.GetString("doubleString"),       // "Double"
+                                    Resources.ResourceManager.GetString("booleanString"),      // "Boolean"
+                                    Resources.ResourceManager.GetString("stringUTF8String"),   // "String (UTF-8)"
+                                    Resources.ResourceManager.GetString("stringUTF16String"),  // "String (UTF-16)"
+                                    Resources.ResourceManager.GetString("byteString")          // "Byte"
                                   };
 
         // String versions of the comparison types we can use
@@ -239,6 +240,8 @@ namespace au.edu.federation.SoniFight
             // Note: Once here SoundPlayer.ShutDown() will be called from the main method because we've been stuck in this form loop up until then.
         }
 
+        /* ---------- TODO: Hotkeys don't work yet - need to fix. Commenting out to make sure these methods don't get called for now. ----------
+
         // Method to register global hotkeys 
         private void registerHotkeys()
         {
@@ -256,8 +259,8 @@ namespace au.edu.federation.SoniFight
 
             if (m.Msg == 0x0312) // 0x0312 corresponds to 'WM_HOTKEY'
             {
-                /* Note that the three lines below are not needed if you only want to register one hotkey.
-                 * The below lines are useful in case you want to register multiple keys, which you can use a switch with the id as argument, or if you want to know which key/modifier was pressed for some particular reason. */
+                // Note that the three lines below are not needed if you only want to register one hotkey.
+                // The below lines are useful in case you want to register multiple keys, which you can use a switch with the id as argument, or if you want to know which key/modifier was pressed for some particular reason.
 
                 //Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);                  // The key of the hotkey that was pressed.
                 //KeyModifier modifier = (KeyModifier)((int)m.LParam & 0xFFFF);       // The modifier of the hotkey that was pressed.
@@ -278,6 +281,8 @@ namespace au.edu.federation.SoniFight
                 UnregisterHotKey(this.Handle, h.Id);
             }
         }
+
+        ----------------------------------------------------------------------- */
 
         // Method to set up creation of a new GameConfig
         private void createNewConfigButton_Click(object senderender, EventArgs e)
@@ -337,63 +342,15 @@ namespace au.edu.federation.SoniFight
                     Program.sonificationBGW.RunWorkerAsync();
                     this.Text = formTitle + Resources.ResourceManager.GetString("statusRunningString") + gameConfig.ConfigDirectory;
 
-                    registerHotkeys();
+                    // Hotkeys don't work for now so not attempting to call them
+                    //registerHotkeys();
 
                     running = true;
                 }
 
             } // End of if !running block
 
-            /*** SECTION WHERE WE TRY TO LAUNCH THE GAME AND CHANGE ITS REGION - DOESN'T WORK, USE PROPERTIES | LANGUAGES DROPDOWN FROM WITHIN STEAM
-
-            // If not running then attempt to launch the game process so we can control the Culture of it.
-
-            string processNameWithPath = gameConfig.ProcessName;
-
-            Console.WriteLine("Initial full process name with path (single backslashes): " + processNameWithPath);
-
-            
-
-            // Cut down full path to just process name, i.e. "C:\Games\StreetFighter\ssfiv.exe" would be cut down to "ssfiv"
-            int lastSlashPos = processNameWithPath.LastIndexOf("\\") + 1;
-            string justProcessName = processNameWithPath.Substring(lastSlashPos, processNameWithPath.Length - lastSlashPos); 
-            Console.WriteLine("Just process name: " + justProcessName);
-
-            string processNameWithEscapedPath = Regex.Replace(processNameWithPath, @"\\", @"\\"); // Replace all single backslashes with double backslashes
-            Console.WriteLine("Escaped full path: " + processNameWithEscapedPath);
-
-            string processLaunchPath = processNameWithEscapedPath + ".exe";
-            Console.WriteLine("Process launch path: " + processLaunchPath);
-
-            // Try to find process
-            Process[] processArray = Process.GetProcessesByName(justProcessName);
-
-            // Process is not already running, so attempt to launch it
-            if (processArray.Length <= 0)
-            {
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-
-                string foo = @"C:\Program Files (x86)\Steam\Steam.exe";
-                string bar = " -applaunch 45760' -nosplash";
-                string foobar = foo + bar;
-
-                // Assign file name
-                startInfo.FileName = @"C:\Program Files (x86)\Steam\Steam.exe"; //@"C:\\Program Files (x86)\\Steam\\Steam.exe -applaunch 45760 -nosplash";// processLaunchPath;
-
-                startInfo.Arguments = "-applaunch 45760 -nosplash";
-
-                // Start the process without creating new window (default is false) - process will create its own window on launch
-                //startInfo.CreateNoWindow = true;
-
-                // Do not execute the process from the shell, launch it directly from this executable
-                //startInfo.UseShellExecute = false;
-
-                Process.Start(startInfo);
-            }
-
-            ***/
-
-        }
+        } // End of runConfig_Click method
 
         // Method to save the current GameConfig to its config.xml file
         private void saveConfig_Click(object senderender, EventArgs e)

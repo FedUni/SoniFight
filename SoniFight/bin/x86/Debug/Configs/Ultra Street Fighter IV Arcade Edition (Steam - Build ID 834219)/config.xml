@@ -197,14 +197,13 @@
       <Name>Graphic Options Submenu Text</Name>
       <Description>Resolution, filtering settings etc. Matched as strings.</Description>
       <PointerList>
-        <string>97DF54</string>
-        <string>44</string>
-        <string>4</string>
+        <string>132FDC</string>
+        <string>1C</string>
         <string>14</string>
-        <string>38</string>
-        <string>18</string>
-        <string>C0</string>
-        <string>0</string>
+        <string>54</string>
+        <string>4</string>
+        <string>10</string>
+        <string>1E0</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
@@ -407,7 +406,7 @@
       <Description>String matches - see listed triggers.</Description>
       <PointerList>
         <string>132FDC</string>
-        <string>180</string>
+        <string>170</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
@@ -725,7 +724,7 @@
       <Active>true</Active>
     </Watch>
     <Watch>
-      <valueType>ShortType</valueType>
+      <valueType>ByteType</valueType>
       <Id>63</Id>
       <Name>Player 1 Ultra Combo Selection</Name>
       <Description>Either 0, 1 or 2 as byte</Description>
@@ -750,6 +749,40 @@
         <string>44</string>
         <string>40</string>
         <string>294</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>65</Id>
+      <Name>P1 Handicap setting</Name>
+      <Description>Int 0 is 100%, 1/2/3/4 are 0/25/50/75%</Description>
+      <PointerList>
+        <string>694298</string>
+        <string>84</string>
+        <string>0</string>
+        <string>60</string>
+        <string>0</string>
+        <string>6C</string>
+        <string>DC</string>
+        <string>C4</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>66</Id>
+      <Name>P2 Handicap setting</Name>
+      <Description>Int 0 is 100%, 1/2/3/4 are 0/25/50/75%</Description>
+      <PointerList>
+        <string>694298</string>
+        <string>84</string>
+        <string>0</string>
+        <string>60</string>
+        <string>0</string>
+        <string>6C</string>
+        <string>DC</string>
+        <string>3B0C4</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
@@ -7421,7 +7454,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>640 by 480</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7447,7 +7480,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>720 by 480</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7473,7 +7506,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>720 by 576</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7499,7 +7532,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>800 by 600</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7525,7 +7558,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1024 by 768</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7551,7 +7584,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1152 by 864</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7577,7 +7610,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1176 by 664</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7603,7 +7636,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1280 by 720</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7629,7 +7662,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1280 by 768</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7655,7 +7688,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1280 by 800</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7681,7 +7714,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1280 by 960</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7707,7 +7740,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1280 by 1024</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7733,7 +7766,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1360 by 768</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7759,7 +7792,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1366 by 768</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7785,7 +7818,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1440 by 900</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7811,7 +7844,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1600 by 900</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7837,7 +7870,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1600 by 1024</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7863,7 +7896,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1680 by 1050</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -7889,7 +7922,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1768 by 992</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -8487,7 +8520,7 @@
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>1920 by 1080</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -10021,7 +10054,7 @@
         <int>54</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>441</int>
       </SecondaryIdList>
       <SampleFilename>{}</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -10066,14 +10099,14 @@
       </hotkey>
       <hotkeyActive>false</hotkeyActive>
       <Id>411</Id>
-      <Name>Options Menu Graphics Res 19 - 1920x1080-CLONE</Name>
+      <Name>Options Menu Graphics Res 19 - 3840x2160</Name>
       <Description>Says resolution</Description>
       <Value xsi:type="xsd:string">20</Value>
       <WatchIdList>
         <int>29</int>
       </WatchIdList>
       <SecondaryIdList>
-        <int>-1</int>
+        <int>442</int>
       </SecondaryIdList>
       <SampleFilename>3840 by 2160</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -10682,7 +10715,7 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <hotkey>
         <key>0</key>
@@ -10708,7 +10741,7 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <hotkey>
         <key>0</key>
@@ -10734,7 +10767,7 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <hotkey>
         <key>0</key>
@@ -10760,7 +10793,7 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <hotkey>
         <key>0</key>
@@ -10786,7 +10819,7 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <hotkey>
         <key>0</key>
@@ -10812,7 +10845,7 @@
     </Trigger>
     <Trigger>
       <triggerType>Normal</triggerType>
-      <allowanceType>Any</allowanceType>
+      <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
       <hotkey>
         <key>0</key>
@@ -10830,6 +10863,344 @@
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>Ultra combo double</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Dependent</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>441</Id>
+      <Name>Sound Submenu - Voice volume - DEPENDENT</Name>
+      <Description>Only allows trigger 409 (voice volume) to activate when on voice volume option in submenu</Description>
+      <Value xsi:type="xsd:string">Set voice volume.</Value>
+      <WatchIdList>
+        <int>51</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Voice Volume</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Dependent</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>442</Id>
+      <Name>Graphics Settings - Resolution - DEPENDENT</Name>
+      <Description>Graphics options comparing with case-sensitive submenu string.</Description>
+      <Value xsi:type="xsd:string">Choose screen resolution.</Value>
+      <WatchIdList>
+        <int>22</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Resolution</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>443</Id>
+      <Name>P1 Handicap - 100%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>65</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>100 percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>444</Id>
+      <Name>P1 Handicap - 0%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>65</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Zero percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>445</Id>
+      <Name>P1 Handicap - 25%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>65</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>25 percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>446</Id>
+      <Name>P1 Handicap - 50%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>65</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>50 percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>447</Id>
+      <Name>P1 Handicap - 75%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>65</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>75 percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>448</Id>
+      <Name>P1 Handicap - 100%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>65</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>100 percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>449</Id>
+      <Name>P2 Handicap - 0%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>66</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Zero percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>450</Id>
+      <Name>P2 Handicap - 25%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>66</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>25 percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>451</Id>
+      <Name>P2 Handicap - 50%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>66</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>50 percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>452</Id>
+      <Name>P2 Handicap - 75%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>66</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>75 percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>InMenu</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>453</Id>
+      <Name>P2 Handicap - 100%</Name>
+      <Description>Used in versus - int</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>66</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>100 percent</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>

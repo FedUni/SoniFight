@@ -125,7 +125,7 @@ namespace au.edu.federation.PointerChainTester
         }
 
         // Read and return an int
-        public static Int32 getIntFromAddress(IntPtr processHandle, IntPtr address)
+        public static int getIntFromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
             byte[] buf = new byte[4];
@@ -134,7 +134,7 @@ namespace au.edu.federation.PointerChainTester
         }
 
         // Read and return a short
-        public static Int16 getShortFromAddress(IntPtr processHandle, IntPtr address)
+        public static short getShortFromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
             byte[] buf = new byte[2];
@@ -143,12 +143,21 @@ namespace au.edu.federation.PointerChainTester
         }
 
         // Read and return a long
-        public static Int64 getLongFromAddress(IntPtr processHandle, IntPtr address)
+        public static long getLongFromAddress(IntPtr processHandle, IntPtr address)
         {
             int bytesRead = 0;
             byte[] buf = new byte[8];
             ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
             return BitConverter.ToInt64(buf, 0);
+        }
+
+        // Read and return a byte
+        public static byte getByteFromAddress(IntPtr processHandle, IntPtr address)
+        {
+            int bytesRead = 0;
+            byte[] buf = new byte[1];
+            ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
+            return buf[0];
         }
 
         // Read and return a float
@@ -257,28 +266,31 @@ namespace au.edu.federation.PointerChainTester
             switch (valueType)
             {
                 case Program.ValueType.IntType:
-                    return (Int32)Utils.getIntFromAddress(Program.processHandle, Program.featureAddress);
+                    return Utils.getIntFromAddress(Program.processHandle, Program.featureAddress);
 
                 case Program.ValueType.ShortType:
-                    return (Int16)Utils.getShortFromAddress(Program.processHandle, Program.featureAddress);
+                    return Utils.getShortFromAddress(Program.processHandle, Program.featureAddress);
 
                 case Program.ValueType.LongType:
-                    return (Int64)Utils.getShortFromAddress(Program.processHandle, Program.featureAddress);
+                    return Utils.getShortFromAddress(Program.processHandle, Program.featureAddress);
 
                 case Program.ValueType.FloatType:
-                    return (float)Utils.getFloatFromAddress(Program.processHandle, Program.featureAddress);
+                    return Utils.getFloatFromAddress(Program.processHandle, Program.featureAddress);
 
                 case Program.ValueType.DoubleType:
-                    return (double)Utils.getDoubleFromAddress(Program.processHandle, Program.featureAddress);
+                    return Utils.getDoubleFromAddress(Program.processHandle, Program.featureAddress);
 
                 case Program.ValueType.BoolType:
-                    return (bool)Utils.getBoolFromAddress(Program.processHandle, Program.featureAddress);
+                    return Utils.getBoolFromAddress(Program.processHandle, Program.featureAddress);
 
                 case Program.ValueType.StringUTF8Type:
-                    return (string)Utils.getUTF8FromAddress(Program.processHandle, Program.featureAddress);
+                    return Utils.getUTF8FromAddress(Program.processHandle, Program.featureAddress);
 
                 case Program.ValueType.StringUTF16Type:
-                    return (string)Utils.getUTF16FromAddress(Program.processHandle, Program.featureAddress);
+                    return Utils.getUTF16FromAddress(Program.processHandle, Program.featureAddress);
+
+                case Program.ValueType.ByteType:
+                    return Utils.getByteFromAddress(Program.processHandle, Program.featureAddress);
 
                 default:
                     MessageBox.Show("Value type in getDynamicValueFromType not recognised. Value type we got was: " + valueType.ToString());

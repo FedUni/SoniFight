@@ -666,6 +666,10 @@
           <source>Increased</source>
           <target state="new">Increased</target>
         </trans-unit>
+        <trans-unit id="byteString" translate="yes" xml:space="preserve">
+          <source>Byte</source>
+          <target state="new">Byte</target>
+        </trans-unit>
       </group>
     </body>
   </file>

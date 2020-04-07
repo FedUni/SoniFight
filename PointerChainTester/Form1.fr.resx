@@ -42,15 +42,6 @@
   <data name="processNameTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="pointerTrailTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
-    <value>306, 101</value>
-  </data>
-  <data name="pointerTrailTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>249, 20</value>
-  </data>
-  <data name="pointerTrailTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="memoryAddressTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>306, 180</value>
   </data>
@@ -477,4 +468,13 @@
   <metadata name="$this.Localizable" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="pointerChainTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>306, 101</value>
+  </data>
+  <data name="pointerChainTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>249, 20</value>
+  </data>
+  <data name="pointerChainTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
 </root>

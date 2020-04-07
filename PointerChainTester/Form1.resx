@@ -174,25 +174,25 @@
   <data name="&gt;&gt;processNameTextBox.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="pointerTrailTextBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="pointerChainTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>306, 101</value>
   </data>
-  <data name="pointerTrailTextBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="pointerChainTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>249, 20</value>
   </data>
-  <data name="pointerTrailTextBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="pointerChainTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;pointerTrailTextBox.Name" xml:space="preserve">
-    <value>pointerTrailTextBox</value>
+  <data name="&gt;&gt;pointerChainTextBox.Name" xml:space="preserve">
+    <value>pointerChainTextBox</value>
   </data>
-  <data name="&gt;&gt;pointerTrailTextBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;pointerChainTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pointerTrailTextBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pointerChainTextBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;pointerTrailTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pointerChainTextBox.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="memoryAddressTextBox.Location" type="System.Drawing.Point, System.Drawing">
@@ -338,6 +338,9 @@
   </data>
   <data name="dataTypeComboBox.Items7" xml:space="preserve">
     <value>String (UTF-16)</value>
+  </data>
+  <data name="dataTypeComboBox.Items8" xml:space="preserve">
+    <value>Byte</value>
   </data>
   <data name="dataTypeComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>306, 139</value>

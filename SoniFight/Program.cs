@@ -465,7 +465,7 @@ namespace au.edu.federation.SoniFight
             dynamic lastClock = null;
             bool foundMatch;
 
-            // While we are providing sonification...            
+            // While SoniFight has not been stopped or closed we'll provide sonification...            
             while (!e.Cancel)
             {   
                 // Update all active watch destination addresses (this must happen once per poll)

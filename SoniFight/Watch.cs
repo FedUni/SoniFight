@@ -23,7 +23,8 @@ namespace au.edu.federation.SoniFight
             DoubleType,
             BoolType,
             StringUTF8Type,
-            StringUTF16Type
+            StringUTF16Type,
+            ByteType
         }
 
         // Default constructor req'd for XML serialization
@@ -132,6 +133,9 @@ namespace au.edu.federation.SoniFight
 
                 case Watch.ValueType.StringUTF16Type:
                     return (string)Utils.getUTF16FromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
+
+                case Watch.ValueType.ByteType:
+                    return (Byte)Utils.getByteFromAddress(MainForm.gameConfig.ProcessHandle, DestinationAddress);
 
                 default:
                     MessageBox.Show(Resources.ResourceManager.GetString("unrecognisedValueTypeWarningString") + valueType.ToString());

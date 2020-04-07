@@ -612,4 +612,7 @@
   <data name="increasedString" xml:space="preserve">
     <value>Increased</value>
   </data>
+  <data name="byteString" xml:space="preserve">
+    <value>Byte</value>
+  </data>
 </root>

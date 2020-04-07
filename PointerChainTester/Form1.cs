@@ -81,6 +81,9 @@ namespace au.edu.federation.PointerChainTester
                         case 7:
                             value = Utils.getUTF16FromAddress(Program.processHandle, Program.featureAddress);
                             break;
+                        case 8:
+                            value = Utils.getByteFromAddress(Program.processHandle, Program.featureAddress);
+                            break;
                     }
                     valueTextBox.Text = Convert.ToString(value);
 

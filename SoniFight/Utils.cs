@@ -340,6 +340,15 @@ namespace au.edu.federation.SoniFight
             return BitConverter.ToInt16(buf, 0);
         }
 
+        // Method to read and return a byte
+        public static short getByteFromAddress(IntPtr processHandle, IntPtr address)
+        {
+            int bytesRead = 0;
+            byte[] buf = new byte[1];
+            ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
+            return buf[0]; // No need for conversion - it's a byte!
+        }
+
         // Method to read and return a long (8 bytes)
         public static Int64 getLongFromAddress(IntPtr processHandle, IntPtr address)
         {
@@ -562,6 +571,8 @@ namespace au.edu.federation.SoniFight
                     return Watch.ValueType.StringUTF8Type;
                 case 8:
                     return Watch.ValueType.StringUTF16Type;
+                case 9:
+                    return Watch.ValueType.ByteType;
                 default:
                     return Watch.ValueType.IntType;
             }
@@ -590,6 +601,8 @@ namespace au.edu.federation.SoniFight
                     return 7;
                 case Watch.ValueType.StringUTF16Type:
                     return 8;
+                case Watch.ValueType.ByteType:
+                    return 9;
                 default:
                     return 0;
             }

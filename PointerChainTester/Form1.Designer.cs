@@ -54,10 +54,10 @@
             resources.ApplyResources(this.processNameTextBox, "processNameTextBox");
             this.processNameTextBox.Name = "processNameTextBox";
             // 
-            // pointerTrailTextBox
+            // pointerChainTextBox
             // 
-            resources.ApplyResources(this.pointerChainTextBox, "pointerTrailTextBox");
-            this.pointerChainTextBox.Name = "pointerTrailTextBox";
+            resources.ApplyResources(this.pointerChainTextBox, "pointerChainTextBox");
+            this.pointerChainTextBox.Name = "pointerChainTextBox";
             // 
             // memoryAddressTextBox
             // 
@@ -92,7 +92,8 @@
             resources.GetString("dataTypeComboBox.Items4"),
             resources.GetString("dataTypeComboBox.Items5"),
             resources.GetString("dataTypeComboBox.Items6"),
-            resources.GetString("dataTypeComboBox.Items7")});
+            resources.GetString("dataTypeComboBox.Items7"),
+            resources.GetString("dataTypeComboBox.Items8")});
             resources.ApplyResources(this.dataTypeComboBox, "dataTypeComboBox");
             this.dataTypeComboBox.Name = "dataTypeComboBox";
             // 

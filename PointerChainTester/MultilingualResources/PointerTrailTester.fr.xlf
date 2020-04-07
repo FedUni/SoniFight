@@ -75,18 +75,6 @@
           <source>1</source>
           <target state="needs-review-translation">1</target>
         </trans-unit>
-        <trans-unit id="pointerTrailTextBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>306, 101</source>
-          <target state="needs-review-translation">306, 101</target>
-        </trans-unit>
-        <trans-unit id="pointerTrailTextBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>249, 20</source>
-          <target state="needs-review-translation">249, 20</target>
-        </trans-unit>
-        <trans-unit id="pointerTrailTextBox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>2</source>
-          <target state="needs-review-translation">2</target>
-        </trans-unit>
         <trans-unit id="memoryAddressTextBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>306, 180</source>
           <target state="needs-review-translation">306, 180</target>
@@ -879,6 +867,22 @@
         <trans-unit id="$this.Localizable" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="pointerChainTextBox.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>306, 101</source>
+          <target state="needs-review-translation">306, 101</target>
+        </trans-unit>
+        <trans-unit id="pointerChainTextBox.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>249, 20</source>
+          <target state="needs-review-translation">249, 20</target>
+        </trans-unit>
+        <trans-unit id="pointerChainTextBox.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>2</source>
+          <target state="needs-review-translation">2</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Items8" translate="yes" xml:space="preserve">
+          <source>Byte</source>
+          <target state="new">Byte</target>
         </trans-unit>
       </group>
     </body>
