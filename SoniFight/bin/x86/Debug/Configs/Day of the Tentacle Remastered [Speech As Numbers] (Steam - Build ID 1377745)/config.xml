@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GameConfigFileVersion>1</GameConfigFileVersion>
+  <watchList>
+    <Watch>
+      <valueType>StringUTF8Type</valueType>
+      <Id>1</Id>
+      <Name>Currently highlighted item</Name>
+      <Description>The text when you highlight an item</Description>
+      <PointerList>
+        <string>356AFC</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>UnsignedIntType</valueType>
+      <Id>2</Id>
+      <Name>Right-click menu option as an int</Name>
+      <Description>0 = Open, 1 = Close, 3 = Push, 4 = Pull, 5 = Use, Look = 6, Pick up = 7. Cancel is int max.</Description>
+      <PointerList>
+        <string>322DAC</string>
+        <string>4</string>
+        <string>17C</string>
+        <string>320</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>ShortType</valueType>
+      <Id>3</Id>
+      <Name>Options screen highlighted items as short</Name>
+      <Description>How to play / controls / settings / credits / back. Values are arbitrary</Description>
+      <PointerList>
+        <string>338F80</string>
+        <string>2EC</string>
+        <string>14</string>
+        <string>27A</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>4</Id>
+      <Name>Speech option as an int</Name>
+      <Description>Values are 0 and upwards</Description>
+      <PointerList>
+        <string>322DAC</string>
+        <string>4</string>
+        <string>180</string>
+        <string>100</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>StringUTF8Type</valueType>
+      <Id>5</Id>
+      <Name>Use object with text</Name>
+      <Description>CHANGE ME</Description>
+      <PointerList>
+        <string>322DAC</string>
+        <string>4</string>
+        <string>17C</string>
+        <string>C0</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+  </watchList>
+  <triggerList>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>1</Id>
+      <Name>Mouse over text</Name>
+      <Description>Says the item the mouse is currently hovering over</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>2</Id>
+      <Name>Open 0</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">0</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Open {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>3</Id>
+      <Name>Push 3</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">3</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Push {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>4</Id>
+      <Name>Pull 4</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">4</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Pull {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>5</Id>
+      <Name>Use 5</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">5</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Use {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>6</Id>
+      <Name>Look At 6</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">6</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Look At {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>7</Id>
+      <Name>Pick Up 7</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">7</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Pick Up {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>8</Id>
+      <Name>Cancel</Name>
+      <Description>This is the UINT max value - used when not highlighting anything.</Description>
+      <Value xsi:type="xsd:string">4294967295</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Cancel</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>9</Id>
+      <Name>Give 2</Name>
+      <Description>Says give then the highlighted item</Description>
+      <Value xsi:type="xsd:string">2</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Give {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>10</Id>
+      <Name>Close 1</Name>
+      <Description>Says close then the highlighted item</Description>
+      <Value xsi:type="xsd:string">1</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Close {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>11</Id>
+      <Name>Windowed Options - New Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17074</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>New Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>12</Id>
+      <Name>Windowed Options - Bonus</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17090</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Bonus</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>13</Id>
+      <Name>Windowed Options - Options</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17046</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>14</Id>
+      <Name>Windowed Options - Quit</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">16996</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Quit or Resume - Hit Escape to Resume</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>15</Id>
+      <Name>Windowed Options - Resume Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">16996</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Quit or Resume - Hit Escape to Resume</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>16</Id>
+      <Name>Windowed Options - Load Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17253</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Load Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>17</Id>
+      <Name>Windowed Options - Save Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17226</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Save Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>18</Id>
+      <Name>Talk To 8</Name>
+      <Description>Says verb then name of currently selected item</Description>
+      <Value xsi:type="xsd:string">8</Value>
+      <WatchIdList>
+        <int>2</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Talk To {1}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>19</Id>
+      <Name>Speech option as int</Name>
+      <Description>This doesn't say the text, just the option number</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>20</int>
+      </SecondaryIdList>
+      <SampleFilename>Speech option {}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Dependent</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>NotEqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>20</Id>
+      <Name>Speech option -1 avoider (DEPENDENT)</Name>
+      <Description>This trigger stops the config saying speech option -1 after selecting a speech option</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>4</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename />
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>22</Id>
+      <Name>Use object</Name>
+      <Description>Says use object with whatever other object is named</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>5</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>23</Id>
+      <Name>Windowed Options - Options subscreen - How To Play</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17222</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>How to play</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>24</Id>
+      <Name>Windowed Options - Options subscreen - Controls</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17262</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Controls</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>25</Id>
+      <Name>Windowed Options - Options subscreen - Settings</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17288</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Settings</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>26</Id>
+      <Name>Windowed Options - Options subscreen - Credits</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17305</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Credits</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>27</Id>
+      <Name>Windowed Options - Options subscreen - Back</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17297</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Back</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>28</Id>
+      <Name>Fullscreen Options - New Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17085</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>New Game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>29</Id>
+      <Name>Fullscreen Options - Bonus</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17135</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Bonus</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>30</Id>
+      <Name>Fullscreen Options - Options</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">16982</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Options</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>31</Id>
+      <Name>Fullscreen Options - Quit</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">-16640</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Quit or Resume - Hit Escape to Resume</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>32</Id>
+      <Name>Fullscreen Options - Resume</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">-16640</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Quit or Resume - Hit Escape to Resume</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>33</Id>
+      <Name>Fullscreen Options - Load Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17408</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Load game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>34</Id>
+      <Name>Fullscreen Options - Save Game</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17368</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Save game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>35</Id>
+      <Name>Fullscreen Options - Load Game Initial Load Screen</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17283</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Load game</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>36</Id>
+      <Name>Fullscreen Options - Options subscreen - How To Play</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17361</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>How to play</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>37</Id>
+      <Name>Fullscreen Options - Options subscreen - Controls</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17414</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Controls</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>38</Id>
+      <Name>Fullscreen Options - Options subscreen - Settings</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17439</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Settings</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>39</Id>
+      <Name>Fullscreen Options - Options subscreen - Credits</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17465</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Credits</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>40</Id>
+      <Name>Fullscreen Options - Options subscreen - Back</Name>
+      <Description>Says option via tolk</Description>
+      <Value xsi:type="xsd:string">17453</Value>
+      <WatchIdList>
+        <int>3</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>Back</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+  </triggerList>
+  <Description>Al lansley - 2017-11-12
+
+Outputs currently selected object.
+Should also output new game / load game / save game etc prompts from options screen, but the memory location seems to change when in fullscreen mode so a second watch to these items will need to be found. </Description>
+  <ProcessName>Dott</ProcessName>
+  <PollSleepMS>100</PollSleepMS>
+  <ClockTickMS>1000</ClockTickMS>
+  <ClockMax>99</ClockMax>
+  <ConfigDirectory>Day of the Tentacle Remastered [Speech As Numbers] (Steam - Build ID 1377745)</ConfigDirectory>
+  <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
+  <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
+</GameConfig>

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Xml.Serialization;
 
+//TODO: Get this all working!
+
 namespace au.edu.federation.SoniFight
 {
     // Class representing a hotkey which can be bound to force a trigger to activate (each trigger has a hotkey, whether it's active or not is held in the Trigger class).

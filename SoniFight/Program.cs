@@ -80,7 +80,6 @@ namespace au.edu.federation.SoniFight
                 is64Bit = false;
             }
 
-            
             // At some point we may wish to have this as a Windows Application (not a Console Application) and attach a console to it.
             // This comes with some caveats like you can't cleanly pipe output to file from it, so I'll leave it for now. In the below
             // AttachConsole call -1 means attach to the parent process, and we also need the native AttachConsole method from kernel32.dll.
@@ -401,6 +400,11 @@ namespace au.edu.federation.SoniFight
                                 t.PreviousValueList.Add(new int());
                                 t.PreviousValueList[watchIdLoop] = t.Value; // By value
                                 break;
+                            case Watch.ValueType.ByteType:
+                                t.Value = Convert.ChangeType(t.Value, TypeCode.Byte);
+                                t.PreviousValueList.Add(new byte());
+                                t.PreviousValueList[watchIdLoop] = t.Value; // By value
+                                break;
                             case Watch.ValueType.ShortType:
                                 t.Value = Convert.ChangeType(t.Value, TypeCode.Int16);
                                 t.PreviousValueList.Add(new short());
@@ -541,7 +545,11 @@ namespace au.edu.federation.SoniFight
 
                     } // End of if we have a watch ID for the clock section
 
-                } // End of game state update block               
+                } // End of game state update block
+
+                //else // If gc.ClockTriggerId IS -1 (that is - there is no clock associated with this config)
+                //{
+                //}
 
                 /* PLEASE NOTE: The below separate normal, continuous and modifier trigger lists are constructed in the GameConfig.connectToProcess method. Also, dependent triggers 
                  *              go into the normal trigger list, but are processed on demand rather than in sequence. 
@@ -658,6 +666,7 @@ namespace au.edu.federation.SoniFight
                          (t.allowanceType == Trigger.AllowanceType.InMenu && Program.gameState == GameState.InGame) ||
                           t.triggerType == Trigger.TriggerType.Dependent) 
                     {
+                        //Console.WriteLine("Skipping trigger allowance type / game state mismatch."); /* Don't uncomment this - it will FLOOD the console! */
                         continue;
                     }
 
@@ -735,12 +744,15 @@ namespace au.edu.federation.SoniFight
                                             Console.WriteLine(DateTime.Now + " Trigger activated " + t.Id + " " + Resources.ResourceManager.GetString("sayingTolkString") + s);
 
                                             // ...then say the sample filename text. Final false means queue not interrupt anything currently being spoken.
-                                            Tolk.Output(s, false);
+                                            Tolk.Speak(s, false);
                                         }
                                         else
                                         {
                                             Console.WriteLine(Resources.ResourceManager.GetString("screenReaderNotActiveWarningString") + t.Id);
                                         }
+
+                                        
+
                                     }
                                     else // Audio is file based
                                     {
@@ -814,7 +826,6 @@ namespace au.edu.federation.SoniFight
                     continue;
                 }
                 */
-
 
 
                 // ----- Process modifier triggers ----- 

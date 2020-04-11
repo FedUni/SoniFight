@@ -786,6 +786,39 @@
       </PointerList>
       <Active>true</Active>
     </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>67</Id>
+      <Name>P1 Combo count</Name>
+      <Description>Integer starts at 2 because 1 hit isn't a combo!</Description>
+      <PointerList>
+        <string>6A7DD8</string>
+        <string>20</string>
+        <string>38</string>
+        <string>A0</string>
+        <string>24</string>
+        <string>DC</string>
+        <string>F74</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
+    <Watch>
+      <valueType>IntType</valueType>
+      <Id>68</Id>
+      <Name>P2 Combo count</Name>
+      <Description>Integer starts at 2 because 1 hit isn't a combo!</Description>
+      <PointerList>
+        <string>6A7DD8</string>
+        <string>1C</string>
+        <string>18</string>
+        <string>28</string>
+        <string>20</string>
+        <string>1C</string>
+        <string>1C</string>
+        <string>394</string>
+      </PointerList>
+      <Active>true</Active>
+    </Watch>
   </watchList>
   <triggerList>
     <Trigger>
@@ -11201,6 +11234,58 @@
         <int>-1</int>
       </SecondaryIdList>
       <SampleFilename>100 percent</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>454</Id>
+      <Name>P1 Combo count</Name>
+      <Description>Says x hit combo, where x is some int</Description>
+      <Value xsi:type="xsd:string">-1</Value>
+      <WatchIdList>
+        <int>67</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{} hit combo</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>Changed</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
+      <Id>455</Id>
+      <Name>P2 Combo count</Name>
+      <Description>Says x hit combo, where x is some int</Description>
+      <Value xsi:type="xsd:string">-1</Value>
+      <WatchIdList>
+        <int>68</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>{} hit combo</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
       <SampleVolume>1</SampleVolume>
       <UseTolk>true</UseTolk>

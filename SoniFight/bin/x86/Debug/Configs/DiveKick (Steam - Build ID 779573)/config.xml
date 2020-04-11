@@ -20,6 +20,11 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
       <Id>1</Id>
       <Name>Main menu 0 - Exit</Name>
       <Description>Says menu option via tolk</Description>
@@ -41,6 +46,11 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
       <Id>2</Id>
       <Name>Main menu 1 - Story</Name>
       <Description>Says menu option via tolk</Description>
@@ -62,6 +72,11 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
       <Id>3</Id>
       <Name>Main menu 2 - Versus</Name>
       <Description>Says menu option via tolk</Description>
@@ -83,6 +98,11 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
       <Id>4</Id>
       <Name>Main menu 3 - Online</Name>
       <Description>Says menu option via tolk</Description>
@@ -104,6 +124,11 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
       <Id>5</Id>
       <Name>Main menu 4 - How To Play</Name>
       <Description>Says menu option via tolk</Description>
@@ -125,6 +150,11 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
+      <hotkey>
+        <key>0</key>
+        <modifierCode>0</modifierCode>
+      </hotkey>
+      <hotkeyActive>false</hotkeyActive>
       <Id>6</Id>
       <Name>Main menu 5 - Options</Name>
       <Description>Says menu option via tolk</Description>
