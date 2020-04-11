@@ -8,6 +8,7 @@ v1.1.5 - 2020/04/11
 - Street Fighter 4 - broken watches fixed with new or adjusted pointer chains.
 - Street Fighter 4 config has been reworked to remove many samples and use speech synthesis via screen readers instead.
 - Street Fighter 4 config trigger count decreased significantly by using a single "changed" trigger instead of individual watches for values like 1/2/3/4/5/etc.
+- Street Fighter 4 triggers exist for combo count (triggers 454 and 455). I'm tempted to disable them as you can hear if you've made a "pow-pow-pow" 3-hit combo. Let me know if you want them to be on or off by default!
 - Mortal Kombat 9 config checked - everything still working / nothing to do.
 - Day of the Tentacle Remastered config updated, there's two configs now - one that speaks the voice options as "speech option 0" / "speech option 1" etc. and a second one that speaks the actual text but is not the same as the previous [Speech Fix] config which didn't update the speech option when it was multiple choices into a conversation. This one DOES update the live selected speech option to say the first 33 chars of the option text BUT - it only works sometimes. It's bizarre - it'll work 5 reboots in a row, then on the 6th reboot - nothing. Then it'll work again on the 7th reboot. If it keeps not working for you then please use the [Speech Option as Number] version of the config.
 - Beneath A Steel Sky config updated to fix watches any broken watch pointer chains.

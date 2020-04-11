@@ -11300,7 +11300,7 @@ This config provides alerts for clock values, health, super bar and ultra bar fo
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>99</ClockMax>
-  <ConfigDirectory>Ultra Street Fighter IV Arcade Edition (Steam - Build ID 834219)\</ConfigDirectory>
+  <ConfigDirectory>Ultra Street Fighter IV Arcade Edition (Steam - Build ID 834219)</ConfigDirectory>
   <NormalTriggerMasterVolume>0.7</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>0.15</ContinuousTriggerMasterVolume>
 </GameConfig>
