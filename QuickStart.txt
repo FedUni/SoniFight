@@ -1,0 +1,7 @@
+Launch SoniFight_x86.bat for games which are 32-bit processes or SoniFight_x64.bat for games which are 64-bit processes.
+
+Then pick a config for your game, click the run selected config button and then launch your game.
+
+If you don't have executables in the bin folder you may have downloaded the source code instead of the pre-compiled package by accident.
+
+Pre-compiled releases are available from: https://github.com/FedUni/SoniFight/releases
