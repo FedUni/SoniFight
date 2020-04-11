@@ -228,7 +228,7 @@
           <target state="needs-review-translation">69, 9</target>
         </trans-unit>
         <trans-unit id="titleLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>444, 31</source>
+          <source>467, 31</source>
           <target state="needs-review-translation">426, 31</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -237,8 +237,8 @@
           <target state="needs-review-translation">8</target>
         </trans-unit>
         <trans-unit id="titleLabel.Text" translate="no" xml:space="preserve">
-          <source>SoniFight Pointer Chain Tester v1.0</source>
-          <target state="final">SoniFight Pointer Chain Tester v1.0</target>
+          <source>SoniFight Pointer Chain Tester v1.1.5</source>
+          <target state="final">SoniFight Pointer Chain Tester v1.1.5</target>
         </trans-unit>
         <trans-unit id="titleLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
           <source>TopCenter</source>
@@ -861,8 +861,8 @@
           <target state="needs-review-translation">571, 261</target>
         </trans-unit>
         <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
-          <source>SoniFight Pointer Chain Tester v1.0</source>
-          <target state="new">SoniFight Pointer Chain Tester v1.0</target>
+          <source>SoniFight Pointer Chain Tester v1.1.5</source>
+          <target state="new">SoniFight Pointer Chain Tester v1.1.5</target>
         </trans-unit>
         <trans-unit id="$this.Localizable" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
           <source>True</source>
@@ -883,6 +883,10 @@
         <trans-unit id="dataTypeComboBox.Items8" translate="yes" xml:space="preserve">
           <source>Byte</source>
           <target state="new">Byte</target>
+        </trans-unit>
+        <trans-unit id="dataTypeComboBox.Items9" translate="yes" xml:space="preserve">
+          <source>Unsigned Integer</source>
+          <target state="new">Unsigned Integer</target>
         </trans-unit>
       </group>
     </body>

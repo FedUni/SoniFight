@@ -20,7 +20,8 @@ namespace au.edu.federation.PointerChainTester
             BoolType,
             StringUTF8Type,
             StringUTF16Type,
-            ByteType
+            ByteType,
+            UnsignedIntType
         }
 
         // Maximum characters to read from string types

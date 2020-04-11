@@ -342,6 +342,9 @@
   <data name="dataTypeComboBox.Items8" xml:space="preserve">
     <value>Byte</value>
   </data>
+  <data name="dataTypeComboBox.Items9" xml:space="preserve">
+    <value>Unsigned Integer</value>
+  </data>
   <data name="dataTypeComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>306, 139</value>
   </data>
@@ -373,13 +376,13 @@
     <value>69, 9</value>
   </data>
   <data name="titleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 31</value>
+    <value>467, 31</value>
   </data>
   <data name="titleLabel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="titleLabel.Text" xml:space="preserve">
-    <value>SoniFight Pointer Chain Tester v1.0</value>
+    <value>SoniFight Pointer Chain Tester v1.1.5</value>
   </data>
   <data name="titleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -760,7 +763,7 @@
     <value>571, 261</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>SoniFight Pointer Chain Tester v1.0</value>
+    <value>SoniFight Pointer Chain Tester v1.1.5</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

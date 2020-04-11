@@ -93,7 +93,8 @@
             resources.GetString("dataTypeComboBox.Items5"),
             resources.GetString("dataTypeComboBox.Items6"),
             resources.GetString("dataTypeComboBox.Items7"),
-            resources.GetString("dataTypeComboBox.Items8")});
+            resources.GetString("dataTypeComboBox.Items8"),
+            resources.GetString("dataTypeComboBox.Items9")});
             resources.ApplyResources(this.dataTypeComboBox, "dataTypeComboBox");
             this.dataTypeComboBox.Name = "dataTypeComboBox";
             // 

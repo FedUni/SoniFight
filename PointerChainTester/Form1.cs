@@ -84,6 +84,9 @@ namespace au.edu.federation.PointerChainTester
                         case 8:
                             value = Utils.getByteFromAddress(Program.processHandle, Program.featureAddress);
                             break;
+                        case 9:
+                            value = Utils.getUnsignedIntFromAddress(Program.processHandle, Program.featureAddress);
+                            break;
                     }
                     valueTextBox.Text = Convert.ToString(value);
 

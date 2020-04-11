@@ -1,0 +1,19 @@
+v1.1.5 - 2020/04/11
+
+- Added this whatsnew.txt document to the repo which will be updated with each release (following MAME on this - it's a nice idea).
+- The SoniFight process will now reconnect to your game process and resume sonification if you close the game and restart it (previously you had to stop and then re-start the running config).
+- Added byte and unsigned integer data types to SoniFight and the Pointer Chain Tester apps.
+- Preliminary work on hotkeys (this breaks previous configs with this version of the software - the GameConfig class has changed and hence the XML describing a config has changed)...
+- ...however, I've obviously updated all the configs in this release to cater for this, and if you have your own custom config you may be able to load and then save it to overwrite in the new format - please make a backup of your config first though, I'd hate for you to lose any work.
+- Street Fighter 4 - broken watches fixed with new or adjusted pointer chains.
+- Street Fighter 4 config has been reworked to remove many samples and use speech synthesis via screen readers instead.
+- Street Fighter 4 config trigger count decreased significantly by using a single "changed" trigger instead of individual watches for values like 1/2/3/4/5/etc.
+- Mortal Kombat 9 config checked - everything still working / nothing to do.
+- Day of the Tentacle Remastered config updated, there's two configs now - one that speaks the voice options as "speech option 0" / "speech option 1" etc. and a second one that speaks the actual text but is not the same as the previous [Speech Fix] config which didn't update the speech option when it was multiple choices into a conversation. This one DOES update the live selected speech option to say the first 33 chars of the option text BUT - it only works sometimes. It's bizarre - it'll work 5 reboots in a row, then on the 6th reboot - nothing. Then it'll work again on the 7th reboot. If it keeps not working for you then please use the [Speech Option as Number] version of the config.
+- Beneath A Steel Sky config updated to fix watches any broken watch pointer chains.
+
+Potential Future work:
+- It would be useful to specify a valid range of values either on a specific trigger or on a dependent trigger that could be applied to a normal trigger because triggers that use the "changed" criteria could then only provide sonification when values were within a predefined valid range. For example, if a valid health value is between 0 and 100 and it changes but stays within that range then (and only then) announce it.
+- Get hotkeys working properly, both for single press (announce) actions and for press and hold (continuously announce) options
+- If hotkeys could be bound to joysticks that would be cool i.e. Left trigger + select = announce watch X value etc.
+

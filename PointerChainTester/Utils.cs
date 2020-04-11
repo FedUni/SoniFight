@@ -133,6 +133,15 @@ namespace au.edu.federation.PointerChainTester
             return BitConverter.ToInt32(buf, 0);
         }
 
+        // Read and return an unsigned int
+        public static uint getUnsignedIntFromAddress(IntPtr processHandle, IntPtr address)
+        {
+            int bytesRead = 0;
+            byte[] buf = new byte[4];
+            ReadProcessMemory(processHandle, address, buf, buf.Length, ref bytesRead);
+            return BitConverter.ToUInt32(buf, 0);
+        }
+
         // Read and return a short
         public static short getShortFromAddress(IntPtr processHandle, IntPtr address)
         {
@@ -291,6 +300,9 @@ namespace au.edu.federation.PointerChainTester
 
                 case Program.ValueType.ByteType:
                     return Utils.getByteFromAddress(Program.processHandle, Program.featureAddress);
+
+                case Program.ValueType.UnsignedIntType:
+                    return Utils.getUnsignedIntFromAddress(Program.processHandle, Program.featureAddress);
 
                 default:
                     MessageBox.Show("Value type in getDynamicValueFromType not recognised. Value type we got was: " + valueType.ToString());
