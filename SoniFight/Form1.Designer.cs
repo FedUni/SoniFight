@@ -33,6 +33,7 @@
             System.Windows.Forms.PictureBox fedUniPictureBox;
             this.tabControl = new System.Windows.Forms.TabControl();
             this.mainTabPage = new System.Windows.Forms.TabPage();
+            this.readConfigNotesButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.quitButton = new System.Windows.Forms.Button();
             this.createConfigButton = new System.Windows.Forms.Button();
@@ -51,6 +52,7 @@
             this.addWatchButton = new System.Windows.Forms.Button();
             this.currentUILabel = new System.Windows.Forms.Label();
             this.gcTreeView = new System.Windows.Forms.TreeView();
+            this.addHotkeyButton = new System.Windows.Forms.Button();
             irrKlangPictureBox = new System.Windows.Forms.PictureBox();
             fedUniPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(irrKlangPictureBox)).BeginInit();
@@ -76,15 +78,16 @@
             // 
             // tabControl
             // 
+            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Controls.Add(this.mainTabPage);
             this.tabControl.Controls.Add(this.editTabPage);
-            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // mainTabPage
             // 
+            this.mainTabPage.Controls.Add(this.readConfigNotesButton);
             this.mainTabPage.Controls.Add(this.pictureBox1);
             this.mainTabPage.Controls.Add(fedUniPictureBox);
             this.mainTabPage.Controls.Add(irrKlangPictureBox);
@@ -98,6 +101,13 @@
             resources.ApplyResources(this.mainTabPage, "mainTabPage");
             this.mainTabPage.Name = "mainTabPage";
             this.mainTabPage.UseVisualStyleBackColor = true;
+            // 
+            // readConfigNotesButton
+            // 
+            resources.ApplyResources(this.readConfigNotesButton, "readConfigNotesButton");
+            this.readConfigNotesButton.Name = "readConfigNotesButton";
+            this.readConfigNotesButton.UseVisualStyleBackColor = true;
+            this.readConfigNotesButton.Click += new System.EventHandler(this.readConfigNotesButton_Click);
             // 
             // pictureBox1
             // 
@@ -141,8 +151,8 @@
             // 
             // configsComboBox
             // 
-            this.configsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.configsComboBox, "configsComboBox");
+            this.configsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.configsComboBox.FormattingEnabled = true;
             this.configsComboBox.Name = "configsComboBox";
             this.configsComboBox.SelectedIndexChanged += new System.EventHandler(this.configsComboBox_SelectedIndexChanged);
@@ -151,9 +161,11 @@
             // 
             resources.ApplyResources(this.appTitleLabel, "appTitleLabel");
             this.appTitleLabel.Name = "appTitleLabel";
+            this.appTitleLabel.UseMnemonic = false;
             // 
             // editTabPage
             // 
+            this.editTabPage.Controls.Add(this.addHotkeyButton);
             this.editTabPage.Controls.Add(this.holderPanel);
             this.editTabPage.Controls.Add(this.saveConfigButton);
             this.editTabPage.Controls.Add(this.cloneTriggerButton);
@@ -224,6 +236,13 @@
             this.gcTreeView.Name = "gcTreeView";
             this.gcTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.gcTreeView_AfterSelect);
             // 
+            // addHotkeyButton
+            // 
+            resources.ApplyResources(this.addHotkeyButton, "addHotkeyButton");
+            this.addHotkeyButton.Name = "addHotkeyButton";
+            this.addHotkeyButton.UseVisualStyleBackColor = true;
+            this.addHotkeyButton.Click += new System.EventHandler(this.addHotkeyButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -270,6 +289,8 @@
         //private au.edu.federation.SoniFight.CoTableLayoutPanel gcPanel;
 
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button readConfigNotesButton;
+        private System.Windows.Forms.Button addHotkeyButton;
     }
 }
 

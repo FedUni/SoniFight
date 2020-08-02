@@ -7,6 +7,7 @@ using System.Globalization;
 
 using DavyKager; // Required for tolk screenreader integration
 using au.edu.federation.SoniFight.Properties;
+using System.Diagnostics;
 
 namespace au.edu.federation.SoniFight
 {
@@ -52,7 +53,7 @@ namespace au.edu.federation.SoniFight
         public static bool connectedToProcess = false;
 
         // Are we currently reconnecting to the process specified in the current GameConfig?
-        public static bool reconnectingToProcess = false;
+        //public static bool reconnectingToProcess = false;
 
         // We keep a queue of normal triggers so they can play in the order they came in without overlapping each other and turning into a cacophony
         static Queue<Trigger> normalInGameTriggerQueue = new Queue<Trigger>();
@@ -63,6 +64,9 @@ namespace au.edu.federation.SoniFight
         // Get an instance of the invariant culture so we can override current/currentUI/thread/threadUI cultures with it and compare strings in this manner.
         // Also: Having this means we don't have to insantiate a new instance all the time (like when performing string comparisons) to it'll take load off the garbage collector.
         private static CultureInfo invariantCulture = CultureInfo.InvariantCulture;
+
+        // Flag to keep track of whether there is an active screen reader or not (as determined by Tolk's DetectScreenReader() method which runs in the performSonification method)
+        public static bool screenReaderActive;
 
         /// <summary>
         /// The main entry point for the application.
@@ -120,7 +124,7 @@ namespace au.edu.federation.SoniFight
             // Setup visual styles and rendering context
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            
             // Run the app, catching any exception that gets raised and always closing down cleanly
             try
             {
@@ -129,6 +133,18 @@ namespace au.edu.federation.SoniFight
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
+
+                // Get stack trace for the exception with source file information
+                var st = new StackTrace(e, true);
+                MessageBox.Show(st.ToString());
+
+                // Get the top stack frame
+                var frame = st.GetFrame(0);
+                MessageBox.Show(frame.ToString());
+
+                // Get the line number from the stack frame
+                var line = frame.GetFileLineNumber();
+                MessageBox.Show(line.ToString());
             }
             finally
             {
@@ -145,7 +161,7 @@ namespace au.edu.federation.SoniFight
             // Note: Continuous triggers do NOT call this method because their job is not to compare to a specific value, it's to compare
             //       two values and give a percentage (e.g. player 1 x-location and player 2 x-location).
 
-            // Note: The 'opposite' comparison checks using the previous value below stop multiple retriggers of a sample as the sample only activates
+            // Also: The 'opposite' comparison checks using the previous value below stop multiple retriggers of a sample as the sample only activates
             //       when the value crosses the trigger threshold.
 
             // If this trigger has dependencies then we must follow them and check them also. That is, as well as this trigger matching its criteria,
@@ -222,7 +238,6 @@ namespace au.edu.federation.SoniFight
                             return false; // Comparison failed? Return false.
 
                         case Trigger.ComparisonType.Changed:
-
                             // NOTE: The changed comparison uses the current watch value and the previous value - it does NOT use the current trigger value, which we
                             //       don't care about.
                             //       Another option we could use in this changed comparison is to say that a change to a blank string does not count as a change.
@@ -358,13 +373,16 @@ namespace au.edu.federation.SoniFight
         }
         
         // This is the DoWork method for the sonification BackgroundWorker
+        // Note: This worker method is called from the Form1.activate() method.
         public static void performSonification(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
+            Console.Write("Starting sonification...");
+
             // Load tolk ready for use
             Tolk.Load();
 
             // Try to detect a screen reader and set a flag if we find one so we know we can use it for sonification events.
-            bool screenReaderActive = false;
+            screenReaderActive = false;
             string screenReaderName = Tolk.DetectScreenReader();
             if (screenReaderName != null)
             {
@@ -385,7 +403,8 @@ namespace au.edu.federation.SoniFight
             // Note: This is a one-off operation that we only do at the start before the main sonification loop.
             Trigger t;
             for (int triggerLoop = 0; triggerLoop < gc.triggerList.Count; ++triggerLoop)
-            {
+            {   
+
                 t = MainForm.gameConfig.triggerList[triggerLoop];
 
                 // As each trigger may be tied to more than one watch we have to loop over them all
@@ -468,10 +487,22 @@ namespace au.edu.federation.SoniFight
             dynamic currentClock = null;
             dynamic lastClock = null;
             bool foundMatch;
+            string now = DateTime.Now.ToString();
+            string previousNow = DateTime.Now.ToString();
+            
 
             // While SoniFight has not been stopped or closed we'll provide sonification...            
             while (!e.Cancel)
-            {   
+            {
+                //Console.WriteLine(DateTime.Now + " - In sonification loop... e.Cancel is: " + e.Cancel);
+                now = DateTime.Now.ToString();
+                if ( !now.Equals(previousNow) )
+                {
+                    Console.WriteLine(now);
+                    previousNow = now.ToString(); // Overwrite previous contents of now with the current 'now' time
+                }
+
+
                 // Update all active watch destination addresses (this must happen once per poll)
                 Watch w;
                 for (int watchLoop = 0; watchLoop < gc.watchList.Count; ++watchLoop)
@@ -677,6 +708,8 @@ namespace au.edu.federation.SoniFight
                     // Note: As each trigger may look at multiple watches, we must compare the trigger value against each watch.
                     for (int watchIdLoop = 0; watchIdLoop < t.WatchIdList.Count; ++watchIdLoop)
                     {
+                        //Console.WriteLine("Inside watch loop");
+
                         // Read the value associated with this watch of this trigger
                         watchValue = Utils.getWatchWithId(t.WatchIdList[watchIdLoop]).getDynamicValueFromType();
 
@@ -712,7 +745,7 @@ namespace au.edu.federation.SoniFight
                                         /*Console.WriteLine("Are these values the same?: " + (depT.Value == depW.getDynamicValueFromType()));
                                         Console.WriteLine("Dependent trigger's value is: " + depT.Value + " and previous value is: " + depT.PreviousValueList[0]);*/
 
-                                        break;
+                                        //break;
                                     }
                                     else
                                     {
@@ -750,8 +783,6 @@ namespace au.edu.federation.SoniFight
                                         {
                                             Console.WriteLine(Resources.ResourceManager.GetString("screenReaderNotActiveWarningString") + t.Id);
                                         }
-
-                                        
 
                                     }
                                     else // Audio is file based
@@ -812,7 +843,11 @@ namespace au.edu.federation.SoniFight
 
                     } // End of loop over watch IDs in watchIDList within each trigger
 
+                    //Console.WriteLine("After watch loop");
+
                 } // End of loop over normal triggers
+
+                //Console.WriteLine("After normal trigger loop");
 
                 /*
                 // There are other conditions under which we can skip processing triggers - such as...
@@ -911,9 +946,9 @@ namespace au.edu.federation.SoniFight
 
                 } // End of modifier triggers section
 
+                //Console.WriteLine("After modifier trigger loop");
 
                 // Process dependent triggers ready for the next poll
-
                 /*for (int normalTriggerLoop = 0; normalTriggerLoop < gc.normalTriggerList.Count; ++normalTriggerLoop)
                 {
                     // Grab a trigger
@@ -926,7 +961,6 @@ namespace au.edu.federation.SoniFight
                         t.Value = Utils.getWatchWithId(t.WatchIdList[0]).getDynamicValueFromType();
                     }
                 }*/
-
 
                 // --- Pull any normal trigger samples from the queue and play them if we're not already playing a normal sample
 
@@ -944,24 +978,26 @@ namespace au.edu.federation.SoniFight
                 // Update the SoundEngine
                 Program.irrKlang.UpdateEngines();
 
-                // Have we lost connection to the process? (e.g. the game process has been closed)
-                //if (GameConfig.GetProcessArray().Length == 0) { }
-                //STONKS
-                if (gc.gameProcess.HasExited && !reconnectingToProcess)
+                // Have we lost connection to the process? (e.g. the game process has been closed)                
+                /*
+                if (gc.gameProcess.HasExited) // && !reconnectingToProcess)
                 {
                     Console.WriteLine("Lost connection to game process - attempting to reconnect.");
                     connectedToProcess = false;
-                    reconnectingToProcess = true;
+                    //reconnectingToProcess = true;
 
                     // Wait five seconds to let the process completely close - and then attempt to reconnect to it
                     Thread.Sleep(5000);
                     gc.activate();
-                }                
+                } 
+                */
 
                 // Finally, after looping over all triggers we sleep for the amount of time specified in the GameConfig
                 Thread.Sleep(MainForm.gameConfig.PollSleepMS);
 
             } // End of while !e.Cancel
+
+            Console.WriteLine("After sonification while loop");
 
             // Unload tolk when we're stopping sonification
             Tolk.Unload();
@@ -982,7 +1018,7 @@ namespace au.edu.federation.SoniFight
                 GameConfig.processConnectionBGW.CancelAsync();
                 GameConfig.processConnectionBGW.Dispose();
                 sonificationBGW.CancelAsync();
-                sonificationBGW.Dispose();
+                //sonificationBGW.Dispose();
 
                 // We do NOT unload all samples here - we only do that on SelectedIndexChanged of the config selection drop-down or on quit.
                 // This minimises delay in stopping and starting sonification of the same config.

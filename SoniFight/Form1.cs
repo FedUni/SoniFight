@@ -72,6 +72,9 @@ namespace au.edu.federation.SoniFight
                                          Resources.ResourceManager.GetString("allowanceTypeInMenuString")  // "In-Menu"
                                        };
 
+        // String versions of the hotkey target types
+        string[] hotkeyTargetsArray = { "Watch", "Trigger" };
+
         // Initial config dropdown index
         static int selectedConfigDropdownIndex = 0;
 
@@ -84,9 +87,10 @@ namespace au.edu.federation.SoniFight
         // Used to keep track of what node is currently selected in the treeview...
         static TreeNode currentTreeNode;
 
-        // ...which will typically relate to a specific watch or trigger, if it's not the standard GameConfig settings or a brief text description.
-        static Watch currentWatch;
-        static Trigger currentTrigger;
+        // ...which will typically relate to a specific watch, trigger, or hotkey if it's not the standard GameConfig settings or a brief text description of the watch/trigger/hotkey classes.
+        static Watch currentWatch = new Watch();
+        static Trigger currentTrigger = new Trigger();
+        static Hotkey currentHotkey = new Hotkey();
 
         // Prior declarations of UI elements for triggers so we can modify or disable them if required based on other trigger settings.
         private ComboBox compTypeCB = new ComboBox();
@@ -104,14 +108,20 @@ namespace au.edu.federation.SoniFight
         private CheckBox isClockCB = new CheckBox();
         private Label triggerTypeLabel = new Label();
         private ComboBox triggerAllowanceComboBox = new ComboBox();
+        private TextBox configNotesTB = new TextBox();
 
         // Flag to keep track of whether we've loaded the Tolk library
         private static bool tolkLoaded = false;
 
-        // Constructor
+        // A pointer to the form handle, used by the Hotkey class when registering / unregistering global hotkeys
+        public static IntPtr formHandlePtr;
+
+        // Form constructor
         public MainForm()
         {
             InitializeComponent();
+            formHandlePtr = this.Handle;
+
             gameConfig = new GameConfig();
 
             // Load tolk library ready for use and flip the flag so we only ever load it once
@@ -124,9 +134,142 @@ namespace au.edu.federation.SoniFight
             // Initially we aren't running so we add that the current status is stopped to the window title
             this.Text = formTitle + Resources.ResourceManager.GetString("statusStoppedString");
 
+            // Setup the textbox for our config notes            
+            Rectangle pbBounds = pictureBox1.Bounds;
+            configNotesTB.Multiline = true;
+            configNotesTB.ScrollBars = ScrollBars.Vertical; // Use vertical scrollbars if necessary
+            configNotesTB.ReadOnly = true;                  // Disable editing config notes from here
+            configNotesTB.BackColor = Color.AliceBlue;
+            configNotesTB.SetBounds(pbBounds.X, pbBounds.Y, pbBounds.Width, pbBounds.Height); // x-loc, y-loc, x-size, y-size
+
             populateMainConfigsBox();
         }
 
+        /* -------- Hotkey related functions -------- */
+
+        // Method to register all global hotkeys in the GameConfig. Note: This will display an error MessageBox if registration fails.
+        private void registerHotkeys()
+        {
+            foreach (Hotkey h in gameConfig.hotkeyList)
+            {
+                h.Register();
+            }
+        }
+
+        // Method to unregister all global hotkeys in the GameConfig. Note: This will display an error MessageBox if unregistration fails.
+        private void unregisterHotkeys()
+        {   
+            foreach (Hotkey h in gameConfig.hotkeyList)
+            {
+                h.Unregister();
+            }
+        }
+
+        // Method to return a hotkey with a given Id
+        private Hotkey getHotkeyWithID(int id)
+        {
+            Hotkey tmp = null;
+            foreach (Hotkey h in gameConfig.hotkeyList)
+            {
+                if (h.Id == id)
+                {
+                    tmp = h;
+                    break;
+                }
+            }
+            return tmp;
+        }
+
+        private Hotkey getHotkeyByName(string searchName)
+        {
+            //MessageBox.Show("hotkey list size: " + gameConfig.hotkeyList.Count);
+
+            Hotkey tmp = null;
+            foreach (Hotkey h in gameConfig.hotkeyList)
+            {
+                //MessageBox.Show("hotkey name: " + h.name);// gameConfig.hotkeyList.Count);
+                                
+                if (h.name.Equals(searchName))                    
+                {
+                    tmp = h;
+                    break;
+                }
+            }
+
+            // Creating new hotkey? Send back an 'empty' one...
+            /*if (tmp == null)
+            {
+                tmp = new Hotkey();
+                tmp.hotkeyID = 0;
+                tmp.name = "New Hotkey";
+                tmp.watchOrTriggerID = 0;
+            }*/
+
+            return tmp; // Note: This could be null
+        }
+        
+
+        // Main form loop. Note we need to override this so that we can look for hotkeys and act appropriately
+        protected override void WndProc(ref Message m)
+        {
+            // Note: This runs all the time, just based on any window events that occur...
+
+            // A hotkey was pressed? Note: 0x0312 correspondes to WM_HOTKEY.
+            // See: https://docs.microsoft.com/en-us/windows/win32/inputdev/wm-hotkey
+            if (m.Msg == 0x0312)
+            {
+                int id = m.WParam.ToInt32();
+
+                // Now we have a hotkey ID, is it one of OUR hotkeys? (Remembering that many other hotkeys may exist that are not related to SoniFight!)
+                // If so then activate the sonification for that hotkey
+                Hotkey h = getHotkeyWithID(id);
+                if (h != null)
+                {
+                    if (h.targetType == Hotkey.TargetType.ExecutesTrigger)
+                    {
+                        Trigger t = gameConfig.getTriggerWithID(h.watchOrTriggerID);
+                        if (t.UseTolk)
+                        {
+                            if (Program.screenReaderActive)
+                            {
+                                string s = Utils.substituteWatchValuesInString(t, t.SampleFilename);
+                                Console.WriteLine(DateTime.Now + " Trigger activated " + t.Id + " via hotkey " + h.Id + " " + Resources.ResourceManager.GetString("sayingTolkString") + s);
+
+                                // ...then say the sample filename text. Final true means interrupt anything currently being spoken
+                                Tolk.Speak(s, true);
+                            }
+                        }
+                        else
+                        {
+                            Program.irrKlang.PlayMenuSample(t); // Note: Play menu sample cuts off any other playing sample - which is what we want for a hotkey
+                        }
+                    }
+                    else // If the hotkey activates a Watch...
+                    {
+                        // Grab the watch
+                        Watch w = gameConfig.getWatchWithID(h.watchOrTriggerID);
+                        if (Program.screenReaderActive)
+                        {
+                            string s = w.getDynamicValueFromType().ToString(); // Utils.substituteWatchValuesInString(t, t.SampleFilename);
+                            Console.WriteLine(DateTime.Now + " Watch activated " + w.Id + " via hotkey " + h.Id + " - " + Resources.ResourceManager.GetString("sayingTolkString") + s);
+
+                            // ...then say the sample filename text. Final true means interrupt anything currently being spoken
+                            Tolk.Speak(s, true);
+                        }
+                    }
+
+                } // End of if h != null check
+
+                //MessageBox.Show(string.Format("Hotkey #{0} pressed", id));
+
+            } // End of if hotkey detected
+
+            // Carry on...
+            base.WndProc(ref m);
+        }
+
+        /* -------- End of Hotkey related functions -------- */
+        
         // Make all controls support double buffering (so we don't have to do so on each control created).
         // Source: https://stackoverflow.com/a/25648710/1868200
         protected override CreateParams CreateParams
@@ -219,6 +362,10 @@ namespace au.edu.federation.SoniFight
             // Update our configs selected index so we can move back to it if the user goes from the edit to the main tabs
             MainForm.selectedConfigDropdownIndex = this.configsComboBox.SelectedIndex;
 
+            // Display our headphone picturebox
+            pictureBox1.Show();
+
+            // Unload samples
             Program.irrKlang.UnloadAllSamples();
         }
 
@@ -240,49 +387,7 @@ namespace au.edu.federation.SoniFight
             // Note: Once here SoundPlayer.ShutDown() will be called from the main method because we've been stuck in this form loop up until then.
         }
 
-        /* ---------- TODO: Hotkeys don't work yet - need to fix. Commenting out to make sure these methods don't get called for now. ----------
-
-        // Method to register global hotkeys 
-        private void registerHotkeys()
-        {
-            
-            foreach (Hotkey h in gameConfig.hotkeyList)
-            {                
-                RegisterHotKey( this.Handle, h.Id, h.modifierCode, h.key.GetHashCode() );
-            }
-        }
-
-        // Overridden method to respond to hotkeys
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-
-            if (m.Msg == 0x0312) // 0x0312 corresponds to 'WM_HOTKEY'
-            {
-                // Note that the three lines below are not needed if you only want to register one hotkey.
-                // The below lines are useful in case you want to register multiple keys, which you can use a switch with the id as argument, or if you want to know which key/modifier was pressed for some particular reason.
-
-                //Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);                  // The key of the hotkey that was pressed.
-                //KeyModifier modifier = (KeyModifier)((int)m.LParam & 0xFFFF);       // The modifier of the hotkey that was pressed.
-
-                int id = m.WParam.ToInt32();                                        // The id of the hotkey that was pressed.
-
-
-                MessageBox.Show("Hotkey with id " + id + " has been pressed!");
-                // do something
-            }
-        }
-
-        // Method to unregister global hotkeys 
-        private void unregisterHotkeys()
-        {            
-            foreach (Hotkey h in gameConfig.hotkeyList)
-            {
-                UnregisterHotKey(this.Handle, h.Id);
-            }
-        }
-
-        ----------------------------------------------------------------------- */
+        
 
         // Method to set up creation of a new GameConfig
         private void createNewConfigButton_Click(object senderender, EventArgs e)
@@ -302,25 +407,41 @@ namespace au.edu.federation.SoniFight
             this.tabControl.SelectedIndex = 1;
         }
 
+        private void loadGameConfig()
+        {
+            // Inflate game config from XML file
+            string pathToConfig = ".\\Configs\\" + MainForm.gameConfig.ConfigDirectory + "\\config.xml";
+            Console.WriteLine("About to read config: " + pathToConfig);
+            gameConfig = Utils.ReadFromXmlFile<GameConfig>(pathToConfig);
+
+            // Moan if we couldn't inflate the object
+            if (gameConfig == null)
+            {
+                string s1 = Resources.ResourceManager.GetString("deserialiseFailString1");
+                string s2 = Resources.ResourceManager.GetString("deserialiseFailString2");
+                MessageBox.Show(s1 + gameConfig.ConfigDirectory + s2);
+                return;
+            }
+
+            // Break up the description string so that it displays with blank lines in a TextBox
+            gameConfig.Description = gameConfig.Description.Replace("\n", Environment.NewLine);
+        }
+
         // Method to load the config and start polling
         private void runConfig_Click(object senderender, EventArgs e)
         {
+            // The irrKlang object shouldn't be null, but make sure it's not and instantiate it if it is
+            if (Program.irrKlang == null) { Program.irrKlang = new SoundPlayer(); }
+
+            // Play the start config sample to let users know a config is running - but only if we're not ALREADY running
+            // Note: This will mean running a config always makes a sound - if this was within the below (!running) block it would only make a sound if we were NOT already running
+            Program.irrKlang.PlayStartStopSample(true);
+
+            // We should definitely not already be running at this point
             if (!running)
             {
-                Program.irrKlang = new SoundPlayer();
-
-                // Inflate game config from XML file
-                string pathToConfig = ".\\Configs\\" + MainForm.gameConfig.ConfigDirectory + "\\config.xml";
-                Console.WriteLine("About to read config: " + pathToConfig);
-                gameConfig = Utils.ReadFromXmlFile<GameConfig>(pathToConfig);
-
-                if (gameConfig == null)
-                {
-                    string s1 = Resources.ResourceManager.GetString("deserialiseFailString1");
-                    string s2 = Resources.ResourceManager.GetString("deserialiseFailString2");
-                    MessageBox.Show(s1 + gameConfig.ConfigDirectory + s2);
-                    return;
-                }
+                // Load the game config!
+                loadGameConfig();
 
                 // IMPORTANT: Because loading a GameConfig object from file overwrites all properties, and
                 //            the ConfigDirectory is not stored in the object, we need to reset it to the
@@ -329,26 +450,36 @@ namespace au.edu.federation.SoniFight
 
                 // Validate and activate our gameconfig
                 gameConfig.Valid = gameConfig.validate();
-                gameConfig.Active = gameConfig.activate();
+                gameConfig.Active = gameConfig.activate(); // Note: this activate() method starts our process connection background worker.
+
+                while (!gameConfig.Active)
+                {
+                    Console.WriteLine("Waiting for gameconfig activation to complete via finding process...");
+                    Thread.Sleep(100);
+                }
 
                 // Brief delay then announce that we're running if tolk is available. Delay is so announcing the button doesn't overwrite our speech, final true means interupt!
-                Thread.Sleep(100);
-                Tolk.Output("SoniFight running config" + gameConfig.ConfigDirectory, true);
+                
+                Tolk.Output("SoniFight is now running config" + gameConfig.ConfigDirectory, true);
 
                 // If we have a valid, active config and we're not already running then start our sonification background worker,
                 // which calls the 'performSonification' method.
                 if (gameConfig.Valid && gameConfig.Active)
                 {
-                    Program.sonificationBGW.RunWorkerAsync();
+                    //Program.sonificationBGW.RunWorkerAsync();
                     this.Text = formTitle + Resources.ResourceManager.GetString("statusRunningString") + gameConfig.ConfigDirectory;
 
                     // Hotkeys don't work for now so not attempting to call them
-                    //registerHotkeys();
+                    registerHotkeys();
 
                     running = true;
                 }
 
             } // End of if !running block
+            else
+            {
+                Console.WriteLine("For some reason we were already running... What the heck!?");
+            }
 
         } // End of runConfig_Click method
 
@@ -417,6 +548,10 @@ namespace au.edu.federation.SoniFight
                 TreeNode triggerNode = rootNode.Nodes.Add( Resources.ResourceManager.GetString("triggersString") );
                 triggerNode.Tag = Resources.ResourceManager.GetString("triggersString");
 
+                // Add the "Hotkeys" node (parent of all hotkey nodes)
+                TreeNode hotkeyNode = rootNode.Nodes.Add("Hotkeys");
+                hotkeyNode.Tag = "Hotkeys"; // Resources.ResourceManager.GetString("triggersString");
+
                 // Add all watch nodes
                 TreeNode tempNode;
                 foreach (Watch w in gameConfig.watchList)
@@ -432,6 +567,13 @@ namespace au.edu.federation.SoniFight
                     string s = t.Id + "-" + t.Name;
                     tempNode = triggerNode.Nodes.Add(s);
                     tempNode.Tag = Resources.ResourceManager.GetString("triggerString");
+                }
+
+                // Add all hotkey nodes
+                foreach (Hotkey h in gameConfig.hotkeyList)
+                {   
+                    tempNode = hotkeyNode.Nodes.Add(h.name);
+                    tempNode.Tag = "Hotkey"; // Resources.ResourceManager.GetString("hotkeyString");
                 }
 
             tv.EndUpdate();
@@ -508,6 +650,9 @@ namespace au.edu.federation.SoniFight
         // Stop button handler to stop the sonification background worker
         private void stopConfigButton_Click(object senderender, EventArgs e)
         {
+            // Play the stop config sample
+            Program.irrKlang.PlayStartStopSample(false);
+
             // This sets cancellation to pending, which we handle in the associated doWork method
             // to actually perform the cancellation.
             GameConfig.processConnectionBGW.CancelAsync();
@@ -515,6 +660,8 @@ namespace au.edu.federation.SoniFight
             this.Text = formTitle + Resources.ResourceManager.GetString("statusStoppedString");
             running = false;
             Thread.Sleep(500);
+
+            unregisterHotkeys(); // Unregister all hotkeys
 
             Program.irrKlang.UnloadAllSamples();
 
@@ -707,7 +854,7 @@ namespace au.edu.federation.SoniFight
 
             /* NOTE: This section was previously done with a switch statement, but they require constant values, and localised values aren't constant, hence the change to if/then/else. */
 
-            // We always start at rown zero
+            // We always start at row zero
             int row = 0;
 
             // --- Recreate the panel based on the current node type ---
@@ -1294,10 +1441,41 @@ namespace au.edu.federation.SoniFight
                 deleteWatchBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right; // Use bitwise-OR to anchor to top-right
                 deleteWatchBtn.Margin = padding;
                 deleteWatchBtn.BackColor = Color.Red;
+
                 deleteWatchBtn.Click += (object sender, EventArgs ea) =>
                 {
                     try
                     {
+                        // Check if a hotkey depends on this watch, if so inform user hotkey will be deleted if they delete the watch
+                        Hotkey htmp = null;
+                        foreach (Hotkey h in gameConfig.hotkeyList)
+                        {
+                            if (h.targetType == Hotkey.TargetType.ExecutesWatch && h.watchOrTriggerID == currentWatch.Id)
+                            {
+                                string msg = "Warning: Hotkey " + h.Id + " depends on this Watch. Deleting the Watch will also delete the hotkey. Continue?";
+                                DialogResult dr = MessageBox.Show(msg, "Dependent Hotkey Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                if (dr == DialogResult.No)
+                                {
+                                    return;
+                                }
+                                else
+                                {
+                                    htmp = h;
+                                    break;
+                                }
+                            }
+                        }
+                        // If there was a dependent hotkey and user opted to still delete the watch
+                        if (htmp != null)
+                        {
+                            // Find and remove the hotkey node
+                            TreeNode tmpNode = Utils.FindNodeWithText(gcTreeView, htmp.name);
+                            gcTreeView.Nodes.Remove(tmpNode);
+
+                            // Remove the hotkey itself from the hotkeyList
+                            gameConfig.hotkeyList.Remove(htmp);
+                        }
+
                         // Remove the watch we're modifying
                         gameConfig.watchList.RemoveAt(watchIndex);
 
@@ -1718,48 +1896,6 @@ namespace au.edu.federation.SoniFight
                 panel.Controls.Add(valueTB, 1, row); // Control, Column, Row
                 row++;
 
-                /*** COMMENTED UNTIL COMPLETED!
-                 
-
-                // ----- Row 8 - Hotkey options row -----                
-                Panel hotkeyOptionsPanel = new Panel();
-                hotkeyOptionsPanel.Height = 30;
-                hotkeyOptionsPanel.Anchor = AnchorStyles.Left;
-                hotkeyOptionsPanel.Dock = DockStyle.Fill;
-                hotkeyOptionsPanel.Margin = padding;
-
-                CheckBox hkAltCheckbox = new CheckBox();
-                hkAltCheckbox.Anchor = AnchorStyles.Right;
-                hkAltCheckbox.Dock = DockStyle.Left;
-                hkAltCheckbox.AutoSize = true;
-                hkAltCheckbox.Padding = padding;
-                hkAltCheckbox.Checked = currentTrigger.hotkey.usesShift();
-                hkAltCheckbox.Text = "Shift";
-
-                hkAltCheckbox.CheckedChanged += (object sender, EventArgs ea) => {
-                    currentTrigger.hotkey.updateModifierCode(hkAltCheckbox.Checked, false, false, false);
-                };
-
-                // Add the hotkey checkbox
-                hotkeyOptionsPanel.Controls.Add(hkAltCheckbox);
-
-                // Finally add the hotkey panel
-                panel.Controls.Add(hotkeyOptionsPanel, 1, row); // Control, Column, Row
-                row++;
-
-                // Create a label to be used as a simulated hrule
-                hrule = new Label();
-                hrule.AutoSize = false;
-                hrule.Anchor = AnchorStyles.Right;
-                hrule.Dock = DockStyle.Fill;
-                hrule.Height = 2;
-                hrule.BorderStyle = BorderStyle.Fixed3D;
-                panel.SetColumnSpan(hrule, 2);
-                panel.Controls.Add(hrule, 0, row);
-                row++; 
-
-                ***/
-
                 // ----- Row 9 - Sample filename / tolk output text row -----                
                 sampleFilenameLabel.AutoSize = true;
                 sampleFilenameLabel.Text = Resources.ResourceManager.GetString("sampleFilenameLabelString");
@@ -1998,8 +2134,281 @@ namespace au.edu.federation.SoniFight
                 {
                     try
                     {
-                        // Remove the watch we're modifying
-                        gameConfig.triggerList.RemoveAt(triggerIndex);
+                        // Check if a hotkey depends on this trigger, if so inform user hotkey will be deleted if they delete the trigger
+                        Hotkey htmp = null;
+                        foreach (Hotkey h in gameConfig.hotkeyList)
+                        {
+                            if (h.targetType == Hotkey.TargetType.ExecutesTrigger && h.watchOrTriggerID == currentTrigger.Id)
+                            {
+                                string msg = "Warning: Hotkey " + h.Id + " depends on this Trigger. Deleting the Trigger will also delete the hotkey. Continue?";
+                                DialogResult dr = MessageBox.Show(msg, "Dependent Hotkey Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                if (dr == DialogResult.No)
+                                {
+                                    return;
+                                }
+                                else
+                                {
+                                    htmp = h;
+                                    break;
+                                }
+                            }
+                        }
+                        // If there was a dependent hotkey and user opted to still delete the trigger
+                        if (htmp != null)
+                        {
+                            // Find and remove the hotkey node
+                            TreeNode tmpNode = Utils.FindNodeWithText(gcTreeView, htmp.name);
+                            gcTreeView.Nodes.Remove(tmpNode);
+
+                            // Remove the hotkey itself from the hotkeyList
+                            gameConfig.hotkeyList.Remove(htmp);
+                        }
+
+                        // Remove the trigger we're modifying
+                        Trigger trigTmp = Utils.getTriggerWithId(triggerIndex);
+                        gameConfig.triggerList.Remove(trigTmp);
+
+                        // Remove the treenode associated with that watch and give focus to the treeview
+                        gcTreeView.Nodes.Remove(currentTreeNode);
+                        gcTreeView.Focus();
+                    }
+                    catch (ArgumentOutOfRangeException aoore)
+                    {
+                        MessageBox.Show("Fuckflaps: " + aoore.Message);
+                        return;
+                    }
+                };
+
+                panel.Controls.Add(deleteTriggerBtn, 1, row); // Control, Column, Row
+                row++;
+
+                updateTriggerUIElementStates();
+            }
+            // Recreate as hotkeys description
+            else if (currentTreeNode.Tag.ToString().Equals("Hotkeys"))
+            {
+                currentUILabel.Text = "Hotkey Description"; //Resources.ResourceManager.GetString("triggerDescriptionLabelString");
+
+                TextBox hotkeysDescriptionTB = new TextBox();
+                hotkeysDescriptionTB.ReadOnly = true;
+                hotkeysDescriptionTB.Multiline = true; // Must be enabled to have newlines in output
+                hotkeysDescriptionTB.WordWrap = true;
+                hotkeysDescriptionTB.Dock = DockStyle.Fill;
+                hotkeysDescriptionTB.Font = new Font(hotkeysDescriptionTB.Font.FontFamily, 12); // Crank up the font size
+
+                hotkeysDescriptionTB.Text = "Hotkeys allow you to activate a Watch or Trigger in a given config on demand by pressing a key or key combination.";
+                hotkeysDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
+                hotkeysDescriptionTB.Text += "You do not need to provide a modifier for a hotkey - for example, you can just have the key F9 or 'J' or such if you want. ";
+                hotkeysDescriptionTB.Text += "Alternatively, you can assign any combination of Alt, Control, and/or Shift along with your activation key. It is up to you to avoid choosing a hotkey activation sequence that clashes with an existing global hotkey outside of SoniFight.";
+                hotkeysDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
+                hotkeysDescriptionTB.Text += "To create a Hotkey, click the 'Add Hotkey' button. Each Hotkey will be assigned its own unique ID value, and only one hotkey can exist for any given Watch or Trigger. ";
+                hotkeysDescriptionTB.Text += "With a new Hotkey created, choose whether it should activate a Watch or a Trigger from the dropdown menu, then enter the Watch or Trigger's ID number into the 'Watch or Trigger ID' textbox. ";
+                hotkeysDescriptionTB.Text += "Finally, with the 'Hotkey Activation Sequence' textbox focused press your hotkey combination of choice, then save the current config.";
+                hotkeysDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
+                hotkeysDescriptionTB.Text += "Hotkeys are registered (i.e. made active) when you run the config, and unregistered when the config is stopped. ";
+                hotkeysDescriptionTB.Text += "Hotkeys may be enabled or disabled via each Hotkey's 'Enabled' checkbox.";
+                hotkeysDescriptionTB.Text += Environment.NewLine + Environment.NewLine;
+                hotkeysDescriptionTB.Text += "For further details on Hotkeys please see the SoniFight User Guide.";
+
+                // Add the textbox and make it span both columns in the TableLayoutPanel
+                panel.Controls.Add(hotkeysDescriptionTB);
+                panel.SetColumnSpan(hotkeysDescriptionTB, 2);
+            }
+            // Recreate as hotkey creation UI
+            else if (currentTreeNode.Tag.ToString().Equals("Hotkey"))
+            {
+                currentUILabel.Text = "Add Hotkey";
+
+                // If we can find a hotkey with the Id as extracted from the currentTreeNode text then grab it and assign it as our current hotkey
+                Hotkey veryTemp = Utils.getHotkeyWithId(Utils.getStartingNumber(currentTreeNode.Text));
+                if (veryTemp == null)
+                {
+                    MessageBox.Show("Could not get hotkey with ID: " + Utils.getStartingNumber(currentTreeNode.Text) + " so this fucker is going to be blank");                    
+                }
+                else
+                {
+                    //MessageBox.Show("Found hotkey with ID: " + Utils.getStartingNumber(currentTreeNode.Text));
+                    currentHotkey = veryTemp;
+                }
+                //MessageBox.Show("Deets: " + currentHotkey.ToString());
+
+                // Let's start by just creating all the UI panel elements first
+
+
+                // ----- Row 0 - Activates Watch or Trigger Dropdown -----
+                Label typeLabel = new Label();
+                typeLabel.AutoSize = true;
+                typeLabel.Text = "Hotkey Activation Target"; // Resources.ResourceManager.GetString("valueTypeLabelString");
+                typeLabel.Anchor = AnchorStyles.Right;
+                typeLabel.Margin = padding;
+                panel.Controls.Add(typeLabel, 0, row); // Control, Column, Row
+
+                // Create and configure dropdown
+                ComboBox targetCB = new ComboBox();
+                targetCB.DropDownStyle = ComboBoxStyle.DropDownList;
+                targetCB.Anchor = AnchorStyles.Right;
+                targetCB.Dock = DockStyle.Fill;
+                targetCB.Margin = padding;
+
+                // Copy watch and trigger strings into array and add them to the ComboBox then select the one at index 0
+                int elementCount = gameConfig.watchList.Count + gameConfig.triggerList.Count; // How many watches and triggers combined are there?
+                string[] combinedWatchAndTriggerStringArray = new string[elementCount];       // Then that's how many strings we'll need
+
+                int index = 0;
+                foreach (Watch w in gameConfig.watchList)
+                { 
+                    combinedWatchAndTriggerStringArray[index] = "Watch-" + w.Id + "-" + w.Name;
+                    ++index;
+                }
+                foreach (Trigger t in gameConfig.triggerList)
+                {
+                    combinedWatchAndTriggerStringArray[index] = "Trigger-" + t.Id + "-" + t.Name;
+                    ++index;
+                }
+                targetCB.Items.AddRange(combinedWatchAndTriggerStringArray);
+
+                panel.Controls.Add(targetCB, 1, row); // Control, Column, Row
+                row++;
+
+                // ----- Row 1 - Hotkey Activation Sequence List -----            
+                Label activationSeqLabel = new Label();
+                activationSeqLabel.AutoSize = true;
+                activationSeqLabel.Text = "Hotkey Activation Key Sequence"; // Resources.ResourceManager.GetString("pointerListLabelString");
+                activationSeqLabel.Anchor = AnchorStyles.Right;
+                activationSeqLabel.Margin = padding;
+
+                panel.Controls.Add(activationSeqLabel, 0, row); // Control, Column, Row
+
+                TextBox activationTB = new TextBox();
+                activationTB.Anchor = AnchorStyles.Right;
+                activationTB.Dock = DockStyle.Fill;
+                activationTB.Margin = padding;
+
+                // Set text on activation sequence text box based on whether this is a new hotkey...
+                if (currentTreeNode.Text.ToString().Contains("New Hotkey"))
+                {
+                    activationTB.Text = "Click on this text box and press your hotkey sequence";
+                    targetCB.SelectedIndex = 0;
+                }
+                else // ...or whether it's an existing hotkey in which 
+                {
+                    activationTB.Text = currentHotkey.getActivationSequenceString();
+
+                    //MessageBox.Show("Looking for: " + currentHotkey.getHotkeyTargetString());
+
+                    targetCB.SelectedIndex = targetCB.FindString(currentHotkey.getHotkeyTargetString());
+
+
+                    //MessageBox.Show("Looking for hotkey with id: " + Utils.getStartingNumber(currentTreeNode.Text));
+
+                    //currentHotkey = Utils.getHotkeyWithId(Utils.getStartingNumber(currentTreeNode.Text));
+                }
+
+
+
+                panel.Controls.Add(activationTB, 1, row); // Control, Column, Row
+                row++;
+
+                // ----- Row 5 - Enabled Flag -----            
+                Label enabledLabel = new Label();
+                enabledLabel.AutoSize = true;
+                enabledLabel.Text = "Enabled"; // Resources.ResourceManager.GetString("activeLabelString");
+                enabledLabel.Anchor = AnchorStyles.Right;
+                enabledLabel.Margin = padding;
+
+                panel.Controls.Add(enabledLabel, 0, row); // Control, Column, Row
+
+                CheckBox activeCB = new CheckBox();
+                activeCB.Checked = currentHotkey.enabled;
+                activeCB.CheckedChanged += (object sender, EventArgs ea) => { currentHotkey.enabled = activeCB.Checked; };
+                activeCB.Anchor = AnchorStyles.Right;
+                activeCB.Dock = DockStyle.Fill;
+                activeCB.Margin = padding;
+
+                panel.Controls.Add(activeCB, 1, row); // Control, Column, Row
+                row++;
+
+                // ----- Row 7 - Delete Hotkey -----
+                Button deleteHotkeyBtn = new Button();
+                deleteHotkeyBtn.AutoSize = false;
+                deleteHotkeyBtn.Text = Resources.ResourceManager.GetString("deleteWatchButtonString");
+                deleteHotkeyBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right; // Use bitwise-OR to anchor to top-right
+                deleteHotkeyBtn.Margin = padding;
+                deleteHotkeyBtn.BackColor = Color.Red;                
+
+                panel.Controls.Add(deleteHotkeyBtn, 1, row); // Control, Column, Row
+                row++;
+
+                // ---------- Alright - now we'll handle all the live changes to UI elements ----------
+
+                targetCB.SelectedIndexChanged += (object sender, EventArgs e) =>
+                {
+                    //string currentTargetDescription = "COULD NOT FIND!";
+
+                    // Grab the watch or trigger ID and set it on our current hotkey
+                    currentHotkey.watchOrTriggerID = extractIntFromString(targetCB.SelectedItem.ToString());
+
+                    // Set the current hotkey type based on the name of the currently selected activation item
+                    if (targetCB.SelectedItem.ToString().StartsWith("Watch"))
+                    {
+                        currentHotkey.targetType = Hotkey.TargetType.ExecutesWatch;
+                        //currentTargetDescription = Utils.getWatchWithId(currentHotkey.watchOrTriggerID).Description;
+                    }
+                    else
+                    {
+                        currentHotkey.targetType = Hotkey.TargetType.ExecutesTrigger;
+                        //currentTargetDescription = Utils.getTriggerWithId(currentHotkey.watchOrTriggerID).Description;
+                    }
+
+                    // Update the current treenode's text with these details
+                    currentTreeNode.Text = currentHotkey.Id + "-" + currentHotkey.getTargetTypeString() + "-" + currentHotkey.watchOrTriggerID + "-" + currentHotkey.getActivationSequenceString();
+
+                    // Update the hotkey's name
+                    currentHotkey.generateAndSetHotkeyName();
+                };
+
+                activationTB.KeyDown += (object sender, KeyEventArgs kea) =>
+                {
+                    // Get the modifier code
+                    int modCode = currentHotkey.GenerateModifierCodeFromFlags(kea.Alt, kea.Control, kea.Shift);
+
+                    // Get the activation code (activation key without modifiers)
+                    // Note: The ~ operator provides a bitwise complement to the bit value, e.g. ~101 would be 010.
+                    int actKey = (int)(kea.KeyData & ~Keys.Control & ~Keys.Shift & ~Keys.Alt);
+
+                    // Set the modifier and activation codes on the hotkey
+                    currentHotkey.SetKeyCombination(modCode, actKey);
+
+                    // Apply the activation text to the textbox, hotkey node, and name of the hotkey. Note: Only the tree node text and the hotkey name have the id prepended to it.
+                    activationTB.Text = currentHotkey.getActivationSequenceString();
+
+                    //currentTreeNode.Text = currentHotkey.name = currentHotkey.Id.ToString() + "-" + currentHotkey.getActivationSequenceString();
+                    currentTreeNode.Text = currentHotkey.generateAndSetHotkeyName();
+
+                    // Prevent the KeyEventArgs from travelling any further
+                    kea.SuppressKeyPress = true;
+                };
+
+                deleteHotkeyBtn.Click += (object sender, EventArgs ea) =>
+                {
+                    try
+                    {
+                        // Find the index of the hotkey and remove it from the hotkey list
+                        int hotkeyIdToDelete = Utils.getStartingNumber(currentTreeNode.Text.ToString());
+                        int tmpIndex = 0;                        
+                        foreach (Hotkey h in gameConfig.hotkeyList)
+                        {
+                            if (hotkeyIdToDelete == h.Id)
+                            {
+                                break;
+                            }
+                            ++tmpIndex;
+                        }
+                        gameConfig.hotkeyList.RemoveAt(tmpIndex);
+
+                        //MessageBox.Show("Just deleted hotkey at index: " + tmpIndex);
+                        //int x = Utils.getNextHotkeyIndex(gameConfig.hotkeyList);
+                        //MessageBox.Show("Next ID is: " + x);
 
                         // Remove the treenode associated with that watch and give focus to the treeview
                         gcTreeView.Nodes.Remove(currentTreeNode);
@@ -2010,12 +2419,9 @@ namespace au.edu.federation.SoniFight
                         MessageBox.Show(aoore.Message);
                         return;
                     }
-                };
 
-                panel.Controls.Add(deleteTriggerBtn, 1, row); // Control, Column, Row
-                row++;
+                }; // End of delete button click handler
 
-                updateTriggerUIElementStates();
             }
             else // Didn't recognise tree node tag? Moan!
             {   
@@ -2026,7 +2432,35 @@ namespace au.edu.federation.SoniFight
             panel.ResumeLayout();
             panel.Visible = true;
 
-        } // End of gcTreeView_AfterSelect method
+        } // End of gcTreeView_AfterSelect method       
+
+        // Method to extract the first integer from the name of a Hotkey
+        // Reminder: Hotkey names are things like "1-Ctrl+Shift+T" etc.
+        private int extractIntFromString(string s)
+        {   
+            string intString = "";
+            bool foundDigits = false;
+            for (int i = 0; i < s.Length; ++i)
+            {
+                if ( Char.IsDigit(s[i]) )
+                {
+                    intString += s[i];
+                    foundDigits = true;
+                }
+                else
+                {
+                    if (foundDigits) { break; }
+                }
+            }
+
+            if (intString.Length == 0)
+            {
+                MessageBox.Show("Error: Could not extract int from string =(");
+                return 0;
+            }
+
+            return int.Parse(intString);
+        }
 
         private void addWatchButton_Click(object senderender, EventArgs e)
         {
@@ -2074,7 +2508,7 @@ namespace au.edu.federation.SoniFight
             currentTrigger.Id = Utils.getNextTriggerIndex(gameConfig.triggerList);
             gameConfig.triggerList.Add(currentTrigger);
 
-            // Add a new watch entry as a child node to the "Triggers" node
+            // Add a new Trigger entry as a child node to the "Triggers" node
             TreeView tv = this.gcTreeView;
             TreeNode triggersNode = Utils.FindNodeWithText( tv, Resources.ResourceManager.GetString("triggersString") );
             tv.BeginUpdate();
@@ -2113,7 +2547,7 @@ namespace au.edu.federation.SoniFight
             currentTrigger.Id = Utils.getNextTriggerIndex(gameConfig.triggerList);
             gameConfig.triggerList.Add(currentTrigger);
 
-            // Add a new watch entry as a child node to the "Triggers" node
+            // Add a new trigger entry as a child node to the "Triggers" node
             TreeView tv = this.gcTreeView;
             TreeNode triggersNode = Utils.FindNodeWithText( tv, Resources.ResourceManager.GetString("triggersString") );
             tv.BeginUpdate();
@@ -2165,7 +2599,95 @@ namespace au.edu.federation.SoniFight
             tv.SelectedNode = currentTreeNode;
             tv.Focus();
         }
+
+        // Method to read, display and output the config notes via Tolk on click
+        private void readConfigNotesButton_Click(object sender, EventArgs e)
+        {
+            // We'll hide the picture box and replace it with the config notes
+            pictureBox1.Hide();
+            
+            // To display the config notes we have to load the config
+            loadGameConfig();
+                       
+            // Set the text on the textbox
+            configNotesTB.Text = gameConfig.Description;
+
+            // If the config doesn't have a description then add some boilerplate text informing user of this, and how they can add details should they want to.
+            if (configNotesTB.Text.Length == 0)
+            {
+                configNotesTB.Text = "No config notes exist in the config file. You can add some by editing the config description in the Edit Config tab and then saving the config.";
+            }
+
+            // If the config notes textbox hasn't already been added to the main page tab then add it
+            if (!mainTabPage.Contains(configNotesTB))
+            {
+                mainTabPage.Controls.Add(configNotesTB);
+            }
+
+            // Output the config notes to screenreader via tolk, interupting any currently spoken output
+            Tolk.Output(configNotesTB.Text, true);
+
+            // Display the config notes textbox
+            //configNotesTB.Show();
+        }
+
         
+
+        private void addHotkeyButton_Click(object senderender, EventArgs e)
+        {
+            currentUILabel.Text = "Add Hotkey"; // Resources.ResourceManager.GetString("addTriggerLabelString");
+
+            // If there are no watches or triggers then moan and bail
+            if (gameConfig.watchList.Count == 0 && gameConfig.triggerList.Count == 0)
+            {
+                MessageBox.Show("Add at least one Watch or Trigger before attempting to assign a hotkey to one.");
+                return;
+            }
+
+            // Get the panel and remove all controls
+            TableLayoutPanel panel = this.gcPanel;
+            Utils.clearTableLayoutPanel(panel);
+            panel.Padding = padding;
+
+            // Create a new Hotkey and set its Id to be the next available
+            currentHotkey = new Hotkey();            
+            currentHotkey.Id = Utils.getNextHotkeyIndex(gameConfig.hotkeyList);
+            //MessageBox.Show("Adding a new hotkey with id: " + Utils.getNextHotkeyIndex(gameConfig.hotkeyList));
+
+            // Set the hotkey's target type and watchOrTriggerID to be the first watch or trigger
+            if (gameConfig.watchList.Count > 0)
+            {
+                currentHotkey.targetType = Hotkey.TargetType.ExecutesWatch;
+                currentHotkey.watchOrTriggerID = gameConfig.watchList[0].Id;
+            }
+            else
+            {
+                currentHotkey.targetType = Hotkey.TargetType.ExecutesTrigger;
+                currentHotkey.watchOrTriggerID = gameConfig.triggerList[0].Id;
+            }
+            
+            
+            // Note: Activation key will be Keys.None as an int (e.g. 0) by default
+
+            currentHotkey.enabled = true; // If you're creating a new hotkey we'll assume you want it enabled!
+
+            // Add the hotkey to the hotkey list
+            gameConfig.hotkeyList.Add(currentHotkey);
+
+            // Add a new Trigger entry as a child node to the "Triggers" node
+            TreeView tv = this.gcTreeView;
+            TreeNode hotkeysNode = Utils.FindNodeWithText(tv, "Hotkeys"); // Resources.ResourceManager.GetString("triggersString"));
+            tv.BeginUpdate();
+                currentTreeNode = hotkeysNode.Nodes.Add(currentHotkey.Id + "-New Hotkey"); // Trigger.Id + Resources.ResourceManager.GetString("newTriggerString"));
+                currentTreeNode.Tag = "Hotkey"; // Resources.ResourceManager.GetString("triggerString");
+            tv.EndUpdate();
+            tv.ExpandAll();
+
+            // Update our the tree's selected node and 'highlight' it like it had been clicked on
+            // Note: When this node becomes selected the UI for the type of node is constructed in the 'gcTreeView_AfterSelect' method
+            tv.SelectedNode = currentTreeNode;
+            tv.Focus();
+        }
     } // End of MainForm partial class
 
 } // End of namespace

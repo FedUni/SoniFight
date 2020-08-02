@@ -75,11 +75,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>1</Id>
       <Name>Ammo low warning</Name>
       <Description>Says "Ammo ten" when you have 10 bullets in the current weapon</Description>
@@ -101,11 +96,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>Increased</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>2</Id>
       <Name>Ammo increased</Name>
       <Description>Say current ammo value when you've picked up more ammo</Description>
@@ -127,11 +117,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>Changed</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>3</Id>
       <Name>Health changed</Name>
       <Description>Says "Health &lt;THE_HEALTH_VALUE&gt;" on change</Description>
@@ -153,11 +138,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>Increased</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>4</Id>
       <Name>Armour increased</Name>
       <Description>Says "Armour &lt;THE_ARMOUR_VALUE&gt;" on increase</Description>
@@ -179,11 +159,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>5</Id>
       <Name>Low Ammo 5</Name>
       <Description>Says when you have this many bullets in current weapon</Description>
@@ -205,11 +180,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>6</Id>
       <Name>Low Ammo 4</Name>
       <Description>Says when you have this many bullets in current weapon</Description>
@@ -231,11 +201,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>7</Id>
       <Name>Low Ammo 3</Name>
       <Description>Says when you have this many bullets in current weapon</Description>
@@ -257,11 +222,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>8</Id>
       <Name>Low Ammo 2</Name>
       <Description>Says when you have this many bullets in current weapon</Description>
@@ -283,11 +243,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>9</Id>
       <Name>Low Ammo 1</Name>
       <Description>Says when you have this many bullets in current weapon</Description>
@@ -306,7 +261,10 @@
       <Active>true</Active>
     </Trigger>
   </triggerList>
-  <Description />
+  <hotkeyList />
+  <Description>2020-07-26 - Al Lansley
+
+Just a test that outputs current ammo, health, armour and player X / Y location along with some low ammo prompts.</Description>
   <ProcessName>zdoom</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>

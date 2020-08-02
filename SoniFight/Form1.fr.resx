@@ -739,4 +739,37 @@
   <data name="runConfigButton.AccessibleName" xml:space="preserve">
     <value>Run Selected Config</value>
   </data>
+  <data name="readConfigNotesButton.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
+  </data>
+  <data name="readConfigNotesButton.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>425, 101</value>
+  </data>
+  <data name="readConfigNotesButton.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>259, 38</value>
+  </data>
+  <data name="readConfigNotesButton.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="pictureBox1.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox1.SizeMode" xml:space="preserve" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>CenterImage</value>
+  </data>
+  <data name="addHotkeyButton.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="addHotkeyButton.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="addHotkeyButton.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>8, 442</value>
+  </data>
+  <data name="addHotkeyButton.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>332, 28</value>
+  </data>
+  <data name="addHotkeyButton.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
 </root>

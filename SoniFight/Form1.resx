@@ -312,7 +312,7 @@
     <value>mainTabPage</value>
   </data>
   <data name="&gt;&gt;irrKlangPictureBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="fedUniPictureBox.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -551,7 +551,481 @@
     <value>mainTabPage</value>
   </data>
   <data name="&gt;&gt;fedUniPictureBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabControl.AccessibleDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;readConfigNotesButton.Name" xml:space="preserve">
+    <value>readConfigNotesButton</value>
+  </data>
+  <data name="&gt;&gt;readConfigNotesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;readConfigNotesButton.Parent" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;readConfigNotesButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;quitButton.Name" xml:space="preserve">
+    <value>quitButton</value>
+  </data>
+  <data name="&gt;&gt;quitButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;quitButton.Parent" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;quitButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;createConfigButton.Name" xml:space="preserve">
+    <value>createConfigButton</value>
+  </data>
+  <data name="&gt;&gt;createConfigButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createConfigButton.Parent" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;createConfigButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;stopConfigButton.Name" xml:space="preserve">
+    <value>stopConfigButton</value>
+  </data>
+  <data name="&gt;&gt;stopConfigButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stopConfigButton.Parent" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;stopConfigButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;runConfigButton.Name" xml:space="preserve">
+    <value>runConfigButton</value>
+  </data>
+  <data name="&gt;&gt;runConfigButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;runConfigButton.Parent" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;runConfigButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;refreshButton.Name" xml:space="preserve">
+    <value>refreshButton</value>
+  </data>
+  <data name="&gt;&gt;refreshButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;refreshButton.Parent" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;refreshButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;configsComboBox.Name" xml:space="preserve">
+    <value>configsComboBox</value>
+  </data>
+  <data name="&gt;&gt;configsComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;configsComboBox.Parent" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;configsComboBox.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;appTitleLabel.Name" xml:space="preserve">
+    <value>appTitleLabel</value>
+  </data>
+  <data name="&gt;&gt;appTitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;appTitleLabel.Parent" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;appTitleLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="mainTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="mainTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="mainTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>866, 515</value>
+  </data>
+  <data name="mainTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="mainTabPage.Text" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="&gt;&gt;mainTabPage.Name" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;mainTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mainTabPage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;mainTabPage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="addHotkeyButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="addHotkeyButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="addHotkeyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 447</value>
+  </data>
+  <data name="addHotkeyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 28</value>
+  </data>
+  <data name="addHotkeyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="addHotkeyButton.Text" xml:space="preserve">
+    <value>Add Hotkey</value>
+  </data>
+  <data name="&gt;&gt;addHotkeyButton.Name" xml:space="preserve">
+    <value>addHotkeyButton</value>
+  </data>
+  <data name="&gt;&gt;addHotkeyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addHotkeyButton.Parent" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;addHotkeyButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gcPanel.Name" xml:space="preserve">
+    <value>gcPanel</value>
+  </data>
+  <data name="&gt;&gt;gcPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gcPanel.Parent" xml:space="preserve">
+    <value>holderPanel</value>
+  </data>
+  <data name="&gt;&gt;gcPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gcPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="holderPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 34</value>
+  </data>
+  <data name="holderPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>508, 475</value>
+  </data>
+  <data name="holderPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;holderPanel.Name" xml:space="preserve">
+    <value>holderPanel</value>
+  </data>
+  <data name="&gt;&gt;holderPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;holderPanel.Parent" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;holderPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="saveConfigButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="saveConfigButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 481</value>
+  </data>
+  <data name="saveConfigButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 28</value>
+  </data>
+  <data name="saveConfigButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="saveConfigButton.Text" xml:space="preserve">
+    <value>Save Game Configuration</value>
+  </data>
+  <data name="&gt;&gt;saveConfigButton.Name" xml:space="preserve">
+    <value>saveConfigButton</value>
+  </data>
+  <data name="&gt;&gt;saveConfigButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveConfigButton.Parent" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;saveConfigButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cloneTriggerButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="cloneTriggerButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 413</value>
+  </data>
+  <data name="cloneTriggerButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 28</value>
+  </data>
+  <data name="cloneTriggerButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="cloneTriggerButton.Text" xml:space="preserve">
+    <value>Clone Current Trigger</value>
+  </data>
+  <data name="&gt;&gt;cloneTriggerButton.Name" xml:space="preserve">
+    <value>cloneTriggerButton</value>
+  </data>
+  <data name="&gt;&gt;cloneTriggerButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cloneTriggerButton.Parent" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;cloneTriggerButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="addTriggerButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="addTriggerButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 379</value>
+  </data>
+  <data name="addTriggerButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 28</value>
+  </data>
+  <data name="addTriggerButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="addTriggerButton.Text" xml:space="preserve">
+    <value>Add Trigger</value>
+  </data>
+  <data name="&gt;&gt;addTriggerButton.Name" xml:space="preserve">
+    <value>addTriggerButton</value>
+  </data>
+  <data name="&gt;&gt;addTriggerButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addTriggerButton.Parent" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;addTriggerButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cloneWatchButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="cloneWatchButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 345</value>
+  </data>
+  <data name="cloneWatchButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 28</value>
+  </data>
+  <data name="cloneWatchButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cloneWatchButton.Text" xml:space="preserve">
+    <value>Clone Current Watch</value>
+  </data>
+  <data name="&gt;&gt;cloneWatchButton.Name" xml:space="preserve">
+    <value>cloneWatchButton</value>
+  </data>
+  <data name="&gt;&gt;cloneWatchButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cloneWatchButton.Parent" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;cloneWatchButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="addWatchButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="addWatchButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 311</value>
+  </data>
+  <data name="addWatchButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 28</value>
+  </data>
+  <data name="addWatchButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="addWatchButton.Text" xml:space="preserve">
+    <value>Add Watch</value>
+  </data>
+  <data name="&gt;&gt;addWatchButton.Name" xml:space="preserve">
+    <value>addWatchButton</value>
+  </data>
+  <data name="&gt;&gt;addWatchButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addWatchButton.Parent" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;addWatchButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="currentUILabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="currentUILabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14pt</value>
+  </data>
+  <data name="currentUILabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>348, 6</value>
+  </data>
+  <data name="currentUILabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 24</value>
+  </data>
+  <data name="currentUILabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="currentUILabel.Text" xml:space="preserve">
+    <value>currentUILabel</value>
+  </data>
+  <data name="&gt;&gt;currentUILabel.Name" xml:space="preserve">
+    <value>currentUILabel</value>
+  </data>
+  <data name="&gt;&gt;currentUILabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;currentUILabel.Parent" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;currentUILabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="gcTreeView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 6</value>
+  </data>
+  <data name="gcTreeView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 299</value>
+  </data>
+  <data name="gcTreeView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gcTreeView.Name" xml:space="preserve">
+    <value>gcTreeView</value>
+  </data>
+  <data name="&gt;&gt;gcTreeView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gcTreeView.Parent" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;gcTreeView.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="editTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="editTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="editTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>866, 515</value>
+  </data>
+  <data name="editTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="editTabPage.Text" xml:space="preserve">
+    <value>Edit Config</value>
+  </data>
+  <data name="&gt;&gt;editTabPage.Name" xml:space="preserve">
+    <value>editTabPage</value>
+  </data>
+  <data name="&gt;&gt;editTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editTabPage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;editTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>874, 541</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="readConfigNotesButton.AccessibleName" xml:space="preserve">
+    <value>Read Config Notes Button</value>
+  </data>
+  <data name="readConfigNotesButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
+  </data>
+  <data name="readConfigNotesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>394, 93</value>
+  </data>
+  <data name="readConfigNotesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 38</value>
+  </data>
+  <data name="readConfigNotesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="readConfigNotesButton.Text" xml:space="preserve">
+    <value>Read Config Notes</value>
+  </data>
+  <data name="&gt;&gt;readConfigNotesButton.Name" xml:space="preserve">
+    <value>readConfigNotesButton</value>
+  </data>
+  <data name="&gt;&gt;readConfigNotesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;readConfigNotesButton.Parent" xml:space="preserve">
+    <value>mainTabPage</value>
+  </data>
+  <data name="&gt;&gt;readConfigNotesButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -744,11 +1218,17 @@
         AAAASUVORK5CYII=
 </value>
   </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 141</value>
+    <value>394, 140</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 296</value>
+    <value>459, 296</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>CenterImage</value>
   </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -763,7 +1243,13 @@
     <value>mainTabPage</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="quitButton.AccessibleDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="quitButton.AccessibleName" xml:space="preserve">
+    <value>Quit Button</value>
   </data>
   <data name="quitButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
@@ -775,7 +1261,7 @@
     <value>377, 61</value>
   </data>
   <data name="quitButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="quitButton.Text" xml:space="preserve">
     <value>Quit</value>
@@ -790,7 +1276,13 @@
     <value>mainTabPage</value>
   </data>
   <data name="&gt;&gt;quitButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="createConfigButton.AccessibleDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="createConfigButton.AccessibleName" xml:space="preserve">
+    <value>Create New Config Button</value>
   </data>
   <data name="createConfigButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
@@ -802,7 +1294,7 @@
     <value>377, 61</value>
   </data>
   <data name="createConfigButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="createConfigButton.Text" xml:space="preserve">
     <value>Create New Config</value>
@@ -817,7 +1309,13 @@
     <value>mainTabPage</value>
   </data>
   <data name="&gt;&gt;createConfigButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
+  </data>
+  <data name="stopConfigButton.AccessibleDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="stopConfigButton.AccessibleName" xml:space="preserve">
+    <value>Stop Running Config Button</value>
   </data>
   <data name="stopConfigButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
@@ -832,7 +1330,7 @@
     <value>377, 61</value>
   </data>
   <data name="stopConfigButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="stopConfigButton.Text" xml:space="preserve">
     <value>Stop Running Config</value>
@@ -847,13 +1345,13 @@
     <value>mainTabPage</value>
   </data>
   <data name="&gt;&gt;stopConfigButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="runConfigButton.AccessibleDescription" xml:space="preserve">
     <value />
   </data>
   <data name="runConfigButton.AccessibleName" xml:space="preserve">
-    <value />
+    <value>Run Selected Config Button</value>
   </data>
   <data name="runConfigButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
@@ -865,7 +1363,7 @@
     <value>378, 61</value>
   </data>
   <data name="runConfigButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="runConfigButton.Text" xml:space="preserve">
     <value>Run Selected Config</value>
@@ -880,19 +1378,25 @@
     <value>mainTabPage</value>
   </data>
   <data name="&gt;&gt;runConfigButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="refreshButton.AccessibleDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="refreshButton.AccessibleName" xml:space="preserve">
+    <value>Refresh Configs Button</value>
   </data>
   <data name="refreshButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="refreshButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>721, 101</value>
+    <value>703, 93</value>
   </data>
   <data name="refreshButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 38</value>
+    <value>150, 38</value>
   </data>
   <data name="refreshButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="refreshButton.Text" xml:space="preserve">
     <value>Refresh</value>
@@ -907,13 +1411,19 @@
     <value>mainTabPage</value>
   </data>
   <data name="&gt;&gt;refreshButton.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
+  </data>
+  <data name="configsComboBox.AccessibleDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="configsComboBox.AccessibleName" xml:space="preserve">
+    <value>Config Dropdown</value>
   </data>
   <data name="configsComboBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="configsComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 63</value>
+    <value>10, 52</value>
   </data>
   <data name="configsComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>843, 32</value>
@@ -931,7 +1441,7 @@
     <value>mainTabPage</value>
   </data>
   <data name="&gt;&gt;configsComboBox.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="appTitleLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -949,7 +1459,7 @@
     <value>0</value>
   </data>
   <data name="appTitleLabel.Text" xml:space="preserve">
-    <value>SoniFight v1.1.5</value>
+    <value>SoniFight v1.2</value>
   </data>
   <data name="appTitleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -964,34 +1474,7 @@
     <value>mainTabPage</value>
   </data>
   <data name="&gt;&gt;appTitleLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="mainTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="mainTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="mainTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>866, 515</value>
-  </data>
-  <data name="mainTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="mainTabPage.Text" xml:space="preserve">
-    <value>Main</value>
-  </data>
-  <data name="&gt;&gt;mainTabPage.Name" xml:space="preserve">
-    <value>mainTabPage</value>
-  </data>
-  <data name="&gt;&gt;mainTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mainTabPage.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;mainTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>10</value>
   </data>
   <data name="gcPanel.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1021,267 +1504,6 @@
     <value>holderPanel</value>
   </data>
   <data name="&gt;&gt;gcPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gcPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;TableLayoutSettings&gt;&lt;Controls /&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="holderPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 34</value>
-  </data>
-  <data name="holderPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>508, 475</value>
-  </data>
-  <data name="holderPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;holderPanel.Name" xml:space="preserve">
-    <value>holderPanel</value>
-  </data>
-  <data name="&gt;&gt;holderPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;holderPanel.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;holderPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="saveConfigButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="saveConfigButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 473</value>
-  </data>
-  <data name="saveConfigButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 36</value>
-  </data>
-  <data name="saveConfigButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="saveConfigButton.Text" xml:space="preserve">
-    <value>Save Game Configuration</value>
-  </data>
-  <data name="&gt;&gt;saveConfigButton.Name" xml:space="preserve">
-    <value>saveConfigButton</value>
-  </data>
-  <data name="&gt;&gt;saveConfigButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveConfigButton.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;saveConfigButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cloneTriggerButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="cloneTriggerButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 434</value>
-  </data>
-  <data name="cloneTriggerButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 33</value>
-  </data>
-  <data name="cloneTriggerButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="cloneTriggerButton.Text" xml:space="preserve">
-    <value>Clone Current Trigger</value>
-  </data>
-  <data name="&gt;&gt;cloneTriggerButton.Name" xml:space="preserve">
-    <value>cloneTriggerButton</value>
-  </data>
-  <data name="&gt;&gt;cloneTriggerButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cloneTriggerButton.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;cloneTriggerButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="addTriggerButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="addTriggerButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 394</value>
-  </data>
-  <data name="addTriggerButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 34</value>
-  </data>
-  <data name="addTriggerButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="addTriggerButton.Text" xml:space="preserve">
-    <value>Add Trigger</value>
-  </data>
-  <data name="&gt;&gt;addTriggerButton.Name" xml:space="preserve">
-    <value>addTriggerButton</value>
-  </data>
-  <data name="&gt;&gt;addTriggerButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addTriggerButton.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;addTriggerButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cloneWatchButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="cloneWatchButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 350</value>
-  </data>
-  <data name="cloneWatchButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 38</value>
-  </data>
-  <data name="cloneWatchButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="cloneWatchButton.Text" xml:space="preserve">
-    <value>Clone Current Watch</value>
-  </data>
-  <data name="&gt;&gt;cloneWatchButton.Name" xml:space="preserve">
-    <value>cloneWatchButton</value>
-  </data>
-  <data name="&gt;&gt;cloneWatchButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cloneWatchButton.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;cloneWatchButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="addWatchButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="addWatchButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 306</value>
-  </data>
-  <data name="addWatchButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 38</value>
-  </data>
-  <data name="addWatchButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="addWatchButton.Text" xml:space="preserve">
-    <value>Add Watch</value>
-  </data>
-  <data name="&gt;&gt;addWatchButton.Name" xml:space="preserve">
-    <value>addWatchButton</value>
-  </data>
-  <data name="&gt;&gt;addWatchButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addWatchButton.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;addWatchButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="currentUILabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="currentUILabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14pt</value>
-  </data>
-  <data name="currentUILabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>348, 6</value>
-  </data>
-  <data name="currentUILabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 24</value>
-  </data>
-  <data name="currentUILabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="currentUILabel.Text" xml:space="preserve">
-    <value>currentUILabel</value>
-  </data>
-  <data name="&gt;&gt;currentUILabel.Name" xml:space="preserve">
-    <value>currentUILabel</value>
-  </data>
-  <data name="&gt;&gt;currentUILabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;currentUILabel.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;currentUILabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="gcTreeView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 6</value>
-  </data>
-  <data name="gcTreeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 294</value>
-  </data>
-  <data name="gcTreeView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;gcTreeView.Name" xml:space="preserve">
-    <value>gcTreeView</value>
-  </data>
-  <data name="&gt;&gt;gcTreeView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gcTreeView.Parent" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;gcTreeView.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="editTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="editTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="editTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>866, 515</value>
-  </data>
-  <data name="editTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="editTabPage.Text" xml:space="preserve">
-    <value>Edit Config</value>
-  </data>
-  <data name="&gt;&gt;editTabPage.Name" xml:space="preserve">
-    <value>editTabPage</value>
-  </data>
-  <data name="&gt;&gt;editTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;editTabPage.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;editTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>874, 541</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

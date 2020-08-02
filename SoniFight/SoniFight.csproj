@@ -190,6 +190,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Samples\start-config.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\stop-config.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sound-Wave-Headphones.ico" />
   </ItemGroup>
   <ItemGroup>

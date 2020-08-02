@@ -87,11 +87,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>Changed</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>1</Id>
       <Name>Mouse over text</Name>
       <Description>Says the item the mouse is currently hovering over</Description>
@@ -113,11 +108,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>2</Id>
       <Name>Open 0</Name>
       <Description>Says verb then name of currently selected item</Description>
@@ -139,11 +129,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>3</Id>
       <Name>Push 3</Name>
       <Description>Says verb then name of currently selected item</Description>
@@ -165,11 +150,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>4</Id>
       <Name>Pull 4</Name>
       <Description>Says verb then name of currently selected item</Description>
@@ -191,11 +171,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>5</Id>
       <Name>Use 5</Name>
       <Description>Says verb then name of currently selected item</Description>
@@ -217,11 +192,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>6</Id>
       <Name>Look At 6</Name>
       <Description>Says verb then name of currently selected item</Description>
@@ -243,11 +213,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>7</Id>
       <Name>Pick Up 7</Name>
       <Description>Says verb then name of currently selected item</Description>
@@ -269,11 +234,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>8</Id>
       <Name>Cancel</Name>
       <Description>This is the UINT max value - used when not highlighting anything.</Description>
@@ -295,11 +255,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>9</Id>
       <Name>Give 2</Name>
       <Description>Says give then the highlighted item</Description>
@@ -321,11 +276,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>10</Id>
       <Name>Close 1</Name>
       <Description>Says close then the highlighted item</Description>
@@ -347,11 +297,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>11</Id>
       <Name>Windowed Options - New Game</Name>
       <Description>Says option via tolk</Description>
@@ -373,11 +318,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>12</Id>
       <Name>Windowed Options - Bonus</Name>
       <Description>Says option via tolk</Description>
@@ -399,11 +339,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>13</Id>
       <Name>Windowed Options - Options</Name>
       <Description>Says option via tolk</Description>
@@ -425,11 +360,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>14</Id>
       <Name>Windowed Options - Quit</Name>
       <Description>Says option via tolk</Description>
@@ -451,11 +381,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>15</Id>
       <Name>Windowed Options - Resume Game</Name>
       <Description>Says option via tolk</Description>
@@ -477,11 +402,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>16</Id>
       <Name>Windowed Options - Load Game</Name>
       <Description>Says option via tolk</Description>
@@ -503,11 +423,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>17</Id>
       <Name>Windowed Options - Save Game</Name>
       <Description>Says option via tolk</Description>
@@ -529,11 +444,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>18</Id>
       <Name>Talk To 8</Name>
       <Description>Says verb then name of currently selected item</Description>
@@ -555,11 +465,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>Changed</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>22</Id>
       <Name>Use object</Name>
       <Description>Says use object with whatever other object is named</Description>
@@ -581,11 +486,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>23</Id>
       <Name>Windowed Options - Options subscreen - How To Play</Name>
       <Description>Says option via tolk</Description>
@@ -607,11 +507,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>24</Id>
       <Name>Windowed Options - Options subscreen - Controls</Name>
       <Description>Says option via tolk</Description>
@@ -633,11 +528,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>25</Id>
       <Name>Windowed Options - Options subscreen - Settings</Name>
       <Description>Says option via tolk</Description>
@@ -659,11 +549,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>26</Id>
       <Name>Windowed Options - Options subscreen - Credits</Name>
       <Description>Says option via tolk</Description>
@@ -685,11 +570,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>27</Id>
       <Name>Windowed Options - Options subscreen - Back</Name>
       <Description>Says option via tolk</Description>
@@ -711,11 +591,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>28</Id>
       <Name>Fullscreen Options - New Game</Name>
       <Description>Says option via tolk</Description>
@@ -737,11 +612,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>29</Id>
       <Name>Fullscreen Options - Bonus</Name>
       <Description>Says option via tolk</Description>
@@ -763,11 +633,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>30</Id>
       <Name>Fullscreen Options - Options</Name>
       <Description>Says option via tolk</Description>
@@ -789,11 +654,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>31</Id>
       <Name>Fullscreen Options - Quit</Name>
       <Description>Says option via tolk</Description>
@@ -815,11 +675,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>32</Id>
       <Name>Fullscreen Options - Resume</Name>
       <Description>Says option via tolk</Description>
@@ -841,11 +696,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>33</Id>
       <Name>Fullscreen Options - Load Game</Name>
       <Description>Says option via tolk</Description>
@@ -867,11 +717,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>34</Id>
       <Name>Fullscreen Options - Save Game</Name>
       <Description>Says option via tolk</Description>
@@ -893,11 +738,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>35</Id>
       <Name>Fullscreen Options - Load Game Initial Load Screen</Name>
       <Description>Says option via tolk</Description>
@@ -919,11 +759,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>36</Id>
       <Name>Fullscreen Options - Options subscreen - How To Play</Name>
       <Description>Says option via tolk</Description>
@@ -945,11 +780,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>37</Id>
       <Name>Fullscreen Options - Options subscreen - Controls</Name>
       <Description>Says option via tolk</Description>
@@ -971,11 +801,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>38</Id>
       <Name>Fullscreen Options - Options subscreen - Settings</Name>
       <Description>Says option via tolk</Description>
@@ -997,11 +822,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>39</Id>
       <Name>Fullscreen Options - Options subscreen - Credits</Name>
       <Description>Says option via tolk</Description>
@@ -1023,11 +843,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>40</Id>
       <Name>Fullscreen Options - Options subscreen - Back</Name>
       <Description>Says option via tolk</Description>
@@ -1049,11 +864,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>Changed</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>41</Id>
       <Name>Speech option text</Name>
       <Description>CHANGE ME</Description>
@@ -1072,9 +882,11 @@
       <Active>true</Active>
     </Trigger>
   </triggerList>
+  <hotkeyList />
   <Description>Al lansley - 2017-11-12
 
 Outputs currently selected object.
+
 Should also output new game / load game / save game etc prompts from options screen, but the memory location seems to change when in fullscreen mode so a second watch to these items will need to be found. </Description>
   <ProcessName>Dott</ProcessName>
   <PollSleepMS>100</PollSleepMS>

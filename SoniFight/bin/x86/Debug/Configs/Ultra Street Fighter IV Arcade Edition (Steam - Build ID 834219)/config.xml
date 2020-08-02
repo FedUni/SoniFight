@@ -825,11 +825,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>1</Id>
       <Name>Clock GameState (isClock)</Name>
       <Description>Keeps track of whether we're in game or in menu by watching for clock movement</Description>
@@ -851,11 +846,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>2</Id>
       <Name>Clock 50</Name>
       <Description>Says 'Clock 50' when it hits 50</Description>
@@ -877,11 +867,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>3</Id>
       <Name>Clock 25</Name>
       <Description>Says 'Clock 25' when clock hits 25</Description>
@@ -903,11 +888,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>4</Id>
       <Name>Clock 10</Name>
       <Description>Says 'Clock Ten' when clock hits 10</Description>
@@ -929,11 +909,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>5</Id>
       <Name>P1 Health 500</Name>
       <Description>Triggers when player 1 health is 500 or less</Description>
@@ -955,11 +930,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>6</Id>
       <Name>P1 Health 250</Name>
       <Description>Triggers when player 1 health is 250 or lower</Description>
@@ -981,11 +951,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>7</Id>
       <Name>P1 Health 100</Name>
       <Description>Triggers when player 1 health is 100 or lower</Description>
@@ -1007,11 +972,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>8</Id>
       <Name>P1 Super - Got 1 bar</Name>
       <Description>Triggers when p1 super reaches 250 or greater</Description>
@@ -1033,11 +993,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>9</Id>
       <Name>P1 Super - Got 2 bars</Name>
       <Description>Triggers when P1 super is 500 or greater</Description>
@@ -1059,11 +1014,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>10</Id>
       <Name>P1 Super - Got 3 bars</Name>
       <Description>Triggers when P1 super is 750 or greater</Description>
@@ -1085,11 +1035,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>11</Id>
       <Name>P1 Super - Full</Name>
       <Description>Triggers when P1 super is 1000 or greater</Description>
@@ -1111,11 +1056,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>12</Id>
       <Name>P1 Ultra - Half</Name>
       <Description>Triggers when player 1 ultra bar hits 200 or higher</Description>
@@ -1137,11 +1077,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>13</Id>
       <Name>P1 Ultra - Full</Name>
       <Description>Triggers when player 1 ultra bar hits 400 or greater.</Description>
@@ -1163,11 +1098,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>18</Id>
       <Name>P2 Super 1</Name>
       <Description>Triggers when P2 super is at least 250</Description>
@@ -1189,11 +1119,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>19</Id>
       <Name>Main Menu Option 00 - Arcade</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1215,11 +1140,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>20</Id>
       <Name>Main Menu Option 01 - Versus</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1241,11 +1161,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>21</Id>
       <Name>Main Menu Option 02 - Multiplayer Battle</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1267,11 +1182,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>22</Id>
       <Name>Main Menu Option 03 - Challenge</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1293,11 +1203,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>23</Id>
       <Name>Main Menu Option 04 - Training</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1319,11 +1224,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>24</Id>
       <Name>Main Menu Option 05 - Player Data</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1345,11 +1245,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>25</Id>
       <Name>Main Menu Option 06 - Options</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1371,11 +1266,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>26</Id>
       <Name>Main Menu Option 07 - Game Manual</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1397,11 +1287,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>27</Id>
       <Name>Main Menu Option 08 - Steam Store</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1423,11 +1308,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>28</Id>
       <Name>Main Menu Option 09 - Benchmark</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1449,11 +1329,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>29</Id>
       <Name>Main Menu Option 10 - Quit</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -1475,11 +1350,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>30</Id>
       <Name>Arcade-Menu-0-Difficulty</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -1501,11 +1371,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>31</Id>
       <Name>Arcade-Menu-1-Rounds</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char].</Description>
@@ -1527,11 +1392,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>32</Id>
       <Name>Arcade-Menu-2-Time-Limit</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -1553,11 +1413,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>33</Id>
       <Name>Arade-Menu-3-Bonus-Stages</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -1579,11 +1434,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>34</Id>
       <Name>Arcade-Menu-4-Fight-Request-Is-On</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -1605,11 +1455,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>35</Id>
       <Name>Arcade-Menu-5-Request-Time-Limit</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -1631,11 +1476,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>36</Id>
       <Name>Arcade-Menu-6-Request-Region</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -1657,11 +1497,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>37</Id>
       <Name>Arcade-Menu-7-Request-Skill</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -1683,11 +1518,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>38</Id>
       <Name>Arcade-Menu-8-Record-Replay</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -1709,11 +1539,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>39</Id>
       <Name>Arcade-Menu-4-Fight-Request-Is-Off</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -1735,11 +1560,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>40</Id>
       <Name>Arcade-Menu-10-Request-Rounds</Name>
       <Description>Fight request number of rounds major option [i.e. not the number of rounds itself - the fact that we're on the number of rounds option]</Description>
@@ -1761,11 +1581,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>41</Id>
       <Name>Arcade-Difficulty-Easiest</Name>
       <Description>Says Easiest when that option is selected.</Description>
@@ -1787,11 +1602,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>42</Id>
       <Name>Arcade-Difficulty-Very-Easy</Name>
       <Description>Says Very Easy when string matches.</Description>
@@ -1813,11 +1623,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>43</Id>
       <Name>Arcade-Difficulty-Easy</Name>
       <Description>Says easy when string matches</Description>
@@ -1839,11 +1644,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>44</Id>
       <Name>Arcade-Difficulty-Medium</Name>
       <Description>Says medium when string matches.</Description>
@@ -1865,11 +1665,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>45</Id>
       <Name>Arcade-Difficulty-Medium-Hard</Name>
       <Description>Says medium hard when string matches.</Description>
@@ -1891,11 +1686,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>46</Id>
       <Name>Arcade-Difficulty-Hard</Name>
       <Description>Says hard when string matches.</Description>
@@ -1917,11 +1707,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>47</Id>
       <Name>Arcade-Difficulty-Very-Hard</Name>
       <Description>Says very hard when string matches.</Description>
@@ -1943,11 +1728,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>48</Id>
       <Name>Arcade-Difficulty-Hardest</Name>
       <Description>Says hardest when string matches.</Description>
@@ -1969,11 +1749,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>49</Id>
       <Name>Arcade-Num-Rounds-1</Name>
       <Description>Says 1. Comparison is to string.</Description>
@@ -1995,11 +1770,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>50</Id>
       <Name>Arcade-Num-Rounds-3</Name>
       <Description>Says 3. Comparison is to string.</Description>
@@ -2021,11 +1791,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>51</Id>
       <Name>Arcade-Num-Rounds-5</Name>
       <Description>Says 5. Comparison is to string.</Description>
@@ -2047,11 +1812,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>52</Id>
       <Name>Arcade-Num-Rounds-7</Name>
       <Description>Says 7. Comparison is to string.</Description>
@@ -2073,11 +1833,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>53</Id>
       <Name>Arcade-Round-Time-30</Name>
       <Description>Hits on 30 as string</Description>
@@ -2099,11 +1854,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>54</Id>
       <Name>Arcade-Round-Time-60</Name>
       <Description>Hits on 60. Comparison is string.</Description>
@@ -2125,11 +1875,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>55</Id>
       <Name>Arcade-Round-Time-99</Name>
       <Description>Hits on 99. Comparison is string.</Description>
@@ -2151,11 +1896,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>56</Id>
       <Name>Arcade-Round-Time-Infinite</Name>
       <Description>Hits on ∞. Yes, I had to copy and paste the ouroboros symbol. Comparison is string.</Description>
@@ -2177,11 +1917,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>57</Id>
       <Name>Arcade-Bonus-Stages-On</Name>
       <Description>Hits on ON. Case sensitive.</Description>
@@ -2203,11 +1938,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>58</Id>
       <Name>Arcade-Bonus-Stages-Off</Name>
       <Description>Hits on OFF. Case sensitive.</Description>
@@ -2229,11 +1959,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>59</Id>
       <Name>Arcade-Fight-Req-Rounds-ANY</Name>
       <Description>Triggers on ANY as a string. Case sensitive.</Description>
@@ -2255,11 +1980,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>60</Id>
       <Name>Arcade-Fight-Req-Rounds-1</Name>
       <Description>Triggers on 1 as a string.</Description>
@@ -2281,11 +2001,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>61</Id>
       <Name>Arcade-Fight-Req-Rounds-3</Name>
       <Description>Triggers on 3 as a string.</Description>
@@ -2307,11 +2022,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>62</Id>
       <Name>Arcade-Fight-Req-Rounds-5</Name>
       <Description>Triggers on 5 as a string.</Description>
@@ -2333,11 +2043,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>63</Id>
       <Name>Arcade-Fight-Req-Time-Limit-30</Name>
       <Description>CHANGE_ME</Description>
@@ -2359,11 +2064,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>64</Id>
       <Name>Arcade-Fight-Req-Time-Limit-60</Name>
       <Description>CHANGE_ME</Description>
@@ -2385,11 +2085,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>65</Id>
       <Name>Arcade-Fight-Req-Time-Limit-99</Name>
       <Description>Says 99.</Description>
@@ -2411,11 +2106,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>66</Id>
       <Name>Arcade-Fight-Req-Time-Limit-ANY</Name>
       <Description>CHANGE_ME</Description>
@@ -2437,11 +2127,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>67</Id>
       <Name>Arcade-Fight-Req-Region-ANY</Name>
       <Description>Hits on ANY as case sensitive string.</Description>
@@ -2463,11 +2148,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>68</Id>
       <Name>Arcade-Fight-Req-Region-SAME</Name>
       <Description>Hits on SAME as case sensitive string.</Description>
@@ -2489,11 +2169,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>69</Id>
       <Name>Arcade Fight Request Skill - Any</Name>
       <Description>Says any.</Description>
@@ -2515,11 +2190,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>70</Id>
       <Name>Arcade-Fight-Req-Skill-SAME-SKILL</Name>
       <Description>Hits on SAME SKILL</Description>
@@ -2541,11 +2211,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>71</Id>
       <Name>Arcade-Fight-Req-Skill-MORE-SKILLED</Name>
       <Description>Triggers on MORE SKILLED</Description>
@@ -2567,11 +2232,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>72</Id>
       <Name>Character Selection 00 - Ryu</Name>
       <Description>Says Ryu.</Description>
@@ -2594,11 +2254,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>73</Id>
       <Name>Character Selection 01 - Ken</Name>
       <Description>Says Ken.</Description>
@@ -2621,11 +2276,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>74</Id>
       <Name>Character Selection 02 - Chun-Li</Name>
       <Description>Says Chun-Li.</Description>
@@ -2648,11 +2298,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>75</Id>
       <Name> Character Selection 03 - E-Honda</Name>
       <Description>Says E. Honda.</Description>
@@ -2675,11 +2320,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>76</Id>
       <Name>Character Selection 04 - Blanka</Name>
       <Description>Says Blanka.</Description>
@@ -2702,11 +2342,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>77</Id>
       <Name>Character Selection 05 - Zangief</Name>
       <Description>Says Zangief.</Description>
@@ -2729,11 +2364,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>78</Id>
       <Name>Character Selection 06 - Guile</Name>
       <Description>Says Guile.</Description>
@@ -2756,11 +2386,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>79</Id>
       <Name>Character Selection 07 - Dhalsim</Name>
       <Description>Says Dhalsim.</Description>
@@ -2783,11 +2408,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>80</Id>
       <Name>Character Selection 08 - Balrog</Name>
       <Description>Says Balrog.</Description>
@@ -2810,11 +2430,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>81</Id>
       <Name>Character Selection 09 - Vega</Name>
       <Description>Says Vega.</Description>
@@ -2837,11 +2452,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>82</Id>
       <Name>Character Selection 10 - Sagat</Name>
       <Description>Says Sagat.</Description>
@@ -2864,11 +2474,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>83</Id>
       <Name>Character Selection 11 - M. Bison</Name>
       <Description>Says M. Bison.</Description>
@@ -2891,11 +2496,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>84</Id>
       <Name>Character Selection 12 - C. Viper</Name>
       <Description>Says C. Viper.</Description>
@@ -2918,11 +2518,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>85</Id>
       <Name>Character Selection 13 - Rufus</Name>
       <Description>Says Rufus.</Description>
@@ -2945,11 +2540,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>86</Id>
       <Name>Character Selection 14 - El Fuerte</Name>
       <Description>Says El Fuerte.</Description>
@@ -2972,11 +2562,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>87</Id>
       <Name>Character Selection 15 - Able</Name>
       <Description>Says Able</Description>
@@ -2999,11 +2584,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>88</Id>
       <Name>Character Selection 16 - Seth</Name>
       <Description>Says Seth.</Description>
@@ -3026,11 +2606,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>89</Id>
       <Name>Character Selection 17 - Akuma</Name>
       <Description>Says Akuma.</Description>
@@ -3053,11 +2628,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>90</Id>
       <Name>Character Selection 18 - Gouken</Name>
       <Description>Says Gouken.</Description>
@@ -3080,11 +2650,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>91</Id>
       <Name>Character Selection 19 - T. Hawk</Name>
       <Description>Says T. Hawk.</Description>
@@ -3107,11 +2672,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>92</Id>
       <Name>Character Selection 20 - Cammy</Name>
       <Description>Says Cammy.</Description>
@@ -3134,11 +2694,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>93</Id>
       <Name>Character Selection 21 - Fei Long</Name>
       <Description>Says Fei Long.</Description>
@@ -3161,11 +2716,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>94</Id>
       <Name>Character Selection 22 - Dee Jay</Name>
       <Description>Says Dee Jay.</Description>
@@ -3188,11 +2738,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>95</Id>
       <Name>Character Selection 23 - Sakura</Name>
       <Description>Says Sakura.</Description>
@@ -3215,11 +2760,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>96</Id>
       <Name>Character Selection 24 - Rose</Name>
       <Description>Says Rose.</Description>
@@ -3242,11 +2782,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>97</Id>
       <Name>Character Selection 25 - Gen</Name>
       <Description>Says Gen.</Description>
@@ -3269,11 +2804,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>98</Id>
       <Name>Character Selection 26 - Dan</Name>
       <Description>Says Dan.</Description>
@@ -3296,11 +2826,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>99</Id>
       <Name>Character Selection 27 - Guy</Name>
       <Description>Says Guy.</Description>
@@ -3323,11 +2848,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>100</Id>
       <Name>Character Selection 28 - Cody</Name>
       <Description>Says Cody.</Description>
@@ -3350,11 +2870,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>101</Id>
       <Name>Character Selection 29 - Ibuki</Name>
       <Description>Says Ibuki.</Description>
@@ -3377,11 +2892,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>102</Id>
       <Name>Character Selection 30 - Makoto</Name>
       <Description>Says Makoto.</Description>
@@ -3404,11 +2914,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>103</Id>
       <Name>Character Selection 31 - Dudley</Name>
       <Description>Says Dudley.</Description>
@@ -3431,11 +2936,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>104</Id>
       <Name>Character Selection 32 - Adon</Name>
       <Description>Says Adon.</Description>
@@ -3458,11 +2958,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>105</Id>
       <Name>Character Selection 33 - Hakan</Name>
       <Description>Says Hakan.</Description>
@@ -3485,11 +2980,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>106</Id>
       <Name>Character Selection 34 - Juri</Name>
       <Description>Says Juri.</Description>
@@ -3512,11 +3002,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>107</Id>
       <Name>Character Selection 35 - Yun</Name>
       <Description>Says Yun.</Description>
@@ -3539,11 +3024,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>108</Id>
       <Name>Character Selection 36 - Yang</Name>
       <Description>Says Yang.</Description>
@@ -3566,11 +3046,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>109</Id>
       <Name>Character Selection 37 - Evil Ryu</Name>
       <Description>Says Evil Ryu.</Description>
@@ -3593,11 +3068,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>110</Id>
       <Name>Character Selection 38 - Oni</Name>
       <Description>Says Oni.</Description>
@@ -3620,11 +3090,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>111</Id>
       <Name>Character Selection 39 - Rolento</Name>
       <Description>Says Rolento.</Description>
@@ -3647,11 +3112,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>112</Id>
       <Name>Character Selection 40 - Elena</Name>
       <Description>Says Elena.</Description>
@@ -3674,11 +3134,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>113</Id>
       <Name>Character Selection 41 - Poison</Name>
       <Description>Says Poison.</Description>
@@ -3701,11 +3156,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>114</Id>
       <Name>Character Selection 42 - Hugo</Name>
       <Description>Says Hugo.</Description>
@@ -3728,11 +3178,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>115</Id>
       <Name>Character Selection 43 - Decapre</Name>
       <Description>Says Decapre.</Description>
@@ -3755,11 +3200,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>116</Id>
       <Name>Character Selection 44 - Random</Name>
       <Description>Says Random.</Description>
@@ -3782,11 +3222,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>117</Id>
       <Name>P2 Health 500</Name>
       <Description>Triggers when player 2 health is 500 or less</Description>
@@ -3808,11 +3243,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>118</Id>
       <Name>P2 Health 250</Name>
       <Description>Triggers when player 2 health is 250 or lower</Description>
@@ -3834,11 +3264,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>119</Id>
       <Name>P2 Health Low</Name>
       <Description>Triggers when player 2 health is 100 or lower.</Description>
@@ -3860,11 +3285,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>120</Id>
       <Name>P2 Super 2</Name>
       <Description>Triggers when P2 super is at least 500</Description>
@@ -3886,11 +3306,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>121</Id>
       <Name>P2 Super 3</Name>
       <Description>Triggers when P2 super is at least 750</Description>
@@ -3912,11 +3327,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>122</Id>
       <Name>P2 Super full</Name>
       <Description>Triggers when P2 super is at least 1000</Description>
@@ -3938,11 +3348,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>123</Id>
       <Name>Arcade-Record-Replay-On</Name>
       <Description>Hits on ON. Case sensitive.</Description>
@@ -3964,11 +3369,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>124</Id>
       <Name>Arcade-Record-Replay-Off</Name>
       <Description>Hits on OFF. Case sensitive.</Description>
@@ -3990,11 +3390,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>125</Id>
       <Name>Multiplayer Battle Menu 0 - Ranked Match</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4016,11 +3411,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>126</Id>
       <Name>Multiplayer Battle Menu 1 - Endless Battle</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4042,11 +3432,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>127</Id>
       <Name>Multiplayer Battle Menu 2 - Team Battle</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4068,11 +3453,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>128</Id>
       <Name>Multiplayer Battle Menu 3 - Tournament</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4094,11 +3474,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>129</Id>
       <Name>Multiplayer Battle Menu 3 - Online Training</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4120,11 +3495,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>130</Id>
       <Name>Multiplayer Battle Menu 4 - Replay Channel</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4146,11 +3516,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>131</Id>
       <Name>Multiplayer Battle Menu 5 - Leaderboards</Name>
       <Description>Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4172,11 +3537,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>132</Id>
       <Name>Lounge Menus 0 - Quick Match</Name>
       <Description>All lounge menus. Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4198,11 +3558,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>133</Id>
       <Name>Lounge Menus 1 - Custom Match</Name>
       <Description>All lounge menus. Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4224,11 +3579,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>134</Id>
       <Name>Lounge Menus 2 - Create Match</Name>
       <Description>All lounge menus. Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4250,11 +3600,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>135</Id>
       <Name>P2 Ultra Half</Name>
       <Description>Triggers when player 2 ultra bar hits 200 or higher</Description>
@@ -4276,11 +3621,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>136</Id>
       <Name>P2 Ultra Full</Name>
       <Description>Triggers when player 2 ultra bar hits 400 or greater.</Description>
@@ -4302,11 +3642,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>137</Id>
       <Name>Options Menu 0 - Button Config</Name>
       <Description>Options menu options. Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4328,11 +3663,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>138</Id>
       <Name>Options Menu 1 - Sound Settings</Name>
       <Description>Options menu options. Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4354,11 +3684,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>139</Id>
       <Name>Options Menu 2 - Screen Config</Name>
       <Description>Options menu options. Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4380,11 +3705,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>140</Id>
       <Name>Options Menu 3 - Graphics Settings</Name>
       <Description>Options menu options. Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4406,11 +3726,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>141</Id>
       <Name>Options Menu 4 - Upload To YouTube</Name>
       <Description>Options menu options. Runs when submenu text matches (Exits at null char or 33 chars max)</Description>
@@ -4432,11 +3747,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>142</Id>
       <Name>Controls 00 - Up</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4458,11 +3768,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>143</Id>
       <Name>Controls 01 - Down</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4484,11 +3789,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>144</Id>
       <Name>Controls 02 - Left</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4510,11 +3810,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>145</Id>
       <Name>Controls 03 - Right</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4536,11 +3831,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>146</Id>
       <Name>Controls 04 - Start</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4562,11 +3852,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>147</Id>
       <Name>Controls 05 - Select</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4588,11 +3873,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>148</Id>
       <Name>Controls 06 - Light Punch</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4614,11 +3894,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>149</Id>
       <Name>Controls 07 - Medium Punch</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4640,11 +3915,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>150</Id>
       <Name>Controls 08 - Heavy Punch</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4666,11 +3936,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>151</Id>
       <Name>Controls 09 - LP+MP+HP</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4692,11 +3957,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>152</Id>
       <Name>Controls 10 - Light Kick</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4718,11 +3978,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>153</Id>
       <Name>Controls 11 - Medium Kick</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4744,11 +3999,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>154</Id>
       <Name>Controls 12 - Heavy Kick</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4770,11 +4020,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>155</Id>
       <Name>Controls 13 - LK+MK+HK</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4796,11 +4041,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>156</Id>
       <Name>Controls 14 - Throw</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4822,11 +4062,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>157</Id>
       <Name>Controls 15 - Focus Attack</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4848,11 +4083,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>158</Id>
       <Name>Controls 16 - Personal Action</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4874,11 +4104,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>159</Id>
       <Name>Controls 17 - Red Focus</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4900,11 +4125,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>160</Id>
       <Name>Controls 18 - Reload</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4926,11 +4146,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>161</Id>
       <Name>Controls 19 - Memory</Name>
       <Description>Control binding as int. Range 0 through 19.</Description>
@@ -4952,11 +4167,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>162</Id>
       <Name>Graphics Settings 01 - Resolution</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -4978,11 +4188,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>163</Id>
       <Name>Graphics Settings 02 - VSync</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5004,11 +4209,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>164</Id>
       <Name>Graphics Settings 03 - Framerate</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5030,11 +4230,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>165</Id>
       <Name>Graphics Settings 04 - Antialiasing</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5056,11 +4251,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>166</Id>
       <Name>Graphics Settings 05 - Filtering</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5082,11 +4272,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>167</Id>
       <Name>Graphics Settings 06 - Model Quality</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5108,11 +4293,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>168</Id>
       <Name>Graphics Settings 07 - Stage Quality</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5134,11 +4314,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>169</Id>
       <Name>Graphics Settings 08 - Soft Shadow</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5160,11 +4335,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>170</Id>
       <Name>Graphics Settings 09 - Self Shadow</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5186,11 +4356,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>171</Id>
       <Name>Graphics Settings 10 - Motion Blur</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5212,11 +4377,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>172</Id>
       <Name>Graphics Settings 11 - Particles</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5238,11 +4398,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>173</Id>
       <Name>Graphics Settings 12 - Extra Effect</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -5264,11 +4419,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>174</Id>
       <Name>Training Menu - Fight Request Off</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -5290,11 +4440,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>220</Id>
       <Name>Pause Menu 0 - Continue</Name>
       <Description>Says continue.</Description>
@@ -5316,11 +4461,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>221</Id>
       <Name>Pause Menu 1 - Restart</Name>
       <Description>Says restart.</Description>
@@ -5342,11 +4482,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>222</Id>
       <Name>Pause Menu 2 - Training Options</Name>
       <Description>Says training options.</Description>
@@ -5368,11 +4503,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>223</Id>
       <Name>Pause Menu 3 - Button Config</Name>
       <Description>Says button config. Sample is taken from options menu samples.</Description>
@@ -5394,11 +4524,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>224</Id>
       <Name>Pause Menu 4 - Command List</Name>
       <Description>Says command list.</Description>
@@ -5420,11 +4545,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>225</Id>
       <Name>Pause Menu 5 - Character Change</Name>
       <Description>Says character change.</Description>
@@ -5446,11 +4566,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>226</Id>
       <Name>Pause Menu 6 - Memory</Name>
       <Description>Says memory. Sample is taken from controls menu.</Description>
@@ -5472,11 +4587,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>227</Id>
       <Name>Pause Menu 7 - Reload</Name>
       <Description>Says reload. Sample is taken from controls menu.</Description>
@@ -5498,11 +4608,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>228</Id>
       <Name>Pause Menu 8 - Disable Fight Request</Name>
       <Description>Says disable fight request. Option is greyed out if you start training with fight req disabled.</Description>
@@ -5524,11 +4629,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>229</Id>
       <Name>Pause Menu 9 - Exit</Name>
       <Description>Says exit.</Description>
@@ -5550,11 +4650,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>230</Id>
       <Name>Training Options Menu 00 - Action</Name>
       <Description>Says action</Description>
@@ -5576,11 +4671,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>231</Id>
       <Name>Training Options Menu 01 - Guard</Name>
       <Description>Says guard</Description>
@@ -5602,11 +4692,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>232</Id>
       <Name>Training Options Menu 02 - Stand</Name>
       <Description>Says stand.</Description>
@@ -5628,11 +4713,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>233</Id>
       <Name>Training Options Menu 03 - Counter Hit</Name>
       <Description>Says counter hit.</Description>
@@ -5654,11 +4734,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>234</Id>
       <Name>Training Options Menu 04 - Stun</Name>
       <Description>Says stun.</Description>
@@ -5680,11 +4755,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>235</Id>
       <Name>Training Options Menu 05 - S,C, Gauge</Name>
       <Description>Says super gauge.</Description>
@@ -5706,11 +4776,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>236</Id>
       <Name>Training Options Menu 06 - Revenge Gauge</Name>
       <Description>Says revenge gauge.</Description>
@@ -5732,11 +4797,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>237</Id>
       <Name>Training Options Menu 07 - Attack Data</Name>
       <Description>Says attack data.</Description>
@@ -5758,11 +4818,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>238</Id>
       <Name>Training Options Menu 08 - Input Display</Name>
       <Description>Says input display.</Description>
@@ -5784,11 +4839,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>239</Id>
       <Name>Training Options Menu 09 - Difficulty</Name>
       <Description>Says difficulty. Uses arcade menu difficulty sample.</Description>
@@ -5810,11 +4860,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>240</Id>
       <Name>Training Options Menu 10 - Network Simulation</Name>
       <Description>Says network frame lag simulation.</Description>
@@ -5836,11 +4881,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>241</Id>
       <Name>Training Options Menu 11 - Default</Name>
       <Description>Says reset to defaults.</Description>
@@ -5862,11 +4902,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>242</Id>
       <Name>Training Options Action - Stand</Name>
       <Description>Says stand.</Description>
@@ -5888,11 +4923,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>243</Id>
       <Name>Training Options Action - Crouch</Name>
       <Description>Says stand.</Description>
@@ -5914,11 +4944,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>244</Id>
       <Name>Training Options Action - Jump</Name>
       <Description>Says jump.</Description>
@@ -5940,11 +4965,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>245</Id>
       <Name>Training Options Action - CPU</Name>
       <Description>Says CPU.</Description>
@@ -5966,11 +4986,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>246</Id>
       <Name>Training Options Action - Human</Name>
       <Description>Says human.</Description>
@@ -5992,11 +5007,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>247</Id>
       <Name>Training Options Action - Record</Name>
       <Description>Says record.</Description>
@@ -6018,11 +5028,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>248</Id>
       <Name>Training Options Action - Playback</Name>
       <Description>Says playback.</Description>
@@ -6044,11 +5049,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>249</Id>
       <Name>Training Options Guard - No Block</Name>
       <Description>Says no block.</Description>
@@ -6070,11 +5070,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>250</Id>
       <Name>Training Options Guard - Auto Block</Name>
       <Description>Says auto block.</Description>
@@ -6096,11 +5091,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>251</Id>
       <Name>Training Options Guard - All Block</Name>
       <Description>Says all block.</Description>
@@ -6122,11 +5112,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>252</Id>
       <Name>Training Options Guard - Random</Name>
       <Description>Says random.</Description>
@@ -6148,11 +5133,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>253</Id>
       <Name>Training Options Stand - Normal</Name>
       <Description>Says normal.</Description>
@@ -6174,11 +5154,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>254</Id>
       <Name>Training Options Stand - Quick</Name>
       <Description>Says quick.</Description>
@@ -6200,11 +5175,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>255</Id>
       <Name>Training Options Stand - Delay</Name>
       <Description>Says delayed.</Description>
@@ -6226,11 +5196,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>256</Id>
       <Name>Training Options Stand - Random</Name>
       <Description>Says random.</Description>
@@ -6252,11 +5217,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>257</Id>
       <Name>Training Options Counter Hit - Off</Name>
       <Description>Says off.</Description>
@@ -6278,11 +5238,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>258</Id>
       <Name>Training Options Counter Hit - On</Name>
       <Description>Says on.</Description>
@@ -6304,11 +5259,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>259</Id>
       <Name>Training Options Counter Hit - Random</Name>
       <Description>Says random.</Description>
@@ -6330,11 +5280,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>260</Id>
       <Name>Training Options Stun - Normal</Name>
       <Description>Says normal.</Description>
@@ -6356,11 +5301,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>261</Id>
       <Name>Training Options Stun - Constant</Name>
       <Description>Says constant.</Description>
@@ -6382,11 +5322,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>262</Id>
       <Name>Training Options Stun - None</Name>
       <Description>Says none.</Description>
@@ -6408,11 +5343,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>263</Id>
       <Name>Training Options Super Gauge - Normal</Name>
       <Description>Says normal.</Description>
@@ -6434,11 +5364,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>264</Id>
       <Name>Training Options Super Gauge - Max Start</Name>
       <Description>Says max start.</Description>
@@ -6460,11 +5385,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>265</Id>
       <Name>Training Options Super Gauge - Infinite</Name>
       <Description>Says infinite.</Description>
@@ -6486,11 +5406,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>266</Id>
       <Name>Training Options Super Gauge - Refill</Name>
       <Description>Says refill.</Description>
@@ -6512,11 +5427,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>267</Id>
       <Name>Training Options Revenge Gauge - Normal</Name>
       <Description>Says normal.</Description>
@@ -6538,11 +5448,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>268</Id>
       <Name>Training Options Revenge Gauge - Max Start</Name>
       <Description>Says normal.</Description>
@@ -6564,11 +5469,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>269</Id>
       <Name>Training Options Revenge Gauge - Infinite</Name>
       <Description>Says infinite.</Description>
@@ -6590,11 +5490,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>270</Id>
       <Name>Training Options Revenge Gauge - Refill</Name>
       <Description>Says refill.</Description>
@@ -6616,11 +5511,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>271</Id>
       <Name>Training Options Attack Data - Off</Name>
       <Description>Says off.</Description>
@@ -6642,11 +5532,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>272</Id>
       <Name>Training Options Attack Data - On</Name>
       <Description>Says on.</Description>
@@ -6668,11 +5553,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>273</Id>
       <Name>Training Options Input Display - Off</Name>
       <Description>Says off.</Description>
@@ -6694,11 +5574,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>274</Id>
       <Name>Training Options Input Display - On</Name>
       <Description>Says on.</Description>
@@ -6720,11 +5595,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>275</Id>
       <Name>Training Options CPU Difficulty - Easiest</Name>
       <Description>Says easiest.</Description>
@@ -6746,11 +5616,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>276</Id>
       <Name>Training Options CPU Difficulty - Very Easy</Name>
       <Description>Says very easy..</Description>
@@ -6772,11 +5637,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>277</Id>
       <Name>Training Options CPU Difficulty - Easy</Name>
       <Description>Says easy.</Description>
@@ -6798,11 +5658,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>278</Id>
       <Name>Training Options CPU Difficulty - Medium</Name>
       <Description>Says medium.</Description>
@@ -6824,11 +5679,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>279</Id>
       <Name>Training Options CPU Difficulty - Medium Hard</Name>
       <Description>Says medium hard.</Description>
@@ -6850,11 +5700,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>280</Id>
       <Name>Training Options CPU Difficulty - Hard</Name>
       <Description>Says hard.</Description>
@@ -6876,11 +5721,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>281</Id>
       <Name>Training Options CPU Difficulty - Very Hard</Name>
       <Description>Says very hard.</Description>
@@ -6902,11 +5742,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>282</Id>
       <Name>Training Options CPU Difficulty - Hardest</Name>
       <Description>Says hardest.</Description>
@@ -6928,11 +5763,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>283</Id>
       <Name>Training Mode Options Simulated Lag Frames 0</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -6954,11 +5784,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>284</Id>
       <Name>Training Mode Options Simulated Lag Frames 1</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -6980,11 +5805,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>285</Id>
       <Name>Training Mode Options Simulated Lag Frames 2</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7006,11 +5826,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>286</Id>
       <Name>Training Mode Options Simulated Lag Frames 3</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7032,11 +5847,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>287</Id>
       <Name>Training Mode Options Simulated Lag Frames 4</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7058,11 +5868,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>288</Id>
       <Name>Training Mode Options Simulated Lag Frames 5</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7084,11 +5889,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>289</Id>
       <Name>Training Mode Options Simulated Lag Frames 6</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7110,11 +5910,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>290</Id>
       <Name>Training Mode Options Simulated Lag Frames 7</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7136,11 +5931,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>291</Id>
       <Name>Training Mode Options Simulated Lag Frames 8</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7162,11 +5952,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>292</Id>
       <Name>Training Mode Options Simulated Lag Frames 9</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7188,11 +5973,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>293</Id>
       <Name>Training Mode Options Simulated Lag Frames 10</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7214,11 +5994,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>294</Id>
       <Name>Training Mode Options Simulated Lag Frames 11</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7240,11 +6015,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>295</Id>
       <Name>Training Mode Options Simulated Lag Frames 12</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7266,11 +6036,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>296</Id>
       <Name>Training Mode Options Simulated Lag Frames 13</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7292,11 +6057,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>297</Id>
       <Name>Training Mode Options Simulated Lag Frames 14</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7318,11 +6078,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>298</Id>
       <Name>Training Mode Options Simulated Lag Frames 15</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7344,11 +6099,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>299</Id>
       <Name>Training Mode Options Simulated Lag Frames 16</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7370,11 +6120,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>300</Id>
       <Name>Training Mode Options Simulated Lag Frames 17</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7396,11 +6141,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>301</Id>
       <Name>Training Mode Options Simulated Lag Frames 18</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7422,11 +6162,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>302</Id>
       <Name>Training Mode Options Simulated Lag Frames 19</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7448,11 +6183,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>303</Id>
       <Name>Training Mode Options Simulated Lag Frames 20</Name>
       <Description>Says value. Double. Range is 0 to 20 inclusive.</Description>
@@ -7474,11 +6204,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>304</Id>
       <Name>Options Menu Graphics Res 00 - 640x480</Name>
       <Description>Says resolution</Description>
@@ -7500,11 +6225,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>305</Id>
       <Name>Options Menu Graphics Res 01 - 720x480</Name>
       <Description>Says resolution</Description>
@@ -7526,11 +6246,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>306</Id>
       <Name>Options Menu Graphics Res 02 - 720x576</Name>
       <Description>Says resolution</Description>
@@ -7552,11 +6267,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>307</Id>
       <Name>Options Menu Graphics Res 03 - 800x600</Name>
       <Description>Says resolution</Description>
@@ -7578,11 +6288,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>308</Id>
       <Name>Options Menu Graphics Res 04 - 1024x768</Name>
       <Description>Says resolution</Description>
@@ -7604,11 +6309,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>309</Id>
       <Name>Options Menu Graphics Res 05 - 1152x864</Name>
       <Description>Says resolution</Description>
@@ -7630,11 +6330,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>310</Id>
       <Name>Options Menu Graphics Res 06 - 1176x664</Name>
       <Description>Says resolution</Description>
@@ -7656,11 +6351,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>311</Id>
       <Name>Options Menu Graphics Res 07 - 1280x720</Name>
       <Description>Says resolution</Description>
@@ -7682,11 +6372,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>312</Id>
       <Name>Options Menu Graphics Res 08 - 1280x768</Name>
       <Description>Says resolution</Description>
@@ -7708,11 +6393,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>313</Id>
       <Name>Options Menu Graphics Res 09 - 1280x800</Name>
       <Description>Says resolution</Description>
@@ -7734,11 +6414,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>314</Id>
       <Name>Options Menu Graphics Res 10 - 1280x960</Name>
       <Description>Says resolution</Description>
@@ -7760,11 +6435,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>315</Id>
       <Name>Options Menu Graphics Res 11 - 1280x1024</Name>
       <Description>Says resolution</Description>
@@ -7786,11 +6456,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>316</Id>
       <Name>Options Menu Graphics Res 12 - 1360x768</Name>
       <Description>Says resolution</Description>
@@ -7812,11 +6477,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>317</Id>
       <Name>Options Menu Graphics Res 13 - 1366x768</Name>
       <Description>Says resolution</Description>
@@ -7838,11 +6498,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>318</Id>
       <Name>Options Menu Graphics Res 14 - 1400x900</Name>
       <Description>Says resolution</Description>
@@ -7864,11 +6519,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>319</Id>
       <Name>Options Menu Graphics Res 15 - 1600x900</Name>
       <Description>Says resolution</Description>
@@ -7890,11 +6540,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>320</Id>
       <Name>Options Menu Graphics Res 16 - 1600x1024</Name>
       <Description>Says resolution</Description>
@@ -7916,11 +6561,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>321</Id>
       <Name>Options Menu Graphics Res 17 - 1680x1050</Name>
       <Description>Says resolution</Description>
@@ -7942,11 +6582,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>322</Id>
       <Name>Options Menu Graphics Res 18 - 1768x992</Name>
       <Description>Says resolution</Description>
@@ -7968,11 +6603,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>323</Id>
       <Name>Options Menu VSync On</Name>
       <Description>Says VSync setting.</Description>
@@ -7994,11 +6624,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>324</Id>
       <Name>Options Menu VSync Off</Name>
       <Description>Says VSync setting.</Description>
@@ -8020,11 +6645,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>325</Id>
       <Name>Options Menu Framerate - Variable</Name>
       <Description>Says framerate setting.</Description>
@@ -8046,11 +6666,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>326</Id>
       <Name>Options Menu Framerate - Fixed</Name>
       <Description>Says framerate setting.</Description>
@@ -8072,11 +6687,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>327</Id>
       <Name>Options Menu Framerate - Smooth</Name>
       <Description>Says framerate setting.</Description>
@@ -8098,11 +6708,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>328</Id>
       <Name>Options Menu Antialiasing 0 - None</Name>
       <Description>Says antialiasing setting.</Description>
@@ -8124,11 +6729,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>329</Id>
       <Name>Options Menu Antialiasing 1 - 2x</Name>
       <Description>Says antialiasing setting.</Description>
@@ -8150,11 +6750,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>330</Id>
       <Name>Options Menu Antialiasing 2 - 4x</Name>
       <Description>Says antialiasing setting.</Description>
@@ -8176,11 +6771,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>331</Id>
       <Name>Options Menu Antialiasing 3 - 8x</Name>
       <Description>Says antialiasing setting.</Description>
@@ -8202,11 +6792,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>332</Id>
       <Name>Options Menu Antialiasing 4 - C8x</Name>
       <Description>Says antialiasing setting.</Description>
@@ -8228,11 +6813,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>333</Id>
       <Name>Options Menu Antialiasing 5 - C16x</Name>
       <Description>Says antialiasing setting.</Description>
@@ -8254,11 +6834,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>334</Id>
       <Name>Options Menu Antialiasing 6 - C16xQ</Name>
       <Description>Says antialiasing setting.</Description>
@@ -8280,11 +6855,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>335</Id>
       <Name>Options Menu Filtering 0 - Default</Name>
       <Description>Says filtering setting. This is option 0, but matches on value 1.</Description>
@@ -8306,11 +6876,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>336</Id>
       <Name>Options Menu Filtering 1 - Off</Name>
       <Description>Says filtering setting. This is option 1, but matches on value 0.</Description>
@@ -8332,11 +6897,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>337</Id>
       <Name>Options Menu Filtering 2 - 2x</Name>
       <Description>Default is 1, as is 2x - so we'll have this here but disabled so we know we didn't forget anything.</Description>
@@ -8358,11 +6918,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>339</Id>
       <Name>Options Menu Filtering 3 - 4x</Name>
       <Description>Says filtering setting. This is option 3, but matches on value 2.</Description>
@@ -8384,11 +6939,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>340</Id>
       <Name>Options Menu Filtering 4 - 8x</Name>
       <Description>Says filtering setting. This is option 4, but matches on value 3.</Description>
@@ -8410,11 +6960,6 @@
       <triggerType>Continuous</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>DistanceVolumeDescending</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>341</Id>
       <Name>Continuous Volume Descending w/ Dist. (Wind)</Name>
       <Description>Plays constantly when in-game - modify via "Distance" comparison types</Description>
@@ -8436,11 +6981,6 @@
       <triggerType>Continuous</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>DistanceVolumeAscending</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>342</Id>
       <Name>Continuous Volume Ascending w/ Dist. (Wind)</Name>
       <Description>Looping sample gets louder as players get closer together.</Description>
@@ -8462,11 +7002,6 @@
       <triggerType>Continuous</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>DistancePitchDescending</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>343</Id>
       <Name>Continuous Pitch Descending w/ Dist. (Wind)</Name>
       <Description>Plays constantly when in-game - modify via "Distance" comparison types</Description>
@@ -8488,11 +7023,6 @@
       <triggerType>Continuous</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>DistancePitchAscending</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>344</Id>
       <Name>Continuous Pitch Ascending w/ Dist. (Wind)</Name>
       <Description>Plays constantly when in-game - modify via "Distance" comparison types</Description>
@@ -8514,11 +7044,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>345</Id>
       <Name>Options Menu Filtering 4 - 16x</Name>
       <Description>Says filtering setting. This is option 5, but matches on value 4.</Description>
@@ -8540,11 +7065,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>347</Id>
       <Name>Options Menu Graphics Res 19 - 1920x1080</Name>
       <Description>Says resolution</Description>
@@ -8566,11 +7086,6 @@
       <triggerType>Modifier</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>348</Id>
       <Name>Continuous Trigger Modifier - Pitch Change on P2 Crouch</Name>
       <Description>Modifies continuous sample speed on P2 crouch</Description>
@@ -8592,11 +7107,6 @@
       <triggerType>Modifier</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>349</Id>
       <Name>Continuous Trigger Modifier - Volume Down on P2 Crouch</Name>
       <Description>Multiplies sample volume by 0.5 for specified continuous trigger on value match</Description>
@@ -8618,11 +7128,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>351</Id>
       <Name>Versus-Menu-Edition-Select</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -8644,11 +7149,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>354</Id>
       <Name>Versus submenu - Player Vs. Player</Name>
       <Description>Says Player Vs. Player</Description>
@@ -8670,11 +7170,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>355</Id>
       <Name>Versus submenu - Player Vs. CPU</Name>
       <Description>Says Player Vs. CPU</Description>
@@ -8696,11 +7191,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>356</Id>
       <Name>Versus submenu - CPU Vs. CPU</Name>
       <Description>Says CPU Vs. CPU</Description>
@@ -8722,11 +7212,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>357</Id>
       <Name>P1 Char Select - Costume</Name>
       <Description>Says costume. Matches 0 as int.</Description>
@@ -8748,11 +7233,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>358</Id>
       <Name>P1 Char Select - Colour</Name>
       <Description>Says colour. Matches 1 as int.</Description>
@@ -8774,11 +7254,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>359</Id>
       <Name>P1 Char Select - Personal Action</Name>
       <Description>Says personal action. Matches 2 as int.</Description>
@@ -8800,11 +7275,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>360</Id>
       <Name>P1 Char Select - Win Quote</Name>
       <Description>Says win quote. Matches 3 as int.</Description>
@@ -8826,11 +7296,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>361</Id>
       <Name>P1 Costume Select - Original</Name>
       <Description>Says original. Matches 0 as int.</Description>
@@ -8852,11 +7317,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>362</Id>
       <Name>P1 Costume Select - Alternate 1</Name>
       <Description>Says alternate 1. Matches 1 as int.</Description>
@@ -8878,11 +7338,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>363</Id>
       <Name>P1 Costume Select - Alternate 2</Name>
       <Description>Says alternate 2. Matches 2 as int.</Description>
@@ -8904,11 +7359,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>364</Id>
       <Name>P1 Costume Select - Alternate 3</Name>
       <Description>Says alternate 3. Matches 2 as int.</Description>
@@ -8930,11 +7380,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>365</Id>
       <Name>P1 Colour Number 1</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -8956,11 +7401,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>366</Id>
       <Name>P1 Colour Number 2</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -8982,11 +7422,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>367</Id>
       <Name>P1 Colour Number 3</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -9008,11 +7443,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>368</Id>
       <Name>P1 Colour Number 4</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -9034,11 +7464,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>369</Id>
       <Name>P1 Colour Number 5</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -9060,11 +7485,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>370</Id>
       <Name>P1 Colour Number 6</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -9086,11 +7506,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>371</Id>
       <Name>P1 Colour Number 7</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -9112,11 +7527,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>372</Id>
       <Name>P1 Colour Number 8</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -9138,11 +7548,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>373</Id>
       <Name>P1 Colour Number 9</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -9164,11 +7569,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>374</Id>
       <Name>P1 Colour Number 10</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -9190,11 +7590,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>375</Id>
       <Name>P1 Colour Number 11</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -9216,11 +7611,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>376</Id>
       <Name>P1 Colour Number 12</Name>
       <Description>Says colour number. Matches int.</Description>
@@ -9242,11 +7632,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>377</Id>
       <Name>P1 Personal Action 1</Name>
       <Description>Says personal action number. Matches unsigned int.</Description>
@@ -9268,11 +7653,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>378</Id>
       <Name>P1 Personal Action 2</Name>
       <Description>Says personal action number. Matches max unsigned int 1</Description>
@@ -9294,11 +7674,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>379</Id>
       <Name>P1 Personal Action 3</Name>
       <Description>Says personal action number. Matches unsigned int.</Description>
@@ -9320,11 +7695,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>380</Id>
       <Name>P1 Personal Action 4</Name>
       <Description>Says personal action number. Matches unsigned int</Description>
@@ -9346,11 +7716,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>381</Id>
       <Name>P1 Personal Action 5</Name>
       <Description>Says personal action number. Matches nsigned int.</Description>
@@ -9372,11 +7737,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>382</Id>
       <Name>P1 Personal Action 6</Name>
       <Description>Says personal action number. Matches unsigned int.</Description>
@@ -9398,11 +7758,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>383</Id>
       <Name>P1 Personal Action 7</Name>
       <Description>Says personal action number. Matches unsigned int.</Description>
@@ -9424,11 +7779,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>384</Id>
       <Name>P1 Personal Action 8</Name>
       <Description>Says personal action number. Matches unsigned int.</Description>
@@ -9450,11 +7800,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>385</Id>
       <Name>P1 Personal Action 9</Name>
       <Description>Says personal action number. Matches unsigned int.</Description>
@@ -9476,11 +7821,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>386</Id>
       <Name>P1 Personal Action None</Name>
       <Description>Says personal action none. Matches max unsigned int (FF FF FF FF).</Description>
@@ -9502,11 +7842,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>387</Id>
       <Name>P1 Win Quote 1</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9528,11 +7863,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>388</Id>
       <Name>P1 Win Quote 2</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9554,11 +7884,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>389</Id>
       <Name>P1 Win Quote 3</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9580,11 +7905,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>390</Id>
       <Name>P1 Win Quote 4</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9606,11 +7926,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>391</Id>
       <Name>P1 Win Quote 5</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9632,11 +7947,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>392</Id>
       <Name>P1 Win Quote 6</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9658,11 +7968,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>393</Id>
       <Name>P1 Win Quote 7</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9684,11 +7989,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>394</Id>
       <Name>P1 Win Quote 8</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9710,11 +8010,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>395</Id>
       <Name>P1 Win Quote 9</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9736,11 +8031,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>396</Id>
       <Name>P1 Win Quote 10</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9762,11 +8052,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>397</Id>
       <Name>P1 Win Quote 11</Name>
       <Description>Win quote number as unsigned int.</Description>
@@ -9788,11 +8073,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>398</Id>
       <Name>P1 Win Quote Random</Name>
       <Description>Win quote number as unsigned int. This one matches uint max and says "Random".</Description>
@@ -9814,11 +8094,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>399</Id>
       <Name>P1 Personal Action 10</Name>
       <Description>Says personal action number. Matches unsigned int.</Description>
@@ -9840,11 +8115,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>400</Id>
       <Name>Sound Submenu - Background music volume</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -9866,11 +8136,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>401</Id>
       <Name>Sound Submenu - Sound Effect volume</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -9892,11 +8157,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>402</Id>
       <Name>Sound Submenu - Voice volume</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -9918,11 +8178,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>403</Id>
       <Name>Sound Submenu - Voice chat volume</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -9944,11 +8199,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>404</Id>
       <Name>Sound Submenu - Mute own microphone</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -9970,11 +8220,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>405</Id>
       <Name>Sound Submenu - Arranged background music</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -9996,11 +8241,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>406</Id>
       <Name>Sound Submenu - Voice language</Name>
       <Description>Triggers based on submenu text [33 chars max or hits null char]</Description>
@@ -10022,11 +8262,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>Changed</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>407</Id>
       <Name>Background volume</Name>
       <Description>Says background volume [0..9]. Matches int.</Description>
@@ -10048,11 +8283,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>Changed</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>408</Id>
       <Name>Sound effects volume</Name>
       <Description>Says sound effects volume [0..9]. Matches int.</Description>
@@ -10074,11 +8304,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>Changed</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>409</Id>
       <Name>Voice volume </Name>
       <Description>Says sound effects volume [0..9]. Matches int.</Description>
@@ -10100,11 +8325,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>Changed</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>410</Id>
       <Name>Voice chat volume</Name>
       <Description>Says sound effects volume [0..9]. Matches int.</Description>
@@ -10126,11 +8346,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>411</Id>
       <Name>Options Menu Graphics Res 19 - 3840x2160</Name>
       <Description>Says resolution</Description>
@@ -10152,11 +8367,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>412</Id>
       <Name>Graphics settings - model quality - low</Name>
       <Description>Says model quality setting</Description>
@@ -10178,11 +8388,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>413</Id>
       <Name>Graphics settings - model quality - medium</Name>
       <Description>Says model quality setting</Description>
@@ -10204,11 +8409,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>414</Id>
       <Name>Graphics settings - model quality - high</Name>
       <Description>Says model quality setting</Description>
@@ -10230,11 +8430,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>415</Id>
       <Name>Graphics settings - stage quality - low</Name>
       <Description>Says stage quality setting</Description>
@@ -10256,11 +8451,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>416</Id>
       <Name>Graphics settings - stage quality - high</Name>
       <Description>Says stage quality setting</Description>
@@ -10282,11 +8472,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>417</Id>
       <Name>Graphics settings - soft shadow quality - off</Name>
       <Description>Says soft shadow quality</Description>
@@ -10308,11 +8493,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>418</Id>
       <Name>Graphics settings - soft shadow quality - low</Name>
       <Description>Says soft shadow quality</Description>
@@ -10334,11 +8514,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>419</Id>
       <Name>Graphics settings - soft shadow quality - middle</Name>
       <Description>Says soft shadow quality</Description>
@@ -10360,11 +8535,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>420</Id>
       <Name>Graphics settings - soft shadow quality - high</Name>
       <Description>Says soft shadow quality</Description>
@@ -10386,11 +8556,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>421</Id>
       <Name>Graphics settings - soft shadow quality - extreme</Name>
       <Description>Says soft shadow quality</Description>
@@ -10412,11 +8577,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>422</Id>
       <Name>Graphics settings - self shadow quality - off</Name>
       <Description>Says self shadow quality</Description>
@@ -10438,11 +8598,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>423</Id>
       <Name>Graphics settings - self shadow quality - low</Name>
       <Description>Says self shadow quality</Description>
@@ -10464,11 +8619,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>424</Id>
       <Name>Graphics settings - self shadow quality - high</Name>
       <Description>Says self shadow quality</Description>
@@ -10490,11 +8640,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>425</Id>
       <Name>Graphics settings - motion blur quality - off</Name>
       <Description>Says motion blur quality</Description>
@@ -10516,11 +8661,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>426</Id>
       <Name>Graphics settings - motion blur quality - low</Name>
       <Description>Says motion blur quality</Description>
@@ -10542,11 +8682,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>427</Id>
       <Name>Graphics settings - motion blur quality - high</Name>
       <Description>Says motion blur quality</Description>
@@ -10568,11 +8703,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>428</Id>
       <Name>Graphics settings - particles quality - low</Name>
       <Description>Says particles quality</Description>
@@ -10594,11 +8724,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>429</Id>
       <Name>Graphics settings - particles quality - middle</Name>
       <Description>Says particles quality</Description>
@@ -10620,11 +8745,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>430</Id>
       <Name>Graphics settings - particles quality - high</Name>
       <Description>Says particles quality</Description>
@@ -10646,11 +8766,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>431</Id>
       <Name>Graphics settings - extra effect - off</Name>
       <Description>Says any extra effect applied to the screen</Description>
@@ -10672,11 +8787,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>432</Id>
       <Name>Graphics settings - extra effect - ink</Name>
       <Description>Says any extra effect applied to the screen</Description>
@@ -10698,11 +8808,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>433</Id>
       <Name>Graphics settings - extra effect - watercolor</Name>
       <Description>Says any extra effect applied to the screen</Description>
@@ -10724,11 +8829,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>434</Id>
       <Name>Graphics settings - extra effect - posterization</Name>
       <Description>Says any extra effect applied to the screen</Description>
@@ -10750,11 +8850,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>435</Id>
       <Name>Player 1 Ultra combo choice 1</Name>
       <Description>Value is byte in range 0 through 2</Description>
@@ -10776,11 +8871,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>436</Id>
       <Name>Player 1 Ultra combo choice 2</Name>
       <Description>Value is byte in range 0 through 2</Description>
@@ -10802,11 +8892,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>437</Id>
       <Name>Player 1 Ultra combo choice double</Name>
       <Description>Value is byte in range 0 through 2</Description>
@@ -10828,11 +8913,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>438</Id>
       <Name>Player 2 Ultra combo choice 1</Name>
       <Description>Value is byte in range 0 through 2</Description>
@@ -10854,11 +8934,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>439</Id>
       <Name>Player 2 Ultra combo choice 2</Name>
       <Description>Value is byte in range 0 through 2</Description>
@@ -10880,11 +8955,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>440</Id>
       <Name>Player 2 Ultra combo choice double</Name>
       <Description>Value is byte in range 0 through 2</Description>
@@ -10906,11 +8976,6 @@
       <triggerType>Dependent</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>441</Id>
       <Name>Sound Submenu - Voice volume - DEPENDENT</Name>
       <Description>Only allows trigger 409 (voice volume) to activate when on voice volume option in submenu</Description>
@@ -10932,11 +8997,6 @@
       <triggerType>Dependent</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>442</Id>
       <Name>Graphics Settings - Resolution - DEPENDENT</Name>
       <Description>Graphics options comparing with case-sensitive submenu string.</Description>
@@ -10958,11 +9018,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>443</Id>
       <Name>P1 Handicap - 100%</Name>
       <Description>Used in versus - int</Description>
@@ -10984,11 +9039,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>444</Id>
       <Name>P1 Handicap - 0%</Name>
       <Description>Used in versus - int</Description>
@@ -11010,11 +9060,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>445</Id>
       <Name>P1 Handicap - 25%</Name>
       <Description>Used in versus - int</Description>
@@ -11036,11 +9081,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>446</Id>
       <Name>P1 Handicap - 50%</Name>
       <Description>Used in versus - int</Description>
@@ -11062,11 +9102,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>447</Id>
       <Name>P1 Handicap - 75%</Name>
       <Description>Used in versus - int</Description>
@@ -11088,11 +9123,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>448</Id>
       <Name>P1 Handicap - 100%</Name>
       <Description>Used in versus - int</Description>
@@ -11114,11 +9144,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>449</Id>
       <Name>P2 Handicap - 0%</Name>
       <Description>Used in versus - int</Description>
@@ -11140,11 +9165,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>450</Id>
       <Name>P2 Handicap - 25%</Name>
       <Description>Used in versus - int</Description>
@@ -11166,11 +9186,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>451</Id>
       <Name>P2 Handicap - 50%</Name>
       <Description>Used in versus - int</Description>
@@ -11192,11 +9207,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>452</Id>
       <Name>P2 Handicap - 75%</Name>
       <Description>Used in versus - int</Description>
@@ -11218,11 +9228,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>453</Id>
       <Name>P2 Handicap - 100%</Name>
       <Description>Used in versus - int</Description>
@@ -11244,11 +9249,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>Changed</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>454</Id>
       <Name>P1 Combo count</Name>
       <Description>Says x hit combo, where x is some int</Description>
@@ -11270,11 +9270,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>Any</allowanceType>
       <comparisonType>Changed</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>455</Id>
       <Name>P2 Combo count</Name>
       <Description>Says x hit combo, where x is some int</Description>
@@ -11293,7 +9288,8 @@
       <Active>true</Active>
     </Trigger>
   </triggerList>
-  <Description>Ultra Street Fighter 4 Arcade Edition - Al Lansley - 2019-06-12
+  <hotkeyList />
+  <Description>Ultra Street Fighter 4 Arcade Edition - Al Lansley - 2020-04-12
 
 This config provides alerts for clock values, health, super bar and ultra bar for both players - as well as a large number of (but not all possible) menu sonification events to assist in navigating menus and selecting characters without the need to memorise menu options.</Description>
   <ProcessName>SSFIV</ProcessName>

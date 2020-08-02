@@ -144,7 +144,13 @@ namespace au.edu.federation.SoniFight
         // Method to find and return a TreeNode inside a TreeView which has specific text on it
         public static TreeNode FindNodeWithText(TreeView tv, string text)
         {
-            var treeNodes = tv.FlattenTree().Where(n => n.Text == text).ToList();
+            List<TreeNode> treeNodes = tv.FlattenTree().Where(n => n.Text == text).ToList();
+
+            if (treeNodes.Count == 0)
+            {
+                MessageBox.Show("Could not find treenode with text: " + text);
+                return new TreeNode();
+            }
             return (TreeNode)treeNodes[0];
         }
 
@@ -748,6 +754,36 @@ namespace au.edu.federation.SoniFight
             }
         }
 
+        /*
+        // Method to return an int based on the value type of a watch
+        public static int GetIntFromHotkeyTarget(Hotkey.HotkeyType ht)
+        {
+            switch (ht)
+            {
+                case Hotkey.HotkeyType.ExecutesWatch:
+                    return 0;
+                case Hotkey.HotkeyType.ExecutesTrigger:
+                    return 1;
+                default:
+                    return 0;
+            }
+        }
+
+        // Method to return an int based on the value type of a watch
+        public static Hotkey.HotkeyType GetHotkeyTargetFromInt(int i)
+        {
+            switch (i)
+            {
+                case 0:
+                    return Hotkey.HotkeyType.ExecutesWatch;
+                case 1:
+                    return Hotkey.HotkeyType.ExecutesTrigger;
+                default:
+                    return Hotkey.HotkeyType.ExecutesWatch;
+            }
+        }
+        */
+
         // Method to return the specific trigger with a given id value. If no such trigger exists we return null.
         public static Trigger getTriggerWithId(int id)
         {
@@ -801,6 +837,59 @@ namespace au.edu.federation.SoniFight
             }
             return highest + 1;
         }
+
+        // Method to return the specific watch with a given id value. If not such watch exists we return null.
+        public static Hotkey getHotkeyWithId(int id)
+        {
+            Hotkey h = null;
+            for (int loop = 0; loop < MainForm.gameConfig.hotkeyList.Count; ++loop)
+            {
+                h = MainForm.gameConfig.hotkeyList[loop];
+                if (h.Id == id)
+                    return h;
+            }
+            return null;
+        }
+
+        // Method to return the next highest value to use as the next new watch id
+        public static int getNextHotkeyIndex(List<Hotkey> list)
+        {   
+            int highest = 0;
+            for (int loop = 0; loop < list.Count; ++loop)
+            {
+                if (list[loop].Id > highest)
+                {
+                    highest = list[loop].Id;
+                }
+            }
+            return highest + 1;
+        }
+
+        public static int getStartingNumber(string s)
+        {
+            string intString = "";            
+            for (int i = 0; i < s.Length; ++i)
+            {
+                if (Char.IsDigit(s[i]))
+                {
+                    intString += s[i];;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            if (intString.Length == 0)
+            {
+                MessageBox.Show("Error: Could not extract int from string in getStartingNumber =(");
+                return 0;
+            }
+
+            return int.Parse(intString);
+        }
+
+
 
         // Method to substitute all watch curly braces with the value of this trigger's watch for {}, or the value of the numbered watch in the case of things like {123}
         public static string substituteWatchValuesInString(Trigger t, string s)

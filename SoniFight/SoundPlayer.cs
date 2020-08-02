@@ -223,6 +223,23 @@ namespace au.edu.federation.SoniFight
 
         } // End of method
 
+        // Method to play a start or stop sample. The starting flag as true means play the config startup sample, false means play the config stop sample.
+        public void PlayStartStopSample(bool starting)
+        {
+            ISound sound;            
+            if (starting)
+            {
+                sound = normalEngine.Play2D("Samples\\start-config.wav", false, false, StreamMode.AutoDetect, false);
+                sound.Volume = 1.0f;
+            }
+            else
+            {
+                sound = normalEngine.Play2D("Samples\\stop-config.wav", false, false, StreamMode.AutoDetect, false);
+                sound.Volume = 1.0f;
+            }
+
+        } // End of PlayStartStopSample method
+
         // Method to play the sample identified by the key at the volume and pitch provided
         public void PlayQueuedNormalSample()
         {

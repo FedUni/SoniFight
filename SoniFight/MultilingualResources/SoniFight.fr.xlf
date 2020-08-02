@@ -1848,13 +1848,14 @@
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="pictureBox1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>460, 141</source>
+          <source>394, 140</source>
           <target state="needs-review-translation">460, 141</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="pictureBox1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>342, 296</source>
+          <source>459, 296</source>
           <target state="needs-review-translation">342, 296</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="pictureBox1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>9</source>
@@ -1873,8 +1874,9 @@
           <target state="needs-review-translation">377, 61</target>
         </trans-unit>
         <trans-unit id="quitButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>6</source>
+          <source>7</source>
           <target state="needs-review-translation">6</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="quitButton.Text" translate="yes" xml:space="preserve">
           <source>Quit</source>
@@ -1893,8 +1895,9 @@
           <target state="needs-review-translation">377, 61</target>
         </trans-unit>
         <trans-unit id="createConfigButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>5</source>
+          <source>6</source>
           <target state="needs-review-translation">5</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="createConfigButton.Text" translate="yes" xml:space="preserve">
           <source>Create New Config</source>
@@ -1917,8 +1920,9 @@
           <target state="needs-review-translation">377, 61</target>
         </trans-unit>
         <trans-unit id="stopConfigButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>4</source>
+          <source>5</source>
           <target state="needs-review-translation">4</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="stopConfigButton.Text" translate="yes" xml:space="preserve">
           <source>Stop Running Config</source>
@@ -1937,8 +1941,9 @@
           <target state="needs-review-translation">378, 61</target>
         </trans-unit>
         <trans-unit id="runConfigButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>3</source>
+          <source>4</source>
           <target state="needs-review-translation">3</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="runConfigButton.Text" translate="yes" xml:space="preserve">
           <source>Run Selected Config</source>
@@ -1949,17 +1954,19 @@
           <target state="needs-review-translation">Microsoft Sans Serif, 14pt</target>
         </trans-unit>
         <trans-unit id="refreshButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>721, 101</source>
+          <source>703, 93</source>
           <target state="needs-review-translation">721, 101</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="refreshButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>132, 38</source>
+          <source>150, 38</source>
           <target state="needs-review-translation">132, 38</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="refreshButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>2</source>
+          <source>3</source>
           <target state="needs-review-translation">2</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="refreshButton.Text" translate="yes" xml:space="preserve">
           <source>Refresh</source>
@@ -1970,8 +1977,9 @@
           <target state="needs-review-translation">Microsoft Sans Serif, 14pt</target>
         </trans-unit>
         <trans-unit id="configsComboBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>10, 63</source>
+          <source>10, 52</source>
           <target state="needs-review-translation">10, 63</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="configsComboBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>843, 32</source>
@@ -2004,8 +2012,8 @@
           <target state="needs-review-translation">0</target>
         </trans-unit>
         <trans-unit id="appTitleLabel.Text" translate="no" xml:space="preserve">
-          <source>SoniFight v1.1.5</source>
-          <target state="final">SoniFight v1.1.5</target>
+          <source>SoniFight v1.2</source>
+          <target state="final">SoniFight v1.2</target>
         </trans-unit>
         <trans-unit id="appTitleLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
           <source>MiddleCenter</source>
@@ -2075,12 +2083,14 @@
           <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
         </trans-unit>
         <trans-unit id="saveConfigButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>9, 473</source>
+          <source>8, 481</source>
           <target state="needs-review-translation">9, 473</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="saveConfigButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>332, 36</source>
+          <source>333, 28</source>
           <target state="needs-review-translation">332, 36</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="saveConfigButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>7</source>
@@ -2095,12 +2105,14 @@
           <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
         </trans-unit>
         <trans-unit id="cloneTriggerButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>9, 434</source>
+          <source>9, 413</source>
           <target state="needs-review-translation">9, 434</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="cloneTriggerButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>332, 33</source>
+          <source>332, 28</source>
           <target state="needs-review-translation">332, 33</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="cloneTriggerButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>6</source>
@@ -2115,12 +2127,14 @@
           <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
         </trans-unit>
         <trans-unit id="addTriggerButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>8, 394</source>
+          <source>8, 379</source>
           <target state="needs-review-translation">8, 394</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="addTriggerButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>333, 34</source>
+          <source>333, 28</source>
           <target state="needs-review-translation">333, 34</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="addTriggerButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>5</source>
@@ -2135,12 +2149,14 @@
           <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
         </trans-unit>
         <trans-unit id="cloneWatchButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>8, 350</source>
+          <source>8, 345</source>
           <target state="needs-review-translation">8, 350</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="cloneWatchButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>333, 38</source>
+          <source>333, 28</source>
           <target state="needs-review-translation">333, 38</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="cloneWatchButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>4</source>
@@ -2155,12 +2171,14 @@
           <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
         </trans-unit>
         <trans-unit id="addWatchButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>9, 306</source>
+          <source>8, 311</source>
           <target state="needs-review-translation">9, 306</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="addWatchButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>332, 38</source>
+          <source>333, 28</source>
           <target state="needs-review-translation">332, 38</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="addWatchButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>3</source>
@@ -2199,8 +2217,9 @@
           <target state="needs-review-translation">8, 6</target>
         </trans-unit>
         <trans-unit id="gcTreeView.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>333, 294</source>
+          <source>333, 299</source>
           <target state="needs-review-translation">333, 294</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="gcTreeView.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>0</source>
@@ -2276,12 +2295,120 @@
           <target state="needs-review-translation">Fill</target>
         </trans-unit>
         <trans-unit id="runConfigButton.AccessibleName" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="translated">Run Selected Config</target>
+          <source>Run Selected Config Button</source>
+          <target state="needs-review-translation">Run Selected Config</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="runConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="tabControl.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="tabControl.AccessibleName" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="quitButton.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="quitButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Quit Button</source>
+          <target state="new">Quit Button</target>
+        </trans-unit>
+        <trans-unit id="createConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="createConfigButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Create New Config Button</source>
+          <target state="new">Create New Config Button</target>
+        </trans-unit>
+        <trans-unit id="stopConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="stopConfigButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Stop Running Config Button</source>
+          <target state="new">Stop Running Config Button</target>
+        </trans-unit>
+        <trans-unit id="refreshButton.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="refreshButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Refresh Configs Button</source>
+          <target state="new">Refresh Configs Button</target>
+        </trans-unit>
+        <trans-unit id="configsComboBox.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="configsComboBox.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Config Dropdown</source>
+          <target state="new">Config Dropdown</target>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Read Config Notes Button</source>
+          <target state="new">Read Config Notes Button</target>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.Font" translate="yes" xml:space="preserve" extype="System.Drawing.Font, System.Drawing">
+          <source>Microsoft Sans Serif, 14.25pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 14.25pt</target>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>394, 93</source>
+          <target state="needs-review-translation">425, 101</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>288, 38</source>
+          <target state="needs-review-translation">259, 38</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>2</source>
+          <target state="needs-review-translation">2</target>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.Text" translate="yes" xml:space="preserve">
+          <source>Read Config Notes</source>
+          <target state="new">Read Config Notes</target>
+        </trans-unit>
+        <trans-unit id="pictureBox1.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="pictureBox1.SizeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+          <source>CenterImage</source>
+          <target state="needs-review-translation">CenterImage</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.Font" translate="yes" xml:space="preserve" extype="System.Drawing.Font, System.Drawing">
+          <source>Microsoft Sans Serif, 12pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>8, 447</source>
+          <target state="needs-review-translation">8, 442</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>332, 28</source>
+          <target state="needs-review-translation">332, 28</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>9</source>
+          <target state="needs-review-translation">9</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.Text" translate="yes" xml:space="preserve">
+          <source>Add Hotkey</source>
+          <target state="new">Add Hotkey</target>
         </trans-unit>
       </group>
     </body>

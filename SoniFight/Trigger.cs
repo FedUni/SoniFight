@@ -205,10 +205,6 @@ namespace au.edu.federation.SoniFight
             set { modificationActive = value; }
         }
 
-        // A trigger may have a hotkey that can be used to activate it at the user's discretion.
-        public Hotkey hotkey;
-        public bool hotkeyActive;
-
         // ---------- Methods ----------
 
         // Default constructor required for XML serialization
@@ -237,8 +233,6 @@ namespace au.edu.federation.SoniFight
             IsClock            = false;
             ModificationActive = false;
             UseTolk            = true;  // Changed using tolk to default as it's far more likely to be used than samples (creating samples is time consuming!)
-
-            hotkey = new Hotkey();
         }
 
         // Copy constructor which creates a deep-copy of an existing trigger
@@ -282,8 +276,6 @@ namespace au.edu.federation.SoniFight
             IsClock            = source.IsClock;
             ModificationActive = source.ModificationActive;
             UseTolk            = source.UseTolk;
-
-            hotkey = source.hotkey;
         }
 
     } // End of Trigger class

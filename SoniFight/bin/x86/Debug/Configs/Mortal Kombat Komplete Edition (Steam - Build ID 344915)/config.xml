@@ -124,10 +124,11 @@
     <Watch>
       <valueType>IntType</valueType>
       <Id>11</Id>
-      <Name>Player 1 - In Fight Submenu</Name>
-      <Description>Checks to ensure player 1 is in Fight submenu (matches 429 in fight submenu)</Description>
+      <Name>Submenu tracker - USED WITH DEPENDENT</Name>
+      <Description>5 is top level, 6 is P1 Fight menu, 10 is options</Description>
       <PointerList>
-        <string>A03648</string>
+        <string>51AE00</string>
+        <string>98</string>
       </PointerList>
       <Active>true</Active>
     </Watch>
@@ -137,11 +138,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>1</Id>
       <Name>Clock trigger for InGame vs InMenu determination</Name>
       <Description>Round timer. 90 down to 0 as an int</Description>
@@ -161,11 +157,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>2</Id>
       <Name>P1 Health Half</Name>
       <Description>Says half health</Description>
@@ -185,11 +176,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>3</Id>
       <Name>P1 Health Quarter</Name>
       <Description>Says health quarter.</Description>
@@ -209,11 +195,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>4</Id>
       <Name>P1 Health Low</Name>
       <Description>Says health low when 10% or less.</Description>
@@ -233,11 +214,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>5</Id>
       <Name>Clock 45</Name>
       <Description>Says clock 45 at the halfway point of the round</Description>
@@ -257,11 +233,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>6</Id>
       <Name>Clock 10</Name>
       <Description>Says clock 10 when the clock hits that value.</Description>
@@ -281,11 +252,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>7</Id>
       <Name>P1 - One Third Bar - Enhanced</Name>
       <Description>Says Enhanced when you get one third bar.</Description>
@@ -305,11 +271,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>8</Id>
       <Name>P1 - Two Thirds Bar - Breaker</Name>
       <Description>Says breaker when player 1 gets two thirds bar.</Description>
@@ -329,11 +290,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>9</Id>
       <Name>P1 - Full Bar - X-Ray</Name>
       <Description>Says X-Ray when player 1 gets full bar.</Description>
@@ -353,11 +309,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>10</Id>
       <Name>P2 Health Half</Name>
       <Description>Says half health.</Description>
@@ -377,11 +328,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>11</Id>
       <Name>P2 Health Quarter</Name>
       <Description>Says health quarter.</Description>
@@ -401,11 +347,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>LessThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>12</Id>
       <Name>P2 Health Low</Name>
       <Description>Says health low when 10% or less.</Description>
@@ -425,11 +366,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>13</Id>
       <Name>P2 - One Third Bar - Enhanced</Name>
       <Description>Says Enhanced when player 2 gets one third bar.</Description>
@@ -449,11 +385,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>14</Id>
       <Name>P2 - Two Thirds Bar - Breaker</Name>
       <Description>Says breaker when player 2 gets two thirds bar.</Description>
@@ -473,11 +404,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InGame</allowanceType>
       <comparisonType>GreaterThanOrEqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>15</Id>
       <Name>P2 - Full Bar - X-Ray</Name>
       <Description>Says X-Ray when player 2 gets full bar.</Description>
@@ -497,11 +423,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>16</Id>
       <Name>Single Player Main Menu - Fight</Name>
       <Description>Says menu option using tolk</Description>
@@ -523,11 +444,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>17</Id>
       <Name>Single Player Main Menu - Story Mode</Name>
       <Description>Says menu option using tolk</Description>
@@ -549,11 +465,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>18</Id>
       <Name>Single Player Main Menu - Challenge Tower</Name>
       <Description>Says menu option using tolk</Description>
@@ -575,11 +486,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>19</Id>
       <Name>Single Player Main Menu - Training</Name>
       <Description>Says menu option using tolk</Description>
@@ -601,11 +507,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>20</Id>
       <Name>Single Player Main Menu - Online</Name>
       <Description>Says menu option using tolk</Description>
@@ -627,11 +528,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>21</Id>
       <Name>Single Player Main Menu - Extras</Name>
       <Description>Says menu option using tolk</Description>
@@ -653,11 +549,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>22</Id>
       <Name>Single Player Main Menu - Options</Name>
       <Description>Says menu option using tolk</Description>
@@ -679,11 +570,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>23</Id>
       <Name>Single Player Main Menu - Exit Game</Name>
       <Description>Says menu option using tolk</Description>
@@ -705,11 +591,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>24</Id>
       <Name>Main menu - number of players 1</Name>
       <Description>Says single player</Description>
@@ -731,11 +612,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>25</Id>
       <Name>Main menu - number of players 2</Name>
       <Description>Says 2 players</Description>
@@ -757,11 +633,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>26</Id>
       <Name>Main menu - number of players 3</Name>
       <Description>Says 3 players</Description>
@@ -783,11 +654,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>27</Id>
       <Name>Main menu - number of players 4</Name>
       <Description>Says 4 players</Description>
@@ -809,11 +675,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>28</Id>
       <Name>2 Player Main Menu - 0 Versus Mode</Name>
       <Description>Says menu option using tolk</Description>
@@ -835,11 +696,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>29</Id>
       <Name>2 Player Main Menu - 1 Team Ladder</Name>
       <Description>Says menu option using tolk</Description>
@@ -861,11 +717,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>30</Id>
       <Name>2 Player Main Menu - 2 Online</Name>
       <Description>Says menu option using tolk</Description>
@@ -887,11 +738,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>31</Id>
       <Name>2 Player Main Menu - 3 Extras</Name>
       <Description>Says menu option using tolk</Description>
@@ -913,11 +759,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>32</Id>
       <Name>2 Player Main Menu - 4 Options</Name>
       <Description>Says menu option using tolk</Description>
@@ -939,11 +780,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>33</Id>
       <Name>2 Player Main Menu - 5 Exit Game</Name>
       <Description>Says menu option using tolk</Description>
@@ -965,11 +801,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>34</Id>
       <Name>3 Player Main Menu - 0 Versus Mode</Name>
       <Description>Says menu option using tolk</Description>
@@ -991,11 +822,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>35</Id>
       <Name>3 Player Main Menu - 1 Extras</Name>
       <Description>Says menu option using tolk</Description>
@@ -1017,11 +843,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>36</Id>
       <Name>3 Player Main Menu - 2 Options</Name>
       <Description>Says menu option using tolk</Description>
@@ -1043,11 +864,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>37</Id>
       <Name>3 Player Main Menu - 3 Exit Game</Name>
       <Description>Says menu option using tolk</Description>
@@ -1069,11 +885,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>38</Id>
       <Name>4 Player Main Menu - 0 Versus Mode</Name>
       <Description>Says menu option using tolk</Description>
@@ -1095,11 +906,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>39</Id>
       <Name>4 Player Main Menu - 1 Extras</Name>
       <Description>Says menu option using tolk</Description>
@@ -1121,11 +927,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>40</Id>
       <Name>4 Player Main Menu - 2 Options</Name>
       <Description>Says menu option using tolk</Description>
@@ -1147,11 +948,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>41</Id>
       <Name>4 Player Main Menu - 3 Exit Game</Name>
       <Description>Says menu option using tolk</Description>
@@ -1173,11 +969,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>42</Id>
       <Name>Character selection 0 - Scorpion</Name>
       <Description>Says character name</Description>
@@ -1199,11 +990,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>43</Id>
       <Name>Character selection 1 - Liu Kang</Name>
       <Description>Says character name</Description>
@@ -1225,11 +1011,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>44</Id>
       <Name>Character selection 2 - Kung Lao</Name>
       <Description>Says character name</Description>
@@ -1251,11 +1032,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>45</Id>
       <Name>Character selection 3 - Sub-Zero</Name>
       <Description>Says character name</Description>
@@ -1277,11 +1053,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>46</Id>
       <Name>Character selection 4 - Sindel</Name>
       <Description>Says character name</Description>
@@ -1303,11 +1074,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>47</Id>
       <Name>Character selection 5 - Ermac</Name>
       <Description>Says character name</Description>
@@ -1329,11 +1095,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>48</Id>
       <Name>Character selection 6 - Reptile</Name>
       <Description>Says character name</Description>
@@ -1355,11 +1116,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>49</Id>
       <Name>Character selection 7 - Kitana</Name>
       <Description>Says character name</Description>
@@ -1381,11 +1137,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>50</Id>
       <Name>Character selection 8 - Johnny Cage</Name>
       <Description>Says character name</Description>
@@ -1407,11 +1158,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>51</Id>
       <Name>Character selection 9 - Jade</Name>
       <Description>Says character name</Description>
@@ -1433,11 +1179,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>52</Id>
       <Name>Character selection 10 - Mileena</Name>
       <Description>Says character name</Description>
@@ -1459,11 +1200,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>53</Id>
       <Name>Character selection 11 - Nightwolf</Name>
       <Description>Says character name</Description>
@@ -1485,11 +1221,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>54</Id>
       <Name>Character selection 12 - Cyrax</Name>
       <Description>Says character name</Description>
@@ -1511,11 +1242,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>55</Id>
       <Name>Character selection 13 - Noob</Name>
       <Description>Says character name</Description>
@@ -1537,11 +1263,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>56</Id>
       <Name>Character selection 14 - Smoke</Name>
       <Description>Says character name</Description>
@@ -1563,11 +1284,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>57</Id>
       <Name>Character selection 15 - Sektor</Name>
       <Description>Says character name</Description>
@@ -1589,11 +1305,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>58</Id>
       <Name>Character selection 16 - Sonya Blade</Name>
       <Description>Says character name</Description>
@@ -1615,11 +1326,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>59</Id>
       <Name>Character selection 17 - Jax</Name>
       <Description>Says character name</Description>
@@ -1641,11 +1347,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>60</Id>
       <Name>Character selection 18 - Kano</Name>
       <Description>Says character name</Description>
@@ -1667,11 +1368,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>61</Id>
       <Name>Character selection 19 - Stryker</Name>
       <Description>Says character name</Description>
@@ -1693,11 +1389,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>62</Id>
       <Name>Character selection 20 - Shang Tsung</Name>
       <Description>Says character name</Description>
@@ -1719,11 +1410,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>63</Id>
       <Name>Character selection 21 - Baraka</Name>
       <Description>Says character name</Description>
@@ -1745,11 +1431,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>64</Id>
       <Name>Character selection 22 - Kabal</Name>
       <Description>Says character name</Description>
@@ -1771,11 +1452,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>65</Id>
       <Name>Character selection 23 - Raiden</Name>
       <Description>Says character name</Description>
@@ -1797,11 +1473,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>66</Id>
       <Name>Character selection 25 - Seheeva </Name>
       <Description>Says character name - NOTE: There is no char 24.</Description>
@@ -1823,11 +1494,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>67</Id>
       <Name>Character selection 26 - Quan Chi</Name>
       <Description>Says character name</Description>
@@ -1849,11 +1515,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>68</Id>
       <Name>Character selection 28 - Cyber Sub-Zero</Name>
       <Description>Says character name. Note: There is no char 27.</Description>
@@ -1875,11 +1536,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>69</Id>
       <Name>Character selection 29 - Skarlet</Name>
       <Description>Says character name</Description>
@@ -1901,11 +1557,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>70</Id>
       <Name>Character selection 30 - Kenshi</Name>
       <Description>Says character name</Description>
@@ -1927,11 +1578,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>71</Id>
       <Name>Character selection 31 - Rain</Name>
       <Description>Says character name</Description>
@@ -1953,11 +1599,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>72</Id>
       <Name>Character selection 32 - Freddy Krueger</Name>
       <Description>Says character name</Description>
@@ -1979,11 +1620,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>73</Id>
       <Name>Difficulty 0 - Beginner</Name>
       <Description>Says difficulty setting</Description>
@@ -2005,11 +1641,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>74</Id>
       <Name>Difficulty 1 - Easy</Name>
       <Description>Says difficulty setting</Description>
@@ -2031,11 +1662,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>75</Id>
       <Name>Difficulty 2 - Medium</Name>
       <Description>Says difficulty setting</Description>
@@ -2057,11 +1683,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>76</Id>
       <Name>Difficulty 3 - Hard</Name>
       <Description>Says difficulty setting</Description>
@@ -2083,11 +1704,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>77</Id>
       <Name>Difficulty 4 - Expert</Name>
       <Description>Says difficulty setting</Description>
@@ -2109,11 +1725,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>78</Id>
       <Name>Player 1 Game Type - Ladder</Name>
       <Description>Matches on 0</Description>
@@ -2123,7 +1734,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>84</int>
-        <int>85</int>
       </SecondaryIdList>
       <SampleFilename>Ladder</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -2136,11 +1746,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>79</Id>
       <Name>Player 1 Game Type - Tag-Ladder</Name>
       <Description>Matches on 1</Description>
@@ -2150,7 +1755,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>84</int>
-        <int>85</int>
       </SecondaryIdList>
       <SampleFilename>Tag Ladder</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -2163,11 +1767,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>80</Id>
       <Name>Player 1 Game Type - Test Your Luck</Name>
       <Description>Matches on 2</Description>
@@ -2177,7 +1776,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>84</int>
-        <int>85</int>
       </SecondaryIdList>
       <SampleFilename>Test Your Luck</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -2190,11 +1788,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>81</Id>
       <Name>Player 1 Game Type - Test Your Might</Name>
       <Description>Matches on 3</Description>
@@ -2204,7 +1797,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>84</int>
-        <int>85</int>
       </SecondaryIdList>
       <SampleFilename>Test Your Might</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -2217,11 +1809,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>82</Id>
       <Name>Player 1 Game Type - Test Your Sight</Name>
       <Description>Matches on 4</Description>
@@ -2231,7 +1818,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>84</int>
-        <int>85</int>
       </SecondaryIdList>
       <SampleFilename>Test Your Sight</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -2244,11 +1830,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>83</Id>
       <Name>Player 1 Game Type - Test Your Strike</Name>
       <Description>Matches on 5</Description>
@@ -2258,7 +1839,6 @@
       </WatchIdList>
       <SecondaryIdList>
         <int>84</int>
-        <int>85</int>
       </SecondaryIdList>
       <SampleFilename>Test Your Strike</SampleFilename>
       <SampleSpeed>1</SampleSpeed>
@@ -2271,15 +1851,10 @@
       <triggerType>Dependent</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>84</Id>
-      <Name>DEPENDENT - Player 1 is in Fight submenu </Name>
-      <Description>Value 8 is top level menu, 13 is first submenu for P1</Description>
-      <Value xsi:type="xsd:string">431</Value>
+      <Name>Menu tracker - P1 Fight menu DEPENDENT</Name>
+      <Description />
+      <Value xsi:type="xsd:string">6</Value>
       <WatchIdList>
         <int>11</int>
       </WatchIdList>
@@ -2294,40 +1869,9 @@
       <Active>true</Active>
     </Trigger>
     <Trigger>
-      <triggerType>Dependent</triggerType>
-      <allowanceType>InMenu</allowanceType>
-      <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
-      <Id>85</Id>
-      <Name>DEPENDENT - 1 Player game type selected</Name>
-      <Description>Matches on 1</Description>
-      <Value xsi:type="xsd:string">1</Value>
-      <WatchIdList>
-        <int>7</int>
-      </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
-      <SampleFilename>None</SampleFilename>
-      <SampleSpeed>1</SampleSpeed>
-      <SampleVolume>1</SampleVolume>
-      <UseTolk>false</UseTolk>
-      <IsClock>false</IsClock>
-      <Active>true</Active>
-    </Trigger>
-    <Trigger>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>86</Id>
       <Name>Player 2 - Versus Submenu options - One Vs One</Name>
       <Description />
@@ -2347,40 +1891,9 @@
       <Active>true</Active>
     </Trigger>
     <Trigger>
-      <triggerType>Dependent</triggerType>
-      <allowanceType>InMenu</allowanceType>
-      <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
-      <Id>87</Id>
-      <Name>DEPENDENT - Player 2 is in Versus submenu</Name>
-      <Description>Matches on 435</Description>
-      <Value xsi:type="xsd:string">437</Value>
-      <WatchIdList>
-        <int>11</int>
-      </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
-      <SampleFilename>None</SampleFilename>
-      <SampleSpeed>1</SampleSpeed>
-      <SampleVolume>1</SampleVolume>
-      <UseTolk>false</UseTolk>
-      <IsClock>false</IsClock>
-      <Active>true</Active>
-    </Trigger>
-    <Trigger>
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>88</Id>
       <Name>Player 2 - Versus Submenu options - Two Vs Two</Name>
       <Description />
@@ -2403,11 +1916,6 @@
       <triggerType>Normal</triggerType>
       <allowanceType>InMenu</allowanceType>
       <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
       <Id>89</Id>
       <Name>Player 2 - Versus Submenu options - Test Your Luck</Name>
       <Description />
@@ -2426,33 +1934,8 @@
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>
-    <Trigger>
-      <triggerType>Dependent</triggerType>
-      <allowanceType>InMenu</allowanceType>
-      <comparisonType>EqualTo</comparisonType>
-      <hotkey>
-        <key>0</key>
-        <modifierCode>0</modifierCode>
-      </hotkey>
-      <hotkeyActive>false</hotkeyActive>
-      <Id>90</Id>
-      <Name>DEPENDENT - 2 Players game type selected</Name>
-      <Description>Matches on 2</Description>
-      <Value xsi:type="xsd:string">2</Value>
-      <WatchIdList>
-        <int>7</int>
-      </WatchIdList>
-      <SecondaryIdList>
-        <int>-1</int>
-      </SecondaryIdList>
-      <SampleFilename>None</SampleFilename>
-      <SampleSpeed>1</SampleSpeed>
-      <SampleVolume>1</SampleVolume>
-      <UseTolk>false</UseTolk>
-      <IsClock>false</IsClock>
-      <Active>true</Active>
-    </Trigger>
   </triggerList>
+  <hotkeyList />
   <Description>Mortal Kombat 9 - Al Lansley 2017-10-14
 
 This config uses sample-based output for health, clock and gauge values - as well as tolk-based output for menu sonification.</Description>
@@ -2460,7 +1943,7 @@ This config uses sample-based output for health, clock and gauge values - as wel
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>
   <ClockMax>90</ClockMax>
-  <ConfigDirectory>Mortal Kombat Komplete Edition (Steam - Build ID 344915)\</ConfigDirectory>
+  <ConfigDirectory>Mortal Kombat Komplete Edition (Steam - Build ID 344915)</ConfigDirectory>
   <NormalTriggerMasterVolume>1</NormalTriggerMasterVolume>
   <ContinuousTriggerMasterVolume>1</ContinuousTriggerMasterVolume>
 </GameConfig>

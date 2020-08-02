@@ -40,7 +40,7 @@ namespace au.edu.federation.SoniFight
         public const int FIND_PROCESS_SLEEP_MS = 500;
 
         // The version of GameConfig this is. This may change in the future.
-        public int GameConfigFileVersion = 1;
+        public int GameConfigFileVersion = 2;
 
         // Description of this config
         private string description = "GameConfig description";
@@ -100,6 +100,11 @@ namespace au.edu.federation.SoniFight
         // List of triggers (all triggers to be saved)
         public List<Trigger> triggerList = new List<Trigger>();
 
+        // List of hotkeys we create (before we register them) when parsing a config        
+        public List<Hotkey> hotkeyList = new List<Hotkey>();
+        //public List<KeyValuePair<int, Hotkey>> hotkeyKVPList = new List<KeyValuePair<int, Hotkey>>();
+        //public Dictionary<int, Hotkey> hotkeyDictionary = new Dictionary<int, Hotkey>();
+
         // Trigger list broken up into categories for looping efficiency. These are used internally but not saved to XML.
         [XmlIgnore]
         public List<Trigger> menuTriggerList = new List<Trigger>();
@@ -109,10 +114,6 @@ namespace au.edu.federation.SoniFight
         public List<Trigger> continuousTriggerList = new List<Trigger>();
         [XmlIgnore]
         public List<Trigger> modifierTriggerList = new List<Trigger>();
-
-        // List of hotkeys we create (before we register them) when parsing a config
-        [XmlIgnore]
-        public List<Hotkey> hotkeyList = new List<Hotkey>();
 
         // The actual process attached to. This is used internally but not saved to XML.
         [XmlIgnore]
@@ -195,15 +196,50 @@ namespace au.edu.federation.SoniFight
         // Method to check if we're still connected to the game process
         //public static bool ConnectedToConfigProcess() { return Process.GetProcessesByName(processName).Length > 0 ? true : false; }
 
+        // Return a Trigger with a given ID from the triggerList
+        public Trigger getTriggerWithID(int id)
+        {
+            Trigger tmp = null;
+            foreach (Trigger t in triggerList)
+            {
+                if (t.Id == id)
+                {
+                    tmp = t;
+                    break;
+                }
+            }
+            return tmp;
+        }
+
+        // Return a Watch with a given ID from the watchList
+        public Watch getWatchWithID(int id)
+        {
+            Watch tmp = null;
+            foreach (Watch w in watchList)
+            {
+                if (w.Id == id)
+                {
+                    tmp = w;
+                    break;
+                }
+            }
+            return tmp;
+        }
+
         // DoWork method for the process connection background worker
         public void connectToProcess(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            //Console.WriteLine("About to enter process connection while loop!");
+            Console.WriteLine("About to connect to process...");
+            Console.WriteLine("Connected? " + Program.connectedToProcess);
+            Console.WriteLine("Cancellation pending? " + processConnectionBGW.CancellationPending);
+
+            bool tmp = (!Program.connectedToProcess && !processConnectionBGW.CancellationPending);
+            Console.WriteLine("Should enter while loop? " + tmp);
 
             // Not connected and we're not cancelling? Then using the background worker...
             while (!Program.connectedToProcess && !processConnectionBGW.CancellationPending)
             {
-                //Console.WriteLine("In while loop!");
+                Console.WriteLine("In connect to process loop!");
 
                 // Find all instances of the named process running on the local computer.
                 // This will return an empty array if the process isn't running.
@@ -217,10 +253,7 @@ namespace au.edu.federation.SoniFight
                 }
                 else // Found the process by name?
                 {
-                    Console.WriteLine("Found process!");
-
-                    // Flip the flag so we can stop trying to connect
-                    Program.connectedToProcess = true;
+                    Console.WriteLine("Found process!");                   
 
                     // Get the process handle
                     gameProcess = processArray[0];
@@ -271,77 +304,94 @@ namespace au.edu.federation.SoniFight
                         configDirectory += "\\";
                     }
 
-                    // If we were previously connected to the process but lost connection so now we're attempting to reconnect then we don't need do all the trigger setup & sample loading again
-                    if (!Program.reconnectingToProcess)
+                    Console.WriteLine("About to load samples and set up triggers");
+
+                    // Clear existing trigger lists before rebuilding them
+                    //normalTriggerList.Clear();
+                    //modifierTriggerList.Clear();
+                    //continuousTriggerList.Clear();
+
+                    // Load all samples and build up trigger lists & hotkey list
+                    foreach (Trigger t in triggerList)
                     {
-                        Console.WriteLine("About to load samples and set up triggers");
+                        // Construct the sample key used for the dictionary
+                        t.SampleKey = ".\\Configs\\" + configDirectory + t.SampleFilename;
 
-                        // Load all samples and build up trigger lists & hotkey list
-                        foreach (Trigger t in triggerList)
+                        // Note: Yes, all the below if conditions could be combined into one. But it's simpler to understand what's going on if they're not.
+
+                        // We only load samples for active triggers which do not use tolk, are not the clock and are not modifier or dependent triggers.
+                        if (t.Active && !t.UseTolk && !t.IsClock && (t.triggerType == Trigger.TriggerType.Normal || t.triggerType == Trigger.TriggerType.Continuous))
                         {
-                            // Construct the sample key used for the dictionary
-                            t.SampleKey = ".\\Configs\\" + configDirectory + t.SampleFilename;
+                            // NOTE: The sample is loaded into the specific engine used for playback based on the trigger type
+                            Program.irrKlang.LoadSample(t);
+                        }
 
-                            // Note: Yes, all the below if conditions could be combined into one. But it's simpler to understand what's going on if they're not.
-
-                            // We only load samples for active triggers which do not use tolk, are not the clock and are not modifier or dependent triggers.
-                            if (t.Active && !t.UseTolk && !t.IsClock && (t.triggerType == Trigger.TriggerType.Normal || t.triggerType == Trigger.TriggerType.Continuous))
+                        // Only add active triggers to these separated lists, and don't add the clock
+                        if (t.Active && !t.IsClock)
+                        {
+                            if (t.triggerType == Trigger.TriggerType.Normal || t.triggerType == Trigger.TriggerType.Dependent)
                             {
-                                // NOTE: The sample is loaded into the specific engine used for playback based on the trigger type
-                                Program.irrKlang.LoadSample(t);
+                                // This list contains ALL the normal triggers and dependent triggers
+                                normalTriggerList.Add(t);
                             }
-
-                            // Only add active triggers to these separated lists, and don't add the clock
-                            if (t.Active && !t.IsClock)
+                            else if (t.triggerType == Trigger.TriggerType.Continuous)
                             {
-                                if (t.triggerType == Trigger.TriggerType.Normal || t.triggerType == Trigger.TriggerType.Dependent)
-                                {
-                                    // This list contains ALL the normal triggers and dependent triggers
-                                    normalTriggerList.Add(t);
-                                }
-                                else if (t.triggerType == Trigger.TriggerType.Continuous)
-                                {
-                                    continuousTriggerList.Add(t);
-                                }
-                                else // if (t.triggerType == Trigger.TriggerType.Modifier)
-                                {
-                                    modifierTriggerList.Add(t);
-                                }
+                                continuousTriggerList.Add(t);
                             }
-
-                            // TODO: Fix hotkeys and re-enable
-                            /*
-                            // Trigger has a hotkey? Add it to the hotkey list.
-                            if (t.hotkeyActive)
+                            else // if (t.triggerType == Trigger.TriggerType.Modifier)
                             {
-                                // Set the id value of the trigger and add it to the list of hotkeys to register
-                                t.hotkey.Id = t.Id;
-                                hotkeyList.Add(t.hotkey);
+                                modifierTriggerList.Add(t);
                             }
-                            */
+                        }
 
-                        } // End of if not reconnecting to progress section 
+                        // TODO: Fix hotkeys and re-enable
+                        /*
+                        // Trigger has a hotkey? Add it to the hotkey list.
+                        if (t.hotkeyActive)
+                        {
+                            // Set the id value of the trigger and add it to the list of hotkeys to register
+                            t.hotkey.Id = t.Id;
+                            hotkeyList.Add(t.hotkey);
+                        }
+                        */
 
-                        // Set our process grabbing background worker to cancel
-                        e.Cancel = true;
+                    } // End of building up trigger list
 
-                        // This sets cancellation to pending, which we handle in the associated doWork method
-                        // to actually perform the cancellation.
-                        processConnectionBGW.CancelAsync();
+                    // Set our process grabbing background worker to cancel
+                    e.Cancel = true;
 
-                    } // End of found game process section
+                    // This sets cancellation to pending, which we handle in the associated doWork method
+                    // to actually perform the cancellation.
+                    //processConnectionBGW.CancelAsync();
+
+                    // Flip the flag so we can stop trying to connect
+                    Program.connectedToProcess = true;
 
                 } // End of found procecess by name block
 
                 // Now we're connected we're no longer reconnecting, so set flag appropriately
-                Program.reconnectingToProcess = false;
+                //Program.reconnectingToProcess = false;
 
                 // Only poll in our background worker to find the process twice per second
                 Thread.Sleep(FIND_PROCESS_SLEEP_MS);
 
-            } // End of while loop
+            } // End of while !Program.connectedToProcess && !processConnectionBGW.CancellationPending loop
 
-            Console.WriteLine("Left while loop!");
+            // Dispose of our process connection worker. TODO: Is this a potential race condition with cancelling it as per above?!?
+            //processConnectionBGW.Dispose();
+
+            Console.WriteLine("Left connectToProcess worker function.");
+            Console.WriteLine("Connected? " + Program.connectedToProcess);
+            Console.WriteLine("Cancellation pending? " + processConnectionBGW.CancellationPending);
+
+
+            
+            // If we found the process and are not just cancelling then jump into
+            if (Program.connectedToProcess)
+            {
+                Console.WriteLine("About to jump into perform sonification BGW...");
+                Program.sonificationBGW.RunWorkerAsync();
+            }
         }
 
         // Method to activate this GameConfig
@@ -355,7 +405,7 @@ namespace au.edu.federation.SoniFight
             processConnectionBGW = new BackgroundWorker();
             processConnectionBGW.DoWork += connectToProcess;
             processConnectionBGW.WorkerReportsProgress = false;
-            processConnectionBGW.WorkerSupportsCancellation = true;
+            processConnectionBGW.WorkerSupportsCancellation = true;            
             processConnectionBGW.RunWorkerAsync();
 
             return true;
@@ -664,8 +714,19 @@ namespace au.edu.federation.SoniFight
                 return false;
             }
 
-            // Made it this far? Then indicate that we're hot to trot...            
-            return true;
+            // Ensure all hotkeys validate
+            foreach (Hotkey h in hotkeyList)
+            {
+                if (!h.IsValid())
+                {
+                    MessageBox.Show("Validation Error: Hotkey is invalid - save failed. Hotkey details: " + h.ToString());
+                    return false;
+                }
+            }
+
+
+                // Made it this far? Then indicate that we're hot to trot...            
+                return true;
 
         } // End of validate method
 
