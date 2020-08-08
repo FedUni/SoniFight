@@ -1,13 +1,13 @@
-﻿using au.edu.federation.SoniFight.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+
+using au.edu.federation.SoniFight.Properties;
 
 namespace au.edu.federation.SoniFight
 {
@@ -38,6 +38,11 @@ namespace au.edu.federation.SoniFight
 
         // How long to wait in milliseconds before re-polling the process list to find the process we're interested in.
         public const int FIND_PROCESS_SLEEP_MS = 500;
+
+        public int tolkOutputDecimalPlaces = 2;
+
+        [XmlIgnore]
+        public string tolkOutputFormattingString; // This be made into "{0:.#}" where the number of hashes in the string is the above tolkOutputDecimalPlaces value
 
         // The version of GameConfig this is. This may change in the future.
         public int GameConfigFileVersion = 2;
@@ -183,10 +188,18 @@ namespace au.edu.federation.SoniFight
         public GameConfig()
         {
             processConnectionBGW.WorkerSupportsCancellation = true;
-        }
 
-        // Background worker so we can attempt to connect to a game process without locking up the UI
-        [XmlIgnore]
+            // Generate our decimal places formatting string, for example, "{0:.##}" will output up to 2 decimal places
+            tolkOutputFormattingString = "{0:.";
+            for (int i = 0; i < tolkOutputDecimalPlaces; ++i)
+            {
+                tolkOutputFormattingString += "#";
+            }
+            tolkOutputFormattingString += "}";
+    }
+
+    // Background worker so we can attempt to connect to a game process without locking up the UI
+    [XmlIgnore]
         public static BackgroundWorker processConnectionBGW = new BackgroundWorker();
 
         // The array of processes returned when we ask the system for them (used to try to find the specific process we've been asked for)

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
-using System.Globalization;
 
 using DavyKager; // Required for tolk screenreader integration
+
 using au.edu.federation.SoniFight.Properties;
-using System.Diagnostics;
 
 namespace au.edu.federation.SoniFight
 {
@@ -773,7 +774,7 @@ namespace au.edu.federation.SoniFight
                                         if (screenReaderActive)
                                         {
                                             // Substitute all curly braces and braces with number with the watch values
-                                            string s = Utils.substituteWatchValuesInString(t, t.SampleFilename);
+                                            string s = Utils.substituteWatchValuesInString(t, t.SampleFilename, MainForm.gameConfig.ProcessHandle, MainForm.gameConfig.ProcessBaseAddress);
                                             Console.WriteLine(DateTime.Now + " Trigger activated " + t.Id + " " + Resources.ResourceManager.GetString("sayingTolkString") + s);
 
                                             // ...then say the sample filename text. Final false means queue not interrupt anything currently being spoken.
@@ -807,7 +808,7 @@ namespace au.edu.federation.SoniFight
                                         if (screenReaderActive)
                                         {
                                             // Substitute all curly braces and braces with number with the watch values
-                                            string s = Utils.substituteWatchValuesInString(t, t.SampleFilename);
+                                            string s = Utils.substituteWatchValuesInString(t, t.SampleFilename, MainForm.gameConfig.ProcessHandle, MainForm.gameConfig.ProcessBaseAddress);
                                             Console.WriteLine(DateTime.Now + " Trigger activated " + t.Id + " " + Resources.ResourceManager.GetString("sayingTolkString") + s);
 
 

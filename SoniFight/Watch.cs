@@ -27,24 +27,7 @@ namespace au.edu.federation.SoniFight
             ByteType
         }
 
-        // Default constructor req'd for XML serialization
-        public Watch() { }
-
-        // Copy constructor which creates a deep-copy of an existing watch
-        public Watch(Watch source)
-        {
-            name = source.name + Resources.ResourceManager.GetString("cloneString");
-            description = source.description;
-            valueType = source.valueType;
-            active = source.active;
-
-            // Deep copy the pointer list
-            pointerList = new List<String>();
-            foreach (string s in source.pointerList)
-            {
-                pointerList.Add(s);
-            }
-        }        
+        // ---------- Properties ----------        
 
         // What type of value this watch will read - default is int
         public ValueType valueType = ValueType.IntType;
@@ -98,7 +81,28 @@ namespace au.edu.federation.SoniFight
         {
             get { return active;  }
             set { active = value; }
-        }        
+        }
+
+        // ---------- Constructors ----------
+
+        // Default constructor req'd for XML serialization
+        public Watch() { }
+
+        // Copy constructor which creates a deep-copy of an existing watch
+        public Watch(Watch source)
+        {
+            name = source.name + Resources.ResourceManager.GetString("cloneString");
+            description = source.description;
+            valueType = source.valueType;
+            active = source.active;
+
+            // Deep copy the pointer list
+            pointerList = new List<String>();
+            foreach (string s in source.pointerList)
+            {
+                pointerList.Add(s);
+            }
+        }
 
         // ---------- Methods ----------
 
@@ -144,6 +148,27 @@ namespace au.edu.federation.SoniFight
             } // End of switch
 
         } // End of getDynamicValueFromType method
+
+        public void evaluateAndUpdateDestinationAddress(IntPtr processHandle, IntPtr baseAddress)
+        {
+            destinationAddress = Utils.findFeatureAddress(processHandle, baseAddress, this.PointerList);
+        }
+
+        // Method to return a string description of a Watch
+        public override string ToString()
+        {   
+            string desc = "Watch: " + Id;
+            if (active) { desc += " (Enabled) "; } else { desc += " (Disabled) "; }
+            desc += description;
+            desc += " Destination address: ";
+            desc += destinationAddress;
+            desc += " Type: ";
+            desc += valueType;
+            desc += " Value: ";
+            desc += getDynamicValueFromType();
+
+            return desc;
+        }
 
     } // End of Watch class
 

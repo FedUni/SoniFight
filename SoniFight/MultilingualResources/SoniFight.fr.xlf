@@ -673,12 +673,12 @@
       </group>
     </body>
   </file>
-  <file datatype="xml" source-language="en" target-language="fr" original="SONIFIGHT/FORM1.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+  <file datatype="xml" source-language="en" target-language="fr" original="SONIFIGHT/MAINFORM.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6810.0" tool-company="Microsoft" />
     </header>
     <body>
-      <group id="SONIFIGHT/FORM1.RESX" datatype="resx">
+      <group id="SONIFIGHT/MAINFORM.RESX" datatype="resx">
         <trans-unit id="irrKlangPictureBox.Image" translate="yes" extype="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64" xml:space="preserve">
           <source>
         iVBORw0KGgoAAAANSUhEUgAAAL4AAAA3CAYAAACyy/CNAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
@@ -845,7 +845,7 @@
         EcIv7DJiqqNW6i692OsJuCRgZVkTxgVhsoUVYOj0k83E5QcuIStxvHPBnWFyywio7q+v/KWAUeRia/t/
         Mo4qnnQSEhL017lPMfL8Qz/hTGTifx0nFVMVTzqO4/w/qV57/bOP4/kAAAAASUVORK5CYII=
 </source>
-          <target state="new">
+          <target state="needs-review-translation">
         iVBORw0KGgoAAAANSUhEUgAAAL4AAAA3CAYAAACyy/CNAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
         GAAALhgBKqonIAAAAAd0SU1FB9cEGBIvInscURAAACW8SURBVHhe7Z0HdFXF1seP5emziwoWbM/engUR
         xQo2rAioqEiTIlUEQu+999577733TigSSoCEEBJIofeirvXtb/8mzPXcc08gQSM+Tdb6r3vOmT39v/fs
@@ -1014,7 +1014,6 @@
         <trans-unit id="irrKlangPictureBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>663, 451</source>
           <target state="needs-review-translation">663, 451</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="irrKlangPictureBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>190, 55</source>
@@ -1466,6 +1465,270 @@
           <source>8</source>
           <target state="needs-review-translation">8</target>
         </trans-unit>
+        <trans-unit id="tabControl.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="tabControl.AccessibleName" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="mainTabPage.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>4, 22</source>
+          <target state="needs-review-translation">4, 22</target>
+        </trans-unit>
+        <trans-unit id="mainTabPage.Padding" translate="yes" extype="System.Windows.Forms.Padding, System.Windows.Forms" xml:space="preserve">
+          <source>3, 3, 3, 3</source>
+          <target state="needs-review-translation">3, 3, 3, 3</target>
+        </trans-unit>
+        <trans-unit id="mainTabPage.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>866, 515</source>
+          <target state="needs-review-translation">866, 515</target>
+        </trans-unit>
+        <trans-unit id="mainTabPage.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>0</source>
+          <target state="needs-review-translation">0</target>
+        </trans-unit>
+        <trans-unit id="mainTabPage.Text" translate="yes" xml:space="preserve">
+          <source>Main</source>
+          <target state="new">Main</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
+          <source>Microsoft Sans Serif, 12pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>8, 447</source>
+          <target state="needs-review-translation">8, 447</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>332, 28</source>
+          <target state="needs-review-translation">332, 28</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>9</source>
+          <target state="needs-review-translation">9</target>
+        </trans-unit>
+        <trans-unit id="addHotkeyButton.Text" translate="yes" xml:space="preserve">
+          <source>Add Hotkey</source>
+          <target state="new">Add Hotkey</target>
+        </trans-unit>
+        <trans-unit id="gcPanel.LayoutSettings" translate="yes" extype="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms" xml:space="preserve">
+          <source><bpt id="1">&lt;TableLayoutSettings&gt;</bpt><bpt id="2">&lt;Controls &gt;</bpt><ept id="2">&lt;/Controls&gt;</ept><bpt id="3">&lt;Columns Styles="Percent,50,Percent,50"&gt;</bpt><ept id="3">&lt;/Columns&gt;</ept><bpt id="4">&lt;Rows Styles="Percent,50"&gt;</bpt><ept id="4">&lt;/Rows&gt;</ept><ept id="1">&lt;/TableLayoutSettings&gt;</ept></source>
+          <target state="needs-review-translation"><bpt id="1">&lt;TableLayoutSettings&gt;</bpt><bpt id="2">&lt;Controls &gt;</bpt><ept id="2">&lt;/Controls&gt;</ept><bpt id="3">&lt;Columns Styles="Percent,50,Percent,50"&gt;</bpt><ept id="3">&lt;/Columns&gt;</ept><bpt id="4">&lt;Rows Styles="Percent,50"&gt;</bpt><ept id="4">&lt;/Rows&gt;</ept><ept id="1">&lt;/TableLayoutSettings&gt;</ept></target>
+        </trans-unit>
+        <trans-unit id="holderPanel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>352, 34</source>
+          <target state="needs-review-translation">352, 34</target>
+        </trans-unit>
+        <trans-unit id="holderPanel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>508, 475</source>
+          <target state="needs-review-translation">508, 475</target>
+        </trans-unit>
+        <trans-unit id="holderPanel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>8</source>
+          <target state="needs-review-translation">8</target>
+        </trans-unit>
+        <trans-unit id="saveConfigButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
+          <source>Microsoft Sans Serif, 12pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
+        </trans-unit>
+        <trans-unit id="saveConfigButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>8, 481</source>
+          <target state="needs-review-translation">8, 481</target>
+        </trans-unit>
+        <trans-unit id="saveConfigButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>333, 28</source>
+          <target state="needs-review-translation">333, 28</target>
+        </trans-unit>
+        <trans-unit id="saveConfigButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>7</source>
+          <target state="needs-review-translation">7</target>
+        </trans-unit>
+        <trans-unit id="saveConfigButton.Text" translate="yes" xml:space="preserve">
+          <source>Save Game Configuration</source>
+          <target state="new">Save Game Configuration</target>
+        </trans-unit>
+        <trans-unit id="cloneTriggerButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
+          <source>Microsoft Sans Serif, 12pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
+        </trans-unit>
+        <trans-unit id="cloneTriggerButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>9, 413</source>
+          <target state="needs-review-translation">9, 413</target>
+        </trans-unit>
+        <trans-unit id="cloneTriggerButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>332, 28</source>
+          <target state="needs-review-translation">332, 28</target>
+        </trans-unit>
+        <trans-unit id="cloneTriggerButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>6</source>
+          <target state="needs-review-translation">6</target>
+        </trans-unit>
+        <trans-unit id="cloneTriggerButton.Text" translate="yes" xml:space="preserve">
+          <source>Clone Current Trigger</source>
+          <target state="new">Clone Current Trigger</target>
+        </trans-unit>
+        <trans-unit id="addTriggerButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
+          <source>Microsoft Sans Serif, 12pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
+        </trans-unit>
+        <trans-unit id="addTriggerButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>8, 379</source>
+          <target state="needs-review-translation">8, 379</target>
+        </trans-unit>
+        <trans-unit id="addTriggerButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>333, 28</source>
+          <target state="needs-review-translation">333, 28</target>
+        </trans-unit>
+        <trans-unit id="addTriggerButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>5</source>
+          <target state="needs-review-translation">5</target>
+        </trans-unit>
+        <trans-unit id="addTriggerButton.Text" translate="yes" xml:space="preserve">
+          <source>Add Trigger</source>
+          <target state="new">Add Trigger</target>
+        </trans-unit>
+        <trans-unit id="cloneWatchButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
+          <source>Microsoft Sans Serif, 12pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
+        </trans-unit>
+        <trans-unit id="cloneWatchButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>8, 345</source>
+          <target state="needs-review-translation">8, 345</target>
+        </trans-unit>
+        <trans-unit id="cloneWatchButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>333, 28</source>
+          <target state="needs-review-translation">333, 28</target>
+        </trans-unit>
+        <trans-unit id="cloneWatchButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>4</source>
+          <target state="needs-review-translation">4</target>
+        </trans-unit>
+        <trans-unit id="cloneWatchButton.Text" translate="yes" xml:space="preserve">
+          <source>Clone Current Watch</source>
+          <target state="new">Clone Current Watch</target>
+        </trans-unit>
+        <trans-unit id="addWatchButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
+          <source>Microsoft Sans Serif, 12pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
+        </trans-unit>
+        <trans-unit id="addWatchButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>8, 311</source>
+          <target state="needs-review-translation">8, 311</target>
+        </trans-unit>
+        <trans-unit id="addWatchButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>333, 28</source>
+          <target state="needs-review-translation">333, 28</target>
+        </trans-unit>
+        <trans-unit id="addWatchButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>3</source>
+          <target state="needs-review-translation">3</target>
+        </trans-unit>
+        <trans-unit id="addWatchButton.Text" translate="yes" xml:space="preserve">
+          <source>Add Watch</source>
+          <target state="new">Add Watch</target>
+        </trans-unit>
+        <trans-unit id="currentUILabel.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="currentUILabel.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
+          <source>Microsoft Sans Serif, 14pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 14pt</target>
+        </trans-unit>
+        <trans-unit id="currentUILabel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>348, 6</source>
+          <target state="needs-review-translation">348, 6</target>
+        </trans-unit>
+        <trans-unit id="currentUILabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>132, 24</source>
+          <target state="needs-review-translation">132, 24</target>
+        </trans-unit>
+        <trans-unit id="currentUILabel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>1</source>
+          <target state="needs-review-translation">1</target>
+        </trans-unit>
+        <trans-unit id="currentUILabel.Text" translate="yes" xml:space="preserve">
+          <source>currentUILabel</source>
+          <target state="new">currentUILabel</target>
+        </trans-unit>
+        <trans-unit id="gcTreeView.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>8, 6</source>
+          <target state="needs-review-translation">8, 6</target>
+        </trans-unit>
+        <trans-unit id="gcTreeView.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>333, 299</source>
+          <target state="needs-review-translation">333, 299</target>
+        </trans-unit>
+        <trans-unit id="gcTreeView.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>0</source>
+          <target state="needs-review-translation">0</target>
+        </trans-unit>
+        <trans-unit id="editTabPage.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>4, 22</source>
+          <target state="needs-review-translation">4, 22</target>
+        </trans-unit>
+        <trans-unit id="editTabPage.Padding" translate="yes" extype="System.Windows.Forms.Padding, System.Windows.Forms" xml:space="preserve">
+          <source>3, 3, 3, 3</source>
+          <target state="needs-review-translation">3, 3, 3, 3</target>
+        </trans-unit>
+        <trans-unit id="editTabPage.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>866, 515</source>
+          <target state="needs-review-translation">866, 515</target>
+        </trans-unit>
+        <trans-unit id="editTabPage.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>1</source>
+          <target state="needs-review-translation">1</target>
+        </trans-unit>
+        <trans-unit id="editTabPage.Text" translate="yes" xml:space="preserve">
+          <source>Edit Config</source>
+          <target state="new">Edit Config</target>
+        </trans-unit>
+        <trans-unit id="tabControl.Dock" translate="yes" extype="System.Windows.Forms.DockStyle, System.Windows.Forms" xml:space="preserve">
+          <source>Fill</source>
+          <target state="needs-review-translation">Fill</target>
+        </trans-unit>
+        <trans-unit id="tabControl.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>0, 0</source>
+          <target state="needs-review-translation">0, 0</target>
+        </trans-unit>
+        <trans-unit id="tabControl.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>874, 541</source>
+          <target state="needs-review-translation">874, 541</target>
+        </trans-unit>
+        <trans-unit id="tabControl.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>0</source>
+          <target state="needs-review-translation">0</target>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Read Config Notes Button</source>
+          <target state="new">Read Config Notes Button</target>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
+          <source>Microsoft Sans Serif, 14.25pt</source>
+          <target state="needs-review-translation">Microsoft Sans Serif, 14.25pt</target>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>394, 93</source>
+          <target state="needs-review-translation">394, 93</target>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>288, 38</source>
+          <target state="needs-review-translation">288, 38</target>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>2</source>
+          <target state="needs-review-translation">2</target>
+        </trans-unit>
+        <trans-unit id="readConfigNotesButton.Text" translate="yes" xml:space="preserve">
+          <source>Read Config Notes</source>
+          <target state="new">Read Config Notes</target>
+        </trans-unit>
         <trans-unit id="pictureBox1.Image" translate="yes" extype="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64" xml:space="preserve">
           <source>
         iVBORw0KGgoAAAANSUhEUgAAAVYAAAEdCAYAAABXME8sAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
@@ -1657,209 +1920,222 @@
         AAAASUVORK5CYII=
 </source>
           <target state="needs-review-translation">
-        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
-        7LD/B1tlBS+iIKb9AAAAAElFTkSuQmCC
+        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
+        AAAASUVORK5CYII=
 </target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="pictureBox1.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
         </trans-unit>
         <trans-unit id="pictureBox1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>394, 140</source>
-          <target state="needs-review-translation">460, 141</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">394, 140</target>
         </trans-unit>
         <trans-unit id="pictureBox1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>459, 296</source>
-          <target state="needs-review-translation">342, 296</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">459, 296</target>
+        </trans-unit>
+        <trans-unit id="pictureBox1.SizeMode" translate="yes" extype="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms" xml:space="preserve">
+          <source>CenterImage</source>
+          <target state="needs-review-translation">CenterImage</target>
         </trans-unit>
         <trans-unit id="pictureBox1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>9</source>
           <target state="needs-review-translation">9</target>
+        </trans-unit>
+        <trans-unit id="quitButton.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="quitButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Quit Button</source>
+          <target state="new">Quit Button</target>
         </trans-unit>
         <trans-unit id="quitButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
           <source>Microsoft Sans Serif, 14pt</source>
@@ -1875,12 +2151,19 @@
         </trans-unit>
         <trans-unit id="quitButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>7</source>
-          <target state="needs-review-translation">6</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">7</target>
         </trans-unit>
         <trans-unit id="quitButton.Text" translate="yes" xml:space="preserve">
           <source>Quit</source>
-          <target state="translated">Sortie</target>
+          <target state="new">Quit</target>
+        </trans-unit>
+        <trans-unit id="createConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="createConfigButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Create New Config Button</source>
+          <target state="new">Create New Config Button</target>
         </trans-unit>
         <trans-unit id="createConfigButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
           <source>Microsoft Sans Serif, 14pt</source>
@@ -1896,12 +2179,19 @@
         </trans-unit>
         <trans-unit id="createConfigButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>6</source>
-          <target state="needs-review-translation">5</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">6</target>
         </trans-unit>
         <trans-unit id="createConfigButton.Text" translate="yes" xml:space="preserve">
           <source>Create New Config</source>
-          <target state="translated">Créer une nouvelle configuration</target>
+          <target state="new">Create New Config</target>
+        </trans-unit>
+        <trans-unit id="stopConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="stopConfigButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Stop Running Config Button</source>
+          <target state="new">Stop Running Config Button</target>
         </trans-unit>
         <trans-unit id="stopConfigButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
           <source>Microsoft Sans Serif, 14pt</source>
@@ -1921,12 +2211,19 @@
         </trans-unit>
         <trans-unit id="stopConfigButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>5</source>
-          <target state="needs-review-translation">4</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">5</target>
         </trans-unit>
         <trans-unit id="stopConfigButton.Text" translate="yes" xml:space="preserve">
           <source>Stop Running Config</source>
-          <target state="translated">Arrêter d'exécuter la configuration</target>
+          <target state="new">Stop Running Config</target>
+        </trans-unit>
+        <trans-unit id="runConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="runConfigButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Run Selected Config Button</source>
+          <target state="new">Run Selected Config Button</target>
         </trans-unit>
         <trans-unit id="runConfigButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
           <source>Microsoft Sans Serif, 14pt</source>
@@ -1942,12 +2239,19 @@
         </trans-unit>
         <trans-unit id="runConfigButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>4</source>
-          <target state="needs-review-translation">3</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">4</target>
         </trans-unit>
         <trans-unit id="runConfigButton.Text" translate="yes" xml:space="preserve">
           <source>Run Selected Config</source>
-          <target state="translated">Exécuter la configuration sélectionnée</target>
+          <target state="new">Run Selected Config</target>
+        </trans-unit>
+        <trans-unit id="refreshButton.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="refreshButton.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Refresh Configs Button</source>
+          <target state="new">Refresh Configs Button</target>
         </trans-unit>
         <trans-unit id="refreshButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
           <source>Microsoft Sans Serif, 14pt</source>
@@ -1955,22 +2259,27 @@
         </trans-unit>
         <trans-unit id="refreshButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>703, 93</source>
-          <target state="needs-review-translation">721, 101</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">703, 93</target>
         </trans-unit>
         <trans-unit id="refreshButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>150, 38</source>
-          <target state="needs-review-translation">132, 38</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">150, 38</target>
         </trans-unit>
         <trans-unit id="refreshButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>3</source>
-          <target state="needs-review-translation">2</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">3</target>
         </trans-unit>
         <trans-unit id="refreshButton.Text" translate="yes" xml:space="preserve">
           <source>Refresh</source>
-          <target state="translated">Rafraîchir</target>
+          <target state="new">Refresh</target>
+        </trans-unit>
+        <trans-unit id="configsComboBox.AccessibleDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="configsComboBox.AccessibleName" translate="yes" xml:space="preserve">
+          <source>Config Dropdown</source>
+          <target state="new">Config Dropdown</target>
         </trans-unit>
         <trans-unit id="configsComboBox.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
           <source>Microsoft Sans Serif, 14pt</source>
@@ -1978,13 +2287,11 @@
         </trans-unit>
         <trans-unit id="configsComboBox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>10, 52</source>
-          <target state="needs-review-translation">10, 63</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">10, 52</target>
         </trans-unit>
         <trans-unit id="configsComboBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>843, 32</source>
           <target state="needs-review-translation">843, 32</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="configsComboBox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>1</source>
@@ -2005,251 +2312,30 @@
         <trans-unit id="appTitleLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>860, 46</source>
           <target state="needs-review-translation">860, 46</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="appTitleLabel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>0</source>
           <target state="needs-review-translation">0</target>
         </trans-unit>
-        <trans-unit id="appTitleLabel.Text" translate="no" xml:space="preserve">
+        <trans-unit id="appTitleLabel.Text" translate="yes" xml:space="preserve">
           <source>SoniFight v1.2</source>
-          <target state="final">SoniFight v1.2</target>
+          <target state="new">SoniFight v1.2</target>
         </trans-unit>
         <trans-unit id="appTitleLabel.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
           <source>MiddleCenter</source>
           <target state="needs-review-translation">MiddleCenter</target>
         </trans-unit>
-        <trans-unit id="mainTabPage.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>4, 22</source>
-          <target state="needs-review-translation">4, 22</target>
-        </trans-unit>
-        <trans-unit id="mainTabPage.Padding" translate="yes" extype="System.Windows.Forms.Padding, System.Windows.Forms" xml:space="preserve">
-          <source>3, 3, 3, 3</source>
-          <target state="needs-review-translation">3, 3, 3, 3</target>
-        </trans-unit>
-        <trans-unit id="mainTabPage.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>866, 515</source>
-          <target state="needs-review-translation">866, 515</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="mainTabPage.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>0</source>
-          <target state="needs-review-translation">0</target>
-        </trans-unit>
-        <trans-unit id="mainTabPage.Text" translate="yes" xml:space="preserve">
-          <source>Main</source>
-          <target state="new">Main</target>
-        </trans-unit>
-        <trans-unit id="editTabPage.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>4, 22</source>
-          <target state="needs-review-translation">4, 22</target>
-        </trans-unit>
-        <trans-unit id="editTabPage.Padding" translate="yes" extype="System.Windows.Forms.Padding, System.Windows.Forms" xml:space="preserve">
-          <source>3, 3, 3, 3</source>
-          <target state="needs-review-translation">3, 3, 3, 3</target>
-        </trans-unit>
-        <trans-unit id="editTabPage.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>866, 515</source>
-          <target state="needs-review-translation">866, 515</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="editTabPage.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>1</source>
-          <target state="needs-review-translation">1</target>
-        </trans-unit>
-        <trans-unit id="editTabPage.Text" translate="yes" xml:space="preserve">
-          <source>Edit Config</source>
-          <target state="translated">Modifier la configuration</target>
-        </trans-unit>
-        <trans-unit id="tabControl.Dock" translate="yes" extype="System.Windows.Forms.DockStyle, System.Windows.Forms" xml:space="preserve">
-          <source>Fill</source>
-          <target state="needs-review-translation">Fill</target>
-        </trans-unit>
-        <trans-unit id="tabControl.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>0, 0</source>
-          <target state="needs-review-translation">0, 0</target>
-        </trans-unit>
-        <trans-unit id="tabControl.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>874, 541</source>
-          <target state="needs-review-translation">874, 541</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="tabControl.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>0</source>
-          <target state="needs-review-translation">0</target>
-        </trans-unit>
-        <trans-unit id="saveConfigButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
-          <source>Microsoft Sans Serif, 12pt</source>
-          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
-        </trans-unit>
-        <trans-unit id="saveConfigButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>8, 481</source>
-          <target state="needs-review-translation">9, 473</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="saveConfigButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>333, 28</source>
-          <target state="needs-review-translation">332, 36</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="saveConfigButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>7</source>
-          <target state="needs-review-translation">7</target>
-        </trans-unit>
-        <trans-unit id="saveConfigButton.Text" translate="yes" xml:space="preserve">
-          <source>Save Game Configuration</source>
-          <target state="translated">Sauvegarder la configuration du jeu</target>
-        </trans-unit>
-        <trans-unit id="cloneTriggerButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
-          <source>Microsoft Sans Serif, 12pt</source>
-          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
-        </trans-unit>
-        <trans-unit id="cloneTriggerButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>9, 413</source>
-          <target state="needs-review-translation">9, 434</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="cloneTriggerButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>332, 28</source>
-          <target state="needs-review-translation">332, 33</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="cloneTriggerButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>6</source>
-          <target state="needs-review-translation">6</target>
-        </trans-unit>
-        <trans-unit id="cloneTriggerButton.Text" translate="yes" xml:space="preserve">
-          <source>Clone Current Trigger</source>
-          <target state="new">Clone Current Trigger</target>
-        </trans-unit>
-        <trans-unit id="addTriggerButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
-          <source>Microsoft Sans Serif, 12pt</source>
-          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
-        </trans-unit>
-        <trans-unit id="addTriggerButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>8, 379</source>
-          <target state="needs-review-translation">8, 394</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="addTriggerButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>333, 28</source>
-          <target state="needs-review-translation">333, 34</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="addTriggerButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>5</source>
-          <target state="needs-review-translation">5</target>
-        </trans-unit>
-        <trans-unit id="addTriggerButton.Text" translate="yes" xml:space="preserve">
-          <source>Add Trigger</source>
-          <target state="translated">Ajouter un trigger</target>
-        </trans-unit>
-        <trans-unit id="cloneWatchButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
-          <source>Microsoft Sans Serif, 12pt</source>
-          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
-        </trans-unit>
-        <trans-unit id="cloneWatchButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>8, 345</source>
-          <target state="needs-review-translation">8, 350</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="cloneWatchButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>333, 28</source>
-          <target state="needs-review-translation">333, 38</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="cloneWatchButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>4</source>
-          <target state="needs-review-translation">4</target>
-        </trans-unit>
-        <trans-unit id="cloneWatchButton.Text" translate="yes" xml:space="preserve">
-          <source>Clone Current Watch</source>
-          <target state="new">Clone Current Watch</target>
-        </trans-unit>
-        <trans-unit id="addWatchButton.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
-          <source>Microsoft Sans Serif, 12pt</source>
-          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
-        </trans-unit>
-        <trans-unit id="addWatchButton.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>8, 311</source>
-          <target state="needs-review-translation">9, 306</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="addWatchButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>333, 28</source>
-          <target state="needs-review-translation">332, 38</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="addWatchButton.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>3</source>
-          <target state="needs-review-translation">3</target>
-        </trans-unit>
-        <trans-unit id="addWatchButton.Text" translate="yes" xml:space="preserve">
-          <source>Add Watch</source>
-          <target state="translated">Ajouter une montre</target>
-        </trans-unit>
-        <trans-unit id="currentUILabel.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
-          <source>True</source>
-          <target state="needs-review-translation">True</target>
-        </trans-unit>
-        <trans-unit id="currentUILabel.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
-          <source>Microsoft Sans Serif, 14pt</source>
-          <target state="needs-review-translation">Microsoft Sans Serif, 14pt</target>
-        </trans-unit>
-        <trans-unit id="currentUILabel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>348, 6</source>
-          <target state="needs-review-translation">348, 6</target>
-        </trans-unit>
-        <trans-unit id="currentUILabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>132, 24</source>
-          <target state="needs-review-translation">132, 24</target>
-        </trans-unit>
-        <trans-unit id="currentUILabel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>1</source>
-          <target state="needs-review-translation">1</target>
-        </trans-unit>
-        <trans-unit id="currentUILabel.Text" translate="yes" xml:space="preserve">
-          <source>currentUILabel</source>
-          <target state="new">currentUILabel</target>
-        </trans-unit>
-        <trans-unit id="gcTreeView.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>8, 6</source>
-          <target state="needs-review-translation">8, 6</target>
-        </trans-unit>
-        <trans-unit id="gcTreeView.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>333, 299</source>
-          <target state="needs-review-translation">333, 294</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="gcTreeView.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>0</source>
-          <target state="needs-review-translation">0</target>
-        </trans-unit>
-        <trans-unit id="gcPanel.LayoutSettings" translate="yes" extype="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms" xml:space="preserve">
-          <source><bpt id="1">&lt;TableLayoutSettings&gt;</bpt><bpt id="2">&lt;Controls &gt;</bpt><ept id="2">&lt;/Controls&gt;</ept><bpt id="3">&lt;Columns Styles="Percent,50,Percent,50"&gt;</bpt><ept id="3">&lt;/Columns&gt;</ept><bpt id="4">&lt;Rows Styles="Percent,50"&gt;</bpt><ept id="4">&lt;/Rows&gt;</ept><ept id="1">&lt;/TableLayoutSettings&gt;</ept></source>
-          <target state="needs-review-translation"><bpt id="1">&lt;TableLayoutSettings&gt;</bpt><bpt id="2">&lt;Controls &gt;</bpt><ept id="2">&lt;/Controls&gt;</ept><bpt id="3">&lt;Columns Styles="Percent,50,Percent,50"&gt;</bpt><ept id="3">&lt;/Columns&gt;</ept><bpt id="4">&lt;Rows Styles="Percent,50"&gt;</bpt><ept id="4">&lt;/Rows&gt;</ept><ept id="1">&lt;/TableLayoutSettings&gt;</ept></target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="holderPanel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
-          <source>352, 34</source>
-          <target state="needs-review-translation">352, 34</target>
-        </trans-unit>
-        <trans-unit id="holderPanel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>508, 475</source>
-          <target state="needs-review-translation">508, 475</target>
-        </trans-unit>
-        <trans-unit id="holderPanel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>8</source>
-          <target state="needs-review-translation">8</target>
-        </trans-unit>
         <trans-unit id="gcPanel.ColumnCount" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>2</source>
           <target state="needs-review-translation">2</target>
         </trans-unit>
+        <trans-unit id="gcPanel.Dock" translate="yes" extype="System.Windows.Forms.DockStyle, System.Windows.Forms" xml:space="preserve">
+          <source>Fill</source>
+          <target state="needs-review-translation">Fill</target>
+        </trans-unit>
         <trans-unit id="gcPanel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>0, 0</source>
-          <target state="needs-review-translation">3, 3</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">0, 0</target>
         </trans-unit>
         <trans-unit id="gcPanel.RowCount" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>1</source>
@@ -2257,8 +2343,7 @@
         </trans-unit>
         <trans-unit id="gcPanel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>508, 475</source>
-          <target state="needs-review-translation">200, 100</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="needs-review-translation">508, 475</target>
         </trans-unit>
         <trans-unit id="gcPanel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>0</source>
@@ -2271,12 +2356,10 @@
         <trans-unit id="$this.ClientSize" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>874, 541</source>
           <target state="needs-review-translation">874, 541</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
           <source>SoniFight Status: Stopped</source>
-          <target state="needs-review-translation">SoniFight v1.0 - Statut arrêté</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new">SoniFight Status: Stopped</target>
         </trans-unit>
         <trans-unit id="irrKlangPictureBox.GenerateMember" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
           <source>False</source>
@@ -2289,126 +2372,6 @@
         <trans-unit id="$this.Localizable" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
-        </trans-unit>
-        <trans-unit id="gcPanel.Dock" translate="yes" xml:space="preserve" extype="System.Windows.Forms.DockStyle, System.Windows.Forms">
-          <source>Fill</source>
-          <target state="needs-review-translation">Fill</target>
-        </trans-unit>
-        <trans-unit id="runConfigButton.AccessibleName" translate="yes" xml:space="preserve">
-          <source>Run Selected Config Button</source>
-          <target state="needs-review-translation">Run Selected Config</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="runConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="tabControl.AccessibleDescription" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="tabControl.AccessibleName" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="quitButton.AccessibleDescription" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="quitButton.AccessibleName" translate="yes" xml:space="preserve">
-          <source>Quit Button</source>
-          <target state="new">Quit Button</target>
-        </trans-unit>
-        <trans-unit id="createConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="createConfigButton.AccessibleName" translate="yes" xml:space="preserve">
-          <source>Create New Config Button</source>
-          <target state="new">Create New Config Button</target>
-        </trans-unit>
-        <trans-unit id="stopConfigButton.AccessibleDescription" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="stopConfigButton.AccessibleName" translate="yes" xml:space="preserve">
-          <source>Stop Running Config Button</source>
-          <target state="new">Stop Running Config Button</target>
-        </trans-unit>
-        <trans-unit id="refreshButton.AccessibleDescription" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="refreshButton.AccessibleName" translate="yes" xml:space="preserve">
-          <source>Refresh Configs Button</source>
-          <target state="new">Refresh Configs Button</target>
-        </trans-unit>
-        <trans-unit id="configsComboBox.AccessibleDescription" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="configsComboBox.AccessibleName" translate="yes" xml:space="preserve">
-          <source>Config Dropdown</source>
-          <target state="new">Config Dropdown</target>
-        </trans-unit>
-        <trans-unit id="readConfigNotesButton.AccessibleName" translate="yes" xml:space="preserve">
-          <source>Read Config Notes Button</source>
-          <target state="new">Read Config Notes Button</target>
-        </trans-unit>
-        <trans-unit id="readConfigNotesButton.Font" translate="yes" xml:space="preserve" extype="System.Drawing.Font, System.Drawing">
-          <source>Microsoft Sans Serif, 14.25pt</source>
-          <target state="needs-review-translation">Microsoft Sans Serif, 14.25pt</target>
-        </trans-unit>
-        <trans-unit id="readConfigNotesButton.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>394, 93</source>
-          <target state="needs-review-translation">425, 101</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="readConfigNotesButton.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>288, 38</source>
-          <target state="needs-review-translation">259, 38</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="readConfigNotesButton.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>2</source>
-          <target state="needs-review-translation">2</target>
-        </trans-unit>
-        <trans-unit id="readConfigNotesButton.Text" translate="yes" xml:space="preserve">
-          <source>Read Config Notes</source>
-          <target state="new">Read Config Notes</target>
-        </trans-unit>
-        <trans-unit id="pictureBox1.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
-        </trans-unit>
-        <trans-unit id="pictureBox1.SizeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-          <source>CenterImage</source>
-          <target state="needs-review-translation">CenterImage</target>
-        </trans-unit>
-        <trans-unit id="addHotkeyButton.Font" translate="yes" xml:space="preserve" extype="System.Drawing.Font, System.Drawing">
-          <source>Microsoft Sans Serif, 12pt</source>
-          <target state="needs-review-translation">Microsoft Sans Serif, 12pt</target>
-        </trans-unit>
-        <trans-unit id="addHotkeyButton.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
-        </trans-unit>
-        <trans-unit id="addHotkeyButton.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>8, 447</source>
-          <target state="needs-review-translation">8, 442</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="addHotkeyButton.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>332, 28</source>
-          <target state="needs-review-translation">332, 28</target>
-        </trans-unit>
-        <trans-unit id="addHotkeyButton.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>9</source>
-          <target state="needs-review-translation">9</target>
-        </trans-unit>
-        <trans-unit id="addHotkeyButton.Text" translate="yes" xml:space="preserve">
-          <source>Add Hotkey</source>
-          <target state="new">Add Hotkey</target>
         </trans-unit>
       </group>
     </body>

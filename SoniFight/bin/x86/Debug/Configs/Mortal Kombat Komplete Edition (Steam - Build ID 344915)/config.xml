@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <tolkOutputDecimalPlaces>2</tolkOutputDecimalPlaces>
   <GameConfigFileVersion>1</GameConfigFileVersion>
   <watchList>
     <Watch>
@@ -18,8 +19,8 @@
       <Name>P1 Health</Name>
       <Description>Player 1 health as a float. Range is 1.0f to 0.0f</Description>
       <PointerList>
-        <string>AD8970</string>
-        <string>180</string>
+        <string>A91BBC</string>
+        <string>78</string>
         <string>9C</string>
         <string>130</string>
         <string>284</string>
@@ -1934,11 +1935,90 @@
       <IsClock>false</IsClock>
       <Active>true</Active>
     </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>90</Id>
+      <Name>Hotkey multiple value substitution test</Name>
+      <Description>Just testing hotkeys with triggers and multiple watches</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>P1 has {2} and P2 has {4}</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>true</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
+    <Trigger>
+      <triggerType>Normal</triggerType>
+      <allowanceType>Any</allowanceType>
+      <comparisonType>EqualTo</comparisonType>
+      <Id>91</Id>
+      <Name>Hotkey sample test</Name>
+      <Description>Just testing hotkeys with triggers and samples</Description>
+      <Value xsi:type="xsd:int">-1</Value>
+      <WatchIdList>
+        <int>1</int>
+      </WatchIdList>
+      <SecondaryIdList>
+        <int>-1</int>
+      </SecondaryIdList>
+      <SampleFilename>X-Ray.mp3</SampleFilename>
+      <SampleSpeed>1</SampleSpeed>
+      <SampleVolume>1</SampleVolume>
+      <UseTolk>false</UseTolk>
+      <IsClock>false</IsClock>
+      <Active>true</Active>
+    </Trigger>
   </triggerList>
-  <hotkeyList />
-  <Description>Mortal Kombat 9 - Al Lansley 2017-10-14
+  <hotkeyList>
+    <Hotkey>
+      <Id>1</Id>
+      <name>1-Watch-2-H</name>
+      <targetType>ExecutesWatch</targetType>
+      <watchOrTriggerID>2</watchOrTriggerID>
+      <activationKey>72</activationKey>
+      <modifierCode>16384</modifierCode>
+      <enabled>true</enabled>
+    </Hotkey>
+    <Hotkey>
+      <Id>2</Id>
+      <name>2-Watch-4-N</name>
+      <targetType>ExecutesWatch</targetType>
+      <watchOrTriggerID>4</watchOrTriggerID>
+      <activationKey>78</activationKey>
+      <modifierCode>16384</modifierCode>
+      <enabled>true</enabled>
+    </Hotkey>
+    <Hotkey>
+      <Id>3</Id>
+      <name>3-Trigger-90-J</name>
+      <targetType>ExecutesTrigger</targetType>
+      <watchOrTriggerID>90</watchOrTriggerID>
+      <activationKey>74</activationKey>
+      <modifierCode>16384</modifierCode>
+      <enabled>true</enabled>
+    </Hotkey>
+    <Hotkey>
+      <Id>4</Id>
+      <name>4-Trigger-91-M</name>
+      <targetType>ExecutesTrigger</targetType>
+      <watchOrTriggerID>91</watchOrTriggerID>
+      <activationKey>77</activationKey>
+      <modifierCode>16384</modifierCode>
+      <enabled>true</enabled>
+    </Hotkey>
+  </hotkeyList>
+  <Description>Mortal Kombat 9 - Al Lansley 2020-08-08
 
-This config uses sample-based output for health, clock and gauge values - as well as tolk-based output for menu sonification.</Description>
+This config uses sample-based output for health, clock and gauge values, as well as tolk-based output for menu sonification.</Description>
   <ProcessName>MKKE</ProcessName>
   <PollSleepMS>100</PollSleepMS>
   <ClockTickMS>1000</ClockTickMS>

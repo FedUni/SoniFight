@@ -278,6 +278,8 @@ namespace au.edu.federation.SoniFight
             UseTolk            = source.UseTolk;
         }
 
+        //List<int> extrac
+
     } // End of Trigger class
 
 } // End of namespace

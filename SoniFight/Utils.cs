@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Xml.Serialization;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using System.Diagnostics;
-using au.edu.federation.SoniFight.Properties;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Xml.Serialization;
+
+using au.edu.federation.SoniFight.Properties;
 
 namespace au.edu.federation.SoniFight
 {
@@ -892,43 +893,56 @@ namespace au.edu.federation.SoniFight
 
 
         // Method to substitute all watch curly braces with the value of this trigger's watch for {}, or the value of the numbered watch in the case of things like {123}
-        public static string substituteWatchValuesInString(Trigger t, string s)
+        public static string substituteWatchValuesInString(Trigger t, string stringToParse, IntPtr processHandle, IntPtr processBaseAddress)
         {
             // Easy case -just substitutethe value of this trigger's watch
-            if (t.WatchIdList.Count > 0)
-            {
-                s = s.Replace("{}", Convert.ToString(Utils.getWatchWithId(t.WatchIdList[0]).getDynamicValueFromType()));
-            }
+            //if (t.WatchIdList.Count > 0)
+            //{
+            //    s = s.Replace("{}", Convert.ToString(Utils.getWatchWithId(t.WatchIdList[0]).getDynamicValueFromType()));
+            //}
 
             // Regex to find any remaining values in curly braces. Note: The returned match contains the curly braces, which is exactly what we want.
             Regex matchesWithBracesRegex = new Regex("{.*?}");
 
             // Get the collection of matches
-            MatchCollection matches = matchesWithBracesRegex.Matches(s);
+            MatchCollection matches = matchesWithBracesRegex.Matches(stringToParse);
 
             // Loop over each match
             foreach (Match match in matches)
             {
+                // Note: Each match is stuff like "{2}"
+                //Console.WriteLine("Looking at match: " + match.ToString());
+
                 // Strip start and end curly brace to leave just watch ID as a string
                 string valueString = match.Value.Substring(1, match.Value.Length - 2);
 
-                // Convert watch ID to an int, then get the watch with that ID, get its value and substitute the value into the string we're constructing
+                // Convert watch ID to an int, then get the watch with that ID, update the watch, then get its value and substitute the value into the string we're constructing
                 int valueInt = -1;
                 if (int.TryParse(valueString, System.Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, out valueInt))
                 {
-                    dynamic watchValue = Utils.getWatchWithId(valueInt).getDynamicValueFromType();
+                    Watch w = Utils.getWatchWithId(valueInt);
+                    w.evaluateAndUpdateDestinationAddress(processHandle, processBaseAddress);
+                    dynamic watchValue = w.getDynamicValueFromType();
 
-                    s = s.Replace(match.Value, Convert.ToString(watchValue));
+                    // If we have a float or double type then limit output to however many decimal places as specified by the GameConfig's tolkOutputDecimalPlaces property
+                    if (w.valueType == Watch.ValueType.FloatType || w.valueType == Watch.ValueType.DoubleType)
+                    {
+                        stringToParse = stringToParse.Replace( match.Value, String.Format(MainForm.gameConfig.tolkOutputFormattingString, watchValue) );
+                    }
+                    else // Any other type? Substitute as normal
+                    {
+                        stringToParse = stringToParse.Replace(match.Value, Convert.ToString(watchValue));
+                    }
                 }
                 else // Couldn't parse text inside braces to int? Warn user by substituting warning into tolk output.
                 {
-                    s = s.Replace(match.Value, Resources.ResourceManager.GetString("watchValueParseFailString") + match.Value);
+                    stringToParse = stringToParse.Replace(match.Value, Resources.ResourceManager.GetString("watchValueParseFailString") + match.Value);
                 }
 
             } // End of loop over matches
 
             // Finally return the string with all substitutions made
-            return s;
+            return stringToParse;
         }
 
         // Method to return whether the current game config uses tolk or not
