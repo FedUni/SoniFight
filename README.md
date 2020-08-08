@@ -27,4 +27,4 @@ SoniFight also contains a comprehensive user interface where you can create your
 
 ## Documentation ##
 
-To learn more about creating your own game configs as well as how the software operates through 'watches' and 'triggers', or to take a look at the answers to some frequently asked questions please see the provided user documentation [https://github.com/FedUni/SoniFight/blob/master/Documentation/SoniFight_User_Guide.pdf](here).
+To learn more about creating your own game configs as well as how the software operates through 'watches' and 'triggers', or to take a look at the answers to some frequently asked questions please see the provided user documentation here: [SoniFight User Guide.pdf](https://github.com/FedUni/SoniFight/blob/master/Documentation/SoniFight_User_Guide.pdf)
