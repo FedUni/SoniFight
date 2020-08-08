@@ -10,7 +10,7 @@ If you want to get an idea of what the SoniFight software can do then a demonstr
 
 ## Quick Start ##
 
-To use SoniFight, please download a pre-compiled release from: https://github.com/FedUni/SoniFight/releases then run the SoniFight_32-bit.bat batch file for 32-bit games (it's likely this is the one you want) or the SoniFight_64-bit.bat file for 64-bit games (currrently proof of concept only).
+To use SoniFight, please download a pre-compiled release from: https://github.com/FedUni/SoniFight/releases then run the SoniFight_x86.bat batch file for 32-bit games (it's likely this is the one you want) or the SoniFight_x64.bat file for 64-bit games (currrently proof of concept only).
 
 Once running choose a game config from the dropdown menu for the game you want to play and click the "Run Selected Config" button, then launch the associated game. SoniFight will connect to the game process and provide additional sonification cues as specified in the game configuration file.
 
