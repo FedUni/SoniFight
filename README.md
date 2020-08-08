@@ -2,11 +2,11 @@
 
 SoniFight is a Windows application designed to provide additional sonification cues to video games for blind or visually impaired players. It is written in C# and released under the MIT license. Please see LICENSE.txt for further details, including separate licensing details for the embedded tolk and irrKlang libraries.
 
+If you want to get an idea of what the SoniFight software can do then a demonstration video can be found here: https://www.youtube.com/watch?v=qHvcVv_BdmE
+
 If referencing this project in your research, APA style referencing for the accompaniying research paper is:
 
 Lansley, A., Vamplew, P., Foale, C., & Smith, P. (2018). SoniFight: Software to Provide Additional Sonification Cues to Video Games for Visually Impaired Players. The Computer Games Journal, 7(2), 115-130.
-
-If you want to get an idea of what the SoniFight software can do then a demonstration video can be found here: https://www.youtube.com/watch?v=qHvcVv_BdmE
 
 ## Quick Start ##
 
