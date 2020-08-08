@@ -183,31 +183,18 @@ namespace au.edu.federation.SoniFight
         private Hotkey getHotkeyByName(string searchName)
         {
             //MessageBox.Show("hotkey list size: " + gameConfig.hotkeyList.Count);
-
             Hotkey tmp = null;
             foreach (Hotkey h in gameConfig.hotkeyList)
             {
-                //MessageBox.Show("hotkey name: " + h.name);// gameConfig.hotkeyList.Count);
-                                
+                //MessageBox.Show("hotkey name: " + h.name);// gameConfig.hotkeyList.Count);                                
                 if (h.name.Equals(searchName))                    
                 {
                     tmp = h;
                     break;
                 }
             }
-
-            // Creating new hotkey? Send back an 'empty' one...
-            /*if (tmp == null)
-            {
-                tmp = new Hotkey();
-                tmp.hotkeyID = 0;
-                tmp.name = "New Hotkey";
-                tmp.watchOrTriggerID = 0;
-            }*/
-
             return tmp; // Note: This could be null
-        }
-        
+        }        
 
         // Main form loop. Note we need to override this so that we can look for hotkeys and act appropriately
         protected override void WndProc(ref Message m)
@@ -396,9 +383,7 @@ namespace au.edu.federation.SoniFight
             Thread.Sleep(500);
 
             // Note: Once here SoundPlayer.ShutDown() will be called from the main method because we've been stuck in this form loop up until then.
-        }
-
-        
+        }        
 
         // Method to set up creation of a new GameConfig
         private void createNewConfigButton_Click(object senderender, EventArgs e)
@@ -604,9 +589,12 @@ namespace au.edu.federation.SoniFight
                 // Cancel sonification if we move to the edit tab while running
                 if (running)
                 {
+                    /*
                     // This sets cancellation to pending, which we handle in the associated doWork method
                     // to actually perform the cancellation.
                     Program.sonificationBGW.CancelAsync();
+
+                    unregisterHotkeys(); // Unregister all hotkeys
 
                     Console.WriteLine( Resources.ResourceManager.GetString("sonificationStoppedString") );
 
@@ -616,6 +604,18 @@ namespace au.edu.federation.SoniFight
                     // Pause then announce we've stopped
                     Thread.Sleep(500);
                     Tolk.Output("SoniFight stopped", false);
+                    */
+
+                    // This sets cancellation to pending, which we handle in the associated doWork method
+                    // to actually perform the cancellation.
+                    GameConfig.processConnectionBGW.CancelAsync();
+                    Program.sonificationBGW.CancelAsync();
+                    this.Text = formTitle + Resources.ResourceManager.GetString("statusStoppedString");
+                    running = false;
+                    Thread.Sleep(500);
+                    unregisterHotkeys(); // Unregister all hotkeys
+                    Program.irrKlang.UnloadAllSamples();
+                    Tolk.Output("SoniFight stopped", true);
                 }
 
                 // Loading an existing config? Okay...
@@ -651,19 +651,15 @@ namespace au.edu.federation.SoniFight
                 // Rebuild the TreeView for the newly loaded GameConfig
                 RebuildTreeViewFromGameConfig();
             }
-            else // We must be on index 0, and so we should update the GameConfig ComboBox incase the user has created a new config they want to run
+            else // We must be on index 0, and so we should update the GameConfig ComboBox in case the user has created a new config they want to run
             {
                 populateMainConfigsBox();
             }
 
         } // End of tabControl_SelectedIndexChanged method
 
-        // Stop button handler to stop the sonification background worker
-        private void stopConfigButton_Click(object senderender, EventArgs e)
+        private void stopAllSonification()
         {
-            // Play the stop config sample
-            Program.irrKlang.PlayStartStopSample(false);
-
             // This sets cancellation to pending, which we handle in the associated doWork method
             // to actually perform the cancellation.
             GameConfig.processConnectionBGW.CancelAsync();
@@ -671,12 +667,21 @@ namespace au.edu.federation.SoniFight
             this.Text = formTitle + Resources.ResourceManager.GetString("statusStoppedString");
             running = false;
             Thread.Sleep(500);
-
             unregisterHotkeys(); // Unregister all hotkeys
-
             Program.irrKlang.UnloadAllSamples();
-
             Tolk.Output("SoniFight stopped", true);
+        }
+
+        // Stop button handler to stop the sonification background worker
+        private void stopConfigButton_Click(object senderender, EventArgs e)
+        {
+            if (running)
+            {
+                // Play the stop config sample
+                Program.irrKlang.PlayStartStopSample(false);
+
+                stopAllSonification();
+            }
         }
 
         // Method to refresh the main config selection dropdown menu
@@ -2641,8 +2646,6 @@ namespace au.edu.federation.SoniFight
             // Display the config notes textbox
             //configNotesTB.Show();
         }
-
-        
 
         private void addHotkeyButton_Click(object senderender, EventArgs e)
         {

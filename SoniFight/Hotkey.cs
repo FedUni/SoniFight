@@ -38,6 +38,9 @@ namespace au.edu.federation.SoniFight
         public int modifierCode;        // This is the bitflag indicating the combination of hotkeys being used with this hotkey's activation key
         public bool enabled;            // Is this hotkey enabled?
 
+        [XmlIgnore]
+        private bool currentlyRegistered = false;
+
         // Default constructor. Note: This is required for XML serialisation.
         public Hotkey() {  }
 
@@ -77,14 +80,12 @@ namespace au.edu.federation.SoniFight
         // Method to register a global hotkey, will return true on success or false otherwise
         public bool Register()
         {
-            
-
-            // Check if hotkey is valid. If so then attempt to register, otherwise inform user of issue.
+            // Check if hotkey is valid. If so then attempt to register (placing the success/failure state into the currentlyRegistered property), otherwise inform user of issue
             if (IsValid())
             {
-                bool succeeded = RegisterHotKey(MainForm.formHandlePtr, Id, modifierCode, activationKey);
+                currentlyRegistered = RegisterHotKey(MainForm.formHandlePtr, Id, modifierCode, activationKey);
 
-                if (succeeded)
+                if (currentlyRegistered)
                 {
                     Console.WriteLine("Successfully registered hotkey: " + this.ToString());
                 }
@@ -94,7 +95,7 @@ namespace au.edu.federation.SoniFight
                     MessageBox.Show("Warning: Failed to register hotkey: " + this.ToString(), "Hotkey Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                return succeeded;
+                return currentlyRegistered;
             }
             else
             {
@@ -111,6 +112,8 @@ namespace au.edu.federation.SoniFight
         // Method to unregister a global hotkey, will return true on success or false otherwise
         public bool Unregister()
         {
+            // If the hotkey isn't registered in the first place we cannot unregister it!
+            if (!currentlyRegistered) { return false; }
 
             bool result;
             result = UnregisterHotKey(MainForm.formHandlePtr, Id);
