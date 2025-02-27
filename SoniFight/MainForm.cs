@@ -201,16 +201,18 @@ namespace au.edu.federation.SoniFight
         {
             // Note: This runs all the time, just based on any window events that occur...
 
-            // A hotkey was pressed? Note: 0x0312 correspondes to WM_HOTKEY.
+            // If a hotkey was pressed... (Note: 0x0312 correspondes to WM_HOTKEY)
             // See: https://docs.microsoft.com/en-us/windows/win32/inputdev/wm-hotkey
             if (m.Msg == 0x0312)
             {
+                // Get the ID of the hotkey
                 int id = m.WParam.ToInt32();
 
-                // Now we have a hotkey ID, is it one of OUR hotkeys? (Remembering that many other hotkeys may exist that are not related to SoniFight!)
-                // If so then activate the sonification for that hotkey
+                // Now we have a hotkey ID, is it one of OUR hotkeys? (Remembering that many other hotkeys may exist that are not related to SoniFight!)                
                 Hotkey h = getHotkeyWithID(id);
-                if (h != null)
+
+                // If it's one of ours, and we're connected to a game process then activate the sonification for that hotkey
+                if (h != null && Program.connectedToProcess)
                 {
                     // If this hotkey activates a trigger...
                     if (h.targetType == Hotkey.TargetType.ExecutesTrigger)
